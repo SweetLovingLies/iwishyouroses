@@ -255,6 +255,7 @@ footer a{
   margin-left: -3px;
   pointer-events: none;
 }
+
 .corkboard:before {
   content: url('./Assets/pixels/pinkheart.gif');
   vertical-align: text-top;
@@ -262,6 +263,26 @@ footer a{
 .corkboard:last-child::before {
   content: url('./Assets/pixels/blueheart.gif');
   vertical-align: text-top;
+}
+.links li:nth-child(even):after {
+  background-image: url('./Assets/pixels/fd/flower2.webp');
+  background-size: 20px 20px;
+  display: inline-block;
+  width: 20px; 
+  height: 20px;
+  content:"";
+  vertical-align:middle;
+  margin-right: 5px;
+}
+.links li:nth-child(odd)::after {
+  background-image: url('./Assets/pixels/fd/clover.webp');
+  background-size: 20px 20px;
+  display: inline-block;
+  width: 20px; 
+  height: 20px;
+  content:"";
+  vertical-align:middle;
+  margin-right: 5px;
 }
 
 
