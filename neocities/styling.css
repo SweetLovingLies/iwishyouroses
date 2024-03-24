@@ -21,7 +21,7 @@
 }
 @font-face {
     font-family: kinkee;
-    src: url('./Assets/fonts/KINKIE__.ttf');
+    src: url('Assets/fonts/kinkee.ttf');
 }
 @font-face {
   font-family: peachsundress;
@@ -63,22 +63,26 @@ nav {
   height:auto;
   margin-bottom:10px;
   background-color:var(--nav-bg);
-  font-family: kinkee;
   font-size: 21px;
+  border:2px solid var(--darker-border-color);
+  border-left:none;
+  border-right:none;
 }
 
 header {
-  height:400px;
+  height:300px;
   background-color:var(--header-bg);
   background-image:url('./Assets/headers/lana-del-rey-chemtrails.jpeg');
   background-size:cover;
   background-position: center 20%;
 }
+
 main {
   width:100%;
   margin-left:20px;
   margin-right:20px;
 }
+
 section {
   margin-bottom:10px;
   color:var(--sidebar-text-color);
@@ -87,6 +91,7 @@ section {
   border-left: #ff8191 dashed 2px;
   border-right: #ff8191 dashed 2px;
 }
+
 p {
   padding: 5px;
   display: block;
@@ -96,14 +101,15 @@ p {
   margin-inline-end: 0;
 }
 article { 
+  position: relative;
   border:1px solid var(--darker-border-color);
   margin-bottom:15px;
   background-color:var(--article-bg);
   color:var(--article-text-color);
   padding:10px;
 }
+
 .subtitle {
-  border:1px solid var(--darker-border-color);
   background-color:var(--nav-bg);
   font-family: peachsundress;
   font-size: 21px;
@@ -115,6 +121,7 @@ article {
 }
 
 .headertxt {
+  position: relative;
   border:1px solid var(--darker-border-color);
   color: var(--heading-color);
   font-family: peachsundress;
@@ -151,6 +158,7 @@ article {
 .nav {
   margin:10px 0;
   text-align:center;
+  font-family: kinkee;
 }
 
 .nav li {
@@ -160,7 +168,6 @@ article {
 
 .nav li a {
   text-decoration:none;
-  text-transform:uppercase;
   color:var(--nav-link-color);
   font-weight: bold;
 }
@@ -186,11 +193,6 @@ article .subtitle {
   margin-bottom:10px;
   
 }
-nav {
-  border:2px solid var(--darker-border-color);
-  border-left:none;
-  border-right:none;
-}
 footer {
   max-width:800px;
   text-align:center;
@@ -200,10 +202,88 @@ footer {
 footer a{
   color:var(--navbar-link-color);
 }
+
+/* General Decoration */
+
+.blueberryborder {
+  border-style:solid;
+  border-image: url("./Assets/borders/blueberryGingham.png") 8 round;
+  border-width: 7px;
+  background-clip: padding-box;
+}
+
+.darklineborder {
+  border:1px solid var(--darker-border-color);
+}
+
+.flowerborder1 {
+  position: absolute;
+  display: block;
+  top: 16px;
+  background: url('./Assets/pixels/fd/flowers.webp');
+  height: 35px;
+  width: 100%;
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: 13%;
+  margin-left: -3px;
+  pointer-events: none;
+}
+.flowerborder2 {
+  position: absolute;
+  display: block;
+  top: 22px;
+  background: url('./Assets/pixels/fd/flowerborder.webp');
+  height: 35px;
+  width: 100%;
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: 23%;
+  margin-left: -3px;
+  pointer-events: none;
+}
+.flowerborder3 {
+  position: absolute;
+  display: block;
+  top: 20px;
+  background: url('./Assets/pixels/fd/flowerborder3.webp');
+  height: 35px;
+  width: 100%;
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: 60%;
+  margin-left: -3px;
+  pointer-events: none;
+}
+.corkboard:before {
+  content: url('./Assets/pixels/pinkheart.gif');
+  vertical-align: text-top;
+}
+.corkboard:last-child::before {
+  content: url('./Assets/pixels/blueheart.gif');
+  vertical-align: text-top;
+}
+
+
+/* Media Query */
+
 @media only screen and (max-width: 800px) {
   .flex {
     flex-wrap:wrap;
   }
+  .flowerborder1 {
+    top: 14px;
+    background-size: 65px;
+  }
+  .flowerborder2 {
+    top: 18px;
+    background-size: 160px;
+  }
+  .flowerborder3 {
+    top: 16px;
+    background-size: 270px;
+  }
+
   aside {
     display:flex;
     width:100%;
