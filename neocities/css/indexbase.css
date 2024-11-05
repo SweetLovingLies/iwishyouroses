@@ -290,8 +290,8 @@ footer{
     border: none;
 
     position: absolute;
-    /* bottom: -605px; */
-    bottom: 0;
+    bottom: -605px;
+    /* bottom: 0; */ /* ! For testing */
     right: 20px;
 
     z-index: 1000;
