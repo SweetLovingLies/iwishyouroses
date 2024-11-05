@@ -65,3 +65,13 @@ h4 {
     background: linear-gradient(0deg, var(--bubblegum) 0%, rgba(238, 238, 255, 1) 50%, var(--bubblegum) 100%);
     box-shadow: 0 1px 4px rgba(0, 0, 10, 0.24);
 }
+
+h4::after {
+    content: "★";
+    font-size: 20px;
+    margin-left: 2px;
+    transform: rotate(20deg);
+
+    color: white;
+    text-shadow: 2px 2px 0 var(--wisteria), 2px -2px 0 var(--wisteria), -2px 2px 0 var(--wisteria), -2px -2px 0 var(--wisteria), 2px 0px 0 var(--wisteria), 0px 2px 0 var(--wisteria), -2px 0px 0 var(--wisteria), 0px -2px 0 var(--wisteria);
+}
