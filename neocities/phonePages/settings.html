@@ -89,7 +89,7 @@
 
             localStorage.setItem("gifState", toggleState);
 
-            window.parent.postMessage({ command: toggleState }, "*");
+            window.top.postMessage({ command: toggleState }, "*");
         }
 
         window.addEventListener("load", () => {
@@ -103,7 +103,7 @@
                 gifToggle.checked = false;
             }
 
-            window.parent.postMessage({ command: gifState }, "*");
+            window.top.postMessage({ command: gifState }, "*");
         });
 
     </script>
