@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Screen: Homepage</title>
+
+    <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/phoneGlobals.css" rel="stylesheet" type="text/css" media="all">
+
+    <link href="css/homepageBase.css" rel="stylesheet" type="text/css" media="all">
+    <link id="homepageCSS" href="css/homepageThemes/homepageLight.css" rel="stylesheet" type="text/css" media="all">
+    <link id="homepageDarkCSS" href="css/homepageThemes/homepageDark.css" rel="stylesheet" type="text/css" media="all"
+        disabled>
+
+    <meta name="description" content="Access literally everything you need." />
+    <link rel="icon" type="image/x-icon" href="../Assets/pixels/vintageAmericana/strawberryphone.webp">
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+</head>
+
+<body>
+    <div class="detailBar">
+        <p id="time">00:00</p>
+
+        <div id="camera">
+            <iconify-icon icon="ic:baseline-lens"></iconify-icon>
+        </div>
+
+        <div class="iconWrapper">
+            <iconify-icon icon="lucide:signal"></iconify-icon>
+            <iconify-icon icon="material-symbols-light:wifi"></iconify-icon>
+            <iconify-icon icon="mingcute:battery-fill"></iconify-icon>
+            <div class="weatherIcon">
+                <!-- Modify per season -->
+                <iconify-icon icon="mdi:weather-sunny"></iconify-icon>
+            </div>
+        </div>
+    </div>
+
+    <div id="homepages">
+        <div class="homepage active" id="homepage1">
+            <div class="appWrapper">
+                <div style="display: flex; margin: 0 auto; column-gap: 25px;">
+                    <div class="column2">
+                        <img class="widget" src="/Assets/kpop/xg/pfp/Harvey1.jpg">
+                        <caption>widgetsmith</caption>
+                    </div>
+
+                    <div class="column1">
+                        <a href="nav.html" class="app" onclick="openApp(event, this)">
+                            <div class="appIcon">
+                                <img src="/Assets/customNavIcons/navIcon.png">
+                            </div>
+                            <p>Navigation</p>
+                        </a>
+                        <a href="idolMessenger.html" class="app" onclick="openApp(event, this)">
+                            <div class="appIcon">
+                                <img src="/Assets/customNavIcons/idolMessengerIcon.png">
+                            </div>
+                            <p>Idol Messenger</p>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="socials.html" class="app" onclick="openApp(event, this)">
+                    <div class="appIcon">
+                        <img src="/Assets/customNavIcons/socialsIcon.png">
+                    </div>
+                    <p>Socials</p>
+                </a>
+
+                <a href="stats.html" class="app" onclick="openApp(event, this)">
+                    <div class="appIcon">
+                        <img src="/Assets/customNavIcons/statsIcon.png">
+                    </div>
+                    <p>Stats</p>
+                </a>
+                <a href="temp.html" class="app" onclick="openApp(event, this)" style="color: red;">
+                    <div class="appIcon">
+                        <img src="/Assets/customNavIcons/peersIcon.png">
+                    </div>
+                    <p>Peers</p>
+                </a>
+                <a href="temp.html" class="app" onclick="openApp(event, this)" style="color: red;">
+                    <div class="appIcon">
+                        <img src="/Assets/customNavIcons/galleryIcon.png">
+                    </div>
+                    <p>Gallery</p>
+                </a>
+                <a href="themes.html" class="app" onclick="openApp(event, this)">
+                    <div class="appIcon">
+                        <img src="/Assets/customNavIcons/shiny_cats_pact_by_yuriachanartist.png">
+                    </div>
+                    <p>Themes</p>
+                </a>
+            </div>
+
+            <div class="swipeIcons">
+                <iconify-icon icon="material-symbols:circle" style="color: var(--wisteria)"
+                    onclick="showHomepage(0)"></iconify-icon> <iconify-icon icon="material-symbols:circle"
+                    style="color: gray" onclick="showHomepage(1)"></iconify-icon>
+            </div>
+
+            <footer>
+                <tray>
+                    <a href="temp.html" class="app" onclick="openApp(event, this)" style="color: red;">
+                        <div class="appIcon">
+                            <img src="/Assets/customNavIcons/ShiranaiIcon.png">
+                        </div>
+                        <p>SHIRANAI</p>
+                    </a>
+                    <a href="settings.html" class="app" onclick="openApp(event, this)">
+                        <div class="appIcon">
+                            <img src="/Assets/customNavIcons/settingsIcon.png">
+                        </div>
+                        <p>Settings</p>
+                    </a>
+                    <a href="temp.html" class="app" onclick="openApp(event, this)" style="color: red;">
+                        <div class="appIcon">
+                            <img src="/Assets/customNavIcons/cameraIcon.png">
+                        </div>
+                        <p>Camera</p>
+                    </a>
+                </tray>
+            </footer>
+        </div>
+
+        <div class="homepage" id="homepage2">
+            <div class="appWrapper">
+                <div id="weatherWidget">
+                    <div id="wwTop">
+                        <p id="wwCityName">Yomiyama City</p>
+
+                        <!-- Modify per season -->
+                        <p id="wwTemp">40°F</p>
+                        <div id="wwWeatherIcon" class="weatherIcon"> 
+                            <iconify-icon icon="mdi:weather-sunny"></iconify-icon>
+                        </div>
+                    </div>
+                    <div id="wwBottom">
+                        <div id="forecastContainer" class="weeklyForecast"></div>
+                    </div>
+                </div>
+
+                <a href="temp.html" class="app" onclick="openApp(event, this)" style="color: red;">
+                    <div class="appIcon"></div>
+                    <p>Music</p>
+                </a>
+                <a href="temp.html" class="app" onclick="openApp(event, this)" style="color: red;">
+                    <div class="appIcon"></div>
+                    <p>GoalPost</p>
+                </a>
+                <a href="temp.html" class="app" onclick="openApp(event, this)" style="color: red;">
+                    <div class="appIcon"></div>
+                    <p>Backpack</p>
+                </a>
+            </div>
+            <div class="swipeIcons">
+                <iconify-icon icon="material-symbols:circle" style="color: gray"
+                    onclick="showHomepage(0)"></iconify-icon> <iconify-icon icon="material-symbols:circle"
+                    style="color: var(--wisteria)" onclick="showHomepage(1)"></iconify-icon>
+            </div>
+
+            <footer>
+                <tray>
+                    <a href="temp.html" class="app" onclick="openApp(event, this)" style="color: red;">
+                        <div class="appIcon">
+                            <img src="/Assets/customNavIcons/ShiranaiIcon.png">
+                        </div>
+                        <p>SHIRANAI</p>
+                    </a>
+                    <a href="settings.html">
+                        <div class="appIcon">
+                            <img src="/Assets/customNavIcons/settingsIcon.png">
+                        </div>
+                        <p>Settings</p>
+                    </a>
+                    <a href="temp.html" class="app" onclick="openApp(event, this)" style="color: red;">
+                        <div class="appIcon">
+                            <img src="/Assets/customNavIcons/cameraIcon.png">
+                        </div>
+                        <p>Camera</p>
+                    </a>
+                </tray>
+            </footer>
+        </div>
+    </div>
+
+    <script src="js/phone.js"></script>
+
+    <script>
+        function openApp(event, appElement) {
+            event.preventDefault();
+
+            if (appElement.classList.contains('open')) return;
+
+            const activeApps = document.querySelectorAll('.app.open');
+            activeApps.forEach(activeApp => {
+                closeApp(activeApp);
+            });
+
+            appElement.classList.add('open');
+            appElement.classList.remove('close');
+
+            const appHref = appElement.getAttribute('href');
+
+            setTimeout(() => {
+                parent.document.getElementById('phoneScreen').src = appHref;
+            }, 350);
+        }
+
+        let currentHomepage = parseInt(localStorage.getItem('currentHomepage')) || 0;
+        const homepages = document.querySelectorAll('.homepage');
+
+        function showHomepage(index, autoOpenFirstApp = false) {
+            homepages.forEach((homepage, i) => {
+                if (i === index) {
+                    homepage.classList.remove('hidden');
+                    homepage.classList.add('active');
+
+                    if (autoOpenFirstApp) {
+                        const firstApp = homepage.querySelector('.app');
+                        if (firstApp) {
+                            openApp(firstApp);
+                        }
+                    }
+                } else {
+                    homepage.classList.add('hidden');
+                    homepage.classList.remove('active');
+                }
+            });
+            localStorage.setItem('currentHomepage', index);
+        }
+
+        document.addEventListener('swiped-right', () => {
+            currentHomepage = (currentHomepage > 0) ? currentHomepage - 1 : homepages.length - 1;
+            showHomepage(currentHomepage);
+        });
+
+        document.addEventListener('swiped-left', () => {
+            currentHomepage = (currentHomepage < homepages.length - 1) ? currentHomepage + 1 : 0;
+            showHomepage(currentHomepage);
+        });
+
+        showHomepage(currentHomepage);
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const darkThemeEnabled = localStorage.getItem('darkTheme') === 'true';
+            const homepageCSS = document.getElementById("homepageCSS");
+            const homepageDarkCSS = document.getElementById("homepageDarkCSS");
+            const detailBar = document.querySelector('.detailBar');
+
+            if (darkThemeEnabled) {
+                homepageCSS.disabled = true;
+                homepageDarkCSS.disabled = false;
+                detailBar.classList.add('dark');
+            } else {
+                homepageCSS.disabled = false;
+                homepageDarkCSS.disabled = true;
+                detailBar.classList.remove('dark');
+            }
+        });
+
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Screen: Homepage</title>
+    <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/phoneGlobals.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/settings.css" rel="stylesheet" type="text/css" media="all">
+    <meta name="description" content="Access literally everything you need." />
+    <link rel="icon" type="image/x-icon" href="../Assets/pixels/vintageAmericana/strawberryphone.webp">
+
+    <script src="/js/jaxframeFork.js"></script>
+    <script src="js/stats.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+    <script src="js/phone.js"></script>
+</head>
+
+<body>
+    <div class="detailBar">
+        <p id="time">00:00</p>
+
+        <div id="camera">
+            <iconify-icon icon="ic:baseline-lens"></iconify-icon>
+        </div>
+
+        <div class="iconWrapper">
+            <iconify-icon icon="lucide:signal"></iconify-icon>
+            <iconify-icon icon="material-symbols-light:wifi"></iconify-icon>
+            <iconify-icon icon="mingcute:battery-fill"></iconify-icon>
+            <div id="weatherIcon">
+                <iconify-icon icon="mdi:weather-sunny"></iconify-icon> <!-- Default icon -->
+            </div>
+        </div>
+    </div>
+
+    <h4>Settings</h4>
+    <main>
+
+        <img id="anonIcon" src="/Assets/other/anonIcon.jpg">
+        <p id="welcomeMessage">Welcome, Anon</p>
+
+        <div class="settingsWrapper">
+            <label class="toggleLabel" for="gifToggle">Toggle GIFs:</label>
+            <label class="switch">
+                <input type="checkbox" id="gifToggle" onchange="toggleGIFs()" />
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <!-- <div class="settingsWrapper">
+            <label class="toggleLabel" for="squeamishToggle">Squeamish Mode:</label>
+            <label class="switch" name="switch">
+                <input type="checkbox" id="squeamishToggle" onclick="toggleGIFs()" />
+                <span class="slider"></span>
+            </label>
+        </div> -->
+
+        <div class="settingsWrapper">
+            <label class="toggleLabel" for="herobrineToggle">Remove Herobrine</label>
+            <label class="switch">
+                <input type="checkbox" id="herobrineToggle" />
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="settingsWrapper">
+            <button id="clearStatsButton" style="color: red;">Clear WeirdStats</button>
+        </div>
+        <div class="settingsWrapper">
+            <button id="clearCacheButton" style="color: red;">Clear Cache</button>
+        </div>
+    </main>
+    <script>
+        const clearCacheButton = document.getElementById('clearCacheButton');
+        if (clearCacheButton) {
+            clearCacheButton.addEventListener('click', () => {
+                localStorage.clear()
+                alert("Cache Cleared!");
+            });
+        }
+
+        // Freezeframe.js
+
+        function toggleGIFs() {
+            const gifToggle = document.getElementById("gifToggle");
+            const toggleState = gifToggle.checked ? "playing" : "stopped";
+
+            localStorage.setItem("gifState", toggleState);
+
+            window.parent.postMessage({ command: toggleState }, "*");
+        }
+
+        window.addEventListener("load", () => {
+            const gifState = localStorage.getItem("gifState");
+
+            const gifToggle = document.getElementById("gifToggle");
+
+            if (gifState === "playing") {
+                gifToggle.checked = true;
+            } else {
+                gifToggle.checked = false;
+            }
+
+            window.parent.postMessage({ command: gifState }, "*");
+        });
+
+    </script>
+</body>
+
+</html>

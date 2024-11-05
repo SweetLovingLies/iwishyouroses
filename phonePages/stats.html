@@ -1,0 +1,63 @@
+<!-- <script src="visitors.js"></script> -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Screen: Stats</title>
+    <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/phoneGlobals.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/stats.css" rel="stylesheet" type="text/css" media="all">
+    <meta name="description" content="Access literally everything you need." />
+    <link rel="icon" type="image/x-icon" href="../Assets/pixels/vintageAmericana/strawberryphone.webp">
+
+    <script src="js/stats.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+    <script src="js/phone.js"></script>
+</head>
+
+<body>
+    <div class="detailBar">
+        <p id="time">00:00</p>
+
+        <div id="camera">
+            <iconify-icon icon="ic:baseline-lens"></iconify-icon>
+        </div>
+
+        <div class="iconWrapper">
+            <iconify-icon icon="lucide:signal"></iconify-icon>
+            <iconify-icon icon="material-symbols-light:wifi"></iconify-icon>
+            <iconify-icon icon="mingcute:battery-fill"></iconify-icon>
+            <div id="weatherIcon">
+                <iconify-icon icon="mdi:weather-sunny"></iconify-icon> <!-- Default icon -->
+            </div>
+        </div>
+    </div>
+
+    <h4>Site Stats</h4>
+    <main>
+        <div class="statsWrapper">
+            <h6>Established On:</h6>
+            <p class="creationDate"></p>
+        </div>
+
+        <div class="statsWrapper">
+            <h6>Website Visits:</h6>
+            <p class="visitorCount"></p>
+        </div>
+
+        <div class="statsWrapper">
+            <h6>Last Updated:</h6>
+            <p class="lastUpdated"></p>
+        </div>
+
+        <div id="weirdStats" class="statsWrapper" style="margin-top: 1000px; margin-bottom: 50px;">
+            <h6>Weird Stats Clicked:</h6>
+            <p class="weirdstats">0</p>
+        </div>
+    </main>
+</body>
+
+</html>

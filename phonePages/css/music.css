@@ -1,0 +1,50 @@
+body{
+    display: flex;
+    flex-flow: column wrap;
+
+    font-family: cafesweet;
+    color: white;
+
+    background-color: var(--persian);
+
+    height: 100vh;
+    padding: 0 5px;
+
+    overflow: auto;
+}
+
+h6{
+    font-family: BTS, Helvetica, sans-serif;
+    font-size: 1.5em;
+    color: white;
+
+    align-self: flex-start;
+    width: 100%;
+    text-align: center;
+}
+
+.controlsWrapper{
+    display: flex;
+    margin: 10px auto;
+    gap: 10px;
+}
+
+.seekButtons{
+    background-color: transparent;
+    border: none;
+
+    color: white;
+    font-size: 1.9em;
+    font-family: Calibri, sans-serif;
+}
+
+p{
+    font-size: 1.9em;
+    text-align: center;
+}
+
+.playerButtons{
+    width: 40px;
+    height: 40px;
+    font-size: 1.5em;
+}

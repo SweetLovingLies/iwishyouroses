@@ -1,0 +1,247 @@
+
+*{
+    scrollbar-width: none;
+}
+
+*::-webkit-scrollbar,
+*::-webkit-scrollbar-button {
+    width: 0;
+}
+
+body{
+    display: flex;
+    flex-flow: column wrap;
+    height: calc(100vh - 5px);
+}
+
+.homepage {
+    display: flex;
+    flex-flow: column wrap;
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.homepage.hidden {
+    transform: translateX(100%);
+}
+
+.homepage.active {
+    transform: translateX(0);
+}
+
+.appWrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+
+    row-gap: 15px;
+    column-gap: 25px;
+    padding: 5px;
+    padding-top: 25px;
+    padding-bottom: 10px;
+}
+
+.appWrapper a, footer a{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    text-decoration: none;
+
+    transition: color .25s;
+}
+
+.appWrapper p, footer p{
+    text-align: center;
+    width: 70px;
+    font-size: 15px;
+}
+
+.column1{
+    display: flex;
+    flex-flow: column wrap;
+    gap: 20px;
+}
+
+.column2{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+
+    text-align: center;
+    font-size: 15px;
+}
+
+.widget{
+    width: 160px;
+    height: 150px;
+    object-fit: cover;
+    object-position: right;
+    border-radius: var(--globalBorderRadius);
+}
+
+.appIcon{
+    align-self: center;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 10px;
+}
+
+.appIcon img{
+    width: 90%;
+}
+
+.appWrapper a:hover, .appWrapper a:focus, footer a:hover, footer a:focus{
+    color: black;
+}
+
+@keyframes appOpen {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes appClose {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+.app {
+    animation-duration: 0.3s; 
+    animation-fill-mode: forwards; 
+}
+
+.app.open {
+    animation-name: appOpen;
+}
+
+.app.close {
+    animation-name: appClose;
+}
+
+.swipeIcons{
+    flex: 1 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    font-size: .5em;
+    gap: 5px;
+
+    margin: 5px 0;
+}
+
+footer{
+    padding: 0 20px 10px;
+}
+
+tray{
+    display: flex;
+    justify-content: space-between;
+
+    padding: 5px 9px;
+    border-radius: 20px;
+}
+
+#weatherWidget{
+    width: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+
+    background: linear-gradient(150deg, rgba(199,115,255,1) 0%, rgba(255,104,104,1) 39%, rgba(255,104,104,1) 53%, rgba(255,202,127,1) 100%); 
+    border-radius: 20px;
+
+    padding: 10px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+
+    position: relative;
+}
+
+#weatherWidget p{
+    width: unset;
+    text-align: left;
+}
+
+#wwCityName{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#wwTemp{
+    font-size: 40px;
+}
+
+#wwWeatherIcon{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    font-size: 30px;
+}
+
+#weatherWidget .weatherIcon iconify-icon { /* Modify per season */
+
+    color: #FFD700;
+
+    filter: drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white);
+}
+
+#weatherWidget .weatherIcon > iconify-icon.sunny {
+    color: #FFD700;
+}
+
+#weatherWidget .weatherIcon > iconify-icon.cloudy {
+    color: #C0C0C0;
+}
+
+#weatherWidget .weatherIcon > iconify-icon.rainy {
+    color: #2f44c0;
+}
+
+#weatherWidget .weatherIcon > iconify-icon.snow, #weatherWidget .weatherIcon > iconify-icon.hail {
+    color: #bad9f5;
+}
+
+#weatherWidget .weatherIcon > iconify-icon.snowstorm {
+    color: #858ba8;
+}
+
+#weatherWidget .weatherIcon > iconify-icon.windy, #weatherWidget .weatherIcon > iconify-icon.fog{
+    color: #c7d3df;
+}
+
+#forecastContainer{
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.4em;
+
+    color: rgba(255, 255, 255, 0.575);
+}
+
+#wwBottom{
+    width: 100%;
+}

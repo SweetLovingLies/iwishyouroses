@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Screen: Music</title>
+    <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/phoneGlobals.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/music.css" rel="stylesheet" type="text/css" media="all">
+    <meta name="description" content="Access literally everything you need." />
+    <link rel="icon" type="image/x-icon" href="../Assets/pixels/vintageAmericana/strawberryphone.webp">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Emoji:wght@300..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <h6>Music</h6>
+    <div class="controlsWrapper">
+        <button id="seekBack" class="seekButtons">◀</button>
+        <div>
+            <p>Now Playing:</p>
+            <p id="songInfo">Track Name</p>
+        </div>
+        <button id="seekForward" class="seekButtons">▶</button>
+    </div>
+
+    <div class="controlsWrapper">
+        <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.5" title="Volume">
+        <button id="MusicPauseButton" class="playerButtons">❚❚</button>
+    </div>
+</body>
+
+</html>

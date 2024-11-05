@@ -1,0 +1,55 @@
+
+*{
+    scrollbar-width: none;
+}
+
+*::-webkit-scrollbar,
+*::-webkit-scrollbar-button {
+    width: 0;
+}
+
+
+body {
+    font-family: cafesweet;
+}
+
+main{
+    display: flex;
+    flex-flow: column wrap;
+}
+
+h6 {
+    font-size: 1.3em;
+    font-weight: normal;
+
+    color: var(--wisteria);
+
+    align-self: flex-start;
+}
+
+.statsWrapper {
+    display: flex;
+    flex-flow: column wrap;
+
+    gap: 10px;
+
+    background-color: white;
+    padding: 5px;
+
+    border-bottom: 5px dashed var(--persian);
+}
+
+.statsWrapper:nth-child(odd){
+    background-color: #f5f2f3;
+
+    border-bottom: 5px dashed var(--bubblegum);
+}
+
+.visitorCount,
+.creationDate,
+.lastUpdated {
+    font-size: 1.3em;
+    align-self: flex-start;
+    text-decoration: underline;
+    text-decoration-style: dashed; /* iOS Compatibility... */
+}

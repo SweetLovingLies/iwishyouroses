@@ -1,0 +1,67 @@
+body{
+    display: flex;
+
+    font-family: cafesweet;
+
+    padding: 10px;
+}
+
+#phoneWrapper{
+    display: flex;
+    flex-flow: column wrap;
+
+    width: 100vw;
+    height: 600px;
+
+    background-color: var(--pinkIce);
+    border: 10px solid black;
+    outline: 10px solid var(--dustyPink);
+    border-radius: 30px;
+
+    overflow: hidden;
+}
+
+header, footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3em;
+    color: white;
+
+    background-color: black;
+    padding: 10px;
+}
+
+header{
+    height: 25px;
+}
+
+footer{
+    height: 60px;
+}
+
+main{
+    flex: 1 1;
+}
+
+#phoneScreen{
+    height: 100%;
+    width: 100%;
+}
+
+#homeButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+
+    background-color: #303030;
+    color: white;
+    border: 3px solid var(--dustyPink);
+    height: 40px;
+    width: 40px;
+    border-radius: 999px;
+}

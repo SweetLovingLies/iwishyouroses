@@ -1,0 +1,104 @@
+
+main{
+    font-family: cafesweet;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+#welcomeMessage{
+    text-align: center;
+    margin-bottom: 10px;;
+}
+
+#anonIcon{
+    display: block;
+    margin: 20px auto 0;
+    width:  100px;
+    border-radius: 999px;
+    border: 5px solid white;
+}
+
+.settingsWrapper {
+    display: flex;
+    justify-content: center;
+    height: 40px;
+
+    gap: 10px;
+
+    background-color: white;
+}
+
+.settingsWrapper:nth-child(odd){
+    background-color: #f5f2f3;
+}
+
+.settingsWrapper button {
+    font-family: cafesweet;
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+    flex: 1 1;
+
+    transition: background-color .25s;
+}
+
+.settingsWrapper button:hover {
+    background-color: #ccc;
+}
+
+.toggleLabel{
+    flex: 1 1; 
+    align-self: center;
+
+    padding: 15px 10px;
+}
+
+.switch {
+    position: relative;
+    align-self: center;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+/* Updated selectors */
+#gifToggle:checked + .slider {
+    background-color: #e991ff;
+}
+
+#herobrineToggle:checked + .slider {
+    background-color: #04bb41;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}

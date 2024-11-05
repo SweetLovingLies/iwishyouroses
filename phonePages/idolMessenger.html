@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhoneScreen: IdolMessenger</title>
+    <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/phoneGlobals.css" rel="stylesheet" type="text/css" media="all">
+    <meta name="description" content="Access literally everything you need." />
+    <link rel="icon" type="image/x-icon" href="../Assets/pixels/vintageAmericana/strawberryphone.webp">
+
+    <script src="https://chattable.neocities.org/scripts/main.min.js"></script>
+    <script>
+        chattable.initialize({
+            stylesheet: "css/idolMessenger.css",
+        });
+    </script>
+    <style>
+        body {
+            overflow: hidden;
+        }
+
+        #idolMessengerHeader {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            height: 35px;
+            padding-left: 5px;
+            font-size: 25px;
+
+            color: #525252;
+            font-family: "Barbie";
+            background: linear-gradient(0deg, var(--bubblegum) 0%, rgba(238, 238, 255, 1) 50%, var(--bubblegum) 100%);
+            box-shadow: 0 1px 4px rgba(0, 0, 10, 0.24);
+        }
+
+        .color1 {
+            color: var(--wisteria)
+        }
+
+        #idolMessengerHeader::after {
+            content: "★";
+            font-size: 20px;
+            margin-left: 2px;
+            transform: rotate(20deg);
+
+            color: white;
+            text-shadow: 2px 2px 0 var(--wisteria), 2px -2px 0 var(--wisteria), -2px 2px 0 var(--wisteria), -2px -2px 0 var(--wisteria), 2px 0px 0 var(--wisteria), 0px 2px 0 var(--wisteria), -2px 0px 0 var(--wisteria), 0px -2px 0 var(--wisteria);
+        }
+
+        #chattable {
+            width: 100vw;
+            height: calc(100vh - 35px);
+        }
+    </style>
+</head>
+
+<body>
+    <header id="idolMessengerHeader">
+        <span class="color1">i</span>
+        DOLMESSENGER
+    </header>
+    <iframe src='https://iframe.chat/embed/index.html?chat=IdolMessenger' id='chattable' frameborder='none'></iframe>
+</body>
+
+</html>

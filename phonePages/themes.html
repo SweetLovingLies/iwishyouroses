@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Screen: Theme Switcher</title>
+    <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/phoneGlobals.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/themes.css" rel="stylesheet" type="text/css" media="all">
+    <meta name="description" content="Access literally everything you need." />
+    <link rel="icon" type="image/x-icon" href="../Assets/pixels/vintageAmericana/strawberryphone.webp">
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+</head>
+
+<body>
+    <h4>Themes</h4>
+    <div id="welcomeWrapper">
+        <p> Please pick a theme that speaks to you!</p>
+    </div>
+
+    <div class="themeWrapper">
+        <button id="lightModeSwitch" class="themePreview">
+            <img src="themeSwitcherPreviews/Base.png" loading="lazy">
+            <caption>Fairy Dust</caption>
+        </button>
+
+        <button id="darkModeSwitch" class="themePreview">
+            <img src="themeSwitcherPreviews/Dark.png" loading="lazy">
+            <caption>Empty Dream</caption>
+        </button>
+    </div>
+
+    <div id="loadingScreen" class="loading-screen hidden">
+        <div class="loading-container">
+            <p>Great choice!</p>
+            <p>Applying your theme now!</p>
+            <div class="progress-bar">
+                <div id="progress" class="progress"></div>
+            </div>
+        </div>
+            <img src="/Assets/pixels/animals/catroll.gif">
+    </div>
+
+    <script src="js/themeSwitcher.js"></script>
+</body>
+
+</html>

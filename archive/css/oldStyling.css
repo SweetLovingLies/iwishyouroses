@@ -1,0 +1,321 @@
+:root {
+  --header-bg:#F1F1F1;
+  --nav-bg:#cbdfc6;
+  --article-bg:white;
+  --border-color:#E0E0E0;
+  --sidebar-text-color:black;
+  --article-text-color:black;
+  --article-heading-color:#929292;
+  --nav-link-color: #ff8191;
+  --darker-border-color:#87a389;
+  --heading-color: #ff8191;
+}
+
+@font-face {
+    font-family: cafesweet;
+    src: url('/fonts/16ptpixels/CafeSweet.ttf');
+}
+@font-face {
+    font-family: diegovainilla;
+    src: url('/fonts/16ptpixels/DiegoVainilla.otf');
+}
+@font-face {
+  font-family: peachsundress;
+  src: url('/fonts/peachsundress.ttf');
+}
+@font-face {
+  font-family: typogarden;
+  src: url('/fonts/typogarden-demo.ttf');
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  background-image: url('/Assets/BGs/tumblr_inline_mqgagaPYfb1qz4rgp540.gif');
+}
+body {
+  font-size:16px;
+  font-family: cafesweet;
+}
+body a {
+  color:var(--nav-link-color);
+}
+/* .container {
+} */
+
+header, nav {
+  width: 100%;
+}
+aside {
+  width:300px;
+}
+
+.flex {
+  display:flex;
+  max-width:900px;
+  margin: 0 auto;
+}
+nav {
+  height:auto;
+  margin-bottom:10px;
+  background-color:var(--nav-bg);
+  font-size: 21px;
+  border:2px solid var(--darker-border-color);
+  border-left:none;
+  border-right:none;
+}
+
+header {
+  height:300px;
+  background-color:var(--header-bg);
+  background-image:url('/Assets/headers/lana-del-rey-chemtrails.jpeg');
+  background-size:cover;
+  background-position: center 20%;
+}
+
+main {
+  width:100%;
+  margin-left:20px;
+  margin-right:20px;
+}
+
+section {
+  margin-bottom:10px;
+  color:var(--sidebar-text-color);
+  background-color: white;
+  padding: 0 5px 1px;
+  border-left: #ff8191 dashed 2px;
+  border-right: #ff8191 dashed 2px;
+}
+
+p {
+  padding: 5px;
+  display: block;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+article { 
+  position: relative;
+  border:1px solid var(--darker-border-color);
+  margin-bottom:15px;
+  background-color:var(--article-bg);
+  color:var(--article-text-color);
+  padding:10px;
+}
+
+.subtitle {
+  background-color:var(--nav-bg);
+  font-family: peachsundress;
+  font-size: 21px;
+  color:var(--article-text-color);
+  font-weight:bold;
+  letter-spacing:1px;
+  line-height: 1.2em;
+  padding: 3px;
+}
+
+.headertxt {
+  position: relative;
+  border:1px solid var(--darker-border-color);
+  color: var(--heading-color);
+  font-family: peachsundress;
+  font-weight: bold;
+  font-size: 1.5em;
+  background-color: var(--nav-bg);
+  padding: 3px;
+}
+
+.links {
+  list-style-type:none;
+  padding-left:0;
+}
+.scrollbox {
+  overflow: auto;
+}
+.to-do {
+  list-style-type: none;
+  padding-left: 20px;
+  height: 100px;
+}
+
+.links li {
+  background-color:var(--nav-bg);
+  border:1px solid var(--border-color);
+  margin-bottom:3px;
+}
+
+.links li a {
+  text-decoration:none;
+  color:inherit;
+}
+
+.nav {
+  margin:10px 0;
+  text-align:center;
+}
+
+.nav li {
+  display:inline-block;
+  padding-left:30px;
+}
+
+.nav li a {
+  text-decoration:none;
+  color:var(--nav-link-color);
+  font-weight: bold;
+  font-family: peachsundress;
+}
+
+nav ul {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
+}
+
+.left-sidebar, .right-sidebar {
+  font-size:14px;
+}
+article .subtitle {
+  text-transform:uppercase;
+  font-size:16px;
+  color:var(--article-heading-color);
+  margin-top:10px;
+  margin-left:5px;
+  margin-right:5px;
+  margin-bottom:10px;
+  
+}
+footer {
+  max-width:800px;
+  text-align:center;
+  color:var(--sidebar-text-color);
+  margin: 0 auto;
+}
+footer a{
+  color:var(--navbar-link-color);
+}
+
+/* General Decoration */
+
+.blueberryborder {
+  border-style:solid;
+  border-image: url("/Assets/borders/blueberryGingham.png") 8 round;
+  border-width: 7px;
+  background-clip: padding-box;
+}
+
+.darklineborder {
+  border:1px solid var(--darker-border-color);
+}
+
+.flowerborder1 {
+  position: absolute;
+  display: block;
+  top: 16px;
+  background: url('/Assets/pixels/fd/flowers.webp');
+  height: 35px;
+  width: 100%;
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: 13%;
+  margin-left: -3px;
+  pointer-events: none;
+}
+.flowerborder2 {
+  position: absolute;
+  display: block;
+  top: 22px;
+  background: url('/Assets/pixels/fd/flowerborder.webp');
+  height: 35px;
+  width: 100%;
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: 23%;
+  margin-left: -3px;
+  pointer-events: none;
+}
+.flowerborder3 {
+  position: absolute;
+  display: block;
+  top: 16px;
+  background: url('/Assets/pixels/fd/flowerborder3.webp');
+  height: 35px;
+  width: 100%;
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: 60%;
+  margin-left: -3px;
+  pointer-events: none;
+}
+
+.corkboard:before {
+  content: url('/Assets/pixels/pinkheart.gif');
+  vertical-align: text-top;
+}
+.corkboard:last-child::before {
+  content: url('/Assets/pixels/blueheart.gif');
+  vertical-align: text-top;
+}
+
+.links li:nth-child(even):after {
+  background-image: url('/Assets/pixels/fd/flower2.webp');
+  background-size: 20px 20px;
+  display: inline-block;
+  width: 20px; 
+  height: 20px;
+  content:"";
+  vertical-align:middle;
+  margin-right: 5px;
+}
+.links li:nth-child(odd)::after {
+  background-image: url('/Assets/pixels/fd/clover.webp');
+  background-size: 20px 20px;
+  display: inline-block;
+  width: 20px; 
+  height: 20px;
+  content:"";
+  vertical-align:middle;
+  margin-right: 5px;
+}
+
+
+/* Media Query */
+
+@media only screen and (max-width: 800px) {
+  .flex {
+    flex-wrap:wrap;
+  }
+  .flowerborder1 {
+    top: 14px;
+    background-size: 65px;
+  }
+  .flowerborder2 {
+    top: 18px;
+    background-size: 160px;
+  }
+  .flowerborder3 {
+    top: 16px;
+    background-size: 270px;
+  }
+
+  aside {
+    display:flex;
+    width:100%;
+    margin-left:20px;
+    margin-right:20px;
+  }
+  aside > section {
+    margin-right:10px;
+  }
+  .nav {
+    margin-left:0 !important;
+    margin-right:50px;
+  }
+  .nav li {
+    padding-bottom:5px;
+  }
+}
