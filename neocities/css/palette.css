@@ -73,12 +73,6 @@
 }
 
 @font-face {
-    font-family: BTS;
-    src: url('/fonts/BackToSchool.ttf');
-}
-
-@font-face {
-    /* IdolMessenger */
     font-family: Barbie;
     src: url('/fonts/BarbieKawaii.otf');
 }
