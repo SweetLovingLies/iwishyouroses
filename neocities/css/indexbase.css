@@ -155,7 +155,7 @@ main {
     height: 250px;
 }
 
-#yuiBox img{
+#yuiBox img, #yuiBox canvas{
     height: 100%;
 
     object-fit: cover;
