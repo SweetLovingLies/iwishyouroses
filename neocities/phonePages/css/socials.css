@@ -24,6 +24,8 @@ h5{
     font-size: 2em;
     color: var(--whispermist);
     -webkit-text-stroke: .4px black;
+
+    text-align: center;
 }
 
 hr {
