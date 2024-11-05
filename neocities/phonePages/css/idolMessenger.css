@@ -194,7 +194,7 @@ blockquote {
     flex-direction: row-reverse;
 }
 
-/* Thank you to LilithDev for helping me with this! */
+/* Thanks to LilithDev for helping me with this! */
 
 .msgWrapper:has(.owner)::before {
     background-image: url(https://iwishyouroses.neocities.org/Assets/YanSim/pfp/ryoba1.jpg) !important;
