@@ -1,3 +1,7 @@
+body{
+    overflow: auto;
+}
+
 .detailBar {
     display: flex;
     width: 100%;
