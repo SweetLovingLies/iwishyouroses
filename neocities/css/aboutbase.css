@@ -1,37 +1,4 @@
 :root {
-
-    /* Colors */
-    --bubblegum: #ffb7ed;
-    --dustyPink: #f6bdd1;
-    --persian: #f283b6;
-    --wisteria: #8266ff;
-    --hintofmist: #f1efff;
-    --whispermist: #dbd8f0;
-    --driedBlood: #8B575c;
-    --pinkIce: #f6e4f6;
-    --ash: #cad2c5;
-    --water: #adcaff;
-    --deepsea: #357ce6;
-    --blood: #800000;
-    --deepslate: #696969;
-    --cobblestone: #a8a8a8;
-
-    /* Rainbow Ring Colors */
-
-    --rainbowRed: #ffadad;
-    --rainbowOrange: #ffdea1;
-    --rainbowYellow: #ffffb5;
-    --rainbowGreen: #c2ffc2;
-    --rainbowBlue: #b8d4ff;
-    --rainbowIndigo: #9e97e0;
-    --rainbowPurple: #cfb0ff;
-    --rainbowPink: #ffd8f2;
-
-    /* Globals */
-    --globalBorderRadius: 10px;
-
-    /* Marquee */
-
     --duration: 30s;
     --scroll-start: 0;
     --scroll-end: -100%;
@@ -44,23 +11,12 @@ body {
 
     width: 100vw;
     height: 100vh;
-
-    background: url("/Assets/BGs/check6-b.gif");
-
-    font-family: cafesweet;
 }
 
 #wrapper {
     flex: 0 1 80%;
     /* height: 50vh; */
-
-    background: url("/Assets/BGs/GMS6nDM.png");
     padding: 10px;
-
-    border-style: solid;
-    border-image: url("/Assets/borders/border2FP.png") 28 round;
-    border-width: 28px;
-    background-clip: padding-box;
 
     display: flex;
     gap: 20px;
@@ -71,15 +27,7 @@ aside {
 
     display: flex;
     flex-flow: column wrap;
-
     gap: 10px;
-
-    background: url("/Assets/BGs/tumblr_ad479ccfea2121a711cc5099eff07479_82048f3a_75.gif");
-
-    border-style: solid;
-    border-image: url("/Assets/borders/lbborder.png") 9 round;
-    border-width: 9px;
-    background-clip: padding-box;
 }
 
 #leftSide{
@@ -101,15 +49,7 @@ main {
 }
 
 main section {
-    background: url("/Assets/BGs/checkst-b.gif");
-
-    border-style: solid;
-    border-image: url("/Assets/borders/borderfilled.png") 8 round;
-    border-width: 8px;
-    background-clip: padding-box;
-
     height: 206px;
-
     overflow: auto;
 }
 
@@ -118,15 +58,11 @@ main section {
     width: 0;
 }
 
+
 #ryoba {
     display: block;
     width: 90%;
     margin: 0 auto;
-
-    border-style: solid;
-    border-image: url("/Assets/borders/pinkHearts.png") 7 round;
-    border-width: 7px;
-    background-clip: padding-box;
 }
 
 #welcome{
@@ -146,11 +82,6 @@ main section {
     width: 100%;
 }
 
-.boxes th,
-.boxes td {
-    border: 2px dashed var(--wisteria);
-}
-
 .boxes th {
     width: 90px;
 }
@@ -161,8 +92,7 @@ main section {
 
 .boxes p {
     overflow: auto;
-    height: 76px;
-    /* accounting for border and padding*/
+    height: 76px; /* accounting for border and padding*/
     scrollbar-width: none;
 }
 
@@ -213,17 +143,8 @@ main section {
 /* Right-side */
 
 aside section {
-    background: url("/Assets/BGs/iDAfjUq.gif");
-
-    border-style: solid;
-    border-image: url("/Assets/borders/borderfilled.png") 8 round;
-    border-width: 8px;
-    background-clip: padding-box;
-
     height: 230px;
-
     overflow: auto;
-
     padding: 10px;
 }
 
@@ -232,47 +153,6 @@ aside section {
 }
 
 /* General */
-
-hr {
-    width: 100%;
-    border: 2px dashed var(--dustyPink);
-}
-
-h2 {
-    font-family: "maddison", Helvetica, sans-serif;
-    font-size: 2.3em;
-    letter-spacing: -5px;
-
-    height: 50px;
-
-    color: var(--persian);
-}
-
-h2 span {
-    display: inline-block;
-    height: inherit;
-}
-
-quote::before,
-quote::after,
-li::before {
-    color: var(--persian);
-}
-
-li::before {
-    content: "❤︎";
-    font-size: 10px;
-    margin-right: 3px;
-    vertical-align: text-top;
-}
-
-.mark{
-    background-color: var(--bubblegum);
-}
-
-a{
-    color: var(--deepsea)
-}
 
 h3{
     font-weight: normal;

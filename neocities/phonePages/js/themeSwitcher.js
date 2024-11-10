@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const indexCSS = window.top.document.getElementById("indexCSS");
-    const indexDarkCSS = window.top.document.getElementById("indexDarkCSS");
+    const pageName = window.top.location.pathname.split('/').pop().split('.')[0];
+    const themeCSS = window.top.document.getElementById(`${pageName}CSS`);
+    const themeDarkCSS = window.top.document.getElementById(`${pageName}DarkCSS`);
 
     const darkButton = document.getElementById("darkModeSwitch");
     const lightButton = document.getElementById("lightModeSwitch");
@@ -9,15 +10,14 @@ document.addEventListener("DOMContentLoaded", function () {
         const darkThemeEnabled = localStorage.getItem('darkTheme') === 'true';
 
         if (darkThemeEnabled) {
-            indexCSS.disabled = true;
-            indexDarkCSS.disabled = false;
+            themeCSS.disabled = true;
+            themeDarkCSS.disabled = false;
+            if (darkButton) darkButton.disabled = true;
+            if (lightButton) lightButton.disabled = false;
         } else {
-            indexCSS.disabled = false;
-            indexDarkCSS.disabled = true;
-
-            if (lightButton) {
-                lightButton.disabled = true;
-            }
+            themeCSS.disabled = false;
+            themeDarkCSS.disabled = true;
+            if (lightButton) lightButton.disabled = true;
         }
     }
 
@@ -46,25 +46,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function setTheme(theme) {
         if (theme === 'dark') {
-            indexDarkCSS.disabled = false;
-            indexCSS.disabled = true;
+            themeDarkCSS.disabled = false;
+            themeCSS.disabled = true;
             localStorage.setItem('darkTheme', 'true');
 
-            if (darkButton) darkButton.disabled = true;
-            if (lightButton) lightButton.disabled = false;
+            if (darkButton) {
+                darkButton.disabled = true;
+            }
+            if (lightButton) {
+                lightButton.disabled = false;
+            }
         } else {
-            indexCSS.disabled = false;
-            indexDarkCSS.disabled = true;
+            themeCSS.disabled = false;
+            themeDarkCSS.disabled = true;
             localStorage.setItem('darkTheme', 'false');
 
-            if (darkButton) darkButton.disabled = false;
-            if (lightButton) lightButton.disabled = true;
+            if (darkButton) {
+                darkButton.disabled = false;
+            }
+            if (lightButton) {
+                lightButton.disabled = true;
+            }
         }
     }
 
     if (darkButton) {
         darkButton.addEventListener("click", function () {
-            if (indexDarkCSS.disabled) {
+            if (themeDarkCSS.disabled) {
                 applyTheme('dark');
             }
         });
