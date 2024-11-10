@@ -1,0 +1,40 @@
+body{
+    background: url("/Assets/BGs/fleurbg1.png");
+
+    width: 100vw;
+    height: 100vh;
+
+    justify-content: center;
+    align-items: center;
+
+    font-family: cafesweet;
+}
+
+main{
+    background: url(/Assets/BGs/linedpaper.jpg);
+    width: 600px;
+
+    padding: 20px;
+
+    align-items: center;
+
+    border-style: solid;
+    border-image: url("/Assets/borders/border2FP.png") 28 round;
+    border-width: 28px;
+    background-clip: padding-box;
+}
+
+h1{
+    font-size: 5em;
+    font-family: heartstyle;
+}
+
+#wonyoung{
+    width: 75%;
+    margin: 20px 0;
+    
+    border-style: solid;
+    border-image: url("/Assets/borders/bowplate2.gif") 50 60 round;
+    border-width: 50px;
+    background-clip: padding-box;
+}
