@@ -3,8 +3,6 @@
 * **!! Things to do for the credits page:**
   * Make it sooner rather than later.
     * Credit Hill House for her halloween border
-* **!! Things to do for the blog:**
-  * Work on CSS for it
 * **!! Things to do for the Media Log:**
   * Make it. lol
 * **!! Things to do for the shrines:**
@@ -19,9 +17,7 @@
   * Make it. lol
 * **!! Things to do for the Button Wall:**
   * Do it later on
-
-
-* **!! Things I intend to do for the about page:**
+* **!! Things I intend to add to the about page:**
   * Fun facts clicker (Later on)
 
 
