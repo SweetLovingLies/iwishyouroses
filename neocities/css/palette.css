@@ -29,6 +29,7 @@
 
     /* Globals */
     --globalBorderRadius: 10px;
+    --detailBarHeight: 20px;
 }
 
 @font-face {
