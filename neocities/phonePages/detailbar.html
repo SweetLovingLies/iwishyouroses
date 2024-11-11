@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail bar</title>
+    
+    <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/phoneGlobals.css" rel="stylesheet" type="text/css" media="all">
+
+    <meta name="description" content="Why are you even here lol?" />
+    
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+    <script src="js/phone.js"></script>
+    <script src="js/themeSwitcher.js"></script>
+
+</head>
+
+<body>
+    <div class="detailBar">
+        <p id="time">00:00</p>
+
+        <div class="iconWrapper">
+            <iconify-icon icon="lucide:signal"></iconify-icon>
+            <iconify-icon icon="material-symbols-light:wifi"></iconify-icon>
+            <iconify-icon icon="mingcute:battery-fill"></iconify-icon>
+            <div class="weatherIcon">
+                <!-- Modify per season -->
+                <iconify-icon icon="mdi:weather-sunny"></iconify-icon>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const darkThemeEnabled = localStorage.getItem('darkTheme') === 'true';
+
+            const detailBar = document.querySelector('.detailBar');
+
+            if (darkThemeEnabled) {
+                detailBar.classList.add('dark');
+            } else {
+                detailBar.classList.remove('dark');
+            }
+        });
+    </script>
+</body>
+
+</html>

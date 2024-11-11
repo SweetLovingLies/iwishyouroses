@@ -16,28 +16,15 @@
 
     <meta name="description" content="Access literally everything you need." />
     <link rel="icon" type="image/x-icon" href="../Assets/pixels/vintageAmericana/strawberryphone.webp">
+    
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+    <script src="js/phone.js"></script>
 
 </head>
 
 <body>
-    <div class="detailBar">
-        <p id="time">00:00</p>
-
-        <div id="camera">
-            <iconify-icon icon="ic:baseline-lens"></iconify-icon>
-        </div>
-
-        <div class="iconWrapper">
-            <iconify-icon icon="lucide:signal"></iconify-icon>
-            <iconify-icon icon="material-symbols-light:wifi"></iconify-icon>
-            <iconify-icon icon="mingcute:battery-fill"></iconify-icon>
-            <div class="weatherIcon">
-                <!-- Modify per season -->
-                <iconify-icon icon="mdi:weather-sunny"></iconify-icon>
-            </div>
-        </div>
-    </div>
+    <iframe id="detailBarIFrame" src="detailbar.html"></iframe>
 
     <div id="homepages">
         <div class="homepage active" id="homepage1">
@@ -45,7 +32,7 @@
                 <div style="display: flex; margin: 0 auto; column-gap: 25px;">
                     <div class="column2">
                         <img class="widget" src="/Assets/kpop/xg/pfp/Harvey1.jpg">
-                        <caption>widgetsmith</caption>
+                        <p>widgetsmith</p>
                     </div>
 
                     <div class="column1">
@@ -188,8 +175,6 @@
         </div>
     </div>
 
-    <script src="js/phone.js"></script>
-
     <script>
         function openApp(event, appElement) {
             event.preventDefault();
@@ -251,19 +236,15 @@
             const darkThemeEnabled = localStorage.getItem('darkTheme') === 'true';
             const homepageCSS = document.getElementById("homepageCSS");
             const homepageDarkCSS = document.getElementById("homepageDarkCSS");
-            const detailBar = document.querySelector('.detailBar');
 
             if (darkThemeEnabled) {
                 homepageCSS.disabled = true;
                 homepageDarkCSS.disabled = false;
-                detailBar.classList.add('dark');
             } else {
                 homepageCSS.disabled = false;
                 homepageDarkCSS.disabled = true;
-                detailBar.classList.remove('dark');
             }
         });
-
     </script>
 
 

@@ -332,9 +332,11 @@ quote::after{
     border: none;
 
     position: absolute;
-    bottom: -605px;
-    /* bottom: 0; */ /* ! For testing */
     right: 20px;
+    bottom: -605px;
+    
+     /* ! For testing */
+    /* bottom: 0; */
 
     z-index: 1000;
 

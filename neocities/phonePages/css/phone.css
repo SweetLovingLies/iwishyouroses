@@ -1,12 +1,14 @@
-body{
+body {
     display: flex;
 
     font-family: cafesweet;
 
     padding: 10px;
+
+    position: relative;
 }
 
-#phoneWrapper{
+#phoneWrapper {
     display: flex;
     flex-flow: column wrap;
 
@@ -21,7 +23,8 @@ body{
     overflow: hidden;
 }
 
-header, footer{
+header,
+footer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,24 +37,47 @@ header, footer{
     padding: 10px;
 }
 
-header{
+header {
     height: 25px;
 }
 
-footer{
+footer {
     height: 60px;
 }
 
-main{
+main {
     flex: 1 1;
 }
 
-#phoneScreen{
+#camera {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+
+
+    width: 80px;
+    height: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: black;
+    border-radius: 0 0 999px 999px;
+}
+
+#camera iconify-icon {
+    font-size: .7em;
+    color: rgba(108, 120, 255, 0.386);
+}
+
+#phoneScreen {
     height: 100%;
     width: 100%;
 }
 
-#homeButton{
+#homeButton {
     display: flex;
     justify-content: center;
     align-items: center;

@@ -7,7 +7,6 @@
     <title>Phone Screen: Navigation</title>
 
     <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
-    <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
     <link href="css/phoneGlobals.css" rel="stylesheet" type="text/css" media="all">
     <link href="css/nav.css" rel="stylesheet" type="text/css" media="all">
 
@@ -20,23 +19,8 @@
 </head>
 
 <body>
-    <div class="detailBar">
-        <p id="time">00:00</p>
-
-        <div id="camera">
-            <iconify-icon icon="ic:baseline-lens"></iconify-icon>
-        </div>
-
-        <div class="iconWrapper">
-            <iconify-icon icon="lucide:signal"></iconify-icon>
-            <iconify-icon icon="material-symbols-light:wifi"></iconify-icon>
-            <iconify-icon icon="mingcute:battery-fill"></iconify-icon>
-            <div class="weatherIcon">
-                <!-- Modify per season -->
-                <iconify-icon icon="mdi:weather-sunny"></iconify-icon>
-            </div>
-        </div>
-    </div>
+    <iframe id="detailBarIFrame" src="detailbar.html"></iframe>
+    
     <h4>Navigation</h4>
     <section id="topList">
         <a class="navLink" href="/index.html" target="_top">Home</a>
