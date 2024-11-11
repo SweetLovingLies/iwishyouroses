@@ -12,6 +12,8 @@ body{
     display: flex;
     flex-flow: column wrap;
     height: calc(100vh - 5px);
+
+    overflow: hidden;
 }
 
 .homepage {
