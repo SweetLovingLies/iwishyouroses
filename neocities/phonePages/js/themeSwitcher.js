@@ -1,10 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const pageName = window.top.location.pathname.split('/').pop().split('.')[0];
-    console.log(pageName)
+    const path = window.top.location.pathname.split('/').pop();
+    const pageName = path ? path.split('.')[0] : "index";
+    console.log(pageName);
+    
     const themeCSS = window.top.document.getElementById(`${pageName}CSS`);
-    console.log(themeCSS)
+    console.log(themeCSS);
     const themeDarkCSS = window.top.document.getElementById(`${pageName}DarkCSS`);
-    console.log(themeDarkCSS)
+    console.log(themeDarkCSS);
 
     if (!themeCSS || !themeDarkCSS) {
         console.warn(`Theme CSS elements for ${pageName} not found. Skipping theme initialization.`);
