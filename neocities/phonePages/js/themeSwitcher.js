@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!themeCSS || !themeDarkCSS) {
         console.warn(`Theme CSS elements for ${pageName} not found. Skipping theme initialization.`);
-        return;
     }
 
     const darkButton = document.getElementById("darkModeSwitch");
