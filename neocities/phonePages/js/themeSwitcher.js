@@ -1,13 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
     const pageName = window.top.location.pathname.split('/').pop().split('.')[0];
+    console.log(pageName)
     const themeCSS = window.top.document.getElementById(`${pageName}CSS`);
+    console.log(themeCSS)
     const themeDarkCSS = window.top.document.getElementById(`${pageName}DarkCSS`);
+    console.log(themeDarkCSS)
 
     if (!themeCSS || !themeDarkCSS) {
         console.warn(`Theme CSS elements for ${pageName} not found. Skipping theme initialization.`);
         return
     }
-    
+
     const darkButton = document.getElementById("darkModeSwitch");
     const lightButton = document.getElementById("lightModeSwitch");
 
