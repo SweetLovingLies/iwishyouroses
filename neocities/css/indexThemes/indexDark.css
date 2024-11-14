@@ -74,7 +74,15 @@ header .calendar-navigation span:hover {
 #home {
     background: url('/Assets/BGs/darkMode/bydinpattern.com.png');
 
-    scrollbar-color: var(--persian) #ffffff;
+    scrollbar-color: var(--persian) white;
+}
+
+#home::-webkit-scrollbar-track {
+    background: white
+}
+
+#home::-webkit-scrollbar-thumb {
+    background-color: var(--persian);
 }
 
 #spotlight {

@@ -80,11 +80,11 @@ header .calendar-navigation span:hover {
 #home {
     background: url('/Assets/BGs/tex1.png');
 
-    scrollbar-color: var(--whispermist) #ffffff;
+    scrollbar-color: var(--whispermist) white;
 }
 
 #home::-webkit-scrollbar-track {
-    background: black;
+    background: white;
 }
 
 #home::-webkit-scrollbar-thumb {
