@@ -45,6 +45,19 @@ section {
     height: 200px;
 }
 
+#siteButton{
+    justify-content: center;
+    align-items: center;
+}
+
+#siteButton img{
+    margin: 10px 0;
+}
+
+textarea{
+    width: 100%;
+}
+
 /* JS Calender */
 
 #jsCalender {

@@ -5,6 +5,10 @@
   * Add BGM if you ever feel like it.
 
     \
+* **!! Site button!**
+  * Color Palette?
+
+    \
 * **!! Things to do for the Media Log:**
 * Make it. lol
 
