@@ -1,8 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap");
+
 body {
     font-size: 16px;
 }
 
-#wrapper{
+#wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,7 +14,7 @@ body {
     padding-top: 50px;
 }
 
-.rainbowWrapper{
+.rainbowWrapper {
     left: -2.3vw;
     top: -7em;
 
@@ -45,16 +47,16 @@ section {
     height: 200px;
 }
 
-#siteButton{
+#siteButton {
     justify-content: center;
     align-items: center;
 }
 
-#siteButton img{
+#siteButton img {
     margin: 10px 0;
 }
 
-textarea{
+textarea {
     width: 100%;
 }
 
@@ -78,15 +80,15 @@ header .calendar-navigation {
 header .calendar-navigation span {
     height: 38px;
     width: 38px;
-    
+
     border-radius: 50%;
     margin: 0 1px;
-    
+
     cursor: pointer;
 
     text-align: center;
     line-height: 38px;
-    
+
 
     user-select: none;
     -webkit-user-select: none;
@@ -142,7 +144,7 @@ main {
     gap: 10px;
 }
 
-#home p{
+#home p {
     margin: 10px 0;
 }
 
@@ -164,11 +166,12 @@ main {
     text-align: center;
 }
 
-#yuiBox{
+#yuiBox {
     height: 250px;
 }
 
-#yuiBox img, #yuiBox canvas{
+#yuiBox img,
+#yuiBox canvas {
     height: 100%;
 
     object-fit: cover;
@@ -188,15 +191,15 @@ main {
 #updates,
 #webgroups,
 #status,
-#stamps,
-#blogRSS {
+#stamps {
     overflow: auto;
 }
+
 #home,
 #webgroups,
 #status,
 #updates,
-#stamps{
+#stamps {
     height: 165px
 }
 
@@ -236,36 +239,55 @@ main {
 }
 
 #webgroups,
-#stamps{
+#stamps {
     flex: 1 1 45%;
 }
 
 /* RSS */
 
-#blogRSS{
+#blogRSS {
     height: 250px;
     flex: 1 1 100%;
+
+    position: relative;
 }
 
-#blogRSS h2{
+#rssFeedContainer{
+    overflow: auto;
+}
+
+#blogRSS h1,
+#blogRSS h2,
+#blogRSS h3,
+#blogRSS h4,
+#blogRSS h5,
+#blogRSS h6 {
+    font-family: "Cormorant Garamond", Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+#blogRSS h1 {
+    font-size: 1.6em;
+}
+
+#blogRSS #title {
     font-family: diegoVainilla;
     font-size: 2em;
 
     margin: 0px 10px;
 }
 
-#blogRSS p{
+#blogRSS p {
+    font-family: "Cormorant Garamond", Georgia, Cambria, "Times New Roman", Times, serif;    
     margin-top: auto;
+    font-size: 1.2em;
 }
 
 .feed-item {
     margin-bottom: 20px;
     padding: 0px 10px;
-    border-bottom: 4px dashed var(--water);
 }
 
-.feed-item a{
-    color: var(--wisteria);
+.feed-item a {
     text-decoration: none;
 }
 
@@ -273,13 +295,12 @@ main {
     margin-bottom: 10px;
 }
 
-.feed-item small{
+.feed-item small {
     text-align: right;
-    color: #797979;
     margin: 5px 0 10px;
 }
 
-footer{
+footer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -289,7 +310,7 @@ footer{
 /* Other */
 
 
-h1 {
+#androses {
     position: absolute;
     top: -10.5vh;
     right: 0;
@@ -304,7 +325,7 @@ h1 {
     z-index: 99;
 }
 
-h1 span {
+#androses span {
     font-size: 2.4em;
     margin: 0;
 }
@@ -332,41 +353,41 @@ h2 {
         overflow: auto;
     }
 
-    h1 {
+    #androses {
         top: 0;
         right: 5%;
     }
 
-    h1 span {
+    #androses span {
         font-size: 100%;
     }
 
-    .rainbowWrapper{
+    .rainbowWrapper {
         display: none;
     }
 
-    #baselayout{
+    #baselayout {
         flex: 1 1;
     }
 
-    section{
+    section {
         flex: 1 1;
     }
 
     .displayScreenshots {
         flex: none;
         width: 100%;
-      }
+    }
 
-    .box2, #stamps{
+    .box2,
+    #stamps {
         flex: none;
     }
 
     #jsCalender {
         width: 100%;
-      }
+    }
 }
 
 
-@media only screen and (max-width: 500px) {
-}
+@media only screen and (max-width: 500px) {}

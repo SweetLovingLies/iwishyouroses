@@ -169,8 +169,42 @@ header .calendar-navigation span:hover {
     background: url(/Assets/BGs/darkMode/subtlestripes.png);
 }
 
-#blogRSS h4{
-    color: var(--bubblegum);
+#blogRSS {
+    background: url(/Assets/BGs/darkMode/linedpaperD.png);
+
+    border-style: solid;
+    border-image: url(/Assets/borders/border2FP.png) 28 round;
+    border-width: 28px;
+    background-clip: padding-box;
+}
+
+#blogRSS h1,
+#blogRSS h2,
+#blogRSS h3,
+#blogRSS h4,
+#blogRSS h5,
+#blogRSS h6 {
+    color: white;
+}
+
+#blogRSS #title {
+    color: var(--persian);
+}
+
+#blogRSS p{
+    color: white;
+}
+
+.feed-item {
+    border-bottom: 4px dashed var(--persian);
+}
+
+.feed-item a {
+    color: var(--wisteria);
+}
+
+.feed-item small {
+    color: #797979;
 }
 
 /* Footer */

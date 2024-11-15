@@ -112,7 +112,7 @@ header .calendar-navigation span:hover {
 }
 
 
-#yuiBox{
+#yuiBox {
     background: url("/Assets/BGs/checkst-b.gif");
 }
 
@@ -124,11 +124,11 @@ header .calendar-navigation span:hover {
     flex: 0 1 46%;
 }
 
-#status h2{
+#status h2 {
     margin-bottom: 10px;
 }
 
-.statusBubble{
+.statusBubble {
     display: flex;
     flex-flow: row wrap;
 
@@ -140,11 +140,11 @@ header .calendar-navigation span:hover {
     margin-bottom: 10px;
 }
 
-.statusBubble:nth-child(even){
+.statusBubble:nth-child(even) {
     background: var(--hintofmist);
 }
 
-#status h3{
+#status h3 {
     flex: 1 1;
     font-weight: normal;
     font-style: italic;
@@ -159,7 +159,8 @@ header .calendar-navigation span:hover {
     background: url(/Assets/BGs/bg24.gif);
 }
 
-#stamps h2, #webgroups h2{
+#stamps h2,
+#webgroups h2 {
     color: var(--wisteria);
 }
 
@@ -168,11 +169,41 @@ header .calendar-navigation span:hover {
 
 
 #blogRSS {
-    background: url(/Assets/BGs/bgtf5b.gif);
+    background: url(/Assets/BGs/linedpaper.jpg);
+
+    border-style: solid;
+    border-image: url(/Assets/borders/border2FP.png) 28 round;
+    border-width: 28px;
+    background-clip: padding-box;
 }
 
-#blogRSS h4{
+#blogRSS h1,
+#blogRSS h2,
+#blogRSS h3,
+#blogRSS h4,
+#blogRSS h5,
+#blogRSS h6 {
+    color: #0c3934;
+}
+
+#blogRSS #title {
     color: var(--persian);
+}
+
+#blogRSS p{
+    color: #0c3934;
+}
+
+.feed-item {
+    border-bottom: 4px dashed var(--water);
+}
+
+.feed-item a {
+    color: var(--wisteria);
+}
+
+.feed-item small {
+    color: #797979;
 }
 
 /* Footer */
@@ -194,7 +225,7 @@ h2 {
     color: var(--persian);
 }
 
-a{
+a {
     color: var(--wisteria);
     text-decoration: none;
 }
