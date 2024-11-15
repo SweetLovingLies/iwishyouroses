@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Screen: IdolFinder</title>
+
+    <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/phoneGlobals.css" rel="stylesheet" type="text/css" media="all">
+
+    <link href="css/idolFinder.css" rel="stylesheet" type="text/css" media="all">
+
+    <meta name="description" content="Access literally everything you need." />
+    <link rel="icon" type="image/x-icon" href="../Assets/pixels/vintageAmericana/strawberryphone.webp">
+
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+    <script src="js/phone.js"></script>
+
+</head>
+
+<body>
+    <iframe id="detailBarIFrame" src="detailbar.html"></iframe>
+    <h>IdolFinder</h>
+    <main>
+        <div id="welcome">
+            <p>Meet my lovely mutuals! <heartMoji></heartMoji></p>
+            <p> You could be here too, yaknow? <cloudBubbleMoji></cloudBubbleMoji> Just shoot me a message after adding my button to your site!</p>
+        </div>
+        <div id="wrapper">
+            <button data-popover="popoverJirachis">
+                <img src="/Assets/coolsites/jirachis/icon.jpg">
+                Jirachis
+            </button>
+        </div>
+    </main>
+
+    <div id="popoverJirachis" class="popover">
+        <iconify-icon class="exit" icon="mingcute:close-fill"></iconify-icon>
+        <img class="personaIcon" src="/Assets/coolsites/jirachis/icon.jpg">
+
+        <section id="persona">
+            <h2>Jirachis</h2>
+            <i>"I like Wobbuffet"</i>
+        </section>
+        <section id="siteButton">
+            <p>Tip: Click the button! </p>
+            <a href="https://jirachis.neocities.org/" target="_blank"><img
+                    src="/Assets/coolsites/jirachis/jirachisButton.gif" alt="Welcome to jirachis' site!"></a>
+        </section>
+        <section id="reputation">
+            <table>
+                <td>
+                    <h4>Reputation:</h4>
+                </td>
+                <td>
+                    <p class="repValue">+20</span>
+                    <div class="repbar">
+                        <div class="slider" data-reputation="20"></div>
+                    </div>
+                </td>
+            </table>
+        </section>
+
+        <section id="club">
+            <table>
+                <td>
+                    <h4>Club:</h4>
+                </td>
+                <td>
+                    <p>Neocities</p>
+                </td>
+            </table>
+        </section>
+
+        <section id="LandH">
+            <h4>Loves and Hates</h4>
+            <p class="loves">Pokemon, Sonic, DDLC, MLP, Sanrio, NSO, Sailor Moon</p>
+            <p class="hates">N/A</p>
+        </section>
+
+        <section id="otherHeader">
+            <h3>Other Info</h3>
+        </section>
+        <section id="other">
+            <p>
+                Not sure much about this person yet, however, they seem cool. Please bare in mind that <u>this person is
+                    a minor!</u>
+            </p>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const buttons = document.querySelectorAll("main button");
+
+            buttons.forEach(button => {
+                button.addEventListener("click", () => {
+                    const popoverId = button.getAttribute("data-popover");
+                    const popover = document.getElementById(popoverId);
+
+                    popover.classList.remove("hide");
+                    popover.style.display = "flex";
+
+                    const slider = popover.querySelector(".slider");
+                    const reputationValue = parseInt(slider.getAttribute("data-reputation"));
+                    const minReputation = -100;
+                    const maxReputation = 100;
+                    const barWidth = popover.querySelector(".repbar").offsetWidth;
+
+                    const position = ((reputationValue - minReputation) / (maxReputation - minReputation)) * barWidth - (slider.offsetWidth / 2);
+                    slider.style.left = `${position}px`;
+
+                    const exitButton = popover.querySelector(".exit");
+                    exitButton.addEventListener("click", () => {
+                        popover.classList.add("hide");
+                        setTimeout(() => {
+                            popover.style.display = "none";
+                        }, 300);
+                    });
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

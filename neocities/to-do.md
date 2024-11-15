@@ -5,12 +5,12 @@
   * Add BGM if you ever feel like it.
 
     \
-* **!! Site button!**
-  * Color Palette?
+* **!! Things to do for the Media Log:**
+  * Make it. lol
 
     \
-* **!! Things to do for the Media Log:**
-* Make it. lol
+* **!! Things to do for the projects page:**
+  * Make it. lol
 
   \
 * **!! Things to do for the shrines:**
@@ -23,14 +23,6 @@
     * Frutiger Aero
 
       \
-* **!! Things to do for the projects page:**
-  * Make it. lol
-
-    \
-* **!! Things to do for the Button Wall:**
-  * Do it later on
-
-    \
 * **!! Things I intend to add to the about page:**
   * Fun facts clicker (Later on)
 

@@ -1,0 +1,311 @@
+:root {
+
+    /* Colors */
+    --bubblegum: #ffb7ed;
+    --dustyPink: #f6bdd1;
+    --persian: #f283b6;
+    --wisteria: #8266ff;
+    --hintofmist: #f1efff;
+    --whispermist: #dbd8f0;
+    --driedBlood: #8B575c;
+    --pinkIce: #f6e4f6;
+    --ash: #cad2c5;
+    --water: #adcaff;
+    --deepsea: #357ce6;
+    --blood: #800000;
+    --deepslate: #696969;
+    --cobblestone: #a8a8a8;
+
+    /* Rainbow Ring Colors */
+
+    --rainbowRed: #ffadad;
+    --rainbowOrange: #ffdea1;
+    --rainbowYellow: #ffffb5;
+    --rainbowGreen: #c2ffc2;
+    --rainbowBlue: #b8d4ff;
+    --rainbowIndigo: #9e97e0;
+    --rainbowPurple: #cfb0ff;
+    --rainbowPink: #ffd8f2;
+
+    /* Globals */
+    --globalBorderRadius: 10px;
+    --detailBarHeight: 20px;
+}
+
+
+body {
+    background: url("/Assets/BGs/polkastarPink.png");
+    font-family: cafesweet;
+
+    overflow-x: hidden;
+}
+
+main {
+    display: flex;
+    flex-flow: column nowrap;
+
+    padding: 10px;
+}
+
+#welcome{
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 5px dotted var(--persian);
+}
+
+#wrapper{
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    background: none;
+    border: none;
+    font-family: cafesweet;
+
+    flex: 0 1 50%;
+}
+
+button img {
+    width: 100%;
+
+    border-style: solid;
+    border-image: url("/Assets/borders/borderfilled.png") 8 round;
+    border-width: 8px;
+    background-clip: padding-box;
+}
+
+button:hover {
+    color: var(--wisteria);
+    cursor: pointer;
+}
+
+.personaIcon {
+    width: 80%;
+    max-width: 220px;
+
+    border-style: solid;
+    border-image: url("/Assets/borders/borderfilled.png") 8 round;
+    border-width: 8px;
+    background-clip: padding-box;
+
+    margin: 10px 0;
+}
+
+section {
+    width: 100%;
+
+    background-color: var(--pinkIce);
+
+    border-bottom: 1px solid black;
+}
+
+section:first-of-type {
+    border-top: 1px solid black;
+}
+
+section:last-of-type {
+    border: none;
+}
+
+table {
+    width: 100%;
+}
+
+td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+#persona,
+#otherHeader {
+    text-align: center;
+}
+
+#LandH,
+#other {
+    padding: 5px 10px;
+}
+
+/* ! Loves and Hates */
+
+.loves::before, .hates::before{
+    content: "";
+    vertical-align: text-top;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+.loves::before {
+    width: .8em;
+    height: .8em;
+    color: var(--wisteria);
+
+    /* Icon from Iconify! */
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M12.001 4.529a6 6 0 0 1 8.242.228a6 6 0 0 1 .236 8.236l-8.48 8.492l-8.478-8.492a6 6 0 0 1 8.48-8.464'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+
+.hates::before {
+    width: .8em;
+    height: .71em;
+    color: red;
+
+    /* Icon from Iconify! */
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1216 1312'%3E%3Cpath fill='%23000' d='M1202 1066q0 40-28 68l-136 136q-28 28-68 28t-68-28L608 976l-294 294q-28 28-68 28t-68-28L42 1134q-28-28-28-68t28-68l294-294L42 410q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 294l294-294q28-28 68-28t68 28l136 136q28 28 28 68t-28 68L880 704l294 294q28 28 28 68'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+
+/* ! Reputation */
+
+.repbar {
+    position: relative;
+
+    width: 140px;
+    height: 20px;
+    background: linear-gradient(90deg, rgba(127,91,126,1) 0%, rgba(127,91,126,1) 25%, rgba(189,157,190,1) 25%, rgba(189,157,190,1) 75%, rgba(255,223,255,1) 75%, rgba(255,223,255,1) 100%); 
+    border: 1px solid black;
+}
+
+.repValue {
+    font-size: 16px;
+    color: var(--wisteria);
+    text-align: center;
+}
+
+.slider {
+    position: absolute;
+    top: -25%;
+    left: 0;
+    width: 10px;
+    height: 150%;
+
+    background-color: white;
+    box-shadow: inset 0 0 3px black;
+    border: 1px solid black;
+
+    transition: left .25s;
+}
+
+/* Site Button */
+
+#siteButton {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    padding: 6px;
+}
+
+#siteButton img{
+    display: block;
+    margin: auto;
+}
+
+/* Popover functionality */
+
+.popover {
+    display: none;
+    position: fixed;
+
+    top: 200%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 1000;
+
+    flex-flow: column nowrap;
+    align-items: center;
+
+    width: 100%;
+    max-width: 300px;
+    height: 100vh;
+
+    overflow: auto;
+
+    border-radius: var(--globalBorderRadius);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+
+    background: url("/Assets/BGs/polkastarPink.png");
+
+    animation: popoverShow 0.3s ease-out forwards;
+
+    /* ! Debug */
+    /* top: 50%;
+    display: flex; */
+}
+
+
+@keyframes popoverShow {
+    from {
+        top: 200%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    to {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+    }
+}
+
+.popover.hide {
+    animation: popoverHide 0.3s ease-in forwards;
+}
+
+@keyframes popoverHide {
+    from {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    to {
+        top: 200%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.exit {
+    font-size: 30px;
+    color: red;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.exit:hover {
+    cursor: pointer;
+}
+
+h4 {
+    font-family: diegovainilla;
+    font-weight: normal;
+}
+
+h2{
+    font-size: 2em;
+}
+
+h2, h3 {
+    font-family: FoxRelish;
+    color: var(--wisteria)
+}

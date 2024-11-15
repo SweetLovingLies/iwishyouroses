@@ -19,20 +19,28 @@ const feedUrl = 'https://iwishyouroses.bearblog.dev/feed/?type=rss';
 
         function displayRSSFeed(items) {
             const feedContainer = document.getElementById("rssFeedContainer");
-
+        
             items.forEach(item => {
                 const feedItem = document.createElement("div");
                 feedItem.classList.add("feed-item");
                 feedItem.classList.add("columnFlex2");
-
+        
+                const charLimit = 200;
+                let truncatedDescription = item.description;
+                
+                if (truncatedDescription.length > charLimit) {
+                    truncatedDescription = truncatedDescription.slice(0, charLimit) + '...';
+                }
+        
                 feedItem.innerHTML = `
-            <h3><a href="${item.link}" target="_blank">${item.title}</a></h3>
-            <p>${item.description}</p>
-            <small>${new Date(item.pubDate).toLocaleDateString()}</small>
-        `;
-
+                    <h3><a href="${item.link}" target="_blank">${item.title}</a></h3>
+                    <p>${truncatedDescription}</p>
+                    <small>${new Date(item.pubDate).toLocaleDateString()}</small>
+                `;
+        
                 feedContainer.appendChild(feedItem);
             });
         }
+        
 
         fetchRSSFeed();

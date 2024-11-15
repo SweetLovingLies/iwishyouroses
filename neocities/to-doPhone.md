@@ -5,24 +5,33 @@
 
 * Gallery <-------- Very Easy !
   * Gallery of my favorite images! - Maybe some memes too
-* Fronter Info (Student Info) <---------- Easy!
-  * Styled around Stardew and YanSim
-* Camera <--------- Easy ?
-  * Take a selfie that will  appear in the gallery!
 
     \
 
 **! Whenever tf I feel like doing this !**
 
+
+* Camera <--------- Easy ?
+  * Take a selfie that will  appear in the gallery!
+
+    \
 * Aura Notes (? name ?) <---------- Easy!
   * Notes taking app
+
+    \
 * DreamCast (? name ?) <------- MEDIUM
   * Podcasts
+
+    \
 * SHIRANAI <----------- HARD
   * Notes about different things you can do on the main site as well as this one! - Come up with a predefined set of tooltips.
   * Maybe some search results too for a more Search Engine / Virtual Assistant like feel
+
+    \
 * Stellar Shop (? name ?) <--------- HARD
   * Fake e-commerce app
+
+    \
 * Music Player Controls  (Music) <------ HARD!
   * LastFM plugin maybe?
 
@@ -30,8 +39,6 @@
 **Make Icons for Apps**
 
 * DreamCast (? name ?)
-
-
 * Stellar Shop (? name ?)
 * Aura Notes (? name ?)
 * Celestune (? name ?)

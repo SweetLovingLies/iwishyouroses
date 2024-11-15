@@ -29,6 +29,10 @@ body{
     font-family: cafeSweet;
 }
 
+.themePreview:hover {
+    cursor: pointer;
+}
+
 .themePreview img{
     width: 100px;
 }
