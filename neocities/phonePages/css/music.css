@@ -99,6 +99,10 @@ main {
     z-index: 0;
 }
 
+.songInfoWrapper{
+    align-self: stretch;
+}
+
 .timeDisplay{
     display: flex;
     justify-content: center;
