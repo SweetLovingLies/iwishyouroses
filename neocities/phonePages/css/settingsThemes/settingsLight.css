@@ -1,0 +1,18 @@
+body{
+    background: white;
+}
+
+#anonIcon{
+    border: 5px solid var(--wisteria);
+}
+.settingsWrapper {
+    background-color: white;
+}
+
+.settingsWrapper:nth-child(odd){
+    background-color: #f5eeee;
+}
+
+.settingsWrapper button:hover {
+    background-color: #ccc;
+}

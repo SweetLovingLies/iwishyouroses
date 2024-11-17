@@ -48,11 +48,6 @@
 }
 
 @font-face {
-    font-family: typogarden;
-    src: url('/fonts/typogarden-demo.ttf');
-}
-
-@font-face {
     /* use & _ - for connectors */
     font-family: heartstyle;
     src: url('/fonts/heartstyle.ttf');
@@ -83,6 +78,11 @@
     /* Fuzzy Font! */
     font-family: FoxRelish;
     src: url('/fonts/FoxRelish.ttf');
+}
+
+@font-face {
+    font-family: MagicStars;
+    src: url('/fonts/MagicStars.otf');
 }
 
 html,
@@ -159,11 +159,14 @@ body {
     flex-wrap: wrap;
 }
 
-
 /* Global styling */
 
-
 ::selection{
+    background-color:var(--wisteria);
+    color:#ffffff;
+}
+
+mark {
     background-color:var(--wisteria);
     color:#ffffff;
 }

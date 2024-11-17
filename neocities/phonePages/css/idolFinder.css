@@ -1,69 +1,63 @@
 :root {
-
-    /* Colors */
-    --bubblegum: #ffb7ed;
-    --dustyPink: #f6bdd1;
-    --persian: #f283b6;
+    /* OG Colors */
     --wisteria: #8266ff;
-    --hintofmist: #f1efff;
-    --whispermist: #dbd8f0;
-    --driedBlood: #8B575c;
-    --pinkIce: #f6e4f6;
-    --ash: #cad2c5;
-    --water: #adcaff;
-    --deepsea: #357ce6;
-    --blood: #800000;
-    --deepslate: #696969;
-    --cobblestone: #a8a8a8;
 
-    /* Rainbow Ring Colors */
-
-    --rainbowRed: #ffadad;
-    --rainbowOrange: #ffdea1;
-    --rainbowYellow: #ffffb5;
-    --rainbowGreen: #c2ffc2;
-    --rainbowBlue: #b8d4ff;
-    --rainbowIndigo: #9e97e0;
-    --rainbowPurple: #cfb0ff;
-    --rainbowPink: #ffd8f2;
-
-    /* Globals */
-    --globalBorderRadius: 10px;
-    --detailBarHeight: 20px;
+    /* Theme Colors */
+    --blueDeep: #3c7fc2;
+    --blue1: #87b4e0;
+    --blue2: #96c0e6;
+    --blue3: #a4c8e0;
+    --blue4: #b4d6e7;
+    --blue5: #bbdae6;
+    --blue6: #BFD4DB;
 }
 
-
 body {
-    background: url("/Assets/BGs/polkastarPink.png");
-    font-family: cafesweet;
-
+    background: url("/Assets/BGs/tumblr_ad479ccfea2121a711cc5099eff07479_82048f3a_75.gif");
+    
+    font-family: Arial, Helvetica, sans-serif;
     overflow-x: hidden;
+}
+
+header {
+    background: linear-gradient(90deg, rgba(135,180,224,1) 0%, rgba(150,192,230,1) 25%, rgba(187,218,230,1) 50%, rgba(150,192,230,1) 75%, rgba(135,180,224,1) 100%); 
+
+    padding: 20px 5px 10px;
+
+    border-bottom: 1px solid black;
 }
 
 main {
     display: flex;
     flex-flow: column nowrap;
-
-    padding: 10px;
 }
 
 #welcome{
+    background-color: white;
     padding-bottom: 10px;
     margin-bottom: 20px;
-    border-bottom: 5px dotted var(--persian);
+
+    padding: 5px;
+
+    border-bottom: 1px solid black;
 }
 
 #wrapper{
     display: flex;
     gap: 10px;
+
+    padding: 10px;
 }
 
 button {
     background: none;
     border: none;
-    font-family: cafesweet;
+    font-family: Arial, Helvetica, sans-serif;
 
     flex: 0 1 50%;
+
+    font-size: 16px;
+    transition: color .25s;
 }
 
 button img {
@@ -92,10 +86,92 @@ button:hover {
     margin: 10px 0;
 }
 
+/* Popover functionality */
+
+.popover {
+    display: none;
+    position: fixed;
+
+    top: 200%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 1000;
+
+    flex-flow: column nowrap;
+    align-items: center;
+
+    width: 100%;
+    max-width: 300px;
+    height: 100vh;
+
+    overflow: auto;
+
+    border-radius: var(--globalBorderRadius);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+
+    background: url("/Assets/BGs/bgtf5b.gif");
+
+    animation: popoverShow 0.3s ease-out forwards;
+
+    /* ! Debug */
+    /* top: 50%;
+    display: flex; */
+}
+
+
+@keyframes popoverShow {
+    from {
+        top: 200%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    to {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+    }
+}
+
+.popover.hide {
+    animation: popoverHide 0.3s ease-in forwards;
+}
+
+@keyframes popoverHide {
+    from {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    to {
+        top: 200%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.exit {
+    font-size: 30px;
+    color: red;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.exit:hover {
+    cursor: pointer;
+}
+
+/* Popover Content */
+
 section {
     width: 100%;
 
-    background-color: var(--pinkIce);
+    background-color: var(--blue4);
 
     border-bottom: 1px solid black;
 }
@@ -173,7 +249,7 @@ td {
 .repbar {
     position: relative;
 
-    width: 140px;
+    width: 180px;
     height: 20px;
     background: linear-gradient(90deg, rgba(127,91,126,1) 0%, rgba(127,91,126,1) 25%, rgba(189,157,190,1) 25%, rgba(189,157,190,1) 75%, rgba(255,223,255,1) 75%, rgba(255,223,255,1) 100%); 
     border: 1px solid black;
@@ -181,7 +257,6 @@ td {
 
 .repValue {
     font-size: 16px;
-    color: var(--wisteria);
     text-align: center;
 }
 
@@ -216,96 +291,18 @@ td {
     margin: auto;
 }
 
-/* Popover functionality */
+/* Other General Styles */
 
-.popover {
-    display: none;
-    position: fixed;
-
-    top: 200%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    z-index: 1000;
-
-    flex-flow: column nowrap;
-    align-items: center;
-
-    width: 100%;
-    max-width: 300px;
-    height: 100vh;
-
-    overflow: auto;
-
-    border-radius: var(--globalBorderRadius);
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
-
-    background: url("/Assets/BGs/polkastarPink.png");
-
-    animation: popoverShow 0.3s ease-out forwards;
-
-    /* ! Debug */
-    /* top: 50%;
-    display: flex; */
+h2, h3{
+    font-size: 2em;
 }
 
-
-@keyframes popoverShow {
-    from {
-        top: 200%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    to {
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 1000;
-    }
-}
-
-.popover.hide {
-    animation: popoverHide 0.3s ease-in forwards;
-}
-
-@keyframes popoverHide {
-    from {
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    to {
-        top: 200%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-}
-
-.exit {
-    font-size: 30px;
-    color: red;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.exit:hover {
-    cursor: pointer;
+h2, h3 {
+    font-family: MagicStars;
+    color: var(--blueDeep)
 }
 
 h4 {
     font-family: diegovainilla;
     font-weight: normal;
-}
-
-h2{
-    font-size: 2em;
-}
-
-h2, h3 {
-    font-family: FoxRelish;
-    color: var(--wisteria)
 }

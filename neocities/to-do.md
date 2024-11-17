@@ -1,8 +1,12 @@
 ## !!!!!! Things I intend to do for this site... the text file!
 
+* **!! Things to do for the site itself:**
+  * Create landing page!
+  * Make custom preview
+
+  \
 * **!! Things to do for the credits page:**
-  * Dark Mode?
-  * Add BGM if you ever feel like it.
+  * Dark Theme?
 
     \
 * **!! Things to do for the Media Log:**
@@ -27,3 +31,4 @@
   * Fun facts clicker (Later on)
 
 
+**Make this site mobile compatible at some point please!** :laughing:

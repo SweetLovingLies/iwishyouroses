@@ -1,0 +1,221 @@
+:root {
+    /* Colors */
+    --sunsetRed: #850925;
+    --sunsetRedL: #FF2E43;
+    --cherish: #542432;
+    --sunsetPink: #D20047;
+    --sunsetOrange: #F01501;
+    --sunsetOrangeL: #FF5F01;
+    --sunsetBlue: #090349;
+    --sunsetBlueL: #072879;
+    --sunsetPurple: #58337c;
+
+    --shootingstar: #ffffb5;
+}
+
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    background: linear-gradient(180deg, var(--sunsetRedL) 0%, var(--sunsetOrange) 20%, var(--sunsetPink) 100%);
+
+    font-family: Comfortaa, Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 14px;
+}
+
+h4 {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 80%;
+    max-width: 500px;
+}
+
+.detailWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+}
+
+/* ! Progress Bar */
+
+.ProgressC {
+    position: absolute;
+    transform: rotate(-90deg);
+    z-index: 1;
+}
+
+.ProgressCBg {
+    fill: none;
+    stroke: var(--sunsetPurple);
+    stroke-width: 5;
+}
+
+.ProgressCBgOutline {
+    fill: none;
+    stroke: black;
+    stroke-width: 8;
+    stroke-linecap: round;
+}
+
+.ProgressCBar {
+    fill: none;
+    stroke: var(--shootingstar);
+    stroke-width: 5;
+    stroke-linecap: round;
+    stroke-dasharray: 565;
+    stroke-dashoffset: 565;
+    transition: stroke-dashoffset 0.1s linear;
+}
+
+.ProgressCStar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: center center;
+    z-index: 10;
+    transform: translateX(-50%) translateY(-90px);
+}
+
+/* ! Progress Bar End */
+
+.albumCover {
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    z-index: 0;
+}
+
+.timeDisplay{
+    display: flex;
+    justify-content: center;
+}
+
+#currentTimeDisplay, #durationTimeDisplay {
+    font-size: 1.4em;
+    text-align: center;
+}
+
+#slash{
+    font-size: 20px;
+}
+
+#songArtist {
+    font-weight: bold;
+}
+
+/* Big Buttons! */
+
+.controlsWrapper {
+    display: flex;
+    gap: 10px;
+}
+
+.buttonsBase {
+    background: transparent;
+    border: none;
+
+    padding: 10px;
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+
+    color: white;
+    font-size: 1.6em;
+
+    border: 1px solid white;
+
+    box-shadow: 0px 0px 5px 3px rgba(255, 255, 255, 0.1);
+}
+
+/* Shuffle and Loop */
+
+.tinyButtons {
+    background: transparent;
+    border: none;
+    color: black;
+    font-size: 1em;
+
+    filter: drop-shadow(0px 0px .4px white) drop-shadow(0px 0px .4px white) drop-shadow(0px 0px .4px white) drop-shadow(0px 0px .4px white) drop-shadow(0px 0px .4px white) drop-shadow(0px 0px .4px white) drop-shadow(0px 0px .4px white) drop-shadow(0px 0px 2px rgba(255, 255, 255, 0.1));
+}
+
+.active {
+    color: var(--wisteria)
+}
+
+/* Volume */
+
+#volumeSlider {
+    -webkit-appearance: none;
+    appearance: none;
+
+    width: 100%;
+    height: 0;
+    border-radius: 5px;
+    outline: none;
+}
+
+#volumeSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    content: "";
+
+    width: 20px;
+    height: 20px;
+    background: var(--wisteria);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    /* A cute star icon from Iconify! */
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="%23ffffb5" stroke="black" stroke-width="1" d="M13.51 3.139c-.652-1.185-2.368-1.185-3.021 0a28 28 0 0 0-2.114 4.894a.35.35 0 0 1-.33.223a30 30 0 0 0-4.375.436c-1.337.233-1.926 1.837-.91 2.83a32 32 0 0 0 3.492 2.96a.274.274 0 0 1 .108.31a27.6 27.6 0 0 0-1.17 5.066c-.19 1.424 1.317 2.298 2.494 1.694a29.3 29.3 0 0 0 4.085-2.537a.4.4 0 0 1 .462 0a29 29 0 0 0 4.085 2.537c1.177.604 2.685-.27 2.495-1.694a27.6 27.6 0 0 0-1.171-5.065a.274.274 0 0 1 .11-.31a32 32 0 0 0 3.49-2.96c1.016-.994.427-2.598-.91-2.831a30 30 0 0 0-4.376-.436a.35.35 0 0 1-.329-.223a27.7 27.7 0 0 0-2.114-4.894"/></svg>') no-repeat center / contain;
+}
+
+#volumeSlider::-moz-range-thumb {
+    width: 40px;
+    height: 40px;
+    border: none;
+
+    /* A cute star icon from Iconify! */
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="%23ffffb5" stroke="black" stroke-width="1" d="M13.51 3.139c-.652-1.185-2.368-1.185-3.021 0a28 28 0 0 0-2.114 4.894a.35.35 0 0 1-.33.223a30 30 0 0 0-4.375.436c-1.337.233-1.926 1.837-.91 2.83a32 32 0 0 0 3.492 2.96a.274.274 0 0 1 .108.31a27.6 27.6 0 0 0-1.17 5.066c-.19 1.424 1.317 2.298 2.494 1.694a29.3 29.3 0 0 0 4.085-2.537a.4.4 0 0 1 .462 0a29 29 0 0 0 4.085 2.537c1.177.604 2.685-.27 2.495-1.694a27.6 27.6 0 0 0-1.171-5.065a.274.274 0 0 1 .11-.31a32 32 0 0 0 3.49-2.96c1.016-.994.427-2.598-.91-2.831a30 30 0 0 0-4.376-.436a.35.35 0 0 1-.329-.223a27.7 27.7 0 0 0-2.114-4.894"/></svg>') no-repeat center / contain;
+
+    cursor: pointer;
+    transform: translateY(-2px);
+}
+
+#volumeSlider::-webkit-slider-runnable-track {
+    height: 8px;
+    background: var(--sunsetPurple);
+    border-radius: 5px;
+
+    border: 1px solid black;
+    box-shadow: 0px 0px 5px 3px rgba(255, 255, 255, 0.1);
+}
+
+#volumeSlider::-moz-range-track {
+    height: 8px;
+    background: var(--sunsetPurple);
+    border-radius: 5px;
+
+    border: 1px solid black;
+    box-shadow: 0px 0px 5px 3px rgba(255, 255, 255, 0.1);
+}

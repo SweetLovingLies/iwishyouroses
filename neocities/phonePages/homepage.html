@@ -24,7 +24,7 @@
 </head>
 
 <body>
-    <iframe id="detailBarIFrame" src="detailbar.html"></iframe>
+    <object id="detailBarObject" data="detailbar.html"></object>
 
     <div id="homepages">
         <div class="homepage active" id="homepage1">
@@ -43,7 +43,7 @@
                             <p>Navigation</p>
                         </a>
                         <a href="idolMessenger.html" class="app" onclick="openApp(event, this)">
-                            <div class="appIcon">
+                            <div id="idolMessenger" class="appIcon">
                                 <img src="/Assets/customNavIcons/idolMessengerIcon.png">
                             </div>
                             <p>Idol Messenger</p>
@@ -52,10 +52,10 @@
                 </div>
 
                 <a href="socials.html" class="app" onclick="openApp(event, this)">
-                    <div class="appIcon">
-                        <img src="/Assets/customNavIcons/socialsIcon.png">
+                    <div id="asterism" class="appIcon">
+                        <img src="/Assets/customNavIcons/asterismIcon.png">
                     </div>
-                    <p>Socials</p>
+                    <p>Asterism</p>
                 </a>
 
                 <a href="stats.html" class="app" onclick="openApp(event, this)">
@@ -65,7 +65,7 @@
                     <p>Stats</p>
                 </a>
                 <a href="idolFinder.html" class="app" onclick="openApp(event, this)">
-                    <div class="appIcon">
+                    <div id="idolFinder" class="appIcon">
                         <img src="/Assets/customNavIcons/peersIcon.png">
                     </div>
                     <p>IdolFinder</p>
@@ -82,6 +82,12 @@
                     </div>
                     <p>Themes</p>
                 </a>
+                <a href="music.html" class="app" onclick="openApp(event, this)">
+                    <div id="serenade" class="appIcon">
+                        <img src="/Assets/customNavIcons/serenadeIcon.png">
+                    </div>
+                    <p>Serenade</p>
+                </a>
             </div>
 
             <div class="swipeIcons">
@@ -94,7 +100,7 @@
                 <tray>
                     <a href="temp.html" class="app" onclick="openApp(event, this)" style="color: red;">
                         <div class="appIcon">
-                            <img src="/Assets/customNavIcons/ShiranaiIcon.png">
+                            <img src="/Assets/customNavIcons/shiranaiIcon.png">
                         </div>
                         <p>SHIRANAI</p>
                     </a>
@@ -133,15 +139,19 @@
 
                 <a href="temp.html" class="app" onclick="openApp(event, this)" style="color: red;">
                     <div class="appIcon"></div>
-                    <p>Music</p>
+                    <p>Storybook</p>
                 </a>
                 <a href="temp.html" class="app" onclick="openApp(event, this)" style="color: red;">
                     <div class="appIcon"></div>
-                    <p>GoalPost</p>
+                    <p>Your Tome</p>
                 </a>
                 <a href="temp.html" class="app" onclick="openApp(event, this)" style="color: red;">
                     <div class="appIcon"></div>
-                    <p>Backpack</p>
+                    <p>DreamCast</p>
+                </a>
+                <a href="temp.html" class="app" onclick="openApp(event, this)" style="color: red;">
+                    <div class="appIcon"></div>
+                    <p>Stellar Shop</p>
                 </a>
             </div>
             <div class="swipeIcons">
@@ -154,7 +164,7 @@
                 <tray>
                     <a href="temp.html" class="app" onclick="openApp(event, this)" style="color: red;">
                         <div class="appIcon">
-                            <img src="/Assets/customNavIcons/ShiranaiIcon.png">
+                            <img src="/Assets/customNavIcons/shiranaiIcon.png">
                         </div>
                         <p>SHIRANAI</p>
                     </a>
@@ -246,9 +256,6 @@
             }
         });
     </script>
-
-
-
 </body>
 
 </html>

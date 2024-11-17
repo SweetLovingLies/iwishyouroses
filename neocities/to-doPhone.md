@@ -2,59 +2,56 @@
 
 **!!!!!!!! Today!**
 
-
-* Gallery <-------- Very Easy !
-  * Gallery of my favorite images! - Maybe some memes too
+* Storybook (Achievements)
+  * Unlock Lovesick Theme by clicking home button 9 (?) times
+  * Click the weirdStats 69 times... Nice!
+  * Type **395248** into Your Tome to get a FNAF reference
 
     \
 
 **! Whenever tf I feel like doing this !**
 
+* Gallery <-------- Very Easy !
+  * Gallery of my favorite images! - Maybe some memes too
 
+    \
 * Camera <--------- Easy ?
   * Take a selfie that will  appear in the gallery!
 
     \
-* Aura Notes (? name ?) <---------- Easy!
+* Your Tome <---------- Easy?
   * Notes taking app
 
-    \
-* DreamCast (? name ?) <------- MEDIUM
-  * Podcasts
+  \
+* DreamCast (? name ?) <------- Easy?
+  * Links to Podcasts
+  * Maybe add my own later if I do it lol
 
-    \
-* SHIRANAI <----------- HARD
+  \
+* SHIRANAI <----------- VERY HARD
   * Notes about different things you can do on the main site as well as this one! - Come up with a predefined set of tooltips.
   * Maybe some search results too for a more Search Engine / Virtual Assistant like feel
+  * Change Icon Color
 
     \
-* Stellar Shop (? name ?) <--------- HARD
+* Stellar Shop (? name ?) <--------- VERY HARD
   * Fake e-commerce app
 
     \
-* Music Player Controls  (Music) <------ HARD!
-  * LastFM plugin maybe?
+* Make Icons for Apps
+  * Your Tome
+  * DreamCast (? name ?)
+  * Stellar Shop (? name ?)
 
-
-**Make Icons for Apps**
-
-* DreamCast (? name ?)
-* Stellar Shop (? name ?)
-* Aura Notes (? name ?)
-* Celestune (? name ?)
-
+    \
 
 **! Doing later on !**
 
-* Achievements/GoalPost (Stuff to do around the site?)
-  * Unlock Lovesick Theme by clicking home button 9 (?) times
-  * Click the weirdStats 69 times... Nice!
-  * Click the weirdStats 1987 times... FNAF ref because you're that dedicated
 * (Site) Settings
   * Squeamish Mode
-  * Remove Herobrine // Maybe he'll go in the about page?
-  * Move FNAF Ref here
+  * Remove Herobrine // ???
 
+    \
 
 **! Possibly not doing !**
 
@@ -63,8 +60,7 @@
   * Hammer.js Navigation Gestures (?)
   * Notification Badge System for App Icons (?)
   * "Fake" Notifications (?)
-    * Maybe a notification system for idolMessenger?
 * Backpack (Inventory) - Not sure what to put in here yet
-* Add Pollcode Section:
+* Add Pollcode Section
 
 

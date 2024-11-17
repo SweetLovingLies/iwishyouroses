@@ -1,15 +1,16 @@
+// First error: Check if you added IDs to the theme css links...
+
 document.addEventListener("DOMContentLoaded", function () {
-    const path = window.top.location.pathname.split('/').pop();
-    const pageName = path ? path.split('.')[0] : "index";
-    console.log(pageName);
+    const topPath = window.top.location.pathname.split('/').pop();
+    const topPageName = topPath ? topPath.split('.')[0] : "index";
+
+    // For top level html files
     
-    const themeCSS = window.top.document.getElementById(`${pageName}CSS`);
-    console.log(themeCSS);
-    const themeDarkCSS = window.top.document.getElementById(`${pageName}DarkCSS`);
-    console.log(themeDarkCSS);
+    const themeCSS = window.top.document.getElementById(`${topPageName}CSS`);
+    const themeDarkCSS = window.top.document.getElementById(`${topPageName}DarkCSS`);
 
     if (!themeCSS || !themeDarkCSS) {
-        console.warn(`Theme CSS elements for ${pageName} not found. Skipping theme initialization.`);
+        console.warn(`Theme CSS elements for ${topPageName} not found. Skipping theme initialization.`);
         return
     }
 

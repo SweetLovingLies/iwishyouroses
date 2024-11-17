@@ -1,9 +1,13 @@
 body {
     height: 100vh;
 
-    font-family: cafesweet;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to top, rgba(0, 6, 87, 0.5), rgba(0, 0, 0, 0.6)), url('/Assets/BGs/bluefloral.png');
 
-    background: url('/Assets/BGs/tex2.png');
+    background-size: contain, 40%;
+    color: white;
+
+    overflow-x: hidden;
 }
 
 #top {
@@ -17,6 +21,8 @@ body {
     height: 45%;
 
     border-bottom: 5px solid black;
+
+    margin-bottom: 10px;
 }
 
 h5{
@@ -28,28 +34,25 @@ h5{
     text-align: center;
 }
 
-hr {
-    margin: 0;
-    margin-bottom: 10px;
-    border: 2px dashed var(--ash);
-}
-
-#navButtons{
+main{
     display: flex;
     flex-flow: column wrap;
     gap: 10px;
 
-    margin: 0 5px;
+    padding: 0 10px 0 5px;
 }
 
-#navButtons button{
+main button{
     background-color: var(--hintofmist);
     border: 1px solid black;
     border-radius: var(--globalBorderRadius);
 
-    font-family: cafesweet;
     font-size: larger;
 
     width: 100%;
     padding: 5px;
+}
+
+p {
+    text-align: center;
 }

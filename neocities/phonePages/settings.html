@@ -7,7 +7,12 @@
     <title>Phone Screen: Homepage</title>
     <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
     <link href="css/phoneGlobals.css" rel="stylesheet" type="text/css" media="all">
-    <link href="css/settings.css" rel="stylesheet" type="text/css" media="all">
+
+
+    <link href="css/settingsBase.css" rel="stylesheet" type="text/css" media="all">
+    <link id="settingsCSS" href="css/settingsThemes/settingsLight.css" rel="stylesheet" type="text/css" media="all">
+    <link id="settingsDarkCSS" href="css/settingsThemes/settingsDark.css" rel="stylesheet" type="text/css" media="all" disabled>
+
     <meta name="description" content="Access literally everything you need." />
     <link rel="icon" type="image/x-icon" href="../Assets/pixels/vintageAmericana/strawberryphone.webp">
 
@@ -18,7 +23,7 @@
 </head>
 
 <body>
-    <iframe id="detailBarIFrame" src="detailbar.html"></iframe>
+    <object id="detailBarObject" data="detailbar.html"></object>
 
     <h>Settings</h>
     <main>
@@ -66,7 +71,7 @@
             });
         }
 
-        // Freezeframe.js testing
+        // Freezeframe.js
 
         function toggleGIFs() {
             const gifToggle = document.getElementById("gifToggle");
@@ -91,6 +96,32 @@
             window.top.postMessage({ command: gifState }, "*");
         });
 
+        // Fun Stuff
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const anonIcon = document.getElementById("anonIcon");
+            const chance = 0.01;
+            const alternateIcon = "/Assets/other/anonAicon.jpg";
+
+            if (Math.random() < chance) {
+                anonIcon.src = alternateIcon;
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const darkThemeEnabled = localStorage.getItem('darkTheme') === 'true';
+            const settingsCSS = document.getElementById("settingsCSS");
+            const settingsDarkCSS = document.getElementById("settingsDarkCSS");
+
+            if (darkThemeEnabled) {
+                settingsCSS.disabled = true;
+                settingsDarkCSS.disabled = false;
+            } else {
+                settingsCSS.disabled = false;
+                settingsDarkCSS.disabled = true;
+            }
+        });
     </script>
 </body>
 

@@ -1,5 +1,4 @@
-
-*{
+* {
     scrollbar-width: none;
 }
 
@@ -8,7 +7,7 @@
     width: 0;
 }
 
-body{
+body {
     display: flex;
     flex-flow: column wrap;
     height: calc(100vh - 5px);
@@ -26,13 +25,20 @@ body{
     transition: transform 0.3s ease-in-out;
 }
 
-.homepage.hidden {
+#homepage1.active {
+    transform: translateX(0);
+}
+#homepage1.hidden {
+    transform: translateX(-100%);
+}
+
+#homepage1.active {
+    transform: translateX(0);
+}
+#homepage2.hidden {
     transform: translateX(100%);
 }
 
-.homepage.active {
-    transform: translateX(0);
-}
 
 .appWrapper {
     display: flex;
@@ -46,7 +52,8 @@ body{
     padding-bottom: 10px;
 }
 
-.appWrapper a, footer a{
+.appWrapper a,
+footer a {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
@@ -55,19 +62,20 @@ body{
     transition: color .25s;
 }
 
-.appWrapper p, footer p{
+.appWrapper p,
+footer p {
     text-align: center;
     width: 70px;
     font-size: 15px;
 }
 
-.column1{
+.column1 {
     display: flex;
     flex-flow: column wrap;
     gap: 20px;
 }
 
-.column2{
+.column2 {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
@@ -76,7 +84,7 @@ body{
     font-size: 15px;
 }
 
-.widget{
+.widget {
     width: 160px;
     height: 150px;
     object-fit: cover;
@@ -84,9 +92,9 @@ body{
     border-radius: var(--globalBorderRadius);
 }
 
-.appIcon{
+.appIcon {
     align-self: center;
-    
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -97,7 +105,7 @@ body{
     border-radius: 10px;
 }
 
-.appIcon img{
+.appIcon img {
     width: 90%;
 }
 
@@ -106,6 +114,7 @@ body{
         transform: scale(0);
         opacity: 0;
     }
+
     100% {
         transform: scale(1);
         opacity: 1;
@@ -117,6 +126,7 @@ body{
         transform: scale(1);
         opacity: 1;
     }
+
     100% {
         transform: scale(0);
         opacity: 0;
@@ -124,8 +134,8 @@ body{
 }
 
 .app {
-    animation-duration: 0.3s; 
-    animation-fill-mode: forwards; 
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
 }
 
 .app.open {
@@ -136,7 +146,7 @@ body{
     animation-name: appClose;
 }
 
-.swipeIcons{
+.swipeIcons {
     flex: 1 1;
 
     display: flex;
@@ -149,11 +159,11 @@ body{
     margin: 5px 0;
 }
 
-footer{
+footer {
     padding: 0 20px 10px;
 }
 
-tray{
+tray {
     display: flex;
     justify-content: space-between;
 
@@ -161,18 +171,18 @@ tray{
     border-radius: 20px;
 }
 
-.column2 p{
+.column2 p {
     width: unset;
 }
 
-#weatherWidget{
+#weatherWidget {
     width: 100%;
 
     display: flex;
     flex-flow: column nowrap;
     align-items: flex-start;
 
-    background: linear-gradient(150deg, rgba(199,115,255,1) 0%, rgba(255,104,104,1) 39%, rgba(255,104,104,1) 53%, rgba(255,202,127,1) 100%); 
+    background: linear-gradient(150deg, rgba(199, 115, 255, 1) 0%, rgba(255, 104, 104, 1) 39%, rgba(255, 104, 104, 1) 53%, rgba(255, 202, 127, 1) 100%);
     border-radius: 20px;
 
     padding: 10px;
@@ -183,21 +193,21 @@ tray{
     position: relative;
 }
 
-#weatherWidget p{
+#weatherWidget p {
     width: unset;
     text-align: left;
 }
 
-#wwCityName{
+#wwCityName {
     font-size: 20px;
     font-weight: bold;
 }
 
-#wwTemp{
+#wwTemp {
     font-size: 40px;
 }
 
-#wwWeatherIcon{
+#wwWeatherIcon {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -205,38 +215,41 @@ tray{
     font-size: 30px;
 }
 
-#weatherWidget .weatherIcon iconify-icon { /* Modify per season */
+#weatherWidget .weatherIcon iconify-icon {
+    /* Modify per season */
 
     color: #FFD700;
 
     filter: drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white);
 }
 
-#weatherWidget .weatherIcon > iconify-icon.sunny {
+#weatherWidget .weatherIcon>iconify-icon.sunny {
     color: #FFD700;
 }
 
-#weatherWidget .weatherIcon > iconify-icon.cloudy {
+#weatherWidget .weatherIcon>iconify-icon.cloudy {
     color: #C0C0C0;
 }
 
-#weatherWidget .weatherIcon > iconify-icon.rainy {
+#weatherWidget .weatherIcon>iconify-icon.rainy {
     color: #2f44c0;
 }
 
-#weatherWidget .weatherIcon > iconify-icon.snow, #weatherWidget .weatherIcon > iconify-icon.hail {
+#weatherWidget .weatherIcon>iconify-icon.snow,
+#weatherWidget .weatherIcon>iconify-icon.hail {
     color: #bad9f5;
 }
 
-#weatherWidget .weatherIcon > iconify-icon.snowstorm {
+#weatherWidget .weatherIcon>iconify-icon.snowstorm {
     color: #858ba8;
 }
 
-#weatherWidget .weatherIcon > iconify-icon.windy, #weatherWidget .weatherIcon > iconify-icon.fog{
+#weatherWidget .weatherIcon>iconify-icon.windy,
+#weatherWidget .weatherIcon>iconify-icon.fog {
     color: #c7d3df;
 }
 
-#forecastContainer{
+#forecastContainer {
     display: flex;
     justify-content: space-evenly;
     font-size: 1.4em;
@@ -244,6 +257,24 @@ tray{
     color: rgba(255, 255, 255, 0.575);
 }
 
-#wwBottom{
+#wwBottom {
     width: 100%;
+}
+
+/* Downloaded App Icons */
+
+#idolMessenger {
+    background-color: var(--wisteria);
+}
+
+#asterism {
+    background-color: #090349;
+}
+
+#idolFinder {
+    background-color: #87b4e0;
+}
+
+#serenade {
+    background-color: #F01501;
 }
