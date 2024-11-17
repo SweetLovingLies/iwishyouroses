@@ -106,6 +106,7 @@ button:hover {
     height: 100vh;
 
     overflow: auto;
+    overflow-x: hidden;
 
     border-radius: var(--globalBorderRadius);
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
