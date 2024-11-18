@@ -1,0 +1,384 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap");
+
+body {
+    font-size: 16px;
+}
+
+#wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+
+    padding-top: 50px;
+}
+
+.rainbowWrapper {
+    left: -2.3vw;
+    top: -7em;
+
+    transform: scale(50%);
+}
+
+#baselayout {
+    gap: 20px;
+    position: relative;
+
+    width: 80%;
+
+    padding: 20px;
+    padding-top: 55px;
+}
+
+#content {
+    gap: 20px;
+    position: relative;
+}
+
+
+/* Left-side */
+
+section {
+    flex: 0 1 300px;
+}
+
+#eyecatcher {
+    height: 200px;
+}
+
+#siteButton {
+    justify-content: center;
+    align-items: center;
+}
+
+#siteButton img {
+    margin: 10px 0;
+}
+
+textarea {
+    width: 100%;
+}
+
+/* JS Calender */
+
+#jsCalender {
+    width: 356px;
+}
+
+.calendar-container header {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    justify-content: space-between;
+}
+
+header .calendar-navigation {
+    display: flex;
+}
+
+header .calendar-navigation span {
+    height: 38px;
+    width: 38px;
+
+    border-radius: 50%;
+    margin: 0 1px;
+
+    cursor: pointer;
+
+    text-align: center;
+    line-height: 38px;
+
+
+    user-select: none;
+    -webkit-user-select: none;
+
+    font-size: 1.9rem;
+
+    transition: color .25s;
+}
+
+.calendar-navigation span:last-child {
+    margin-right: -10px;
+}
+
+header .calendar-current-date {
+    font-size: 1.2rem;
+}
+
+.calendar-body {
+    padding: 5px;
+}
+
+.calendar-body ul {
+    list-style: none;
+    flex-wrap: wrap;
+    display: flex;
+    text-align: center;
+
+    margin: 0;
+    padding: 0;
+}
+
+.calendar-body li {
+    width: calc(100% / 7 - 2px);
+    font-size: 1.07rem;
+    padding: 12px 0;
+}
+
+.calendar-body .calendar-weekdays li {
+    cursor: default;
+}
+
+.calendar-body .calendar-dates li {
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+
+/* Central */
+
+main {
+    flex: 0 1 40%;
+
+    gap: 10px;
+}
+
+#home p {
+    margin: 10px 0;
+}
+
+#spotlight a {
+    align-items: center;
+}
+
+.displayScreenshots {
+    width: 430px;
+    height: 217px;
+
+    object-fit: cover;
+    object-position: top;
+
+    overflow: hidden;
+
+    border: 1px solid black;
+    filter: drop-shadow(-1px 2px 3px rgba(0, 0, 0, 0.26));
+}
+
+#spotlight p {
+    margin-top: 10px;
+    text-align: center;
+}
+
+#yuiBox {
+    height: 250px;
+}
+
+#yuiBox img,
+#yuiBox canvas {
+    height: 100%;
+
+    object-fit: cover;
+    object-position: top;
+}
+
+/* Right-side */
+
+.column {
+    gap: 10px;
+    align-content: flex-start;
+
+    flex: 1 1;
+}
+
+#home,
+#updates,
+#webgroups,
+#status,
+#stamps {
+    overflow: auto;
+}
+
+#home,
+#webgroups,
+#status,
+#updates,
+#stamps {
+    height: 165px
+}
+
+#updates {
+    flex: 1 1;
+
+    background: url(/Assets/BGs/blackboard.jpeg);
+    background-size: contain;
+
+    color: white;
+
+    border-width: 11px;
+    border-style: solid;
+    border-image: url("/Assets/BGs/wood.jpg") 36 round;
+
+    scrollbar-color: white black;
+}
+
+#updates::-webkit-scrollbar-track {
+    background: black;
+}
+
+#updates::-webkit-scrollbar-thumb {
+    background-color: white;
+}
+
+#updates h2 {
+    font-family: chalkcursive;
+    font-size: 1.5em;
+    font-weight: normal;
+    color: white;
+}
+
+#updates p {
+    font-family: chalk;
+    font-size: 1.3em;
+}
+
+#webgroups,
+#stamps {
+    flex: 1 1 45%;
+}
+
+/* RSS */
+
+#blogRSS {
+    height: 250px;
+    flex: 1 1 100%;
+
+    position: relative;
+}
+
+#rssFeedContainer{
+    overflow: auto;
+}
+
+#blogRSS h1,
+#blogRSS h2,
+#blogRSS h3,
+#blogRSS h4,
+#blogRSS h5,
+#blogRSS h6 {
+    font-family: "Cormorant Garamond", Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+#blogRSS h1 {
+    font-size: 1.6em;
+}
+
+#blogRSS #title {
+    font-family: diegoVainilla;
+    font-size: 2em;
+
+    margin: 0px 10px;
+}
+
+#blogRSS p {
+    font-family: "Cormorant Garamond", Georgia, Cambria, "Times New Roman", Times, serif;    
+    margin-top: auto;
+    font-size: 1.2em;
+}
+
+.feed-item {
+    margin-bottom: 20px;
+    padding: 0px 10px;
+}
+
+.feed-item a {
+    text-decoration: none;
+}
+
+.feed-item h3 {
+    margin-bottom: 10px;
+}
+
+.feed-item small {
+    text-align: right;
+    margin: 5px 0 10px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Other */
+
+#androses{
+    position: absolute;
+    top: -10.5vh;
+    right: 0;
+    pointer-events: none;
+    z-index: 99;
+}
+
+h2 {
+    font-family: diegovainilla;
+    font-size: 2em;
+    font-weight: normal;
+}
+
+.box2 {
+    flex: 1 1 100%;
+}
+
+/* ? Media Queries */
+
+@media (prefers-reduced-motion: reduce) {}
+
+@media only screen and (max-width: 1024px) {}
+
+@media only screen and (max-width: 810px) {
+
+    body {
+        height: unset;
+        overflow: auto;
+    }
+
+    #androses {
+        top: 0;
+        right: 5%;
+    }
+
+    #androses span {
+        font-size: 100%;
+    }
+
+    .rainbowWrapper {
+        display: none;
+    }
+
+    #baselayout {
+        flex: 1 1;
+    }
+
+    section {
+        flex: 1 1;
+    }
+
+    .displayScreenshots {
+        flex: none;
+        width: 100%;
+    }
+
+    .box2,
+    #stamps {
+        flex: none;
+    }
+
+    #jsCalender {
+        width: 100%;
+    }
+}
+
+
+@media only screen and (max-width: 500px) {}

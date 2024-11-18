@@ -1,8 +1,8 @@
 ## !!!!!! Things I intend to do for this site... the text file!
 
 * **!! Things to do for the site itself:**
-  * Create landing page!
   * Make custom preview
+  * Status Cafe Setup
 
   \
 * **!! Things to do for the credits page:**
@@ -29,6 +29,5 @@
       \
 * **!! Things I intend to add to the about page:**
   * Fun facts clicker (Later on)
-
 
 **Make this site mobile compatible at some point please!** :laughing:

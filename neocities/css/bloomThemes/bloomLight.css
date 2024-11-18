@@ -1,0 +1,241 @@
+body {
+    font-family: cafesweet;
+    background: url('/Assets/BGs/ht9-p.gif');
+}
+
+#baselayout {
+    background: url('/Assets/BGs/tex1.png');
+}
+
+/* Left-side */
+
+#eyecatcher {
+    border: 2px dashed var(--ash);
+    border-radius: var(--globalBorderRadius);
+}
+
+section hr {
+    width: 100%;
+    border: 1px solid var(--dustyPink);
+}
+
+#siteButton {
+    background: url("/Assets/BGs/GMS6nDM.png");
+}
+
+#jsCalender {
+    background: url(/Assets/BGs/tumblr_inline_mvrivfu8tN1r8f9na.gif);
+}
+
+/* Calender styles */
+
+
+.calendar-weekdays li {
+    background: url("/Assets/BGs/polkadotPink.png");
+    background-size: 100%;
+}
+
+header .calendar-navigation span {
+    color: var(--wisteria);
+}
+
+header .calendar-navigation span:hover {
+    color: black;
+}
+
+.calendar-body li {
+    color: black;
+
+    box-shadow: -1px -1.4px 1px inset #9e9699, 2px 3px 1.5px inset white, 0px 0px 2px #aba4a6;
+    border: 1px solid var(--whispermist);
+}
+
+.calendar-body .calendar-dates li {
+    background: url("/Assets/BGs/polkadotPink.png");
+    background-size: 100%;
+}
+
+.calendar-body .calendar-dates li:hover {
+    background: url("/Assets/BGs/polkaheartPink.png");
+    background-size: 100%;
+}
+
+.calendar-dates li.inactive {
+    color: #696969;
+}
+
+.calendar-dates li.active {
+    color: #fff;
+    background: var(--water);
+}
+
+
+.calendar-dates li.active:hover {
+    color: black;
+}
+
+/* Main */
+
+
+#home {
+    background: url('/Assets/BGs/tex1.png');
+
+    scrollbar-color: var(--whispermist) white;
+}
+
+#home::-webkit-scrollbar-track {
+    background: white;
+}
+
+#home::-webkit-scrollbar-thumb {
+    background-color: var(--whispermist);
+}
+
+#spotlight {
+    background: url('/Assets/BGs/heartgrid.gif');
+
+    height: unset;
+}
+
+#spotlight a {
+    color: var(--wisteria);
+    transition: color .25s;
+}
+
+#spotlight a:hover {
+    color: var(--driedBlood);
+}
+
+#spotlight h2 {
+    text-align: center;
+    color: var(--wisteria);
+}
+
+
+#yuiBox {
+    background: url("/Assets/BGs/checkst-b.gif");
+}
+
+/* Side Columns */
+
+#status {
+    background: url("/Assets/BGs/tumblr_ad479ccfea2121a711cc5099eff07479_82048f3a_75.gif");
+
+    flex: 0 1 46%;
+}
+
+#status h2 {
+    margin-bottom: 10px;
+}
+
+.statusBubble {
+    display: flex;
+    flex-flow: row wrap;
+
+    background: white;
+    border: 3px dashed var(--bubblegum);
+    border-radius: 20px;
+
+    padding: 1px 10px;
+    margin-bottom: 10px;
+}
+
+.statusBubble:nth-child(even) {
+    background: var(--hintofmist);
+}
+
+#status h3 {
+    flex: 1 1;
+    font-weight: normal;
+    font-style: italic;
+    color: var(--persian)
+}
+
+#stamps {
+    background: url(/Assets/BGs/iDAfjUq.gif);
+}
+
+#webgroups {
+    background: url(/Assets/BGs/bg24.gif);
+}
+
+#stamps h2,
+#webgroups h2 {
+    color: var(--wisteria);
+}
+
+
+/* #webgroups{} */
+
+
+#blogRSS {
+    background: url(/Assets/BGs/linedpaper.jpg);
+
+    border-style: solid;
+    border-image: url(/Assets/borders/border2FP.png) 28 round;
+    border-width: 28px;
+    background-clip: padding-box;
+}
+
+#blogRSS h1,
+#blogRSS h2,
+#blogRSS h3,
+#blogRSS h4,
+#blogRSS h5,
+#blogRSS h6 {
+    color: #0c3934;
+}
+
+#blogRSS #title {
+    color: var(--persian);
+}
+
+#blogRSS p{
+    color: #0c3934;
+}
+
+.feed-item {
+    border-bottom: 4px dashed var(--water);
+}
+
+.feed-item a {
+    color: var(--wisteria);
+}
+
+.feed-item small {
+    color: #797979;
+}
+
+/* Footer */
+
+footer {
+    background-color: var(--whispermist);
+    padding: 5px;
+}
+
+.box,
+.box2 {
+    padding: 5px;
+    background-color: var(--pinkIce);
+    border: 2px dashed var(--ash);
+    border-radius: var(--globalBorderRadius);
+}
+
+h2 {
+    color: var(--persian);
+}
+
+a {
+    color: var(--wisteria);
+    text-decoration: none;
+}
+
+/* ? Media Queries */
+
+@media (prefers-reduced-motion: reduce) {}
+
+@media only screen and (max-width: 1024px) {}
+
+@media only screen and (max-width: 810px) {}
+
+@media only screen and (max-width: 500px) {}

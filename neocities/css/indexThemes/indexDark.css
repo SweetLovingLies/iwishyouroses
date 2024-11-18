@@ -1,241 +1,35 @@
 body {
-    font-family: cafesweet;
-    background: url('/Assets/BGs/darkMode/stars5.gif');
+    background: url(/Assets/BGs/darkMode/galaxy.gif);
     color: white;
 }
 
-#baselayout {
-    background: url('/Assets/BGs/darkMode/yb2.jpg');
-}
-
-/* Left-side */
-
-#eyecatcher {
-    border: 2px dashed var(--ash);
-    border-radius: var(--globalBorderRadius);
-}
-
-section hr {
-    width: 100%;
-    border: 1px solid white;
-}
-
-#siteButton{
-    background: url("/Assets/BGs/darkMode/roses.gif");
-}
-
-#jsCalender{
-    background: url(/Assets/BGs/darkMode/stripes.gif);
-}
-
-/* Calender */
-
-.calendar-weekdays li{
-    background: url("/Assets/BGs/darkMode/stars.gif");
-    background-size: 100%;
-}
-
-header .calendar-navigation span {
-    color: var(--wisteria);
-}
-
-header .calendar-navigation span:hover {
-    color: white;
-}
-
-.calendar-body li {
-    color: white;
-    
-    box-shadow: -1px -1.4px 1px inset #9e9699, 2px 3px 1.5px inset white, 0px 0px 2px #aba4a6;
-    border: 1px solid var(--whispermist);
-}
-
-
-.calendar-body .calendar-dates li {
-    background: url("/Assets/BGs/darkMode/stars.gif");
-    background-size: 100%;
-}
-
-.calendar-body .calendar-dates li:hover{
-    background: url("/Assets/BGs/darkMode/roses2.gif");
-    background-size: 100%;
-}
-
-.calendar-dates li.inactive {
-    color: #696969;
-}
-
-.calendar-dates li.active {
-    background: var(--blood)
-}
-
-/* Main */
-
-#home {
-    background: url('/Assets/BGs/darkMode/bydinpattern.com.png');
-
-    scrollbar-color: var(--persian) white;
-}
-
-#home::-webkit-scrollbar-track {
-    background: white
-}
-
-#home::-webkit-scrollbar-thumb {
-    background-color: var(--persian);
-}
-
-#spotlight {
-    background: url('/Assets/BGs/darkMode/scratches.png');
-
-    height: unset;
-}
-
-.displayScreenshots {
-    border: 1px solid white;
-    filter: drop-shadow(-1px 2px 3px rgba(0, 0, 0, 0.26));
-}
-
-#spotlight a {
-    color: white;
-    transition: color .25s;
-}
-
-#spotlight a:hover{
-    color: var(--bubblegum);
-}
-
-#spotlight h2{
-    text-align: center;
-    color: white;
-}
-
-#yuiBox{
-    background: url("/Assets/BGs/darkMode/paintedwood.png");
-}
-
-/* Side Columns */
-
-#status{
-    background: url("/Assets/BGs/darkMode/paintedwood.png");
-
-    flex: 0 1 46%;
-}
-
-#status h2{
-    margin-bottom: 10px;
-}
-
-.statusBubble{
-    display: flex;
-    flex-flow: row wrap;
-
-    background: black;
-    border: 3px dashed var(--bubblegum);
-    border-radius: 20px;
-
-    padding: 1px 10px;
-    margin-bottom: 10px;
-}
-
-.statusBubble:nth-child(even){
-    background: var(--deepslate);
-}
-
-#status h3{
-    flex: 1 1;
-    font-weight: normal;
-    font-style: italic;
-    color: white;
-}
-
-
-#stamps{
-    background: url("/Assets/BGs/darkMode/tumblr_inline_ml800rh1KC1qz4rgp.png");
-    background-size: 10%;
-}
-
-#stamps h2, #webgroups h2{
-    color: var(--whispermist);
-}
-
-#webgroups{
-    background: url(/Assets/BGs/darkMode/paintedwood.png);
-}
-/* #webgroups{} */
-
-
-#blogRSS{
-    background: url(/Assets/BGs/darkMode/subtlestripes.png);
-}
-
-#blogRSS {
-    background: url(/Assets/BGs/darkMode/linedpaperD.png);
+main {
+    background: url(/Assets/BGs/darkMode/bydinpattern.com.png);
 
     border-style: solid;
-    border-image: url(/Assets/borders/border2FP.png) 28 round;
+    border-image: url("/Assets/borders/border2FP.png") 28 round;
     border-width: 28px;
     background-clip: padding-box;
 }
 
-#blogRSS h1,
-#blogRSS h2,
-#blogRSS h3,
-#blogRSS h4,
-#blogRSS h5,
-#blogRSS h6 {
-    color: white;
+#warnings {
+    background-color: black;
+    border: 5px solid var(--dustyPink);
 }
 
-#blogRSS #title {
+.warningIMGs {
+    border-bottom: 2px solid var(--wisteria);
+}
+
+strong{
+    color: var(--persian);
+    font-weight: normal;
+}
+
+#enter{
     color: var(--persian);
 }
 
-#blogRSS p{
-    color: white;
-}
-
-.feed-item {
-    border-bottom: 4px dashed var(--persian);
-}
-
-.feed-item a {
+#enter:hover {
     color: var(--wisteria);
 }
-
-.feed-item small {
-    color: #797979;
-}
-
-/* Footer */
-
-footer {
-    background-color: black;
-    padding: 5px;
-}
-
-.box, .box2 {
-    padding: 5px;
-    background-color: var(--pinkIce);
-    border: 2px dashed var(--ash);
-    border-radius: var(--globalBorderRadius);
-}
-
-h2{
-    color: var(--cobblestone);
-}
-
-a{
-    color: var(--persian);
-    text-decoration: none;
-}
-
-/* ? Media Queries */
-
-@media (prefers-reduced-motion: reduce) {}
-
-@media only screen and (max-width: 1024px) {}
-
-@media only screen and (max-width: 810px) {}
-
-@media only screen and (max-width: 500px) {}

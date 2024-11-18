@@ -118,7 +118,7 @@ html {
 body {
     position: relative;
     overflow: hidden;
-    
+
     animation: fadeInAnimation ease .55s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
@@ -161,30 +161,32 @@ body {
 
 /* Global styling */
 
-::selection{
-    background-color:var(--wisteria);
-    color:#ffffff;
+::selection {
+    background-color: var(--wisteria);
+    color: #ffffff;
 }
 
 mark {
-    background-color:var(--wisteria);
-    color:#ffffff;
+    background-color: var(--wisteria);
+    color: #ffffff;
 }
 
-quote{
+quote {
     display: block;
     margin: 10px 0;
 }
-quote::before, quote::after{
+
+quote::before,
+quote::after {
     font-size: larger;
 }
 
-
-quote::before{
+quote::before {
     content: "❝";
     color: inherit;
 }
-quote::after{
+
+quote::after {
     content: "❞";
     color: inherit;
 }
@@ -196,6 +198,45 @@ quote::after{
 .ss04 {
     font-feature-settings: "ss04" 1;
 }
+
+.ss08 {
+    font-feature-settings: "ss08" 1;
+}
+
+.ss09 {
+    font-feature-settings: "ss09" 1;
+}
+
+/* & Titular h1 */
+
+#androses {
+    font-family: Maddison;
+    letter-spacing: -5px;
+    color: var(--dustyPink);
+}
+
+#androses span {
+    font-size: 4vw;
+    margin: 0;
+}
+
+/* & Basic Syntax for Copy and Paste */
+
+/* <h1 id="androses" class="textshadow">
+                <span style="padding-right: 10px;">I</span>
+                <span>w</span>
+                <span>i</span>
+                <span>s</span>
+                <span class="ss01">h</span>
+                <span>y</span>
+                <span>o</span>
+                <span class="ss01">u</span>
+                <span>r</span>
+                <span>o</span>
+                <span>s</span>
+                <span>e</span>
+                <span class="ss04">s</span>
+            </h1> */
 
 /* The Rainbow Ring */
 
@@ -339,6 +380,124 @@ cloudBubbleMoji {
     vertical-align: text-bottom;
 }
 
+pinkNewMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/other/new!p.gif") no-repeat;
+    width: 29px;
+    height: 8px;
+
+    vertical-align: text-bottom;
+}
+purpleNewMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/other/new!.gif") no-repeat;
+    width: 29px;
+    height: 8px;
+
+    vertical-align: text-bottom;
+}
+
+keyMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/other/key.gif") no-repeat;
+    width: 22px;
+    height: 13px;
+
+    vertical-align: text-bottom;
+}
+
+downloadMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/other/download.gif") no-repeat;
+    width: 57px;
+    height: 11px;
+
+    vertical-align: text-top;
+}
+
+bandageMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/menhera/bandage.webp") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+}
+bandage2Moji {
+    display: inline-block;
+    background: url("/Assets/pixels/menhera/bandage2.webp") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+}
+
+bloodMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/menhera/blood.webp") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+}
+
+boxKnifeMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/menhera/boxknife.webp") no-repeat;
+    width: 68px;
+    height: 13px;
+
+    vertical-align: text-bottom;
+}
+
+brokenHeartMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/menhera/brokenheart.webp") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+}
+
+PinkSyringeMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/menhera/syringep.gif") no-repeat;
+    width: 15px;
+    height: 15px;
+
+    vertical-align: middle;
+}
+
+realHeartMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/menhera/realheart.webp") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+}
+
+knifeMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/menhera/knife.webp") no-repeat;
+    width: 25px;
+    height: 26px;
+
+    vertical-align: text-bottom;
+}
+
+pinkBouquetMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/fd/pinkbouquet.gif") no-repeat;
+    width: 16px;
+    height: 16px;
+
+    vertical-align: text-bottom;
+}
+
+/* There's always more to add! Go check if you need anything new! */
+
+
 /* & Phone */
 
 #phoneSpot {
@@ -358,8 +517,8 @@ cloudBubbleMoji {
     position: absolute;
     right: 20px;
     bottom: -605px;
-    
-     /* ! For testing */
+
+    /* ! For testing */
     /* bottom: 0; */
 
     z-index: 1000;
@@ -379,7 +538,7 @@ h2,
 h3,
 h4,
 h5,
-h6, 
+h6,
 p,
 ul,
 ol,
@@ -387,7 +546,8 @@ li {
     margin: 0;
 }
 
-ul, ol{
+ul,
+ol {
     list-style-type: none;
 }
 
