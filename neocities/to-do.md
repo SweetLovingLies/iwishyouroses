@@ -1,7 +1,6 @@
 ## !!!!!! Things I intend to do for this site... the text file!
 
 * **!! Things to do for the site itself:**
-  * Make custom preview
   * Status Cafe Setup
 
   \
