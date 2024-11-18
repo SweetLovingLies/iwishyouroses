@@ -49,7 +49,7 @@
 
 * (Site) Settings
   * Squeamish Mode
-  * Remove Herobrine // ???
+  * Remove Herobrine // ??
 
     \
 

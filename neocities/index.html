@@ -26,6 +26,12 @@
         })();
 
     </script>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        if (navigator.userAgent.includes('Screenjesus')) {
+          window.location.replace("/preview/");
+        }
+      </script>
 </head>
 
 <body>
