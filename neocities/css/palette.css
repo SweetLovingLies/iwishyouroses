@@ -353,7 +353,21 @@ quote::after {
     pointer-events: none;
 }
 
-.blueberryborder {
+.kerchiefBorder {
+    border-style: solid;
+    border-image: url("/Assets/borders/border2FP.png") 28 round;
+    border-width: 28px;
+    background-clip: padding-box;
+}
+
+.cloudBorder {
+    border-style: solid;
+    border-image: url("/Assets/borders/borderfilled.png") 8 round;
+    border-width: 8px;
+    background-clip: padding-box;
+}
+
+.blueberryBorder {
     border-style: solid;
     border-image: url("/Assets/borders/blueberryGingham.png") 8 round;
     border-width: 7px;

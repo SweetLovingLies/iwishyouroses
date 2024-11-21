@@ -2,10 +2,10 @@ const feedUrl = 'https://iwishyouroses.bearblog.dev/feed/?type=rss';
         const apiKey = 'tlcfsziakgz4yum8e33ynpst4abvo7r62o9nkfot';
         const apiEndpoint = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feedUrl)}&api_key=${apiKey}`;
 
-        async function fetchRSSFeed() {
-            try {
-                const response = await fetch(apiEndpoint);
-                const data = await response.json();
+        async function fetchRSSFeed() { // async function because there may not be an update for a long time!
+            try { // try allows us to check for errors
+                const response = await fetch(apiEndpoint); // Check for updates
+                const data = await response.json(); // API updates every 1 hour 
 
                 if (data.status === 'ok') {
                     displayRSSFeed(data.items);
@@ -17,6 +17,7 @@ const feedUrl = 'https://iwishyouroses.bearblog.dev/feed/?type=rss';
             }
         }
 
+        // Displays items!
         function displayRSSFeed(items) {
             const feedContainer = document.getElementById("rssFeedContainer");
         

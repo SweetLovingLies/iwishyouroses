@@ -10,9 +10,7 @@ body {
 }
 
 main {
-    /* ! Temp */
     width: 50%;
-    height: 70vh;
 
     padding: 20px;
     padding-top: 55px;
@@ -67,4 +65,32 @@ main {
 
 #enter:hover {
     color: var(--persian);
+}
+
+/* ~ Media Queries */
+
+@media (prefers-reduced-motion: reduce) {}
+
+@media only screen and (max-width: 1024px) {}
+
+@media only screen and (max-width: 810px) {
+    main {
+        width: unset;
+        height: unset;
+    }
+}
+
+
+@media only screen and (max-width: 500px) {
+    #androses span {
+        font-size: 8vw;
+    }
+
+    #warnings{
+        flex-flow: row wrap;
+        align-items: center;
+    }
+    .warningDisplay {
+        flex: 0;
+    }
 }

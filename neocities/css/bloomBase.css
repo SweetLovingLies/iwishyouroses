@@ -331,7 +331,7 @@ h2 {
     flex: 1 1 100%;
 }
 
-/* ? Media Queries */
+/* ~ Media Queries */
 
 @media (prefers-reduced-motion: reduce) {}
 
