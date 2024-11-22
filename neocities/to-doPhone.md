@@ -6,6 +6,7 @@
   * Unlock Lovesick Theme by clicking home button 9 (?) times
   * Click the weirdStats 69 times... Nice!
   * Type **395248** into Your Tome to get a FNAF reference
+  * Create an icon for the app
 
     \
 
@@ -38,7 +39,7 @@
   * Fake e-commerce app
 
     \
-* Make Icons for Apps
+* Make Icons for Apps (upon progress being made on them)
   * Your Tome
   * DreamCast (? name ?)
   * Stellar Shop (? name ?)

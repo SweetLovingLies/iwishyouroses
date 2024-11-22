@@ -27,6 +27,9 @@
 
       \
 * **!! Things I intend to add to the about page:**
-  * Fun facts clicker (Later on)
+  * Fun facts clicker
+  * Add music preferences
+
+    \
 
 **Make this site mobile compatible at some point please!** :laughing:
