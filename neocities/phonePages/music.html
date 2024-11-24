@@ -93,15 +93,11 @@
 
             let rotationOffset = 0;
             const rotationsPerSecond = 0.15; // Rotations in place
+
             starPath.style.transformOrigin = "50% 50%";
             starPath.style.transition = "transform 1s";
 
             progressCStar.style.transform = 'translate(0, -90px)';
-
-            const savedTime = sessionStorage.getItem('currentSongTime');
-            if (savedTime) {
-                audioPlayer.currentTime = parseFloat(savedTime);
-            }
 
             const savedDuration = sessionStorage.getItem('songDuration');
             if (savedDuration) {

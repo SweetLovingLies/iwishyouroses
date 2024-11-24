@@ -90,6 +90,11 @@ document.addEventListener("DOMContentLoaded", function () {
     audioPlayer.addEventListener('timeupdate', function () {
         sessionStorage.setItem('currentSongTime', audioPlayer.currentTime);
     });
+    
+    const savedTime = sessionStorage.getItem('currentSongTime');
+    if (savedTime) {
+        audioPlayer.currentTime = parseFloat(savedTime);
+    }
 });
 
 function loadSong(index) {
@@ -181,7 +186,7 @@ function toggleShuffle() {
     this.classList.toggle('active', shuffleMode);
 
     if (shuffleMode) {
-        shuffleArray(shuffleOrder); 
+        shuffleArray(shuffleOrder);
         currentShuffleIndex = 0;   // Plays the first song in the shuffled array; this should be the current song!
     } else {
         shuffleOrder = [...Array(songs.length).keys()];
