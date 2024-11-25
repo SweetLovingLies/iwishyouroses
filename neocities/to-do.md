@@ -33,3 +33,8 @@
     \
 
 **Make this site mobile compatible at some point please!** :laughing:
+
+
+Other:
+
+Font: To Japan
