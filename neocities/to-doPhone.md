@@ -2,18 +2,24 @@
 
 **!!!!!!!! Today!**
 
-* Storybook (Achievements)
-  * Unlock Lovesick Theme by clicking home button 9 (?) times
-  * Click the weirdStats 69 times... Nice!
-  * Type **395248** into Your Tome to get a FNAF reference
-  * Create an icon for the app
+
+* Gallery <-------- Very Easy !
+  * Gallery of my favorite images! - Maybe some memes too
+
+    \
+* Add phone set up screens
+  * Use inputted name for all apps
 
     \
 
 **! Whenever tf I feel like doing this !**
 
-* Gallery <-------- Very Easy !
-  * Gallery of my favorite images! - Maybe some memes too
+
+* Storybook (Achievements)
+  * Unlock Lovesick Theme by clicking home button 9 (?) times
+  * Click the weirdStats 69 times... Nice!
+  * Type **395248** into Your Tome to get a FNAF reference
+  * Create an icon for the app
 
     \
 * Camera <--------- Easy ?

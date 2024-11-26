@@ -1,0 +1,168 @@
+:root {
+
+    /* Colors */
+    --bubblegum: #ffb7ed;
+    --dustyPink: #f6bdd1;
+    --persian: #f283b6;
+    --wisteria: #8266ff;
+    --hintofmist: #f1efff;
+    --whispermist: #dbd8f0;
+    --driedBlood: #8B575c;
+    --pinkIce: #f6e4f6;
+    --ash: #cad2c5;
+    --water: #adcaff;
+    --deepsea: #357ce6;
+    --blood: #800000;
+    --deepslate: #696969;
+    --cobblestone: #a8a8a8;
+}
+
+
+*{
+    scrollbar-width: none;
+}
+
+*::-webkit-scrollbar,
+*::-webkit-scrollbar-button {
+    width: 0;
+}
+
+/* Base */
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 1 1;
+
+    background: white;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    position: relative;
+
+    overflow: hidden
+}
+
+.wrapper {
+    overflow: hidden;
+
+    height: 100%;
+}
+
+header, footer {
+    display: flex;
+}
+
+.flexWrapper{
+    display: flex;
+    flex: 1 1;
+    font-size: 25px;
+}
+
+header {
+    align-items: center;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+}
+
+/* gridView */
+
+#gridView {
+    padding-bottom: 40px;
+}
+
+#gridView main {
+    height: 100%;
+    width: 100vw;
+    padding: 0 10px;
+
+    overflow: auto;
+}
+
+#gridView .IMGWrapper{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+
+    gap: 10px;
+    margin: 10px 0;
+}
+
+#gridView .IMGPreview {
+    flex: 1 1;
+    width: calc(33% - 10px); /* Subtract wrapper gap */
+
+    aspect-ratio: 1;
+    object-fit: cover;
+    border: .5px solid var(--cobblestone);
+}
+
+#gridView footer {
+    background: var(--cobblestone);
+
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+#gridView footer a {
+    text-decoration: none;
+    color: white;
+}
+
+/* lightboxView */
+
+#lightboxView header {
+    padding: 0 10px;
+}
+
+#lightboxView main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 70vh;
+    padding: 0 10px;
+}
+
+#lightboxView .IMGPreview {
+    width: 100%;
+}
+
+#lightboxView footer {
+    flex-flow: column nowrap;
+    font-size: 12px;
+
+    height: 20vh;
+
+    padding: 0 10px;
+}
+
+/* General */
+
+h2 {
+    flex: 1 1 100%;
+    font-size: 1.1em;
+}
+
+filler {
+    color: transparent
+}
+
+spacer {
+    width: 100%;
+}
+
+/* Test */
+
+#gridView {
+    display: none;
+}

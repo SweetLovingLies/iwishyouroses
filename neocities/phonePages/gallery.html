@@ -7,7 +7,7 @@
     <title>Phone Screen: Gallery</title>
     <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
     <link href="css/phoneGlobals.css" rel="stylesheet" type="text/css" media="all">
-    <link href="css/stats.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/galleryBase.css" rel="stylesheet" type="text/css" media="all">
     <meta name="description" content="Access literally everything you need." />
     <link rel="icon" type="image/x-icon" href="../Assets/pixels/vintageAmericana/strawberryphone.webp">
 
@@ -15,7 +15,65 @@
 </head>
 
 <body>
-    
+    <object id="detailBarObject" data="detailbar.html"></object>
+    <div id="gridView" class="wrapper">
+        <filler>
+            spacer
+        </filler>
+        <header>
+            <div class="flexWrapper">
+                <iconify-icon icon="qlementine-icons:menu-dots-16"></iconify-icon>
+            </div>
+        </header>
+
+        <main>
+            <h2 class="dateTitle">Today</h2>
+            <div class="IMGWrapper">
+                <img class="IMGPreview" src="/Assets/anime/gifs/1a7b40acd36c897144959cb8cd4478e0.gif">
+                <img class="IMGPreview" src="/Assets/anime/gifs/e1f7632d6cc0c91815f1ff411fb60693.gif">
+                <img class="IMGPreview" src="/Assets/anime/gifs/a04ee0dd7e7c59827a7b8a9cec5df6c8.gif">
+                <img class="IMGPreview" src="/Assets/anime/gifs/manaka1.gif">
+                <img class="IMGPreview" src="/Assets/anime/gifs/manaka2.gif">
+            </div>
+            <br>
+            <h2 class="dateTitle">Nov 20</h2>
+            <div class="IMGWrapper">
+                <img class="IMGPreview" src="/Assets/anime/gifs/8add9a0bdb6f30b54919295a376866f3.gif">
+                <img class="IMGPreview" src="/Assets/anime/gifs/yui.gif">
+                <img class="IMGPreview" src="/Assets/anime/gifs/yui2.gif">
+                <img class="IMGPreview" src="/Assets/anime/gifs/yui3.gif">
+                <img class="IMGPreview" src="/Assets/anime/gifs/yuinfriends.webp">
+                <img class="IMGPreview" src="/Assets/anime/gifs/yui6.webp">
+            </div>
+        </main>
+
+        <footer>
+            <a href="#">Pictures</a>
+            <a href="#">Albums</a>
+            <a href="#">Stories</a>
+        </footer>
+    </div>
+    <div id="lightboxView" class="wrapper">
+        <filler>
+            spacer
+        </filler>
+        <header>
+            <div class="flexWrapper">
+                <iconify-icon id="back" icon="lucide:chevron-left"></iconify-icon>
+                <spacer></spacer>
+                <iconify-icon id="rotateIMG" icon="solar:smartphone-rotate-2-linear"></iconify-icon>
+            </div>
+        </header>
+
+        <main>
+            <img class="IMGPreview" src="/Assets/kpop/IVE/gifs/wonyoung.gif">
+        </main>
+
+        <footer>
+            <strong>November 25th, 2024 12:02</strong>
+            <p>whatever.gif</p>
+        </footer>
+    </div>
 </body>
 
 </html>

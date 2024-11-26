@@ -78,3 +78,7 @@ h::after {
     color: white;
     text-shadow: 2px 2px 0 var(--wisteria), 2px -2px 0 var(--wisteria), -2px 2px 0 var(--wisteria), -2px -2px 0 var(--wisteria), 2px 0px 0 var(--wisteria), 0px 2px 0 var(--wisteria), -2px 0px 0 var(--wisteria), 0px -2px 0 var(--wisteria);
 }
+
+filler {
+    font-size: 20px;
+}
