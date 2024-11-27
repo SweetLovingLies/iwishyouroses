@@ -1,24 +1,4 @@
-:root {
-
-    /* Colors */
-    --bubblegum: #ffb7ed;
-    --dustyPink: #f6bdd1;
-    --persian: #f283b6;
-    --wisteria: #8266ff;
-    --hintofmist: #f1efff;
-    --whispermist: #dbd8f0;
-    --driedBlood: #8B575c;
-    --pinkIce: #f6e4f6;
-    --ash: #cad2c5;
-    --water: #adcaff;
-    --deepsea: #357ce6;
-    --blood: #800000;
-    --deepslate: #696969;
-    --cobblestone: #a8a8a8;
-}
-
-
-*{
+* {
     scrollbar-width: none;
 }
 
@@ -37,9 +17,7 @@ body {
     flex-flow: column nowrap;
     flex: 1 1;
 
-    background: white;
-
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: cafesweet;
 
     position: relative;
 
@@ -48,15 +26,15 @@ body {
 
 .wrapper {
     overflow: hidden;
-
     height: 100%;
 }
 
-header, footer {
+header,
+footer {
     display: flex;
 }
 
-.flexWrapper{
+.flexWrapper {
     display: flex;
     flex: 1 1;
     font-size: 25px;
@@ -64,13 +42,6 @@ header, footer {
 
 header {
     align-items: center;
-}
-
-footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100vw;
 }
 
 /* gridView */
@@ -87,7 +58,7 @@ footer {
     overflow: auto;
 }
 
-#gridView .IMGWrapper{
+#gridView .IMGWrapper {
     display: flex;
     flex-flow: row wrap;
     align-items: flex-start;
@@ -97,28 +68,51 @@ footer {
 }
 
 #gridView .IMGPreview {
-    flex: 1 1;
-    width: calc(33% - 10px); /* Subtract wrapper gap */
-
+    width: calc((100% / 3) - 10px);
+    flex: 1 0 calc((100% / 3) - 10px);
     aspect-ratio: 1;
     object-fit: cover;
-    border: .5px solid var(--cobblestone);
+    border: 0.5px solid var(--cobblestone);
 }
 
-#gridView footer {
-    background: var(--cobblestone);
+/* #gridView footer {
+    background: var(--bubblegum);
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
 
     gap: 20px;
     justify-content: center;
     align-items: center;
+
+    height: 8vh;
+
 }
 
 #gridView footer a {
     text-decoration: none;
-    color: white;
+    color: black;
+} */
+
+/* ~ lightboxView */
+
+.imgAni {
+    position: absolute;
+    z-index: 100;
+    transition: transform 0.3s ease, top 0.3s ease, left 0.3s ease, width .3s, height 3s;
+    transform-origin: center center;
 }
 
-/* lightboxView */
+#lightboxView {
+    display: none;
+    transition: background .25s;
+}
+
+#lightboxView.active {
+    background: black;
+}
 
 #lightboxView header {
     padding: 0 10px;
@@ -135,6 +129,8 @@ footer {
 
 #lightboxView .IMGPreview {
     width: 100%;
+    max-height: 330px;
+    object-fit: contain;
 }
 
 #lightboxView footer {
@@ -144,6 +140,26 @@ footer {
     height: 20vh;
 
     padding: 0 10px;
+}
+
+#lightboxView footer p {
+    transition: color .25s;
+}
+
+#lightboxView footer strong {
+    font-size: 1.2em;
+    transition: color .25s;
+}
+
+#lightboxView.active > footer p, #lightboxView.active > footer strong {
+    color: transparent
+}
+
+
+/* Other */
+
+#back {
+    transition: color .25s;
 }
 
 /* General */
@@ -159,10 +175,4 @@ filler {
 
 spacer {
     width: 100%;
-}
-
-/* Test */
-
-#gridView {
-    display: none;
 }

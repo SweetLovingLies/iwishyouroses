@@ -5,13 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phone Screen: Gallery</title>
+
     <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
     <link href="css/phoneGlobals.css" rel="stylesheet" type="text/css" media="all">
+
     <link href="css/galleryBase.css" rel="stylesheet" type="text/css" media="all">
+    <link id="galleryCSS" href="css/galleryThemes/galleryLight.css" rel="stylesheet" type="text/css" media="all">
+    <link id="galleryDarkCSS" href="css/galleryThemes/galleryDark.css" rel="stylesheet" type="text/css" media="all" disabled>
+
     <meta name="description" content="Access literally everything you need." />
+
     <link rel="icon" type="image/x-icon" href="../Assets/pixels/vintageAmericana/strawberryphone.webp">
 
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
 </head>
 
 <body>
@@ -22,7 +29,8 @@
         </filler>
         <header>
             <div class="flexWrapper">
-                <iconify-icon icon="qlementine-icons:menu-dots-16"></iconify-icon>
+                <!-- <spacer></spacer> 
+                <iconify-icon icon="qlementine-icons:menu-dots-16"></iconify-icon> -->
             </div>
         </header>
 
@@ -31,27 +39,34 @@
             <div class="IMGWrapper">
                 <img class="IMGPreview" src="/Assets/anime/gifs/1a7b40acd36c897144959cb8cd4478e0.gif">
                 <img class="IMGPreview" src="/Assets/anime/gifs/e1f7632d6cc0c91815f1ff411fb60693.gif">
+                <img class="IMGPreview" src="/Assets/kpop/IVE/gifs/wonyoung.gif">
                 <img class="IMGPreview" src="/Assets/anime/gifs/a04ee0dd7e7c59827a7b8a9cec5df6c8.gif">
                 <img class="IMGPreview" src="/Assets/anime/gifs/manaka1.gif">
                 <img class="IMGPreview" src="/Assets/anime/gifs/manaka2.gif">
+                <img class="IMGPreview" src="/Assets/kpop/xg/OT7/ss1.jpg">
             </div>
             <br>
             <h2 class="dateTitle">Nov 20</h2>
             <div class="IMGWrapper">
+                <img class="IMGPreview" src="/Assets/kpop/xg/harvey/Harvey1.jpg">
                 <img class="IMGPreview" src="/Assets/anime/gifs/8add9a0bdb6f30b54919295a376866f3.gif">
                 <img class="IMGPreview" src="/Assets/anime/gifs/yui.gif">
                 <img class="IMGPreview" src="/Assets/anime/gifs/yui2.gif">
                 <img class="IMGPreview" src="/Assets/anime/gifs/yui3.gif">
                 <img class="IMGPreview" src="/Assets/anime/gifs/yuinfriends.webp">
+                <img class="IMGPreview" src="/Assets/kpop/xg/OT7/ss2.jpg">
                 <img class="IMGPreview" src="/Assets/anime/gifs/yui6.webp">
             </div>
+            <h2 class="dateTitle">?</h2>
+            <div class="IMGWrapper">
+                <img class="IMGPreview" src="/Assets/FNAF/Springtrap/395248.jpeg">
+            </div>
         </main>
-
+        <!-- 
         <footer>
             <a href="#">Pictures</a>
             <a href="#">Albums</a>
-            <a href="#">Stories</a>
-        </footer>
+        </footer> -->
     </div>
     <div id="lightboxView" class="wrapper">
         <filler>
@@ -60,20 +75,144 @@
         <header>
             <div class="flexWrapper">
                 <iconify-icon id="back" icon="lucide:chevron-left"></iconify-icon>
-                <spacer></spacer>
-                <iconify-icon id="rotateIMG" icon="solar:smartphone-rotate-2-linear"></iconify-icon>
+                <!-- <spacer></spacer>
+                <iconify-icon id="rotateIMG" icon="solar:smartphone-rotate-2-linear"></iconify-icon> -->
             </div>
         </header>
 
         <main>
-            <img class="IMGPreview" src="/Assets/kpop/IVE/gifs/wonyoung.gif">
+            <img class="IMGPreview" src="">
         </main>
 
         <footer>
-            <strong>November 25th, 2024 12:02</strong>
-            <p>whatever.gif</p>
+            <strong></strong>
+            <p></p>
         </footer>
     </div>
+
+    <script>
+        const gridView = document.getElementById('gridView');
+        const lightboxView = document.getElementById('lightboxView');
+        const lightboxImage = lightboxView.querySelector('main img');
+        const imgDate = lightboxView.querySelector('footer strong');
+        const imgName = lightboxView.querySelector('footer p');
+        const backButton = lightboxView.querySelector('#back');
+
+        function openLightbox(e) {
+            const ogIMG = e.target;
+            const imgDimensions = ogIMG.getBoundingClientRect(); // ! Gives current size of image on the DOM (Because it starts out scaled)
+
+            const cloneIMG = ogIMG.cloneNode();
+            cloneIMG.classList.add('imgAni');
+
+            // Starting size
+            cloneIMG.style.top = `${imgDimensions.top}px`;
+            cloneIMG.style.left = `${imgDimensions.left}px`;
+            cloneIMG.style.width = `${imgDimensions.width}px`;
+            cloneIMG.style.height = `${imgDimensions.height}px`;
+
+            document.body.appendChild(cloneIMG);
+
+            // Making a new image to get the natural size of said image. 
+            const tempIMG = new Image();
+            tempIMG.src = ogIMG.src;
+
+            tempIMG.onload = () => {
+                // Get the base dimensions of the image
+                const baseWidth = tempIMG.naturalWidth;
+                const baseHeight = tempIMG.naturalHeight;
+                const viewportWidth = window.innerWidth;
+                const viewportHeight = window.innerHeight;
+
+                const aspectRatio = baseWidth / baseHeight;
+
+                let targetWidth;
+                let targetHeight;
+
+                if (baseWidth > viewportWidth || baseHeight > viewportHeight) {
+                    if (aspectRatio > 1) {
+                        // Wider than tall
+                        targetWidth = viewportWidth * 0.9;
+                        targetHeight = targetWidth / aspectRatio;
+                    } else {
+                        // Taller than wide
+                        targetHeight = viewportHeight * 0.9;
+                        targetWidth = targetHeight * aspectRatio;
+                    }
+                } else {
+                    targetWidth = baseWidth;
+                    targetHeight = baseHeight;
+                }
+
+                // console.log('Chicken Wing!');
+                document.body.appendChild(cloneIMG);
+                cloneIMG.getBoundingClientRect(); // Hopefully fix the animation not playing sometimes by regertting the dimensions 
+
+                setTimeout(() => {
+                    cloneIMG.style.top = `50%`;
+                    cloneIMG.style.left = `50%`;
+                    cloneIMG.style.width = `${targetWidth}px`;
+                    cloneIMG.style.height = `${targetHeight}px`;
+                    cloneIMG.style.transform = `translate(-50%, -50%)`;
+                }, 0);
+
+
+                cloneIMG.addEventListener('transitionend', () => {
+                    // console.log('Chicken bone!');
+                    if (document.body.contains(cloneIMG)) {
+                        document.body.removeChild(cloneIMG);
+                    }
+                    
+                    lightboxImage.src = ogIMG.src;
+
+                    const dateTitle = ogIMG.closest('.IMGWrapper').previousElementSibling.textContent;
+                    const fileName = ogIMG.src.split('/').pop();
+
+                    imgDate.textContent = `${dateTitle}`;
+                    imgName.textContent = fileName;
+
+                    gridView.style.display = 'none';
+                    lightboxView.style.display = 'block';
+
+
+                    lightboxImage.addEventListener('click', toggleLBTheme);
+                    backButton.addEventListener('click', closeLightbox);
+                });
+            };
+        }
+
+        function toggleLBTheme(e) {
+            lightboxView.classList.toggle('active')
+        }
+
+        function closeLightbox() {
+            lightboxView.style.display = 'none';
+            gridView.style.display = 'block';
+        }
+
+        const images = gridView.querySelectorAll('.IMGPreview');
+        images.forEach((img) => {
+            img.addEventListener('click', openLightbox);
+        });
+
+        backButton.addEventListener('click', closeLightbox);
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const darkThemeEnabled = localStorage.getItem('darkTheme') === 'true';
+            const galleryCSS = document.getElementById("galleryCSS");
+            const galleryDarkCSS = document.getElementById("galleryDarkCSS");
+
+            if (darkThemeEnabled) {
+                galleryCSS.disabled = true;
+                galleryDarkCSS.disabled = false;
+            } else {
+                galleryCSS.disabled = false;
+                galleryDarkCSS.disabled = true;
+            }
+        });
+    </script>
 </body>
 
 </html>

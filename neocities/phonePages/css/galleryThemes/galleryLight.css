@@ -1,0 +1,21 @@
+body {
+    background: url(/Assets/BGs/gridbg.jpg);
+    background-size: contain;
+}
+
+#lightboxView footer p {
+    color: #868686;
+}
+
+#lightboxView footer strong {
+    color: var(--wisteria);
+}
+
+#back:hover {
+    color: var(--wisteria);
+}
+
+h2 {
+    background-color: white;
+    border-bottom: 5px solid var(--pinkIce);
+}

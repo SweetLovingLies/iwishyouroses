@@ -1,0 +1,23 @@
+body {
+    background: url(/Assets/BGs/darkMode/gridbgB.jpg);
+    background-size: contain;
+
+    color: white;
+}
+
+#lightboxView footer p {
+    color: white;
+}
+
+#lightboxView footer strong {
+    color: var(--persian);
+}
+
+#back:hover {
+    color: var(--persian);
+}
+
+h2 {
+    background-color: black;
+    border-bottom: 5px solid var(--pinkIce);
+}
