@@ -1,0 +1,52 @@
+
+:root {
+
+    /* Colors */
+    --bubblegum: #ffb7ed;
+    --dustyPink: #f6bdd1;
+    --persian: #f283b6;
+    --wisteria: #8266ff;
+    --hintofmist: #f1efff;
+    --whispermist: #dbd8f0;
+    --driedBlood: #8B575c;
+    --pinkIce: #f6e4f6;
+    --ash: #cad2c5;
+    --water: #adcaff;
+    --deepsea: #357ce6;
+    --blood: #800000;
+    --deepslate: #696969;
+    --cobblestone: #a8a8a8;
+
+    /* Globals */
+    --globalBorderRadius: 10px;
+    --detailBarHeight: 20px;
+}
+
+body {
+    overflow: hidden;
+    width: 100vw;
+
+    background: url('/Assets/anime/smilePrecure/transformationBGRecreation.webp');
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px 5px 10px;
+    font-size: 25px;
+
+    color: black;
+    font-family: "MagicStars";
+    background: url('/Assets/anime/smilePrecure/someVectorStockImg.jpg');
+    background-size: 100%;
+
+    box-shadow: 0 1px 4px rgba(0, 0, 10, 0.24);
+}
+
+
+#idolPet {
+    height: 100vh;
+    transform: scale(.93) translateX(-16px); /*! This shit is so weird */
+}

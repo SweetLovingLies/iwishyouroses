@@ -28,6 +28,7 @@ body {
 #homepage1.active {
     transform: translateX(0);
 }
+
 #homepage1.hidden {
     transform: translateX(-100%);
 }
@@ -35,6 +36,7 @@ body {
 #homepage1.active {
     transform: translateX(0);
 }
+
 #homepage2.hidden {
     transform: translateX(100%);
 }
@@ -277,4 +279,8 @@ tray {
 
 #serenade {
     background-color: #F01501;
+}
+
+#idolPet {
+    background: #9f14e1;
 }

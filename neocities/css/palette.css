@@ -320,8 +320,14 @@ quote::after {
 
 /* Rainbow Ring End */
 
+/* Pastel */
 .rainbowbg {
     background: linear-gradient(84deg, rgba(255, 189, 200, 1) 0%, rgba(246, 255, 175, 1) 20%, rgba(205, 255, 167, 1) 40%, rgba(195, 241, 255, 1) 60%, rgba(241, 202, 245, 1) 80%, rgba(252, 206, 242, 1) 100%);
+}
+
+/* Not Pastel */
+.rainbowbg2 { 
+    background: linear-gradient(90deg, rgba(255,71,101,1) 0%, rgba(254,147,65,1) 10%, rgba(241,205,57,1) 20%, rgba(102,246,70,1) 30%, rgba(38,191,186,1) 40%, rgba(65,89,225,1) 50%, rgba(159,20,225,1) 60%, rgba(173,76,254,1) 70%, rgba(252,64,125,1) 80%, rgba(255,139,177,1) 90%, rgba(255,255,255,1) 100%);
 }
 
 .textshadow {
