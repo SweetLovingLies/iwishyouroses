@@ -2,11 +2,6 @@
 
 **!!!!!!!! Today !!!!!!!!**
 
-* Make onboarding phone setup flow
-  * Work on the onboarding pages
-    * Not sure what they will say yet.
-
-
 * Your Tome <---------- Easy?
   * Notes taking app
   * Maybe also for journalling?
@@ -26,7 +21,6 @@
   * View Shrine by clicking phone home button 9 (?) times
   * Click the weirdStats 69 times... Nice!
   * Type **395248** into Your Tome to get a FNAF reference
-  * Create an icon for the app
 
     \
 * Camera <--------- Medium?
@@ -48,6 +42,7 @@
 
     \
 * Make Icons for Apps (upon progress being made on them)
+  * Storybook
   * Your Tome
   * Stellar Shop (? name ?)
   * Mellow?

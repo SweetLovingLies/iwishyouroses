@@ -210,7 +210,7 @@ blockquote {
 /* Thanks to LilithDev for helping me with this! */
 
 .msgWrapper:has(.owner)::before {
-    background-image: url(https://iwishyouroses.neocities.org/Assets/YanSim/pfp/ryoba1.jpg) !important;
+    background-image: url(https://iwishyouroses.neocities.org/Assets/anime/YanSim/pfp/sweetryo.jpg) !important;
 }
 
 .msgWrapper:has(.mod)::before {
