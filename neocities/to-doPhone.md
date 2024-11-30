@@ -2,8 +2,8 @@
 
 **!!!!!!!! Today !!!!!!!!**
 
-* Make a dark theme for:
-  * All Built-in Apps
+* Add Delay for hovering the phone
+  * Probably reuse code from parent site
 
     \
 * Your Tome <---------- Easy?
@@ -12,15 +12,15 @@
   * Write love letters that could appear in the Yandere shrine!
 
     \
+
+**! Whenever tf I feel like doing this !**
+
 * Mellow <--------- Easy?
   * Select your mood with emojis or cute icons
     * Could use this to practice anime style vector work
   * Mood insights?
 
     \
-
-**! Whenever tf I feel like doing this !**
-
 * Storybook (Achievements)
   * View Shrine by clicking phone home button 9 (?) times
   * Click the weirdStats 69 times... Nice!
@@ -98,13 +98,18 @@
   * Feed of anime inspired outfits or J-K-Idol fashion trends
   * Pinterest style interactions (download your favorites to the gallery)
 
+
+**! Other !**
+
+* Make a dark theme for:
+  * All Built-in Apps
+
     \
 
 **! Doing later on !**
 
 * (Site) Settings
   * Squeamish Mode
-  * Remove Herobrine // ??
 
     \
 
