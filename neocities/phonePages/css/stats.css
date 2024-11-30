@@ -1,4 +1,3 @@
-
 *{
     scrollbar-width: none;
 }
@@ -18,6 +17,21 @@ main{
     flex-flow: column wrap;
 }
 
+h1 {
+    font-family: Barbie;
+    font-weight: normal;
+
+    background: url("/Assets/BGs/pixelPaper.png");
+    background-size: contain;
+
+    color: var(--persian);
+
+    padding: 10px 0;
+    border-bottom: 5px dashed var(--water);
+    border-top: 5px dashed var(--dustyPink);
+
+}
+
 h6 {
     font-size: 1.3em;
     font-weight: normal;
@@ -35,19 +49,27 @@ h6 {
 
     background-color: white;
     padding: 5px;
-
-    border-bottom: 5px dashed var(--persian);
 }
 
 .statsWrapper:nth-child(odd){
     background-color: #f5f2f3;
-
-    border-bottom: 5px dashed var(--bubblegum);
 }
 
-.visitorCount,
-.creationDate,
-.lastUpdated {
+#iWishYouRoses {
+    background-color: var(--roseRed);
+}
+
+
+#iWishYouRoses h6, #iWishYouRoses p {
+    color: white;
+}
+
+
+
+
+/* Generak */
+
+p {
     font-size: 1.3em;
     align-self: flex-start;
     text-decoration: underline;

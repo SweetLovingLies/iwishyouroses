@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Screen: Onboarding</title>
+
+    <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/phoneGlobals.css" rel="stylesheet" type="text/css" media="all">
+
+    <link href="css/onboarding.css" rel="stylesheet" type="text/css" media="all">
+
+    <meta name="description" content="Access literally everything you need." />
+    <link rel="icon" type="image/x-icon" href="../Assets/pixels/vintageAmericana/strawberryphone.webp">
+
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+</head>
+
+<body>
+    <div id="welcomeScreen" class="wrapper active">
+        <div id="hangingSheep"></div>
+        <div id="welcomeWrapper" class="centralWrapper">
+            <h1>Welcome!</h1>
+            <p style="margin-bottom: 10px;">Use the arrows to navigate IdolLine's set up process <softSkyMoji>
+                </softSkyMoji>
+            </p>
+
+            <sub style="text-align: center;">Icons marked with <span style="color: red;">red</span> mean that you can't
+                go back to the current page after clicking them!</sub>
+        </div>
+        <footer>
+            <iconify-icon class="forward" style="color: red;" onclick="keepitPushing(1)"
+                icon="lucide:chevron-right"></iconify-icon>
+        </footer>
+    </div>
+
+    <div id="nameScreen" class="wrapper">
+        <div id="roseChime"></div>
+        <form class="centralWrapper">
+            <strong>To begin, tell us... </strong>
+            <label for="nameInput" id="nameInputLabel">What's your name?</label>
+            <div class="inputWrapper">
+                <input type="text" id="nameInput" name="nameInput" oninput="debounceNameValidation()"
+                    onkeydown="preventEnterRefresh(event)">
+            </div>
+            <sub id="keepItSweet"></sub>
+            <p class="rightAligned">We will use this name on various built-in apps on your phone.</p>
+        </form>
+        <footer>
+            <div class="iconifyWrapper">
+                <iconify-icon class="forward" onclick="keepitPushing(2)" icon="lucide:chevron-right"></iconify-icon>
+            </div>
+        </footer>
+        <!-- <div id="glitterGlobe"></div> -->
+    </div>
+
+    <div id="iconPickerScreen" class="wrapper">
+        <div class="centralWrapper">
+            <div style="display: flex; flex-flow: column nowrap;">
+                <h2 id="top">Pick an Icon!</h2>
+                <p>If you have any icon recommendations, send us a message on IdolMessenger! <heartMoji>
+                    </heartMoji>
+                </p>
+            </div>
+            <hr>
+
+            <h3>IdolMaster</h3>
+            <div id="idolMasterWrapper" class="imgWrapper">
+                <img src="/Assets/anime/idolmaster/pfp/anzu1.jpg" data-id="anzu1" onclick="iconSelect(this)">
+                <img src="/Assets/anime/idolmaster/pfp/kirari1.jpg" data-id="kirari1" onclick="iconSelect(this)">
+                <img src="/Assets/anime/idolmaster/pfp/mika1.jpg" data-id="mika1" onclick="iconSelect(this)">
+                <img src="/Assets/anime/idolmaster/pfp/riamu1.jpg" data-id="riamu1" onclick="iconSelect(this)">
+            </div>
+
+
+            <hr>
+
+            <h3>Project Sekai</h3>
+            <div id="pjskWrapper" class="imgWrapper">
+                <img src="/Assets/anime/pjsk/pfp/airi1.jpg" data-id="airi1" onclick="iconSelect(this)">
+                <img src="/Assets/anime/pjsk/pfp/emu1.jpg" data-id="emu1" onclick="iconSelect(this)">
+                <img src="/Assets/anime/pjsk/pfp/ena1.jpg" data-id="ena1" onclick="iconSelect(this)">
+                <img src="/Assets/anime/pjsk/pfp/miku1.jpg" data-id="miku1" onclick="iconSelect(this)">
+            </div>
+
+            <hr>
+
+            <h3>PriPara</h3>
+            <div id="priparaWrapper" class="imgWrapper">
+                <img src="/Assets/anime/pripara/pfp/laala.jpg" data-id="laala" onclick="iconSelect(this)">
+                <img src="/Assets/anime/pripara/pfp/yui1.jpg" data-id="yui1" onclick="iconSelect(this)">
+            </div>
+
+            <hr>
+
+            <h3>XG</h3>
+            <div id="xgWrapper" class="imgWrapper">
+                <img src="/Assets/kpop/xg/pfp/chisa1.jpg" data-id="chisa1" onclick="iconSelect(this)">
+                <img src="/Assets/kpop/xg/pfp/cocona1.jpg" data-id="cocona1" onclick="iconSelect(this)">
+                <img src="/Assets/kpop/xg/pfp/harvey1.jpg" data-id="harvey1" onclick="iconSelect(this)">
+                <img src="/Assets/kpop/xg/pfp/hinata1.jpg" data-id="hinata1" onclick="iconSelect(this)">
+                <img src="/Assets/kpop/xg/pfp/juria1.jpg" data-id="juria1" onclick="iconSelect(this)">
+                <img src="/Assets/kpop/xg/pfp/jurin1.jpg" data-id="jurin1" onclick="iconSelect(this)">
+                <img src="/Assets/kpop/xg/pfp/maya1.jpg" data-id="maya1" onclick="iconSelect(this)">
+            </div>
+
+            <hr>
+
+            <h3>IVE</h3>
+            <div id="iveWrapper" class="imgWrapper">
+                <img src="/Assets/kpop/IVE/pfps/gaeul1.jpg" data-id="gaeul1" onclick="iconSelect(this)">
+                <img src="/Assets/kpop/IVE/pfps/leeseo1.jpg" data-id="leeseo1" onclick="iconSelect(this)">
+                <img src="/Assets/kpop/IVE/pfps/liz1.jpg" data-id="liz1" onclick="iconSelect(this)">
+                <img src="/Assets/kpop/IVE/pfps/rei1.jpg" data-id="rei1" onclick="iconSelect(this)">
+                <img src="/Assets/kpop/IVE/pfps/wonyoung1.jpg" data-id="wonyoung1" onclick="iconSelect(this)">
+                <img src="/Assets/kpop/IVE/pfps/yujin1.jpg" data-id="yujin1" onclick="iconSelect(this)">
+            </div>
+
+            <hr>
+
+            <h3>NGO/NSO</h3>
+            <div id="ngoWrapper" class="imgWrapper">
+                <img src="/Assets/anime/NSO/pfp/ame1.jpg" data-id="ame1" onclick="iconSelect(this)">
+                <img src="/Assets/anime/NSO/pfp/ame2.jpg" data-id="ame2" onclick="iconSelect(this)">
+                <img src="/Assets/anime/NSO/pfp/ame3.jpg" data-id="ame3" onclick="iconSelect(this)">
+                <img src="/Assets/anime/NSO/pfp/Kangel1.jpg" data-id="Kangel1" onclick="iconSelect(this)">
+                <img src="/Assets/anime/NSO/pfp/Kangel2.jpg" data-id="Kangel2" onclick="iconSelect(this)">
+                <img src="/Assets/anime/NSO/pfp/pchan1.png" data-id="pchan1" onclick="iconSelect(this)">
+            </div>
+
+            <hr>
+
+            <h3>YanSim</h3>
+            <div id="yansimWrapper" class="imgWrapper">
+                <img src="/Assets/anime/YanSim/pfp/ayano1.jpg" data-id="ayano1" onclick="iconSelect(this)">
+                <img src="/Assets/anime/YanSim/pfp/hana1.jpg" data-id="hana1" onclick="iconSelect(this)">
+                <img src="/Assets/anime/YanSim/pfp/kokona1.jpg" data-id="kokona1" onclick="iconSelect(this)">
+                <img src="/Assets/anime/YanSim/pfp/osana1.jpg" data-id="osana1" onclick="iconSelect(this)">
+                <img src="/Assets/anime/YanSim/pfp/raibaru1.jpg" data-id="raibaru1" onclick="iconSelect(this)">
+                <img src="/Assets/anime/YanSim/pfp/ryoba1.jpg" data-id="ryoba1" onclick="iconSelect(this)">
+                <img src="/Assets/anime/YanSim/pfp/ryoba2.png" data-id="ryoba2" onclick="iconSelect(this)">
+                <img src="/Assets/anime/YanSim/pfp/tokuko1.jpg" data-id="tokuko1" onclick="iconSelect(this)">
+            </div>
+
+            <a href="#top" id="toTop" style="display: flex; justify-content: center;">
+                <iconify-icon icon="lucide:chevron-up"></iconify-icon>
+            </a>
+        </div>
+        <footer>
+            <div class="iconifyWrapper">
+                <iconify-icon class="backward" onclick="keepitPushing(1)" icon="lucide:chevron-left"></iconify-icon>
+                <iconify-icon class="forward" onclick="keepitPushing(3)" icon="lucide:chevron-right"></iconify-icon>
+            </div>
+        </footer>
+
+        <div id="iconAlertLightbox">
+            <div id="iconAlert">
+                You must pick an icon to proceed!
+            </div>
+        </div>
+    </div>
+
+    <div id="themeScreen" class="wrapper">
+        <div class="centralWrapper">
+            <h2>Pick a theme!</h2>
+            <div id="themeWrapper">
+                <button id="lightModeSwitch" class="themePreview">
+                    <img src="themeSwitcherPreviews/Base.png" loading="lazy">
+                    <caption>Fairy Dust</caption>
+                </button>
+
+                <button id="darkModeSwitch" class="themePreview">
+                    <img src="themeSwitcherPreviews/Dark.png" loading="lazy">
+                    <caption>Empty Dream</caption>
+                </button>
+            </div>
+            <p class="rightAligned">This can be changed in the themes app later!</p>
+            <br>
+        </div>
+
+        <footer>
+            <div class="iconifyWrapper">
+                <iconify-icon class="backward" onclick="keepitPushing(2)" icon="lucide:chevron-left"></iconify-icon>
+                <iconify-icon class="forward" style="color: red;" onclick="keepitPushing(4)"
+                    icon="lucide:chevron-right"></iconify-icon>
+            </div>
+        </footer>
+
+        <div id="mirror"></div>
+        <div id="loadingScreen" class="loading-screen hidden">
+            <div class="loading-container">
+                <p>Great choice!</p>
+                <p>Applying your theme now!</p>
+                <div class="progress-bar">
+                    <div id="progress" class="progress"></div>
+                </div>
+            </div>
+            <img src="/Assets/pixels/animals/catroll.gif">
+        </div>
+    </div>
+
+    <div id="onboarding1" class="onboarding wrapper">
+        <bgOverlay>
+            <div style="position: relative; height: 100%;">
+                <img id="moon" src="/Assets/other/onboardingIcons/MoonIcon.png">
+                <img id="cloud1" src="/Assets/other/onboardingIcons/Cloud1.png">
+                <img id="cloud2" src="/Assets/other/onboardingIcons/Cloud2.png">
+                <img id="cloud3" src="/Assets/other/onboardingIcons/Cloud3.png">
+
+                <img id="star1" src="/Assets/other/onboardingIcons/Star.png">
+                <img id="star2" src="/Assets/other/onboardingIcons/Star.png">
+            </div>
+        </bgOverlay>
+
+        <div id="OBCentralWrapper" class="centralWrapper">
+            <p>Welcome to the</p>
+            <h1>IdolLine</h1>
+            <p>universe! </p>
+        </div>
+
+        <footer>
+            <div class="iconifyWrapper">
+                <iconify-icon class="forward" onclick="keepitPushing(5)" icon="lucide:chevron-right"></iconify-icon>
+            </div>
+        </footer>
+    </div>
+
+    <div id="onboarding2" class="onboarding wrapper">
+        <bgOverlay>
+            <div style="position: relative; height: 100%;">
+                <img id="moon" src="/Assets/other/onboardingIcons/MoonIcon.png">
+                <img id="cloud1" src="/Assets/other/onboardingIcons/Cloud1.png">
+                <img id="cloud2" src="/Assets/other/onboardingIcons/Cloud2.png">
+                <img id="cloud3" src="/Assets/other/onboardingIcons/Cloud3.png">
+
+                <img id="star1" src="/Assets/other/onboardingIcons/Star.png">
+                <img id="star2" src="/Assets/other/onboardingIcons/Star.png">
+            </div>
+        </bgOverlay>
+
+        <div id="OBCentralWrapper" class="centralWrapper">
+            <p>Use your new phone to navigate the site! It will be present in the bottom right corner of every page.</p>
+            <img id="navIcon" src="/Assets/customNavIcons/navIcon.png">
+        </div>
+
+        <footer>
+            <div class="iconifyWrapper">
+                <iconify-icon class="backward" onclick="keepitPushing(4)" icon="lucide:chevron-left"></iconify-icon>
+                <iconify-icon class="forward" onclick="keepitPushing(6)" icon="lucide:chevron-right"></iconify-icon>
+            </div>
+        </footer>
+    </div>
+
+    <div id="onboarding3" class="onboarding wrapper">
+        <bgOverlay>
+            <div style="position: relative; height: 100%;">
+                <img id="moon" src="/Assets/other/onboardingIcons/MoonIcon.png">
+                <img id="cloud1" src="/Assets/other/onboardingIcons/Cloud1.png">
+                <img id="cloud2" src="/Assets/other/onboardingIcons/Cloud2.png">
+                <img id="cloud3" src="/Assets/other/onboardingIcons/Cloud3.png">
+
+                <img id="star1" src="/Assets/other/onboardingIcons/Star.png">
+                <img id="star2" src="/Assets/other/onboardingIcons/Star.png">
+            </div>
+        </bgOverlay>
+
+        <div id="OBCentralWrapper" class="centralWrapper">
+            <p>if you'd like to unfreeze animated images, navigate to the settings app to toggle the frozen status!</p>
+            <iconify-icon id="snowflake" icon="solar:snowflake-bold"></iconify-icon>
+        </div>
+
+        <footer>
+            <div class="iconifyWrapper">
+                <iconify-icon class="backward" onclick="keepitPushing(5)" icon="lucide:chevron-left"></iconify-icon>
+                <iconify-icon class="forward" onclick="keepitPushing(7)" icon="lucide:chevron-right"></iconify-icon>
+            </div>
+        </footer>
+    </div>
+
+    <div id="onboarding4" class="onboarding wrapper">
+        <bgOverlay>
+            <div style="position: relative; height: 100%;">
+                <img id="moon" src="/Assets/other/onboardingIcons/MoonIcon.png">
+                <img id="cloud1" src="/Assets/other/onboardingIcons/Cloud1.png">
+                <img id="cloud2" src="/Assets/other/onboardingIcons/Cloud2.png">
+                <img id="cloud3" src="/Assets/other/onboardingIcons/Cloud3.png">
+
+                <img id="star1" src="/Assets/other/onboardingIcons/Star.png">
+                <img id="star2" src="/Assets/other/onboardingIcons/Star.png">
+            </div>
+        </bgOverlay>
+
+        <div id="OBCentralWrapper" class="centralWrapper">
+            <p>
+                Please feel free to explore all of the apps on the phone and make them yours!
+                IdolLine prides itself in it's extensive customization options and ease of use.
+            </p>
+
+            <iconify-icon id="myHeartIsYours" icon="line-md:heart-filled"></iconify-icon>
+
+        </div>
+
+        <footer>
+            <div class="iconifyWrapper">
+                <iconify-icon class="backward" onclick="keepitPushing(6)" icon="lucide:chevron-left"></iconify-icon>
+                <iconify-icon class="forward" onclick="keepitPushing(8)" icon="lucide:chevron-right"></iconify-icon>
+            </div>
+        </footer>
+    </div>
+
+    <div id="onboarding5" class="onboarding wrapper">
+        <bgOverlay>
+            <div style="position: relative; height: 100%;">
+                <img id="moon" src="/Assets/other/onboardingIcons/MoonIcon.png">
+                <img id="cloud1" src="/Assets/other/onboardingIcons/Cloud1.png">
+                <img id="cloud2" src="/Assets/other/onboardingIcons/Cloud2.png">
+                <img id="cloud3" src="/Assets/other/onboardingIcons/Cloud3.png">
+
+                <img id="star1" src="/Assets/other/onboardingIcons/Star.png">
+                <img id="star2" src="/Assets/other/onboardingIcons/Star.png">
+            </div>
+        </bgOverlay>
+
+        <div id="OBCentralWrapper" class="centralWrapper">
+            <p>
+                As the phone gets updated, there's a good chance that <u>things will break!</u>
+                <br>
+                <br>
+                To remedy this, right click on the phone and open the broken screen in a new tab. Once you arrive at the
+                homepage, hard refresh (it's different for every browser, so search for yours!)
+                <br>
+                <br>
+                That usually works, but if it doesn't, you might have to wait or clear your browser's cache.
+                <br>
+                <strong>Be aware that this will log you out of Neocities and <a href="https://iframe.chat/"
+                        target="_blank">IdolMessenger</a>.</strong>
+            </p>
+        </div>
+
+        <footer>
+            <div class="iconifyWrapper">
+                <iconify-icon class="backward" onclick="keepitPushing(7)" icon="lucide:chevron-left"></iconify-icon>
+                <iconify-icon class="forward" style="color: red;" onclick="keepitPushing(9)"
+                    icon="lucide:chevron-right"></iconify-icon>
+            </div>
+        </footer>
+    </div>
+
+    <div id="onboarding6" class="onboarding wrapper">
+        <bgOverlay>
+            <div style="position: relative; height: 100%;">
+                <img id="moon" src="/Assets/other/onboardingIcons/MoonIcon.png">
+                <img id="cloud1" src="/Assets/other/onboardingIcons/Cloud1.png">
+                <img id="cloud2" src="/Assets/other/onboardingIcons/Cloud2.png">
+                <img id="cloud3" src="/Assets/other/onboardingIcons/Cloud3.png">
+
+                <img id="star1" src="/Assets/other/onboardingIcons/Star.png">
+                <img id="star2" src="/Assets/other/onboardingIcons/Star.png">
+            </div>
+        </bgOverlay>
+
+        <div id="OBCentralWrapper" class="centralWrapper">
+            <p>
+                Thank you for willingly choosing
+            </p>
+            <h1>IdolLine</h1>
+            <strong>We hope you enjoy your stay!</strong>
+
+            <button id="enter">
+                <iconify-icon icon="mingcute:star-fill"></iconify-icon> It wasn't willingly... <iconify-icon
+                    icon="mingcute:star-fill"></iconify-icon>
+            </button>
+        </div>
+    </div>
+
+
+    <script src="js/themeSwitcher.js"></script>
+    <script>
+        // Name Stuff
+
+        window.addEventListener('load', () => {
+            if (localStorage.getItem('userName')) {
+                parent.document.getElementById('phoneScreen').src = 'homepage.html';
+            }
+        });
+
+        // Attemping validation without a button
+        let debounceTimer;
+
+        function debounceNameValidation() {
+            clearTimeout(debounceTimer); // Clears any timers already made
+
+            debounceTimer = setTimeout(() => {
+                validateNameInput();
+            }, 2000); // Wait 2 seconds before checking
+        }
+
+        function validateNameInput() {
+            const nameInput = document.getElementById("nameInput").value.trim();
+            const keepItSweet = document.getElementById('keepItSweet');
+
+            localStorage.setItem('userName', nameInput);
+            keepItSweet.textContent = `It's nice to meet you, ${nameInput}!`;
+            keepItSweet.style.color = "green";
+        }
+
+        function preventEnterRefresh(event) {
+            if (event.key === "Enter") {
+                event.preventDefault(); // Stop refreshes on hitting enter
+                validateName();
+            }
+        }
+
+        // Image Selection
+        function iconSelect(imgElement) {
+            document.querySelectorAll('.imgWrapper img').forEach(img => {
+                img.classList.remove('selected');
+            });
+
+            imgElement.classList.add('selected');
+
+            const selectedProfilePic = imgElement.src;
+            localStorage.setItem('selectedIcon', selectedProfilePic);
+        }
+
+        // Screen Selection 
+
+        let currentOnboardingPage = 0;
+        const wrappers = document.querySelectorAll('.wrapper');
+
+        function keepitPushing(index) {
+            const currentWrapper = document.querySelector('.wrapper.active');
+            const isNameScreen = currentWrapper && currentWrapper.id === 'nameScreen';
+            const isIconPickerScreen = currentWrapper && currentWrapper.id === 'iconPickerScreen';
+
+            const iconAlert = document.getElementById('iconAlertLightbox');
+
+            if (isNameScreen) {
+                const nameInput = document.getElementById("nameInput").value.trim();
+                const keepItSweet = document.getElementById('keepItSweet');
+
+                // Check if the name input is valid
+                if (!nameInput) {
+                    keepItSweet.textContent = "Please enter your name to continue.";
+                    keepItSweet.style.color = "red";
+                    return; // Stop progression
+                }
+
+                // Save the name if not already saved
+                if (!localStorage.getItem('userName') || localStorage.getItem('userName') !== nameInput) {
+                    localStorage.setItem('userName', nameInput);
+                    keepItSweet.textContent = `It's nice to meet you, ${nameInput}!`;
+                    keepItSweet.style.color = "green";
+                }
+            }
+
+            if (isIconPickerScreen) {
+                const selectedIcon = localStorage.getItem('selectedIcon');
+                if (!selectedIcon) {
+                    iconAlert.style.opacity = '100';
+                    setTimeout(() => {
+                        iconAlert.style.opacity = '0';
+                    }, 3000);
+                    return;
+                }
+            }
+
+            wrappers.forEach((wrapper, i) => {
+                if (i === index) {
+                    wrapper.classList.remove('hidden');
+                    wrapper.classList.add('active');
+                    wrapper.style.transform = 'translateX(0)';
+                } else if (i < index) {
+                    wrapper.classList.add('hidden');
+                    wrapper.classList.remove('active');
+                    wrapper.style.transform = 'translateX(-100%)';
+                } else {
+                    wrapper.classList.add('hidden');
+                    wrapper.classList.remove('active');
+                    wrapper.style.transform = 'translateX(100%)';
+                }
+            });
+        }
+
+
+        document.addEventListener('swiped-right', () => {
+            currentOnboardingPage = (currentOnboardingPage > 0) ? currentOnboardingPage - 1 : wrappers.length - 1;
+            keepitPushing(currentOnboardingPage);
+        });
+
+        document.addEventListener('swiped-left', () => {
+            currentOnboardingPage = (currentOnboardingPage < wrappers.length - 1) ? currentOnboardingPage + 1 : 0;
+            keepitPushing(currentHomepage);
+        });
+
+        keepitPushing(currentOnboardingPage);
+
+        document.getElementById('enter').addEventListener('click', () => {
+            parent.document.getElementById('phoneScreen').src = 'homepage.html';
+        });
+    </script>
+    <script>
+        // Discovering the Intersection Observer API thanks to Mozilla Documentation (which took absolutely fucking forever!)
+        function unpauseAnimations() {
+            const observerOptions = {
+                root: null, // Root is the Viewport (which is null for some reason)
+                threshold: 0.5,  // Check if observed objects are 50% in view
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => { // This is the actual observer 
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = "running";
+                        observer.unobserve(entry.target); // Once triggered, it will stop observing the object
+                    }
+                });
+            }, observerOptions);
+
+            const observedIcons = document.querySelectorAll('#navIcon, #snowflake');
+            observedIcons.forEach(icon => {
+                icon.style.animationPlayState = "paused"; // Check if they are paused
+                observer.observe(icon);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', unpauseAnimations);
+
+    </script>
+</body>
+
+</html>

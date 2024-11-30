@@ -72,24 +72,24 @@ const last_updated_selector = ".lastUpdated";
 // Weird Stats
 
 document.addEventListener('DOMContentLoaded', () => {
-const weirdStatsElement = document.querySelector('.weirdstats');
-if (weirdStatsElement) {
-  let clickCount = parseInt(localStorage.getItem('weirdStatsCount'), 10) || 0;
-  weirdStatsElement.textContent = clickCount;
+  const weirdStatsElement = document.querySelector('.weirdstats');
+  if (weirdStatsElement) {
+    let clickCount = parseInt(localStorage.getItem('weirdStatsCount'), 10) || 0;
+    weirdStatsElement.textContent = clickCount;
 
-  const weirdStatsButton = document.getElementById('weirdStats');
-  if (weirdStatsButton) {
-    weirdStatsButton.addEventListener('click', () => {
-      clickCount++;
-      weirdStatsElement.textContent = clickCount;
-      localStorage.setItem('weirdStatsCount', clickCount);
-    });
+    const weirdStatsButton = document.getElementById('weirdStats');
+    if (weirdStatsButton) {
+      weirdStatsButton.addEventListener('click', () => {
+        clickCount++;
+        weirdStatsElement.textContent = clickCount;
+        localStorage.setItem('weirdStatsCount', clickCount);
+      });
+    }
   }
-}
   const clearStatsButton = document.getElementById('clearStatsButton');
   if (clearStatsButton) {
     clearStatsButton.addEventListener('click', () => {
-      localStorage.removeItem('weirdStatsCount'); 
+      localStorage.removeItem('weirdStatsCount');
       clickCount = 0;
       alert("Weird Stats Cleared!");
 
@@ -99,3 +99,92 @@ if (weirdStatsElement) {
     });
   }
 });
+
+// Display Below
+
+document.addEventListener('DOMContentLoaded', () => {
+  const appsOpened = parseInt(localStorage.getItem('appsOpened')) || 0;
+  const homeButtonClicks = localStorage.getItem('homeButtonClicks') || 0;
+  const herobrineSightings = localStorage.getItem('herobrineSightings') || 0;
+  const rosesWished = localStorage.getItem('rosesWished') || 0;
+
+  updateAppsOpened(appsOpened);
+  updatehomeButtonClicks(homeButtonClicks);
+  updateHBSightings(herobrineSightings);
+  updateRosesWishedDisplay(rosesWished);
+});
+
+// Apps Opened
+
+function incrementAppOpenedCount() {
+  let appsOpened = parseInt(localStorage.getItem('appsOpened')) || 0;
+  appsOpened++;
+
+  localStorage.setItem('appsOpened', appsOpened);
+
+  updateAppsOpened(appsOpened);
+}
+
+function updateAppsOpened(count) {
+  const display = document.querySelector('.appsOpened');
+  if (display) {
+    display.textContent = count;
+  }
+}
+
+// Home Button Clicks
+
+function clicker() {
+  let homeButtonClicks = parseInt(localStorage.getItem('homeButtonClicks')) || 0;
+
+  homeButtonClicks++;
+
+  localStorage.setItem('homeButtonClicks', homeButtonClicks);
+}
+
+function updatehomeButtonClicks(count) {
+  const display = document.querySelector('.homeButtonClicksCounter');
+  if (display) {
+    display.textContent = count;
+  }
+}
+
+// Need to make a version that tracks consecutive clicks as well
+
+// Herobrine Sightings
+
+function trackHerobrineSightings() {
+  let sightingsCount = parseInt(localStorage.getItem('herobrineSightings')) || 0;
+  if (Math.random() < 0.1) {
+      sightingsCount++;
+  }
+  localStorage.setItem('herobrineSightings', sightingsCount);
+
+  // console.log('Herobrine Sightings:', sightingsCount);
+}
+
+setInterval(trackHerobrineSightings, 460000); 
+
+function updateHBSightings(count) {
+  const display = document.querySelector('.herobrineSightings');
+  if (display) {
+    display.textContent = count;
+  }
+}
+
+// ! Roses Wished
+
+function wishOnRose() {
+  let count = parseInt(localStorage.getItem('rosesWished')) || 0;
+  count++;
+  localStorage.setItem('rosesWished', count);
+
+  // console.log('Roses Wished:', count);
+}
+
+function updateRosesWishedDisplay(count) {
+  const display = document.querySelector('.rosesWished');
+  if (display) {
+    display.textContent = count;
+  }
+}

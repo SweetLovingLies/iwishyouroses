@@ -11,7 +11,8 @@
 
     <link href="css/settingsBase.css" rel="stylesheet" type="text/css" media="all">
     <link id="settingsCSS" href="css/settingsThemes/settingsLight.css" rel="stylesheet" type="text/css" media="all">
-    <link id="settingsDarkCSS" href="css/settingsThemes/settingsDark.css" rel="stylesheet" type="text/css" media="all" disabled>
+    <link id="settingsDarkCSS" href="css/settingsThemes/settingsDark.css" rel="stylesheet" type="text/css" media="all"
+        disabled>
 
     <meta name="description" content="Access literally everything you need." />
     <link rel="icon" type="image/x-icon" href="../Assets/pixels/vintageAmericana/strawberryphone.webp">
@@ -28,7 +29,7 @@
     <h>Settings</h>
     <main>
 
-        <img id="anonIcon" src="/Assets/other/anonIcon.jpg">
+        <img id="userIcon" src="/Assets/other/anonIcon.jpg">
         <p id="welcomeMessage">Welcome, Anon</p>
 
         <div class="settingsWrapper">
@@ -68,6 +69,7 @@
             clearCacheButton.addEventListener('click', () => {
                 localStorage.clear()
                 alert("Cache Cleared!");
+                window.top.location.reload();
             });
         }
 
@@ -97,17 +99,25 @@
         });
 
         // Fun Stuff
+        var userName = localStorage.getItem("userName");
+        var selectedIcon = localStorage.getItem("selectedIcon");
+        // console.log(selectedIcon);
+
+        document.getElementById("welcomeMessage").textContent = `Welcome, ${userName}!`;
+        document.getElementById("userIcon").src = selectedIcon;
+
 
         document.addEventListener("DOMContentLoaded", () => {
-            const anonIcon = document.getElementById("anonIcon");
+            const userIcon = document.getElementById("userIcon");
             const chance = 0.01;
             const alternateIcon = "/Assets/other/anonAicon.jpg";
 
             if (Math.random() < chance) {
-                anonIcon.src = alternateIcon;
+                userIcon.src = alternateIcon;
             }
         });
     </script>
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const darkThemeEnabled = localStorage.getItem('darkTheme') === 'true';

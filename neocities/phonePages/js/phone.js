@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Homepage button
 
-function closeAllAppsAndGoHome() {
+function homeButton() {
     const iframe = document.getElementById('phoneScreen');
     const iframeWindow = iframe.contentWindow;
     const activeApps = iframeWindow.document.querySelectorAll('.app.open');

@@ -12,6 +12,8 @@
     --ash: #cad2c5;
     --water: #adcaff;
     --deepsea: #357ce6;
+    --roseRed: #C71227;
+    --rosePink: #FB003F;
     --blood: #800000;
     --deepslate: #696969;
     --cobblestone: #a8a8a8;
@@ -322,7 +324,7 @@ quote::after {
 
 /* Pastel */
 .rainbowbg {
-    background: linear-gradient(84deg, rgba(255, 189, 200, 1) 0%, rgba(246, 255, 175, 1) 20%, rgba(205, 255, 167, 1) 40%, rgba(195, 241, 255, 1) 60%, rgba(241, 202, 245, 1) 80%, rgba(252, 206, 242, 1) 100%);
+    background: linear-gradient(90deg, rgba(255, 189, 200, 1) 0%, rgba(246, 255, 175, 1) 20%, rgba(205, 255, 167, 1) 40%, rgba(195, 241, 255, 1) 60%, rgba(241, 202, 245, 1) 80%, rgba(252, 206, 242, 1) 100%);
 }
 
 /* Not Pastel */
@@ -378,6 +380,15 @@ quote::after {
     border-image: url("/Assets/borders/blueberryGingham.png") 8 round;
     border-width: 7px;
     background-clip: padding-box;
+}
+
+/* & Dividers */
+
+blossomDivider {
+    background: url('/Assets/pixels/other/blossomborder.webp') repeat-x;
+    background-size: contain;
+    height: 138px;
+    width: 389px;
 }
 
 /* & "Emojis!" */
@@ -506,11 +517,138 @@ knifeMoji {
     vertical-align: text-bottom;
 }
 
+roseMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/vintageAmericana/rose.gif") no-repeat;
+    width: 16px;
+    height: 16px;
+
+    vertical-align: text-bottom;
+}
+
 pinkBouquetMoji {
     display: inline-block;
     background: url("/Assets/pixels/fd/pinkbouquet.gif") no-repeat;
     width: 16px;
     height: 16px;
+
+    vertical-align: text-bottom;
+}
+
+roseBouquetMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/fd/rosebouquet.gif") no-repeat;
+    width: 16px;
+    height: 16px;
+
+    vertical-align: text-bottom;
+}
+
+
+confettiMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/magicalgirls/confetti.webp") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+}
+
+glitterMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/magicalgirls/glitter2.webp") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+}
+
+pastelGlitterMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/magicalgirls/glitter3.webp") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+}
+
+pinkGlitterMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/magicalgirls/glitter.webp") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+}
+
+crayonGlitterMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/magicalgirls/glitter4.webp") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+}
+
+staffMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/magicalgirls/magicstaff.webp") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+}
+
+crayonStaffMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/magicalgirls/magicstaff2.webp") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+}
+
+shootingStarMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/magicalgirls/shootingStar.webp") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+}
+
+cometsMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/magicalgirls/shootingStars.webp") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+}
+
+softSkyMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/magicalgirls/moonnStars.webp") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+}
+
+phoneMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/magicalgirls/phone.webp") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+}
+
+starCloudMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/magicalgirls/starCloud.webp") no-repeat;
+    width: 20px;
+    height: 20px;
 
     vertical-align: text-bottom;
 }

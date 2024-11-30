@@ -34,6 +34,8 @@
 
 **Make this site mobile compatible at some point please!** :laughing:
 
+**Also add alt text and stuff**
+
 
 Other:
 

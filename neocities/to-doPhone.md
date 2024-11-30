@@ -2,12 +2,23 @@
 
 **!!!!!!!! Today !!!!!!!!**
 
+* Make onboarding phone setup flow
+  * Work on the onboarding pages
+    * Not sure what they will say yet.
+
 
 * Your Tome <---------- Easy?
   * Notes taking app
   * Maybe also for journalling?
   * Write love letters that could appear in the Yandere shrine!
 
+    \
+* Mellow <--------- Easy?
+  * Select your mood with emojis or cute icons
+    * Could use this to practice anime style vector work
+  * Mood insights?
+
+    \
 
 **! Whenever tf I feel like doing this !**
 
@@ -22,19 +33,11 @@
   * Take a selfie that will appear in the gallery!
 
     \
-* Your Tome <---------- Easy?
-  * Notes taking app
-  * Maybe also for journalling?
-  * Write love letters that could appear in the Yandere shrine!
-
-    \
-* DreamCast (? name ?) <------- Easy?
-  * Links to Podcasts
-  * Maybe add my own later if I do it lol
-
-    \
-* SHIRANAI <----------- VERY HARD
-  * Notes about different things you can do on the main site as well as this one! - Come up with a predefined set of tooltips.
+* SHIRANAI <----------- VERY HARD (Probably a very long process)
+  * Notes about different things you can do on the main site (Planet Pearlia) as well as this one!
+    * Come up with a predefined set of tooltips.
+    * Going to need some kind of choice validation.
+    * How to make SHIRANAI more lifelike?
   * Maybe some search results too for a more Search Engine / Virtual Assistant like feel
   * Change Icon Color
     * AKA come up with a color scheme lol
@@ -45,23 +48,18 @@
 
     \
 * Make Icons for Apps (upon progress being made on them)
-  * IdolPet
   * Your Tome
-  * DreamCast (? name ?)
   * Stellar Shop (? name ?)
+  * Mellow?
 
     \
 
 **Other App Ideas!**
 
 * Horoscope App
+  * Daily horoscopes
+    * Try animations again
   * Maybe a compatibility checker (with a yandere twist)
-
-    \
-* Mood Tracker App
-  * Select your mood with emojis or cute icons
-  * Mood insights?
-  * Could use this to practice anime style vector work
 
     \
 * Fortune Teller App
@@ -83,23 +81,25 @@
   * Could practice animations here!
 
     \
-* Sticker Studio
+* Sticker Studio <-------- Hard
   * Make stickers you can use across the phone
+    * Idk where yet… Maybe Your Tome?
   * Premade Assets!
     * Take suggestions for it!
   * Maybe even have a contest to add them to IdolMessenger?
 
     \
-* Time Capsule
+* Time Capsule <----------- Easy?
   * Write a note that you can after a certain date
   * Maybe make a notification system for that.
     * Or a widget? Idk
 
   \
-* Idol Fashion App
+* Idol Fashion App <---------- HARD!
   * Feed of anime inspired outfits or J-K-Idol fashion trends
   * Pinterest style interactions (download your favorites to the gallery)
 
+    \
 
 **! Doing later on !**
 
@@ -118,7 +118,13 @@
   * "Fake" Notifications (?)
 
     \
-* Backpack (Inventory) - Not sure what to put in here yet
+* DreamCast (? name ?) <------- Easy?
+  * Links to Podcasts
+  * Maybe add my own later if I do it lol
+
+  \
+* Backpack (Inventory)
+  * Not sure what to put in here yet
 * Add Pollcode Section
 
 

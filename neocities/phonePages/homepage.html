@@ -11,14 +11,17 @@
 
     <link href="css/homepageBase.css" rel="stylesheet" type="text/css" media="all">
     <link id="homepageCSS" href="css/homepageThemes/homepageLight.css" rel="stylesheet" type="text/css" media="all">
-    <link id="homepageDarkCSS" href="css/homepageThemes/homepageDark.css" rel="stylesheet" type="text/css" media="all" disabled>
- 
+    <link id="homepageDarkCSS" href="css/homepageThemes/homepageDark.css" rel="stylesheet" type="text/css" media="all"
+        disabled>
+
     <meta name="description" content="Access literally everything you need." />
     <link rel="icon" type="image/x-icon" href="../Assets/pixels/vintageAmericana/strawberryphone.webp">
-    
+
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 
     <script src="js/phone.js"></script>
+    <script src="js/stats.js"></script>
+
 
 </head>
 
@@ -127,7 +130,7 @@
 
                         <!-- Modify per season -->
                         <p id="wwTemp">40°F</p>
-                        <div id="wwWeatherIcon" class="weatherIcon"> 
+                        <div id="wwWeatherIcon" class="weatherIcon">
                             <iconify-icon icon="mdi:weather-sunny"></iconify-icon>
                         </div>
                     </div>
@@ -153,7 +156,7 @@
                 </a>
                 <a href="temp.html" class="app" onclick="openApp(event, this)" style="color: red;">
                     <div class="appIcon"></div>
-                    <p>DreamCast</p>
+                    <p>Mellow</p>
                 </a>
                 <a href="temp.html" class="app" onclick="openApp(event, this)" style="color: red;">
                     <div class="appIcon"></div>
@@ -207,10 +210,13 @@
 
             const appHref = appElement.getAttribute('href');
 
+            incrementAppOpenedCount();
+
             setTimeout(() => {
                 parent.document.getElementById('phoneScreen').src = appHref;
             }, 350);
         }
+
 
         let currentHomepage = parseInt(localStorage.getItem('currentHomepage')) || 0;
         const homepages = document.querySelectorAll('.homepage');
@@ -247,6 +253,7 @@
 
         showHomepage(currentHomepage);
     </script>
+    
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const darkThemeEnabled = localStorage.getItem('darkTheme') === 'true';

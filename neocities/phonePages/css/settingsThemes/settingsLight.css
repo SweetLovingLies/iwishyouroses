@@ -2,7 +2,7 @@ body{
     background: white;
 }
 
-#anonIcon{
+#userIcon{
     border: 5px solid var(--wisteria);
 }
 .settingsWrapper {

@@ -3,7 +3,7 @@ body{
     color: white;
 }
 
-#anonIcon{
+#userIcon{
     border: 5px solid var(--wisteria);
 }
 .settingsWrapper {

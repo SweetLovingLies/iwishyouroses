@@ -192,7 +192,6 @@ main {
 }
 
 #home,
-#updates,
 #webgroups,
 #status,
 #stamps {
@@ -213,33 +212,11 @@ main {
     background: url(/Assets/BGs/blackboard.jpeg);
     background-size: contain;
 
-    color: white;
-
     border-width: 11px;
     border-style: solid;
     border-image: url("/Assets/BGs/wood.jpg") 36 round;
 
-    scrollbar-color: white black;
-}
-
-#updates::-webkit-scrollbar-track {
-    background: black;
-}
-
-#updates::-webkit-scrollbar-thumb {
-    background-color: white;
-}
-
-#updates h2 {
-    font-family: chalkcursive;
-    font-size: 1.5em;
-    font-weight: normal;
-    color: white;
-}
-
-#updates p {
-    font-family: chalk;
-    font-size: 1.3em;
+    overflow: hidden;
 }
 
 #webgroups,

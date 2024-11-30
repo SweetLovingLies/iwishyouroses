@@ -5,22 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phone Screen: Stats</title>
+
     <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
     <link href="css/phoneGlobals.css" rel="stylesheet" type="text/css" media="all">
+
     <link href="css/stats.css" rel="stylesheet" type="text/css" media="all">
+
     <meta name="description" content="Access literally everything you need." />
     <link rel="icon" type="image/x-icon" href="../Assets/pixels/vintageAmericana/strawberryphone.webp">
 
     <script src="js/stats.js"></script>
-    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
     <script src="js/phone.js"></script>
 </head>
 
 <body>
     <object id="detailBarObject" data="detailbar.html"></object>
 
-    <h>Site Stats</h>
+    <h>Stats</h>
     <main>
+        <h1>Site Stats</h1>
+        
         <div class="statsWrapper">
             <h6>Established On:</h6>
             <p class="creationDate"></p>
@@ -36,6 +40,28 @@
             <p class="lastUpdated"></p>
         </div>
 
+        <h1>Your Stats</h1>
+
+        <div class="statsWrapper">
+            <h6>Apps Opened:</h6>
+            <p class="appsOpened">0</p>
+        </div>
+
+        <div class="statsWrapper">
+            <h6>Home Button Clicks:</h6>
+            <p class="homeButtonClicksCounter">0</p>
+        </div>
+
+        <div id="iWishYouRoses" class="statsWrapper">
+            <h6><roseMoji></roseMoji> Roses Wished:</h6>
+            <p class="rosesWished">0</p>
+        </div>
+
+        <div class="statsWrapper">
+            <h6>Herobrine Sightings:</h6>
+            <p class="herobrineSightings">0</p>
+        </div>
+
         <div id="weirdStats" class="statsWrapper" style="margin-top: 1000px; margin-bottom: 50px;">
             <h6>Weird Stats Clicked:</h6>
             <p class="weirdstats">0</p>
@@ -44,3 +70,17 @@
 </body>
 
 </html>
+
+<!--  ~ Ideas
+
+Herobrine Sightings:
+I want to add Herobrine to the site somewhere, but for now, make this a number that sometimes counts up (for no apparent reason) to spook people
+    - Probably on a random tick or something. 
+
+!! Global !!
+
+Roses Wished:
+An arbitrary number that grows when clicking on a rose on the site
+    - Sure, it's Neocities, but maybe theres a way to globally track this?
+
+~ -->

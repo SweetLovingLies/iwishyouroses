@@ -14,9 +14,8 @@
     <meta name="description" content="Access literally everything you need." />
     <link rel="icon" type="image/x-icon" href="../Assets/pixels/vintageAmericana/strawberryphone.webp">
 
-    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
-
     <script src="js/phone.js"></script>
+    <script src="js/stats.js"></script>
 </head>
 
 <body>
@@ -28,13 +27,28 @@
                 <iconify-icon icon="ic:baseline-lens"></iconify-icon>
             </div>
         <main>
-            <iframe id="phoneScreen" name="phoneScreen" src="homepage.html"></iframe>
+            <iframe id="phoneScreen" name="phoneScreen" src="onboarding.html" onload="onboardingState()"></iframe>
             <!-- Change the src as previews are needed -->
         </main>
         <footer>
-            <a id="homeButton" href="#" onclick="closeAllAppsAndGoHome()"></a>
+            <a id="homeButton" href="#" onclick="homeButton(); clicker();"></a>
         </footer>
     </div>
+
+    <script>
+        function onboardingState() {
+            const iframe = document.getElementById('phoneScreen');
+            const homeButton = document.getElementById('homeButton');
+
+            if (iframe.src.includes('onboarding.html')) {
+                homeButton.classList.add('disabled');
+                homeButton.style.pointerEvents = 'none';
+            } else {
+                homeButton.classList.remove('disabled');
+                homeButton.style.pointerEvents = 'auto';
+            }
+        }
+    </script>
 </body>
 
 </html>
