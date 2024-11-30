@@ -6,6 +6,14 @@
   * Probably reuse code from parent site
 
     \
+* Rework navigation page
+  * Make it a map instead!
+    * Custom map made in Illustrator and Photoshop!
+
+      \
+
+**! Whenever tf I feel like doing this !**
+
 * Your Tome <---------- Easy?
   * Notes taking app
   * Maybe also for journalling?
@@ -13,7 +21,6 @@
 
     \
 
-**! Whenever tf I feel like doing this !**
 
 * Mellow <--------- Easy?
   * Select your mood with emojis or cute icons
@@ -43,8 +50,10 @@
       \
 * Stellar Shop (? name ?) <--------- VERY HARD
   * Fake e-commerce app
+    * Maybe Tie it into the Idol fashion app somehow
+    * OR THE STICKER CREATION APP?
 
-    \
+      \
 * Make Icons for Apps (upon progress being made on them)
   * Storybook
   * Your Tome
@@ -97,7 +106,6 @@
 * Idol Fashion App <---------- HARD!
   * Feed of anime inspired outfits or J-K-Idol fashion trends
   * Pinterest style interactions (download your favorites to the gallery)
-
 
 **! Other !**
 

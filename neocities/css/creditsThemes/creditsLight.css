@@ -1,0 +1,59 @@
+body {
+    background-image: url(/Assets/BGs/floralbouquet.jpeg);
+    font-family: cafesweet;
+}
+
+
+#wrapper {
+    background-color: var(--pinkIce);
+
+    border-style: solid;
+    border-image: url("/Assets/borders/borderfilled.png") 8 round;
+    border-width: 8px;
+    background-clip: padding-box;
+}
+
+h1, h2 {
+    font-family: FoxRelish;
+
+    border: 2px ridge white;
+    box-shadow: 0px 3px 2px inset var(--whispermist);
+}
+
+h1 {
+    background: url("/Assets/BGs/check5-b.gif");
+
+    color: var(--persian);
+}
+
+h2 {
+    background: url("/Assets/BGs/check5-p.gif");
+
+    color: var(--wisteria);
+}
+
+h3{
+    text-decoration: underline 1px var(--water) double;
+}
+
+h1::before,
+h2::before,
+h1::after,
+h2::after {
+    color: black;
+}
+
+
+a {
+    color: var(--wisteria);
+}
+
+a:hover{
+    color: var(--deepsea);
+}
+
+
+hr{
+    height: 20px;
+    background: url("/Assets/pixels/fd/flowerdivider.webp") repeat-x;
+}

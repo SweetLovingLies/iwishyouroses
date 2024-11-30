@@ -659,12 +659,14 @@ starCloudMoji {
 /* & Phone */
 
 #phoneSpot {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     right: 0;
 
     height: 100px;
     width: 350px;
+
+    z-index: 1001;
 }
 
 #phone {
@@ -674,20 +676,22 @@ starCloudMoji {
 
     position: absolute;
     right: 20px;
-    bottom: -605px;
-
-    /* ! For testing */
-    /* bottom: 0; */
 
     z-index: 1000;
 
     transition: bottom .5s ease-in-out;
 }
 
-#phoneSpot:hover>#phone {
-    bottom: 0;
+#phone.hidden {
+    bottom: -605px;
+
+    /* ! For testing */
+    /* bottom: 0; */
 }
 
+#phone.visible {
+    bottom: 0;
+}
 
 /* Boring Shit */
 

@@ -5,10 +5,6 @@
   * Start a webring for people who like creepy aesthetics?
 
   \
-* **!! Things to do for the credits page:**
-  * Dark Theme?
-
-    \
 * **!! Things to do for the Media Log:**
   * Make it. lol
 
@@ -25,14 +21,14 @@
     * Frutiger Aero
 
 
-* !! Things to do for the Paracosms page:
+* **!! Things to do for the Paracosms page:**
   * Make it
-    * Continue writing the stories!
+  * Continue writing the stories!
 
 
 * **!! Things I intend to add to the about page:**
-  * Fun facts clicker
   * Add music preferences
+  * Fun facts clicker (?)
 
     \
 

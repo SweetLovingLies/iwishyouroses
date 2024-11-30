@@ -21,7 +21,6 @@
     <script src="js/jaxframeFork.js"></script>
     <script src="phonePages/js/stats.js"></script>
     <script src="js/rsswidget.js"></script>
-
     <script>
         var documentTitle = "୧ ꒰ " + document.title + " ꒱ ୨";
         (function tabTitle() {
@@ -223,7 +222,8 @@
 
                         <p id="tip">(Feed updated every hour)</p>
                     </div>
-                    <img src="Assets/pixels/fd/singlerose.webp" style="cursor: pointer;" onclick="wishOnRose(); document.getElementById('roseClick').play();">
+                    <img src="Assets/pixels/fd/singlerose.webp" style="cursor: pointer;"
+                        onclick="wishOnRose(); document.getElementById('roseClick').play();">
                 </div>
 
             </div>
@@ -236,10 +236,11 @@
     </div>
 
     <div id="phoneSpot">
-        <iframe id="phone" src="phonePages/phone.html"></iframe>
+        <iframe id="phone" class="hidden" src="phonePages/phone.html"></iframe>
     </div>
 
     <script src="js/calender.js"></script>
+    <script src="js/phoneDisplayScript.js"></script>
 </body>
 
 <audio id="roseClick">
@@ -247,3 +248,20 @@
 </audio>
 
 </html>
+
+<!-- <script>
+    // Script for keeping the footer visable only at the bottom of the viewport
+    window.addEventListener('scroll', function () {
+        const footer = document.querySelector('.footer-hidden');
+        const scrollHeight = document.documentElement.scrollHeight;
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const clientHeight = window.innerHeight;
+
+        if (scrollTop + clientHeight >= scrollHeight - 50) {
+            footer.classList.add('footer-visible');
+        } else {
+            footer.classList.remove('footer-visible');
+        }
+    });
+
+</script> -->
