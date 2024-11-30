@@ -8,7 +8,12 @@
 
     <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
     <link href="css/phoneGlobals.css" rel="stylesheet" type="text/css" media="all">
-    <link href="css/themes.css" rel="stylesheet" type="text/css" media="all">
+
+    <link href="css/themesBase.css" rel="stylesheet" type="text/css" media="all">
+
+    <link id="themesCSS" href="css/themeAppThemes/themesLight.css" rel="stylesheet" type="text/css" media="all">
+    <link id="themesDarkCSS" href="css/themeAppThemes/themesDark.css" rel="stylesheet" type="text/css" media="all"
+        disabled>
 
     <meta name="description" content="Access literally everything you need." />
     <link rel="icon" type="image/x-icon" href="../Assets/pixels/vintageAmericana/strawberryphone.webp">
@@ -27,12 +32,12 @@
 
     <div class="themeWrapper">
         <button id="lightModeSwitch" class="themePreview">
-            <img src="themeSwitcherPreviews/Base.png" loading="lazy">
+            <img src="themeSwitcherPreviews/Base.png">
             <caption>Fairy Dust</caption>
         </button>
 
         <button id="darkModeSwitch" class="themePreview">
-            <img src="themeSwitcherPreviews/Dark.png" loading="lazy">
+            <img src="themeSwitcherPreviews/Dark.png">
             <caption>Empty Dream</caption>
         </button>
     </div>
@@ -45,10 +50,56 @@
                 <div id="progress" class="progress"></div>
             </div>
         </div>
-            <img src="/Assets/pixels/animals/catroll.gif">
+        <img src="/Assets/pixels/animals/catroll.gif">
     </div>
 
     <script src="js/themeSwitcher.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const themesCSS = document.getElementById("themesCSS");
+            const themesDarkCSS = document.getElementById("themesDarkCSS");
+            const lightModeSwitch = document.getElementById("lightModeSwitch");
+            const darkModeSwitch = document.getElementById("darkModeSwitch");
+
+            function pickTheme() {
+                const darkThemeEnabled = localStorage.getItem("darkTheme") === "true";
+
+                if (darkThemeEnabled) {
+                    darkMode();
+                } else {
+                    lightMode();
+                }
+            }
+
+            function darkMode() {
+                themesCSS.disabled = true;
+                themesDarkCSS.disabled = false;
+                localStorage.setItem("darkTheme", "true");
+            }
+
+            function lightMode() {
+                themesCSS.disabled = false;
+                themesDarkCSS.disabled = true;
+                localStorage.setItem("darkTheme", "false");
+            }
+
+            lightModeSwitch.addEventListener("click", function () {
+                if (themesCSS.disabled) {
+                    lightMode();
+                }
+            });
+
+            darkModeSwitch.addEventListener("click", function () {
+                if (themesDarkCSS.disabled) {
+                    darkMode();
+                }
+            });
+
+            pickTheme();
+        });
+
+    </script>
 </body>
 
 </html>

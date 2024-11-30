@@ -19,10 +19,8 @@
 * **!! Things to do for the shrines:**
   * Create the base page
   * Topics:
-    * IVE
-    * Weeekly
     * XG
-    * Another
+    * Another (Anime)
     * Frutiger Aero
 
       \
@@ -34,9 +32,9 @@
 
 **Make this site mobile compatible at some point please!** :laughing:
 
-**Also add alt text and stuff**
+**Also add alt text and other accessibility stuff**
 
 
 Other:
 
-Font: To Japan
+Find a font like To Japan on Creative Frabrica

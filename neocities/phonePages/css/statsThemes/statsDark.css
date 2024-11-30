@@ -1,0 +1,27 @@
+body {
+    background: url("/Assets/BGs/darkMode/stripes.gif");
+    background-size: contain;
+}
+
+h1 {
+    background: url("/Assets/BGs/darkMode/stripes.gif");
+    background-size: contain;
+
+    color: var(--persian);
+
+    border-bottom: 5px dashed var(--roseRed);
+    border-top: 5px dashed var(--rosePink);
+}
+
+h6 {
+    color: var(--rosePink);
+}
+
+.statsWrapper {
+    background-color: black;
+    color: white;
+}
+
+.statsWrapper:nth-child(odd){
+    background-color: #2b2b2b;
+}

@@ -1,0 +1,58 @@
+*{
+    scrollbar-width: none;
+}
+
+*::-webkit-scrollbar,
+*::-webkit-scrollbar-button {
+    width: 0;
+}
+
+
+body {
+    font-family: cafesweet;
+}
+
+main{
+    display: flex;
+    flex-flow: column wrap;
+}
+
+h1 {
+    font-family: Barbie;
+    font-weight: normal;
+
+    padding: 10px 0;
+}
+
+h6 {
+    font-size: 1.3em;
+    font-weight: normal;
+
+    align-self: flex-start;
+}
+
+.statsWrapper {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 10px;
+
+    padding: 5px;
+}
+
+#iWishYouRoses {
+    background-color: var(--roseRed);
+}
+
+
+#iWishYouRoses h6, #iWishYouRoses p {
+    color: white;
+}
+
+/* General */
+
+p {
+    font-size: 1.3em;
+    align-self: flex-start;
+    text-decoration: underline;
+    text-decoration-style: dashed; /* iOS Compatibility... */
+}

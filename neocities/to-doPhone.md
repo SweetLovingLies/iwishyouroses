@@ -2,6 +2,10 @@
 
 **!!!!!!!! Today !!!!!!!!**
 
+* Make a dark theme for:
+  * All Built-in Apps
+
+    \
 * Your Tome <---------- Easy?
   * Notes taking app
   * Maybe also for journalling?

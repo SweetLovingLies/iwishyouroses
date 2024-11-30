@@ -9,7 +9,10 @@
     <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
     <link href="css/phoneGlobals.css" rel="stylesheet" type="text/css" media="all">
 
-    <link href="css/stats.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/statsBase.css" rel="stylesheet" type="text/css" media="all">
+
+    <link id="statsCSS" href="css/statsThemes/statsLight.css" rel="stylesheet" type="text/css" media="all">
+    <link id="statsDarkCSS" href="css/statsThemes/statsDark.css" rel="stylesheet" type="text/css" media="all" disabled>
 
     <meta name="description" content="Access literally everything you need." />
     <link rel="icon" type="image/x-icon" href="../Assets/pixels/vintageAmericana/strawberryphone.webp">
@@ -67,20 +70,22 @@
             <p class="weirdstats">0</p>
         </div>
     </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const darkThemeEnabled = localStorage.getItem('darkTheme') === 'true';
+            const statsCSS = document.getElementById("statsCSS");
+            const statsDarkCSS = document.getElementById("statsDarkCSS");
+
+            if (darkThemeEnabled) {
+                statsCSS.disabled = true;
+                statsDarkCSS.disabled = false;
+            } else {
+                statsCSS.disabled = false;
+                statsDarkCSS.disabled = true;
+            }
+        });
+    </script>
 </body>
 
 </html>
-
-<!--  ~ Ideas
-
-Herobrine Sightings:
-I want to add Herobrine to the site somewhere, but for now, make this a number that sometimes counts up (for no apparent reason) to spook people
-    - Probably on a random tick or something. 
-
-!! Global !!
-
-Roses Wished:
-An arbitrary number that grows when clicking on a rose on the site
-    - Sure, it's Neocities, but maybe theres a way to globally track this?
-
-~ -->

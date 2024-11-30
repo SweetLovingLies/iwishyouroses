@@ -1,0 +1,35 @@
+body {
+    background: url("/Assets/BGs/darkMode/lace2.jpg");
+    background-color: black;
+}
+
+#welcomeWrapper {
+    background-color: black;
+    color: white;
+
+    border-top: 1px solid var(--persian);
+    border-bottom: 1px solid var(--persian);
+}
+
+.themePreview {
+    color: white;
+}
+
+.themePreview:disabled {
+    color: gray;
+}
+
+.loading-screen {
+    background-color: black;
+    color: white;
+}
+
+.progress-bar {
+    background-color: var(--pinkIce);
+
+    border: 2px dashed var(--wisteria);
+}
+
+.progress {
+    background-color: var(--bubblegum);
+}

@@ -1,0 +1,27 @@
+body {
+    background: url("/Assets/BGs/pixelPaper.png");
+    background-size: contain;
+}
+
+h1 {
+    background: url("/Assets/BGs/pixelPaper.png");
+    background-size: contain;
+
+    color: var(--persian);
+
+    border-bottom: 5px dashed var(--water);
+    border-top: 5px dashed var(--dustyPink);
+
+}
+
+h6 {
+    color: var(--wisteria);
+}
+
+.statsWrapper {
+    background-color: white;
+}
+
+.statsWrapper:nth-child(odd){
+    background-color: #f5f2f3;
+}
