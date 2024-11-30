@@ -118,12 +118,13 @@
                         <p> Oh, and please feel free to leave me a message on IdolMessenger! It serves as the guest book
                             for this site.</p>
                     </div>
+
                     <div id="spotlight" class="box">
                         <h2>Site of the Whenever</h2>
-                        <a href="https://sugarfantasies.neocities.org/" class="columnFlex2">
+                        <a href="https://sanguineroyal.com/" class="columnFlex2">
                             <img class="displayScreenshots"
-                                src="Assets/other/screenshots/SugarFantasies 2024-11-17 at 17.42.22.png">
-                            <p>Sugar Fantasies</p>
+                                src="Assets/other/screenshots/Sanguine Royal 2024-11-30 at 13.54.09.png">
+                            <p>Sanguine Royal</p>
                         </a>
                     </div>
                     <div id="yuiBox" class="box">
@@ -210,7 +211,9 @@
                             <img src="/Assets/coolsites/cafeRose/88x31melo.png">
                         </a>
                         <br>
-                        <img src="https://iili.io/HD7xIff.png" style="height: 16px; width:16px; vertical-align: text-bottom;"> This <a href="https://fan.sanguineroyal.com/cli/barbieland/" >Barbie</a> is a Himedere!
+                        <img src="https://iili.io/HD7xIff.png"
+                            style="height: 16px; width:16px; vertical-align: text-bottom;"> This <a
+                            href="https://fan.sanguineroyal.com/cli/barbieland/">Barbie</a> is a Himedere!
                     </div>
 
                     <div id="blogRSS" class="columnFlex1 box">
@@ -220,7 +223,7 @@
 
                         <p id="tip">(Feed updated every hour)</p>
                     </div>
-                    <img src="Assets/pixels/fd/singlerose.webp" style="cursor: pointer;" onclick="wishOnRose()">
+                    <img src="Assets/pixels/fd/singlerose.webp" style="cursor: pointer;" onclick="wishOnRose(); document.getElementById('roseClick').play();">
                 </div>
 
             </div>
@@ -238,5 +241,9 @@
 
     <script src="js/calender.js"></script>
 </body>
+
+<audio id="roseClick">
+    <source src="https://files.catbox.moe/dgg0m4.mp3" type="audio/ogg">
+</audio>
 
 </html>

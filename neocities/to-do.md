@@ -2,6 +2,7 @@
 
 * **!! Things to do for the site itself:**
   * Status Cafe Setup
+  * Start a webring for people who like creepy aesthetics?
 
   \
 * **!! Things to do for the credits page:**
@@ -23,7 +24,12 @@
     * Another (Anime)
     * Frutiger Aero
 
-      \
+
+* !! Things to do for the Paracosms page:
+  * Make it
+    * Continue writing the stories!
+
+
 * **!! Things I intend to add to the about page:**
   * Fun facts clicker
   * Add music preferences
@@ -37,4 +43,4 @@
 
 Other:
 
-Find a font like To Japan on Creative Frabrica
+Find a font like To Japan on Creative Fabrica
