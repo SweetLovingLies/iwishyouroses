@@ -677,7 +677,7 @@ starCloudMoji {
     bottom: -605px;
 
     /* ! For testing */
-    bottom: 0;
+    /* bottom: 0; */
 
     z-index: 1000;
 
