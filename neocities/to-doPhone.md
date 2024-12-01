@@ -2,17 +2,15 @@
 
 **!!!!!!!! Today !!!!!!!!**
 
-* Add Delay for hovering the phone
-  * Probably reuse code from parent site
+**! Whenever tf I feel like doing this !**
 
-    \
+
 * Rework navigation page
   * Make it a map instead!
     * Custom map made in Illustrator and Photoshop!
 
       \
 
-**! Whenever tf I feel like doing this !**
 
 * Your Tome <---------- Easy?
   * Notes taking app
@@ -20,8 +18,6 @@
   * Write love letters that could appear in the Yandere shrine!
 
     \
-
-
 * Mellow <--------- Easy?
   * Select your mood with emojis or cute icons
     * Could use this to practice anime style vector work
