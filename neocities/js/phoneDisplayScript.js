@@ -9,6 +9,10 @@ function hidePhone() {
         phone.classList.add('hidden');
         phone.classList.remove('visible');
     }
+    if (!phoneSpot.matches(':focus') && !phone.matches(':focus')) {
+        phone.classList.add('hidden');
+        phone.classList.remove('visible');
+    }
 }
 
 phoneSpot.addEventListener('mouseenter', () => {
