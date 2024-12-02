@@ -733,4 +733,9 @@ iframe {
     }
 }
 
-@media only screen and (max-width: 500px) {}
+@media only screen and (max-width: 500px) {
+    #phone {
+        right: 50%;
+        transform: translateX(50%);
+    }
+}

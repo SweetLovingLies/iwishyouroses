@@ -33,14 +33,16 @@ main {
 }
 
 .warningDisplay {
-    width: 100px;
+    /* min-width: 100px; */
+    max-width: 120px;
+
     text-align: center;
 }
 
 .warningIMGs {
     display: block;
     width: 70px;
-    min-height: 80px;
+    height: 100px;
     object-fit: contain;
 
     margin: 0 auto;
@@ -69,17 +71,12 @@ main {
 
 /* ~ Media Queries */
 
-@media (prefers-reduced-motion: reduce) {}
-
-@media only screen and (max-width: 1024px) {}
-
 @media only screen and (max-width: 810px) {
     main {
         width: unset;
         height: unset;
     }
 }
-
 
 @media only screen and (max-width: 500px) {
     #androses span {

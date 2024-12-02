@@ -30,11 +30,11 @@ aside {
     gap: 10px;
 }
 
-#leftSide{
+#leftSide {
     flex: 1 1;
 }
 
-#rightSide{
+#rightSide {
     flex: 1 1 10%;
 }
 
@@ -65,7 +65,7 @@ main section {
     margin: 0 auto;
 }
 
-#welcome{
+#welcome {
     padding: 10px;
 }
 
@@ -86,59 +86,62 @@ main section {
     width: 90px;
 }
 
-.boxes td{
+.boxes td {
     padding: 5px;
 }
 
 .boxes p {
     overflow: auto;
-    height: 76px; /* accounting for border and padding*/
+    height: 76px;
+    /* accounting for border and padding*/
     scrollbar-width: none;
 }
 
-#marqueeBar{
+#marqueeBar {
     height: unset;
     display: flex;
     overflow: hidden;
 }
 
 /* & Marquee Bar */
-  
-  .marqueeitems {
+
+.marqueeitems {
     animation: scroll-x var(--duration) linear infinite;
     flex-shrink: 0;
-  }
-  .marqueeitems img, .marqueeitems canvas{
+}
+
+.marqueeitems img,
+.marqueeitems canvas {
     display: inline-block;
     vertical-align: middle;
-  }
-  
-  @keyframes scroll-x {
+}
+
+@keyframes scroll-x {
     from {
-      transform: translateX(var(--scroll-start));
+        transform: translateX(var(--scroll-start));
     }
-  
+
     to {
-      transform: translateX(var(--scroll-end));
+        transform: translateX(var(--scroll-end));
     }
-  }
+}
 
-  @media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce) {
 
-    .marqueeitems{
-      -webkit-animation-play-state: paused;
-      -moz-animation-play-state: paused;
-      -o-animation-play-state: paused;
-      animation-play-state: paused;
+    .marqueeitems {
+        -webkit-animation-play-state: paused;
+        -moz-animation-play-state: paused;
+        -o-animation-play-state: paused;
+        animation-play-state: paused;
     }
-  }
-  
-  .marquee:hover .marqueeitems {
+}
+
+.marquee:hover .marqueeitems {
     -webkit-animation-play-state: paused;
     -moz-animation-play-state: paused;
     -o-animation-play-state: paused;
     animation-play-state: paused;
-  }
+}
 
 /* Right-side */
 
@@ -148,13 +151,44 @@ aside section {
     padding: 10px;
 }
 
-#quizzes img{
+#quizzes img {
     width: 100%;
 }
 
 /* General */
 
-h3{
+h3 {
     font-weight: normal;
     font-size: 1.5em;
+}
+
+/* ~ Media Queries */
+
+@media (prefers-reduced-motion: reduce) {}
+
+@media only screen and (max-width: 1024px) {}
+
+@media only screen and (max-width: 810px) {
+    body {
+        align-items: unset;
+    }
+
+    #wrapper {
+        flex: 0 1 60%;
+        flex-flow: column nowrap;
+
+        overflow-y: scroll;
+    }
+}
+
+
+@media only screen and (max-width: 500px) {
+    #wrapper {
+        flex: 1 1;
+        border-width: 0 !important;
+    }
+
+    aside section {
+        padding: 0;
+      }
 }

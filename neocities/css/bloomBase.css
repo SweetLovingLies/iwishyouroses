@@ -2,6 +2,8 @@
 
 body {
     font-size: 16px;
+
+    overflow: hidden;
 }
 
 #wrapper {
@@ -12,6 +14,8 @@ body {
     width: 100vw;
 
     padding-top: 50px;
+
+    overflow: auto;
 }
 
 .rainbowWrapper {
@@ -318,7 +322,12 @@ h2 {
 
     body {
         height: unset;
-        overflow: auto;
+    }
+
+    #wrapper {
+        align-items: baseline;
+
+        padding-top: 0;
     }
 
     #androses {
@@ -328,10 +337,6 @@ h2 {
 
     #androses span {
         font-size: 100%;
-    }
-
-    .rainbowWrapper {
-        display: none;
     }
 
     #baselayout {
@@ -354,6 +359,10 @@ h2 {
 
     #jsCalender {
         width: 100%;
+    }
+
+    #pixelRose {
+        align-self: flex-end;
     }
 }
 
