@@ -51,11 +51,11 @@ main {
     margin-bottom: 5px;
 }
 
-.flexWrapper{
+.flexWrapper {
     display: flex;
 }
 
-#enter{
+#enter {
     font-size: 4em;
     font-family: maddison;
     letter-spacing: -8px;
@@ -72,6 +72,11 @@ main {
 /* ~ Media Queries */
 
 @media only screen and (max-width: 810px) {
+    body {
+        align-items: baseline;
+        overflow: auto;
+    }
+
     main {
         width: unset;
         height: unset;
@@ -83,10 +88,11 @@ main {
         font-size: 8vw;
     }
 
-    #warnings{
+    #warnings {
         flex-flow: row wrap;
         align-items: center;
     }
+
     .warningDisplay {
         flex: 0;
     }
