@@ -2,32 +2,35 @@
 
 **!!!!!!!! Today !!!!!!!!**
 
-**! Whenever tf I feel like doing this !**
-
-
-* Rework navigation page
-  * Make it a map instead!
-    * Custom map made in Illustrator and Photoshop!
+* Your Tome <---------- Easy?
+  * Write love letters that could appear in the Yandere shrine!
+    * Would require tagging system
 
       \
-
-
-* Your Tome <---------- Easy?
-  * Notes taking app
-  * Maybe also for journalling?
-  * Write love letters that could appear in the Yandere shrine!
-
-    \
+  * Add export to PDF functionality
+  * Make modal to view notes
+  * Add Markdown support?
+  * Add FNAF Ref
 * Mellow <--------- Easy?
   * Select your mood with emojis or cute icons
     * Could use this to practice anime style vector work
-  * Mood insights?
+      * UGH
+    * Mood insights?
 
-    \
-* Storybook (Achievements)
+**! Whenever tf I feel like doing this !**
+
+* Rework navigation page
+  * Make it a map instead!
+    * Custom map made in Illustrator and Photoshop (?)
+
+      \
+* StarBound (Achievements)
   * View Shrine by clicking phone home button 9 (?) times
   * Click the weirdStats 69 times... Nice!
   * Type **395248** into Your Tome to get a FNAF reference
+  * Wish roses 1000 times
+  * Actually find Herobrine
+  * Something in the water…?
 
     \
 * Camera <--------- Medium?
@@ -46,15 +49,15 @@
       \
 * Stellar Shop (? name ?) <--------- VERY HARD
   * Fake e-commerce app
-    * Maybe Tie it into the Idol fashion app somehow
+    * Maybe rie it into the Idol fashion app somehow
     * OR THE STICKER CREATION APP?
 
       \
 * Make Icons for Apps (upon progress being made on them)
-  * Storybook
+  * StarBound
   * Your Tome
   * Stellar Shop (? name ?)
-  * Mellow?
+  * Mellow
 
     \
 
@@ -63,7 +66,7 @@
 * Horoscope App
   * Daily horoscopes
     * Try animations again
-  * Maybe a compatibility checker (with a yandere twist)
+  * Maybe a compatibility checker (with a yandere twist!)
 
     \
 * Fortune Teller App

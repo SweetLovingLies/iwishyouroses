@@ -1,16 +1,11 @@
 ## !!!!!! Things I intend to do for this site... the text file!
 
-* **!! Things to do for the site itself:**
-  * Status Cafe Setup
-  * Start a webring for people who like creepy aesthetics?
-
-  \
 * **!! Things to do for the Media Log:**
-  * Make it. lol
+  * Make it
 
     \
 * **!! Things to do for the projects page:**
-  * Make it. lol
+  * Make this one too
 
   \
 * **!! Things to do for the shrines:**
@@ -20,21 +15,22 @@
     * Another (Anime)
     * Frutiger Aero
 
-
+      \
 * **!! Things to do for the Paracosms page:**
-  * Make it
+  * Make this one too
   * Continue writing the stories!
 
-
+    \
 * **!! Things I intend to add to the about page:**
   * Add music preferences
   * Fun facts clicker (?)
 
-    \
 
-**Make this site mobile compatible at some point please!** :laughing:
-
-**Also add alt text and other accessibility stuff**
+* **!! Things to do for the site itself:**
+  * Status Cafe Setup
+  * **Add alt text and other accessibility stuff**
+  * Start a webring for people who like creepy aesthetics?
+  * **Christmas theme!**
 
 
 Other:
