@@ -34,10 +34,10 @@ phone.addEventListener('mouseleave', () => {
 });
 
 // Fallback just in case something breaks... it probably won't. 
-// document.addEventListener('mousemove', (e) => {
-//     const windowWidth = window.innerWidth;
-//     if (e.clientX > windowWidth - 50 && phone.classList.contains('hidden')) {
-//         phone.classList.remove('hidden');
-//         phone.classList.add('visible');
-//     }
-// });
+document.addEventListener('mousemove', (e) => {
+    const windowWidth = window.innerWidth;
+    if (e.clientX > windowWidth - 50 && phone.classList.contains('hidden')) {
+        phone.classList.remove('hidden');
+        phone.classList.add('visible');
+    }
+});
