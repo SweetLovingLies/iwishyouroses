@@ -1,0 +1,35 @@
+:root {
+
+    /* Colors */
+    --bubblegum: #ffb7ed;
+    --dustyPink: #f6bdd1;
+    --persian: #f283b6;
+    --wisteria: #8266ff;
+    --hintofmist: #f1efff;
+    --whispermist: #dbd8f0;
+    --driedBlood: #8B575c;
+    --pinkIce: #f6e4f6;
+    --ash: #cad2c5;
+    --water: #adcaff;
+    --deepsea: #357ce6;
+    --roseRed: #C71227;
+    --rosePink: #FB003F;
+    --blood: #800000;
+    --deepslate: #696969;
+    --cobblestone: #a8a8a8;
+
+    /* Rainbow Ring Colors */
+
+    --rainbowRed: #ffadad;
+    --rainbowOrange: #ffdea1;
+    --rainbowYellow: #ffffb5;
+    --rainbowGreen: #c2ffc2;
+    --rainbowBlue: #b8d4ff;
+    --rainbowIndigo: #9e97e0;
+    --rainbowPurple: #cfb0ff;
+    --rainbowPink: #ffd8f2;
+
+    /* Globals */
+    --globalBorderRadius: 10px;
+    --detailBarHeight: 20px;
+}
