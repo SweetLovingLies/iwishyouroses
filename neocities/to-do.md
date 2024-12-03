@@ -1,7 +1,7 @@
 ## !!!!!! Things I intend to do for this site... the text file!
 
 * **!! Things to do for the Media Log:**
-  * Make it
+  * Make Both
 
     \
 * **!! Things to do for the projects page:**
@@ -27,7 +27,8 @@
 
 
 * **!! Things to do for the site itself:**
-  * Status Cafe Setup
+  * Add Status Cafe to the site
+    * Bugkisser inspo
   * **Add alt text and other accessibility stuff**
   * Start a webring for people who like creepy aesthetics?
   * **Christmas theme!**

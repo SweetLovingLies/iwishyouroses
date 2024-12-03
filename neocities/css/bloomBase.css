@@ -174,19 +174,68 @@ main {
     text-align: center;
 }
 
-#yuiBox {
-    height: 250px;
+/* ~ Status Cafe */
+
+#statusCafe {
+    height: 270px;
+    position: relative;
 }
 
-#yuiBox img,
-#yuiBox canvas {
+#statusCafe img,
+#statusCafe canvas {
     height: 100%;
-
     object-fit: cover;
     object-position: top;
 }
 
-/* Right-side */
+#TBWrapper {
+    position: absolute;
+    top: 20px;
+    right: 30%;
+}
+
+#thoughtBubble {
+    max-width: 300px;
+    width: 100%;
+    height: 84px;
+    padding: 10px;
+
+    background: var(--dustyPink);
+    border: 3px dashed white;
+    outline: 5px solid var(--dustyPink);
+    border-radius: 20px;
+}
+
+#thoughtBubble::after {
+    content: ".";
+    font-weight: bold;
+
+    display: block;
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+    z-index: 1;
+
+    color: var(--dustyPink);
+    -webkit-text-stroke: 1px white;
+    text-align: right;
+    font-size: 55px;
+    line-height: 20px;
+    font-family: 'Times New Roman', Times, serif; /* For rounded dot */
+    
+    width: 55px;
+    height: 11px;
+
+    background-color: var(--dustyPink);
+    border: 1px solid white;
+    border-radius: 11px;
+}
+
+#thoughtBubble a {
+    color: var(--wisteria);
+}
+
+/* ? Right-side */
 
 .column {
     gap: 10px;
@@ -364,7 +413,19 @@ h2 {
     #pixelRose {
         align-self: flex-end;
     }
+
+    #statusCafe {
+        height: 300px;
+    }
 }
 
 
-@media only screen and (max-width: 500px) {}
+@media only screen and (max-width: 500px) {
+    #thoughtBubble::after {
+    
+        display: block;
+        position: absolute;
+        top: .5em;
+        right: -1.3em;
+    }
+}
