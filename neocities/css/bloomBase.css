@@ -9,11 +9,10 @@ body {
 #wrapper {
     display: flex;
     justify-content: center;
-    align-items: center;
     height: 100vh;
     width: 100vw;
 
-    padding-top: 50px;
+    padding-top: 80px;
 
     overflow: auto;
 }
@@ -145,7 +144,7 @@ header .calendar-current-date {
 main {
     flex: 0 1 40%;
 
-    gap: 10px;
+    /* gap: 10px; */
 }
 
 #home p {
@@ -158,7 +157,7 @@ main {
 
 .displayScreenshots {
     width: 430px;
-    height: 217px;
+    height: 220px;
 
     object-fit: cover;
     object-position: top;
@@ -221,8 +220,9 @@ main {
     text-align: right;
     font-size: 55px;
     line-height: 20px;
-    font-family: 'Times New Roman', Times, serif; /* For rounded dot */
-    
+    font-family: 'Times New Roman', Times, serif;
+    /* For rounded dot */
+
     width: 55px;
     height: 11px;
 
@@ -286,7 +286,7 @@ main {
     position: relative;
 }
 
-#rssFeedContainer{
+#rssFeedContainer {
     overflow: auto;
 }
 
@@ -311,7 +311,7 @@ main {
 }
 
 #blogRSS p {
-    font-family: "Cormorant Garamond", Georgia, Cambria, "Times New Roman", Times, serif;    
+    font-family: "Cormorant Garamond", Georgia, Cambria, "Times New Roman", Times, serif;
     margin-top: auto;
     font-size: 1.2em;
 }
@@ -343,7 +343,11 @@ footer {
 
 /* Other */
 
-#androses{
+hr {
+    border: none;
+}
+
+#androses {
     position: absolute;
     top: -10.5vh;
     right: 0;
@@ -422,7 +426,7 @@ h2 {
 
 @media only screen and (max-width: 500px) {
     #thoughtBubble::after {
-    
+
         display: block;
         position: absolute;
         top: .5em;

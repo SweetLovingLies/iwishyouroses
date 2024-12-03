@@ -14,11 +14,6 @@ body {
     border-radius: var(--globalBorderRadius);
 }
 
-section hr {
-    width: 100%;
-    border: 1px solid var(--dustyPink);
-}
-
 #siteButton {
     background: url("/Assets/BGs/GMS6nDM.png");
 }
@@ -211,6 +206,16 @@ header .calendar-navigation span:hover {
 footer {
     background-color: var(--whispermist);
     padding: 5px;
+}
+
+/* General */
+
+hr {
+    background: url('/Assets/pixels/bubblegum/pinkRoseBowDivider.webp') repeat-x;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    height: 22px;
 }
 
 .box,

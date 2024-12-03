@@ -25,10 +25,8 @@
   * Add music preferences
   * Fun facts clicker (?)
 
-
+    \
 * **!! Things to do for the site itself:**
-  * Add Status Cafe to the site
-    * Bugkisser inspo
   * **Add alt text and other accessibility stuff**
   * Start a webring for people who like creepy aesthetics?
   * **Christmas theme!**
