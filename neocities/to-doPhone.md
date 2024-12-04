@@ -2,6 +2,9 @@
 
 **!!!!!!!! Today !!!!!!!!**
 
+* Figure out why tf the phone hover system is weird.
+
+
 * Your Tome <---------- Easy?
   * Write love letters that could appear in the Yandere shrine!
     * Would require tagging system
