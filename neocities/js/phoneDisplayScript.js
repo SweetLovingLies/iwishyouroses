@@ -8,8 +8,7 @@ function hidePhone() {
     if (!phoneSpot.matches(':hover') && !phone.matches(':hover')) {
         phone.classList.add('hidden');
         phone.classList.remove('visible');
-    }
-    if (!phoneSpot.matches(':focus') && !phone.matches(':focus')) {
+    } else if (!phoneSpot.matches(':focus') && !phone.matches(':focus')) {
         phone.classList.add('hidden');
         phone.classList.remove('visible');
     }
