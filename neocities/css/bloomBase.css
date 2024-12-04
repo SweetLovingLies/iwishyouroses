@@ -366,6 +366,10 @@ h2 {
     flex: 1 1 100%;
 }
 
+#pixelRose {
+    image-rendering: pixelated;
+}
+
 /* ~ Media Queries */
 
 @media (prefers-reduced-motion: reduce) {}
