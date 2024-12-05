@@ -1,0 +1,185 @@
+[
+    {
+      "title": "I Wish You Roses",
+      "writer": "Kali Uchis",
+      "volume": 0.04,
+      "src": "https://files.catbox.moe/z1e1s4.mp3",
+      "cover": "/Assets/other/albumCovers/IWishYouRosesCover.jpeg"
+    },
+    {
+      "title": "Dead to Me (Instrumental Ver.)",
+      "writer": "Melanie Martinez",
+      "volume": 0.05,
+      "src": "https://files.catbox.moe/8ey6a2.mp3",
+      "cover": "/Assets/other/albumCovers/DeadToMeCover.jpeg"
+    },
+    {
+      "title": "Yandere Simulator Main Menu",
+      "writer": "Only Wednesday",
+      "volume": 0.07,
+      "src": "https://files.catbox.moe/5jr3gz.mp3",
+      "cover": "/Assets/other/albumCovers/MainMenuYanSimCover.png"
+    },
+    {
+      "title": "Saffron and Green Tea",
+      "writer": "Ibrahim",
+      "volume": 0.04,
+      "src": "https://files.catbox.moe/v69zye.mp3",
+      "cover": "/Assets/other/albumCovers/SaffronandGreenTeaCover.jpeg"
+    },
+    {
+      "title": "Love Issues",
+      "writer": "Dahl_",
+      "volume": 0.05,
+      "src": "https://files.catbox.moe/0csw80.mp3",
+      "cover": "/Assets/other/albumCovers/LoveIssuesCover.jpeg"
+    },
+    {
+      "title": "Bullet Train Fantasy",
+      "writer": "Ibrahim, LuvBird",
+      "volume": 0.04,
+      "src": "https://files.catbox.moe/xr431q.mp3",
+      "cover": "/Assets/other/albumCovers/BulletTrainFantasyCover.jpeg"
+    },
+    {
+      "title": "Flowers",
+      "writer": "In Love With a Ghost, Nori",
+      "volume": 0.04,
+      "src": "https://files.catbox.moe/c3o43h.mp3",
+      "cover": "/Assets/other/albumCovers/FlowersCover.jpeg"
+    },
+    {
+      "title": "Let Go",
+      "writer": "Ark Patrol",
+      "volume": 0.04,
+      "src": "https://files.catbox.moe/4t8wvc.mp3",
+      "cover": "/Assets/other/albumCovers/LetGoCover.jpeg"
+    },
+    {
+      "title": "Wool Sweaters and Early Mornings",
+      "writer": "Ibrahim",
+      "volume": 0.04,
+      "src": "https://files.catbox.moe/p5w6oz.mp3",
+      "cover": "/Assets/other/albumCovers/WoolSweatersandEarlyMorningsCover.jpeg"
+    },
+    {
+      "title": "Paranoia",
+      "writer": "The Marías",
+      "volume": 0.05,
+      "src": "https://files.catbox.moe/f7q8av.mp3",
+      "cover": "/Assets/other/albumCovers/ParanoiaCover.jpeg"
+    },
+    {
+      "title": "Pretty",
+      "writer": "Coco and Clair Clair",
+      "volume": 0.05,
+      "src": "https://files.catbox.moe/61v348.mp3",
+      "cover": "/Assets/other/albumCovers/PrettyCover.jpeg"
+    },
+    {
+      "title": "SHOOTING STAR",
+      "writer": "XG",
+      "volume": 0.05,
+      "src": "https://files.catbox.moe/4kl1q3.mp3",
+      "cover": "/Assets/other/albumCovers/XGCover.jpeg"
+    },
+    {
+      "title": "LEFT RIGHT",
+      "writer": "XG",
+      "volume": 0.05,
+      "src": "https://files.catbox.moe/fqqoqx.mp3",
+      "cover": "/Assets/other/albumCovers/XGCover.jpeg"
+    },
+    {
+      "title": "IYKYK",
+      "writer": "XG",
+      "volume": 0.05,
+      "src": "https://files.catbox.moe/tvknyo.mp3",
+      "cover": "/Assets/other/albumCovers/IYKYKCover.jpeg"
+    },
+    {
+      "title": "SOMETHING AINT RIGHT",
+      "writer": "XG",
+      "volume": 0.05,
+      "src": "https://files.catbox.moe/8gg2x6.mp3",
+      "cover": "/Assets/other/albumCovers/SomethingAintRightCover.jpeg"
+    },
+    {
+      "title": "West Coast",
+      "writer": "Lana Del Rey",
+      "volume": 0.05,
+      "src": "https://files.catbox.moe/rkrkpf.mp3",
+      "cover": "/Assets/other/albumCovers/WestCoastCover.jpeg"
+    },
+    {
+      "title": "Who?",
+      "writer": "Azari",
+      "volume": 0.05,
+      "src": "https://files.catbox.moe/ffp4dk.mp3",
+      "cover": "/Assets/other/albumCovers/WhoCover.jpeg"
+    },
+    {
+      "title": "Sad Girl Sex",
+      "writer": "Deco*27",
+      "volume": 0.05,
+      "src": "https://files.catbox.moe/9xkxvv.mp3",
+      "cover": "/Assets/other/albumCovers/SadGirlSexCover.jpeg"
+    },
+    {
+      "title": "Agora Hills",
+      "writer": "Doja Cat",
+      "volume": 0.05,
+      "src": "https://files.catbox.moe/20y449.mp3",
+      "cover": "/Assets/other/albumCovers/AgoraHillsCover.jpeg"
+    },
+    {
+      "title": "Barbwire Kiss",
+      "writer": "Night Club",
+      "volume": 0.05,
+      "src": "https://files.catbox.moe/d4x9vl.mp3",
+      "cover": "/Assets/other/albumCovers/BarbwireKissCover.jpeg"
+    },
+    {
+      "title": "Desire",
+      "writer": "Meg Meyers",
+      "volume": 0.05,
+      "src": "https://files.catbox.moe/1ezhas.mp3",
+      "cover": "/Assets/other/albumCovers/DesireCover.jpeg"
+    },
+    {
+      "title": "I Was Never There",
+      "writer": "The Weeknd",
+      "volume": 0.05,
+      "src": "https://files.catbox.moe/4c4asl.mp3",
+      "cover": "/Assets/other/albumCovers/IWasNeverThereCover.jpeg"
+    },
+    {
+      "title": "Love is a Bitch",
+      "writer": "The Weeknd",
+      "volume": 0.05,
+      "src": "https://files.catbox.moe/1cgyd1.mp3",
+      "cover": "/Assets/other/albumCovers/LoveIsABitchCover.jpeg"
+    },
+    {
+      "title": "Night Club Junkie",
+      "writer": "YUC'e",
+      "volume": 0.05,
+      "src": "https://files.catbox.moe/zz4l3k.mp3",
+      "cover": "/Assets/other/albumCovers/NightClubJunkieCover.jpeg"
+    },
+    {
+      "title": "Online",
+      "writer": "TWRP, Montaigne, Tom Cardy",
+      "volume": 0.05,
+      "src": "https://files.catbox.moe/snbr26.mp3",
+      "cover": "/Assets/other/albumCovers/OnlineCover.jpeg"
+    },
+    {
+      "title": "OTONABLUE",
+      "writer": "ATARASHII GAKKO!",
+      "volume": 0.05,
+      "src": "https://files.catbox.moe/kgvecj.mp3",
+      "cover": "/Assets/other/albumCovers/OTONOBLUECover.jpeg"
+    }
+  ]
+  

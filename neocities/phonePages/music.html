@@ -14,7 +14,7 @@
     <link rel="icon" type="image/x-icon" href="../Assets/pixels/vintageAmericana/strawberryphone.webp">
 
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
-    <script src="js/nowPlaying.js"></script>
+    <script src="js/musicPlayer/musicPlayer.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,6 +38,7 @@
             </svg>
 
             <img id="albumCover" class="albumCover" src="/Assets/other/albumCovers/fallbackCover.jpg" alt="Album Cover">
+
         </div>
 
         <div class="songInfoWrapper">
@@ -75,76 +76,177 @@
         <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.5" title="Volume">
     </main>
 </body>
-
-
 <script>
-    // Nightmare Code
-    document.addEventListener("DOMContentLoaded", function () {
-        setTimeout(function () {
-            let audioPlayer = window.top.document.getElementById('globalAudio');
-            let currentTimeDisplay = document.getElementById('currentTimeDisplay');
+    document.addEventListener('DOMContentLoaded', async function () {
+        await createAudioPlayer();
+        controlsSetUp();
+        setupMusicPageUI();
+        PauseNPlay();
+    });
 
-            const songProgressBar = document.querySelector('.ProgressCBar');
-            const songDuration = audioPlayer.duration;
+    function controlsSetUp() {
+        if (!audioPlayer) {
+            console.error("Audio player is not initialized yet.");
+            return;
+        }
 
-            const progressCStar = document.querySelector('.ProgressCStar');
-            const starPath = progressCStar.querySelector('path');
+        const pauseButton = document.getElementById('MusicPauseButton');
+        if (pauseButton) {
+            pauseButton.addEventListener('click', PauseNPlay);
+        }
 
-            let rotationOffset = 0;
-            const rotationsPerSecond = 0.15; // Rotations in place
+        const seekBackButton = document.getElementById('seekBack');
+        if (seekBackButton) {
+            seekBackButton.addEventListener('click', seekBackward);
+        }
 
-            starPath.style.transformOrigin = "50% 50%";
-            starPath.style.transition = "transform 1s, left 1s, top 1s";
+        const seekForwardButton = document.getElementById('seekForward');
+        if (seekForwardButton) {
+            seekForwardButton.addEventListener('click', seekForward);
+        }
 
-            progressCStar.style.transform = 'translate(0, -90px)';
+        const loopButton = document.getElementById('loopButton');
+        if (loopButton) {
+            loopButton.addEventListener('click', toggleLoop);
+        }
 
-            const savedDuration = sessionStorage.getItem('songDuration');
-            if (savedDuration) {
-                document.getElementById('durationTimeDisplay').innerText = savedDuration;
-            }
+        const shuffleButton = document.getElementById('shuffleButton');
+        if (shuffleButton) {
+            shuffleButton.addEventListener('click', toggleShuffle);
+        }
+    }
 
+    function setupMusicPageUI() {
+        if (!audioPlayer) {
+            console.error("Audio player is not initialized yet.");
+            return;
+        }
+
+        // For the progress bar
+        const progressCStar = document.querySelector('.ProgressCStar');
+        const starPath = progressCStar?.querySelector('path');
+        let rotationOffset = 0;
+        const rotationsPerSecond = 0.15; // Rotations in place
+        starPath.style.transformOrigin = "50% 50%";
+        starPath.style.transition = "transform 1s, left 1s, top 1s";
+
+        // Volume Slider
+        const volumeSlider = document.getElementById('volumeSlider');
+        if (volumeSlider) {
+            volumeSlider.value = audioPlayer.volume;
+            volumeSlider.addEventListener('input', function () {
+                audioPlayer.volume = parseFloat(volumeSlider.value);
+                sessionStorage.setItem('songVolume', volumeSlider.value);
+                volumeSlider.setAttribute('title', `Volume: ${volumeSlider.value}`);
+            });
+        }
+
+        const savedTime = sessionStorage.getItem('currentSongTime');
+        if (savedTime) {
+            audioPlayer.currentTime = parseFloat(savedTime);
+        }
+
+        const currentTimeDisplay = document.getElementById('currentTimeDisplay');
+        if (currentTimeDisplay) {
             audioPlayer.addEventListener('timeupdate', function () {
                 const currentTime = audioPlayer.currentTime;
-
-                const progress = (currentTime / audioPlayer.duration) * 565;
-                songProgressBar.style.strokeDashoffset = 565 - progress;
-
-                const radius = 90;
-
-                const angle = (currentTime / audioPlayer.duration) * 360;
-
-                const radians = (angle - 90) * (Math.PI / 180);
-
-                const starX = radius * Math.cos(radians);
-                const starY = radius * Math.sin(radians);
-
-                progressCStar.style.left = '50%';
-                progressCStar.style.top = '50%';
-                progressCStar.style.transform = `translate(${starX - 20}px, ${starY - 20}px)`;
-
-                rotationOffset += rotationsPerSecond * 360;
-                starPath.style.transform = `rotate(${rotationOffset}deg)`;
-
                 const minutes = Math.floor(currentTime / 60);
                 const seconds = Math.floor(currentTime % 60);
-
                 currentTimeDisplay.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+
+                updateProgressBar(currentTime, audioPlayer.duration, progressCStar);
             });
-        }, 100);
+        }
 
+        // Update song duration when metadata is loaded
         audioPlayer.addEventListener('loadedmetadata', function () {
-            const songIndex = parseInt(sessionStorage.getItem('currentSongIndex')) || 0;
-            updateMetadata(songIndex);
-
-            const totalDuration = Math.floor(audioPlayer.duration);
-            const minutes = Math.floor(totalDuration / 60);
-            const seconds = totalDuration % 60;
+            const duration = Math.floor(audioPlayer.duration);
+            const minutes = Math.floor(duration / 60);
+            const seconds = duration % 60;
             const formattedDuration = `${minutes}:${seconds.toString().padStart(2, '0')}`;
-
             sessionStorage.setItem('songDuration', formattedDuration);
             document.getElementById('durationTimeDisplay').innerText = formattedDuration;
         });
-    });
+    }
+
+    function updateProgressBar(currentTime, duration, progressCStar) {
+        const progressCBar = document.querySelector('.ProgressCBar');
+        if (!progressCBar) return;
+
+        const progress = (currentTime / duration) * 565;
+        progressCBar.style.strokeDashoffset = 565 - progress;
+
+        if (progressCStar) {
+            const radius = 90;
+            const angle = (currentTime / duration) * 360;
+            const radians = (angle - 90) * (Math.PI / 180);
+            const starX = radius * Math.cos(radians);
+            const starY = radius * Math.sin(radians);
+
+            progressCStar.style.left = '50%';
+            progressCStar.style.top = '50%';
+            progressCStar.style.transform = `translate(${starX - 20}px, ${starY - 20}px)`;
+
+            const rotationsPerSecond = 0.15;
+            progressCStar.querySelector('path').style.transform = `rotate(${currentTime * rotationsPerSecond * 360}deg)`;
+        }
+    }
+
+    function updateMetadata(index) {
+        const song = songs[index];
+        if (!song) return;  // Exit if there's no song at the given index
+
+        // Update song name and artist
+        document.getElementById('songName').innerText = song.title;
+        document.getElementById('songArtist').innerText = song.writer;
+
+        // Update album cover (with fallback image)
+        const albumCoverElement = document.getElementById('albumCover');
+        if (albumCoverElement) {
+            albumCoverElement.src = song.cover || "/Assets/other/albumCovers/fallbackCover.jpg";
+            albumCoverElement.alt = `${song.title} Album Cover`;
+        }
+        // console.log(`Updated metadata for ${song.title}`);
+    }
+
+    // Toggle play/pause state
+    function PauseNPlay() {
+        const isPaused = audioPlayer.paused;
+
+        if (isPaused) {
+            audioPlayer.play();
+            sessionStorage.setItem('isPaused', 'false'); 
+            document.getElementById('MusicPauseButton').innerHTML = `<iconify-icon icon="qlementine-icons:pause-16"></iconify-icon>`;
+        } else if (!isPaused) {
+            audioPlayer.pause();
+            sessionStorage.setItem('isPaused', 'true');
+            document.getElementById('MusicPauseButton').innerHTML = `<iconify-icon icon="qlementine-icons:play-16"></iconify-icon>`; 
+        } else {
+            document.getElementById('MusicPauseButton').innerHTML = `<iconify-icon icon="line-md:loading-loop"></iconify-icon></iconify-icon>`; 
+        }
+    }
+
+    // Loop Mode
+    function toggleLoop() {
+        loopMode = !loopMode;
+        this.classList.toggle('active', loopMode);
+        sessionStorage.setItem('loopMode', loopMode);
+    }
+
+    // Shuffle Mode
+    function toggleShuffle() {
+        shuffleMode = !shuffleMode;
+        this.classList.toggle('active', shuffleMode);
+
+        if (shuffleMode) {
+            shuffleArray(shuffleOrder);
+            currentShuffleIndex = 0;
+        } else {
+            shuffleOrder = [...Array(songs.length).keys()];
+        }
+
+        sessionStorage.setItem('shuffleMode', shuffleMode);
+    }
 </script>
 
 </html>
