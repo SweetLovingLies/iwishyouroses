@@ -200,13 +200,7 @@
 
             if (appElement.classList.contains('open')) return;
 
-            const activeApps = document.querySelectorAll('.app.open');
-            activeApps.forEach(activeApp => {
-                closeApp(activeApp);
-            });
-
             appElement.classList.add('open');
-            appElement.classList.remove('close');
 
             const appHref = appElement.getAttribute('href');
 
