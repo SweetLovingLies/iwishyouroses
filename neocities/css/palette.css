@@ -728,9 +728,9 @@ iframe {
         flex-flow: column nowrap;
     }
 
-    .flex2 {
+    /* .flex2 {
         flex-flow: column wrap;
-    }
+    } */
 }
 
 @media only screen and (max-width: 500px) {

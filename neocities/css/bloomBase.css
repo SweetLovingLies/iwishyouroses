@@ -385,7 +385,7 @@ h2 {
 
     #wrapper {
         align-items: baseline;
-
+        flex-flow: row nowrap;
         padding-top: 0;
     }
 
@@ -411,10 +411,10 @@ h2 {
         width: 100%;
     }
 
-    .box2,
+    /* .box2,
     #stamps {
         flex: none;
-    }
+    } */
 
     #jsCalender {
         width: 100%;
@@ -432,7 +432,6 @@ h2 {
 
 @media only screen and (max-width: 500px) {
     #thoughtBubble::after {
-
         display: block;
         position: absolute;
         top: .5em;
