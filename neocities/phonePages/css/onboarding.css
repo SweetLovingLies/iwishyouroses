@@ -22,7 +22,7 @@ body {
 
 #hangingSheep {
     position: absolute;
-    background: url('/Assets/pixels/other/hangingSheep.webp') repeat-x;
+    background: url('/Assets/pixels/headers/hangingSheep.webp') repeat-x;
     background-size: contain;
     height: 200px;
     width: 100%;

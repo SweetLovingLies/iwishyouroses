@@ -3,8 +3,10 @@
     /* Colors */
     --bubblegum: #ffb7ed;
     --dustyPink: #f6bdd1;
+    --rosette: #ffbbc5;
     --persian: #f283b6;
     --wisteria: #8266ff;
+    --kangel: #c3a3f6;
     --hintofmist: #f1efff;
     --whispermist: #dbd8f0;
     --driedBlood: #8B575c;
@@ -85,6 +87,11 @@
 @font-face {
     font-family: MagicStars;
     src: url('/fonts/MagicStars.otf');
+}
+
+@font-face {
+    font-family: heartBlood;
+    src: url('/fonts/yanFonts/HeartBlood.ttf');
 }
 
 html,
@@ -350,7 +357,7 @@ quote::after {
 
 .detailing {
     position: absolute;
-    background: url('/Assets/BGs/headerpink2.gif') repeat-x;
+    background: url('/Assets/pixels/headers/headerpink2.gif') repeat-x;
     background-size: contain;
     height: 58px;
     width: 100%;

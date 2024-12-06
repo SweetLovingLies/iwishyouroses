@@ -1,0 +1,198 @@
+body {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+
+    font-family: cafesweet;
+}
+
+#wrapper {
+    flex: 0 1 50%;
+    display: flex;
+    flex-flow: row wrap;
+    position: relative;
+
+    border-top: none;
+    border-bottom: none;
+}
+
+header {
+    flex: 1 1 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+}
+
+.wrapper {
+    flex: 1 1 50%;
+    height: calc(100% - 130px);
+    position: relative;
+}
+
+#topTrim {
+    position: absolute;
+    width: 100%;
+
+    top: 0;
+    left: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+#bottomTrim {
+    position: absolute;
+    width: 100%;
+
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+
+/* & Game Log */
+
+#gameLogWrapper {
+    background: url("/Assets/BGs/trspHearts.gif"), var(--pinkIce);
+}
+
+#gameLogWrapper #topTrim {
+    image-rendering: pixelated;
+    background: url('/Assets/pixels/headers/061-t.gif') repeat-x;
+    background-size: contain;
+    background-position: center;
+    
+    height: 55px;
+}
+
+#gameLogWrapper #bottomTrim {
+    image-rendering: pixelated;
+    background: url('/Assets/pixels/headers/061-b.gif') repeat-x;
+    background-size: contain;
+    background-position: center;
+
+    height: 55px;
+}
+
+#gameLog {
+    image-rendering: pixelated;
+
+    top: 10em;
+    left: 50%;
+
+    color: var(--kangel);
+    transform: translateX(-50%);
+
+    transition: color .25s;
+}
+
+#gameLog:hover {
+    color: var(--persian);
+}
+
+#gameLog:active {
+    color: var(--water);
+}
+
+#gameLog img {
+    width: 20vw;
+
+    border-style: solid;
+    border-image: url("/Assets/borders/pinkHearts.png") 7 round;
+    border-width: 7px;
+    background-clip: padding-box;
+    transition: transform 1s;
+}
+
+#gameLog img:hover, 
+#gameLog:hover > img {
+    transform: rotate(-5deg);
+}
+
+
+#gameLog h2 {
+    bottom: -1.5em;
+    -webkit-text-stroke: .5px black;
+}
+
+/* ! Media Log */
+
+#mediaLogWrapper {
+    background: url(/Assets/BGs/darkMode/redroses.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#mediaLogWrapper #topTrim {
+    background: url('/Assets/pixels/headers/bloodHeader.webp') repeat-x;
+    background-size: contain;
+    height: 20px;
+}
+
+#mediaLog {
+    top: 10em;
+    right: 50%;
+    transform: translateX(50%);
+
+    text-align: right;
+    color: var(--blood);
+    transition: color .25s;
+}
+
+#mediaLog:hover {
+    color: var(--driedBlood);
+}
+
+#mediaLog:active {
+    color: black;
+}
+
+#mediaLog img {
+    width: calc(20vw + 45px);
+
+    border-width: 45px;
+    border-style: solid;
+    border-image: url("/assets/borders/HILLHOUSELace.png") 84 round;
+    background-clip: border-box;
+    transition: transform 1s;
+}
+
+#mediaLog img:hover, #mediaLog:hover > img {
+    transform: rotate(-5deg);
+}
+
+#mediaLog h2 {
+    top: -1.5em;
+    -webkit-text-stroke: .3px white;
+}
+
+/* ~ General */
+
+h1 {
+    font-family: maddison, cursive;
+    font-size: 3em;
+    font-weight: normal;
+
+    flex: 1 1;
+}
+
+h2 {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+
+    font-size: 4.5vw;
+
+    font-family: heartBlood;
+    font-weight: normal;
+    text-transform: lowercase;
+}
+
+a {
+    position: absolute;
+    text-decoration: none;
+}
+
+img {
+    border-radius: var(--globalBorderRadius);
+}
