@@ -154,7 +154,7 @@ header {
 
     border-width: 45px;
     border-style: solid;
-    border-image: url("/assets/borders/HILLHOUSELace.png") 84 round;
+    border-image: url("/Assets/borders/HILLHOUSELace.png") 84 round;
     background-clip: border-box;
     transition: transform 1s;
 }
