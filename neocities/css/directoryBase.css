@@ -1,0 +1,132 @@
+:root {
+
+    /* Colors */
+    --bubblegum: #ffb7ed;
+    --dustyPink: #f6bdd1;
+    --persian: #f283b6;
+    --wisteria: #8266ff;
+    --hintofmist: #f1efff;
+    --whispermist: #dbd8f0;
+    --driedBlood: #8B575c;
+    --pinkIce: #f6e4f6;
+    --ash: #cad2c5;
+    --water: #adcaff;
+    --deepsea: #357ce6;
+    --roseRed: #C71227;
+    --rosePink: #FB003F;
+    --blood: #800000;
+    --deepslate: #696969;
+    --cobblestone: #a8a8a8;
+
+    /* Globals */
+    --globalBorderRadius: 10px;
+    --detailBarHeight: 20px;
+}
+
+body {
+    height: 100vh;
+    background: url("/Assets/BGs/rose-kt4.gif");
+    background-attachment: fixed;
+
+    font-family: cafesweet;
+
+    display: flex;
+    justify-content: center;
+}
+
+#wrapper {
+    flex: 0 1 50%;
+    background-color: white;
+    position: relative;
+
+    border-style: solid;
+    border-image: url("/Assets/borders/borderfilled.png") 9 round;
+    border-width: 8px;
+    background-clip: padding-box;
+
+    border-top: none;
+    border-bottom: none;
+}
+
+header{
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+
+    background-color: var(--pinkIce);
+}
+
+h1 {
+    font-family: maddison, cursive;
+    font-size: 3em;
+    font-weight: normal;
+
+    flex: 1 1;
+}
+
+a {
+    position: absolute;
+    text-decoration: none;
+}
+
+img {
+    border-radius: var(--globalBorderRadius);
+}
+
+/* Game Log */
+
+#gameLog {
+    image-rendering: pixelated;
+
+    top: 10em;
+    left: 4em;
+
+    color: var(--bubblegum);
+    transition: color .25s;
+}
+
+#gameLog:hover {
+    color: var(--persian);
+}
+
+#gameLog:active {
+    color: var(--water);
+}
+
+#gameLog img {
+    width:  250px;
+
+    border-style: solid;
+    border-image: url("/Assets/borders/pinkHearts.png") 7 round;
+    border-width: 7px;
+    background-clip: padding-box;
+}
+
+/* Media Log */
+
+
+#mediaLog {
+    top: 25em;
+    right: 4em;
+
+    text-align: right;
+    color: var(--driedBlood);
+    transition: color .25s;
+}
+
+#mediaLog:hover {
+    color: var(--blood);
+}
+
+#mediaLog:active {
+    color: black;
+}
+
+#mediaLog img {
+    width:  250px;
+
+    border-width: 45px;
+    border-style: solid;
+    border-image: url("/assets/borders/HILLHOUSELace.png") 84 round;
+    background-clip: border-box;
+}
