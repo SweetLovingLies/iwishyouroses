@@ -61,7 +61,7 @@ header {
     background: url('/Assets/pixels/headers/061-t.gif') repeat-x;
     background-size: contain;
     background-position: center;
-    
+
     height: 55px;
 }
 
@@ -104,8 +104,10 @@ header {
     transition: transform 1s;
 }
 
-#gameLog img:hover, 
-#gameLog:hover > img {
+#gameLog img:hover,
+#gameLog:hover>img,
+#gameLog img:focus,
+#gameLog:focus>img {
     transform: rotate(-5deg);
 }
 
@@ -139,7 +141,7 @@ header {
     transition: color .25s;
 }
 
-#mediaLog:hover {
+#mediaLog:hover, #mediaLog:focus {
     color: var(--driedBlood);
 }
 
@@ -157,7 +159,10 @@ header {
     transition: transform 1s;
 }
 
-#mediaLog img:hover, #mediaLog:hover > img {
+#mediaLog img:hover,
+#mediaLog:hover>img,
+#mediaLog img:focus,
+#mediaLog:focus>img {
     transform: rotate(-5deg);
 }
 
@@ -181,7 +186,7 @@ h2 {
     width: 100%;
     text-align: center;
 
-    font-size: 4.5vw;
+    font-size: 5em;
 
     font-family: heartBlood;
     font-weight: normal;
@@ -195,4 +200,48 @@ a {
 
 img {
     border-radius: var(--globalBorderRadius);
+}
+
+/* ? Media Queries */
+
+@media (prefers-reduced-motion: reduce) {}
+
+@media only screen and (max-width: 1024px) {}
+
+@media only screen and (max-width: 810px) {
+
+    #wrapper {
+        flex: 1 1;
+    }
+
+    #gameLog img {
+        width: 40vw;
+    }
+
+    #mediaLog img {
+        width: calc(40vw + 45px);
+    }
+
+    h2 {
+        font-size: 4em;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    #wrapper {
+        overflow: scroll;
+        overflow-x: hidden;
+    }
+
+    h2 {
+        font-size: 3em;
+    }
+
+    #gameLog h2 {
+        bottom: -2.5em
+    }
+
+    #mediaLog h2 {
+        top: -2.5em;
+    }
 }
