@@ -418,6 +418,16 @@ cloudBubbleMoji {
     vertical-align: text-bottom;
 }
 
+heartBubbleMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/chatbubble\(heart\).gif") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+}
+
+
 pinkNewMoji {
     display: inline-block;
     background: url("/Assets/pixels/other/new!p.gif") no-repeat;

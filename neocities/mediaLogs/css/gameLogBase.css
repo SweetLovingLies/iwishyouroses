@@ -3,8 +3,10 @@
     /* Colors */
     --bubblegum: #ffb7ed;
     --dustyPink: #f6bdd1;
+    --rosette: #ffbbc5;
     --persian: #f283b6;
     --wisteria: #8266ff;
+    --kangel: #c3a3f6;
     --hintofmist: #f1efff;
     --whispermist: #dbd8f0;
     --driedBlood: #8B575c;
@@ -18,18 +20,365 @@
     --deepslate: #696969;
     --cobblestone: #a8a8a8;
 
-    /* Rainbow Ring Colors */
-
-    --rainbowRed: #ffadad;
-    --rainbowOrange: #ffdea1;
-    --rainbowYellow: #ffffb5;
-    --rainbowGreen: #c2ffc2;
-    --rainbowBlue: #b8d4ff;
-    --rainbowIndigo: #9e97e0;
-    --rainbowPurple: #cfb0ff;
-    --rainbowPink: #ffd8f2;
-
     /* Globals */
     --globalBorderRadius: 10px;
     --detailBarHeight: 20px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+
+    background: url("/Assets/BGs/trspHearts.gif"), var(--pinkIce);
+
+    font-family: cafesweet;
+}
+
+#wrapper {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#monitor {
+    flex: 0 1 55%;
+    height: 70%;
+    z-index: 2;
+
+    display: flex;
+    justify-content: center;
+
+    background: url("/Assets/BGs/windows_xp_bliss-wide.jpg");
+    background-size: cover;
+    background-clip: padding-box;
+
+    border-radius: 20px;
+    border-style: solid;
+    border-image: url("/Assets/other/screen.png") repeat 35 27 145 27;
+    border-image-width: 20px 20px 50px 20px;
+    outline: 5px solid gray;
+
+}
+
+#monitorStand {
+    position: absolute;
+    width: 300px;
+    bottom: 5%;
+    z-index: 1;
+}
+
+#screen {
+    background: url("/Assets/BGs/alicebg1.gif");
+    position: relative;
+    margin-top: 16px;
+    width: calc(100% - 33px);
+    height: calc(100% - 62px);
+    overflow: hidden;
+
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+
+    /* ? Animation */
+    transform: scaleY(0);
+    animation: scale .5s 1s forwards;
+}
+
+@keyframes scale {
+    from {
+        transform: scaleY(0);
+    }
+    to {
+        transform: scaleY(100%);
+    }
+}
+
+#whiteScreen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+
+    z-index: 20;
+
+    opacity: 100%;
+
+    animation: fade .75s 1.5s forwards;
+}
+
+
+@keyframes fade {
+    from {
+        opacity: 100%;
+    }
+    to {
+        opacity: 0%;
+        pointer-events: none;
+    }
+}
+
+
+/* & Content */
+
+header {
+    flex: 1 1 100%;
+
+    background: url("/Assets/BGs/hearts3.gif");
+    background-position: center;
+
+    border-bottom: 2px solid var(--bubblegum);
+}
+
+h1 {
+    font-family: heartBlood;
+    font-weight: normal;
+    text-transform: lowercase;
+
+    color: var(--kangel);
+    padding-left: 20px;
+
+    transition: letter-spacing .25s;
+}
+
+h1 div {
+    display: inline-block;
+
+    font-size: 4em;
+    -webkit-text-stroke: .5px black;
+    line-height: .8em;
+
+    transform: rotate(0deg);
+    transition: color .25s, transform .25s;
+}
+
+h1:hover {
+    letter-spacing: 5px;
+}
+
+h1:hover>div:nth-child(1),
+h1:hover>div:nth-child(4) {
+    color: #ffaddd;
+    transform: rotate(-9deg);
+}
+
+h1:hover>div:nth-child(2),
+h1:hover>div:nth-child(6) {
+    color: #92c5ff;
+    transform: rotate(-15deg);
+}
+
+h1:hover>div:nth-child(3),
+h1:hover>div:nth-child(7) {
+    color: #c6adff;
+    transform: rotate(3deg);
+}
+
+h1:hover>div:nth-child(5),
+h1:hover>div:nth-child(8) {
+    color: #ffe057;
+    transform: rotate(17deg);
+}
+
+nav {
+    flex: 1 1 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    background: white;
+
+    border-bottom: 2px solid var(--bubblegum);
+    filter: drop-shadow(1px 2px 2px #666666);
+}
+
+nav a {
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 2px solid var(--bubblegum);
+    border-top: none;
+    border-bottom: none;
+
+    min-width: 100px;
+    height: 50px;
+    padding: 10px 10px;
+
+    background: url("/Assets/BGs/tumblr_ad479ccfea2121a711cc5099eff07479_82048f3a_75.gif");
+
+    color: black;
+    text-align: center;
+    text-decoration: none;
+
+    transition: color .25s;
+}
+
+nav a:hover {
+    color: var(--wisteria);
+    filter: hue-rotate(30deg);
+}
+
+nav a.active {
+    filter: hue-rotate(70deg);
+}
+
+spacer {
+    flex: 1 1;
+}
+
+main {
+    display: none;
+    flex: 0 1 55%;
+    flex: 0 1 55%;
+    height: calc(100% - 105px - 52px - 40px);
+
+    overflow: auto;
+    padding: 20px;
+
+    border-right-style: solid;
+    border-image: url("/Assets/borders/borderfilled.png") 8 fill round;
+    border-width: 8px;
+    background-clip: padding-box;
+}
+
+main.active {
+    display: block;
+}
+
+.textbox {
+    background: url("/Assets/BGs/alicebg1.gif");
+    background-position: center;
+
+    border-style: solid;
+    border-image: url("/Assets/borders/pinkHearts.png") 7 round;
+    border-width: 9px;
+    background-clip: padding-box;
+    margin-bottom: 10px;
+
+    padding: 10px;
+}
+
+footer {
+    flex: 1 1 100%;
+    height: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: url("/Assets/BGs/check5-b.gif");
+    border-top-style: solid;
+    border-image: url("/Assets/borders/borderfilled.png") 8 round;
+    border-width: 8px;
+    background-clip: padding-box;
+}
+
+/* ~ Home */
+
+#dva {
+    max-width: 200px;
+    float: left;
+}
+
+/* ~ Currently Playing */
+
+.steam {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #1b2838;
+    color: #949494;
+
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.steam:nth-child(odd) {
+    background-color: #16202d;
+}
+
+.steam img {
+    width: 170px
+}
+
+.steam h2 {
+    font-size: 1.2em;
+    color: white;
+    font-weight: normal;
+    flex: 1 1;
+}
+
+.steam h3 {
+    text-transform: lowercase;
+    font-variant: small-caps;
+}
+
+.infoWrapper {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.hoursWrapper {
+    display: flex;
+    gap: 10px;
+}
+
+/* ~ General */
+
+li::before {
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    background-image: url(/assets/pixels/magicalgirls/rainbow.webp);
+    background-size: contain;
+    margin-right: 5px;
+}
+
+
+/* ~ Decor */
+
+#kangel {
+    flex: 1 1;
+    position: relative;
+}
+
+#kangel img {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+#topTrim,
+#bottomTrim {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: 0;
+    pointer-events: none;
+
+    image-rendering: pixelated;
+    background-size: contain;
+    background-position: center;
+
+    height: 55px;
+}
+
+#topTrim {
+    top: 0;
+    background: url('/Assets/pixels/headers/061-t.gif') repeat-x;
+}
+
+#bottomTrim {
+    bottom: 0;
+    background: url('/Assets/pixels/headers/061-b.gif') repeat-x;
 }
