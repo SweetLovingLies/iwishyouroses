@@ -5,18 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detail bar</title>
-    
+
     <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
     <link href="css/phoneGlobals.css" rel="stylesheet" type="text/css" media="all">
 
     <meta name="description" content="Why are you even here lol?" />
-    
+
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
     <script src="js/phone.js"></script>
     <script src="js/themeSwitcher.js"></script>
 
     <style>
-        body{
+        body {
             animation: none !important;
         }
     </style>
@@ -31,20 +31,26 @@
             <iconify-icon icon="lucide:signal"></iconify-icon>
             <iconify-icon icon="material-symbols-light:wifi"></iconify-icon>
             <iconify-icon icon="mingcute:battery-fill"></iconify-icon>
+
+            <!-- ! Modify per season: Here, Detail Bar, homepageBase, phone.js -->
+            <p id="wwTemp">20°F</p>
             <div class="weatherIcon">
-                <!-- Modify per season -->
-                <iconify-icon icon="mdi:weather-sunny"></iconify-icon>
+                <iconify-icon icon="ion:cloudy"></iconify-icon>
             </div>
         </div>
     </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const darkThemeEnabled = localStorage.getItem('darkTheme') === 'true';
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlTheme = urlParams.get('theme');
+            const savedTheme = localStorage.getItem('globalTheme') || 'light';  
+
+            const theme = urlTheme || savedTheme;
 
             const detailBar = document.querySelector('.detailBar');
 
-            if (darkThemeEnabled) {
+            if (theme === 'dark') {
                 detailBar.classList.add('dark');
             } else {
                 detailBar.classList.remove('dark');

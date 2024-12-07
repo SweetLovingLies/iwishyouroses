@@ -1,0 +1,52 @@
+:root {
+    /* New Colors */
+    --christmasRed: #ce211b;
+    --christmasLightRed: #ff716d;
+    --christmasYellow: #fff0be;
+    --christmasGreen: #005007;
+}
+
+body {
+    background: linear-gradient(to top, rgba(255, 148, 148, 0.702), rgba(255, 148, 148, 0.702)), url("/Assets/BGs/holidays/christmas/phoneWallpaper2.jpg");
+    background-size: cover;
+    background-position: center;
+
+    font-family: cafesweet;
+}
+
+.appWrapper a {
+    color: white;
+}
+
+footer a {
+    color: black;
+}
+
+.appWrapper a:hover,
+.appWrapper a:focus,
+footer a:hover,
+footer a:focus {
+    color: var(--christmasGreen);
+}
+
+.navDots.active {
+    color: var(--christmasGreen);
+}
+.navDots.inactive {
+    color: var(--deepslate);
+}
+
+.appIcon {
+    background-color: var(--christmasRed);
+    border: 2px solid #ffffff;
+    filter: drop-shadow(-1px 2px 3px rgba(0, 0, 0, 0.26));
+}
+
+tray {
+    background: #ffffffa9;
+    box-shadow: -1px 2px 3px rgba(0, 0, 0, 0.25);
+}
+
+.column2 p {
+    color: var(--christmasGreen);
+}

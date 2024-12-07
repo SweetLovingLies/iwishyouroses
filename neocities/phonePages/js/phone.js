@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
-    let currentSeason = 'fall';
+    let currentSeason = 'winter';
     let forecastIcons = generateWeeklyForecast();
     loadWeatherDataFromSession();
 
@@ -74,20 +74,20 @@ document.addEventListener('DOMContentLoaded', function () {
         return forecast;
     }
 
-    
-        function displayForecast(forecast) {
-            const forecastContainer = document.getElementById('forecastContainer');
-            if (forecastContainer) {
-                forecastContainer.innerHTML = '';
 
-                forecast.forEach((day) => {
-                    const dayIcon = document.createElement('div');
-                    dayIcon.className = 'forecastIcon';
-                    dayIcon.innerHTML = `<iconify-icon icon="${day.icon}"></iconify-icon>`;
-                    forecastContainer.appendChild(dayIcon);
-                });
-            } 
+    function displayForecast(forecast) {
+        const forecastContainer = document.getElementById('forecastContainer');
+        if (forecastContainer) {
+            forecastContainer.innerHTML = '';
+
+            forecast.forEach((day) => {
+                const dayIcon = document.createElement('div');
+                dayIcon.className = 'forecastIcon';
+                dayIcon.innerHTML = `<iconify-icon icon="${day.icon}"></iconify-icon>`;
+                forecastContainer.appendChild(dayIcon);
+            });
         }
+    }
 
     function updateWeather() {
         const weatherIconElements = document.querySelectorAll(".weatherIcon iconify-icon");
@@ -152,11 +152,11 @@ document.addEventListener('DOMContentLoaded', function () {
         sessionStorage.setItem('forecastIcons', JSON.stringify(forecastIcons));
         sessionStorage.setItem('currentSeason', currentSeason);
     }
-    
+
     function loadWeatherDataFromSession() {
         const savedForecast = sessionStorage.getItem('forecastIcons');
         const savedSeason = sessionStorage.getItem('currentSeason');
-    
+
         if (savedForecast && savedSeason) {
             forecastIcons = JSON.parse(savedForecast);
             currentSeason = savedSeason;
@@ -164,14 +164,15 @@ document.addEventListener('DOMContentLoaded', function () {
             forecastIcons = generateWeeklyForecast();
         }
     }
-    
+
     displayForecast(forecastIcons);
     saveWeatherDataToSession();
-    
+
     setInterval(() => {
         updateWeather();
         saveWeatherDataToSession();
     }, 3600000); // 1 hour = 3600000 milliseconds
+    // }, 50);
 });
 
 // Homepage button

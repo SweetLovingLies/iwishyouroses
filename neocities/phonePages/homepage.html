@@ -10,9 +10,15 @@
     <link href="css/phoneGlobals.css" rel="stylesheet" type="text/css" media="all">
 
     <link href="css/homepageBase.css" rel="stylesheet" type="text/css" media="all">
-    <link id="homepageCSS" href="css/homepageThemes/homepageLight.css" rel="stylesheet" type="text/css" media="all">
+
+    <link id="homepageCSS" href="css/homepageThemes/homepageLight.css" rel="stylesheet" type="text/css" media="all"
+        data-theme="light">
+
     <link id="homepageDarkCSS" href="css/homepageThemes/homepageDark.css" rel="stylesheet" type="text/css" media="all"
-        disabled>
+        data-theme="dark">
+    <link id="homepageChristmasCSS" href="css/homepageThemes/homepageChristmas.css" rel="stylesheet" type="text/css"
+        media="all" data-theme="christmas">
+
 
     <meta name="description" content="Access literally everything you need." />
     <link rel="icon" type="image/x-icon" href="../Assets/pixels/vintageAmericana/strawberryphone.webp">
@@ -21,8 +27,6 @@
 
     <script src="js/phone.js"></script>
     <script src="js/stats.js"></script>
-
-
 </head>
 
 <body>
@@ -33,7 +37,7 @@
             <div class="appWrapper">
                 <div style="display: flex; margin: 0 auto; column-gap: 25px;">
                     <div class="column2">
-                        <img class="widget" src="/Assets/kpop/xg/harvey/Harvey1.jpg">
+                        <img class="widget" src="/Assets/kpop/IVE/selcas/wonyoungChristmas2.jpg">
                         <p>widgetsmith</p>
                     </div>
 
@@ -91,35 +95,6 @@
                     <p>Serenade</p>
                 </a>
             </div>
-
-            <div class="swipeIcons">
-                <iconify-icon icon="material-symbols:circle" style="color: var(--wisteria)"
-                    onclick="showHomepage(0)"></iconify-icon> <iconify-icon icon="material-symbols:circle"
-                    style="color: gray" onclick="showHomepage(1)"></iconify-icon>
-            </div>
-
-            <footer>
-                <tray>
-                    <a href="temp.html" class="app" onclick="openApp(event, this)" style="color: red;">
-                        <div class="appIcon">
-                            <img src="/Assets/customNavIcons/shiranaiIcon.png">
-                        </div>
-                        <p>SHIRANAI</p>
-                    </a>
-                    <a href="settings.html" class="app" onclick="openApp(event, this)">
-                        <div class="appIcon">
-                            <img src="/Assets/customNavIcons/settingsIcon.png">
-                        </div>
-                        <p>Settings</p>
-                    </a>
-                    <a href="temp.html" class="app" onclick="openApp(event, this)" style="color: red;">
-                        <div class="appIcon">
-                            <img src="/Assets/customNavIcons/cameraIcon.png">
-                        </div>
-                        <p>Camera</p>
-                    </a>
-                </tray>
-            </footer>
         </div>
 
         <div class="homepage" id="homepage2">
@@ -128,10 +103,10 @@
                     <div id="wwTop">
                         <p id="wwCityName">Yomiyama City</p>
 
-                        <!-- Modify per season -->
-                        <p id="wwTemp">40°F</p>
+                        <!-- ! Modify per season: Here, Detail Bar, homepageBase, phone.js -->
+                        <p id="wwTemp">20°F</p>
                         <div id="wwWeatherIcon" class="weatherIcon">
-                            <iconify-icon icon="mdi:weather-sunny"></iconify-icon>
+                            <iconify-icon icon="ion:cloudy"></iconify-icon>
                         </div>
                     </div>
                     <div id="wwBottom">
@@ -146,52 +121,51 @@
                     <p>IdolPet</p>
                 </a>
 
-                <a href="temp.html" class="app" onclick="openApp(event, this)" style="color: red;">
+                <a href="temp.html" class="app UNF" onclick="openApp(event, this)">
                     <div class="appIcon"></div>
                     <p>Storybook</p>
                 </a>
-                <a href="temp.html" class="app" onclick="openApp(event, this)" style="color: red;">
+                <a href="temp.html" class="app UNF" onclick="openApp(event, this)">
                     <div class="appIcon"></div>
                     <p>Your Tome</p>
                 </a>
-                <a href="temp.html" class="app" onclick="openApp(event, this)" style="color: red;">
+                <a href="temp.html" class="app UNF" onclick="openApp(event, this)">
                     <div class="appIcon"></div>
                     <p>Mellow</p>
                 </a>
-                <a href="temp.html" class="app" onclick="openApp(event, this)" style="color: red;">
+                <a href="temp.html" class="app UNF" onclick="openApp(event, this)">
                     <div class="appIcon"></div>
                     <p>Stellar Shop</p>
                 </a>
             </div>
+        </div>
+        <footer>
             <div class="swipeIcons">
-                <iconify-icon icon="material-symbols:circle" style="color: gray"
-                    onclick="showHomepage(0)"></iconify-icon> <iconify-icon icon="material-symbols:circle"
-                    style="color: var(--wisteria)" onclick="showHomepage(1)"></iconify-icon>
+                <iconify-icon icon="material-symbols:circle" class="navDots" onclick="showHomepage(0)"></iconify-icon>
+                <iconify-icon icon="material-symbols:circle" class="navDots" onclick="showHomepage(1)"></iconify-icon>
             </div>
 
-            <footer>
-                <tray>
-                    <a href="temp.html" class="app" onclick="openApp(event, this)" style="color: red;">
-                        <div class="appIcon">
-                            <img src="/Assets/customNavIcons/shiranaiIcon.png">
-                        </div>
-                        <p>SHIRANAI</p>
-                    </a>
-                    <a href="settings.html">
-                        <div class="appIcon">
-                            <img src="/Assets/customNavIcons/settingsIcon.png">
-                        </div>
-                        <p>Settings</p>
-                    </a>
-                    <a href="temp.html" class="app" onclick="openApp(event, this)" style="color: red;">
-                        <div class="appIcon">
-                            <img src="/Assets/customNavIcons/cameraIcon.png">
-                        </div>
-                        <p>Camera</p>
-                    </a>
-                </tray>
-            </footer>
-        </div>
+            <tray>
+                <a href="temp.html" class="app UNF" onclick="openApp(event, this)">
+                    <div class="appIcon">
+                        <img src="/Assets/customNavIcons/shiranaiIcon.png">
+                    </div>
+                    <p>SHIRANAI</p>
+                </a>
+                <a href="settings.html" class="app" onclick="openApp(event, this)">
+                    <div class="appIcon">
+                        <img src="/Assets/customNavIcons/settingsIcon.png">
+                    </div>
+                    <p>Settings</p>
+                </a>
+                <a href="temp.html" class="app UNF" onclick="openApp(event, this)">
+                    <div class="appIcon">
+                        <img src="/Assets/customNavIcons/cameraIcon.png">
+                    </div>
+                    <p>Camera</p>
+                </a>
+            </tray>
+        </footer>
     </div>
 
     <script>
@@ -214,24 +188,29 @@
 
         let currentHomepage = parseInt(localStorage.getItem('currentHomepage')) || 0;
         const homepages = document.querySelectorAll('.homepage');
+        const navDots = document.querySelectorAll('.navDots');  // Select all dots
 
         function showHomepage(index, autoOpenFirstApp = false) {
             homepages.forEach((homepage, i) => {
                 if (i === index) {
                     homepage.classList.remove('hidden');
                     homepage.classList.add('active');
-
-                    if (autoOpenFirstApp) {
-                        const firstApp = homepage.querySelector('.app');
-                        if (firstApp) {
-                            openApp(firstApp);
-                        }
-                    }
                 } else {
                     homepage.classList.add('hidden');
                     homepage.classList.remove('active');
                 }
             });
+
+            navDots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.classList.add('active');
+                    dot.classList.remove('inactive');
+                } else {
+                    dot.classList.add('inactive');
+                    dot.classList.remove('active');
+                }
+            });
+
             localStorage.setItem('currentHomepage', index);
         }
 
@@ -245,22 +224,31 @@
             showHomepage(currentHomepage);
         });
 
-        showHomepage(currentHomepage);
+        navDots.forEach((dot, i) => {
+            if (i === currentHomepage) {
+                dot.classList.add('active');
+                dot.classList.remove('inactive');
+            } else {
+                dot.classList.add('inactive');
+                dot.classList.remove('active');
+            }
+        });
+
+        showHomepage(currentHomepage); 
     </script>
-    
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const darkThemeEnabled = localStorage.getItem('darkTheme') === 'true';
-            const homepageCSS = document.getElementById("homepageCSS");
-            const homepageDarkCSS = document.getElementById("homepageDarkCSS");
+            const themeLinks = Array.from(document.querySelectorAll("link[id^='homepage']"));
+            const savedTheme = localStorage.getItem("globalTheme") || "light";
+            const pageName = window.location.pathname.split('/').pop().split('.')[0];
 
-            if (darkThemeEnabled) {
-                homepageCSS.disabled = true;
-                homepageDarkCSS.disabled = false;
-            } else {
-                homepageCSS.disabled = false;
-                homepageDarkCSS.disabled = true;
-            }
+            const availableThemes = themeLinks.map(link => link.id.replace(pageName, '').replace('CSS', '').toLowerCase());
+            const validTheme = (availableThemes.includes(savedTheme) && themeLinks.some(link => link.getAttribute("data-theme") === savedTheme))
+                ? savedTheme
+                : "light";
+
+            themeLinks.forEach(link => link.disabled = link.getAttribute("data-theme") !== validTheme);
         });
     </script>
 </body>

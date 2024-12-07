@@ -3,9 +3,8 @@
 **!!!!!!!! Today !!!!!!!!**
 
 * Add an animation for notifications and when the onboarding is active!
-* \
 
-
+  \
 * Mellow <--------- Easy?
   * Select your mood with emojis or cute icons
     * Could use this to practice anime style vector work
@@ -16,10 +15,12 @@
 
 **! Whenever tf I feel like doing this !**
 
+* Conceptualize IdolLine logo
+
 
 * Your Tome <---------- Easy?
   * Write love letters that could appear in the Yandere shrine!
-    * Would require tagging system
+    * Would require tagging system (indexedDB)
 
       \
   * Add export to PDF functionality
@@ -28,11 +29,9 @@
   * Add FNAF Ref
 
     \
-
-
-* Rework navigation page
+* Rework navigation page completely!
   * Make it a map instead!
-    * Custom map made in Illustrator and Photoshop (?)
+    * Custom map made in Illustrator
 
       \
 * StarBound (Achievements)

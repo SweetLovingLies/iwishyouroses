@@ -1,0 +1,316 @@
+:root {
+    /* New Colors */
+    --christmasRed: #ce211b;
+    --christmasLightRed: #ff716d;
+    --christmasYellow: #fff0be;
+    --christmasGreen: #005007;
+}
+
+* {
+    scrollbar-color: var(--christmasGreen) white;
+}
+
+*::-webkit-scrollbar,
+*::-webkit-scrollbar-button {
+    width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background: white;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--christmasGreen);
+}
+
+body {
+    font-family: cafesweet;
+    background: url('/Assets/BGs/holidays/christmas/pixel2.png'), var(--christmasRed);
+}
+
+#baselayout {
+    background: url('/Assets/BGs/tex1.png');
+}
+
+/* Left-side */
+
+#eyecatcher {
+    border: 2px dashed var(--ash);
+    border-radius: var(--globalBorderRadius);
+}
+
+#siteButton {
+    background: url("/Assets/BGs/holidays/christmas/snowflakes.webp");
+}
+
+#siteButton h2{
+    color: white;
+}
+
+#jsCalender {
+    background: url("/Assets/BGs/holidays/christmas/candycanes.webp");
+}
+
+/* Calender styles */
+
+
+.calendar-weekdays li {
+    background: url("/Assets/BGs/holidays/christmas/yellowstars2.gif");
+}
+
+header .calendar-navigation span {
+    color: var(--christmasGreen);
+}
+
+header .calendar-navigation span:hover {
+    color: black;
+}
+
+.calendar-body li {
+    color: black;
+
+    box-shadow: -1px -1.4px 1px inset #9e9699, 2px 3px 1.5px inset white, 0px 0px 2px #aba4a6;
+    border: 1px solid var(--whispermist);
+}
+
+.calendar-body .calendar-dates li {
+    background: url("/Assets/BGs/holidays/christmas/snowflakesW.webp");
+    background-size: 200%;
+}
+
+.calendar-body .calendar-dates li:hover {
+    background: url("/Assets/BGs/holidays/christmas/snowflakesPi.webp");
+    background-size: 200%;
+}
+
+.calendar-dates li.inactive {
+    color: #696969;
+}
+
+.calendar-dates li.active {
+    color: #fff;
+    background: var(--rosePink);
+}
+
+
+.calendar-dates li.active:hover {
+    color: black;
+}
+
+/* Main */
+
+
+#home {
+    background: url('/Assets/BGs/holidays/christmas/redstripes.gif');
+    color: white;
+}
+
+#home h2 {
+    color: var(--christmasLightRed);
+}
+
+#spotlight {
+    background: url("/Assets/BGs/holidays/christmas/yellowstars.gif");
+    /* background-size: 15%;
+    background-position: center; */
+    height: unset;
+}
+
+#spotlight a {
+    color: var(--blood);
+    transition: color .25s;
+}
+
+#spotlight a:hover {
+    color: var(--christmasGreen);
+}
+
+#spotlight h2 {
+    text-align: center;
+    color: var(--christmasGreen);
+}
+
+/* Status Cafe */
+
+#thoughtBubble {
+    background: var(--christmasLightRed);
+    border: 3px dashed white;
+    outline: 5px solid var(--christmasLightRed);
+}
+
+#thoughtBubble::after {
+    color: var(--christmasLightRed);
+    -webkit-text-stroke: 1px white;
+
+    background-color: var(--christmasLightRed);
+    border: 1px solid white;
+    border-radius: 11px;
+}
+
+#thoughtBubble a {
+    color: var(--christmasGreen);
+}
+
+/* Side Columns */
+
+#status {
+    background: url("/Assets/BGs/holidays/christmas/yellowstripes.gif");
+}
+
+.statusBubble {
+    background: white;
+    border: 3px dashed var(--bubblegum);
+}
+
+.statusBubble:nth-child(even) {
+    background: var(--hintofmist);
+}
+
+#status h3 {
+    font-style: italic;
+    color: var(--persian)
+}
+
+#stamps {
+    background: url("/Assets/BGs/holidays/christmas/almostknit.gif");
+}
+
+#webgroups {
+    background: url("/Assets/BGs/holidays/christmas/yellowstars.gif"), var(--christmasRed);
+}
+
+#stamps h2 {
+    color: white;
+}
+
+
+/* #webgroups{} */
+
+
+#blogRSS {
+    background: url(/Assets/BGs/linedpaper.jpg);
+
+    border-style: solid;
+    border-image: url(/Assets/borders/border2FP.png) 28 round;
+    border-width: 28px;
+    background-clip: padding-box;
+}
+
+#blogRSS h1,
+#blogRSS h2,
+#blogRSS h3,
+#blogRSS h4,
+#blogRSS h5,
+#blogRSS h6 {
+    color: #0c3934;
+}
+
+#blogRSS #title {
+    color: var(--persian);
+}
+
+#blogRSS p{
+    color: #0c3934;
+}
+
+.feed-item {
+    border-bottom: 4px dashed var(--water);
+}
+
+.feed-item a {
+    color: var(--wisteria);
+}
+
+.feed-item small {
+    color: #797979;
+}
+
+/* Footer */
+
+footer {
+    background: url("/Assets/BGs/holidays/christmas/snowflakes.gif"), var(--christmasYellow);
+}
+
+/* ? Decor */
+
+.detailing {
+    background: url('/Assets/pixels/christmas/header5.webp') repeat-x;
+    background-size: contain;
+    height: 76px;
+    image-rendering: crisp-edges;
+    z-index: 10;
+}
+
+#christmasTree {
+    position: absolute;
+    right: -12em;
+    bottom: 0;
+
+    width: 300px;
+    image-rendering: pixelated;
+}
+
+#presents {
+    position: absolute;
+    right: -3em;
+    bottom: 0;
+
+    width: 200px;
+    image-rendering: pixelated;
+}
+
+/* General */
+
+hr {
+    background: url('/Assets/pixels/christmas/hollyDivider.webp') repeat-x;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    height: 20px;
+}
+
+.box,
+.box2 {
+    padding: 5px;
+    background-color: var(--pinkIce);
+    border: 2px dashed var(--ash);
+    border-radius: var(--globalBorderRadius);
+}
+
+h2 {
+    color: var(--christmasGreen);
+}
+
+h2::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(/Assets/pixels/christmas/holly.gif);
+    background-size: contain;
+    margin-right: 3px;
+}
+
+
+a {
+    color: var(--christmasGreen);
+    text-decoration: none;
+}
+
+/* ? Media Queries */
+
+@media (prefers-reduced-motion: reduce) {}
+
+@media only screen and (max-width: 1024px) {}
+
+@media only screen and (max-width: 810px) {
+    #christmasTree {
+        display: none;
+    }
+    
+    #presents {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 500px) {}

@@ -11,8 +11,9 @@
 
     <link href="css/navBase.css" rel="stylesheet" type="text/css" media="all">
 
-    <link id="navCSS" href="css/navThemes/navLight.css" rel="stylesheet" type="text/css" media="all">
-    <link id="navDarkCSS" href="css/navThemes/navDark.css" rel="stylesheet" type="text/css" media="all" disabled>
+    <link id="navCSS" href="css/navThemes/navLight.css" rel="stylesheet" type="text/css" media="all" data-theme="light">
+    <link id="navDarkCSS" href="css/navThemes/navDark.css" rel="stylesheet" type="text/css" media="all"
+        data-theme="dark">
 
     <meta name="description" content="Access literally everything you need." />
     <link rel="icon" type="image/x-icon" href="../Assets/pixels/vintageAmericana/strawberryphone.webp">
@@ -33,7 +34,7 @@
 
     <section id="bottomList">
         <a id="mediaLogs" class="navLink" href="/directory.html" target="_top">Media Logs</a>
-        <a class="UNF navLink" >Paracosms</a>
+        <a class="UNF navLink">Paracosms</a>
         <a class="UNF navLink">Shrines</a>
         <a class="UNF navLink">Projects</a>
 
@@ -44,17 +45,16 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const darkThemeEnabled = localStorage.getItem('darkTheme') === 'true';
-            const navCSS = document.getElementById("navCSS");
-            const navDarkCSS = document.getElementById("navDarkCSS");
+            const themeLinks = Array.from(document.querySelectorAll("link[id^='nav']"));
+            const savedTheme = localStorage.getItem("globalTheme") || "light";
+            const pageName = window.location.pathname.split('/').pop().split('.')[0];
 
-            if (darkThemeEnabled) {
-                navCSS.disabled = true;
-                navDarkCSS.disabled = false;
-            } else {
-                navCSS.disabled = false;
-                navDarkCSS.disabled = true;
-            }
+            const availableThemes = themeLinks.map(link => link.id.replace(pageName, '').replace('CSS', '').toLowerCase());
+            const validTheme = (availableThemes.includes(savedTheme) && themeLinks.some(link => link.getAttribute("data-theme") === savedTheme))
+                ? savedTheme
+                : "light";
+
+            themeLinks.forEach(link => link.disabled = link.getAttribute("data-theme") !== validTheme);
         });
     </script>
 </body>

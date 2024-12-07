@@ -670,6 +670,89 @@ starCloudMoji {
     vertical-align: text-bottom;
 }
 
+/* ! Christmas */
+
+christmasTreeMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/christmas/christmastreeFav2.gif") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+}
+
+christmasPresentMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/christmas/gift.gif") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+}
+
+hollyMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/christmas/holly.gif") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+}
+
+reindeerMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/christmas/reindeer1.gif") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+}
+
+santaMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/christmas/santa.gif") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+}
+
+santaHatMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/christmas/santahat.gif") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+}
+
+stockingMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/christmas/stocking2.gif") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+}
+
+wreathMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/christmas/wreath.gif") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+}
+
+candyCaneMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/christmas/candycane.gif") no-repeat;
+    width: 15px;
+    height: 15px;
+
+    vertical-align: text-bottom;
+}
+
 /* There's always more to add! Go check if you need anything new! */
 
 

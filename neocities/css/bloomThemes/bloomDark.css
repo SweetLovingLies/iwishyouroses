@@ -105,32 +105,36 @@ header .calendar-navigation span:hover {
     color: white;
 }
 
-#yuiBox{
-    background: url("/Assets/BGs/darkMode/paintedwood.png");
+/* Status Cafe */
+
+#thoughtBubble {
+    background: var(--dustyPink);
+    border: 3px dashed white;
+    outline: 5px solid var(--dustyPink);
+}
+
+#thoughtBubble::after {
+    color: var(--dustyPink);
+    -webkit-text-stroke: 1px white;
+
+    background-color: var(--dustyPink);
+    border: 1px solid white;
+    border-radius: 11px;
+}
+
+#thoughtBubble a {
+    color: var(--wisteria);
 }
 
 /* Side Columns */
 
 #status{
     background: url("/Assets/BGs/darkMode/paintedwood.png");
-
-    flex: 0 1 46%;
-}
-
-#status h2{
-    margin-bottom: 10px;
 }
 
 .statusBubble{
-    display: flex;
-    flex-flow: row wrap;
-
     background: black;
     border: 3px dashed var(--bubblegum);
-    border-radius: 20px;
-
-    padding: 1px 10px;
-    margin-bottom: 10px;
 }
 
 .statusBubble:nth-child(even){
@@ -138,8 +142,6 @@ header .calendar-navigation span:hover {
 }
 
 #status h3{
-    flex: 1 1;
-    font-weight: normal;
     font-style: italic;
     color: white;
 }
@@ -206,7 +208,16 @@ header .calendar-navigation span:hover {
 
 footer {
     background-color: black;
-    padding: 5px;
+}
+
+/* ? Decor */
+
+#christmasTree {
+    display: none;
+}
+
+#presents {
+    display: none;
 }
 
 /* General */

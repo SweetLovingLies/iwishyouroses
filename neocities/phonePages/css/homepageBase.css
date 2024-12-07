@@ -140,6 +140,15 @@ footer p {
     animation-fill-mode: forwards;
 }
 
+.app.UNF {
+    color: red;
+    cursor: not-allowed;
+}
+
+.app.UNF:hover {
+    color: red;
+}
+
 .app.open {
     animation-name: appOpen;
 }
@@ -149,7 +158,7 @@ footer p {
 }
 
 .swipeIcons {
-    flex: 1 1;
+    width: 100%;
 
     display: flex;
     justify-content: center;
@@ -161,7 +170,15 @@ footer p {
     margin: 5px 0;
 }
 
+.navDots {
+    transition: color .25s;
+}
+
 footer {
+    position: absolute;
+    bottom: 0;
+
+    width: 100%;
     padding: 0 20px 10px;
 }
 
@@ -220,7 +237,7 @@ tray {
 #weatherWidget .weatherIcon iconify-icon {
     /* Modify per season */
 
-    color: #FFD700;
+    color: #C0C0C0;
 
     filter: drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white);
 }
