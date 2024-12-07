@@ -1,7 +1,8 @@
 ## !!!!!! Things I intend to do for this site... the text file!
 
 * **!! Things to do for the Media Log:**
-  * Make Both
+  * Make the media log
+  * Populate the game log with info
 
     \
 * **!! Things to do for the projects page:**

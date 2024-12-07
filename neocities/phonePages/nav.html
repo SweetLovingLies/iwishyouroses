@@ -8,7 +8,11 @@
 
     <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
     <link href="css/phoneGlobals.css" rel="stylesheet" type="text/css" media="all">
-    <link href="css/nav.css" rel="stylesheet" type="text/css" media="all">
+
+    <link href="css/navBase.css" rel="stylesheet" type="text/css" media="all">
+
+    <link id="navCSS" href="css/navThemes/navLight.css" rel="stylesheet" type="text/css" media="all">
+    <link id="navDarkCSS" href="css/navThemes/navDark.css" rel="stylesheet" type="text/css" media="all" disabled>
 
     <meta name="description" content="Access literally everything you need." />
     <link rel="icon" type="image/x-icon" href="../Assets/pixels/vintageAmericana/strawberryphone.webp">
@@ -19,24 +23,40 @@
 
 <body>
     <object id="detailBarObject" data="detailbar.html"></object>
-    
+
     <h>Navigation</h>
     <section id="topList">
         <a class="navLink" href="/bloom.html" target="_top">Home</a>
-        <a class="navLink" href="/about.html" target="_top">About</a>
-        <a class="navLink" href="https://iwishyouroses.bearblog.dev/" target="_blank">Blog</a>
+        <a id="about" class="navLink" href="/about.html" target="_top">About</a>
+        <a id="blog" class="navLink" href="https://iwishyouroses.bearblog.dev/" target="_blank">Blog</a>
     </section>
 
     <section id="bottomList">
-        <a class="navLink" href="/directory.html" target="_top">Media Logs</a>
-        <a class="navLink" href="#" style="color: red;">Paracosms</a>
-        <a class="navLink" href="#" style="color: red;">Shrines</a>
-        <a class="navLink" href="#" style="color: red;">Projects</a>
+        <a id="mediaLogs" class="navLink" href="/directory.html" target="_top">Media Logs</a>
+        <a class="UNF navLink" >Paracosms</a>
+        <a class="UNF navLink">Shrines</a>
+        <a class="UNF navLink">Projects</a>
+
         <a id="credits" class="navLink" href="/credits.html" target="_top">Credits</a>
     </section>
 
     <img id="deer" src="/Assets/pixels/animals/dollydeer.gif">
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const darkThemeEnabled = localStorage.getItem('darkTheme') === 'true';
+            const navCSS = document.getElementById("navCSS");
+            const navDarkCSS = document.getElementById("navDarkCSS");
+
+            if (darkThemeEnabled) {
+                navCSS.disabled = true;
+                navDarkCSS.disabled = false;
+            } else {
+                navCSS.disabled = false;
+                navDarkCSS.disabled = true;
+            }
+        });
+    </script>
 </body>
 
 </html>

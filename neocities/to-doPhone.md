@@ -2,6 +2,21 @@
 
 **!!!!!!!! Today !!!!!!!!**
 
+* Add an animation for notifications and when the onboarding is active!
+* \
+
+
+* Mellow <--------- Easy?
+  * Select your mood with emojis or cute icons
+    * Could use this to practice anime style vector work
+      * UGH
+    * Mood insights?
+
+      \
+
+**! Whenever tf I feel like doing this !**
+
+
 * Your Tome <---------- Easy?
   * Write love letters that could appear in the Yandere shrine!
     * Would require tagging system
@@ -13,15 +28,7 @@
   * Add FNAF Ref
 
     \
-* Mellow <--------- Easy?
-  * Select your mood with emojis or cute icons
-    * Could use this to practice anime style vector work
-      * UGH
-    * Mood insights?
 
-      \
-
-**! Whenever tf I feel like doing this !**
 
 * Rework navigation page
   * Make it a map instead!
