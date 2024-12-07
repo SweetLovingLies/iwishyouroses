@@ -13,7 +13,8 @@
 
     <link id="themesCSS" href="css/themeAppThemes/themesLight.css" rel="stylesheet" type="text/css" media="all">
     <link id="themesDarkCSS" href="css/themeAppThemes/themesDark.css" rel="stylesheet" type="text/css" media="all">
-    <link id="themesChristmasCSS" href="css/themeAppThemes/themesChristmas.css" rel="stylesheet" type="text/css" media="all">
+    <link id="themesChristmasCSS" href="css/themeAppThemes/themesChristmas.css" rel="stylesheet" type="text/css"
+        media="all">
 
     <meta name="description" content="Access literally everything you need." />
     <link rel="icon" type="image/x-icon" href="../Assets/pixels/vintageAmericana/strawberryphone.webp">
@@ -35,12 +36,12 @@
             <img src="themeSwitcherPreviews/Base.png">
             <caption>Fairy Dust</caption>
         </button>
-    
+
         <button id="darkModeSwitch" class="themePreview" data-theme="dark">
             <img src="themeSwitcherPreviews/Dark.png">
             <caption>Empty Dream</caption>
         </button>
-    
+
         <button id="christmasModeSwitch" class="themePreview" data-theme="christmas">
             <img src="themeSwitcherPreviews/Christmas.png">
             <caption>Christmas Cheer</caption>
@@ -64,24 +65,30 @@
         document.addEventListener("DOMContentLoaded", function () {
             const themeLinks = Array.from(document.querySelectorAll("link[id^='themes']"));
             const themeButtons = document.querySelectorAll("[data-theme]");
-    
+
+            const forceChristmasTheme = localStorage.getItem("forceChristmasTheme") || "true";
+
             function applyTheme(theme) {
-                // console.log("Applying theme:", theme);
                 themeLinks.forEach(link => {
                     link.disabled = !(link.id === `themes${theme === "light" ? "" : theme.charAt(0).toUpperCase() + theme.slice(1)}CSS`);
-                    //  console.log(`Link: ${link.id}, Disabled: ${link.disabled}`);
                 });
+
                 localStorage.setItem("themesTheme", theme);
                 themeButtons.forEach(button => {
                     button.disabled = button.dataset.theme === theme;
                 });
             }
-    
+
             function pickInitialTheme() {
-                const savedTheme = localStorage.getItem("themesTheme") || "light";
-                applyTheme(savedTheme);
+                if (forceChristmasTheme === "true") {
+                    applyTheme("christmas");
+                    localStorage.setItem("forceChristmasTheme", "false"); // Reset the flag
+                } else {
+                    const savedTheme = localStorage.getItem("themesTheme") || "light";
+                    applyTheme(savedTheme);
+                }
             }
-    
+
             themeButtons.forEach(button => {
                 button.addEventListener("click", function () {
                     const selectedTheme = button.dataset.theme;
@@ -90,11 +97,12 @@
                     }
                 });
             });
-    
-            pickInitialTheme(); 
+
+            pickInitialTheme();
         });
     </script>
-    
+
+
 </body>
 
 </html>
