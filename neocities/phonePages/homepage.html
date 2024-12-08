@@ -243,14 +243,25 @@
             const savedTheme = localStorage.getItem("globalTheme") || "light";
             const pageName = window.location.pathname.split('/').pop().split('.')[0];
 
+            const forceChristmasTheme = localStorage.getItem("forceChristmasTheme") || "true";
             const availableThemes = themeLinks.map(link => link.id.replace(pageName, '').replace('CSS', '').toLowerCase());
-            const validTheme = (availableThemes.includes(savedTheme) && themeLinks.some(link => link.getAttribute("data-theme") === savedTheme))
-                ? savedTheme
-                : "light";
 
-            themeLinks.forEach(link => link.disabled = link.getAttribute("data-theme") !== validTheme);
+            let validTheme;
+
+            if (forceChristmasTheme === "true") {
+                validTheme = "christmas";
+            } else {
+                validTheme = (availableThemes.includes(savedTheme) && themeLinks.some(link => link.getAttribute("data-theme") === savedTheme))
+                    ? savedTheme
+                    : "light";
+            }
+
+            themeLinks.forEach(link => {
+                link.disabled = link.getAttribute("data-theme") !== validTheme;
+            });
         });
     </script>
+
 </body>
 
 </html>
