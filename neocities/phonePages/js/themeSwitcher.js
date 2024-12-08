@@ -84,7 +84,6 @@ document.addEventListener("DOMContentLoaded", function () {
         if (theme === "christmas") {
             localStorage.setItem("forceChristmasTheme", "true");
         } else {
-            console.log("Fine. Go along on your merry way!");
             localStorage.setItem("forceChristmasTheme", "false");
         }
     }
