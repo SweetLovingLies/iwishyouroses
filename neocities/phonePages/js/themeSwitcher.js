@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (forceChristmasTheme === "true") {
             console.log("You will be jolly.");
             setTheme("christmas");
-            localStorage.setItem("forceChristmasTheme", "false");  
+            localStorage.setItem("forceChristmasTheme", "false"); 
         } else {
             const savedTheme = localStorage.getItem("globalTheme") || "light";
             const validTheme = availableThemes.includes(savedTheme) ? savedTheme : "light";
@@ -82,10 +82,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // ? Nothing's in my way!
         if (theme === "christmas") {
-            localStorage.setItem("forceChristmasTheme", "false");
+            localStorage.setItem("forceChristmasTheme", "true");
         } else {
             console.log("Fine. Go along on your merry way!")
-            localStorage.setItem("forceChristmasTheme", "true");
+            localStorage.setItem("forceChristmasTheme", "false");
         }
     }
 
