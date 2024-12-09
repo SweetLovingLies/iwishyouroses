@@ -1,0 +1,21 @@
+body {
+    background: url(/Assets/BGs/alicebg2.gif);
+    background-position: center;
+}
+
+body #topTrim {
+    image-rendering: pixelated;
+    background: url('/Assets/pixels/headers/tumblr_lszm1fhDRM1ql1l0v540.gif') repeat-x;
+    background-size: contain;
+    background-position: center;
+    height: 60px;
+}
+
+#wrapper {
+    border: 1px solid var(--rosette);
+}
+
+header {
+    background: url("/Assets/BGs/rose-t5.gif");
+    border-bottom: 1px solid var(--rosette);
+}

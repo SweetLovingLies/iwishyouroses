@@ -3,8 +3,10 @@
     /* Colors */
     --bubblegum: #ffb7ed;
     --dustyPink: #f6bdd1;
+    --rosette: #ffbbc5;
     --persian: #f283b6;
     --wisteria: #8266ff;
+    --kangel: #c3a3f6;
     --hintofmist: #f1efff;
     --whispermist: #dbd8f0;
     --driedBlood: #8B575c;
@@ -85,6 +87,11 @@
 @font-face {
     font-family: MagicStars;
     src: url('/fonts/MagicStars.otf');
+}
+
+@font-face {
+    font-family: heartBlood;
+    src: url('/fonts/yanFonts/HeartBlood.ttf');
 }
 
 html,
@@ -348,7 +355,7 @@ quote::after {
 
 .detailing {
     position: absolute;
-    background: url('/Assets/BGs/headerpink2.gif') repeat-x;
+    background: url('/Assets/pixels/headers/headerpink2.gif') repeat-x;
     background-size: contain;
     height: 58px;
     width: 100%;
@@ -408,6 +415,16 @@ cloudBubbleMoji {
 
     vertical-align: text-bottom;
 }
+
+heartBubbleMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/chatbubble\(heart\).gif") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+}
+
 
 pinkNewMoji {
     display: inline-block;
@@ -647,6 +664,89 @@ starCloudMoji {
     background: url("/Assets/pixels/magicalgirls/starCloud.webp") no-repeat;
     width: 20px;
     height: 20px;
+
+    vertical-align: text-bottom;
+}
+
+/* ! Christmas */
+
+christmasTreeMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/christmas/christmastreeFav2.gif") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+}
+
+christmasPresentMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/christmas/gift.gif") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+}
+
+hollyMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/christmas/holly.gif") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+}
+
+reindeerMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/christmas/reindeer1.gif") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+}
+
+santaMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/christmas/santa.gif") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+}
+
+santaHatMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/christmas/santahat.gif") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+}
+
+stockingMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/christmas/stocking2.gif") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+}
+
+wreathMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/christmas/wreath.gif") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+}
+
+candyCaneMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/christmas/candycane.gif") no-repeat;
+    width: 15px;
+    height: 15px;
 
     vertical-align: text-bottom;
 }

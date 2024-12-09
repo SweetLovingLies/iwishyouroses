@@ -106,33 +106,36 @@ header .calendar-navigation span:hover {
     color: var(--wisteria);
 }
 
+/* Status Cafe */
 
-#yuiBox {
-    background: url("/Assets/BGs/checkst-b.gif");
+#thoughtBubble {
+    background: var(--dustyPink);
+    border: 3px dashed white;
+    outline: 5px solid var(--dustyPink);
+}
+
+#thoughtBubble::after {
+    color: var(--dustyPink);
+    -webkit-text-stroke: 1px white;
+
+    background-color: var(--dustyPink);
+    border: 1px solid white;
+    border-radius: 11px;
+}
+
+#thoughtBubble a {
+    color: var(--wisteria);
 }
 
 /* Side Columns */
 
 #status {
     background: url("/Assets/BGs/tumblr_ad479ccfea2121a711cc5099eff07479_82048f3a_75.gif");
-
-    flex: 0 1 46%;
-}
-
-#status h2 {
-    margin-bottom: 10px;
 }
 
 .statusBubble {
-    display: flex;
-    flex-flow: row wrap;
-
     background: white;
     border: 3px dashed var(--bubblegum);
-    border-radius: 20px;
-
-    padding: 1px 10px;
-    margin-bottom: 10px;
 }
 
 .statusBubble:nth-child(even) {
@@ -140,8 +143,6 @@ header .calendar-navigation span:hover {
 }
 
 #status h3 {
-    flex: 1 1;
-    font-weight: normal;
     font-style: italic;
     color: var(--persian)
 }
@@ -205,8 +206,18 @@ header .calendar-navigation span:hover {
 
 footer {
     background-color: var(--whispermist);
-    padding: 5px;
 }
+
+/* ? Decor */
+
+#christmasTree {
+    display: none;
+}
+
+#presents {
+    display: none;
+}
+
 
 /* General */
 

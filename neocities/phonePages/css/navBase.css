@@ -1,0 +1,41 @@
+body{
+    overflow-x: hidden;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+section {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 20px;
+}
+
+section:first-of-type {
+    margin-top: 20px;
+}
+
+#topList {
+    margin-bottom: 20px;
+}
+
+.navLink {
+    width: 100%;
+    text-align: center;
+    word-wrap: break-word;
+    text-decoration: none;
+    cursor: pointer;
+
+    padding: 10px;
+
+    transition: color .25s;
+}
+
+.navLink.UNF {
+    cursor: not-allowed;
+    color: red;
+}
+
+#deer{
+    margin-top: 10px;
+    align-self: center;
+}

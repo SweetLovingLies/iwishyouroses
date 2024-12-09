@@ -1,0 +1,56 @@
+:root {
+    /* New Colors */
+    --christmasRed: #ce211b;
+    --christmasLightRed: #ff716d;
+    --christmasYellow: #fff0be;
+    --christmasGreen: #005007;
+}
+
+body {
+    background: url(/Assets/BGs/holidays/christmas/computerWallpaper2.jpg);
+    background-size: cover;
+}
+
+main {
+    background: url(/Assets/BGs/holidays/christmas/redstripes.gif);
+
+    color: var(--christmasYellow);
+
+    border-style: solid;
+    border-image: url("/Assets/borders/border2FP.png") 28 round;
+    border-width: 28px;
+    background-clip: padding-box;
+}
+
+#warnings {
+    background-color: var(--christmasLightRed);
+    border: 5px solid var(--dustyPink);
+}
+
+.warningIMGs {
+    border-bottom: 2px solid var(--christmasRed);
+}
+
+strong{
+    color: white;
+    font-weight: normal;
+}
+
+#enter{
+    color: var(--christmasGreen);
+}
+
+#enter:hover {
+    color: var(--christmasRed);
+}
+
+/* ? Decor */
+
+.detailing {
+    background: url('/Assets/pixels/christmas/header4.webp') repeat-x;
+    background-size: contain;
+    background-position: center;
+
+    height: 59px;
+    image-rendering: crisp-edges;
+}

@@ -1,0 +1,44 @@
+body{
+    background: url(/Assets/navMap/BG.png);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.navLink {
+    font-family: heartblood;
+    text-transform: lowercase;
+    font-size: 3em;
+    color: white;
+
+    border: 5px solid var(--roseRed);
+    border-right: none;
+    border-left: none;
+}
+
+.navLink:hover {
+    color: var(--roseRed);
+}
+
+#topList .navLink {
+    background-color: black;
+}
+
+#bottomList .navLink {
+    background-color: black;
+}
+
+/* #topList #about {
+    background: url("/Assets/BGs/checkst-b.gif");
+}
+
+#topList #blog {
+    background: url("/Assets/BGs/ht9-p.gif");
+}
+
+#bottomList #mediaLogs {
+    background: url('/Assets/BGs/alicebg2.gif');
+} */
+
+#bottomList #credits {
+    background: url('/Assets/BGs/darkMode/dots.png');
+}

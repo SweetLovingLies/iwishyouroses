@@ -1,0 +1,42 @@
+:root {
+    /* New Colors */
+    --christmasRed: #ce211b;
+    --christmasLightRed: #ff716d;
+    --christmasYellow: #fff0be;
+    --christmasGreen: #005007;
+}
+
+body{
+    background: url("/Assets/BGs/holidays/christmas/yellowstars2.gif");
+}
+
+#welcomeWrapper{
+    background: url("/Assets/BGs/holidays/christmas/yellowstripes.gif");
+    color: black;
+
+    border-top: 1px solid var(--persian);
+    border-bottom: 1px solid var(--persian);
+}
+
+.themePreview{
+    color: var(--christmasGreen);
+}
+
+.themePreview:disabled {
+    color: gray;
+}
+
+.loading-screen {
+    background: url(/Assets/BGs/holidays/christmas/stars.gif);
+    color: white;
+}
+
+.progress-bar {
+    background-color: var(--christmasLightRed);
+
+    border: 2px dashed var(--christmasRed);
+}
+
+.progress {
+    background-color: var(--christmasGreen);
+}

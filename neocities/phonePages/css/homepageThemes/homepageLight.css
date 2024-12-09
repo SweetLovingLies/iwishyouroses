@@ -6,12 +6,16 @@ body {
     font-family: cafesweet;
 }
 
-.appWrapper a, footer a {
+.appWrapper a,
+footer a {
     color: #747474;
 }
 
 
-.appWrapper a:hover, .appWrapper a:focus, footer a:hover, footer a:focus{
+.appWrapper a:hover,
+.appWrapper a:focus,
+footer a:hover,
+footer a:focus {
     color: black;
 }
 
@@ -21,18 +25,18 @@ body {
     filter: drop-shadow(-1px 2px 3px rgba(0, 0, 0, 0.26));
 }
 
-.appWrapper a:hover, 
-.appWrapper a:focus, 
-footer a:hover, 
-footer a:focus {
-    color: black;
+.navDots.active {
+    color: var(--wisteria);
+}
+.navDots.inactive {
+    color: var(--deepslate);
 }
 
-tray{
+tray {
     background: #ffffffa9;
     box-shadow: -1px 2px 3px rgba(0, 0, 0, 0.25);
 }
 
-.column2 p{
+.column2 p {
     color: black;
 }

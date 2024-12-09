@@ -1,51 +1,60 @@
-// First error: Check if you added IDs to the theme css links...
+// ! First error: Check if you added IDs to the theme css links...
 
 document.addEventListener("DOMContentLoaded", function () {
     const topPath = window.top.location.pathname.split('/').pop();
     const topPageName = topPath ? topPath.split('.')[0] : "index";
 
-    // For top level html files
-    
-    const themeCSS = window.top.document.getElementById(`${topPageName}CSS`);
-    const themeDarkCSS = window.top.document.getElementById(`${topPageName}DarkCSS`);
+    // ! You will be jolly.
+    const forceChristmasTheme = localStorage.getItem("forceChristmasTheme") || "true";
 
-    if (!themeCSS || !themeDarkCSS) {
-        console.warn(`Theme CSS elements for ${topPageName} not found. Skipping theme initialization.`);
-        return
+    // ~ For top level html files only!
+
+    const themeLinks = Array.from(window.top.document.querySelectorAll(`link[id^="${topPageName}"]`));
+
+
+    if (!themeLinks.length) {
+        console.warn(`No themes for ${topPageName} found. Skipping theme initialization!`);
+        return;
     }
 
-    const darkButton = document.getElementById("darkModeSwitch");
-    const lightButton = document.getElementById("lightModeSwitch");
+    const availableThemes = themeLinks.map(link => {
+        const themeName = link.id.replace(topPageName, '').replace('CSS', '').toLowerCase();
+        return themeName;
+    });
+
+    // console.log('Available themes for this page:', availableThemes);
+
+    const themeButtons = document.querySelectorAll("[data-theme]");
 
     function applyInitialTheme() {
-        const darkThemeEnabled = localStorage.getItem('darkTheme') === 'true';
-
-        if (darkThemeEnabled) {
-            themeCSS.disabled = true;
-            themeDarkCSS.disabled = false;
-            if (darkButton) darkButton.disabled = true;
-            if (lightButton) lightButton.disabled = false;
+        // ? For the first time in forever...
+        if (forceChristmasTheme === "true") {
+            console.log("You will be jolly.");
+            setTheme("christmas");
+            localStorage.setItem("forceChristmasTheme", "false"); 
         } else {
-            themeCSS.disabled = false;
-            themeDarkCSS.disabled = true;
-            if (lightButton) lightButton.disabled = true;
+            const savedTheme = localStorage.getItem("globalTheme") || "light";
+            const validTheme = availableThemes.includes(savedTheme) ? savedTheme : "light";
+            setTheme(validTheme);
         }
     }
 
     function applyTheme(theme) {
-        const loadingScreen = document.getElementById('loadingScreen');
-        const progressBar = document.getElementById('progress');
+        const loadingScreen = document.getElementById("loadingScreen");
+        const progressBar = document.getElementById("progress");
 
         if (loadingScreen && progressBar) {
-            loadingScreen.classList.remove('hidden');
+            loadingScreen.classList.remove("hidden");
+            loadingScreen.style.pointerEvents = "all";
             let progress = 0;
             const loadingInterval = setInterval(() => {
                 if (progress < 100) {
                     progress += 3;
-                    progressBar.style.width = progress + '%';
+                    progressBar.style.width = progress + "%";
                 } else {
                     clearInterval(loadingInterval);
-                    loadingScreen.classList.add('hidden');
+                    loadingScreen.classList.add("hidden");
+                    loadingScreen.style.pointerEvents = "none";
                     setTheme(theme);
                 }
             }, 100);
@@ -55,34 +64,38 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function setTheme(theme) {
-        if (theme === 'dark') {
-            themeDarkCSS.disabled = false;
-            themeCSS.disabled = true;
-            localStorage.setItem('darkTheme', 'true');
-            if (darkButton) darkButton.disabled = true;
-            if (lightButton) lightButton.disabled = false;
+        // console.log("Applying theme:", theme);
+
+        const themeId = theme === 'light'
+            ? `${topPageName}CSS`
+            : `${topPageName}${theme.charAt(0).toUpperCase() + theme.slice(1)}CSS`;
+
+        themeLinks.forEach(link => {
+            link.disabled = link.id !== themeId;
+            // console.log(`Link: ${link.id}, Disabled: ${link.disabled}`);
+        });
+
+        localStorage.setItem("globalTheme", theme);
+        themeButtons.forEach(button => {
+            button.disabled = button.dataset.theme === theme;
+        });
+
+        // ? Nothing's in my way!
+        if (theme === "christmas") {
+            localStorage.setItem("forceChristmasTheme", "true");
         } else {
-            themeCSS.disabled = false;
-            themeDarkCSS.disabled = true;
-            localStorage.setItem('darkTheme', 'false');
-            if (darkButton) darkButton.disabled = false;
-            if (lightButton) lightButton.disabled = true;
+            localStorage.setItem("forceChristmasTheme", "false");
         }
     }
 
-    if (darkButton) {
-        darkButton.addEventListener("click", function () {
-            if (themeDarkCSS.disabled) {
-                applyTheme('dark');
+    themeButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            const theme = button.dataset.theme;
+            if (theme) {
+                applyTheme(theme);
             }
         });
-    }
-
-    if (lightButton) {
-        lightButton.addEventListener("click", function () {
-            applyTheme('light');
-        });
-    }
+    });
 
     applyInitialTheme();
 });

@@ -1,87 +1,88 @@
-:root {
-
-    /* Colors */
-    --bubblegum: #ffb7ed;
-    --dustyPink: #f6bdd1;
-    --persian: #f283b6;
-    --wisteria: #8266ff;
-    --hintofmist: #f1efff;
-    --whispermist: #dbd8f0;
-    --driedBlood: #8B575c;
-    --pinkIce: #f6e4f6;
-    --ash: #cad2c5;
-    --water: #adcaff;
-    --deepsea: #357ce6;
-    --roseRed: #C71227;
-    --rosePink: #FB003F;
-    --blood: #800000;
-    --deepslate: #696969;
-    --cobblestone: #a8a8a8;
-
-    /* Globals */
-    --globalBorderRadius: 10px;
-    --detailBarHeight: 20px;
-}
-
 body {
-    height: 100vh;
-    background: url("/Assets/BGs/rose-kt4.gif");
-    background-attachment: fixed;
-
-    font-family: cafesweet;
-
     display: flex;
     justify-content: center;
+    height: 100vh;
+
+    font-family: cafesweet;
 }
 
 #wrapper {
     flex: 0 1 50%;
-    background-color: white;
+    display: flex;
+    flex-flow: row wrap;
     position: relative;
-
-    border-style: solid;
-    border-image: url("/Assets/borders/borderfilled.png") 9 round;
-    border-width: 8px;
-    background-clip: padding-box;
 
     border-top: none;
     border-bottom: none;
 }
 
-header{
+header {
+    flex: 1 1 100%;
     display: flex;
     flex-flow: column nowrap;
     text-align: center;
-
-    background-color: var(--pinkIce);
 }
 
-h1 {
-    font-family: maddison, cursive;
-    font-size: 3em;
-    font-weight: normal;
-
-    flex: 1 1;
+.wrapper {
+    flex: 1 1 50%;
+    height: calc(100% - 130px);
+    position: relative;
 }
 
-a {
+#topTrim {
     position: absolute;
-    text-decoration: none;
+    width: 100%;
+
+    top: 0;
+    left: 0;
+    z-index: 0;
+    pointer-events: none;
 }
 
-img {
-    border-radius: var(--globalBorderRadius);
+#bottomTrim {
+    position: absolute;
+    width: 100%;
+
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    pointer-events: none;
 }
 
-/* Game Log */
+
+/* & Game Log */
+
+#gameLogWrapper {
+    background: url("/Assets/BGs/trspHearts.gif"), var(--pinkIce);
+}
+
+#gameLogWrapper #topTrim {
+    image-rendering: pixelated;
+    background: url('/Assets/pixels/headers/061-t.gif') repeat-x;
+    background-size: contain;
+    background-position: center;
+
+    height: 55px;
+}
+
+#gameLogWrapper #bottomTrim {
+    image-rendering: pixelated;
+    background: url('/Assets/pixels/headers/061-b.gif') repeat-x;
+    background-size: contain;
+    background-position: center;
+
+    height: 55px;
+}
 
 #gameLog {
     image-rendering: pixelated;
 
     top: 10em;
-    left: 4em;
+    left: 50%;
 
-    color: var(--bubblegum);
+    color: var(--kangel);
+    transform: translateX(-50%);
+
     transition: color .25s;
 }
 
@@ -94,28 +95,54 @@ img {
 }
 
 #gameLog img {
-    width:  250px;
+    width: 20vw;
 
     border-style: solid;
     border-image: url("/Assets/borders/pinkHearts.png") 7 round;
     border-width: 7px;
     background-clip: padding-box;
+    transition: transform 1s;
 }
 
-/* Media Log */
+#gameLog img:hover,
+#gameLog:hover>img,
+#gameLog img:focus,
+#gameLog:focus>img {
+    transform: rotate(-5deg);
+}
 
+
+#gameLog h2 {
+    bottom: -1.5em;
+    -webkit-text-stroke: .5px black;
+}
+
+/* ! Media Log */
+
+#mediaLogWrapper {
+    background: url(/Assets/BGs/darkMode/redroses.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#mediaLogWrapper #topTrim {
+    background: url('/Assets/pixels/headers/bloodHeader.webp') repeat-x;
+    background-size: contain;
+    height: 20px;
+}
 
 #mediaLog {
-    top: 25em;
-    right: 4em;
+    top: 10em;
+    right: 50%;
+    transform: translateX(50%);
 
     text-align: right;
-    color: var(--driedBlood);
+    color: var(--blood);
     transition: color .25s;
 }
 
-#mediaLog:hover {
-    color: var(--blood);
+#mediaLog:hover, #mediaLog:focus {
+    color: var(--driedBlood);
 }
 
 #mediaLog:active {
@@ -123,10 +150,98 @@ img {
 }
 
 #mediaLog img {
-    width:  250px;
+    width: calc(20vw + 45px);
 
     border-width: 45px;
     border-style: solid;
-    border-image: url("/assets/borders/HILLHOUSELace.png") 84 round;
+    border-image: url("/Assets/borders/HILLHOUSELace.png") 84 round;
     background-clip: border-box;
+    transition: transform 1s;
+}
+
+#mediaLog img:hover,
+#mediaLog:hover>img,
+#mediaLog img:focus,
+#mediaLog:focus>img {
+    transform: rotate(-5deg);
+}
+
+#mediaLog h2 {
+    top: -1.5em;
+    -webkit-text-stroke: .3px white;
+}
+
+/* ~ General */
+
+h1 {
+    font-family: maddison, cursive;
+    font-size: 3em;
+    font-weight: normal;
+
+    flex: 1 1;
+}
+
+h2 {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+
+    font-size: 5em;
+
+    font-family: heartBlood;
+    font-weight: normal;
+    text-transform: lowercase;
+}
+
+a {
+    position: absolute;
+    text-decoration: none;
+}
+
+img {
+    border-radius: var(--globalBorderRadius);
+}
+
+/* ? Media Queries */
+
+@media (prefers-reduced-motion: reduce) {}
+
+@media only screen and (max-width: 1024px) {}
+
+@media only screen and (max-width: 810px) {
+
+    #wrapper {
+        flex: 1 1;
+    }
+
+    #gameLog img {
+        width: 40vw;
+    }
+
+    #mediaLog img {
+        width: calc(40vw + 45px);
+    }
+
+    h2 {
+        font-size: 4em;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    #wrapper {
+        overflow: scroll;
+        overflow-x: hidden;
+    }
+
+    h2 {
+        font-size: 3em;
+    }
+
+    #gameLog h2 {
+        bottom: -2.5em
+    }
+
+    #mediaLog h2 {
+        top: -2.5em;
+    }
 }

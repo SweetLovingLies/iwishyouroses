@@ -49,6 +49,7 @@ section {
 
 #eyecatcher {
     height: 200px;
+    object-fit: cover;
 }
 
 #siteButton {
@@ -144,7 +145,6 @@ header .calendar-current-date {
 
 main {
     flex: 0 1 40%;
-
     /* gap: 10px; */
 }
 
@@ -201,9 +201,6 @@ main {
     padding: 10px;
     overflow: auto;
 
-    background: var(--dustyPink);
-    border: 3px dashed white;
-    outline: 5px solid var(--dustyPink);
     border-radius: 20px;
 }
 
@@ -217,8 +214,6 @@ main {
     right: 0;
     z-index: 1;
 
-    color: var(--dustyPink);
-    -webkit-text-stroke: 1px white;
     text-align: right;
     font-size: 55px;
     line-height: 20px;
@@ -228,13 +223,7 @@ main {
     width: 55px;
     height: 11px;
 
-    background-color: var(--dustyPink);
-    border: 1px solid white;
     border-radius: 11px;
-}
-
-#thoughtBubble a {
-    color: var(--wisteria);
 }
 
 /* ? Right-side */
@@ -259,6 +248,28 @@ main {
 #updates,
 #stamps {
     height: 165px
+}
+
+#status {
+    flex: 0 1 46%;
+}
+
+#status h2 {
+    margin-bottom: 10px;
+}
+
+#status h3 {
+    flex: 1 1;
+    font-weight: normal;
+}
+
+.statusBubble{
+    display: flex;
+    flex-flow: row wrap;
+
+    border-radius: 20px;
+    padding: 1px 10px;
+    margin-bottom: 10px;
 }
 
 #updates {
@@ -341,6 +352,7 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 5px;
+    padding: 5px;
 }
 
 /* Other */

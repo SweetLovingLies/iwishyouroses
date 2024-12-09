@@ -1,7 +1,8 @@
 ## !!!!!! Things I intend to do for this site... the text file!
 
 * **!! Things to do for the Media Log:**
-  * Make Both
+  * Make the media log
+  * Populate the game log with info
 
     \
 * **!! Things to do for the projects page:**
@@ -29,9 +30,9 @@
 * **!! Things to do for the site itself:**
   * **Add alt text and other accessibility stuff**
   * Start a webring for people who like creepy aesthetics?
-  * **Christmas theme!**
 
+  \
 
-Other:
+**Other:**
 
 Find a font like To Japan on Creative Fabrica

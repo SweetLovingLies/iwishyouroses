@@ -1,0 +1,43 @@
+body{
+    background: url(/Assets/BGs/alicebg3.gif);
+    background-attachment: fixed;
+}
+
+.navLink {
+    font-family: heartblood;
+    text-transform: lowercase;
+    font-size: 3em;
+    color: black;
+
+    border: 5px solid var(--rosette);
+    border-right: none;
+    border-left: none;
+}
+
+.navLink:hover {
+    color: var(--wisteria);
+}
+
+#topList .navLink {
+    background: url('/Assets/BGs/check5-p.gif');
+}
+
+#bottomList .navLink {
+    background: url('/Assets/BGs/check5-b.gif');
+}
+
+#topList #about {
+    background: url("/Assets/BGs/checkst-b.gif");
+}
+
+#topList #blog {
+    background: url("/Assets/BGs/ht9-p.gif");
+}
+
+#bottomList #mediaLogs {
+    background: url('/Assets/BGs/alicebg2.gif');
+}
+
+#bottomList #credits {
+    background: url('/Assets/BGs/tumblr_ad479ccfea2121a711cc5099eff07479_82048f3a_75.gif');
+}
