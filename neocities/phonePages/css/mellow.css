@@ -1,0 +1,497 @@
+:root {
+    /* Colors */
+    --bubblegum: #ffb7ed;
+    --dustyPink: #f6bdd1;
+    --rosette: #ffbbc5;
+    --persian: #f283b6;
+    --wisteria: #8266ff;
+    --kangel: #c3a3f6;
+    --hintofmist: #f1efff;
+    --whispermist: #dbd8f0;
+    --driedBlood: #8B575c;
+    --pinkIce: #f6e4f6;
+    --ash: #cad2c5;
+    --water: #adcaff;
+    --deepsea: #357ce6;
+    --roseRed: #C71227;
+    --rosePink: #FB003F;
+    --blood: #800000;
+    --deepslate: #696969;
+    --cobblestone: #a8a8a8;
+
+    /* New Colors */
+
+    --crystal: #ffaef2;
+    --mint: #8affbd;
+
+    /* Rainbow Ring Colors */
+
+    --rainbowRed: #ffadad;
+    --rainbowOrange: #ffdea1;
+    --rainbowYellow: #ffffb5;
+    --rainbowGreen: #c2ffc2;
+    --rainbowBlue: #b8d4ff;
+    --rainbowIndigo: #9e97e0;
+    --rainbowPurple: #cfb0ff;
+    --rainbowPink: #ffd8f2;
+
+    /* Globals */
+    --globalBorderRadius: 10px;
+    --detailBarHeight: 20px;
+}
+
+@font-face {
+    font-family: cozyCloud;
+    src: url('/fonts/cloudFonts/CozySmileyCloud.otf');
+}
+
+@font-face {
+    font-family: cloud;
+    src: url('/fonts/cloudFonts/CuteCloudOutline.otf');
+}
+
+* {
+    font-family: "Noto Color Emoji", Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, #8affbd 0%, #ffaef2 50%, #8affbd 100%);
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+}
+
+#wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+
+    position: relative;
+    height: 100%;
+}
+
+
+/* header h1 {
+    font-size: 3em;
+    font-family: cozyCloud;
+    color: var(--wisteria);
+    -webkit-text-stroke: .3px var(--kangel);
+} */
+
+main {
+    flex: 1;
+}
+
+/* ~ Tab bar  */
+
+nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+    box-shadow: 0px -1px 3px rgba(0, 0, 0, 0.137);
+}
+
+nav button {
+    flex: 1 1;
+    background: rgba(255, 255, 255, 0.7);
+
+    color: var(--cobblestone);
+    font-size: 10px;
+
+    border: none;
+    border-radius: 0;
+
+    transition: color 0.25s;
+
+    cursor: pointer;
+}
+
+nav button iconify-icon {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+}
+
+nav button:hover,
+nav button.active {
+    color: var(--deepsea);
+}
+
+.tab {
+    display: none;
+    opacity: 0;
+}
+
+.tab.active {
+    display: block;
+    animation: fadeIn ease .55s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#moodSelect, #dailyLog {
+    padding: 10px;
+}
+
+
+/* ~ Mood Select */
+
+#welcome {
+    gap: 10px;
+}
+
+#welcome p {
+    font-size: small;
+}
+
+#user {
+    color: var(--wisteria);
+}
+
+#userIcon {
+    display: block;
+    width: 90px;
+    border-radius: 999px;
+    border: 3px solid var(--kangel);
+}
+
+/* ~ Main Display */
+
+#mainDisplay {
+    /* height: 260px; */
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+#selectedMoodEmoji {
+    font-size: 3.3em;
+    width: 65px;
+    aspect-ratio: 1;
+    text-align: center;
+
+    transform: rotate(-45deg);
+}
+
+.rings {
+    border-radius: 50%;
+}
+
+#ring1 {
+    border: 8px solid var(--bubblegum);
+    outline: 1px solid #999999;
+}
+
+#ring2 {
+    padding: 15px;
+    border-left: 20px solid var(--crystal);
+    border-top: 20px solid var(--mint);
+    border-right: 20px solid var(--kangel);
+    border-bottom: 20px solid var(--kangel);
+
+    filter: drop-shadow(0px 0px 3px white);
+
+    outline: 3px solid black;
+
+    transform: rotate(45deg);
+}
+
+#currentMood {
+    font-size: 2em;
+    font-weight: bold;
+
+    color: white;
+    -webkit-text-stroke: .7px var(--wisteria);
+}
+
+#currentMood::before {
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 25px;
+    background: url(/Assets/other/mellowIcons/WingL.png) no-repeat;
+    background-size: contain;
+    margin-right: 3px;
+}
+
+#currentMood::after {
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 25px;
+    background: url(/Assets/other/mellowIcons/WingR.png) no-repeat;
+    background-size: contain;
+    margin-left: 3px;
+}
+
+/* ~ Mood Picker */
+
+#moodSelect #header {
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+
+    color: var(--wisteria);
+    border-bottom: 1px solid black;
+}
+
+#moodButtons {
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 5px;
+}
+
+#moodButtons button {
+    border: none;
+    background: none;
+
+    font-size: 1.1em;
+}
+
+/* ~ Daily Log */
+
+#dailyLog header {
+    margin-bottom: 10px;
+}
+
+#logNote {
+    font-size: .9em;
+}
+
+#emotion {
+    color: var(--wisteria);
+}
+
+/* ~ Breathing Exercise */
+
+#breatheDeeply {
+    height: 100%;
+}
+
+#breatheDeeply #landscape {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 46px);
+   
+    overflow: hidden;
+}
+
+#sky {
+    position: relative;
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Fallback */
+    background-color: #87ceeb; 
+
+    background: linear-gradient(
+        to bottom,
+        #ff7e5f,
+        #feb47b
+    );
+
+    background-size: 100%; 
+    background-position: 0% 0%;
+    transition: background-position 1s;
+}
+
+
+#sky.dayCycle {
+    background: linear-gradient(
+        to bottom,
+        #ff7e5f, /* Sunset */
+        #feb47b,
+        #87ceeb, /* Day */
+        #f0e68c,
+        #ff7e5f, /* Back to Sunset */
+        #cc3939,
+        #0b3d91, /* Night */
+        #1c1c54
+    );
+
+    background-size: 100% 700%; 
+    animation: dayCycle 15s forwards linear; 
+}
+
+
+#sky.nightCycle {
+    background: linear-gradient(
+        to bottom,
+        #0b3d91, /* Night */
+        #1c1c54,
+        #ff7e5f, /* Back to Sunset */
+        #feb47b
+    );
+    
+    background-size: 100% 300%; 
+
+    animation: nightCycle 15s forwards linear; 
+}
+
+@keyframes dayCycle {
+    0% {
+        background-position: 0% 0%; /* Sunset */
+    }
+    25%, 50% {
+        background-position: 0% 33%; /* Day */
+    }
+    60% {
+        background-position: 0% 66%; /* Sunset */
+    }
+    90%, 100% {
+        background-position: 0% 100%; /* Night */
+    }
+}
+
+
+@keyframes nightCycle {
+    0% {
+        background-position: 0% 0%; /* Night */
+    }
+    90% {
+        background-position: 0% 0%; /* Night */
+    }
+    100% {
+        background-position: 0% 100%; /* Sunset */
+    }
+}
+
+#horizon {
+    position: relative;
+    width: 100%;
+    height: 40%;
+    bottom: 0;
+    z-index: 10;
+    background-color: #0e7c0e;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sun,
+#moon {
+    position: absolute;
+    bottom: 0;
+    transition: all 2s;
+
+    width: 128px;
+    aspect-ratio: 1;
+}
+
+#sun {
+    transform: translateY(50%);
+}
+
+#moon {
+    transform: translateY(110%);
+}
+
+@keyframes sunCycleStart {
+    0% {
+        transform: translateY(50%);
+    }
+    25% {
+        transform: translateY(-90%);
+    }
+    50% {
+        transform: translateY(-90%);
+    }
+    100% {
+        transform: translateY(110%);
+    }
+}
+
+@keyframes sunCycle {
+    0% {
+        transform: translateY(110%);
+    }
+    25% {
+        transform: translateY(-90%);
+    }
+    50% {
+        transform: translateY(-90%);
+    }
+    100% {
+        transform: translateY(110%);
+    }
+}
+
+@keyframes moonCycle {
+    0% {
+        transform: translateY(110%);
+    }
+    25% {
+        transform: translateY(-90%);
+    }
+    50% {
+        transform: translateY(-90%);
+    }
+    100% {
+        transform: translateY(110%);
+    }
+}
+
+#BEtext {
+    font-size: 4em;
+    font-family: cloud;
+    text-align: center;
+
+    font-weight: normal;
+    color: white;
+
+    /* -webkit-text-stroke: 1px black; */
+
+    text-transform: uppercase;
+}
+
+/* ~ General */
+
+.flexWrapper {
+    display: flex;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+textarea {
+    width: 100%;
+    resize: none;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#log-list {
+    margin-top: 10px;
+    list-style: none;
+    padding: 0;
+}
+
+button {
+    background-color: var(--rainbowBlue);
+    border: 3px ridge var(--kangel);
+    border-radius: var(--globalBorderRadius);
+    font-weight: bold;
+}

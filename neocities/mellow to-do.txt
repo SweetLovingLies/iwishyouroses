@@ -1,0 +1,31 @@
+Mellow
+
+MVP: 
+
+Select your mood ✔
+- Could use this to practice anime style vector work
+
+Log Daily Moods with timestamps and optional notes.
+
+Breathing Exercise 
+
+---------------------------------
+
+
+Additonal (NTH) features:
+
+Mood Insights
+    - Mood boosting ideas
+        - Activities
+        - Quotes
+    - Maybe take user preferences for quotes and activities
+
+Maybe remake Idolpet so that it works with mood selections?
+
+Moodboards?
+    - Make them sharable to social media somehow.
+
+Mood Tracker Stats (based on daily mood log)!
+    - Displayed with graphs / charts
+    - Maybe a calender too
+    - Could also be used for achievements!

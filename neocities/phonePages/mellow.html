@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Screen: Mellow</title>
+
+    <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/phoneGlobals.css" rel="stylesheet" type="text/css" media="all">
+
+    <link href="css/mellow.css" rel="stylesheet" type="text/css" media="all">
+
+    <meta name="description" content="Access literally everything you need." />
+    <link rel="icon" type="image/x-icon" href="../Assets/pixels/vintageAmericana/strawberryphone.webp">
+
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+    <object id="detailBarObject" data="detailbar.html"></object>
+    <div id="wrapper">
+        <filler>
+            filler
+        </filler>
+
+        <main>
+            <section id="moodSelect" class="tab">
+                <div id="welcome" class="flexWrapper">
+                    <div class="flexWrapper"
+                        style="flex-flow: column nowrap; justify-content: flex-end; padding-bottom: 20px;">
+                        <h2>Hello, <span id="user">Anon</span>. </h2>
+                        <p>How are you feeling today?</p>
+                    </div>
+                    <img id="userIcon" src="/Assets/other/anonIcon.jpg">
+                </div>
+
+                <div id="mainDisplay">
+                    <div id="ring1" class="rings">
+                        <div id="ring2" class="rings">
+                            <!-- Make a custom emoji for this later! -->
+                            <p id="selectedMoodEmoji">😊</p>
+                        </div>
+                    </div>
+                    <p id="currentMood">Cheerful</p>
+                </div>
+
+                <div id="moodSelect">
+                    <div id="header">
+                        <h3>Today's Mood</h3>
+                    </div>
+                    <div id="moodButtons" class="flexWrapper">
+                        <button id="cheerful">😊</button>
+                        <button id="happy">🙂</button>
+                        <button id="calm">😌</button>
+                        <button id="indifferent">😐</button>
+                        <button id="confused">😕</button>
+                        <button id="sad">🙁</button>
+                        <button id="depressed">😢</button>
+                        <button id="annoyed">🙄</button>
+                        <button id="angry">😡</button>
+                        <button id="dead">💀</button>
+                        <button id="cool">😎</button>
+                        <button id="loved">🥰</button>
+                        <button id="starstruck">🤩</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ! Come back later -->
+            <section id="dailyLog" class="tab">
+                <header>
+                    <h2>Daily Log</h2>
+                    <p id="logNote">I'm happy to hear that you're feeling <span id="emotion">cheerful!</span></p>
+                </header>
+
+                <!-- ! This will use the exact same system as Your Tome btw -->
+
+                <form id="notes">
+                    <label for="logInput">Leave an optional note for yourself!</label>
+                    <textarea id="logInput" name="logInput" rows="4"
+                        placeholder="Do you want to talk about why?"></textarea>
+                    <button id="logMoodBtn" type="submit">Log Mood</button>
+                </form>
+
+                <ul id="log-list"></ul>
+            </section>
+
+            <!-- <section id="insights" class="tab">
+                <h2>Mood Insights</h2>
+                <div id="insights-content">
+                    <p>I'll do this later</p>
+                </div>
+            </section> -->
+
+            <section id="breatheDeeply" class="tab active">
+                <div id="landscape">
+                    <div id="sky">
+                        <img id="sun" src="/Assets/other/mellowIcons/Sun.png">
+                        <img id="moon" src="/Assets/other/mellowIcons/Moon.png">
+                    </div>
+                    <div id="horizon">
+                        <h3 id="BEtext">Let's take a breather</h3>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+
+        <nav>
+            <button class="active" data-tab="moodSelect">
+                <iconify-icon icon="ic:sharp-cloud"></iconify-icon>
+                Mood Select
+            </button>
+            <button data-tab="dailyLog">
+                <iconify-icon icon="octicon:log-24"></iconify-icon>
+                Mood Log
+            </button>
+
+            <!-- ! Insights coming soon to an app near you!
+            <button data-tab="insights">
+                <iconify-icon icon="ion:heart-circle"></iconify-icon>
+                Mood Insights
+            </button> -->
+
+            <button data-tab="breatheDeeply">
+                <iconify-icon icon="cbi:scene-relax"></iconify-icon>
+                Breathing Exercise
+            </button>
+        </nav>
+
+    </div>
+    <script src="js/mellow.js"></script>
+</body>
+
+</html>

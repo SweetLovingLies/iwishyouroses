@@ -121,12 +121,10 @@ body {
     position: relative;
     overflow: hidden;
 
-    animation: fadeInAnimation ease .55s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+    animation: fadeIn ease .55s forwards;
 }
 
-@keyframes fadeInAnimation {
+@keyframes fadeIn {
     0% {
         opacity: 0;
     }
@@ -686,7 +684,7 @@ starCloudMoji {
     bottom: -605px;
 
     /* ! For testing */
-    /* bottom: 0; */
+    bottom: 0;
 }
 
 #phone.visible {

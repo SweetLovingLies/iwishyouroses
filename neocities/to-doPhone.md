@@ -2,6 +2,8 @@
 
 **!!!!!!!! Today !!!!!!!!**
 
+<<<<<<< Updated upstream
+
 * Your Tome <---------- Easy?
   * Write love letters that could appear in the Yandere shrine!
     * Would require tagging system
@@ -18,16 +20,49 @@
     * Could use this to practice anime style vector work
       * UGH
     * Mood insights?
+      =======
+* Mellow
+  * See “mellow to-do.txt”
+  * Make custom emojis
+    * And maybe come up with more emotion ideas lol
+  * Finish the foreground animation
+  * Work on the log!
+    * 2 birds, 1 stone (also works for Your Tome)
 
-      \
+> > > > > > > Stashed changes
+
+```
+  \
+```
 
 **! Whenever tf I feel like doing this !**
 
+<<<<<<< Updated upstream
+
 * Rework navigation page
-  * Make it a map instead!
-    * Custom map made in Illustrator and Photoshop (?)
+  =======
+* Add an animation for notifications and when the onboarding is active!
+* Bugfix the music app AGAIN
+* Conceptualize IdolLine logo
+* Your Tome <---------- Irritating
+  * Write love letters that could appear in the Yandere shrine!
+    * Would require tagging system (indexedDB)
 
       \
+  * Add export to PDF functionality
+  * Make modal to view notes
+  * Add Markdown support?
+  * Add FNAF Ref
+
+    \
+* Rework navigation page completely!
+
+> > > > > > > Stashed changes
+
+* Make it a map instead!
+  * Custom map made in Illustrator and Photoshop (?)
+
+    \
 * StarBound (Achievements)
   * View Shrine by clicking phone home button 9 (?) times
   * Click the weirdStats 69 times... Nice!
@@ -35,6 +70,7 @@
   * Wish roses 1000 times
   * Actually find Herobrine
   * Something in the water…?
+  * Log your mood 10 times!
 
     \
 * Camera <--------- Medium?
