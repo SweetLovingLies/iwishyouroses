@@ -360,8 +360,6 @@ nav button.active {
         background-position: 0% 100%; /* Night */
     }
 }
-
-
 @keyframes nightCycle {
     0% {
         background-position: 0% 0%; /* Night */
@@ -374,17 +372,99 @@ nav button.active {
     }
 }
 
+#mountains {
+    position: absolute;
+    bottom: 0;
+
+    width: 330px;
+
+    filter: brightness(250%) hue-rotate(-260deg); /* Sunset Start */
+}
+
+#mountains.dayCycle {
+    animation: dayMountainCycle 15s forwards linear; 
+}
+#mountains.nightCycle {
+    animation: nightMountainCycle 15s forwards linear; 
+}
+
+@keyframes dayMountainCycle {
+    0% {
+        filter: brightness(250%) hue-rotate(-260deg); /* Sunset */
+    }
+    25%, 50% {
+        filter: brightness(600%) hue-rotate(-90deg);  /* Day */
+    }
+    60% {
+        filter: brightness(250%) hue-rotate(-260deg); /* Sunset */
+    }
+    100% {
+        filter: brightness(100%) hue-rotate(0deg); /* Night */
+    }
+}
+
+@keyframes nightMountainCycle {
+    0% {
+        filter: brightness(100%) hue-rotate(0deg); /* Night */
+    }
+    90% {
+        filter: brightness(100%) hue-rotate(0deg); /* Night */
+    }
+    100% {
+        filter: brightness(250%) hue-rotate(-260deg); /* Sunset */
+    }
+}
+
 #horizon {
     position: relative;
     width: 100%;
     height: 40%;
     bottom: 0;
     z-index: 10;
-    background-color: #0e7c0e;
+    background: url("/Assets/other/mellowIcons/Water.png");
+    background-size: cover;
+    background-position: center;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    filter: brightness(250%) hue-rotate(-0deg); /* Sunset Start */
+}
+
+#horizon.dayCycle {
+    animation: dayHorizonCycle 15s forwards linear; 
+}
+
+#horizon.nightCycle {
+    animation: nightHorizonCycle 15s forwards linear; 
+}
+
+@keyframes dayHorizonCycle {
+    0% {
+        filter: brightness(250%) hue-rotate(-0deg);  /* Sunset */
+    }
+    25%, 50% {
+        filter: brightness(300%) hue-rotate(-20deg);  /* Day */
+    }
+    60% {
+        filter: brightness(250%) hue-rotate(-0deg);  /* Sunset */
+    }
+    100% {
+        filter: brightness(100%) hue-rotate(0deg); /* Night */
+    }
+}
+
+@keyframes nightHorizonCycle {
+    0% {
+        filter: brightness(100%) hue-rotate(0deg); /* Night */
+    }
+    90% {
+        filter: brightness(100%) hue-rotate(0deg); /* Night */
+    }
+    100% {
+        filter: brightness(250%) hue-rotate(-0deg); /* Sunset */
+    }
 }
 
 #sun,

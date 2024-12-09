@@ -68,6 +68,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const moon = document.getElementById('moon');
     const landscape = document.getElementById('landscape');
     const sky = document.getElementById('sky');
+    const mountains = document.getElementById('mountains');
+    const horizon = document.getElementById('horizon');
     const BEtext = document.getElementById('BEtext');
 
     let cycleTimeouts = []; // Store timeouts for cleanup
@@ -103,7 +105,11 @@ document.addEventListener('DOMContentLoaded', () => {
         void sun.offsetWidth; // Trigger reflow
         sun.style.animation = 'sunCycle 13s forwards';
         sky.classList.remove('nightCycle');
+        mountains.classList.remove('nightCycle');
+        horizon.classList.remove('nightCycle');
         sky.classList.add('dayCycle');
+        mountains.classList.add('dayCycle');
+        horizon.classList.add('dayCycle');
         
         // console.log('Sun Cycle');
 
@@ -120,7 +126,12 @@ document.addEventListener('DOMContentLoaded', () => {
         moon.style.animation = 'moonCycle 13s forwards';
 
         sky.classList.remove('dayCycle');
+        mountains.classList.remove('dayCycle');
+        horizon.classList.remove('dayCycle');
         sky.classList.add('nightCycle');
+        mountains.classList.add('nightCycle');
+        horizon.classList.add('nightCycle');
+
 
         // console.log('Moon Cycle');
 
@@ -136,6 +147,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isFirstCycle) {
             sun.style.animation = 'sunCycleStart 13s forwards';
             sky.classList.add('dayCycle');
+            mountains.classList.add('dayCycle');
+            horizon.classList.add('dayCycle');
 
             // console.log('Starting Sun Cycle');
 
@@ -154,8 +167,16 @@ document.addEventListener('DOMContentLoaded', () => {
         cycleTimeouts = [];
         sun.style.animation = 'none';
         moon.style.animation = 'none';
+
         sky.classList.remove('dayCycle');
         sky.classList.remove('nightCycle');
+        
+        mountains.classList.remove('dayCycle');
+        mountains.classList.remove('nightCycle');
+
+        horizon.classList.remove('dayCycle');
+        horizon.classList.remove('nightCycle');
+
         updateText('');
         // console.log('Stopped Cycle');
     }
