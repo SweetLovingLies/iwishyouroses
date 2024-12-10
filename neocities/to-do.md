@@ -1,4 +1,4 @@
-## !!!!!! Things I intend to do for this site... the text file!
+## !!!!!! Things I intend to do for this site... the markdown file!
 
 * **!! Things to do for the Media Log:**
   * Make the media log

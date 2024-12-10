@@ -64,12 +64,17 @@ function updateLog() {
 // & Breathing Exercises
 
 document.addEventListener('DOMContentLoaded', () => {
+    const landscape = document.getElementById('landscape');
+
     const sun = document.getElementById('sun');
     const moon = document.getElementById('moon');
-    const landscape = document.getElementById('landscape');
+
     const sky = document.getElementById('sky');
     const mountains = document.getElementById('mountains');
     const horizon = document.getElementById('horizon');
+    const colorOverlay = document.getElementById('colorOverlay');
+    const reflection = document.getElementById('reflection');
+
     const BEtext = document.getElementById('BEtext');
 
     let cycleTimeouts = []; // Store timeouts for cleanup
@@ -104,12 +109,16 @@ document.addEventListener('DOMContentLoaded', () => {
         sun.style.animation = 'none';
         void sun.offsetWidth; // Trigger reflow
         sun.style.animation = 'sunCycle 13s forwards';
+
         sky.classList.remove('nightCycle');
         mountains.classList.remove('nightCycle');
-        horizon.classList.remove('nightCycle');
+        colorOverlay.classList.remove('nightCycle');
+        horizon.classList.remove('saturated');
+
         sky.classList.add('dayCycle');
         mountains.classList.add('dayCycle');
-        horizon.classList.add('dayCycle');
+        colorOverlay.classList.add('dayCycle');
+        horizon.classList.add('cycle');
         
         // console.log('Sun Cycle');
 
@@ -127,10 +136,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         sky.classList.remove('dayCycle');
         mountains.classList.remove('dayCycle');
-        horizon.classList.remove('dayCycle');
+        colorOverlay.classList.remove('dayCycle');
+        horizon.classList.remove('cycle');
+
         sky.classList.add('nightCycle');
         mountains.classList.add('nightCycle');
-        horizon.classList.add('nightCycle');
+        colorOverlay.classList.add('nightCycle');
+        horizon.classList.add('saturated');
 
 
         // console.log('Moon Cycle');
@@ -148,7 +160,9 @@ document.addEventListener('DOMContentLoaded', () => {
             sun.style.animation = 'sunCycleStart 13s forwards';
             sky.classList.add('dayCycle');
             mountains.classList.add('dayCycle');
-            horizon.classList.add('dayCycle');
+            colorOverlay.classList.add('dayCycle');
+            reflection.classList.add('cycle');
+            horizon.classList.add('cycle');
 
             // console.log('Starting Sun Cycle');
 
@@ -174,8 +188,12 @@ document.addEventListener('DOMContentLoaded', () => {
         mountains.classList.remove('dayCycle');
         mountains.classList.remove('nightCycle');
 
-        horizon.classList.remove('dayCycle');
-        horizon.classList.remove('nightCycle');
+        colorOverlay.classList.remove('dayCycle');
+        colorOverlay.classList.remove('nightCycle');
+
+        reflection.classList.remove('cycle');
+        horizon.classList.remove('cycle');
+        horizon.classList.remove('saturated');
 
         updateText('');
         // console.log('Stopped Cycle');
