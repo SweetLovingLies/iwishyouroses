@@ -15,6 +15,10 @@
     <link id="indexDarkCSS" href="css/indexThemes/indexDark.css" rel="stylesheet" type="text/css" media="all">
     <link id="indexChristmasCSS" href="css/indexThemes/indexChristmas.css" rel="stylesheet" type="text/css" media="all">
 
+    <!-- Do you want to play a game?-->
+    <script src="shrines/OMORI/hangmanGame/js/keyCollectScript.js"></script>
+    <link href="shrines/OMORI/hangmanGame/css/keyscollected.css" rel="stylesheet">
+
     <meta name="description" content="A happy place, A quiet place." />
     <link rel="icon" type="image/x-icon" href="Assets/pixels/vintageAmericana/rose.gif">
 
@@ -33,9 +37,9 @@
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         if (navigator.userAgent.includes('Screenjesus')) {
-          window.location.replace("/preview/");
+            window.location.replace("/preview/");
         }
-      </script>
+    </script>
 </head>
 
 <body>
@@ -103,6 +107,10 @@
             <span class="ss08">r</span>
         </a>
     </main>
+
+    <img id="something" src="shrines/OMORI/omoriAssets/something.webp"
+        onmouseover="something(this); apparition.play();" />
+    <audio id="apparition" src="https://files.catbox.moe/qk17h8.mp3" preload="auto"></audio>
 </body>
 
 </html>

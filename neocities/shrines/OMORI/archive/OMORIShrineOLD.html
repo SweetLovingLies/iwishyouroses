@@ -1,0 +1,145 @@
+<!--I been playing this a lot lately so this goes first. See you soon!-->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neighbors Room</title>
+  <link rel="shortcut icon" type="image/png" href="../Assets/lightbulb.gif">
+
+  <link href="neighborsroom.css" rel="stylesheet" type="text/css" media="all">
+</head>
+
+<body>
+  <main class="flex">
+    <div class="box left">
+      <div class=scrollbox>
+        <div class=inner>
+          <h2 class=topheader>HEADSPACE MAP</h2>
+          <a class=button-link id="NEIGHBORSROOM" href=#>NEIGHBOR'S ROOM</a>
+          <a class=button-link id="PLAYGROUND" href=#>PLAYGROUND</a>
+          <a class=button-link id="PINWHEEL" href=#>PINWHEEL FOREST</a>
+          <a class=button-link href=#>OTHERWORLD</a>
+          <a class=button-link href=#>PYREFLY FOREST</a>
+          <a class=button-link href=#>DEEP WELL</a>
+        </div>
+        <p style="text-align:center;"> Waiting for something to happen? </p>
+      </div>
+    </div>
+
+    <div class="columnflex">
+      <img id="yellowcat1" src="../Assets/BIG_YELLOW_CAT.webp">
+      <img id="yellowcat2" src="../Assets/BIG_YELLOW_CAT Arms.png">
+      <div class="box middle">
+        <div class=scrollbox>
+          <img class="gatorguy"
+            src="https://static.wikia.nocookie.net/omori/images/b/bf/Gator_Guy_%28Construction_Worker%29.png">
+          <div class=inner>
+            <h1 class=topheader>May come back and completely rework this...</h1>
+
+            <img class="blockimages" src="../Assets/OMORI_logo.webp">
+            <p> OMORI is a surreal psychological horror RPG Maker game developed by OMOCAT and co-published by PLAYISM
+              which fully released for PC Windows and macOS on December 25, 2020. </p>
+            <p style="text-align: center;"> If you'd like to learn more, visit the official website <a
+                href="https://www.omori-game.com/en" target="_blank">here</a> </p>
+            <img class="blockimages" src="../Assets/friends.gif">
+            <br>
+            <h1 class=topheader>So, why OMORI?</h1>
+            <p> I discovered OMORI around 3 years ago when a friend mentioned it to me while I was looking for more
+              UNDERTALE-like content. At first, I was very skeptical of the game because I doubted I was in the right
+              mindset to play a game concerning suicide, but I went through with playing it anyway. I'd argue that was
+              the BEST decision I've ever made.</p>
+            <p> The game hit me like a truck. I loved every single character, with all of their quirks and queries. KEL
+              was the first deuteragonist character I warmed up to, but the rest came along quite quickly. MARI ended up
+              becoming a globally loved character within my system and even ended up being introjected not too long ago!
+            </p>
+            <p> But none of them hit me as hard as SUNNY did. The longer I played, the more attached I grew to SUNNY's
+              whole existence. Things paralleled far too well with my life and I ended up starting to question shit
+              about myself. By the end of the game I became the only SUNNY kinnie within my system; as far as I know, at
+              least. </p>
+            <p> As funny as it is, my friends were quite alarmed by my immediate attachment to SUNNY of all characters
+              and I ended up with a boatload of questions about me by the end of my playthrough. No comment. LOL</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="box right">
+      <div class=scrollbox>
+        <div class=inner>
+          <h2 class=topheader>Other Shit</h2>
+          <p> I really REALLY want to learn how to do art in OMORI style. I absolutely suck at drawing though so that
+            might be a while...</p>
+          <p style="margin-top: 1000px;"> You see it too, don't you..? Something in the site... Maybe it will lead us
+            somewhere someday? </p>
+        </div>
+      </div>
+    </div>
+    <div class=footer><a href="/bloom.html">This time, <b>you can go back!</b></a> </div>
+  </main>
+
+  <audio autoplay loop id="lost">
+    <source src="https://files.catbox.moe/dtwcgo.mp3" preload="auto" type="audio/mpeg">
+    Your browser does not support the audio element!
+  </audio>
+  <audio loop id="togethernow">
+    <source src="https://files.catbox.moe/jkrpn9.mp3" type="audio/mpeg">
+    Your browser does not support the audio element!
+  </audio>
+  <audio loop id="trees">
+    <source src="https://files.catbox.moe/l2r4rh.mp3" type="audio/mpeg">
+    Your browser does not support the audio element!
+  </audio>
+  <audio loop id="found">
+    <source src="https://files.catbox.moe/gwb7e4.mp3" type="audio/mpeg">
+    Your browser does not support the audio element!
+  </audio>
+  <audio loop id="pyrefly">
+    <source src="https://files.catbox.moe/7siwre.mp3" type="audio/mpeg">
+    Your browser does not support the audio element!
+  </audio>
+  <audio loop id="highway">
+    <source src="https://files.catbox.moe/1zh022.mp3" type="audio/mpeg">
+    Your browser does not support the audio element!
+  </audio>
+  <script>
+    document.getElementById('lost').load();
+    document.getElementById('togethernow').load();
+    document.getElementById('trees').load();
+    document.getElementById('found').load();
+    document.getElementById('pyrefly').load();
+    document.getElementById('highway').load();
+    lost.volume = 0.02;
+    togethernow.volume = 0.02;
+    trees.volume = 0.02;
+    found.volume = 0.02;
+    pyrefly.volume = 0.03;
+    highway.volume = 0.02;
+  </script>
+  <script src=""></script>
+  <style>
+    /* ===== Scrollbar CSS ===== */
+
+    /* Chrome, Edge, and Safari */
+    *::-webkit-scrollbar {
+      width: 17px;
+    }
+
+    *::-webkit-scrollbar-track {
+      background: white;
+    }
+
+    *::-webkit-scrollbar-thumb {
+      background-color: black;
+      border-radius: 0px;
+      border: 2px solid white;
+      outline: 2px solid black;
+      outline-offset: 0px;
+    }
+
+    /* ===== Scrollbar CSS end ===== */
+  </style>
+</body>
+
+</html>

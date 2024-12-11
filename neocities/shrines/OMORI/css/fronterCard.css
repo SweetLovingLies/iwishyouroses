@@ -1,0 +1,245 @@
+/* Fronter Card */
+
+.fronterCard {
+    position: relative;
+    background-color: lightgray;
+    border: 3px black solid;
+    border-radius: 5px;
+    font-family: Normal;
+    margin: 20px auto 0;
+    padding: 0 0 10px;
+  
+    max-width: 150px;
+    justify-self: center;
+  
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 5px;
+  }
+  
+  .fronterCard h2 {
+    filter: none;
+  }
+  
+  .fronterCard p {
+    color: white;
+    margin: 0;
+  }
+  
+  .fronterEmotion{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 10px;
+  
+    position: absolute;
+    top: -20px;
+    left: 0;
+    right: 0;
+    width: 80%;
+    height: 34px;
+    margin: auto;
+  
+    background-color: black;
+    border: 3px solid white;
+    outline: 3px solid black;
+    border-radius: 5px;
+    box-sizing: content-box;
+  }
+  
+  .fronterEmotion h1 {
+    flex: 0 0;
+    margin: 0;
+  }
+  
+  .fronterTAG{
+    font-family: Normal;
+    color: white;
+    font-size: 1.3em;
+  }
+
+  /* Emotions! */
+  
+  .happy{
+    font-family: porkys;
+    font-size: 1.8em;
+  
+    background: linear-gradient(to left, #ffbe00 0%, #ffb3fd 14%, #aeb0ff 28%, #ffbe00 45%, #aeb0ff 61%, #ffb3fd 77%, #ffbe00 93%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #c5ffc0;
+  
+    letter-spacing: 3px;
+    line-height: 1em;
+  }
+  
+  .sad{
+    font-family: Normal;
+    color: #589bff;
+  }
+  
+  .angry{
+    font-family: TeenIdle;
+    background: linear-gradient(to bottom, #ff4c15 0%, #fd1d1d 50%, #fcb045 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .disgusted{
+    font-family: LemonPopsicle;
+    background: radial-gradient(circle, #cffb3f 0%, #6c139a 46%, #008e08 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .afraid{
+    font-family: NOTFINE;
+    color: #7e91ac;
+    text-shadow:
+        1px 1px 0 lightgray,
+        -1px 1px 0 lightgray,
+        -1px -1px 0 lightgray,
+        1px -1px 0 lightgray;
+  }
+  
+  .vibin{
+    font-family: omekashi;
+    font-size: 1.6em;
+    line-height: 1.3em;
+
+    background: linear-gradient(
+    to right,
+    #c8beff 0%,
+    #dea8f8 10%,
+    #bdfacd 42%,
+    #f3fabd 58%,
+    #fae3bd 70%,
+    #f8acab 95%,
+    #feaad4 100%
+  );
+  background-size: 200% 200%;
+
+  animation: vibing 3s infinite;
+
+  -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+  }
+
+  @keyframes vibing {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .lovesick{
+    font-family: kinkie;
+    font-size: 2em;
+    line-height: 1em;
+  
+    background: radial-gradient(circle, #ff85da 0%, #ff8296 50%, #c341ff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* Fronter IMG */
+  
+  .fronterIMG {
+    max-width: fit-content;
+    width: 125px;
+    height: 125px;
+    margin: 10px;
+    border: 3px black solid;
+    transition: all .5s;
+
+    background: url('/assets/backgrounds/movestarbackground.gif')
+  }
+  
+ .fronterIMG:hover {
+    border: 3px solid;
+    border-image: conic-gradient(from var(--angle), #ffadad, #ffd6a5, #fdffb6, #caffbf, #9bf6ff, #a0c4ff, #bdb2ff, #ffc6ff, #ffadad) 1;
+    animation: 1s rotate linear infinite;
+  }
+  
+  @keyframes rotate {
+    to {
+      --angle: 360deg;
+    }
+  }
+  
+  @property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+  }
+  
+  /* The rest of it lol */
+  
+  .FronterCardDivider {
+    border-top: 3px solid #A7A7A7;
+    border-bottom: 3px solid #FBFCFB;
+    width: 100%;
+  }
+  
+  .FronterCardStats {
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+  
+    padding: 1px 4px 1px 10px;
+    gap: 10px;
+  }
+  
+  .FronterCardStats img {
+    width: 20px;
+    image-rendering: pixelated;
+  }
+  
+  .statBarText {
+    flex: 1 1;
+    padding: 0 7px;
+    border-radius: 999px;
+    text-align: right;
+    align-self: center;
+  
+    font-size: 14px;
+    font-weight: bolder;
+    text-shadow:
+        1px 1px 0 #000,
+        -1px 1px 0 #000,
+        -1px -1px 0 #000,
+        1px -1px 0 #000;
+  }
+  
+  .FronterCardHealth {
+    border: 1px black solid;
+    background-color: #e03030;
+  }
+  
+  .FronterCardJuice {
+    border: 1px black solid;
+    background-color: #31d1d6;
+  }
+  

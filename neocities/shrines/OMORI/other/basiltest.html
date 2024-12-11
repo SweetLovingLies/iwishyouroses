@@ -1,0 +1,98 @@
+<head>
+
+</head>
+
+
+<p class="wtfValue">
+    As a practice, I might try and make the hurt animation work onClick. It can't be that hard, right? (Hopefully not...)
+    <br>
+    <a href="https://lilithdev.neocities.org/tools/omoribox">Creds to LilithDev</a> for this awesome work and also <a href="https://www.reddit.com/r/OMORI/comments/vgldhz/basil_spritesheet">u/MrMissingNoProdigy</a> for the sprites.
+    <br>
+    Dreamworld Basil will be added at some point too, I just need to animate the sprites myself.
+</p>
+
+<br>
+<br>
+<div class="main">
+    <script type="text/javascript" src="https://lilithdev.neocities.org/util/characterbox.js" portrait="https://planetpearlia.com/shrines/OMORI/omoriAssets/Basil%20Sprites/basil_${emotion}.gif"></script>
+</div>
+<div class="side">
+    <script type="text/javascript" src="https://lilithdev.neocities.org/util/characterbox.js" portrait="https://planetpearlia.com/shrines/OMORI/omoriAssets/Basil%20Sprites/basil_${emotion}.gif" emotion="happy" minimized=""></script>
+</div>
+<br>
+<br>
+<div id="toys">
+    <div class="toy" onclick="document.querySelectorAll('characterbox').forEach(cbox => cbox.setEmotion('neutral'));">
+      <img src="https://lilithdev.neocities.org/shrine/vg/omori/sprites/DANDELION.webp">
+      <div>DANDELION</div>
+    </div>
+    <div class="toy" onclick="document.querySelectorAll('characterbox').forEach(cbox => cbox.makeHappy());">
+      <img src="https://lilithdev.neocities.org/shrine/vg/omori/sprites/SPARKLER.webp">
+      <div>SPARKLER</div>
+    </div>
+    <div class="toy" onclick="document.querySelectorAll('characterbox').forEach(cbox => cbox.makeAngry());">
+      <img src="https://lilithdev.neocities.org/shrine/vg/omori/sprites/PRESENT.webp">
+      <div>PRESENT</div>
+    </div>
+    <div class="toy" onclick="document.querySelectorAll('characterbox').forEach(cbox => cbox.makeSad());">
+      <img src="https://lilithdev.neocities.org/shrine/vg/omori/sprites/POETRY_BOOK.webp">
+      <div>POETRY BOOK</div>
+    </div>
+    <img src="https://lilithdev.neocities.org/headspace/sprites/SOMETHING.webp" style="margin: 2px;" onclick="document.querySelectorAll('characterbox').forEach(cbox => cbox.setEmotion('scared'));">
+</div>
+
+<!-- Yea we styling this too cause idk.  -->
+  <style>
+    @font-face {
+              font-family: NORMAL;
+              src: url('/fonts/OMORI_GAME2.ttf');
+    }
+    body {
+        background-color: #696969;
+        font-family: "normal";
+        color: #FFFFFF;
+        font-size: 28px;
+        overflow-y: auto;
+    }
+
+    .main{
+        float: left;
+        margin-right: 20px;
+    }
+    .wtfValue{
+        background-color: black;
+        padding: 10px;
+        border: 8px white solid;
+        outline: 2px black solid;
+    }
+    .wtfValue a{
+        color: #d781ff;
+    }
+
+    #toys {
+        margin-top: 8px;
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        height: 48px;
+        background: black;
+    }
+
+    .toy {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+        min-width: 0;
+    }
+
+    .toy > img {
+        height: 100%;
+    }
+
+    .toy > div {
+        color: white;
+        font-size: 20px;
+        line-height: 20px;
+    }
+  </style>

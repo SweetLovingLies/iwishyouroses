@@ -1,0 +1,307 @@
+:root {}
+
+@font-face {
+  font-family: NORMAL;
+  src: url('/fonts/OMORIfonts/OMORI_GAME2.ttf');
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  width: 100vw;
+}
+
+* {
+  scrollbar-width: thin;
+  box-sizing: border-box;
+
+  scrollbar-color: black white;
+}
+
+body {
+  font-family: NORMAL;
+  color: #232323;
+  background: url("../Assets/Space_parallax_stars.png"), #6C0FFF;
+  background-size: 50%, auto;
+  background-attachment: fixed;
+  animation: slide 30s linear infinite;
+
+  padding-top: 170px;
+}
+
+@keyframes slide {
+  0% {
+    background-position: 0;
+  }
+
+  100% {
+    background-position: -100%;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.columnflex {
+  display: flex;
+  flex-direction: column;
+}
+
+p {
+  font-size: 20px;
+}
+
+center {
+  text-align: center;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+a {
+  color: #33c;
+}
+
+a:visited {
+  color: #226;
+}
+
+.footer a {
+  color: white;
+}
+
+.footer a:visited {
+  color: white;
+}
+
+blockquote {
+  background: #dedeed;
+  color: #444;
+  font-style: italic;
+  border-left: 2px solid #445;
+  padding: 0.5em 0.5em 0.5em 1em;
+  border-radius: 0 3px 3px 0;
+  margin: 1em;
+}
+
+.blockimages {
+  display: block;
+  width: 50%;
+  margin: 10px auto 10px auto;
+}
+
+.something {
+  display: block;
+  margin: 500px auto 10px auto;
+}
+
+.gatorguy {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 15%;
+}
+
+#yellowcat1 {
+  position: relative;
+  width: 300px;
+  top: 440px;
+  margin: 0 auto;
+  z-index: 1;
+
+  pointer-events: none;
+}
+
+#yellowcat2 {
+  position: relative;
+  width: 300px;
+  top: 100px;
+  margin: 0 auto;
+  z-index: 3;
+
+  pointer-events: none;
+}
+
+.topheader {
+  margin-top: 1px;
+}
+
+
+main {
+  border: 0px solid #121212;
+  position: relative;
+  height: 41rem;
+  width: 75vw;
+  margin: 2.5rem auto 1.5rem auto;
+  gap: 24px;
+  align-items: end;
+}
+
+.box {
+  background: #ffffff;
+  display: inline-block;
+  border: 1px solid #121212;
+  padding: 10px 5px 5px 0;
+  bottom: 1rem;
+  overflow: hidden;
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.8);
+}
+
+.left,
+.right {
+  height: 32.5rem;
+  width: 20%;
+  margin-bottom: 16px;
+  flex: 0 0 20%;
+}
+
+.left {
+  border-radius: 25px 3px 3px 15px;
+}
+
+.middle {
+  position: relative;
+  border-radius: 20px 20px 3px 3px;
+  height: 40rem;
+  z-index: 2;
+}
+
+.right {
+  border-radius: 3px 25px 15px 3px;
+  right: 0px;
+}
+
+.left .scrollbox,
+.right .scrollbox {
+  height: 32.5rem;
+}
+
+.middle .scrollbox {
+  height: 40rem;
+}
+
+.scrollbox {
+  overflow: auto;
+}
+
+.inner {
+  padding: 0.75rem 1.5em 0 1.5em;
+}
+
+.inner img {
+  max-width: 100%;
+  height: auto;
+}
+
+.footer {
+  position: absolute;
+  width: 100%;
+  color: #efefef;
+  font-size: 0.9em;
+  text-align: center;
+  font-weight: bold;
+  bottom: -1.5rem;
+  margin: 0.5rem auto 0.75rem auto;
+}
+
+
+
+.button-link {
+  display: block;
+  background: black;
+  text-decoration: none;
+  margin: 0.5em 0;
+  padding: 0.35em 0.5em;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: white;
+  border: 8px solid white;
+  outline: 2px solid black;
+  outline-offset: -2px;
+}
+
+.button-link:visited {
+  color: white;
+}
+
+#PLAYGROUND:hover {
+  background: url("../Assets/picnic.jpg");
+  background-size: 70%;
+  color: black;
+}
+
+#PINWHEEL:hover {
+  background: url("../Assets/Pinwheel Forest.gif");
+  background-size: 130%;
+  background-position: right;
+  color: black;
+}
+
+/* ~ Media Queries */
+
+
+@media(max-width: 1000px) {
+
+  #PINWHEEL:hover {
+    background-size: 100%;
+  }
+}
+
+@media(orientation: portrait) {
+  body {
+    font-size: 0.85rem;
+  }
+
+  .flex {
+    flex-direction: column;
+  }
+
+  .box,
+  .footer {
+    position: inherit;
+  }
+
+  .left,
+  .right,
+  .middle,
+  main {
+    width: 90vw;
+  }
+
+  main {
+    height: auto;
+  }
+
+  .left {
+    border-radius: 20px 20px 2px 2px;
+    margin: 0;
+  }
+
+  .right {
+    height: 15rem;
+    border-radius: 2px 2px 20px 20px;
+    margin: 0;
+  }
+
+  .right .scrollbox {
+    height: 15rem;
+  }
+
+  .middle {
+    border-radius: 2px;
+    margin: 1rem 0;
+  }
+
+  .blockimages {
+    width: 75%;
+  }
+}

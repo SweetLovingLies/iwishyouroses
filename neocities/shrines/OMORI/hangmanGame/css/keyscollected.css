@@ -1,0 +1,121 @@
+@font-face {
+    font-family: Fine;
+    src: url('/fonts/OMORIfonts/OMORI_GAME.ttf');
+}
+
+@font-face {
+    font-family: Normal;
+    src: url('/fonts/OMORIfonts/OMORI_GAME2.ttf');
+}
+
+.hangmanKeys {
+    width: 40px;
+}
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 9999;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.lightbox.show {
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 1);
+}
+
+.lightbox img {
+    width: 1.5em;
+    min-width: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.lightbox.show img {
+    opacity: 1;
+}
+
+.cursor {
+    position: absolute;
+    background: url("../../Assets/cursor.png") no-repeat center center;
+    background-size: contain;
+
+    image-rendering: pixelated;
+}
+
+.textboxContainer {
+    display: none;
+    position: fixed;
+    top: 0;
+
+    justify-content: center;
+    align-items: end;
+
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    margin: auto;
+    pointer-events: none;
+}
+
+.textbox {
+    background-color: black;
+    border: solid 3px white;
+    outline: solid 1px black;
+    padding: 5px 0 0 14px;
+    font-family: Normal;
+    font-size: 30px;
+    color: white;
+    width: 600px;
+    height: 100px;
+
+    animation: opening .2s linear forwards;
+}
+
+@keyframes opening {
+    from {
+        transform: scaleY(0);
+    }
+
+    to {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes closing {
+    from {
+        transform: scaleY(1);
+    }
+
+    to {
+        transform: scaleY(0);
+    }
+}
+
+.textbox .cursor {
+    right: 20px;
+    bottom: 10px;
+    animation: Next 1s infinite ease-in-out;
+}
+
+@keyframes Next {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+}
+
+
+@media only screen and (max-width: 600px) {}

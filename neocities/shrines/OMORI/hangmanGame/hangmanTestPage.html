@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="css/hangman.css" rel="stylesheet">
+</head>
+
+<body>
+    <img src="../hangmanGame/assets/keys/keyA.png" id="keyA" onclick="collectKey('A');">
+    <img src="../hangmanGame/assets/keys/keyB.png" id="keyB" onclick="collectKey('B');"> <!-- On my beloved page-->
+    <img src="../hangmanGame/assets/keys/keyC.png" id="keyC" onclick="collectKey('C');">
+    <img src="../hangmanGame/assets/keys/keyD.png" id="keyD" onclick="collectKey('D');">
+    <img src="../hangmanGame/assets/keys/keyE.png" id="keyE" onclick="collectKey('E');">
+    <img src="../hangmanGame/assets/keys/keyF.png" id="keyF" onclick="collectKey('F');">
+    <img src="../hangmanGame/assets/keys/keyG.png" id="keyG" onclick="collectKey('G');">
+    <img src="../hangmanGame/assets/keys/keyH.png" id="keyH" onclick="collectKey('H');">
+    <img src="../hangmanGame/assets/keys/keyI.png" id="keyI" onclick="collectKey('I');">
+    <img src="../hangmanGame/assets/keys/keyJ.png" id="keyJ" onclick="collectKey('J');">
+    <img src="../hangmanGame/assets/keys/keyK.png" id="keyK" onclick="collectKey('K');">
+    <img src="../hangmanGame/assets/keys/keyL.png" id="keyL" onclick="collectKey('L');">
+    <img src="../hangmanGame/assets/keys/keyM.png" id="keyM" onclick="collectKey('M');">
+    <img src="../hangmanGame/assets/keys/keyN.png" id="keyN" onclick="collectKey('N');">
+    <img src="../hangmanGame/assets/keys/keyO.png" id="keyO" onclick="collectKey('O');">
+    <img src="../hangmanGame/assets/keys/keyP.png" id="keyP" onclick="collectKey('P');">
+    <img src="../hangmanGame/assets/keys/keyQ.png" id="keyQ" onclick="collectKey('Q');">
+    <img src="../hangmanGame/assets/keys/keyR.png" id="keyR" onclick="collectKey('R');">
+    <img src="../hangmanGame/assets/keys/keyS.png" id="keyS" onclick="collectKey('S');">
+    <img src="../hangmanGame/assets/keys/keyT.png" id="keyT" onclick="collectKey('T');"> <!-- On hangman page-->
+    <img src="../hangmanGame/assets/keys/keyU.png" id="keyU" onclick="collectKey('U');">
+    <img src="../hangmanGame/assets/keys/keyV.png" id="keyV" onclick="collectKey('V');">
+    <img src="../hangmanGame/assets/keys/keyW.png" id="keyW" onclick="collectKey('W');">
+    <img src="../hangmanGame/assets/keys/keyX.png" id="keyX" onclick="collectKey('X');">
+    <img src="../hangmanGame/assets/keys/keyY.png" id="keyY" onclick="collectKey('Y');"> <!-- On not found page -->
+    <img src="../hangmanGame/assets/keys/keyZ.png" id="keyZ" onclick="collectKey('Z');">
+    <br>
+    <button onclick="clearLocalStorage()">Clear Local Storage</button>
+    <br>
+    <button id="collectAthruJButton">Collect A-J</button>
+    <button id="collectDFCButton">Collect DEAD FAIRY CIRCL(E)</button>
+    <button id="collectALLButton">COLLECT ALL</button>
+
+</body>
+
+<script src="js/keyCollectScript.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        checkKeys();
+    });
+    const collectAthruJButton = document.getElementById('collectAthruJButton');
+    const collectDFCButton = document.getElementById('collectDFCButton');
+    const collectALLButton = document.getElementById('collectALLButton');
+
+    collectAthruJButton.addEventListener('click', () => {
+        const keysToCollect = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
+        keysToCollect.forEach(key => collectKey(key));
+        location.reload();
+    });
+    collectDFCButton.addEventListener('click', () => {
+        const keysToCollect = ['D', 'A', 'F', 'I', 'R', 'Y', 'C', 'L'];
+        keysToCollect.forEach(key => collectKey(key));
+        location.reload();
+    });
+    collectALLButton.addEventListener('click', () => {
+        const keysToCollect = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+        keysToCollect.forEach(key => collectKey(key));
+        location.reload();
+    });
+
+    function clearLocalStorage() {
+        localStorage.clear();
+        alert('Local storage has been cleared!');
+        location.reload();
+    }
+</script>
+
+</html>
