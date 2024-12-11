@@ -15,9 +15,7 @@
     <link rel="icon" type="image/x-icon" href="../Assets/pixels/vintageAmericana/strawberryphone.webp">
 
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 
 
@@ -29,7 +27,7 @@
         </filler>
 
         <main>
-            <section id="moodSelect" class="tab">
+            <section id="moodSelect" class="tab active">
                 <div id="welcome" class="flexWrapper">
                     <div class="flexWrapper"
                         style="flex-flow: column nowrap; justify-content: flex-end; padding-bottom: 20px;">
@@ -38,7 +36,6 @@
                     </div>
                     <img id="userIcon" src="/Assets/other/anonIcon.jpg">
                 </div>
-
                 <div id="mainDisplay">
                     <div id="ring1" class="rings">
                         <div id="ring2" class="rings">
@@ -49,7 +46,7 @@
                     <p id="currentMood">Cheerful</p>
                 </div>
 
-                <div id="moodSelect">
+                <div id="mojiSelect">
                     <div id="header">
                         <h3>Today's Mood</h3>
                     </div>
@@ -69,35 +66,40 @@
                         <button id="starstruck">🤩</button>
                     </div>
                 </div>
+
+                <div id="popover">
+                    <header>
+                        <h2>Great!</h2>
+                        <p id="logNote">I'm happy to hear that you're feeling <span id="emotion">cheerful!</span></p>
+
+                        <iconify-icon id="exit" icon="mingcute:close-fill"></iconify-icon>
+                    </header>
+
+                    <form id="notes">
+                        <label for="textbox">You can expand on that here:</label>
+                        <textarea id="textbox" name="textbox" rows="4"
+                            placeholder="Do you want to talk about why?"></textarea>
+                        <button id="saveEntry" type="submit">Log Mood</button>
+                    </form>
+                </div>
             </section>
 
-            <!-- ! Come back later -->
             <section id="dailyLog" class="tab">
-                <header>
-                    <h2>Daily Log</h2>
-                    <p id="logNote">I'm happy to hear that you're feeling <span id="emotion">cheerful!</span></p>
-                </header>
-
-                <!-- ! This will use the exact same system as Your Tome btw -->
-
-                <form id="notes">
-                    <label for="logInput">Leave an optional note for yourself!</label>
-                    <textarea id="logInput" name="logInput" rows="4"
-                        placeholder="Do you want to talk about why?"></textarea>
-                    <button id="logMoodBtn" type="submit">Log Mood</button>
-                </form>
-
-                <ul id="log-list"></ul>
+                <h2>Your Log List</h2>
+                <ul id="entriesList">
+                    <p class="placeholder">You haven't logged anything yet!</p>
+                </ul>
             </section>
 
-            <!-- <section id="insights" class="tab">
+            <!-- ! Maybe Later
+            <section id="insights" class="tab">
                 <h2>Mood Insights</h2>
                 <div id="insights-content">
                     <p>I'll do this later</p>
                 </div>
             </section> -->
 
-            <section id="breatheDeeply" class="tab active">
+            <section id="breatheDeeply" class="tab">
                 <div id="landscape">
                     <div id="sky">
                         <img id="sun" src="/Assets/other/mellowIcons/Sun.png">
@@ -111,7 +113,7 @@
                     </div>
                 </div>
             </section>
-            
+
         </main>
 
         <nav>
@@ -138,6 +140,7 @@
 
     </div>
     <script src="js/mellow.js"></script>
+    <script src="js/journal.js"></script>
 </body>
 
 </html>

@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById("user").textContent = `${userName}`;
     document.getElementById("userIcon").src = selectedIcon;
 
-    selectMood(savedMoji, savedMood);
-    updateLog();
+    updatePopover();
+    updateMoodDisplay();
 
     moodButtons.forEach(function (button) {
         button.addEventListener("click", function (e) {
@@ -28,38 +28,50 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // & Select Mood
 function selectMood(moodMoji, mood) {
-    localStorage.setItem('userCurrentMood', mood);
+    var cMood = mood.charAt(0).toUpperCase() + mood.slice(1);
+    localStorage.setItem('userCurrentMood', cMood);
     localStorage.setItem('userCurrentMoji', moodMoji);
 
-    var cMood = mood.charAt(0).toUpperCase() + mood.slice(1);
     selectedMoodEmoji.textContent = moodMoji;
     currentMood.textContent = cMood;
 
-    updateLog(); // ? Does not work 
+    updateMoodDisplay();
+    updatePopover();
+    showPopover();
 }
 
-// & Tabs System
-const tabs = document.querySelectorAll('nav button');
-const tabContents = document.querySelectorAll('.tab');
+function updateMoodDisplay() {
+    savedMood = localStorage.getItem('userCurrentMood') || "Cheerful";
+    savedMoji = localStorage.getItem('userCurrentMoji') || "☺";
 
-tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        tabContents.forEach(content => content.classList.remove('active'));
+    selectedMoodEmoji.textContent = savedMoji;
+    currentMood.textContent = savedMood;
+}
 
-        tab.classList.add('active');
-        const targetTab = tab.getAttribute('data-tab');
-        document.getElementById(targetTab).classList.add('active');
-    });
-});
+// & Popover
 
-// & Daily Log
-function updateLog() {
+const popover = document.getElementById("popover");
+
+function showPopover() {
+    popover.classList.remove("hide");
+    popover.style.display = "block";
+}
+
+function updatePopover() {
     var savedMood = localStorage.getItem('userCurrentMood') || "cheerful";
 
     var logNote = document.getElementById("logNote");
     logNote.innerHTML = `I'm happy to hear that you're feeling <span id="emotion">${savedMood}</span>!`;
 }
+
+// ! Exit
+const exitButton = document.getElementById("exit");
+exitButton.addEventListener("click", () => {
+    popover.classList.add("hide");
+    setTimeout(() => {
+        popover.style.display = "none";
+    }, 300);
+});
 
 // & Breathing Exercises
 
@@ -79,9 +91,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let cycleTimeouts = []; // Store timeouts for cleanup
 
-    const sunDuration = 15000; 
+    const sunDuration = 15000;
     const moonDuration = 15000; // Must be seperate!
-    
+
     function updateText(phase) {
         switch (phase) {
             case 'breatheIn':
@@ -119,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
         mountains.classList.add('dayCycle');
         colorOverlay.classList.add('dayCycle');
         horizon.classList.add('cycle');
-        
+
         // console.log('Sun Cycle');
 
         textCycle();
@@ -184,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         sky.classList.remove('dayCycle');
         sky.classList.remove('nightCycle');
-        
+
         mountains.classList.remove('dayCycle');
         mountains.classList.remove('nightCycle');
 
@@ -207,12 +219,27 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(() => {
                     startBreathingCycle(true);
                 }, 4000);
-                
+
             } else {
                 stopBreathingCycle();
             }
         });
-    }, { threshold: 1 }); 
+    }, { threshold: 1 });
 
     observer.observe(landscape);
+});
+
+// & Tabs System
+const tabs = document.querySelectorAll('nav button');
+const tabContents = document.querySelectorAll('.tab');
+
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+
+        tab.classList.add('active');
+        const targetTab = tab.getAttribute('data-tab');
+        document.getElementById(targetTab).classList.add('active');
+    });
 });

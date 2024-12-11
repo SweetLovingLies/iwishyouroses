@@ -14,13 +14,13 @@
 
 body {
     background: url("/Assets/BGs/tumblr_ad479ccfea2121a711cc5099eff07479_82048f3a_75.gif");
-    
+
     font-family: Arial, Helvetica, sans-serif;
     overflow-x: hidden;
 }
 
 header {
-    background: linear-gradient(90deg, rgba(135,180,224,1) 0%, rgba(150,192,230,1) 25%, rgba(187,218,230,1) 50%, rgba(150,192,230,1) 75%, rgba(135,180,224,1) 100%); 
+    background: linear-gradient(90deg, rgba(135, 180, 224, 1) 0%, rgba(150, 192, 230, 1) 25%, rgba(187, 218, 230, 1) 50%, rgba(150, 192, 230, 1) 75%, rgba(135, 180, 224, 1) 100%);
 
     padding: 20px 5px 10px;
 
@@ -32,7 +32,7 @@ main {
     flex-flow: column nowrap;
 }
 
-#welcome{
+#welcome {
     background-color: white;
     padding-bottom: 10px;
     margin-bottom: 20px;
@@ -42,7 +42,7 @@ main {
     border-bottom: 1px solid black;
 }
 
-#wrapper{
+#wrapper {
     display: flex;
     flex-flow: row wrap;
     gap: 10px;
@@ -122,7 +122,6 @@ button:hover {
     /* top: 50%;
     display: flex; */
 }
-
 
 @keyframes popoverShow {
     from {
@@ -209,7 +208,8 @@ td {
 
 /* ! Loves and Hates */
 
-.loves::before, .hates::before{
+.loves::before,
+.hates::before {
     content: "";
     vertical-align: text-top;
     margin-right: 5px;
@@ -255,7 +255,7 @@ td {
 
     width: 180px;
     height: 20px;
-    background: linear-gradient(90deg, rgba(127,91,126,1) 0%, rgba(127,91,126,1) 25%, rgba(189,157,190,1) 25%, rgba(189,157,190,1) 75%, rgba(255,223,255,1) 75%, rgba(255,223,255,1) 100%); 
+    background: linear-gradient(90deg, rgba(127, 91, 126, 1) 0%, rgba(127, 91, 126, 1) 25%, rgba(189, 157, 190, 1) 25%, rgba(189, 157, 190, 1) 75%, rgba(255, 223, 255, 1) 75%, rgba(255, 223, 255, 1) 100%);
     border: 1px solid black;
 }
 
@@ -290,18 +290,20 @@ td {
     padding: 6px;
 }
 
-#siteButton img{
+#siteButton img {
     display: block;
     margin: auto;
 }
 
 /* Other General Styles */
 
-h2, h3{
+h2,
+h3 {
     font-size: 2em;
 }
 
-h2, h3 {
+h2,
+h3 {
     font-family: MagicStars;
     color: var(--blueDeep)
 }
