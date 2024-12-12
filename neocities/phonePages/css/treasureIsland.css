@@ -1,0 +1,146 @@
+:root {
+
+    /* Colors */
+    --bubblegum: #ffb7ed;
+    --dustyPink: #f6bdd1;
+    --rosette: #ffbbc5;
+    --persian: #f283b6;
+    --wisteria: #8266ff;
+    --kangel: #c3a3f6;
+    --hintofmist: #f1efff;
+    --whispermist: #dbd8f0;
+    --driedBlood: #8B575c;
+    --pinkIce: #f6e4f6;
+    --ash: #cad2c5;
+    --water: #adcaff;
+    --deepsea: #357ce6;
+    --roseRed: #C71227;
+    --rosePink: #FB003F;
+    --blood: #800000;
+    --deepslate: #696969;
+    --cobblestone: #a8a8a8;
+
+    /* Globals */
+    --globalBorderRadius: 10px;
+    --detailBarHeight: 20px;
+}
+
+@font-face {
+    font-family: dingBats;
+    src: url('/fonts/tropicalFonts/BohoChicTropical.ttf');
+}
+
+@font-face {
+    font-family: LoveBeach;
+    src: url('/fonts/tropicalFonts/LoveBeach.ttf');
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+
+    background-color: white;
+
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px 5px 10px;
+
+    background: linear-gradient(to bottom,
+            #87ceeb,
+            #f0e68c);
+    box-shadow: 0 1px 4px rgba(0, 0, 10, 0.24);
+
+
+    font-size: 36px;
+    font-family: LoveBeach;
+    font-feature-settings: "aalt";
+    color: green;
+}
+
+#welcome {
+    background: white;
+    padding: 5px;
+}
+
+#achievements-dashboard {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
+}
+
+.achievement-card {
+    width: 270px;
+    padding: 10px 5px;
+
+    background: url("/Assets/BGs/haibisukasu01b.gif");
+    background-size: 20%;
+    background-position: center;
+
+    border: 2px solid var(--water);
+    border-left: none;
+    border-right: none;
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: color 0.2s;
+
+    overflow: hidden;
+}
+
+.achievement-card:hover {
+    color: var(--rosePink);
+}
+
+/* Themes */
+
+.achievement-card.hidden {
+    filter: grayscale(100%) brightness(50%);
+}
+
+progress {
+    width: 100%;
+}
+
+/* ~ Popover */
+
+#popover {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background: url("/Assets/BGs/haibisukasu01b.gif");
+    background-size: 20%;
+    background-position: center;
+
+    border: 2px solid var(--water);
+
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+
+    width: 250px;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+#popoverTitle {}
+
+#popover.noShow {
+    display: none;
+}
+
+.popover-content button {
+    background: #6200ea;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+}

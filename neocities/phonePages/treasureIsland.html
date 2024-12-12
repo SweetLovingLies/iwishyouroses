@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Screen: Achievements</title>
+    <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/phoneGlobals.css" rel="stylesheet" type="text/css" media="all">
+
+    <link href="css/treasureIsland.css" rel="stylesheet" type="text/css" media="all">
+
+    <meta name="description" content="Access literally everything you need." />
+    <link rel="icon" type="image/x-icon" href="../Assets/pixels/vintageAmericana/strawberryphone.webp">
+
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+    <script src="js/phone.js"></script>
+    <script src="/js/jaxframeFork.js"></script>
+    <script src="js/stats.js"></script>
+</head>
+
+<body>
+    <header>
+        Achievements
+    </header>
+
+    <main>
+        <section id="achievements-dashboard">
+            <div id="welcome">
+                <p>There are many hidden functions in this site. Find them all for a cookie or something... IDK</p>
+            </div>
+
+            <div class="achievement-card">
+                <h3>I Wish You Roses</h3>
+                <p>???</p>
+            </div>
+
+            <div class="achievement-card">
+                <h3>NOICE</h3>
+                <p>???</p>
+            </div>
+
+            <div class="achievement-card">
+                <h3>Herobrine?</h3>
+                <p>???</p>
+            </div>
+            <div class="achievement-card">
+                <h3>Selca Cam!</h3>
+                <p>???</p>
+            </div>
+            <div class="achievement-card">
+                <h3>Bite of '83</h3>
+                <p>???</p>
+            </div>
+            <div id="ANDROSESANDROSESANDROSESAND" class="achievement-card hidden">
+                <h3>???</h3>
+                <p>???</p>
+            </div>
+            <div id="SIS" class="achievement-card hidden">
+                <h3>???</h3>
+                <p>???</p>
+            </div>
+            <div id="SITW" class="achievement-card hidden">
+                <h3>???</h3>
+                <p>???</p>
+            </div>
+        </section>
+
+        <div id="popover" class="noShow">
+            <div class="popover-content">
+                <h3 id="popover-title">Placeholder Name</h3>
+                <p id="popover-description">Placeholder Description</p>
+                <button id="close-popover">Close</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const popover = document.getElementById('popover');
+        const popoverTitle = document.getElementById('popover-title');
+        const popoverDescription = document.getElementById('popover-description');
+        const closePopover = document.getElementById('close-popover');
+        const cards = document.querySelectorAll('.achievement-card');
+
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                popoverTitle.textContent = card.querySelector('h3').textContent;
+                popoverDescription.textContent = card.querySelector('p').textContent;
+                popover.classList.remove('noShow');
+            });
+        });
+
+        closePopover.addEventListener('click', () => {
+            popover.classList.add('noShow');
+        });
+    </script>
+</body>
+
+</html>

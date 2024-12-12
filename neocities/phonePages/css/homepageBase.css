@@ -54,17 +54,18 @@ body {
     padding-bottom: 10px;
 }
 
-.appWrapper a,
+.app ,
 footer a {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
+    align-items: flex-start;
     text-decoration: none;
 
     transition: color .25s;
 }
 
-.appWrapper p,
+.app p,
 footer p {
     text-align: center;
     width: 70px;
@@ -138,6 +139,8 @@ footer p {
 .app {
     animation-duration: 0.3s;
     animation-fill-mode: forwards;
+
+    justify-content: flex-start;
 }
 
 .app.UNF {
