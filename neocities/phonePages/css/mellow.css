@@ -179,12 +179,15 @@ nav button.active {
 }
 
 #selectedMoodEmoji {
-    font-size: 3em;
     width: 65px;
     aspect-ratio: 1;
     text-align: center;
 
     transform: rotate(-45deg);
+}
+
+#selectedMoodEmoji img {
+    width: 100%;
 }
 
 .rings {
@@ -261,7 +264,15 @@ nav button.active {
     border: none;
     background: none;
 
-    font-size: 2em;
+    /* ! Remove After */
+    font-size: 2em; 
+
+    width: 45px;
+    aspect-ratio: 1;
+}
+
+#moodButtons img {
+    width: 100%;
 }
 
 /* ~ Popover */

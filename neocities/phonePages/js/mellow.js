@@ -7,45 +7,45 @@ var moodButtons = document.querySelectorAll("#moodButtons button");
 var currentMood = document.getElementById("currentMood");
 
 var savedMood = localStorage.getItem('userCurrentMood') || "Cheerful";
-var savedMoji = localStorage.getItem('userCurrentMoji') || "☺";
+var savedMoji = localStorage.getItem('userCurrentMoji') || "/Assets/other/mellowIcons/emoji/Cheerful.png";
 
 // & EventListeners and Updates
 document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById("user").textContent = `${userName}`;
-    document.getElementById("userIcon").src = selectedIcon;
+  document.getElementById("user").textContent = `${userName}`;
+  document.getElementById("userIcon").src = selectedIcon;
 
-    updatePopover();
-    updateMoodDisplay();
+  updatePopover();
+  updateMoodDisplay();
 
-    moodButtons.forEach(function (button) {
-        button.addEventListener("click", function (e) {
-            var moodMoji = e.target.textContent;
-            var mood = e.target.id;
-            selectMood(moodMoji, mood)
-        });
+  moodButtons.forEach(function (button) {
+    button.addEventListener("click", function (e) {
+      var moodMoji = e.target.children[0].src;
+      var mood = e.target.id;
+      selectMood(moodMoji, mood)
     });
+  });
 });
 
 // & Select Mood
 function selectMood(moodMoji, mood) {
-    var cMood = mood.charAt(0).toUpperCase() + mood.slice(1);
-    localStorage.setItem('userCurrentMood', cMood);
-    localStorage.setItem('userCurrentMoji', moodMoji);
+  var cMood = mood.charAt(0).toUpperCase() + mood.slice(1);
+  localStorage.setItem('userCurrentMood', cMood);
+  localStorage.setItem('userCurrentMoji', moodMoji);
 
-    selectedMoodEmoji.textContent = moodMoji;
-    currentMood.textContent = cMood;
+  selectedMoodEmoji.src = moodMoji;
+  currentMood.textContent = cMood;
 
-    updateMoodDisplay();
-    updatePopover();
-    showPopover();
+  updateMoodDisplay();
+  updatePopover();
+  showPopover();
 }
 
 function updateMoodDisplay() {
-    savedMood = localStorage.getItem('userCurrentMood') || "Cheerful";
-    savedMoji = localStorage.getItem('userCurrentMoji') || "☺";
+  savedMood = localStorage.getItem('userCurrentMood') || "Cheerful";
+  savedMoji = localStorage.getItem('userCurrentMoji') || "/Assets/other/mellowIcons/emoji/Cheerful.png";
 
-    selectedMoodEmoji.textContent = savedMoji;
-    currentMood.textContent = savedMood;
+  selectedMoodEmoji.src = savedMoji;
+  currentMood.textContent = savedMood;
 }
 
 // & Popover
@@ -53,25 +53,26 @@ function updateMoodDisplay() {
 const popover = document.getElementById("popover");
 
 function showPopover() {
-    popover.classList.remove("hide");
-    popover.style.display = "block";
+  popover.classList.remove("hide");
+  popover.style.display = "block";
 }
 
 function updatePopover() {
-    var savedMood = localStorage.getItem('userCurrentMood') || "cheerful";
+  var savedMood = localStorage.getItem('userCurrentMood') || "cheerful";
 
-    var logNote = document.getElementById("logNote");
-    logNote.innerHTML = `I'm happy to hear that you're feeling <span id="emotion">${savedMood}</span>!`;
+  var logNote = document.getElementById("logNote");
+  logNote.innerHTML = `I'm happy to hear that you're feeling <span id="emotion">${savedMood}</span>!`;
 }
 
 // ! Exit
 const exitButton = document.getElementById("exit");
 exitButton.addEventListener("click", () => {
-    popover.classList.add("hide");
-    setTimeout(() => {
-        popover.style.display = "none";
-    }, 300);
+  popover.classList.add("hide");
+  setTimeout(() => {
+    popover.style.display = "none";
+  }, 300);
 });
+
 
 // & Breathing Exercises
 
