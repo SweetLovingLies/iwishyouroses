@@ -27,7 +27,7 @@
         </filler>
 
         <main>
-            <section id="moodSelect" class="tab active">
+            <section id="moodSelect" class="tab">
                 <div id="welcome" class="flexWrapper">
                     <div class="flexWrapper"
                         style="flex-flow: column nowrap; justify-content: flex-end; padding-bottom: 20px;">
@@ -39,8 +39,7 @@
                 <div id="mainDisplay">
                     <div id="ring1" class="rings">
                         <div id="ring2" class="rings">
-                            <!-- Make a custom emoji for this later! -->
-                            <p id="selectedMoodEmoji"><img src="/Assets/other/mellowIcons/emoji/Cheerful.png"></p>
+                            <img id="selectedMoodEmoji" src="/Assets/other/mellowIcons/emoji/Cheerful.png">
                         </div>
                     </div>
                     <p id="currentMood">Cheerful</p>
@@ -51,20 +50,18 @@
                         <h3>Today's Mood</h3>
                     </div>
                     <div id="moodButtons" class="flexWrapper">
-                        <button id="cheerful"><img src="/Assets/other/mellowIcons/emoji/Cheerful.png"></button>
-                        <button id="happy"><img src="/Assets/other/mellowIcons/emoji/Happy.png"></button>
-                        <button id="calm">😌</button>
-                        <button id="indifferent">😐</button>
-                        <button id="sad">🙁</button>
-                        <button id="depressed">😢</button>
-                        <button id="frustrated">😖</button>
-                        <button id="anxious">😓</button>
-                        <button id="annoyed">🙄</button>
-                        <button id="angry">😡</button>
-                        <button id="proud">😎</button>
-                        <button id="loved">🥰</button>
-                        <button id="inspired">🤩</button>
-                        <button id="energized">⚡</button>
+                        <button id="cheerful"><img src="/Assets/other/mellowIcons/emoji/Cheerful.png" alt="Cheerful"></button>
+                        <button id="happy"><img src="/Assets/other/mellowIcons/emoji/Happy.png" alt="Happy"></button>
+                        <button id="calm"><img src="/Assets/other/mellowIcons/emoji/Calm.png" alt="Calm"></button>
+                        <button id="loved"><img src="/Assets/other/mellowIcons/emoji/Loved.png" alt="Loved"></button>
+                        <button id="inspired"><img src="/Assets/other/mellowIcons/emoji/Starstruck.png" alt="Starstruck"></button>
+                        <button id="indifferent"><img src="/Assets/other/mellowIcons/emoji/Indifferent.png" alt="Indifferent"></button>
+                        <button id="sad"><img src="/Assets/other/mellowIcons/emoji/Sad.png" alt="Sad"></button>
+                        <button id="depressed"><img src="/Assets/other/mellowIcons/emoji/Depressed.png" alt="Depressed"></button>
+                        <button id="frustrated"><img src="/Assets/other/mellowIcons/emoji/Frustrated.png" alt="Frustrated"></button>
+                        <button id="anxious"><img src="/Assets/other/mellowIcons/emoji/Anxious.png" alt="Anxious"></button>
+                        <button id="annoyed"><img src="/Assets/other/mellowIcons/emoji/Annoyed.png" alt="Annoyed"></button>
+                        <button id="angry"><img src="/Assets/other/mellowIcons/emoji/Angry.png" alt="Angry"></button>
                     </div>
                 </div>
 
@@ -85,7 +82,7 @@
                 </div>
             </section>
 
-            <section id="dailyLog" class="tab">
+            <section id="dailyLog" class="tab active">
                 <h2>Your Log List</h2>
                 <ul id="entriesList">
                     <p class="placeholder">You haven't logged anything yet!</p>

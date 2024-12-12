@@ -186,12 +186,9 @@ nav button.active {
     transform: rotate(-45deg);
 }
 
-#selectedMoodEmoji img {
-    width: 100%;
-}
-
 .rings {
     border-radius: 50%;
+    aspect-ratio: 1;
 }
 
 #ring1 {
@@ -254,7 +251,6 @@ nav button.active {
 #moodButtons {
     flex-flow: row wrap;
     justify-content: center;
-    gap: 5px;
 
     height: 100px;
     overflow-y: auto;
@@ -267,7 +263,7 @@ nav button.active {
     /* ! Remove After */
     font-size: 2em; 
 
-    width: 45px;
+    width: 60px;
     aspect-ratio: 1;
 }
 
@@ -369,12 +365,45 @@ nav button.active {
 #entriesList {
     list-style: none;
     padding: 0;
+
+    height: 400px;
+    overflow: auto;
 }
 
 #entriesList li {
     padding: 10px;
     border-bottom: 1px solid var(--persian);
     cursor: pointer;
+}
+
+.moodDisplay {
+    display: flex;
+    border-bottom: 1px solid gray;
+}
+
+.moodIcon {
+    width: 30px;
+    margin-left: auto;
+}
+
+.moodDisplay p {
+    display: inline;
+
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.note {
+    margin: 5px 0;
+}
+
+.timestamp {
+    border-left: 3px solid gray;
+    padding-left: 3px;
+}
+
+.settings {
+    margin-top: 5px;
 }
 
 /* ~ Breathing Exercise */
