@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Screen: Your Tome</title>
+
+    <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/phoneGlobals.css" rel="stylesheet" type="text/css" media="all">
+
+    <link href="css/yourTome.css" rel="stylesheet" type="text/css" media="all">
+
+    <meta name="description" content="Access literally everything you need." />
+    <link rel="icon" type="image/x-icon" href="../Assets/pixels/vintageAmericana/strawberryphone.webp">
+
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <script src="js/phone.js"></script>
+
+</head>
+
+<body>
+    <object id="detailBarObject" data="detailbar.html"></object>
+    <div id="wrapper">
+        <header>
+            <!-- <h1>Your Tome</h1> -->
+            <div class="flexWrapper">
+                <p>What would you like to write?</p>
+                <button id="newEntry">New Entry</button>
+            </div>
+        </header>
+        <main>
+            <form id="journal">
+                <textarea id="textbox" placeholder="In the beginning..."></div>
+            <button id="saveEntry">Save Entry</button>
+        </form>
+        </main>
+        <section>
+            <h2>Your Entries</h2>
+            <ul id="entriesList">
+                <p class="placeholder">Your tome is empty… why not write a spell?</p>
+            </ul>
+        </section>
+
+        <!-- <section id="noteModal" style="display: none;">
+            <div id="noteContent"></div>
+            <button id="closeModal">Close</button>
+        </section> -->
+    </div>
+    <script src="js/journal.js"></script>
+</body>
+
+</html>
