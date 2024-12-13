@@ -32,3 +32,17 @@ strong{
 #enter:hover {
     color: var(--persian);
 }
+
+
+#missing {
+    right: 15em;
+    bottom: 0;
+
+    /* ! debug */
+    /* color: black; */
+    /* background-color: white; */
+}
+
+#missing:hover {
+    color: var(--deepsea);
+}

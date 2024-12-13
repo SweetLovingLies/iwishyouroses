@@ -15,16 +15,14 @@
     <link id="indexDarkCSS" href="css/indexThemes/indexDark.css" rel="stylesheet" type="text/css" media="all">
     <link id="indexChristmasCSS" href="css/indexThemes/indexChristmas.css" rel="stylesheet" type="text/css" media="all">
 
-    <!-- Do you want to play a game?-->
-    <script src="shrines/OMORI/hangmanGame/js/keyCollectScript.js"></script>
-    <link href="shrines/OMORI/hangmanGame/css/keyscollected.css" rel="stylesheet">
 
     <meta name="description" content="A happy place, A quiet place." />
     <link rel="icon" type="image/x-icon" href="Assets/pixels/vintageAmericana/rose.gif">
 
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
-    <script src="js/jaxframeFork.js"></script>
+
     <script src="phonePages/js/themeSwitcher.js"></script>
+    <script src="shrines/OMORI/js/something.js"></script>
 
     <script>
         var documentTitle = "୧ ꒰ " + document.title + " ꒱ ୨";
@@ -33,8 +31,6 @@
             setTimeout(tabTitle, 400);
         })();
 
-    </script>
-    <script>
         const urlParams = new URLSearchParams(window.location.search);
         if (navigator.userAgent.includes('Screenjesus')) {
             window.location.replace("/preview/");
@@ -43,6 +39,7 @@
 </head>
 
 <body>
+    <iconify-icon id="missing" icon="mingcute:power-fill" width="50" height="50"></iconify-icon>
     <main>
         <div class="detailing" style="z-index: 1;"></div>
 
@@ -107,6 +104,20 @@
             <span class="ss08">r</span>
         </a>
     </main>
+
+    <img id="something" src="shrines/OMORI/Assets/something.webp" onmouseover="something(this);" />
+
+    <script>
+        var missing = document.getElementById("missing");
+        var body = document.querySelector("body");
+        var main = document.querySelector("main");
+
+        missing.addEventListener("click", function () {
+            body.style.background ="url(/shrines/OMORI/Assets/BattleBackgrounds/battleback_bs_something.png)";
+            body.style.backgroundSize ="cover";
+            main.style.display = "none";
+        });
+    </script>
 </body>
 
 </html>

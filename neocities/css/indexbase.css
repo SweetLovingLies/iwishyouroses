@@ -7,6 +7,8 @@ body {
     height: 100vh;
 
     font-family: cafesweet;
+
+    position: relative;
 }
 
 main {
@@ -19,6 +21,8 @@ main {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+
+    z-index: 1;
 }
 
 #warnings {
@@ -67,6 +71,17 @@ main {
 
 #enter:hover {
     color: var(--persian);
+}
+
+#something {
+    position: absolute;
+    z-index: 0;
+}
+
+#missing {
+    position: absolute;
+    color: transparent;
+    transition: color 1s;
 }
 
 /* ~ Media Queries */
