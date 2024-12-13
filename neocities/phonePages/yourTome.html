@@ -16,6 +16,7 @@
 
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
     <script src="js/phone.js"></script>
 
@@ -25,17 +26,13 @@
     <object id="detailBarObject" data="detailbar.html"></object>
     <div id="wrapper">
         <header>
-            <!-- <h1>Your Tome</h1> -->
-            <div class="flexWrapper">
-                <p>What would you like to write?</p>
-                <button id="newEntry">New Entry</button>
-            </div>
+            <h1>Your Tome</h1>
         </header>
         <main>
             <form id="journal">
-                <textarea id="textbox" placeholder="In the beginning..."></div>
-            <button id="saveEntry">Save Entry</button>
-        </form>
+                <textarea id="textbox" name="textbox" placeholder="What would you like to write?"></textarea>
+                <button id="saveEntry">Save Entry</button>
+            </form>
         </main>
         <section>
             <h2>Your Entries</h2>
@@ -44,11 +41,16 @@
             </ul>
         </section>
 
-        <!-- <section id="noteModal" style="display: none;">
-            <div id="noteContent"></div>
-            <button id="closeModal">Close</button>
-        </section> -->
+        <div id="viewWrapper" style="display: none;">
+            <div id="lightbox"></div>
+            <section id="noteModal">
+                <h2>Your Entry:</h2>
+                <div id="noteContent"></div>
+                <button id="closeModal">Close</button>
+            </section>
+        </div>
     </div>
+    <script src="js/yourTome.js"></script>
     <script src="js/journal.js"></script>
 </body>
 

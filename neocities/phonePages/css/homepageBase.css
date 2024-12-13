@@ -283,7 +283,7 @@ tray {
     width: 100%;
 }
 
-/* Downloaded App Icons */
+/* ? Downloaded App Icons */
 
 #idolMessenger {
     background-color: var(--wisteria);
@@ -302,5 +302,13 @@ tray {
 }
 
 #idolPet {
-    background: #9f14e1;
+    background-color: #428FF7;
+}
+
+#mellow {
+    background: linear-gradient(to bottom, #8affbd 0%, #ffaef2 100%);
+}
+
+#yourTome {
+    background-color: #3d2c29;
 }

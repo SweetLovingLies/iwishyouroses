@@ -10,6 +10,8 @@ var savedMoji = localStorage.getItem('userCurrentMoji') || "/Assets/other/mellow
 
 // & EventListeners and Updates
 document.addEventListener('DOMContentLoaded', () => {
+    localStorage.setItem('appContext', 'Mellow');
+    
     document.getElementById("user").textContent = `${userName}`;
     document.getElementById("userIcon").src = selectedIcon;
 

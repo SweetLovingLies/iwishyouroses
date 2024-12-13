@@ -1,9 +1,12 @@
 const entriesList = document.getElementById('entriesList');
 const textbox = document.getElementById('textbox');
-const placeholder = document.querySelector('.placeholder'); 
+const placeholder = document.querySelector('.placeholder');
 const saveButton = document.getElementById('saveEntry');
 
-let saveCooldown = false; 
+const { jsPDF } = window.jspdf;
+
+const appContext = localStorage.getItem('appContext') || 'YourTome'; // 'Mellow' or 'YourTome'
+let saveCooldown = false;
 
 
 function saveEntriesToLocalStorage(entries) {
@@ -22,7 +25,12 @@ function renderEntries() {
     if (entries.length === 0) {
         const placeholder = document.createElement('p');
         placeholder.className = 'placeholder';
-        placeholder.textContent = "You haven't logged anything yet!";
+
+        if (appContext === "Mellow") {
+            placeholder.textContent = "You haven't logged anything yet!";
+        } else {
+            placeholder.textContent = "Your tome is empty… why not write a spell?";
+        }
         entriesList.appendChild(placeholder);
         return;
     }
@@ -43,33 +51,21 @@ function renderEntries() {
             const moodText = document.createElement('p');
             moodText.textContent = `Feeling: ${entry.mood}`;
 
-            // console.log("Appending Mood Text and IMG:", moodText.textContent, moodImg);
             moodDiv.appendChild(moodText);
             moodDiv.appendChild(moodImg);
             li.appendChild(moodDiv);
 
             const noteContainer = document.createElement('div');
             noteContainer.className = 'note';
-
-            // console.log("Parsing with marked:", entry.note || entry.content);
             noteContainer.innerHTML = marked.parse(entry.note || "No additional notes.");
-
             li.appendChild(noteContainer);
-
-            // console.log("Appended note:", noteContainer.textContent);
 
             const timestamp = document.createElement('p');
             timestamp.className = 'timestamp';
             timestamp.textContent = new Date(entry.timestamp).toLocaleString();
-
-            // console.log("Appending Timestamp:", timestamp.textContent);
-
             li.appendChild(timestamp);
         } else {
             const textContent = document.createElement('span');
-
-            // console.log("Parsing with marked:", entry.note || entry.content);
-
             textContent.innerHTML = marked.parse(entry.content ? entry.content.substring(0, 30) + '...' : "No content");
             li.appendChild(textContent);
         }
@@ -77,23 +73,74 @@ function renderEntries() {
         const settings = document.createElement('div');
         settings.className = 'settings';
 
-        // const editBtn = document.createElement('button');
-        // editBtn.textContent = 'Edit';
-        // editBtn.className = 'editEntry';
-        // settings.appendChild(editBtn);
-
         const deleteBtn = document.createElement('button');
         deleteBtn.textContent = 'Delete';
         deleteBtn.className = 'deleteEntry';
         settings.appendChild(deleteBtn);
 
-        // const exportBtn = document.createElement('button');
-        // exportBtn.textContent = 'Export to PDF';
-        // exportBtn.className = 'exportJS';
-        // settings.appendChild(exportBtn);
-        
         li.appendChild(settings);
         entriesList.appendChild(li);
+
+        // Now add the view button to the settings
+        addViewButton(entry, li);
+
+        deleteBtn.addEventListener('click', () => {
+            const entries = getEntriesFromLocalStorage();
+            entries.splice(index, 1);
+            saveEntriesToLocalStorage(entries);
+            renderEntries();
+        });
+    });
+}
+
+function exportToPDF(entries) {
+    const doc = new jsPDF();
+
+    doc.setFontSize(18);
+    doc.text('Your Entries!', 10, 10);
+
+    let yOffset = 20;  // Starting Y position for text
+    entries.forEach((entry, index) => {
+        doc.setFontSize(12);
+        const timestamp = new Date(entry.timestamp).toLocaleString();
+
+        if (entry.type === 'mood') {
+            doc.text(`Entry ${index + 1} (Mood Log):`, 10, yOffset);
+            yOffset += 5;
+            doc.text(`Feeling: ${entry.mood}`, 10, yOffset);
+            yOffset += 5;
+            doc.text(`Note: ${entry.note || "No additional notes."}`, 10, yOffset);
+            yOffset += 5;
+            doc.text(`Time Saved: ${timestamp}`, 10, yOffset);
+        } else {
+            doc.text(`Entry ${index + 1}:`, 10, yOffset);
+            yOffset += 5;
+            doc.text(`"${entry.content || "No content"}"`, 10, yOffset);
+            yOffset += 5;
+            doc.text(`Time Saved: ${timestamp}`, 10, yOffset);
+            yOffset += 5;
+        }
+
+        if (yOffset > 270) {
+            doc.addPage();
+            yOffset = 20;
+        }
+    });
+
+    // Save the generated PDF
+    doc.save('journal_entries.pdf');
+}
+
+function addViewButton(entry, li) {
+    const settings = li.querySelector('.settings');
+
+    const viewBtn = document.createElement('button');
+    viewBtn.textContent = 'View Entry';
+    viewBtn.className = 'viewEntry';
+    settings.appendChild(viewBtn);
+
+    viewBtn.addEventListener('click', () => {
+        openEntryModal(entry);
     });
 }
 
@@ -103,20 +150,25 @@ saveButton.addEventListener('click', (e) => {
     if (saveCooldown) return;
 
     const content = textbox.value.trim();
-    if (!content && (!savedMood || !savedMoji)) {
-        console.warn("No content or mood selected.");
-        return; // Prevent saving invalid entries
+
+    // Use context to decide how to handle mood entries
+    const isMoodApp = appContext === 'Mellow';
+    const mood = isMoodApp ? (savedMood || null) : null;
+    const emoji = isMoodApp ? (savedMoji || null) : null;
+
+    if (!content && !mood && !emoji) {
+        alert("No content or mood selected.");
+        return;
     }
 
     const entries = getEntriesFromLocalStorage();
-    // console.log("Entries before saving:", entries);
+    const isMoodLog = isMoodApp && !!mood && !!emoji;
 
-    const isMoodLog = savedMood && savedMoji;
     const entry = isMoodLog
         ? {
             type: 'mood',
-            mood: savedMood,
-            emoji: savedMoji,
+            mood,
+            emoji,
             note: content,
             timestamp: new Date().toISOString(),
         }
@@ -126,32 +178,32 @@ saveButton.addEventListener('click', (e) => {
             timestamp: new Date().toISOString(),
         };
 
-    // console.log("New Entry:", entry);
-
     entries.push(entry);
     saveEntriesToLocalStorage(entries);
     renderEntries();
-    // console.log("Entries after saving:", getEntriesFromLocalStorage());
 
     textbox.value = '';
-    if (isMoodLog) {
+
+    if (isMoodApp) {
         savedMood = null;
         savedMoji = null;
+        if (popover) {
+            popover.classList.add("hide");
+            setTimeout(() => {
+                popover.style.display = "none";
+            }, 300);
+        }
     }
 
-    popover.style.display = 'none';
-    popover.classList.add('hide');
-
-    // Rate Limiter
     saveCooldown = true;
     saveButton.disabled = true;
-    saveButton.style.cursor = "not-allowed";
     setTimeout(() => {
         saveCooldown = false;
         saveButton.disabled = false;
-        saveButton.style.cursor = "pointer";
-    }, 30000); // 30 Seconds
+    }, 2000);
 });
+
+
 
 
 // ! Get Deleted

@@ -62,11 +62,8 @@ body {
     border-radius: 10px;
 }
 
-main {
-    display: none;
-}
-
 #textbox {
+    width: 100%;
     min-height: 300px;
     padding: 1em;
     background: #fff9e6;
@@ -99,6 +96,7 @@ main {
         opacity: 1;
         transform: translate(0, 0) scale(1);
     }
+
     100% {
         opacity: 0;
         transform: translate(10px, -10px) scale(0);
@@ -110,6 +108,9 @@ section {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid var(--persian);
+
+    width: 248px;
+    word-wrap: break-word;
 }
 
 #entriesList {
@@ -145,6 +146,33 @@ section {
 
 .settings button {
     min-width: 40px;
+}
+
+/* ~ View Modal */
+
+#viewWrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#lightbox {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 90;
+}
+
+#noteModal {
+    position: relative;
+    z-index: 100;
 }
 
 /* General */
