@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test that achievement</title>
+    <meta name="description" content="Make it work!" />
+    <link rel="icon" type="image/x-icon" href="/Assets/pixels/dollette/strawbow.gif">
+
+    <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
+
+    <link href="toast.css" rel="stylesheet" type="text/css" media="all">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            /* background-color: #121212; */
+        }
+
+        #clear {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="achievement-toast achievementHidden">
+        <img class="toast-icon" src="https://lilithdev.neocities.org/shrine/vg/nso/sprites/achievements/404.png">
+          <div class="toast-info">
+              <div class="toast-title">I Wish You Roses</div>
+              <div class="toast-description">Wish roses 100 times</div>
+          </div>
+      </div>
+
+    <div id="phoneSpot">
+        <iframe id="phone" class="hidden" src="../../phone.html"></iframe>
+    </div>
+
+    <button id="clear" onclick="clearAchievements();">Clear Achievements</button>
+
+    <script src="achievements.js"></script>
+    <script>
+        function clearAchievements() {
+            const prefix = "general:";
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                if (key.startsWith(prefix)) {
+                    localStorage.removeItem(key);
+                    i--;
+                }
+            }
+            console.log("All achievements cleared!");
+        }
+    </script>
+</body>
+
+</html>

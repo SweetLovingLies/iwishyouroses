@@ -81,12 +81,13 @@
 
 
 .achievementNormal {
-    background: url(/Assets/BGs/linedpaper.jpg);
-    
-    border-style: solid;
-    border-image: url("/Assets/borders/border2.png") 28 round;
-    border-width: 28px;
-    background-clip: padding-box;
+    background: url("/Assets/BGs/linedpaper.jpg");
+}
+
+.achievementHidden {
+    background: url("/Assets/BGs/darkMode/linedpaperD.png");
+    color: white;
+
 }
 
 /* .nso-dark {
@@ -139,4 +140,4 @@
     color: white;
 } */
 
-/* Globals */
+/* ~ Globals */

@@ -3,11 +3,12 @@
 // & Stores data from achievements.json file
 let achievementData;
 
-fetch('/achievements.json', {cache: "no-store"}) //& cache: "no-store" keeps the browser from caching anything so only the newest info is retrieved
+fetch('achievements.json', {cache: "no-store"}) //& cache: "no-store" keeps the browser from caching anything so only the newest info is retrieved
     .then((response) => response.json()) // & Syntax: then(onRetrieved, onRejected) 
     .then((json) => { // & Requests the Data from the JSON file 
       achievementData = json;
       window.achievementData = achievementData;
+      // console.log(achievementData);
 });
 
 // & Loads toast CSS as necessary
@@ -42,8 +43,8 @@ async function loadAssets(namespace) { // ? Not sure what namespace is yet.
   }
 }
 
-// ? IDK why I was so surprised to see localStorage here lmao
 function hasAchievement(namespace, achievementID) {
+  // console.log("Achievement already unlocked:", namespace, achievementID);
   return window.localStorage.getItem(namespace + ":" + achievementID) === 'true';
 }
 
@@ -82,7 +83,7 @@ async function getAchievement(namespace, achievementID) {
   loadAssets(namespace).then(() => {
     const achievementTemplate = document.getElementById("toast-template-" + namespace);
   
-    const clone = achievementTemplate.content.cloneNode(true); // ? What is a node? 
+    const clone = achievementTemplate.content.cloneNode(true);
 
     clone.querySelector(".achievement-toast").className += " " + achievementData[namespace].achievements[achievementID].class;
     clone.querySelector(".toast-icon").src = achievementData[namespace].achievements[achievementID].icon;
@@ -101,7 +102,6 @@ async function getAchievement(namespace, achievementID) {
       pienSFX.play();
     }
 
-    // Handle the animation
     const toast = clone.querySelector(".achievement-toast");
     setTimeout(() => {
       if(getComputedStyle(toast)["animation-name"] == "none") {
@@ -115,7 +115,7 @@ async function getAchievement(namespace, achievementID) {
       var newone = elm.cloneNode(true);
       elm.parentNode.replaceChild(newone, elm);
 
-      newone.addEventListener("animationend", (event) => {
+      newone.addEventListener("animationend", () => {
         newone.remove();
       });
     }, 10000);
@@ -124,28 +124,26 @@ async function getAchievement(namespace, achievementID) {
   });
 }
 
-/*document.onkeypress = function (e) {
+document.onkeypress = function (e) {
   switch(e.key) {
-    case "a":
-      getAchievement("nso", "something");
+    case "q":
+      console.log("test");
+      getAchievement("general", "yanShrine");
       break;
-    case "z":
-      getAchievement("nso", "pien");
+    case "w":
+      console.log("test");
+      getAchievement("general", "iwishyouroses");
       break;
     case "e":
-      getAchievement("nso", "touch-grass");
+      console.log("test");
+      getAchievement("general", "Nice");
       break;
     case "r":
-      getAchievement("nso", "404");
-      break;
-    case "t":
-      getAchievement("nso", "nudes");
-      break;
-    case "y":
-      getAchievement("nso", "bed");
+      console.log("gay");
+      getAchievement("general", "Hangman");
       break;
   }
-};*/
+};
 
 window.addEventListener("message", (e) => {
   if("achievement" in e.data) {

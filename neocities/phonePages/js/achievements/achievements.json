@@ -1,0 +1,77 @@
+{
+    "general": {
+        "title": "General",
+        "template": "toastTemplate.txt",
+        "style": "toast.css",
+        "sfx": "https://lilithdev.neocities.org/shrine/vg/nso/sfx/boot_caution.wav",
+        "missing": {
+            "description": "???",
+            "class": "missing"
+        },
+        "hidden": {
+            "icon": "https://lilithdev.neocities.org/shrine/vg/nso/sprites/achievements/hidden.png",
+            "title": "???",
+            "description": "???",
+            "class": "achievementHidden"
+        },
+        "achievements": {
+            "yanShrine": {
+                "icon": "https://lilithdev.neocities.org/shrine/vg/nso/sprites/achievements/nudes.png",
+                "title": "ANDROSESANDROSESANDROSESANDROSEANDROSESANDROSESANDROSES",
+                "description": "View the Yandere Shrine",
+                "class": "yandere"
+            },
+            "iwishyouroses": {
+                "icon": "https://lilithdev.neocities.org/shrine/vg/nso/sprites/achievements/404.png",
+                "title": "I Wish You Roses",
+                "description": "Wish roses 100 times",
+                "class": "achievementNormal"
+            },
+            "Nice": {
+                "icon": "https://lilithdev.neocities.org/shrine/vg/nso/sprites/achievements/noclick.png",
+                "title": "👌",
+                "description": "Click the Weird Stats 69 times",
+                "sfx": "https://lilithdev.neocities.org/shrine/vg/omori/sfx/something_disappears.ogg",
+                "class": "achievementNormal"
+            },
+            "Selfie": {
+                "icon": "https://lilithdev.neocities.org/shrine/vg/nso/sprites/achievements/noclick.png",
+                "title": "Selfie",
+                "description": "Click the Weird Stats 69 times",
+                "class": "achievementNormal"
+            },
+            "Herobrine": {
+                "icon": "https://lilithdev.neocities.org/shrine/vg/nso/sprites/achievements/only_fan.png",
+                "title": "Herobrine?",
+                "description": "He was supposed to have been removed...",
+                "class": "achievementNormal"
+            },
+            "HeadBite": {
+                "icon": "https://lilithdev.neocities.org/shrine/vg/nso/sprites/achievements/something.png",
+                "title": "THE BITE OF '83",
+                "description": "Type 395248 into Your Tome",
+                "class": "achievementNormal"
+            },
+            "SPACE": {
+                "icon": "https://lilithdev.neocities.org/shrine/vg/nso/sprites/achievements/spooky_pien.png",
+                "title": "SOMETHING IN SPACE",
+                "description": "Find SOMETHING on the Paracosms page",
+                "class": "achievementHidden",
+                "hidden": true
+            },
+            "WATER": {
+                "icon": "https://lilithdev.neocities.org/shrine/vg/nso/sprites/achievements/spooky_pien.png",
+                "title": "SOMETHING IN THE WATER",
+                "description": "Find SOMETHING in the Frutiger Aero shrine",
+                "class": "achievementHidden",
+                "hidden": true
+            },
+            "Hangman": {
+                "icon": "https://lilithdev.neocities.org/shrine/vg/nso/sprites/achievements/spooky_pien.png",
+                "title": "Hangman's Game",
+                "description": "Find the word.",
+                "class": "achievementHidden"
+            }
+        }
+    }
+}
