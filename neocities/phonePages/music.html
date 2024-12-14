@@ -82,9 +82,11 @@
         document.addEventListener('DOMContentLoaded', async function () {
             await createAudioPlayer();
 
+            controlsSetUp();
+            setupMusicPageUI();
+
             const savedTime = sessionStorage.getItem('currentSongTime');
             if (savedTime) {
-                console.log(savedTime);
                 audioPlayer.currentTime = parseFloat(savedTime);
             }
 
@@ -96,10 +98,6 @@
                 audioPlayer.play();
                 document.getElementById('MusicPauseButton').innerHTML = `<iconify-icon icon="qlementine-icons:pause-16"></iconify-icon>`;
             }
-
-            
-            controlsSetUp();
-            setupMusicPageUI();
         });
 
         function controlsSetUp() {

@@ -1,9 +1,12 @@
 :root {
+
     /* Colors */
     --bubblegum: #ffb7ed;
     --dustyPink: #f6bdd1;
-    --persian: #f283b6;
+    --rosette: #ffbbc5;
+    --persian: #f283b6; 
     --wisteria: #8266ff;
+    --kangel: #c3a3f6;
     --hintofmist: #f1efff;
     --whispermist: #dbd8f0;
     --driedBlood: #8B575c;
@@ -11,11 +14,26 @@
     --ash: #cad2c5;
     --water: #adcaff;
     --deepsea: #357ce6;
+    --roseRed: #C71227;
+    --rosePink: #FB003F;
     --blood: #800000;
     --deepslate: #696969;
     --cobblestone: #a8a8a8;
 
-    /* Other */
+    /* Rainbow Ring Colors */
+
+    --rainbowRed: #ffadad;
+    --rainbowOrange: #ffdea1;
+    --rainbowYellow: #ffffb5;
+    --rainbowGreen: #c2ffc2;
+    --rainbowBlue: #b8d4ff;
+    --rainbowIndigo: #9e97e0;
+    --rainbowPurple: #cfb0ff;
+    --rainbowPink: #ffd8f2;
+
+    /* Globals */
+    --globalBorderRadius: 10px;
+    --detailBarHeight: 20px;
 }
 
 @font-face {
@@ -29,20 +47,43 @@
 }
 
 .achievement-toast {
-    display: flex;
-    gap: 8px;
-
     position: fixed;
     left: 0;
-    top: 8px;
-    
-    width: 360px;
+    top: 3em;
 
-    padding: 6px;
+    width: 360px;
     box-sizing: border-box;
 
     animation: toast-show .6s ease-out;
     z-index: 9999999;
+
+    border-radius: 0 5px 5px 0;
+}
+
+.achievement-toast * {
+    box-sizing: border-box;
+}
+
+.achievementWrapper {
+    position: relative;
+    padding: 6px;
+
+    display: flex;
+    gap: 8px;
+
+    z-index: 201;
+}
+
+#decor {
+    position: absolute;
+    top: -4em;
+    left: -10px;
+
+    stroke-width: 3;
+    fill: none;
+    pointer-events: none;
+
+    z-index: 200;
 }
 
 .toast-icon {
@@ -50,13 +91,16 @@
     width: 50px;
 
     background-size: cover;
-    box-sizing: border-box;
+
+    border: 2px solid var(--persian);
+    z-index: 201;
 }
 
 .toast-info {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    z-index: 201;
 }
 
 .toast-title {
@@ -71,7 +115,7 @@
 
 @keyframes toast-show {
     from {
-        transform: translateX(-438px);
+        transform: translateX(-450px);
     }
 
     to {
@@ -79,15 +123,53 @@
     }
 }
 
-
 .achievementNormal {
-    background: url("/Assets/BGs/linedpaper.jpg");
+    background: url("/Assets/BGs/bloodcute.jpg");
+    border: 3px solid var(--wisteria);
+}
+
+.achievementNormal #decor {
+    stroke: var(--wisteria);
+}
+
+.achievementYandere {
+    background: url("/Assets/BGs/menheraPink.jpg");
+    background-position: right;
+    background-size: 50%;
+    border: 3px solid var(--rosePink);
+}
+.achievementWrapper .toast-info {
+    width: 225px;
+    overflow: hidden;
+}
+
+.achievementYandere .toast-title {
+    animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(-550%);
+    }
+}
+
+.achievementYandere #decor {
+    stroke: var(--rosePink);
 }
 
 .achievementHidden {
-    background: url("/Assets/BGs/darkMode/linedpaperD.png");
-    color: white;
+    background: url("/Assets/BGs/darkMode/gridbgB.jpg");
+    background-position: center;
+    background-size: 50%;
+    border: 3px solid var(--persian);
+}
 
+.achievementHidden #decor {
+    stroke: var(--persian);
 }
 
 /* .nso-dark {

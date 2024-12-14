@@ -16,7 +16,7 @@ fetch('/phonePages/js/musicPlayer/songs.json')
         // console.log("Number of songs:", songs.length);
         createAudioPlayer();
     })
-    .catch(error => console.error("Error fetching or parsing JSON:", error));
+    .catch(error => console.error("Error fetching JSON:", error));
 
     async function createAudioPlayer() {
         if (!audioPlayer || !window.top.document.getElementById('globalAudio')) {
@@ -24,7 +24,10 @@ fetch('/phonePages/js/musicPlayer/songs.json')
             audioPlayer.id = 'globalAudio';
             window.top.document.body.appendChild(audioPlayer);
             // console.log("Audio Player Created!");
-        }
+        } 
+        // else {
+        //     console.log ("Skipped initialization!");
+        // }
     
         audioPlayer.removeEventListener('ended', SongEnd);
         audioPlayer.addEventListener('ended', SongEnd);
