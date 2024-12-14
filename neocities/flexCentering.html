@@ -17,7 +17,7 @@
     <style>
         body {
             font-family: cafesweet;
-            
+
             /* Body takes up 100% of the viewport / screen height */
             height: 100vh;
 
@@ -40,12 +40,21 @@
             color: var(--persian);
             font-size: 8em;
         }
+
+        p {
+            max-width: 700px;
+            text-align: center;
+        }
     </style>
 </head>
 
 <body>
-        This is centered with Flexbox! Right click and choose "View Page Source" for explanations!
-        <iconify-icon icon="line-md:heart-filled"></iconify-icon>
+    <p>This is centered with Flexbox! Right click and choose "View Page Source" for explanations!</p>
+    <iconify-icon icon="line-md:heart-filled"></iconify-icon>
+
+    <p>This method is completely responsive, meaning that you can resize the window to any size (even phone sized), and the centered
+        object will remain centered. Try changing the window height, or opening inspect element to change the width.
+    </p>
 </body>
 
 </html>
