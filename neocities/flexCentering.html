@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Display</title>
+
+    <link href="css/palette.css" rel="stylesheet" type="text/css" media="all">
+
+    <meta name="description" content="A happy place, A quiet place." />
+    <link rel="icon" type="image/x-icon" href="Assets/pixels/vintageAmericana/rose.gif">
+
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+
+    <style>
+        body {
+            font-family: cafesweet;
+            
+            /* Body takes up 100% of the viewport / screen height */
+            height: 100vh;
+
+            /* Width is 100vw by default. */
+
+            /* Very cool dynamic display type that makes centering easy */
+            display: flex;
+
+            /* Makes the items sit on top of each other (in a column!) */
+            flex-direction: column;
+
+            /* Centers horizontally */
+            justify-content: center;
+
+            /* Centers vertically depending on the height of the viewport! */
+            align-items: center;
+        }
+
+        iconify-icon {
+            color: var(--persian);
+            font-size: 8em;
+        }
+    </style>
+</head>
+
+<body>
+        This is centered with Flexbox! Right click and choose "View Page Source" for explanations!
+        <iconify-icon icon="line-md:heart-filled"></iconify-icon>
+</body>
+
+</html>
