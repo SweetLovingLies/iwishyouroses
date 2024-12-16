@@ -33,3 +33,16 @@ strong{
 #enter:hover {
     color: var(--wisteria);
 }
+
+#missing {
+    left: 15em;
+    top: 20em;
+
+    /* ! debug */
+    /* color: black; */
+    /* background-color: white; */
+}
+
+#missing:hover {
+    color: var(--wisteria);
+}

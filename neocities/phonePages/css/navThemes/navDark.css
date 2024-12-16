@@ -4,10 +4,21 @@ body{
     background-attachment: fixed;
 }
 
-.navLink {
+
+h2 {
     font-family: heartblood;
     text-transform: lowercase;
-    font-size: 3em;
+    font-size: 4.3em;
+    line-height: .5em;
+    font-weight: normal;
+
+    color: var(--rosePink);
+    -webkit-text-stroke: .4px white;
+}
+
+.navLink {
+    font-family: cafesweet;
+    font-size: 2em;
     color: white;
 
     border: 5px solid var(--roseRed);
@@ -16,14 +27,14 @@ body{
 }
 
 .navLink:hover {
-    color: var(--roseRed);
+    color: var(--persian);
 }
 
 #topList .navLink {
     background-color: black;
 }
 
-#bottomList .navLink {
+#middleList .navLink {
     background-color: black;
 }
 
@@ -35,10 +46,10 @@ body{
     background: url("/Assets/BGs/ht9-p.gif");
 }
 
-#bottomList #mediaLogs {
+#middleList #mediaLogs {
     background: url('/Assets/BGs/alicebg2.gif');
 } */
 
-#bottomList #credits {
+#middleList #credits {
     background: url('/Assets/BGs/darkMode/dots.png');
 }

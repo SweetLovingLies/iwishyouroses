@@ -16,10 +16,10 @@
         },
         "achievements": {
             "yanShrine": {
-                "icon": "https://lilithdev.neocities.org/shrine/vg/nso/sprites/achievements/nudes.png",
+                "icon": "/assets/anime/IWasWrong/pfp/1.jpg",
                 "title": "ANDROSESANDROSESANDROSESANDROSEANDROSESANDROSESANDROSES",
                 "description": "View the Yandere Shrine",
-                "class": "yandere"
+                "class": "achievementYandere"
             },
             "iwishyouroses": {
                 "icon": "https://lilithdev.neocities.org/shrine/vg/nso/sprites/achievements/404.png",

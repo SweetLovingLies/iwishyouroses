@@ -1,0 +1,385 @@
+:root {
+
+    /* Colors */
+    --bubblegum: #ffb7ed;
+    --dustyPink: #f6bdd1;
+    --rosette: #ffbbc5;
+    --persian: #f283b6;
+    --wisteria: #8266ff;
+    --kangel: #c3a3f6;
+    --hintofmist: #f1efff;
+    --whispermist: #dbd8f0;
+    --driedBlood: #8B575c;
+    --pinkIce: #f6e4f6;
+    --ash: #cad2c5;
+    --water: #adcaff;
+    --deepsea: #357ce6;
+    --roseRed: #C71227;
+    --rosePink: #FB003F;
+    --blood: #800000;
+    --deepslate: #696969;
+    --cobblestone: #a8a8a8;
+
+    /* Rainbow Ring Colors */
+
+    --rainbowRed: #ffadad;
+    --rainbowOrange: #ffdea1;
+    --rainbowYellow: #ffffb5;
+    --rainbowGreen: #c2ffc2;
+    --rainbowBlue: #b8d4ff;
+    --rainbowIndigo: #9e97e0;
+    --rainbowPurple: #cfb0ff;
+    --rainbowPink: #ffd8f2;
+
+    /* Globals */
+    --globalBorderRadius: 10px;
+    --detailBarHeight: 20px;
+}
+
+body {
+    height: 100vh;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+
+    background: url(/Assets/BGs/darkMode/itsnotbloodipromise.gif);
+
+    font-family: cafeSweet;
+    color: white;
+}
+
+#wrapper {
+    flex: 0 1 40%;
+}
+
+#harrowRingHeader {
+    text-align: center;
+}
+
+#harrowRingHeader h1 {
+    font-family: heartblood;
+    text-transform: lowercase;
+
+    letter-spacing: -5px;
+    line-height: 1em;
+    font-weight: normal;
+
+    color: var(--rosePink);
+    -webkit-text-stroke: .4px white;
+}
+
+#harrowRingHeader h1 span {
+    font-size: 4em;
+}
+
+#content {
+    height: 60vh;
+
+    background-color: black;
+    border: 5px solid var(--blood);
+
+    display: flex;
+    flex-flow: column nowrap;
+
+    border-radius: var(--globalBorderRadius);
+}
+
+nav {
+    flex: 1 1;
+    display: flex;
+}
+
+nav a {
+    flex: 1 1;
+    display: block;
+
+    background-color: var(--roseRed);
+    padding: 20px 0;
+    border: 1px solid black;
+
+    font-family: Witch;
+    color: black;
+    text-align: center;
+    font-size: 2em;
+    text-decoration: none;
+}
+
+nav .active {
+    background-color: var(--rosePink);
+}
+
+main {
+    padding: 20px;
+    flex: 1 1 100%;
+}
+
+section {
+    max-height: 270px;
+    overflow: auto;
+}
+
+header {
+    background-color: var(--blood);
+    text-align: center;
+
+    /* ! Voids the padding on main */
+    margin: -20px;
+    margin-bottom: 10px;
+
+    padding: 10px;
+}
+
+/* ~ Content */
+
+/* & Snippets */
+
+#aestheticSnippets {
+    height: 170px;
+    overflow: auto;
+}
+
+.snippet {
+    display: flex;
+    padding: 10px;
+
+    border-radius: var(--globalBorderRadius);
+    margin-bottom: 10px;
+}
+
+.snippet img {
+    max-height: 140px;
+    aspect-ratio: 1;
+}
+
+.snippet .textWrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 0 10px;
+}
+
+.snippet p {
+    flex: 1 1;
+    font-size: .9em;
+}
+
+.snippet a {
+    display: block;
+    font-size: 1.3em;
+    text-decoration: none;
+
+    border-radius: 5px;
+    padding: 2px 5px;
+}
+
+.snippet a::after {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: -0.125em;
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13.5 10.5L21 3m-5 0h5v5m0 6v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5'/%3E%3C/svg%3E");
+    margin-left: 5px;
+}
+
+/* ! Yandere */
+
+#Yandere {
+    background-color: var(--pinkIce);
+    color: black;
+}
+
+#Yandere img {
+    mask:
+        radial-gradient(at 70% 31%, #000 29%, #0000 30%),
+        radial-gradient(at 30% 31%, #000 29%, #0000 30%),
+        linear-gradient(#000 0 0) bottom/100% 50% no-repeat;
+    clip-path: polygon(-41% 0, 50% 91%, 141% 0);
+}
+
+#Yandere a {
+    color: black;
+
+    background-color: var(--rosePink);
+}
+
+/* ? Analog Horror */
+
+#AnalogHorror {
+    background-color: #016BFF;
+    color: white;
+}
+
+#AnalogHorror img {
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+#AnalogHorror a {
+    color: white;
+
+    background-color: var(--deepslate);
+}
+
+/* ^ WeirdCore */
+
+#WeirdCore {
+    background: url("/Assets/BGs/yellowflowers.gif");
+    color: black;
+}
+
+#WeirdCore img {
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+#WeirdCore a {
+    color: black;
+
+    background-color: var(--rainbowGreen);
+}
+
+/* Morute */
+
+#Morute {
+    background: url("/Assets/BGs/tex2.png");
+    color: black;
+}
+
+#Morute img {
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+#Morute a {
+    color: black;
+
+    background-color: var(--rosette);
+}
+
+/* ! Creepy Cute */
+
+#CreepyCute {
+    background: url("/Assets/BGs/tex2.png");
+    color: black;
+}
+
+#CreepyCute img {
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+#CreepyCute a {
+    color: black;
+
+    background-color: var(--rosette);
+}
+
+/* & Rules */
+
+#thanks {
+    text-align: center;
+    color: var(--persian);
+}
+
+/* & Join */
+
+#formInput {
+    width: 100%;
+    height: 200px;
+}
+
+/* & Widget */
+
+#copyPaste {
+    width: 100%;
+    height: 60px;
+}
+
+/* & Members */
+
+#members section {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10px;
+}
+
+.memberCard {
+    flex: 1 0 calc((100% / 2) - 10px);
+    height: 200px;
+
+    display: flex;
+    gap: 10px;
+
+    border: 2px dashed var(--dustyPink);
+    padding: 10px;
+
+    border-radius: var(--globalBorderRadius);
+}
+
+.memberCard img {
+    flex: 1 1;
+    max-height: 200px;
+    aspect-ratio: 1;
+    border-radius: var(--globalBorderRadius);
+}
+
+.memberCard .description {
+    font-size: 1em;
+    height: 100px;
+    overflow: auto;
+}
+
+.memberCard a {
+    color: white;
+}
+
+.nsfw {
+    background-color: #330005;
+}
+
+.nsfw-warning {
+    color: yellow;
+}
+
+.owner {
+    background: linear-gradient(180deg, var(--blood) 0%, black 100%); 
+}
+
+/* ~ General */
+
+p {
+    font-size: 1.5em;
+}
+
+ol li {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: var(--driedBlood);
+    border-radius: 5px;
+    border: 1px solid gray;
+    color: white;
+}
+
+* {
+    scrollbar-width: thin;
+    box-sizing: border-box;
+
+    scrollbar-color: var(--deepslate) lightgray;
+}
+
+*::-webkit-scrollbar,
+*::-webkit-scrollbar-button {
+    width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background: lightgray;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--deepslate);
+}

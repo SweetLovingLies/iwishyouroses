@@ -1,15 +1,23 @@
 var her = document.getElementById("something");
-var apparition = document.getElementById("apparition");
-apparition.volume = 0.3;
 
 function something(her) {
-    her.setAttribute('src', 'shrines/OMORI/omoriAssets/something_disappear.gif');
+    her.setAttribute('src', 'shrines/OMORI/Assets/something_disappear.gif');
+
+    if (!window.top.audioPlayer) {
+        audioPlayer = document.createElement('audio');
+        audioPlayer.src = "https://files.catbox.moe/qk17h8.mp3";
+        audioPlayer.volume = 0.05;
+        document.body.appendChild(audioPlayer);
+        audioPlayer.play();
+    }
 
     setTimeout(() => {
         her.remove();
     }, 1550);
 
     setTimeout(() => {
-        window.open('shrines/OMORI/hangmanGame/hangman.html', '_top');
-    }, 5000);
+        audioPlayer.remove();
+
+        window.location.href = "/shrines/OMORI/hangmanGame/hangman.html";
+    }, 5500);
 }

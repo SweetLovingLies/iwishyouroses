@@ -44,6 +44,19 @@ strong{
     color: var(--christmasRed);
 }
 
+#missing {
+    left: 4em;
+    bottom: 2em;
+
+    /* ! debug */
+    /* color: black; */
+    /* background-color: white; */
+}
+
+#missing:hover {
+    color: var(--christmasRed);
+}
+
 /* ? Decor */
 
 .detailing {

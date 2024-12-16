@@ -1,0 +1,142 @@
+:root {
+    /* Colors */
+    --bubblegum: #ffb7ed;
+    --dustyPink: #f6bdd1;
+    --persian: #f283b6;
+    --wisteria: #8266ff;
+    --hintofmist: #f1efff;
+    --whispermist: #dbd8f0;
+    --driedBlood: #8B575c;
+    --pinkIce: #f6e4f6;
+    --ash: #cad2c5;
+    --water: #adcaff;
+    --deepsea: #357ce6;
+    --blood: #800000;
+    --deepslate: #696969;
+    --cobblestone: #a8a8a8;
+
+    /* Other */
+}
+
+@font-face {
+    font-family: cafesweet;
+    src: url('/fonts/16ptpixels/CafeSweet.ttf');
+}
+
+@font-face {
+    font-family: diegovainilla;
+    src: url('/fonts/16ptpixels/DiegoVainilla.otf');
+}
+
+.achievement-toast {
+    display: flex;
+    gap: 8px;
+
+    position: fixed;
+    left: 0;
+    top: 8px;
+    
+    width: 360px;
+
+    padding: 6px;
+    box-sizing: border-box;
+
+    animation: toast-show .6s ease-out;
+    z-index: 9999999;
+}
+
+.toast-icon {
+    height: 50px;
+    width: 50px;
+
+    background-size: cover;
+    box-sizing: border-box;
+}
+
+.toast-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.toast-title {
+    font-family: diegoVainilla;
+    font-size: 30px;
+    color: var(--persian);
+}
+
+.toast-description {
+    font-family: cafesweet;
+}
+
+@keyframes toast-show {
+    from {
+        transform: translateX(-438px);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+
+.achievementNormal {
+    background: url(/Assets/BGs/linedpaper.jpg);
+    
+    border-style: solid;
+    border-image: url("/Assets/borders/border2.png") 28 round;
+    border-width: 28px;
+    background-clip: padding-box;
+}
+
+/* .nso-dark {
+    background-image: url(https://lilithdev.neocities.org/shrine/vg/nso/sprites/achievements/netachip_000.png);
+}
+
+.nso-dark .toast-title {
+    color: white;
+}
+
+.nso-dark .toast-description {
+    color: white;
+}
+
+.nso-pien {
+    background-image: url(https://lilithdev.neocities.org/shrine/vg/nso/sprites/achievements/netachip_001.png);
+}
+
+.nso-bronze {
+    background-image: url(https://lilithdev.neocities.org/shrine/vg/nso/sprites/achievements/netachip_002.png);
+}
+
+.nso-silver {
+    background-image: url(https://lilithdev.neocities.org/shrine/vg/nso/sprites/achievements/netachip_003.png);
+}
+
+.nso-gold {
+    background-image: url(https://lilithdev.neocities.org/shrine/vg/nso/sprites/achievements/netachip_004.png);
+}
+
+.nso-super {
+    background-image: url(https://lilithdev.neocities.org/shrine/vg/nso/sprites/achievements/netachip_005.png);
+}
+
+.nso-missing {
+    opacity: 0.4;
+    filter: grayscale(0.9);
+}
+
+.nso-hidden {
+    opacity: 0.4;
+    background-image: url(https://lilithdev.neocities.org/shrine/vg/nso/sprites/achievements/netachip_000.png) !important;
+}
+
+.nso-hidden .toast-title {
+    color: white;
+}
+
+.nso-hidden .toast-description {
+    color: white;
+} */
+
+/* Globals */

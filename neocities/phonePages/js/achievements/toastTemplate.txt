@@ -1,7 +1,22 @@
 <div class="achievement-toast">
-  <img class="toast-icon" src="">
-    <div class="toast-info">
-        <div class="toast-title"></div>
-        <div class="toast-description"></div>
+        <div class="achievementWrapper">
+            <img class="toast-icon" src="">
+            <div class="toast-info">
+                <div class="toast-title"></div>
+                <div class="toast-description"></div>
+            </div>
+            <svg id="decor" xmlns="http://www.w3.org/2000/svg" width="505" height="200" viewBox="0 0 500 200">
+                <defs>
+                    <pattern id="linedLight" patternUnits="userSpaceOnUse" width="500" height="227">
+                      <image href="/Assets/BGs/linedpaper.jpg" x="0" y="0" width="500" height="227" />
+                    </pattern>
+                    <pattern id="linedDark" patternUnits="userSpaceOnUse" width="500" height="227">
+                      <image href="/Assets/BGs/darkMode/linedpaperD.png" x="0" y="0" width="500" height="227" />
+                    </pattern>
+                  </defs>
+
+                <polygon id="light" fill="url(#linedLight)" points="0,50 280,50 330,100 280,150 0,150 0,50"/>
+                <polygon id="dark" fill="url(#linedDark)" points="0,50 280,50 330,100 280,150 0,150 0,50"/>
+            </svg>
+        </div>
     </div>
-</div>

@@ -10,11 +10,11 @@ section {
     gap: 20px;
 }
 
-section:first-of-type {
+#topList {
     margin-top: 20px;
 }
 
-#topList {
+#topList, #middleList {
     margin-bottom: 20px;
 }
 
@@ -38,4 +38,8 @@ section:first-of-type {
 #deer{
     margin-top: 10px;
     align-self: center;
+}
+
+h2 {
+    text-align: center;
 }

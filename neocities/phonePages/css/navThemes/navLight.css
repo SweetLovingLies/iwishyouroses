@@ -1,12 +1,24 @@
 body{
-    background: url(/Assets/BGs/alicebg3.gif);
+    background: linear-gradient(180deg, rgba(251,0,63,.5) 0%, rgba(242,131,182,.5) 100%), url("/Assets/BGs/menheraBG2.png");
+    background-blend-mode: multiply;
     background-attachment: fixed;
+    background-size: contain;
+}
+
+h2 {
+    font-family: heartblood;
+    text-transform: lowercase;
+    font-size: 4.3em;
+    line-height: .5em;
+    font-weight: normal;
+
+    color: var(--rosePink);
+    -webkit-text-stroke: .4px white;
 }
 
 .navLink {
-    font-family: heartblood;
-    text-transform: lowercase;
-    font-size: 3em;
+    font-family: cafesweet;
+    font-size: 2em;
     color: black;
 
     border: 5px solid var(--rosette);
@@ -22,7 +34,7 @@ body{
     background: url('/Assets/BGs/check5-p.gif');
 }
 
-#bottomList .navLink {
+#middleList .navLink {
     background: url('/Assets/BGs/check5-b.gif');
 }
 
@@ -34,10 +46,10 @@ body{
     background: url("/Assets/BGs/ht9-p.gif");
 }
 
-#bottomList #mediaLogs {
+#middleList #mediaLogs {
     background: url('/Assets/BGs/alicebg2.gif');
 }
 
-#bottomList #credits {
+#credits {
     background: url('/Assets/BGs/tumblr_ad479ccfea2121a711cc5099eff07479_82048f3a_75.gif');
 }

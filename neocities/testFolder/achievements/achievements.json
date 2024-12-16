@@ -1,0 +1,33 @@
+{
+    "general": {
+        "title": "General",
+        "template": "toastTemplate.txt",
+        "style": "toast.css",
+        "sfx": "https://lilithdev.neocities.org/shrine/vg/nso/sfx/boot_caution.wav",
+        "missing": {
+            "description": "???",
+            "class": "nso-missing"
+        },
+        "hidden": {
+            "icon": "",
+            "title": "???",
+            "description": "???",
+            "class": "hidden"
+        },
+        "achievements": {
+            "nice": {
+                "icon": "https://lilithdev.neocities.org/shrine/vg/nso/sprites/achievements/nudes.png",
+                "title": "Nice",
+                "description": "Click the weird stats 69 times",
+                "class": "achievementNormal"
+            },
+            "yandereMode": {
+                "icon": "https://lilithdev.neocities.org/shrine/vg/nso/sprites/achievements/something.png",
+                "title": "Lovesick",
+                "description": "Unlock the lovesick theme",
+                "class": "achievementNormal",
+                "sfx": "https://files.catbox.moe/xcdouv.mp3"
+            }
+        }
+    }
+}
