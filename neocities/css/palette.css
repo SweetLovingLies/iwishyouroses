@@ -94,6 +94,11 @@
     src: url('/fonts/yanFonts/HeartBlood.ttf');
 }
 
+@font-face {
+    font-family: Witch;
+    src: url('/fonts/yanFonts/BloodofWitchRegular.ttf');
+}
+
 html,
 body {
     margin: 0;
@@ -802,12 +807,13 @@ h6,
 p,
 ul,
 ol,
-li {
+li,
+pre,
+code {
     margin: 0;
 }
 
-ul,
-ol {
+ul {
     list-style-type: none;
 }
 

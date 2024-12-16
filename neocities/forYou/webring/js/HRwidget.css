@@ -1,0 +1,75 @@
+:root {
+
+  /* Colors */
+  --bubblegum: #ffb7ed;
+  --dustyPink: #f6bdd1;
+  --rosette: #ffbbc5;
+  --persian: #f283b6;
+  --wisteria: #8266ff;
+  --kangel: #c3a3f6;
+  --hintofmist: #f1efff;
+  --whispermist: #dbd8f0;
+  --driedBlood: #8B575c;
+  --pinkIce: #f6e4f6;
+  --ash: #cad2c5;
+  --water: #adcaff;
+  --deepsea: #357ce6;
+  --roseRed: #C71227;
+  --rosePink: #FB003F;
+  --blood: #800000;
+  --deepslate: #696969;
+  --cobblestone: #a8a8a8;
+}
+
+@font-face {
+  font-family: cafesweet;
+  src: url('https://iwishyouroses.neocities.org/fonts/16ptpixels/CafeSweet.ttf');
+}
+
+@font-face {
+  font-family: heartBlood;
+  src: url('https://iwishyouroses.neocities.org/fonts/yanFonts/HeartBlood.ttf');
+}
+
+#HarrowRing {
+  margin: 0 auto;
+  padding: 15px;
+}
+
+#HarrowRing table {
+  margin: 0 auto;
+}
+
+#HarrowRing table tr td {
+  padding: 15px;
+}
+
+#HarrowRing .webring-prev {
+  text-align: right;
+}
+
+#HarrowRing .webring-info {
+  text-align: center;
+}
+
+#HarrowRing .webring-info h1 {
+  font-family: heartblood;
+  text-transform: lowercase;
+  letter-spacing: 0px;
+  line-height: 1em;
+  font-weight: normal;
+  color: var(--rosePink);
+  -webkit-text-stroke: .2px white;
+}
+
+#HarrowRing h1 span {
+  font-size: 60px
+}
+
+#HarrowRing .webring-next {
+  text-align: left;
+}
+
+#HarrowRing .webring-links {
+  font-size: 20px;
+}
