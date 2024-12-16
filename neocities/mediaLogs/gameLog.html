@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -23,14 +23,14 @@
 </head>
 
 <body>
-    <div id="topTrim"></div>
+    <div id="topTrim" aria-hidden="true"></div>
 
     <div id="wrapper">
         <div id="monitor">
-            <div id="screen">
-                <div id="whiteScreen"></div>
+            <main id="screen">
+                <div id="whiteScreen" aria-hidden="true"></div>
                 <header>
-                    <h1>
+                    <h1 aria-label="Game Log">
                         <div>G</div>
                         <div>a</div>
                         <div>m</div>
@@ -41,24 +41,24 @@
                     </h1>
                 </header>
                 <nav>
-                    <spacer></spacer>
-                    <img src="/Assets/pixels/other/battery.gif">
+                    <spacer aria-hidden="true"></spacer>
+                    <img src="/Assets/pixels/other/battery.gif" aria-hidden="true" alt="">
                     <a href="#home" class="active">Home</a>
-                    <img src="/Assets/pixels/menhera/brokenheart.webp">
+                    <img src="/Assets/pixels/menhera/brokenheart.webp" aria-hidden="true" alt="">
                     <a href="#currentlyPlaying">Currently Playing</a>
-                    <img src="/Assets/pixels/menhera/brokenheart.webp">
+                    <img src="/Assets/pixels/menhera/brokenheart.webp" aria-hidden="true" alt="">
                     <a href="#completed">Completed Games</a>
-                    <img src="/Assets/pixels/menhera/brokenheart.webp">
+                    <img src="/Assets/pixels/menhera/brokenheart.webp" aria-hidden="true" alt="">
                     <a href="#mini-shrines">Mini-Shrines</a>
-                    <img src="/Assets/pixels/menhera/brokenheart.webp">
+                    <img src="/Assets/pixels/menhera/brokenheart.webp" aria-hidden="true" alt="">
                     <a href="#backlog">Backlog</a>
-                    <img src="/Assets/pixels/other/key.gif">
-                    <spacer></spacer>
+                    <img src="/Assets/pixels/other/key.gif" aria-hidden="true" alt="">
+                    <spacer aria-hidden="true"></spacer>
                 </nav>
-                <main id="home" class="active">
+                <section id="home" class="active">
                     <p>
                         <img id="dva" src="/Assets/overwatch/DVA/Renders/1.png">
-                        Hello and welcome to my game log! <heartMoji></heartMoji>
+                        Hello and welcome to my game log! <heartMoji aria-hidden="true"></heartMoji>
                         Here, I will talk a bit about the games I play currently, give
                         an overview of games I have played, and games I haven't finished.
                     </p>
@@ -68,13 +68,13 @@
                         subjective,
                         yaknow? I fucking hate OW! But that doesn't mean you do too.
                     </p>
-                </main>
+                </section>
 
-                <main id="currentlyPlaying">
+                <section id="currentlyPlaying">
                     <div class="textbox">
-                        These are my favorites games right now! <heartMoji></heartMoji>
+                        These are my favorites games right now! <heartMoji aria-hidden="true"></heartMoji>
                         <br>
-                        <heartBubbleMoji></heartBubbleMoji> Yes I do play VRChat too much. SO WHAT!!!!!!!!!!! 
+                        <heartBubbleMoji aria-hidden="true"></heartBubbleMoji> Yes I do play VRChat too much. SO WHAT!!!!!!!!!!! 
                     </div>
                     <div class="steam">
                         <img
@@ -127,21 +127,21 @@
                             </div>
                         </div>
                     </div>
-                </main>
+                </section>
 
-                <main id="completed">
+                <section id="completed">
                     <p>Nothing here yet!</p>
-                </main>
+                </section>
 
-                <main id="mini-shrines">
+                <section id="mini-shrines">
                     <p>Nothing here yet!</p>
-                </main>
+                </section>
 
-                <main id="backlog">
+                <section id="backlog">
                     <div class="textbox">
                         The massive list of games I need to finish / start lol. 
                         <br>
-                        I'll get to them at some point, hopefully. <heartMoji></heartMoji>
+                        I'll get to them at some point, hopefully. <heartMoji aria-hidden="true"></heartMoji>
                     </div>
                     <ul>
                         <li>Yume 2kki</li>
@@ -151,7 +151,7 @@
                         <li>Little Nightmares</li>
                         <li>Muse Dash</li>
                     </ul>
-                </main>
+                </section>
 
                 <div id="kangel">
                     <img src="/Assets/anime/NSO/renders/tranformationFrame.png">
@@ -160,7 +160,7 @@
                 <footer>
                     Hello. Please make yourself at home!
                 </footer>
-            </div>
+            </main>
         </div>
         <img id="monitorStand" src="/Assets/other/base.png">
     </div>

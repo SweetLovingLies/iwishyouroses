@@ -235,7 +235,7 @@ spacer {
     flex: 1 1;
 }
 
-main {
+section {
     display: none;
     flex: 0 1 55%;
     flex: 0 1 55%;
@@ -250,7 +250,7 @@ main {
     background-clip: padding-box;
 }
 
-main.active {
+section.active {
     display: block;
 }
 

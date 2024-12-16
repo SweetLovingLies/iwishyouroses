@@ -73,6 +73,10 @@ main {
     color: var(--persian);
 }
 
+#enter:focus{
+    outline: 2px solid white;
+}
+
 #something {
     position: absolute;
     z-index: 0;

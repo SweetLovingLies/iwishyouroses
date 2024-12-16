@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -10,10 +10,8 @@
 
     <link href="css/creditsBase.css" rel="stylesheet" type="text/css" media="all">
 
-    <!-- Themes -->
     <link id="creditsCSS" href="css/creditsThemes/creditsLight.css" rel="stylesheet" type="text/css" media="all">
-    <link id="creditsDarkCSS" href="css/creditsThemes/creditsDark.css" rel="stylesheet" type="text/css" media="all"
-        disabled>
+    <link id="creditsDarkCSS" href="css/creditsThemes/creditsDark.css" rel="stylesheet" type="text/css" media="all">
 
     <meta name="description" content="Where I credit everyone for their hard work (as I can!)" />
     <link rel="icon" type="image/x-icon" href="Assets/pixels/zzz.webp">
@@ -26,12 +24,12 @@
     <div id="wrapper">
         <main>
             <h1>Credits</h1>
-            <p>I will add more as I find links!</p>
+            <p>Links to the lovely creators behind the assets used on this site. I will add more as I find links!</p>
 
             <hr>
 
             <h2>Graphics:</h2>
-            <table>
+            <table role="presentation">
                 <td>
                     <h3>Borders</h3>
                     <a href="https://hillhouse.neocities.org/materials">Hill House</a>
@@ -46,7 +44,7 @@
             </table>
 
             <h2>Javascript:</h2>
-            <table>
+            <table role="presentation">
                 <td>
                     <h3>Freezeframe.js (Modified by me)</h3>
                     <a href="https://graybox.lol/">GRAYBOX</a>
@@ -59,28 +57,28 @@
                     <a
                         href="https://www.geeksforgeeks.org/how-to-design-a-simple-calendar-using-javascript/">GeeksForGeeks</a>
                 </td>
-            </table>
+            </table">
 
             <h2>Other:</h2>
-            <table>
+            <table role="presentation">
                 <td>
                     <h3>I get most of my fonts from here</h3>
                     <a href="https://www.creativefabrica.com/">Creative Fabrica</a>
-                    <a href="https://strawberry-gashes.gensoukai.net/v2/">Pixel fonts are found here</a>
+                    <a href="https://strawberry-gashes.gensoukai.net/v2/">Strawberry Gashes</a>
                 </td>
                 <td>
                     <h3>The icon used for the Themes app</h3>
                     <a href="https://www.deviantart.com/yuriachanartist/art/Shiny-Cats-Pact-1050727692">Yuriachan
                         Artist</a>
                 </td>
-            </table>
+            </table">
 
-            <table>
+            <table role="presentation">
                 <td>
                     <h3>Thought Bubble for Status Cafe</h3>
                     <a href="https://codepen.io/kirstenallen/pen/MWwPYYm">Kirsten Allen</a>
                 </td>
-            </table>
+            </table">
 
             <hr>
 
@@ -101,7 +99,7 @@
     </div>
     
     <div id="phoneSpot">
-        <iframe id="phone" class="hidden" src="phonePages/phone.html"></iframe>
+        <iframe id="phone" class="hidden" src="phonePages/phone.html" aria-label="Fake phone for navigation"></iframe>
     </div>
     <script src="js/phoneDisplayScript.js"></script>
 

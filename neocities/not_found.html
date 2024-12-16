@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -20,17 +20,17 @@
 </head>
 
 <body class="flex">
-    <main class="columnFlex1">
+    <main class="columnFlex1" aria-describedby="notFound">
         <h1>404</h1>
-        <caption>Page Not Found</caption>
+        <h2 id="notFound">Page Not Found</h2>
 
-        <img id="wonyoung" src="Assets/kpop/IVE/selcas/wonyoung.jpg">
+        <img id="wonyoung" src="Assets/kpop/IVE/selcas/wonyoung.jpg" alt="" aria-hidden="true">
 
-        <p>Use the phone to go back!</p>
+        <p>Use the phone below to navigate back to the main site.</p>
     </main>
 
     <div id="phoneSpot">
-        <iframe id="phone" class="hidden" src="phonePages/phone.html"></iframe>
+        <iframe id="phone" class="hidden" src="phonePages/phone.html" aria-label="Fake phone for navigation"></iframe>
     </div>
     <script src="js/phoneDisplayScript.js"></script>
 </body>

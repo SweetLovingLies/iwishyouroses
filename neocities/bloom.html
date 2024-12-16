@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -26,19 +26,21 @@
     <script src="js/rsswidget.js"></script>
     <script>
         var documentTitle = "୧ ꒰ " + document.title + " ꒱ ୨";
-        (function tabTitle() {
-            document.title = documentTitle = documentTitle.substring(1) + documentTitle.substring(0, 1);
-            setTimeout(tabTitle, 400);
-        })();
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            (function tabTitle() {
+                document.title = documentTitle = documentTitle.substring(1) + documentTitle.substring(0, 1);
+                setTimeout(tabTitle, 400);
+            })();
+        }
     </script>
 </head>
 
 <body>
     <div id="wrapper">
         <div id="baselayout" class="columnFlex1">
-            <div class="detailing" style="z-index: 1;"></div>
+            <div class="detailing" style="z-index: 1;" aria-hidden="true"></div>
 
-            <h1 id="androses" class="textshadow">
+            <h1 id="androses" class="textshadow" aria-label="I Wish You Roses, the site title">
                 <span style="padding-right: 10px;">I</span>
                 <span>w</span>
                 <span>i</span>
@@ -56,7 +58,7 @@
 
             <div id="content" class="flex">
                 <section class="columnFlex2">
-                    <img id="eyecatcher" class="img-fluid" src="Assets/cartoons/MLP/gifs/winterPinkie1.gif">
+                    <img id="eyecatcher" class="img-fluid" src="Assets/cartoons/MLP/gifs/winterPinkie1.gif" alt="Pinkie Pie from MLP making a cake out of snow">
 
                     <hr>
 
@@ -64,26 +66,27 @@
                         <h2>My Site Button</h2>
                         <p><strong>Do not </strong><a
                                 href="https://blog.hubspot.com/website/hotlinking#:~:text=Hotlinking%20is%20the%20act%20of,assets%20can%20also%20be%20hotlinked"
-                                target="_blank">hotlink!</a></p>
+                                target="_blank" aria-label="Learn about hotlinking here!">hotlink!</a></p>
 
-                        <img src="Assets/myAssets/IWYRsmall.png">
+                        <img src="Assets/myAssets/IWYRsmall.png" alt="My Site Button!">
                         <textarea
-                            id="txtarea"><a href="https://iwishyouroses.neocities.org/" target="_blank"><img src="(INSERT YOUR OWN LINK TO MY BUTTON HERE!)" alt="'Welcome to I wish you roses"></a></textarea>
+                            id="txtarea" aria-label="A place to copy the code to display my button on your own personal site!"><a href="https://iwishyouroses.neocities.org/" target="_blank"><img src="(INSERT YOUR OWN LINK TO MY BUTTON HERE!)" alt="Welcome to I Wish You Roses (site button)"></a></textarea>
                     </div>
 
                     <hr>
 
-                    <div id="jsCalender" class="box type2">
+                    <div id="jsCalender" class="box type2" aria-label="An interactable calender of the year">
                         <div class="calendar-container">
                             <header class="calendar-header">
                                 <p class="calendar-current-date"></p>
                                 <div class="calendar-navigation">
-                                    <span id="calendar-prev" class="material-symbols-rounded">
+                                    <span id="calendar-prev" class="material-symbols-rounded" aria-label="Previous month">
                                         <iconify-icon icon="ic:round-chevron-left"></iconify-icon>
                                     </span>
-                                    <span id="calendar-next" class="material-symbols-rounded">
+                                    <span id="calendar-next" class="material-symbols-rounded" aria-label="Next month">
                                         <iconify-icon icon="ic:round-chevron-right"></iconify-icon>
                                     </span>
+                                    
                                 </div>
                             </header>
 
@@ -123,7 +126,7 @@
 
                     <hr>
 
-                    <div id="spotlight" class="box">
+                    <div id="spotlight" class="box" aria-label="Spotlight for a website the website creator likes">
                         <h2>Site of the Whenever</h2>
                         <a href="https://burgeritchi.neocities.org/" class="columnFlex2">
                             <img class="displayScreenshots"
@@ -134,8 +137,8 @@
 
                     <hr>
 
-                    <div id="statusCafe" class="box">
-                        <img class="img-fluid" src="Assets/cartoons/charlieBrown/christmas1.gif">
+                    <div id="statusCafe" class="box" aria-live="polite" aria-label="A display for 'updates' from the website owner">
+                        <img class="img-fluid" src="Assets/cartoons/charlieBrown/christmas1.gif" alt="The kids from A Charlie Brown Christmas decorating a tree. The status bubble sits on top of this image">
                         <div id="TBWrapper">
                             <div id="thoughtBubble" class="TBStyle">
                                 <div id="statuscafe">
@@ -148,7 +151,7 @@
                     </div>
                 </main>
 
-                <div class="column flex2">
+                <div class="column flex2" aria-label="A mini status for the website owner">
                     <div id="status" class="box2">
                         <h2>Currently, I am:</h2>
                         <div class="statusBubble">
@@ -251,13 +254,13 @@
 
                         <p id="tip">(Feed updated every hour)</p>
                     </div>
-                    <img id="pixelRose" src="Assets/pixels/fd/singlerose.webp" style="cursor: pointer;"
+                    <img id="pixelRose" src="Assets/pixels/fd/singlerose.webp" style="cursor: pointer;" aria-label="A rose. You can click on it!"
                         onclick="wishOnRose(); document.getElementById('roseClick').play();">
                 </div>
 
             </div>
-            <img id="christmasTree" src="/Assets/pixels/christmas/christmastree5.webp">
-            <img id="presents" src="/Assets/pixels/christmas/presents.png">
+            <img id="christmasTree" src="/Assets/pixels/christmas/christmastree5.webp" aria-hidden="true">
+            <img id="presents" src="/Assets/pixels/christmas/presents.png" aria-hidden="true">
             <footer>
                 <p>EST.</p>
                 <p class="creationDate"></p>
@@ -267,14 +270,14 @@
     </div>
 
     <div id="phoneSpot">
-        <iframe id="phone" class="hidden" src="phonePages/phone.html"></iframe>
+        <iframe id="phone" class="hidden" src="phonePages/phone.html" aria-label="Fake phone for navigation"></iframe>
     </div>
-
-    <script src="js/calender.js"></script>
     <script src="js/phoneDisplayScript.js"></script>
+    
+    <script src="js/calender.js"></script>
 </body>
 
-<audio id="roseClick">
+<audio id="roseClick"  aria-label="A sound effect for the rose">
     <source src="https://files.catbox.moe/dgg0m4.mp3" type="audio/ogg">
 </audio>
 

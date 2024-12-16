@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <div id="topTrim"></div>
+    <div id="topTrim" aria-hidden="true"></div>
     <div id="wrapper">
         <header>
             <h1> Pick your poison!</h1>
@@ -27,17 +27,17 @@
         </header>
 
         <div id="gameLogWrapper" class="wrapper">
-            <div id="topTrim"></div>
-            <a id="gameLog" href="mediaLogs/gameLog.html">
+            <div id="topTrim" aria-hidden="true"></div>
+            <a id="gameLog" href="mediaLogs/gameLog.html" aria-label="Link to Gamelog">
                 <h2>game log</h2>
-                <img src="/Assets/anime/NSO/pfp/Kangel1.jpg">
+                <img src="/Assets/anime/NSO/pfp/Kangel1.jpg" alt="KAngel from Needy Streamer Overload">
             </a>
-            <div id="bottomTrim"></div>
+            <div id="bottomTrim" aria-hidden="true"></div>
         </div>
 
         <div id="mediaLogWrapper" class="wrapper">
-            <div id="topTrim"></div>
-            <a id="mediaLog" href="#" style="cursor: not-allowed;">
+            <div id="topTrim" aria-hidden="true"></div>
+            <a id="mediaLog" href="#" tabindex="-1" style="cursor: not-allowed;" aria-label="The Media Log link is currently unavailable and under construction">
                 <h2>media log</h2>
                 <img src="/Assets/anime/another/mei/icon1.jpg">
             </a>
@@ -45,7 +45,7 @@
     </div>
 
     <div id="phoneSpot">
-        <iframe id="phone" class="hidden" src="phonePages/phone.html"></iframe>
+        <iframe id="phone" class="hidden" src="phonePages/phone.html" aria-label="Fake phone for navigation"></iframe>
     </div>
     <script src="js/phoneDisplayScript.js"></script>
 </body>

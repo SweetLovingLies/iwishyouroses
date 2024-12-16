@@ -789,7 +789,7 @@ candyCaneMoji {
     bottom: -605px;
 
     /* ! For testing */
-    bottom: 0;
+    /* bottom: 0; */
 }
 
 #phone.visible {

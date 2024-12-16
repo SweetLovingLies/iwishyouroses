@@ -24,11 +24,6 @@ main{
     background-clip: padding-box;
 }
 
-h1{
-    font-size: 5em;
-    font-family: heartstyle;
-}
-
 #wonyoung{
     width: 75%;
     margin: 20px 0;
@@ -37,4 +32,13 @@ h1{
     border-image: url("/Assets/borders/bowplate2.gif") 50 60 round;
     border-width: 50px;
     background-clip: padding-box;
+}
+
+h1{
+    font-size: 5em;
+    font-family: heartstyle;
+}
+
+h2 {
+    font-weight: normal;
 }

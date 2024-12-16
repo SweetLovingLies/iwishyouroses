@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -26,10 +26,13 @@
 
     <script>
         var documentTitle = "୧ ꒰ " + document.title + " ꒱ ୨";
-        (function tabTitle() {
-            document.title = documentTitle = documentTitle.substring(1) + documentTitle.substring(0, 1);
-            setTimeout(tabTitle, 400);
-        })();
+
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            (function tabTitle() {
+                document.title = documentTitle = documentTitle.substring(1) + documentTitle.substring(0, 1);
+                setTimeout(tabTitle, 400);
+            })();
+        }
 
         const urlParams = new URLSearchParams(window.location.search);
         if (navigator.userAgent.includes('Screenjesus')) {
@@ -39,12 +42,13 @@
 </head>
 
 <body>
-    <iconify-icon id="missing" icon="mingcute:power-fill" width="50" height="50"></iconify-icon>
+    <iconify-icon id="missing" icon="mingcute:power-fill" width="50" height="50" aria-label="Close main display"
+        role="button" tabindex="0"></iconify-icon>
     <main>
-        <div class="detailing" style="z-index: 1;"></div>
+        <div class="detailing" style="z-index: 1;" aria-hidden="true"></div>
 
         <p>Hello and welcome to</p>
-        <h1 id="androses" class="textshadow">
+        <h1 id="androses" class="textshadow" aria-label="I Wish You Roses, the site title">
             <span style="padding-right: 10px;">I</span>
             <span>w</span>
             <span>i</span>
@@ -63,40 +67,45 @@
         <div class="wrapper">
             <div class="flexWrapper">
                 <p style="flex: 1 1;"> This site includes the following:</p>
-                <pinkBouquetMoji></pinkBouquetMoji>
-                <pinkBouquetMoji></pinkBouquetMoji>
-                <pinkBouquetMoji></pinkBouquetMoji>
+                <pinkBouquetMoji aria-hidden="true"></pinkBouquetMoji>
+                <pinkBouquetMoji aria-hidden="true"></pinkBouquetMoji>
+                <pinkBouquetMoji aria-hidden="true"></pinkBouquetMoji>
             </div>
             <div id="warnings">
                 <div class="warningDisplay">
-                    <img class="warningIMGs" src="Assets/other/indexWarningIcons/JSGears.png">
+                    <img class="warningIMGs" src="Assets/other/indexWarningIcons/JSGears.png"
+                        alt="Gears, indicating the use of Javascript">
                     <p>Lots of JavaScript</p>
                 </div>
 
                 <div class="warningDisplay">
-                    <img class="warningIMGs" src="Assets/other/indexWarningIcons/CrudeLanguage.png">
+                    <img class="warningIMGs" src="Assets/other/indexWarningIcons/CrudeLanguage.png"
+                        alt="A message bubble with symbols indicating foul language">
                     <p>Crude Language</p>
                 </div>
 
                 <div class="warningDisplay">
-                    <img class="warningIMGs" src="Assets/other/indexWarningIcons/YandereKnife.png">
+                    <img class="warningIMGs" src="Assets/other/indexWarningIcons/YandereKnife.png"
+                        alt="A kitchen knife">
                     <p>Yandere Themes</p>
                 </div>
 
                 <div class="warningDisplay">
-                    <img class="warningIMGs" src="Assets/other/indexWarningIcons/nonAccessible.png">
+                    <img class="warningIMGs" src="Assets/other/indexWarningIcons/nonAccessible.png"
+                        alt="An eye with an exclamation point over it, indicating that the site is not accessible yet">
                     <p><u>Non-accessible ATM</u></p>
                 </div>
 
                 <div class="warningDisplay">
-                    <img class="warningIMGs" src="Assets/other/indexWarningIcons/Phone.png">
+                    <img class="warningIMGs" src="Assets/other/indexWarningIcons/Phone.png"
+                        alt="A phone indicating mobile compatiblity">
                     <p>Mobile Compatibilty!</p>
                 </div>
             </div>
             <p>If you are under 18, and haven't seen the word <strong>Fuck</strong>, you have now.</p>
         </div>
 
-        <a href="bloom.html" id="enter">
+        <a href="bloom.html" id="enter" aria-label="Enter the Site" role="button">
             <span>E</span>
             <span>n</span>
             <span class="ss08">t</span>
@@ -105,7 +114,8 @@
         </a>
     </main>
 
-    <img id="something" src="shrines/OMORI/Assets/something.webp" onmouseover="something(this);" />
+    <img id="something" src="shrines/OMORI/Assets/something.webp" alt="SOMETHING from OMORI"
+        onmouseover="something(this);" />
 
     <script>
         var missing = document.getElementById("missing");
@@ -113,9 +123,17 @@
         var main = document.querySelector("main");
 
         missing.addEventListener("click", function () {
-            body.style.background ="url(/shrines/OMORI/Assets/BattleBackgrounds/battleback_bs_something.png)";
-            body.style.backgroundSize ="cover";
+            body.style.background = "url(/shrines/OMORI/Assets/BattleBackgrounds/battleback_bs_something.png)";
+            body.style.backgroundSize = "cover";
             main.style.display = "none";
+        });
+
+        missing.addEventListener("keydown", function (event) {
+            if (event.key === "Enter" || event.key === " ") {
+                body.style.background = "url(/shrines/OMORI/Assets/BattleBackgrounds/battleback_bs_something.png)";
+                body.style.backgroundSize = "cover";
+                main.style.display = "none";
+            }
         });
     </script>
 </body>

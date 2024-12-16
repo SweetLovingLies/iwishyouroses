@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -28,7 +28,7 @@
     <div id="wrapper">
         <header>
             <div id="content">
-                <h1 id="androses" class="textshadow">
+                <h1 id="androses" class="textshadow" aria-label="I Wish You Roses, the site title">
                     <span style="padding-right: 10px;">I</span>
                     <span>w</span>
                     <span>i</span>
@@ -47,20 +47,22 @@
             </div>
         </header>
 
+        <!-- ! This should be Main -->
         <div id="woven">
-            <div id="detailing"></div>
+            <div id="detailing" aria-hidden="true"></div>
             <aside>
                 <h2>Tutorials</h2>
                 <ul>
-                    <a href="#home" class="active">
+                    <a href="#home" class="active" aria-label="Go to the home page">
                         <li>Home</li>
                     </a>
-                    <a href="#flexbox">
+                    <a href="#flexbox" aria-label="Go to the flexbox tutorial">
                         <li>Learning Flexbox</li>
                     </a>
                 </ul>
             </aside>
 
+            <!-- ! These should be sections -->
             <main id="home" class="active woven">
                 <h1>Welcome to my tutorial page!</h1>
                 <p>I hope I can provide some help to you concerning any of the topics I go over here.</p>
@@ -122,6 +124,7 @@
 }
                     </code></pre>
 
+                    <!-- Add Labels -->
                 <codePlayground id="1">
                     <div class="inputWrapper">
                         <textarea id="htmlCode" rows="10" placeholder="Write your HTML code here"></textarea>
@@ -146,8 +149,9 @@
     margin: 10px;
     padding: 20px;
     font-size: 20px;
-    background-color: var(--whispermist)}`
-                    };
+    background-color: var(--whispermist)
+    }`
+};
                 </script>
 
                 <p>I applied some styling to these divs so we can see them for now. I will remove the height and aspect
