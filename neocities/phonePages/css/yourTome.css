@@ -1,41 +1,11 @@
 :root {
-
-    /* Colors */
-    --bubblegum: #ffb7ed;
-    --dustyPink: #f6bdd1;
-    --persian: #f283b6;
-    --wisteria: #8266ff;
-    --hintofmist: #f1efff;
-    --whispermist: #dbd8f0;
-    --driedBlood: #8B575c;
-    --pinkIce: #f6e4f6;
-    --ash: #cad2c5;
-    --water: #adcaff;
-    --deepsea: #357ce6;
-    --roseRed: #C71227;
-    --rosePink: #FB003F;
-    --blood: #800000;
-    --deepslate: #696969;
-    --cobblestone: #a8a8a8;
-
-    /* Rainbow Ring Colors */
-
-    --rainbowRed: #ffadad;
-    --rainbowOrange: #ffdea1;
-    --rainbowYellow: #ffffb5;
-    --rainbowGreen: #c2ffc2;
-    --rainbowBlue: #b8d4ff;
-    --rainbowIndigo: #9e97e0;
-    --rainbowPurple: #cfb0ff;
-    --rainbowPink: #ffd8f2;
-
-    /* Globals */
-    --globalBorderRadius: 10px;
-    --detailBarHeight: 20px;
+    /* New Colors */
+    --sand: #fff9e6;
+    --dirt: #624c3b;
 }
 
 body {
-    color: #3d2c29;
+    color: var(--dirt);
     background: url(/Assets/BGs/tex2.png);
 
     overflow-y: scroll;
@@ -66,7 +36,7 @@ body {
     width: 100%;
     min-height: 300px;
     padding: 1em;
-    background: #fff9e6;
+    background: var(--sand);
     border: 1px solid var(--persian);
     border-radius: 5px;
     overflow-y: auto;
@@ -125,7 +95,7 @@ section {
 }
 
 #entriesList li:hover {
-    background: #fff1bf;
+    background: var(--sand);
 }
 
 .flexWrapper {
@@ -178,7 +148,7 @@ section {
 /* General */
 
 button {
-    background: #624c3b;
+    background: var(--dirt);
     color: white;
     border: none;
     padding: 5px 5px;
