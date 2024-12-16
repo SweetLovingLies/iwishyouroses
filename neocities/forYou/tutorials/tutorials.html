@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorials</title>
+
+    <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
+
+    <link href="css/tutorialsBase.css" rel="stylesheet" type="text/css" media="all">
+
+    <link id="tutorialsLight" href="css/tutorialsLight.css" rel="stylesheet" type="text/css" media="all">
+    <link id="tutorialsDark" href="css/tutorialsDark.css" rel="stylesheet" type="text/css" media="all" disabled>
+
+    <meta name="description" content="Tutorials for you!" />
+    <link rel="icon" type="image/x-icon" href="/Assets/pixels/fd/heartsprout.gif">
+
+    <script src="/js/jaxframeFork.js"></script>
+
+    <!-- ~ Highlight.js for code styling! -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <div id="content">
+                <h1 id="androses" class="textshadow">
+                    <span style="padding-right: 10px;">I</span>
+                    <span>w</span>
+                    <span>i</span>
+                    <span>s</span>
+                    <span class="ss01">h</span>
+                    <span>y</span>
+                    <span>o</span>
+                    <span class="ss01">u</span>
+                    <span>r</span>
+                    <span>o</span>
+                    <span>s</span>
+                    <span>e</span>
+                    <span class="ss04">s</span>
+                </h1>
+                <p>Tutorials</p>
+            </div>
+        </header>
+
+        <div id="woven">
+            <div id="detailing"></div>
+            <aside>
+                <h2>Tutorials</h2>
+                <ul>
+                    <a href="#home" class="active">
+                        <li>Home</li>
+                    </a>
+                    <a href="#flexbox">
+                        <li>Learning Flexbox</li>
+                    </a>
+                </ul>
+            </aside>
+
+            <main id="home" class="active woven">
+                <h1>Welcome to my tutorial page!</h1>
+                <p>I hope I can provide some help to you concerning any of the topics I go over here.</p>
+                <p><strong>Have an idea?</strong> Please send it my way on IdolMessenger or on my Neocities profile!</p>
+            </main>
+
+            <main id="flexbox" class="active">
+                <h1>How to Flexbox</h1>
+                <p>Hello and welcome to my first tutorial; this one concerning flexboxes! Code snippets and demos will
+                    be provided along the way! Please feel free
+                    to copy them and use them on your own projects! If you need any more help after this, please let me
+                    know!</p>
+                <p>I'll keep things as succinct but detailed as possible, starting with...</p>
+                <h2>What is Flexbox?</h2>
+                <p>
+                    Flexbox is an extremely dynamic and responsive display type designed around objects within it
+                    stretching and shrinking based off of "flexibility" values. Layouts designed with it are extremely
+                    easy to adapt to mobile and typically respond well to all laptop and PC viewports (screen sizes).
+                </p>
+                <p>
+                    It is very widely available nowadays, and once you learn it, I'd argue it's easier to use than every
+                    other display type. If you look around my site, you will find that I use it just about everywhere,
+                    and that is because of just how flexible it is!
+                </p>
+
+                <!-- ~ To flex a Box -->
+                <h2>To flex a box</h2>
+
+                <p>That's basically all you need to know concerning what it is. Now, let's get started with basic
+                    syntax.</p>
+
+                <pre><code>
+.flex { 
+    display: flex;
+} 
+                    </code></pre>
+
+                <p>This, of course, denotes whatever object we are flex displaying as a flex box. But what does it do?
+                </p>
+                <p>Essentially, whatever object we decide to apply this class to becomes a "flex-parent", and everything
+                    inside of it become flex-children. The helper modifiers we apply to the flex-parent will affect
+                    everything inside of itself <strong>only</strong>. That becomes important later. Now, let's see a
+                    visual of what it does.</p>
+
+                <pre><code>
+.flex {
+    display: flex;
+}
+
+.parentDiv {
+    background-color: var(--deepsea);
+    }
+
+.childDiv {
+    margin: 10px;
+    padding: 20px;
+    font-size: 20px;
+    background-color: var(--whispermist);
+}
+                    </code></pre>
+
+                <codePlayground id="1">
+                    <div class="inputWrapper">
+                        <textarea id="htmlCode" rows="10" placeholder="Write your HTML code here"></textarea>
+                        <textarea id="cssCode" rows="10" placeholder="Write your CSS code here"></textarea>
+                    </div>
+                    <iframe class="preview"></iframe>
+                </codePlayground>
+                <script>
+                    window.playground1Code = {
+                        html: `<div class="parentDiv flex">
+    <div class="childDiv">1</div>
+</div>`,
+                        css: `.flex {
+    display: flex;
+}
+
+.parentDiv {
+    background-color: var(--deepsea);
+    }
+
+.childDiv {
+    margin: 10px;
+    padding: 20px;
+    font-size: 20px;
+    background-color: var(--whispermist)}`
+                    };
+                </script>
+
+                <p>I applied some styling to these divs so we can see them for now. I will remove the height and aspect
+                    ratio modifiers later, because we can handle all of it with flexbox! So now, if you remove the flex
+                    modifer, you'll see that the width of the starter div will grow quite large. What gives?
+                </p>
+                <p>Well, let me apply some more modifiers to show you the default styling of a flex-parent.</p>
+
+                <pre><code>
+.flex {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+}
+
+.parentDiv {
+    background-color: var(--deepsea);
+    }
+
+.childDiv {
+    margin: 10px;
+    padding: 20px;
+    font-size: 20px;
+    background-color: var(--whispermist);
+}
+                    </code></pre>
+
+                <codePlayground id="2">
+                    <div class="inputWrapper">
+                        <textarea id="htmlCode" rows="10" placeholder="Write your HTML code here"></textarea>
+                        <textarea id="cssCode" rows="10" placeholder="Write your CSS code here"></textarea>
+                    </div>
+                    <iframe class="preview"></iframe>
+                </codePlayground>
+                <script>
+                    window.playground2Code = {
+                        html: `<div class="parentDiv flex">
+    <div class="childDiv">1</div>
+</div>`,
+                        css: `.flex {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+}
+
+.parentDiv {
+    background-color: var(--deepsea);
+}
+
+.childDiv {
+    margin: 10px;
+    padding: 20px;
+    font-size: 20px;
+    background-color: var(--whispermist)
+}`
+                    };
+                </script>
+
+                <p>We added 4 new modifiers. Here's what they do.</p>
+
+                <h3>flex-flow:</h3>
+
+                <blockquote>
+                    <code>flex-flow</code> is the shorthand of <code>flex-direction</code> and
+                    <code>flex-wrap</code>. I typically use <code>flex-flow</code> because I don't see much
+                    reason not too, but for <i>possibly</i> a little less typing, you can just use the regular
+                    modifiers
+                    instead.
+                </blockquote>
+
+                <p><code>flex-flow</code> essentially tells the flex-parent how it should display it's
+                    flex-children. There are 8 different aptly-named options for <code>flex-flow</code>, as follows:
+
+                <h4>row / column nowrap</h4>
+                <p><code>row</code> and <code>column</code> denote the direction that the code should flow in.</p>
+
+                <blockquote> Importantly, this direction can be kind of confusing sometimes, so let's break it
+                    down.
+                    Essentially, there are 2 main axes in a flex-parent, known as the main axis and the cross axis. In a
+                    basic
+                    flex-layout, the main axis is the horizontal x-axis, and the cross axis is the vertical y-axis.
+                    However, when you choose column as your flex-direction, this flips around because everything is
+                    oriented vertically. This becomes important because a lot of the helper modifiers below are modified
+                    by this change in the main axis. We will address a lot of this later on, so don't worry about it for
+                    now, but it is something to think about when building layouts!</blockquote>
+
+                <p>
+                    <code>nowrap</code> means that the flex-children
+                    won't wrap based on the flex-parent's respective width or height. Experiment with these modifiers
+                    below! To see the effect, add a few more starterDivs to the parent.
+                </p>
+
+
+                <codePlayground id="3">
+                    <div class="inputWrapper">
+                        <textarea id="htmlCode" rows="10" placeholder="Write your HTML code here"></textarea>
+                        <textarea id="cssCode" rows="10" placeholder="Write your CSS code here"></textarea>
+                    </div>
+                    <iframe class="preview"></iframe>
+                </codePlayground>
+
+                <script>
+                    window.playground3Code = {
+                        html: `<div class="parentDiv flex">
+    <div class="childDiv">1</div>
+</div>`,
+                        css: `.flex {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+}
+
+.parentDiv {
+    background-color: var(--deepsea);
+}
+
+.childDiv {
+    margin: 10px;
+    padding: 20px;
+    font-size: 20px;
+    background-color: var(--whispermist)
+}`
+                    };
+                </script>
+
+                <h4>row / column wrap</h4>
+                <p>
+                    <code>nowrap</code> means that the flex-children
+                    will wrap based on the flex-parent's respective width or height. Experiment with these modifiers
+                    too!
+                </p>
+
+                <codePlayground id="4">
+                    <div class="inputWrapper">
+                        <textarea id="htmlCode" rows="10" placeholder="Write your HTML code here"></textarea>
+                        <textarea id="cssCode" rows="10" placeholder="Write your CSS code here"></textarea>
+                    </div>
+                    <iframe class="preview"></iframe>
+                </codePlayground>
+
+                <script>
+                    window.playground4Code = {
+                        html: `<div class="parentDiv flex">
+    <div class="childDiv">1</div>
+</div>`,
+                        css: `.flex {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+}
+
+.parentDiv {
+    background-color: var(--deepsea);
+}
+
+.childDiv {
+    margin: 10px;
+    padding: 20px;
+    font-size: 20px;
+    background-color: var(--whispermist)
+}`
+                    };
+                </script>
+
+                <h3>row-reverse, column-reverse, and wrap-reverse</h3>
+                <p><code>row-reverse</code> and <code>column-reverse</code> can be used to reverse the main-axis
+                    direction.
+                    <code>wrap-reverse</code> reverses the wrap order too. It's extremely weird IMO.
+                    Feel free to experiment with all of this too, but I don't use it almost at all.
+                </p>
+
+                <h3>Justify Content</h3>
+                <p><code>justify-content</code> is responsible for positioning flex-children on the main-axis of the
+                    flex-parent (whichever one that might be). There are 6 different aptly-named options for
+                    <code>justify-content</code>, as follows:
+                </p>
+
+                <h4>flex-start and flex-end</h4>
+                <p><code>flex-start</code> and <code>flex-end</code> tell the parent to justify everything to either end
+                    of the flex-parent's main axis.
+                    <br>
+                    <strong>To test the column <code>flex-end</code>, give the parentDiv a bigger height, like 200px or
+                        something.
+                </p></strong>
+
+                <codePlayground id="5">
+                    <div class="inputWrapper">
+                        <textarea id="htmlCode" rows="10" placeholder="Write your HTML code here"></textarea>
+                        <textarea id="cssCode" rows="10" placeholder="Write your CSS code here"></textarea>
+                    </div>
+                    <iframe class="preview"></iframe>
+                </codePlayground>
+
+                <script>
+                    window.playground5Code = {
+                        html: `<div class="parentDiv flex">
+    <div class="childDiv">1</div>
+</div>`,
+                        css: `.flex {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+
+    align-items: stretch;
+    align-content: stretch;
+}
+
+.parentDiv {
+    background-color: var(--deepsea);
+}
+
+.childDiv {
+    margin: 10px;
+    padding: 20px;
+    font-size: 20px;
+    background-color: var(--whispermist)
+}`
+                    };
+                </script>
+
+                <h4>center</h4>
+                <p><code>center</code> tells the parent to justify everything to the center of the main axis. You know
+                    how to test column by now.
+                </p>
+
+                <codePlayground id="6">
+                    <div class="inputWrapper">
+                        <textarea id="htmlCode" rows="10" placeholder="Write your HTML code here"></textarea>
+                        <textarea id="cssCode" rows="10" placeholder="Write your CSS code here"></textarea>
+                    </div>
+                    <iframe class="preview"></iframe>
+                </codePlayground>
+
+                <script>
+                    window.playground6Code = {
+                        html: `<div class="parentDiv flex">
+<div class="childDiv">1</div>
+</div>`,
+                        css: `.flex {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+
+    align-items: stretch;
+    align-content: stretch;
+}
+
+.parentDiv {
+    background-color: var(--deepsea);
+}
+
+.childDiv {
+    margin: 10px;
+    padding: 20px;
+    font-size: 20px;
+    background-color: var(--whispermist)
+}`
+                    };
+                </script>
+
+                <h4>space-around, space-between, and space-evenly</h4>
+                <p><code>space-around</code> displays the flex-children with a space between and around them. They will
+                    not look equal visually because each flex-child will have it's own space that gets added to the
+                    adjacent flex-children. It's like having 3 divs with the same amount of margin all next to each
+                    other.
+                </p>
+
+                <p><code>space-between</code> displays the flex-children with equal space between them.</p>
+
+                <p><code>space-evenly</code> displays the flex-children with completely equal space between and around
+                    them.</p>
+
+                <codePlayground id="7">
+                    <div class="inputWrapper">
+                        <textarea id="htmlCode" rows="10" placeholder="Write your HTML code here"></textarea>
+                        <textarea id="cssCode" rows="10" placeholder="Write your CSS code here"></textarea>
+                    </div>
+                    <iframe class="preview"></iframe>
+                </codePlayground>
+
+                <script>
+                    window.playground7Code = {
+                        html: `<div class="parentDiv flex">
+<div class="childDiv">1</div>
+<div class="childDiv">2</div>
+<div class="childDiv">3</div>
+</div>`,
+                        css: `.flex {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+
+    align-items: stretch;
+    align-content: stretch;
+}
+
+.parentDiv {
+    background-color: var(--deepsea);
+}
+
+.childDiv {
+    margin: 10px;
+    padding: 20px;
+    font-size: 20px;
+    background-color: var(--whispermist)
+}`
+                    };
+                </script>
+
+                <h3>align-items</h3>
+                <p><code>align-items</code> is responsible for positioning flex-children on the cross axis of the
+                    flex-parent. </p>
+                <blockquote>This can be overwritten by flex-child properties later, while <code>justify-content</code>
+                    cannot be. </blockquote>
+                <p>There are 13 aptly named options for <code>align-items</code>, as follows: </p>
+
+                <h4>stretch</h4>
+                <p>
+                    <code>stretch</code> means that the flex-children will stretch to fill up the entire flex-parent (with respect to min and max width and height values.)
+                </p>
+
+                <codePlayground id="8">
+                    <div class="inputWrapper">
+                        <textarea id="htmlCode" rows="10" placeholder="Write your HTML code here"></textarea>
+                        <textarea id="cssCode" rows="10" placeholder="Write your CSS code here"></textarea>
+                    </div>
+                    <iframe class="preview"></iframe>
+                </codePlayground>
+
+                <script>
+                    window.playground8Code = {
+                        html: `<div class="parentDiv flex">
+    <div class="childDiv">1</div>
+</div>`,
+                        css: `.flex {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+}
+
+.parentDiv {
+    background-color: var(--deepsea);
+}
+
+.childDiv {
+    margin: 10px;
+    padding: 20px;
+    font-size: 20px;
+    background-color: var(--whispermist)
+}`
+                    };
+                </script>
+            </main>
+        </div>
+    </div>
+
+    <div id="phoneSpot">
+        <iframe id="phone" class="hidden" src="/phonePages/phone.html"></iframe>
+    </div>
+
+    <script src="/js/phoneDisplayScript.js"></script>
+
+    <script>
+        // Highlight.js
+        hljs.highlightAll();
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const playgrounds = document.querySelectorAll('codePlayground');
+
+            const globalCSS = `:root {
+            /* Colors */
+            --bubblegum: #ffb7ed;
+            --dustyPink: #f6bdd1;
+            --rosette: #ffbbc5;
+            --persian: #f283b6;
+            --wisteria: #8266ff;
+            --kangel: #c3a3f6;
+            --hintofmist: #f1efff;
+            --whispermist: #dbd8f0;
+            --driedBlood: #8B575c;
+            --pinkIce: #f6e4f6;
+            --ash: #cad2c5;
+            --water: #adcaff;
+            --deepsea: #357ce6;
+            --roseRed: #C71227;
+            --rosePink: #FB003F;
+            --blood: #800000;
+            --deepslate: #696969;
+            --cobblestone: #a8a8a8;
+    
+            /* New Colors */
+            --orangeCrush: #ff943d;
+            --forestGreen: #075800;
+            --codeOrange: #ffd2c07a;
+    
+            /* Globals */
+            --globalBorderRadius: 10px;
+            --detailBarHeight: 20px;
+        }
+    
+        body {
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }`;
+
+            playgrounds.forEach((playground) => {
+                const htmlTextarea = playground.querySelector('#htmlCode');
+                const cssTextarea = playground.querySelector('#cssCode');
+                const iframe = playground.querySelector('.preview');
+                const playgroundId = playground.getAttribute('id');
+
+                const codeVariableName = `playground${playgroundId}Code`;
+                const predefinedCode = window[codeVariableName];
+
+                if (predefinedCode) {
+                    // console.log('Predefined Code:', predefinedCode);
+                    htmlTextarea.value = predefinedCode.html;
+                    cssTextarea.value = predefinedCode.css;
+                }
+
+                function updatePreview() {
+                    const html = htmlTextarea.value;
+                    const css = `<style>${globalCSS}${cssTextarea.value}</style>`;
+                    iframe.srcdoc = `${css}${html}`;
+                }
+
+                htmlTextarea.addEventListener('input', updatePreview);
+                cssTextarea.addEventListener('input', updatePreview);
+
+                updatePreview();
+            });
+        });
+
+    </script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabLinks = document.querySelectorAll('aside a');
+            const contents = document.querySelectorAll('main');
+
+            const activateTab = (tabId) => {
+                tabLinks.forEach((tab) => tab.classList.remove('active'));
+                contents.forEach((content) => {
+                    content.classList.remove('active');
+                    content.style.display = 'none';
+                });
+
+                const activeTab = document.querySelector(`aside a[href="#${tabId}"]`);
+                const activeContent = document.getElementById(tabId);
+
+                if (activeTab && activeContent) {
+                    activeTab.classList.add('active');
+                    activeContent.style.display = 'block';
+                    activeContent.classList.add('active');
+                }
+            };
+
+            tabLinks.forEach((tab) => {
+                tab.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const tabId = tab.getAttribute('href').replace('#', '');
+                    activateTab(tabId);
+
+                    history.pushState(null, null, `#${tabId}`);
+                });
+            });
+
+            const initialTabId = window.location.hash ? window.location.hash.replace('#', '') : 'home';
+            activateTab(initialTabId);
+
+            window.addEventListener('popstate', () => {
+                const currentTabId = window.location.hash.replace('#', '') || 'home';
+                activateTab(currentTabId);
+            });
+        });
+    </script>
+</body>
+
+</html>
