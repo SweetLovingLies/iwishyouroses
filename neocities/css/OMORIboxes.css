@@ -1,11 +1,12 @@
+
 @font-face {
-    font-family: Fine;
-    src: url('/fonts/OMORI_GAME.ttf');
+    font-family: EverythingWillBeOk;
+    src: url('/fonts/OMORIfonts/OMORI_GAME.ttf');
 }
 
 @font-face {
     font-family: Normal;
-    src: url('/fonts/OMORI_GAME2.ttf');
+    src: url('/fonts/OMORIfonts/OMORI_GAME2.ttf');
 }
 
 .lightbox {

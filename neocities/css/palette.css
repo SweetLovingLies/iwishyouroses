@@ -95,6 +95,11 @@
 }
 
 @font-face {
+    font-family: brightHeart;
+    src: url('/fonts/yanFonts/BrightHeart.otf');
+}
+
+@font-face {
     font-family: Witch;
     src: url('/fonts/yanFonts/BloodofWitchRegular.ttf');
 }
@@ -789,7 +794,7 @@ candyCaneMoji {
     bottom: -605px;
 
     /* ! For testing */
-    /* bottom: 0; */
+    bottom: 0;
 }
 
 #phone.visible {

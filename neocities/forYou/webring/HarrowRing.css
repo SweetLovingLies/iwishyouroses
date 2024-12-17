@@ -74,21 +74,30 @@ body {
     font-size: 4em;
 }
 
-#content {
+section {
     height: 60vh;
 
     background-color: black;
     border: 5px solid var(--blood);
+    border-bottom: none;
 
     display: flex;
     flex-flow: column nowrap;
 
-    border-radius: var(--globalBorderRadius);
+    border-radius: var(--globalBorderRadius) var(--globalBorderRadius) 0 0;
 }
 
 nav {
     flex: 1 1;
     display: flex;
+
+    background-color: black;
+    border: 5px solid var(--blood);
+    border-top: none;
+
+    border-radius: 0 0 var(--globalBorderRadius) var(--globalBorderRadius);
+
+    margin-bottom: 10px;
 }
 
 nav a {
@@ -110,12 +119,12 @@ nav .active {
     background-color: var(--rosePink);
 }
 
-main {
+section {
     padding: 20px;
     flex: 1 1 100%;
 }
 
-section {
+.content {
     max-height: 270px;
     overflow: auto;
 }

@@ -51,7 +51,7 @@ body {
     flex: 0 1 50%;
 }
 
-#woven {
+main {
     height: 60vh;
     position: relative;
 
@@ -100,44 +100,44 @@ header p {
     color: var(--roseRed);
 }
 
-aside {
+nav {
     flex: 1 0 15%;
 
     background: url("/Assets/BGs/tex2.png");
 }
 
-aside h2,
+nav h2,
 #home h1 {
     font-family: "Arial", Helvetica, sans-serif;
     color: var(--forestGreen);
 }
 
-aside h2 {
+nav h2 {
     text-align: center;
 }
 
-aside ul {
+nav ul {
     padding: 0;
 }
 
-aside li {
+nav li {
     background: url("/Assets/BGs/picnic.jpg");
     background-position: center;
     padding: 10px 0 10px 7px;
 }
 
-aside a {
+nav a {
     color: black;
     text-decoration: none;
 
     transition: color .25s;
 }
 
-aside a:hover {
+nav a:hover {
     color: var(--forestGreen);
 }
 
-aside li::before {
+nav li::before {
     content: '';
     display: inline-block;
     width: 16px;
@@ -147,7 +147,7 @@ aside li::before {
     margin-right: 5px;
 }
 
-main {
+section {
     flex: 1 1 75%;
 
     background: url("/Assets/BGs/tex2.png");
@@ -157,16 +157,16 @@ main {
     overflow: auto;
 }
 
-aside,
-main {
+nav,
+section {
     padding-top: 50px;
 }
 
-main.active {
+section.active {
     display: flex;
 }
 
-aside a.active>li {
+nav a.active>li {
     background: url("/Assets/BGs/picnicB.jpg");
     background-position: center;
 }
@@ -220,15 +220,15 @@ aside a.active>li {
     background-color: var(--roseRed);
 }
 
-main h2,
-main h3,
-main h4,
-main h5,
-main h6 {
+section h2,
+section h3,
+section h4,
+section h5,
+section h6 {
     margin: 15px 0;
 }
 
-main p, main blockquote {
+section p, section blockquote {
     margin-bottom: 10px;
     line-height: 2em;
 }

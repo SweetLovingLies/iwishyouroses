@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phone Screen: Gallery</title>
+    <title>Phone App: Gallery</title>
 
     <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
     <link href="css/phoneGlobals.css" rel="stylesheet" type="text/css" media="all">
 
     <link href="css/galleryBase.css" rel="stylesheet" type="text/css" media="all">
-    <link id="galleryCSS" href="css/galleryThemes/galleryLight.css" rel="stylesheet" type="text/css" media="all" data-theme="light">
-    <link id="galleryDarkCSS" href="css/galleryThemes/galleryDark.css" rel="stylesheet" type="text/css" media="all" data-theme="dark">
+    <link id="galleryCSS" href="css/galleryThemes/galleryLight.css" rel="stylesheet" type="text/css" media="all"
+        data-theme="light">
+    <link id="galleryDarkCSS" href="css/galleryThemes/galleryDark.css" rel="stylesheet" type="text/css" media="all"
+        data-theme="dark">
 
     <meta name="description" content="Access literally everything you need." />
 
@@ -22,11 +24,14 @@
 </head>
 
 <body>
-    <object id="detailBarObject" data="detailbar.html"></object>
+    <object id="detailBarObject" data="detailbar.html" aria-hidden="true"></object>
+
+    <!-- ! Should be a section -->
     <div id="gridView" class="wrapper">
-        <filler>
+        <filler aria-hidden="true">
             spacer
         </filler>
+
         <header>
             <div class="flexWrapper">
                 <!-- <spacer></spacer> 
@@ -34,6 +39,7 @@
             </div>
         </header>
 
+        <!-- ! Should be a div with a class -->
         <main>
             <h2 class="dateTitle">Today</h2>
             <div class="IMGWrapper">
@@ -68,20 +74,22 @@
             <a href="#">Albums</a>
         </footer> -->
     </div>
-    <div id="lightboxView" class="wrapper">
-        <filler>
+
+    <div id="lightboxView" class="wrapper" role="dialog" aria-hidden="true">
+        <filler aria-hidden="true">
             spacer
         </filler>
+
         <header>
             <div class="flexWrapper">
-                <iconify-icon id="back" icon="lucide:chevron-left"></iconify-icon>
+                <iconify-icon id="back" icon="lucide:chevron-left" tabindex="0"></iconify-icon>
                 <!-- <spacer></spacer>
                 <iconify-icon id="rotateIMG" icon="solar:smartphone-rotate-2-linear"></iconify-icon> -->
             </div>
         </header>
 
         <main>
-            <img class="IMGPreview" src="">
+            <img id="lightboxImage" class="IMGPreview" src="" tabindex="0">
         </main>
 
         <footer>
@@ -93,12 +101,15 @@
     <script>
         const gridView = document.getElementById('gridView');
         const lightboxView = document.getElementById('lightboxView');
-        const lightboxImage = lightboxView.querySelector('main img');
+        const lightboxImage = document.getElementById('lightboxImage');
         const imgDate = lightboxView.querySelector('footer strong');
         const imgName = lightboxView.querySelector('footer p');
         const backButton = lightboxView.querySelector('#back');
 
         function openLightbox(e) {
+            gridView.setAttribute('aria-hidden', 'true');
+            lightboxView.setAttribute('aria-hidden', 'false');
+
             const ogIMG = e.target;
             const imgDimensions = ogIMG.getBoundingClientRect(); // ! Gives current size of image on the DOM (Because it starts out scaled)
 
@@ -162,7 +173,7 @@
                     if (document.body.contains(cloneIMG)) {
                         document.body.removeChild(cloneIMG);
                     }
-                    
+
                     lightboxImage.src = ogIMG.src;
 
                     const dateTitle = ogIMG.closest('.IMGWrapper').previousElementSibling.textContent;
@@ -175,19 +186,41 @@
                     lightboxView.style.display = 'block';
 
 
+                    function isActivationKey(event) {
+                        return event.key === 'Enter' || event.key === ' ';
+                    }
+
                     lightboxImage.addEventListener('click', toggleLBTheme);
+
+                    lightboxImage.addEventListener('keydown', (e) => {
+                        if (isActivationKey(e)) {
+                            toggleLBTheme(e);
+                        }
+                    });
+
                     backButton.addEventListener('click', closeLightbox);
+                    backButton.addEventListener('keydown', (e) => {
+                        if (isActivationKey(e)) {
+                            closeLightbox();
+                        }
+                    });
+                    backButton.focus();
                 });
             };
         }
 
         function toggleLBTheme(e) {
-            lightboxView.classList.toggle('active')
+            lightboxView.classList.toggle('active');
         }
+
 
         function closeLightbox() {
             lightboxView.style.display = 'none';
             gridView.style.display = 'block';
+
+            lightboxView.setAttribute('aria-hidden', 'true');
+            gridView.setAttribute('aria-hidden', 'false');
+            gridView.querySelector('.IMGPreview').focus();
         }
 
         const images = gridView.querySelectorAll('.IMGPreview');
@@ -195,11 +228,21 @@
             img.addEventListener('click', openLightbox);
         });
 
-        backButton.addEventListener('click', closeLightbox);
+        images.forEach((img) => {
+            img.setAttribute('tabindex', '0');
+
+            img.addEventListener('click', openLightbox);
+
+            img.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    openLightbox(e);
+                }
+            });
+        });
     </script>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
             const themeLinks = Array.from(document.querySelectorAll("link[id^='gallery']"));
             const savedTheme = localStorage.getItem("globalTheme") || "light";
             const pageName = window.location.pathname.split('/').pop().split('.')[0];
@@ -211,7 +254,7 @@
 
             themeLinks.forEach(link => link.disabled = link.getAttribute("data-theme") !== validTheme);
         });
-</script>
+    </script>
 </body>
 
 </html>
