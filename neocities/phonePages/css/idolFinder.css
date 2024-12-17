@@ -299,7 +299,17 @@ td {
     margin: auto;
 }
 
-/* Other General Styles */
+/* ~ Other General Styles */
+
+* {
+    scrollbar-width: none;
+}
+
+*::-webkit-scrollbar,
+*::-webkit-scrollbar-button {
+    width: 0;
+}
+
 
 h2,
 h3 {

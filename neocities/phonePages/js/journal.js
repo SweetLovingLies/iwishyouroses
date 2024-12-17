@@ -14,8 +14,9 @@ function saveEntriesToLocalStorage(entries) {
 }
 
 function getEntriesFromLocalStorage() {
-    // console.log(JSON.parse(localStorage.getItem('journalEntries')) || []);
+    console.log(JSON.parse(localStorage.getItem('journalEntries')) || []);
     return JSON.parse(localStorage.getItem('journalEntries')) || [];
+
 }
 
 function renderEntries() {
@@ -81,8 +82,9 @@ function renderEntries() {
         li.appendChild(settings);
         entriesList.appendChild(li);
 
-        // Now add the view button to the settings
-        addViewButton(entry, li);
+        if (appContext !== "Mellow") {
+            addViewButton(entry, li);
+        }
 
         deleteBtn.addEventListener('click', () => {
             const entries = getEntriesFromLocalStorage();
@@ -151,8 +153,8 @@ saveButton.addEventListener('click', (e) => {
 
     const content = textbox.value.trim();
 
-    // Use context to decide how to handle mood entries
     const isMoodApp = appContext === 'Mellow';
+    
     const mood = isMoodApp ? (savedMood || null) : null;
     const emoji = isMoodApp ? (savedMoji || null) : null;
 
@@ -202,9 +204,6 @@ saveButton.addEventListener('click', (e) => {
         saveButton.disabled = false;
     }, 2000);
 });
-
-
-
 
 // ! Get Deleted
 entriesList.addEventListener('click', (event) => {

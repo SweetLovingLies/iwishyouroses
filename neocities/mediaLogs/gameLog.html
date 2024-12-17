@@ -27,6 +27,7 @@
 
     <div id="wrapper">
         <div id="monitor">
+            <!-- ! The webkit-transform line fixes the z-indexing issue when the screen appears on Safari -->
             <main id="screen">
                 <div id="whiteScreen" aria-hidden="true"></div>
                 <header>
@@ -42,17 +43,26 @@
                 </header>
                 <nav>
                     <spacer aria-hidden="true"></spacer>
-                    <img src="/Assets/pixels/other/battery.gif" aria-hidden="true" alt="">
+                    <img class="navDecor" src="/Assets/pixels/other/battery.gif" aria-hidden="true" alt="">
+
                     <a href="#home" class="active">Home</a>
-                    <img src="/Assets/pixels/menhera/brokenheart.webp" aria-hidden="true" alt="">
+
+                    <img class="navDecor" src="/Assets/pixels/menhera/brokenheart.webp" aria-hidden="true" alt="">
+
                     <a href="#currentlyPlaying">Currently Playing</a>
-                    <img src="/Assets/pixels/menhera/brokenheart.webp" aria-hidden="true" alt="">
+
+                    <img class="navDecor" src="/Assets/pixels/menhera/brokenheart.webp" aria-hidden="true" alt="">
+
                     <a href="#completed">Completed Games</a>
-                    <img src="/Assets/pixels/menhera/brokenheart.webp" aria-hidden="true" alt="">
+
+                    <img class="navDecor" src="/Assets/pixels/menhera/brokenheart.webp" aria-hidden="true" alt="">
+
                     <!-- <a href="#mini-shrines">Mini-Shrines</a>
                     <img src="/Assets/pixels/menhera/brokenheart.webp" aria-hidden="true" alt=""> -->
+
                     <a href="#backlog">Backlog</a>
-                    <img src="/Assets/pixels/other/key.gif" aria-hidden="true" alt="">
+
+                    <img class="navDecor" src="/Assets/pixels/other/key.gif" aria-hidden="true" alt="">
                     <spacer aria-hidden="true"></spacer>
                 </nav>
 
@@ -184,7 +194,7 @@
                                 <p class="dateFinished">?/?/2022</p>
                             </div>
                         </div>
-                    </div>s
+                    </div>
 
                     <div id="NGODisplay" class="gamesDisplay">
                         <img src="mediaCovers/NGOCover.jpg">
@@ -389,9 +399,11 @@
     <div id="bottomTrim" aria-hidden="true"></div>
 
     <div id="phoneSpot">
-        <iframe id="phone" class="hidden" src="phonePages/phone.html"
+        <iframe id="phone" class="hidden" src="/phonePages/phone.html"
             title="IdolLine Interactive Phone: Games, Tools, and Navigation!" role="application"></iframe>
     </div>
+    
+    <script src="/js/phoneDisplayScript.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -432,7 +444,6 @@
             });
         });
     </script>
-    <script src="/js/phoneDisplayScript.js"></script>
 </body>
 
 </html>

@@ -1,20 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap");
 
 body {
-    font-size: 16px;
-
-    overflow: hidden;
+    display: flex;
+    height: 100vh;
 }
 
 #wrapper {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    height: 100vh;
-    width: 100vw;
-
-    padding-top: 80px;
-
+    justify-content: center;
+    
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -291,6 +287,13 @@ main {
     flex: 1 1 45%;
 }
 
+#webgroups {
+    display: flex;
+    flex-flow: column nowrap;
+
+    gap: 5px
+}
+
 /* RSS */
 
 #blogRSS {
@@ -392,23 +395,23 @@ h2 {
 
 @media only screen and (max-width: 810px) {
 
-    body {
-        height: unset;
-    }
 
     #wrapper {
-        align-items: baseline;
+        align-items: flex-start;
         flex-flow: row nowrap;
         padding-top: 0;
     }
 
     #androses {
         top: 0;
-        right: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+
+        width: 80%;
     }
 
     #androses span {
-        font-size: 100%;
+       font-size: 8vw;
     }
 
     #baselayout {

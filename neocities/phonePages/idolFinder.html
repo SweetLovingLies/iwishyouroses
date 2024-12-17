@@ -21,22 +21,22 @@
 </head>
 
 <body>
-    <object id="detailBarObject" data="detailbar.html"></object>
+    <object id="detailBarObject" data="detailbar.html" aria-hidden="true"></object>
     <header></header>
     <main>
         <div id="welcome">
-            <p>Meet my lovely mutuals! <heartMoji></heartMoji>
+            <p>Meet my lovely mutuals! <heartMoji aria-hidden="true"></heartMoji>
             </p>
-            <p> You could be here too, yaknow? <cloudBubbleMoji></cloudBubbleMoji> Just shoot me a message after adding
+            <p> You could be here too, yaknow? <cloudBubbleMoji aria-hidden="true"></cloudBubbleMoji> Just shoot me a message after adding
                 my button to your site!</p>
         </div>
         <div id="wrapper">
             <button data-popover="popoverJirachis">
-                <img src="/Assets/coolsites/jirachis/icon.jpg">
+                <img src="/Assets/coolsites/jirachis/icon.jpg" alt="A picture of the pokemon Jirachi">
                 Jirachis
             </button>
             <button data-popover="popoverBugkisser">
-                <img src="/Assets/coolsites/bugkisser/ayumuEdit.jpg">
+                <img src="/Assets/coolsites/bugkisser/ayumuEdit.jpg" alt="An edit of Osaka/Ayumu from Azumanga Daioh">
                 Bugkisser
             </button>
             <button data-popover="popoverMidosuji">
@@ -44,16 +44,20 @@
                 Modosuji Moon
             </button>
             <button data-popover="popoverEyeSoiree">
-                <img src="/Assets/coolsites/eyeSoiree/icon.jpg">
+                <img src="/Assets/coolsites/eyeSoiree/icon.jpg" alt="A picture of a Burberry scarf">
                 EyeSoiree
             </button>
             <button data-popover="popoverOyasumimi">
-                <img src="/Assets/coolsites/oyasumimi/icon.jpg">
+                <img src="/Assets/coolsites/oyasumimi/icon.jpg" alt="Art of Hatsune Miku from Vocaloid">
                 Oyasumimi25
             </button>
             <button data-popover="popoverKrystalsPalace">
                 <img src="/Assets/coolsites/krystalspalace/icon.webp">
                 Krystal's Palace
+            </button>
+            <button data-popover="popoverFreshFlesh">
+                <img src="/Assets/coolsites/freshFlesh/icon.gif" alt="Art of the Website Owner's OC, done by @planetzer_0">
+                Fresh Flesh
             </button>
         </div>
     </main>
@@ -61,7 +65,7 @@
     <!-- Jirachis -->
     <div id="popoverJirachis" class="popover">
         <iconify-icon class="exit" icon="mingcute:close-fill"></iconify-icon>
-        <img class="personaIcon" src="/Assets/coolsites/jirachis/icon.jpg">
+        <img class="personaIcon" src="/Assets/coolsites/jirachis/icon.jpg" alt="A picture of the pokemon Jirachi">
 
         <section id="persona">
             <h2>Jirachis</h2>
@@ -118,7 +122,7 @@
     <!-- Bugkisser -->
     <div id="popoverBugkisser" class="popover">
         <iconify-icon class="exit" icon="mingcute:close-fill"></iconify-icon>
-        <img class="personaIcon" src="/Assets/coolsites/bugkisser/ayumuEdit.jpg">
+        <img class="personaIcon" src="/Assets/coolsites/bugkisser/ayumuEdit.jpg" alt="An edit of Osaka/Ayumu from Azumanga Daioh">
 
         <section id="persona">
             <h2>Bugkisser</h2>
@@ -236,7 +240,7 @@
     <!-- EyeSoiree -->
     <div id="popoverEyeSoiree" class="popover">
         <iconify-icon class="exit" icon="mingcute:close-fill"></iconify-icon>
-        <img class="personaIcon" src="/Assets/coolsites/eyeSoiree/icon.jpg">
+        <img class="personaIcon" src="/Assets/coolsites/eyeSoiree/icon.jpg" alt="A picture of a Burberry scarf">
 
         <section id="persona">
             <h2>EyeSoiree</h2>
@@ -293,7 +297,7 @@
     <!-- Oyasumimi -->
     <div id="popoverOyasumimi" class="popover">
         <iconify-icon class="exit" icon="mingcute:close-fill"></iconify-icon>
-        <img class="personaIcon" src="/Assets/coolsites/oyasumimi/icon.jpg">
+        <img class="personaIcon" src="/Assets/coolsites/oyasumimi/icon.jpg" alt="Art of Hatsune Miku from Vocaloid">
 
         <section id="persona">
             <h2>Oyasumimi25</h2>
@@ -405,6 +409,61 @@
             </p>
             <p>
                 The site is openly NSFW, embracing the nature of the human body, as well as porn. It's honestly captivating to scroll through. I absolutely adore this site. If you visit, I hope you can enjoy it too. Just be aware that you get thrown into it almost immediately. There is a splash page, but after that, it shoots up to 100%.
+            </p>
+        </section>
+    </div>
+
+    <!-- Fresh Flesh -->
+    <div id="popoverFreshFlesh" class="popover">
+        <iconify-icon class="exit" icon="mingcute:close-fill"></iconify-icon>
+        <img class="personaIcon" src="/Assets/coolsites/freshFlesh/icon.gif" >
+
+        <section id="persona">
+            <h2>Fresh Flesh</h2>
+            <i>"Welcome to fleshweb!"</i>
+        </section>
+        <section id="siteButton">
+            <p>Tip: Click the button! </p>
+            <a href="https://freshflesh.neocities.org/" target="_blank"><img
+                    src="/Assets/coolsites/freshFlesh/freshFleshButton.gif" alt="Welcome to Fresh Flesh!"></a>
+        </section>
+        <section id="reputation">
+            <table>
+                <td>
+                    <h4>Reputation:</h4>
+                </td>
+                <td>
+                    <p class="repValue">+10</span>
+                    <div class="repbar">
+                        <div class="slider" data-reputation="7"></div>
+                    </div>
+                </td>
+            </table>
+        </section>
+
+        <section id="club">
+            <table>
+                <td>
+                    <h4>Club:</h4>
+                </td>
+                <td>
+                    <p>Neocities</p>
+                </td>
+            </table>
+        </section>
+
+        <section id="LandH">
+            <h4>Loves and Hates</h4>
+            <p class="loves">Drawing, <span style="color: red;">red</span>, fleshcore, Bill Cipher, sweet things, cartoons, and seafood.</p>
+            <p class="hates">N/A</p>
+        </section>
+
+        <section id="otherHeader">
+            <h3>Other Info</h3>
+        </section>
+        <section id="other">
+            <p>
+               This site's aesthetic mirrors mine in some aspects, without all the pink, which immediately stood out to me. Also, I absolutely love their art! The style is exactly the style I am trying to learn. Finally, the webmaster is Korean, and I am learning Korean, so that also became something of interest to me as well. Go and check out their site if you are not squeamish, which if you are here, you probably aren't.
             </p>
         </section>
     </div>
