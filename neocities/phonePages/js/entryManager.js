@@ -1,6 +1,5 @@
 export const entriesList = document.getElementById('entriesList');
 export const textbox = document.getElementById('textbox');
-export const saveButton = document.getElementById('saveEntry');
 
 const { jsPDF } = window.jspdf;
 
@@ -19,11 +18,88 @@ export function getPlaceholderText(appContext) {
         : "Your tome is empty… why not write a spell?";
 }
 
+function addDeleteButton(li, index, appContext) {
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = 'Delete';
+    deleteBtn.className = 'deleteEntry';
+
+    deleteBtn.addEventListener('click', () => {
+        const entries = getEntriesFromLocalStorage();
+        entries.splice(index, 1);
+        saveEntriesToLocalStorage(entries);
+        renderEntries(appContext);
+    });
+
+    const settings = document.createElement('div');
+    settings.className = 'settings';
+    settings.appendChild(deleteBtn);
+    li.appendChild(settings);
+}
+
+
+export function addJSPDFbutton(li, entries) {
+    const jsPDFBtn = document.createElement('button');
+    jsPDFBtn.textContent = 'Export to PDF';
+    jsPDFBtn.className = 'exportEntry';
+
+    jsPDFBtn.addEventListener("click", () => exportToPDF(entries));
+
+    const settings = document.createElement('div');
+    settings.className = 'settings';
+    settings.appendChild(jsPDFBtn);
+    li.appendChild(settings);
+}
+
+
+export function addViewButton(li, entry) {
+    const viewBtn = document.createElement('button');
+    viewBtn.textContent = 'View Entry';
+    viewBtn.className = 'viewEntry';
+
+    viewBtn.addEventListener('click', () => {
+        openEntryModal(entry);
+    });
+
+    li.querySelector('.settings').appendChild(viewBtn);
+}
+
+export function exportToPDF(entries) {
+    const doc = new jsPDF();
+    doc.setFontSize(18);
+    doc.text('Your Entries!', 10, 10);
+
+    let yOffset = 20; 
+    entries.forEach((entry, index) => {
+        doc.setFontSize(12);
+
+        if (entry.type === 'mood') {
+            doc.text(`Entry ${index + 1} (Mood Log):`, 10, yOffset);
+            yOffset += 5;
+            doc.text(`Feeling: ${entry.mood}`, 10, yOffset);
+            yOffset += 5;
+            doc.text(`Note: ${entry.note || "No additional notes."}`, 10, yOffset);
+        } else {
+            doc.text(`Entry ${index + 1}:`, 10, yOffset);
+            yOffset += 5;
+            doc.text(`"${entry.content || "No content"}"`, 10, yOffset);
+        }
+        yOffset += 10;
+
+        if (yOffset > 270) {
+            doc.addPage();
+            yOffset = 20;
+        }
+    });
+
+    doc.save('journal_entries.pdf');
+}
+
 // ! Render Entries
 export function renderEntries(appContext) {
     const entries = getEntriesFromLocalStorage();
-    const filteredEntries = entries.filter(entry => entry.type === appContext.toLowerCase());
+    const filteredEntries = entries.filter(entry => entry.type === appContext.toLowerCase()); // This line does not work. lol
 
+    const entriesList = document.getElementById("entriesList"); // Ensure entriesList is defined
     entriesList.innerHTML = '';
 
     if (filteredEntries.length === 0) {
@@ -38,16 +114,14 @@ export function renderEntries(appContext) {
         const li = document.createElement('li');
         li.setAttribute('data-index', index);
 
-        if (entry.type === 'mood') {
+        if (entry.type === "mood") {
             renderMoodEntry(li, entry);
-        } else {
+        } else if (entry.type === "journal") {
             renderTextEntry(li, entry);
         }
 
-        addDeleteButton(li, index);
-        if (appContext !== "Mellow") {
-            addViewButton(li, entry);
-        }
+        addDeleteButton(li, index, appContext);
+        addJSPDFbutton(li, [entry]);
         entriesList.appendChild(li);
     });
 }
@@ -82,68 +156,18 @@ function renderMoodEntry(li, entry) {
 
 function renderTextEntry(li, entry) {
     const textContent = document.createElement('span');
-    textContent.innerHTML = marked.parse(entry.content ? entry.content.substring(0, 30) + '...' : "No content");
+    textContent.innerHTML = marked.parse(entry.note || "No content");
     li.appendChild(textContent);
-}
 
-function addDeleteButton(li, index) {
-    const deleteBtn = document.createElement('button');
-    deleteBtn.textContent = 'Delete';
-    deleteBtn.className = 'deleteEntry';
+    const timestamp = document.createElement('p');
+    timestamp.className = 'timestamp';
+    timestamp.textContent = new Date(entry.timestamp).toLocaleString();
+    li.appendChild(timestamp);
 
-    deleteBtn.addEventListener('click', () => {
-        const entries = getEntriesFromLocalStorage();
-        entries.splice(index, 1);
-        saveEntriesToLocalStorage(entries);
-        renderEntries(appContext);
-    });
-
-    const settings = document.createElement('div');
-    settings.className = 'settings';
-    settings.appendChild(deleteBtn);
-    li.appendChild(settings);
-}
-
-export function addViewButton(li, entry) {
-    const viewBtn = document.createElement('button');
-    viewBtn.textContent = 'View Entry';
-    viewBtn.className = 'viewEntry';
-
-    viewBtn.addEventListener('click', () => {
-        openEntryModal(entry);
-    });
-
-    li.querySelector('.settings').appendChild(viewBtn);
-}
-
-export function exportToPDF(entries) {
-    const doc = new jsPDF();
-    doc.setFontSize(18);
-    doc.text('Your Entries!', 10, 10);
-
-    let yOffset = 20; 
-    entries.forEach((entry, index) => {
-        doc.setFontSize(12);
-        const timestamp = new Date(entry.timestamp).toLocaleString();
-
-        if (entry.type === 'mood') {
-            doc.text(`Entry ${index + 1} (Mood Log):`, 10, yOffset);
-            yOffset += 5;
-            doc.text(`Feeling: ${entry.mood}`, 10, yOffset);
-            yOffset += 5;
-            doc.text(`Note: ${entry.note || "No additional notes."}`, 10, yOffset);
-        } else {
-            doc.text(`Entry ${index + 1}:`, 10, yOffset);
-            yOffset += 5;
-            doc.text(`"${entry.content || "No content"}"`, 10, yOffset);
-        }
-        yOffset += 10;
-
-        if (yOffset > 270) {
-            doc.addPage();
-            yOffset = 20;
-        }
-    });
-
-    doc.save('journal_entries.pdf');
+    // Add a button to open the full entry modal
+    const viewButton = document.createElement('button');
+    viewButton.textContent = 'View Entry';
+    viewButton.className = 'viewEntry';
+    viewButton.addEventListener('click', () => openEntryModal(entry));
+    li.appendChild(viewButton);
 }

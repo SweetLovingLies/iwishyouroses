@@ -1,8 +1,8 @@
 import { saveEntriesToLocalStorage, getEntriesFromLocalStorage, renderEntries } from './entryManager.js';
 
-const appContext = "Mellow";
-
 document.addEventListener('DOMContentLoaded', () => {
+    const appContext = "Mellow";
+
     document.getElementById("user").textContent = `${localStorage.getItem("userName") || "Anon"}`;
     document.getElementById("userIcon").src = localStorage.getItem("selectedIcon") || "/Assets/other/anonIcon.jpg";
 
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// & Select Mood
+// Select Mood
 function selectMood(moodMoji, mood) {
     const moodCapitalized = mood.charAt(0).toUpperCase() + mood.slice(1);
 
@@ -31,22 +31,7 @@ function selectMood(moodMoji, mood) {
     updateMoodDisplay();
     updateLogNote();
     showPopover();
-
-    const entry = {
-        type: "mood",
-        mood: moodCapitalized,
-        emoji: moodMoji,
-        note: "",
-        timestamp: new Date().toISOString(),
-    };
-
-    const entries = getEntriesFromLocalStorage();
-    entries.push(entry);
-    saveEntriesToLocalStorage(entries);
-    renderEntries(appContext);
 }
-
-
 
 function updateMoodDisplay() {
     const mood = localStorage.getItem('userCurrentMood') || "Cheerful";
@@ -56,8 +41,7 @@ function updateMoodDisplay() {
     document.getElementById("currentMood").textContent = mood;
 }
 
-// & Popover
-
+// Popover
 const popover = document.getElementById("popover");
 
 function showPopover() {
@@ -65,14 +49,14 @@ function showPopover() {
     popover.style.display = "block";
 }
 
-// ! Exit
-const exitButton = document.getElementById("exit");
-exitButton.addEventListener("click", () => {
+document.getElementById("exit").addEventListener("click", exitPopover);
+
+function exitPopover() {
     popover.classList.add("hide");
     setTimeout(() => {
         popover.style.display = "none";
     }, 300);
-});
+}
 
 function updateLogNote() {
     const mood = localStorage.getItem('userCurrentMood') || "cheerful";
@@ -90,6 +74,33 @@ function updateLogNote() {
     }
 }
 
+// ! Save Entries
+
+const saveButton = document.getElementById('saveEntry');
+saveButton.addEventListener("click", createEntry);
+
+function createEntry(e) {
+    e.preventDefault();
+
+    const appContext = "Mellow";
+    const note = document.getElementById("textbox").value.trim(); 
+
+    const entry = {
+        type: "mood",
+        mood: localStorage.getItem("userCurrentMood"),
+        emoji: localStorage.getItem("userCurrentMoji"),
+        note: note || "", 
+        timestamp: new Date().toISOString(),
+    };
+
+    const entries = getEntriesFromLocalStorage();
+    entries.push(entry);
+    saveEntriesToLocalStorage(entries);
+    renderEntries(appContext);
+    exitPopover();
+
+    document.getElementById("textbox").value = "";
+}
 
 // & Breathing Exercises
 

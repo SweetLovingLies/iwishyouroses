@@ -1,4 +1,4 @@
-import { renderEntries, exportToPDF } from './entryManager.js';
+import { saveEntriesToLocalStorage, getEntriesFromLocalStorage, renderEntries } from './entryManager.js';
 
 const appContext = "YourTome";
 
@@ -19,6 +19,29 @@ function openEntryModal(entry) {
             modal.style.display = 'none';
         }
     });
+}
+
+const saveButton = document.getElementById('saveEntry');
+saveButton.addEventListener("click", createEntry);
+
+function createEntry(e) {
+    e.preventDefault();
+
+    const appContext = "YourTome";
+    const note = document.getElementById("textbox").value.trim(); 
+
+    const entry = {
+        type: "journal",
+        note: note || "", 
+        timestamp: new Date().toISOString(),
+    };
+
+    const entries = getEntriesFromLocalStorage();
+    entries.push(entry);
+    saveEntriesToLocalStorage(entries);
+    renderEntries(appContext);
+
+    document.getElementById("textbox").value = "";
 }
 
 document.addEventListener('DOMContentLoaded', () => renderEntries(appContext));
