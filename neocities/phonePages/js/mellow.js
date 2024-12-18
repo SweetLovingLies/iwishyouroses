@@ -86,17 +86,19 @@ function createEntry(e) {
     const note = document.getElementById("textbox").value.trim(); 
 
     const entry = {
-        type: "mood",
+        type: appContext.toLowerCase(),
         mood: localStorage.getItem("userCurrentMood"),
         emoji: localStorage.getItem("userCurrentMoji"),
         note: note || "", 
         timestamp: new Date().toISOString(),
     };
 
-    const entries = getEntriesFromLocalStorage();
+    const entries = getEntriesFromLocalStorage(appContext);
     entries.push(entry);
-    saveEntriesToLocalStorage(entries);
+
+    saveEntriesToLocalStorage(entries, appContext);  
     renderEntries(appContext);
+    
     exitPopover();
 
     document.getElementById("textbox").value = "";

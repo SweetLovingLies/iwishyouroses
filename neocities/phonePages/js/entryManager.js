@@ -4,13 +4,23 @@ export const textbox = document.getElementById('textbox');
 const { jsPDF } = window.jspdf;
 
 // ! Utility functions
-export function saveEntriesToLocalStorage(entries) {
-    localStorage.setItem("entries", JSON.stringify(entries));
+
+export function saveEntriesToLocalStorage(entries, appContext) {
+    if (appContext === "Mellow") {
+        localStorage.setItem("moodEntries", JSON.stringify(entries));  
+    } else {
+        localStorage.setItem("tomeEntries", JSON.stringify(entries)); 
+    }
 }
 
-export function getEntriesFromLocalStorage() {
-    return JSON.parse(localStorage.getItem("entries") || "[]");
+export function getEntriesFromLocalStorage(appContext) {
+    if (appContext === "Mellow") {
+        return JSON.parse(localStorage.getItem("moodEntries") || "[]");
+    } else {
+        return JSON.parse(localStorage.getItem("tomeEntries") || "[]"); 
+    }
 }
+
 
 export function getPlaceholderText(appContext) {
     return appContext === "Mellow"
@@ -18,38 +28,38 @@ export function getPlaceholderText(appContext) {
         : "Your tome is empty… why not write a spell?";
 }
 
-function addDeleteButton(li, index, appContext) {
+function addSettingsWrapper() {
+    const settings = document.createElement('div');
+    settings.className = 'settings';
+
+    return settings
+}
+
+function addDeleteButton(settings, li, index, appContext) {
     const deleteBtn = document.createElement('button');
     deleteBtn.textContent = 'Delete';
     deleteBtn.className = 'deleteEntry';
 
     deleteBtn.addEventListener('click', () => {
-        const entries = getEntriesFromLocalStorage();
-        entries.splice(index, 1);
-        saveEntriesToLocalStorage(entries);
-        renderEntries(appContext);
-    });
+        const entries = getEntriesFromLocalStorage(appContext);
+        console.log(appContext);
 
-    const settings = document.createElement('div');
-    settings.className = 'settings';
-    settings.appendChild(deleteBtn);
+        entries.splice(index, 1);  
+        saveEntriesToLocalStorage(entries, appContext);
+        renderEntries(appContext); 
+    });
     li.appendChild(settings);
 }
 
-
-export function addJSPDFbutton(li, entries) {
+export function addJSPDFbutton(settings, li, entries) {
     const jsPDFBtn = document.createElement('button');
     jsPDFBtn.textContent = 'Export to PDF';
     jsPDFBtn.className = 'exportEntry';
 
     jsPDFBtn.addEventListener("click", () => exportToPDF(entries));
 
-    const settings = document.createElement('div');
-    settings.className = 'settings';
-    settings.appendChild(jsPDFBtn);
     li.appendChild(settings);
 }
-
 
 export function addViewButton(li, entry) {
     const viewBtn = document.createElement('button');
@@ -72,7 +82,7 @@ export function exportToPDF(entries) {
     entries.forEach((entry, index) => {
         doc.setFontSize(12);
 
-        if (entry.type === 'mood') {
+        if (entry.type === 'mellow') {
             doc.text(`Entry ${index + 1} (Mood Log):`, 10, yOffset);
             yOffset += 5;
             doc.text(`Feeling: ${entry.mood}`, 10, yOffset);
@@ -96,10 +106,9 @@ export function exportToPDF(entries) {
 
 // ! Render Entries
 export function renderEntries(appContext) {
-    const entries = getEntriesFromLocalStorage();
-    const filteredEntries = entries.filter(entry => entry.type === appContext.toLowerCase()); // This line does not work. lol
+    const entries = getEntriesFromLocalStorage(appContext);
+    const filteredEntries = entries.filter(entry => entry.type === appContext.toLowerCase());
 
-    const entriesList = document.getElementById("entriesList"); // Ensure entriesList is defined
     entriesList.innerHTML = '';
 
     if (filteredEntries.length === 0) {
@@ -114,18 +123,20 @@ export function renderEntries(appContext) {
         const li = document.createElement('li');
         li.setAttribute('data-index', index);
 
-        if (entry.type === "mood") {
+        if (entry.type === "mellow") {
+            // console.log("Logging Mood Entry");
             renderMoodEntry(li, entry);
-        } else if (entry.type === "journal") {
+        } else if (entry.type === "yourtome"){
+            // console.log("Logging Tome Entry");
             renderTextEntry(li, entry);
         }
 
+        addSettingsWrapper()
         addDeleteButton(li, index, appContext);
         addJSPDFbutton(li, [entry]);
         entriesList.appendChild(li);
     });
 }
-
 
 function renderMoodEntry(li, entry) {
     const moodDiv = document.createElement('div');
@@ -164,10 +175,9 @@ function renderTextEntry(li, entry) {
     timestamp.textContent = new Date(entry.timestamp).toLocaleString();
     li.appendChild(timestamp);
 
-    // Add a button to open the full entry modal
     const viewButton = document.createElement('button');
     viewButton.textContent = 'View Entry';
     viewButton.className = 'viewEntry';
-    viewButton.addEventListener('click', () => openEntryModal(entry));
+    viewButton.addEventListener("click", () => openEntryModal(entry));
     li.appendChild(viewButton);
 }

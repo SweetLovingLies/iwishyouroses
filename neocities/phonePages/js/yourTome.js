@@ -31,13 +31,14 @@ function createEntry(e) {
     const note = document.getElementById("textbox").value.trim(); 
 
     const entry = {
-        type: "journal",
+        type: appContext.toLowerCase(),
         note: note || "", 
         timestamp: new Date().toISOString(),
     };
 
-    const entries = getEntriesFromLocalStorage();
+    const entries = getEntriesFromLocalStorage(appContext);
     entries.push(entry);
+    
     saveEntriesToLocalStorage(entries);
     renderEntries(appContext);
 
