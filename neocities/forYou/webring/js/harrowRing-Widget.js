@@ -5,8 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const cssFile = document.createElement('link');
   cssFile.rel = 'stylesheet';
-  // cssFile.href = 'https://iwishyouroses.neocities.org/forYou/webring/js/HRwidget.css';
-    cssFile.href = '/forYou/webring/js/HRwidget.css';
+  cssFile.href = 'https://iwishyouroses.neocities.org/forYou/webring/js/HRwidget.css';
   document.head.appendChild(cssFile);
 
   thisSite = window.location.href;
@@ -48,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     tag.insertAdjacentHTML('afterbegin', `
       <div>
           <div class='webring-info'>
+          <img src="https://iwishyouroses.neocities.org/forYou/webring/js/img/harrowRingLogo.png"
           <span class='webring-links'>
           <a href='${sites[previousIndex]}'>previous</a> ⌗
             ${randomText}
