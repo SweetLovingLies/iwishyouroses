@@ -1,6 +1,6 @@
-document.addEventListener('DOMContentLoaded', () => {
-    localStorage.setItem('appContext', 'YourTome');
-});
+import { renderEntries, exportToPDF } from './entryManager.js';
+
+const appContext = "YourTome";
 
 function openEntryModal(entry) {
     const modal = document.getElementById('viewWrapper');
@@ -8,7 +8,7 @@ function openEntryModal(entry) {
     const closeModal = document.getElementById('closeModal');
 
     modal.style.display = 'flex';
-    noteContent.innerHTML = marked.parse(entry.type === 'mood' ? entry.note : entry.content);
+    noteContent.innerHTML = marked.parse(entry.content);
 
     closeModal.addEventListener('click', () => {
         modal.style.display = 'none';
@@ -21,6 +21,8 @@ function openEntryModal(entry) {
     });
 }
 
+document.addEventListener('DOMContentLoaded', () => renderEntries(appContext));
+
 // textbox.addEventListener('input', () => {
 //     const typedContent = textbox.value.trim(); 
 //     if (typedContent === "395248") {
@@ -30,5 +32,4 @@ function openEntryModal(entry) {
 
 // function testAction() {
 //     alert("HARHARHARHARHARHARHARHARHARHAR"); 
-
 // }

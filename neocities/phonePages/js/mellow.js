@@ -1,56 +1,59 @@
-var userName = localStorage.getItem("userName") || "Anon";
-var selectedIcon = localStorage.getItem("selectedIcon") || "/Assets/other/anonIcon.jpg";
+import { saveEntriesToLocalStorage, getEntriesFromLocalStorage, renderEntries } from './entryManager.js';
 
-var selectedMoodEmoji = document.getElementById("selectedMoodEmoji");
-var moodButtons = document.querySelectorAll("#moodButtons button");
-var currentMood = document.getElementById("currentMood");
+const appContext = "Mellow";
 
-var savedMood = localStorage.getItem('userCurrentMood') || "Cheerful";
-var savedMoji = localStorage.getItem('userCurrentMoji') || "/Assets/other/mellowIcons/emoji/Cheerful.png";
-
-// & EventListeners and Updates
 document.addEventListener('DOMContentLoaded', () => {
-    localStorage.setItem('appContext', 'Mellow');
-    
-    document.getElementById("user").textContent = `${userName}`;
-    document.getElementById("userIcon").src = selectedIcon;
+    document.getElementById("user").textContent = `${localStorage.getItem("userName") || "Anon"}`;
+    document.getElementById("userIcon").src = localStorage.getItem("selectedIcon") || "/Assets/other/anonIcon.jpg";
 
-    updateLogNote();
     updateMoodDisplay();
+    updateLogNote();
 
-    moodButtons.forEach(function (button) {
-        button.addEventListener("click", function (e) {
-            var moodMoji = e.currentTarget.querySelector('img').src;
-            var mood = e.currentTarget.id;
+    document.querySelectorAll("#moodButtons button").forEach((button) => {
+        button.addEventListener("click", (e) => {
+            const moodMoji = e.currentTarget.querySelector("img").src;
+            const mood = e.currentTarget.id;
             selectMood(moodMoji, mood);
         });
     });
-
+    setupTabs();
+    renderEntries(appContext);
 });
+
 
 // & Select Mood
 function selectMood(moodMoji, mood) {
-    var cMood = mood.charAt(0).toUpperCase() + mood.slice(1);
-    localStorage.setItem('userCurrentMood', cMood);
-    localStorage.setItem('userCurrentMoji', moodMoji);
-    savedMood = cMood;
-    savedMoji = moodMoji;
+    const moodCapitalized = mood.charAt(0).toUpperCase() + mood.slice(1);
 
-    // Update UI
-    selectedMoodEmoji.src = moodMoji;
-    currentMood.textContent = cMood;
+    localStorage.setItem("userCurrentMood", moodCapitalized);
+    localStorage.setItem("userCurrentMoji", moodMoji);
 
     updateMoodDisplay();
     updateLogNote();
     showPopover();
+
+    const entry = {
+        type: "mood",
+        mood: moodCapitalized,
+        emoji: moodMoji,
+        note: "",
+        timestamp: new Date().toISOString(),
+    };
+
+    const entries = getEntriesFromLocalStorage();
+    entries.push(entry);
+    saveEntriesToLocalStorage(entries);
+    renderEntries(appContext);
 }
 
-function updateMoodDisplay() {
-    savedMood = localStorage.getItem('userCurrentMood') || "Cheerful";
-    savedMoji = localStorage.getItem('userCurrentMoji') || "/Assets/other/mellowIcons/emoji/Cheerful.png";
 
-    selectedMoodEmoji.src = savedMoji;
-    currentMood.textContent = savedMood;
+
+function updateMoodDisplay() {
+    const mood = localStorage.getItem('userCurrentMood') || "Cheerful";
+    const emoji = localStorage.getItem('userCurrentMoji') || "/Assets/other/mellowIcons/emoji/Cheerful.png";
+
+    document.getElementById("selectedMoodEmoji").src = emoji;
+    document.getElementById("currentMood").textContent = mood;
 }
 
 // & Popover
@@ -72,25 +75,29 @@ exitButton.addEventListener("click", () => {
 });
 
 function updateLogNote() {
-    const emotion = localStorage.getItem('userCurrentMood') || "cheerful";
+    const mood = localStorage.getItem('userCurrentMood') || "cheerful";
     const logNote = document.getElementById("logNote");
 
     const goodEmotions = ["Cheerful", "Happy", "Calm", "Focused", "Loved"];
     const badEmotions = ["Sad", "Depressed", "Frustrated", "Anxious", "Annoyed", "Angry"];
 
-    if (goodEmotions.includes(emotion)) {
-        logNote.innerHTML = `I'm happy to hear that you're feeling <span id="emotion">${emotion.toLowerCase()}</span>!`;
-    } else if (badEmotions.includes(emotion)) {
-        logNote.innerHTML = `I'm sorry to hear that you're feeling <span id="emotion">${emotion.toLowerCase()}</span>.`;
+    if (goodEmotions.includes(mood)) {
+        logNote.innerHTML = `I'm happy to hear that you're feeling <span id="emotion">${mood.toLowerCase()}</span>!`;
+    } else if (badEmotions.includes(mood)) {
+        logNote.innerHTML = `I'm sorry to hear that you're feeling <span id="emotion">${mood.toLowerCase()}</span>.`;
     } else {
-        logNote.innerHTML = `You're currently feeling <span id="emotion">${emotion.toLowerCase()}</span>.`;
+        logNote.innerHTML = `You're currently feeling <span id="emotion">${mood.toLowerCase()}</span>.`;
     }
 }
 
 
 // & Breathing Exercises
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
+    setupBreathingExercises();
+});
+
+function setupBreathingExercises() {
     const landscape = document.getElementById('landscape');
 
     const sun = document.getElementById('sun');
@@ -242,19 +249,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 1 });
 
     observer.observe(landscape);
-});
+};
 
 // & Tabs System
-const tabs = document.querySelectorAll('nav button');
-const tabContents = document.querySelectorAll('.tab');
 
-tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        tabContents.forEach(content => content.classList.remove('active'));
+function setupTabs() {
+    const tabs = document.querySelectorAll("nav button");
+    const tabContents = document.querySelectorAll(".tab");
 
-        tab.classList.add('active');
-        const targetTab = tab.getAttribute('data-tab');
-        document.getElementById(targetTab).classList.add('active');
+    tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+            tabs.forEach((t) => t.classList.remove("active"));
+            tabContents.forEach((content) => content.classList.remove("active"));
+
+            tab.classList.add("active");
+            const targetTab = tab.getAttribute("data-tab");
+            document.getElementById(targetTab).classList.add("active");
+        });
     });
-});
+}
