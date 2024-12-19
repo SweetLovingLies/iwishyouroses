@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// Select Mood
+// ~ Select Mood
 function selectMood(moodMoji, mood) {
     const moodCapitalized = mood.charAt(0).toUpperCase() + mood.slice(1);
 
@@ -41,7 +41,7 @@ function updateMoodDisplay() {
     document.getElementById("currentMood").textContent = mood;
 }
 
-// Popover
+// ~ Popover
 const popover = document.getElementById("popover");
 
 function showPopover() {
@@ -75,7 +75,7 @@ function updateLogNote() {
     }
 }
 
-// ! Save Entries
+// ! Save Entries (The problem child)
 const saveButton = document.getElementById('saveEntry');
 saveButton.addEventListener("click", createEntry);
 
@@ -102,7 +102,7 @@ function createEntry(e) {
     exitPopover();
 }
 
-// Local Storage Functions
+// ~ Local Storage Functions
 function saveEntriesToLocalStorage(entries, appContext) {
     if (!appContext) {
         console.error("appContext is missing!");
@@ -134,7 +134,7 @@ function getEntriesFromLocalStorage(appContext) {
     }
 }
 
-// Render Entries
+// ! Render Entries (The other problem child)
 function renderEntries(appContext) {
     if (typeof appContext !== "string") {
         console.error("Invalid appContext:", appContext);
@@ -201,6 +201,8 @@ function renderMoodEntry(li, entry) {
     li.appendChild(timestamp);
 }
 
+// ~ Helper Functions
+
 function addSettingsWrapper(li) {
     const settings = document.createElement('div');
     settings.className = 'settings';
@@ -220,7 +222,7 @@ function addDeleteButton(settings, li, appContext) {
         entries.splice(index, 1); // Remove the entry
 
         saveEntriesToLocalStorage(entries, appContext);
-        renderEntries(appContext); // Re-render entries
+        renderEntries(appContext);
     });
 
     settings.appendChild(deleteBtn);
@@ -274,7 +276,6 @@ function exportToPDF(entries) {
 
     doc.save('journal_entries.pdf');
 }
-
 
 // & Breathing Exercises
 
