@@ -13,12 +13,12 @@ const sites = [
     }, 
     {
         url: 'https://miniwildpanda.neocities.org/',
-        profilePicture: '../webringIMGs/miniWildPanda/imgfluttershy.jpg',
+        profilePicture: '../../webring/webringIMGs/miniWildPanda/imgfluttershy.jpg',
         webmasterName: 'Mini Wild Panda',
         description: 'my site is my little digital webroom! to keep all my hoards and voice all my love!!! ',
         nsfw: false,
         webringOwner: false,
-        siteButton: '../webringIMGs/miniWildPanda/MWPButton.gif',
+        siteButton: '../../webring/webringIMGs/miniWildPanda/MWPButton.gif',
         style: "morute"
     },
 ];
