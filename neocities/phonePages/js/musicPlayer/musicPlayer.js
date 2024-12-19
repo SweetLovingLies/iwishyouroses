@@ -90,9 +90,6 @@ function loadSong(index) {
     }
 }
 
-
-
-
 function SongEnd() {
     if (loopMode) {
         audioPlayer.currentTime = 0;
@@ -119,7 +116,9 @@ function seekForward() {
 
     audioPlayer.play();
 
-    updatePauseButton();
+    if (typeof updatePauseButton === "function") { // ~ Check if this function exists 
+        updatePauseButton();
+    }
 }
 
 function seekBackward() {
@@ -139,10 +138,10 @@ function seekBackward() {
 
     audioPlayer.play();
 
-    updatePauseButton();
+    if (typeof updatePauseButton === "function") {
+        updatePauseButton();
+    }
 }
-
-
 
 function shuffleSongs() {
     shuffleMode = !shuffleMode;
