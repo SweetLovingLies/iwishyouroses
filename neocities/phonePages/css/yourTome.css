@@ -121,7 +121,7 @@ section {
 /* ~ View Modal */
 
 #viewWrapper {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     width: 100%;
@@ -143,6 +143,10 @@ section {
 #noteModal {
     position: relative;
     z-index: 100;
+}
+
+#noteContent {
+    margin: 10px 0;
 }
 
 /* General */

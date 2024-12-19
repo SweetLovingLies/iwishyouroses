@@ -1,5 +1,3 @@
-import { saveEntriesToLocalStorage, getEntriesFromLocalStorage, renderEntries } from './entryManager.js';
-
 document.addEventListener('DOMContentLoaded', () => {
     const appContext = "Mellow";
 
@@ -17,6 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     setupTabs();
+
+    // console.log("renderEntries called (On App Load) with:", appContext);
     renderEntries(appContext);
 });
 
@@ -52,6 +52,7 @@ function showPopover() {
 document.getElementById("exit").addEventListener("click", exitPopover);
 
 function exitPopover() {
+    document.getElementById("textbox").value = "";
     popover.classList.add("hide");
     setTimeout(() => {
         popover.style.display = "none";
@@ -75,7 +76,6 @@ function updateLogNote() {
 }
 
 // ! Save Entries
-
 const saveButton = document.getElementById('saveEntry');
 saveButton.addEventListener("click", createEntry);
 
@@ -83,26 +83,198 @@ function createEntry(e) {
     e.preventDefault();
 
     const appContext = "Mellow";
-    const note = document.getElementById("textbox").value.trim(); 
+    const note = document.getElementById("textbox").value.trim();
 
     const entry = {
         type: appContext.toLowerCase(),
         mood: localStorage.getItem("userCurrentMood"),
         emoji: localStorage.getItem("userCurrentMoji"),
-        note: note || "", 
+        note: note || "",
         timestamp: new Date().toISOString(),
     };
 
     const entries = getEntriesFromLocalStorage(appContext);
     entries.push(entry);
 
-    saveEntriesToLocalStorage(entries, appContext);  
-    renderEntries(appContext);
-    
-    exitPopover();
+    saveEntriesToLocalStorage(entries, appContext);
 
-    document.getElementById("textbox").value = "";
+    renderEntries(appContext);
+    exitPopover();
 }
+
+// Local Storage Functions
+function saveEntriesToLocalStorage(entries, appContext) {
+    if (!appContext) {
+        console.error("appContext is missing!");
+        return;
+    }
+
+    if (appContext === "YourTome") {
+        localStorage.setItem("tomeEntries", JSON.stringify(entries));
+    } else if (appContext === "Mellow") {
+        localStorage.setItem("moodEntries", JSON.stringify(entries));
+    } else {
+        console.error("Invalid appContext:", appContext);
+    }
+}
+
+function getEntriesFromLocalStorage(appContext) {
+    if (!appContext) {
+        console.error("appContext is missing!");
+        return [];
+    }
+
+    if (appContext === "Mellow") {
+        return JSON.parse(localStorage.getItem("moodEntries") || "[]");
+    } else if (appContext === "YourTome") {
+        return JSON.parse(localStorage.getItem("tomeEntries") || "[]");
+    } else {
+        console.error("Invalid appContext:", appContext);
+        return [];
+    }
+}
+
+// Render Entries
+function renderEntries(appContext) {
+    if (typeof appContext !== "string") {
+        console.error("Invalid appContext:", appContext);
+        return;
+    }
+
+    const entries = getEntriesFromLocalStorage(appContext) || [];
+
+    const filteredEntries = entries.filter(entry => entry.type === String(appContext).toLowerCase());
+
+    entriesList.innerHTML = '';
+
+    if (filteredEntries.length === 0) {
+        const placeholder = document.createElement('p');
+        placeholder.className = 'placeholder';
+        placeholder.textContent = getPlaceholderText(appContext);
+        entriesList.appendChild(placeholder);
+        return;
+    }
+
+    filteredEntries.forEach((entry, index) => {
+        const li = document.createElement('li');
+        li.setAttribute('data-index', index);
+
+        if (entry.type === "mellow") {
+            renderMoodEntry(li, entry);
+        } else {
+            renderTextEntry(li, entry);
+        }
+
+        // Create settings div and add buttons for each entry
+        const settings = addSettingsWrapper(li);
+        addDeleteButton(settings, li, appContext);
+        addJSPDFbutton(settings, [entry]);
+
+        entriesList.appendChild(li);
+    });
+}
+
+function renderMoodEntry(li, entry) {
+    const moodDiv = document.createElement('div');
+    moodDiv.className = 'moodDisplay';
+
+    const moodImg = document.createElement('img');
+    moodImg.src = entry.emoji;
+    moodImg.alt = entry.mood;
+    moodImg.className = 'moodIcon';
+
+    const moodText = document.createElement('p');
+    moodText.textContent = `Feeling: ${entry.mood}`;
+
+    moodDiv.appendChild(moodText);
+    moodDiv.appendChild(moodImg);
+    li.appendChild(moodDiv);
+
+    const noteContainer = document.createElement('div');
+    noteContainer.className = 'note';
+    noteContainer.innerHTML = entry.note || "No additional notes.";
+    li.appendChild(noteContainer);
+
+    const timestamp = document.createElement('p');
+    timestamp.className = 'timestamp';
+    timestamp.textContent = new Date(entry.timestamp).toLocaleString();
+    li.appendChild(timestamp);
+}
+
+function addSettingsWrapper(li) {
+    const settings = document.createElement('div');
+    settings.className = 'settings';
+    li.appendChild(settings);
+    return settings;
+}
+
+function addDeleteButton(settings, li, appContext) {
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = 'Delete';
+    deleteBtn.className = 'deleteEntry';
+
+    deleteBtn.addEventListener('click', () => {
+        const index = parseInt(li.getAttribute('data-index'), 10); // Calculate index by its data-index
+        const entries = getEntriesFromLocalStorage(appContext);
+
+        entries.splice(index, 1); // Remove the entry
+
+        saveEntriesToLocalStorage(entries, appContext);
+        renderEntries(appContext); // Re-render entries
+    });
+
+    settings.appendChild(deleteBtn);
+}
+
+function addJSPDFbutton(settings, entries) {
+    const jsPDFBtn = document.createElement('button');
+    jsPDFBtn.textContent = 'Export to PDF';
+    jsPDFBtn.className = 'exportEntry';
+
+    jsPDFBtn.addEventListener("click", () => exportToPDF(entries));
+
+    settings.appendChild(jsPDFBtn);
+}
+
+function getPlaceholderText(appContext) {
+    if (appContext === "Mellow") {
+        return "There's nothing here yet! Go log something!"
+    } else {
+        return "No entries to display.";
+    }
+}
+
+function exportToPDF(entries) {
+    const { jsPDF } = window.jspdf;
+
+    const doc = new jsPDF();
+    doc.setFontSize(18);
+    doc.text('Your Entries!', 10, 10);
+
+    let yOffset = 20; // Initial yOffset for positioning
+
+    entries.forEach((entry, index) => {
+        doc.setFontSize(12);
+        const timestamp = new Date(entry.timestamp).toLocaleString();
+        doc.text(`Entry ${index + 1} (Mood Log):`, 10, yOffset);
+        yOffset += 10;
+        doc.text(`Feeling: ${entry.mood || 'N/A'}`, 10, yOffset);
+        yOffset += 10;
+        doc.text(`Timestamp: ${new Date(entry.timestamp).toLocaleString()}`, 10, yOffset);
+        yOffset += 10;
+        doc.text(`Note: ${entry.note || 'No additional notes.'}`, 10, yOffset);
+
+        yOffset += 10;
+
+        if (yOffset > 270) {
+            doc.addPage();
+            yOffset = 20; // Reset yOffset for the new page
+        }
+    });
+
+    doc.save('journal_entries.pdf');
+}
+
 
 // & Breathing Exercises
 
