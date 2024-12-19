@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     tag.insertAdjacentHTML('afterbegin', `
       <div>
           <div class='webring-info'>
-          <img src="https://iwishyouroses.neocities.org/forYou/webring/js/img/harrowRingLogo.png"
+          <img src="https://iwishyouroses.neocities.org/forYou/webring/js/img/HarrowRingLogo.png"
           <span class='webring-links'>
           <a href='${sites[previousIndex]}'>previous</a> ⌗
             ${randomText}
