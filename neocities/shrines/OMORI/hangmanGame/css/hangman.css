@@ -167,7 +167,7 @@ body {
 /* ~ TO THE RIGHT NOW YALL */
 
 #hangmanContainer {
-    background: url("../Assets/hangman/hangmanBG.png");
+    background: url("../assets/hangman/hangmanBG.png");
     background-size: cover;
     flex: 0 1 37%;
     justify-content: space-between;
