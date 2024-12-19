@@ -90,13 +90,16 @@
                 audioPlayer.currentTime = parseFloat(savedTime);
             }
 
-            const isPaused = sessionStorage.getItem('isPaused') === 'true';
-            if (isPaused) {
-                audioPlayer.pause();
-                document.getElementById('MusicPauseButton').innerHTML = `<iconify-icon icon="qlementine-icons:play-16"></iconify-icon>`;
-            } else {
+            const isPaused = JSON.parse(sessionStorage.getItem('isPaused')) || false;
+            // console.log(`isPaused state on load: ${isPaused}`);
+
+            if (!isPaused) {
+                // console.log("Music is Playing!");
                 audioPlayer.play();
                 document.getElementById('MusicPauseButton').innerHTML = `<iconify-icon icon="qlementine-icons:pause-16"></iconify-icon>`;
+            } else {
+                // console.log("Music is Paused!");
+                document.getElementById('MusicPauseButton').innerHTML = `<iconify-icon icon="qlementine-icons:play-16"></iconify-icon>`;
             }
         });
 
@@ -109,6 +112,7 @@
             const pauseButton = document.getElementById('MusicPauseButton');
             if (pauseButton) {
                 pauseButton.addEventListener('click', PauseNPlay);
+                updatePauseButton();
             }
 
             const seekBackButton = document.getElementById('seekBack');
@@ -145,6 +149,8 @@
             const rotationsPerSecond = 0.15; // Rotations in place
             starPath.style.transformOrigin = "50% 50%";
             starPath.style.transition = "transform 1s, left 1s, top 1s";
+            progressCStar.style.left = '50%';
+            progressCStar.style.top = '50%';
 
             // Volume Slider
             const volumeSlider = document.getElementById('volumeSlider');
@@ -220,21 +226,35 @@
             // console.log(`Updated metadata for ${song.title}`);
         }
 
-        // Toggle play/pause state
         function PauseNPlay() {
             const isPaused = audioPlayer.paused;
+
+            // console.log('PauseNPlay called');
+            // console.log(`Audio paused state: ${isPaused}`);
 
             if (isPaused) {
                 audioPlayer.play();
                 sessionStorage.setItem('isPaused', 'false');
-                document.getElementById('MusicPauseButton').innerHTML = `<iconify-icon icon="qlementine-icons:pause-16"></iconify-icon>`;
-            } else if (!isPaused) {
+                // console.log("Music is Playing! SessionStorage isPaused: false");
+            } else {
                 audioPlayer.pause();
                 sessionStorage.setItem('isPaused', 'true');
-                document.getElementById('MusicPauseButton').innerHTML = `<iconify-icon icon="qlementine-icons:play-16"></iconify-icon>`;
+                // console.log("Music is Paused! SessionStorage isPaused: true");
             }
+
+            updatePauseButton();
         }
 
+
+
+        function updatePauseButton() {
+            const pauseButton = document.getElementById('MusicPauseButton');
+            if (audioPlayer.paused) {
+                pauseButton.innerHTML = `<iconify-icon icon="qlementine-icons:play-16"></iconify-icon>`;  // Show Play icon if paused
+            } else {
+                pauseButton.innerHTML = `<iconify-icon icon="qlementine-icons:pause-16"></iconify-icon>`;  // Show Pause icon if playing
+            }
+        }
         // Loop Mode
         function toggleLoop() {
             loopMode = !loopMode;

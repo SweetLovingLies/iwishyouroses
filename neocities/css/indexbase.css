@@ -69,12 +69,8 @@ main {
     transition: color .25s;
 }
 
-#enter:hover {
+#enter:hover, #enter:focus {
     color: var(--persian);
-}
-
-#enter:focus{
-    outline: 2px solid white;
 }
 
 #something {

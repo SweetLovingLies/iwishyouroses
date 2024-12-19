@@ -89,7 +89,8 @@ header .calendar-navigation span:hover {
 
 .calendar-dates li.active {
     color: #fff;
-    background: var(--rosePink);
+    background: url("/Assets/BGs/holidays/christmas/snowflakes.webp");
+    background-size: 200%;
 }
 
 

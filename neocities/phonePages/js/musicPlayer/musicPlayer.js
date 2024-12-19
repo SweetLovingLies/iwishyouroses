@@ -18,40 +18,42 @@ fetch('/phonePages/js/musicPlayer/songs.json')
     })
     .catch(error => console.error("Error fetching JSON:", error));
 
-    async function createAudioPlayer() {
-        if (!audioPlayer || !window.top.document.getElementById('globalAudio')) {
-            audioPlayer = window.top.document.createElement('audio');
-            audioPlayer.id = 'globalAudio';
-            window.top.document.body.appendChild(audioPlayer);
-            // console.log("Audio Player Created!");
-        } 
-        // else {
-        //     console.log ("Skipped initialization!");
-        // }
-    
-        audioPlayer.removeEventListener('ended', SongEnd);
-        audioPlayer.addEventListener('ended', SongEnd);
-    
-        audioPlayer.removeEventListener('timeupdate', timeUpdateHandler);
-        audioPlayer.addEventListener('timeupdate', timeUpdateHandler);
-        
-        await validationAndChecks();
-    }
-    
-    // Function to handle timeupdate
-    function timeUpdateHandler() {
-        sessionStorage.setItem('currentSongTime', audioPlayer.currentTime);
-        let currentIndex = parseInt(sessionStorage.getItem('currentSongIndex')) || 0;
-        sessionStorage.setItem(`songTime_${currentIndex}`, audioPlayer.currentTime);
-    }
-    
+async function createAudioPlayer() {
+    if (!audioPlayer || !window.top.document.getElementById('globalAudio')) {
+        // console.log('Audio player is being created');
+        audioPlayer = window.top.document.createElement('audio');
+        audioPlayer.id = 'globalAudio';
+        window.top.document.body.appendChild(audioPlayer);
+    } 
+    // else {
+    //     console.log('Audio player already exists');
+    // }
+
+    audioPlayer.removeEventListener('ended', SongEnd);
+    audioPlayer.addEventListener('ended', SongEnd);
+    audioPlayer.removeEventListener('timeupdate', timeUpdateHandler);
+    audioPlayer.addEventListener('timeupdate', timeUpdateHandler);
+
+    await validationAndChecks();
+}
+
+
+// Function to handle timeupdate
+function timeUpdateHandler() {
+    sessionStorage.setItem('currentSongTime', audioPlayer.currentTime);
+    let currentIndex = parseInt(sessionStorage.getItem('currentSongIndex')) || 0;
+    sessionStorage.setItem(`songTime_${currentIndex}`, audioPlayer.currentTime);
+}
+
 
 async function validationAndChecks() {
+    // console.log('Validating songs...');
+    // console.log('Checking audio playing status (validationAndChecks)', !audioPlayer.paused);
+
     if (songs.length > 0) {
         let storedSongIndex = sessionStorage.getItem('currentSongIndex') || 0;
         const songIndex = parseInt(storedSongIndex);
-        // console.log("Validating Song Index:", songIndex);
-        // console.log("Number of songs:", songs.length);
+        // console.log('Stored song index:', storedSongIndex);
 
         if (songIndex >= 0 && songIndex < songs.length) {
             loadSong(songIndex);
@@ -63,6 +65,7 @@ async function validationAndChecks() {
     }
 }
 
+
 function loadSong(index) {
     if (songs && songs.length > 0) {
         const song = songs[index];
@@ -71,21 +74,24 @@ function loadSong(index) {
             return;
         }
 
-        // console.log("Loading song:", song.src);
-        
         let savedTime = parseFloat(sessionStorage.getItem(`songTime_${index}`)) || 0;
-        
+
         audioPlayer.src = song.src;
         audioPlayer.volume = sessionStorage.getItem('songVolume') ? parseFloat(sessionStorage.getItem('songVolume')) : 1;
-        audioPlayer.currentTime = savedTime; 
+        audioPlayer.currentTime = savedTime;
 
         updateMetadata(index);
 
-        // console.log(`Playing song: ${song.title}`);
-    } else {
-        console.error("No songs loaded or empty song list.");
+        const isPaused = JSON.parse(sessionStorage.getItem('isPaused')) || false;
+        if (!isPaused) {
+            audioPlayer.play(); 
+            updatePauseButton();
+        }
     }
 }
+
+
+
 
 function SongEnd() {
     if (loopMode) {
@@ -106,8 +112,14 @@ function seekForward() {
         currentIndex = (currentIndex + 1) % songs.length;
     }
 
+    sessionStorage.removeItem(`songTime_${currentIndex - 1}`);
+
     loadSong(currentIndex);
     sessionStorage.setItem('currentSongIndex', currentIndex);
+
+    audioPlayer.play();
+
+    updatePauseButton();
 }
 
 function seekBackward() {
@@ -120,9 +132,17 @@ function seekBackward() {
         currentIndex = (currentIndex - 1 + songs.length) % songs.length;
     }
 
+    sessionStorage.removeItem(`songTime_${currentIndex + 1}`);
+
     loadSong(currentIndex);
     sessionStorage.setItem('currentSongIndex', currentIndex);
+
+    audioPlayer.play();
+
+    updatePauseButton();
 }
+
+
 
 function shuffleSongs() {
     shuffleMode = !shuffleMode;
