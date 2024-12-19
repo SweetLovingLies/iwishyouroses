@@ -1,0 +1,60 @@
+#cameraApp {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #000;
+  }
+  
+  #viewfinder {
+    flex: 1;
+    position: relative;
+    background: url('placeholder-viewfinder.jpg') no-repeat center center;
+    background-size: cover;
+    border: 5px solid #333;
+  }
+  
+  #time, #battery, #mode {
+    position: absolute;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+  
+  #time {
+    top: 10px;
+    left: 10px;
+  }
+  
+  #battery {
+    top: 10px;
+    right: 10px;
+  }
+  
+  #mode {
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  #controls {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: #222;
+  }
+  
+  #galleryButton, #shutterButton, #filtersButton {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    font-size: 1.5rem;
+  }
+  
+  #shutterButton {
+    background: #f00;
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    box-shadow: 0 0 10px #f00;
+  }
+  
