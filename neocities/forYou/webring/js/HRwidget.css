@@ -39,6 +39,8 @@
     background-color: black;
     border: 5px dashed var(--blood);
     border-radius: 10px;
+
+    text-align: center;
 }
 
 #HarrowRing .webring-links a {

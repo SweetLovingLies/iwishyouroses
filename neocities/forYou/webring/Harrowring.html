@@ -175,6 +175,8 @@ Adult Content? (yes/no):
 What is your favorite unsettling aesthetic?:
 
 Optional: 
+Share a link to a profile picture you'd like for your member card!
+
 Share a link to your site button (I will not hotlink).
 </textarea>
                         <button id="submitForm" type="submit">Submit!</button>
@@ -187,7 +189,7 @@ Share a link to your site button (I will not hotlink).
             <section id="widget">
                 <header id="OohShiny">
                     <p>
-                        The widget is the most important part, and it's customizable, as all things from me are!
+                        The widget is the most important part.
                     </p>
                 </header>
                 <div class="content">
@@ -202,9 +204,7 @@ Share a link to your site button (I will not hotlink).
 
             <section id="members">
                 <header id="ourMembers">
-                    <p>
-                        Current Weirdos Count: Me!
-                    </p>
+                    <p>Current Weirdos Count: <span id="indexCount">Some Cool Number</span>!</p>
                 </header>
                 <div class="content" id="index">
                 </div>
@@ -287,7 +287,7 @@ Share a link to your site button (I will not hotlink).
                 contents.forEach((content) => {
                     const isActive = content.id === tabId;
                     content.classList.toggle('active', isActive);
-                    content.style.display = isActive ? 'block' : 'none';
+                    content.style.display = isActive ? 'flex' : 'none';
                     content.setAttribute('aria-hidden', !isActive);
                 });
             };

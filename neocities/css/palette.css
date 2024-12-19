@@ -104,6 +104,11 @@
     src: url('/fonts/yanFonts/BloodofWitchRegular.ttf');
 }
 
+@font-face {
+    font-family: Angela;
+    src: url('/fonts/Angela.otf');
+}
+
 html,
 body {
     margin: 0;

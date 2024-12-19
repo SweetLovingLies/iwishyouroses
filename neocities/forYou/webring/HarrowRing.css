@@ -124,11 +124,6 @@ section {
     flex: 1 1 100%;
 }
 
-.content {
-    max-height: 270px;
-    overflow: auto;
-}
-
 header {
     background-color: var(--blood);
     text-align: center;
@@ -307,17 +302,22 @@ header {
 
 /* & Members */
 
-#members section {
+#index {
+    flex: 1 1;
     display: flex;
     flex-flow: row wrap;
-    gap: 10px;
+    align-content: flex-start;
 }
 
 .memberCard {
-    flex: 1 0 calc((100% / 2) - 10px);
-    height: 200px;
+    flex: 0 1 calc((100% / 2) - 10px);
+    margin-left: 10px;
+    margin-bottom: 10px;
+
+    min-height: 210px;
 
     display: flex;
+    flex-flow: row wrap;
     gap: 10px;
 
     border: 2px dashed var(--dustyPink);
@@ -326,33 +326,80 @@ header {
     border-radius: var(--globalBorderRadius);
 }
 
-.memberCard img {
-    flex: 1 1;
-    max-height: 200px;
+.profilePic {
+    flex: 0 1 50%;
+    max-height: 150px;
     aspect-ratio: 1;
     border-radius: var(--globalBorderRadius);
+}
+
+.detailWrapper {
+    flex: 1 1;
+}
+
+.webmasterName {
+    font-size: 1.5em;
 }
 
 .memberCard .description {
     font-size: 1em;
     height: 100px;
     overflow: auto;
+
+    margin-bottom: 10px;
 }
 
-.memberCard a {
-    color: white;
+.linksNtags {
+    flex: 1 0 100%;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
 }
 
-.nsfw {
-    background-color: #330005;
+.siteButton {
+    text-decoration: none;
 }
 
 .nsfw-warning {
+    background-color: black;
+    padding: 5px 10px;
+    border-radius: var(--globalBorderRadius);
     color: yellow;
 }
 
-.owner {
-    background: linear-gradient(180deg, var(--blood) 0%, black 100%); 
+/* & Themes */
+
+.style-yandere {
+    background: linear-gradient(180deg, rgba(251, 0, 63, .5) 0%, rgba(242, 131, 182, .5) 100%), url("/Assets/BGs/menheraBG2.png");
+    background-size: contain;
+    background-blend-mode: multiply;
+
+    color: black;
+}
+
+.style-yandere .webmasterName {
+    font-family: Angela;
+
+    font-size: 3em;
+    line-height: .7em;
+}
+
+.style-yandere a {
+    color: black;
+}
+
+.style-morute {
+    background: url("/Assets/BGs/morute.jpg"); 
+    background-size: cover;
+    background-position: center;
+
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+}
+
+.style-morute a {
+    color: black;
 }
 
 /* ~ General */
