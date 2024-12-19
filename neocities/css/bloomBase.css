@@ -13,6 +13,8 @@ body {
     
     overflow-y: auto;
     overflow-x: hidden;
+
+    padding-top: 150px;
 }
 
 .rainbowWrapper {
@@ -394,7 +396,6 @@ h2 {
 @media only screen and (max-width: 1024px) {}
 
 @media only screen and (max-width: 810px) {
-
 
     #wrapper {
         align-items: flex-start;
