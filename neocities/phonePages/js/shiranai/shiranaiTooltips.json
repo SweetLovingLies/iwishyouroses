@@ -1,13 +1,82 @@
 {
-    "tooltips": [
-      {
-        "keyword": "gallery",
-        "tooltip": "The Gallery app stores all the photos you take with the Camera app."
-      },
-      {
-        "keyword": "camera",
-        "tooltip": "The Camera app lets you take selfies and group photos, complete with filters!"
-      }
-    ]
-  }
-  
+  "general": [
+    {
+      "category": "General",
+      "keywords": ["hello", "hi", "hey", "yo", "heya", "hey there", "g'day", "good day", "howdy"],
+      "tooltip": "Hello! How can I help you today?"
+    },
+    {
+      "category": "General",
+      "keywords": [
+        "how are you", 
+        "how are you doing",
+        "how ya doing",
+        "how's it going", 
+        "hows it going", 
+        "how going",
+        "/how[\\'?]s? it going/"
+      ],
+      "tooltip": "I'm doing great, thanks for asking! How about you?"
+    },
+    {
+      "category": "General",
+      "keywords": [
+        "i'm doing great",
+        "i'm doing well",
+        "i'm doing fine"
+      ],
+      "tooltip": "I'm happy to hear it!"
+    },
+    {
+      "category": "General",
+      "keywords": [
+        "i'm doing bad",
+        "i'm doing poorly",
+        "i'm doing awful"
+      ],
+      "tooltip": "I'm sorry to hear that."
+    },
+    {
+      "category": "General",
+      "keywords": ["up to", "whats up"],
+      "tooltip": "Waiting for my next command!"
+    },
+    {
+      "category": "General",
+      "keywords": ["test"],
+      "tooltip": "Testing, 1, 2, 3!"
+    }
+  ],
+
+  "tooltips": [
+    {
+      "category": "Tooltips",
+      "keywords": ["navigation"],
+      "tooltip": "The navigation app allows you to interact with the parent (or external) pages of the site."
+    },
+    
+    {
+      "category": "Tooltips",
+      "keywords": ["gallery, photos"],
+      "tooltip": "The Gallery app stores all the photos you take with the Camera app."
+    },
+    {
+      "category": "Tooltips",
+      "keywords": ["camera"],
+      "tooltip": "The Camera app lets you take selfies and group photos, complete with filters!"
+    }
+  ],
+
+  "achievements": [
+    {
+      "category": "Achievements",
+      "keywords": ["first selfie"],
+      "tooltip": "You've taken your first selfie! Keep going to collect more selfies."
+    },
+    {
+      "category": "Achievements",
+      "keywords": ["photo album"],
+      "tooltip": "Create a complete photo album by taking pictures with different filters."
+    }
+  ]
+}

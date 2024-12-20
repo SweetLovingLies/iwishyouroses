@@ -22,39 +22,19 @@
 <body>
     <object id="detailBarObject" data="detailbar.html" aria-hidden="true"></object>
     <header>
-        <img id="asSheIs" class="avatar" src="/Assets/customNavIcons/shiranaiIcon.png">
+        <img class="avatar" src="/Assets/customNavIcons/shiranaiIcon.png">
         <h1>SHIRANAI</h1>
     </header>
     <main>
-        <div id="shiranai-response">
-            <div class="avatarWrapper">
-                <img id="asSheIs" class="avatar" src="/Assets/customNavIcons/shiranaiIcon.png" alt="SHIRANAI">
-                <div id="status-indicator"></div>
-            </div>
-            <div id="response-bubble">
-                <p id="response-text">Hello! How can I assist you today?</p>
-            </div>
-        </div>
-
-        <div id="user-response">
-            <div class="avatarWrapper">
-                <img id="userIcon" class="avatar" alt="It's You!">
-                <div id="status-indicator"></div>
-            </div>
-            <div id="response-bubble">
-                <p id="response-text">What's your name?</p>
-            </div>
-        </div>
-
-        <footer id="user-interaction">
+        <div id="messageContainer"></div>
+        <footer>
             <input type="text" id="userInput" placeholder="Ask me anything!">
-            <button id="submit-input">Send</button>
+            <button id="submitBTN">
+                <iconify-icon icon="fa:send"></iconify-icon>
+            </button>
         </footer>
     </main>
     <script src="js/shiranai/shiranaiBaseCode.js"></script>
-    <script>
-        document.getElementById("userIcon").src = localStorage.getItem("selectedIcon") || "/Assets/other/anonIcon.jpg";
-    </script>
 </body>
 
 </html>
