@@ -43,12 +43,9 @@ body {
     outline: none;
 }
 
-#textbox:empty:before {
-    content: attr(placeholder);
+#textbox::placeholder {
     color: #aaa;
     font-style: italic;
-
-    position: relative;
 }
 
 #entryEditor:after {

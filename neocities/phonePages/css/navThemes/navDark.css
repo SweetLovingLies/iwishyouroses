@@ -1,5 +1,5 @@
 body{
-    background: url(/Assets/navMap/BG.png);
+    background: url(/Assets/BGs/spaceBG.png);
     background-size: cover;
     background-attachment: fixed;
 }

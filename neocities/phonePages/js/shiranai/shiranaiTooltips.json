@@ -1,0 +1,13 @@
+{
+    "tooltips": [
+      {
+        "keyword": "gallery",
+        "tooltip": "The Gallery app stores all the photos you take with the Camera app."
+      },
+      {
+        "keyword": "camera",
+        "tooltip": "The Camera app lets you take selfies and group photos, complete with filters!"
+      }
+    ]
+  }
+  

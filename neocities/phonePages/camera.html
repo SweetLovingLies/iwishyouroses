@@ -20,22 +20,31 @@
 </head>
 
 <body>
-    <div id="cameraApp">
-        <!-- Viewfinder -->
-        <div id="viewfinder">
-          <span id="time">12:34</span>
-          <span id="battery">🔋 85%</span>
-          <span id="mode">Selfie Mode</span>
-        </div>
-        
-        <!-- Controls -->
-        <div id="controls">
-          <button id="galleryButton">📷</button>
-          <button id="shutterButton"></button>
-          <button id="filtersButton">✨</button>
-        </div>
-      </div>
-      
+    <object id="detailBarObject" data="detailbar.html?theme=dark"></object>
+
+    <div id="viewfinder" style='background-image: url("/Assets/kpop/xg/harvey/Harvey1.jpg");'>
+        <div id="flash"></div>
+    </div>
+
+    <div id="controls">
+        <span id="mode">
+            <p id="group">Group</p>
+            <p id="selfie" class="active">Selfie</p>
+        </span>
+
+        <a id="galleryPreview" href="gallery.html" role="button">
+            <img src="">
+        </a>
+
+        <button id="shutterButton"></button>
+
+        <button id="filtersButton">
+            <iconify-icon icon="solar:filters-bold-duotone"></iconify-icon>
+            <p id="filterName"></p>
+        </button>
+    </div>
+
+    <script src="js/camera/camera.js"></script>
 </body>
 
 </html>

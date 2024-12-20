@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone App: Shiranai</title>
+
+    <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/phoneGlobals.css" rel="stylesheet" type="text/css" media="all">
+
+    <link href="css/shiranaiBase.css" rel="stylesheet" type="text/css" media="all">
+
+
+    <meta name="description" content="A fake virtual assistant. How may I help you?" />
+
+    <link rel="icon" type="image/x-icon" href="/Assets/pixels/magicalgirls/glitter3.webp">
+
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+</head>
+
+<body>
+    <object id="detailBarObject" data="detailbar.html" aria-hidden="true"></object>
+    <header>
+        <img id="asSheIs" class="avatar" src="/Assets/customNavIcons/shiranaiIcon.png">
+        <h1>SHIRANAI</h1>
+    </header>
+    <main>
+        <div id="shiranai-response">
+            <div class="avatarWrapper">
+                <img id="asSheIs" class="avatar" src="/Assets/customNavIcons/shiranaiIcon.png" alt="SHIRANAI">
+                <div id="status-indicator"></div>
+            </div>
+            <div id="response-bubble">
+                <p id="response-text">Hello! How can I assist you today?</p>
+            </div>
+        </div>
+
+        <div id="user-response">
+            <div class="avatarWrapper">
+                <img id="userIcon" class="avatar" alt="It's You!">
+                <div id="status-indicator"></div>
+            </div>
+            <div id="response-bubble">
+                <p id="response-text">What's your name?</p>
+            </div>
+        </div>
+
+        <footer id="user-interaction">
+            <input type="text" id="userInput" placeholder="Ask me anything!">
+            <button id="submit-input">Send</button>
+        </footer>
+    </main>
+    <script src="js/shiranai/shiranaiBaseCode.js"></script>
+    <script>
+        document.getElementById("userIcon").src = localStorage.getItem("selectedIcon") || "/Assets/other/anonIcon.jpg";
+    </script>
+</body>
+
+</html>

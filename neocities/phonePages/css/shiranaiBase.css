@@ -1,0 +1,199 @@
+:root {
+
+    /* Colors */
+    --bubblegum: #ffb7ed;
+    --dustyPink: #f6bdd1;
+    --rosette: #ffbbc5;
+    --persian: #f283b6;
+    --wisteria: #8266ff;
+    --kangel: #c3a3f6;
+    --hintofmist: #f1efff;
+    --whispermist: #dbd8f0;
+    --driedBlood: #8B575c;
+    --pinkIce: #f6e4f6;
+    --ash: #cad2c5;
+    --water: #adcaff;
+    --deepsea: #357ce6;
+    --roseRed: #C71227;
+    --rosePink: #FB003F;
+    --blood: #800000;
+    --deepslate: #696969;
+    --cobblestone: #a8a8a8;
+
+    /* New Colors */
+    
+    --night: #021651;
+    --starscape: #0056AD;
+    --ocean: #38C4DD;
+    --aurora1: #8BDECE;
+    --aurora2: #78C0B2;
+    --tealGrass: #003227;
+    --stardust: #88B1C7;
+
+
+    --accent-color: #88B1C7;
+    --bubble-color: #0056AD;
+    --input-bg: #0056AD;
+    --tooltip-bg: #D8E2DC;
+    --status-online: #00ff99;
+    --status-listening: #ffdd44;
+    --status-busy: #ff5544;
+
+    /* Rainbow Ring Colors */
+
+    --rainbowRed: #ffadad;
+    --rainbowOrange: #ffdea1;
+    --rainbowYellow: #ffffb5;
+    --rainbowGreen: #c2ffc2;
+    --rainbowBlue: #b8d4ff;
+    --rainbowIndigo: #9e97e0;
+    --rainbowPurple: #cfb0ff;
+    --rainbowPink: #ffd8f2;
+
+    /* Globals */
+    --globalBorderRadius: 10px;
+    --detailBarHeight: 20px;
+}
+
+body {
+    background: url(/Assets/BGs/spaceBG.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    font-family: 'Arial', sans-serif;
+    color: white;
+
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+header {
+    background-color: var(--starscape);
+
+    padding: 20px 5px 10px;
+    margin-bottom: 10px;
+
+    display: flex;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.4em;
+}
+
+main {
+    flex: 1 1;
+
+    width: 280px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    padding: 0 10px;
+
+    position: relative;
+
+}
+
+/* Shiranai */
+
+#shiranai-response {
+    display: flex;
+    gap: 15px;
+}
+
+#status-indicator {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--status-online);
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    border: 2px solid var(--bubble-color);
+}
+
+#response-bubble {
+    flex: 1;
+    background-color: var(--bubble-color);
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+#response-text {
+    font-size: 1rem;
+}
+
+/* & User Interactions! */
+
+#user-response {
+    display: flex;
+    flex-flow: row-reverse nowrap;
+
+    gap: 15px;
+}
+
+
+#user-interaction {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: space-around;
+}
+
+#userInput {
+    flex: 0 1 40%;
+    padding: 10px;
+    background-color: var(--input-bg);
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+#userInput::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+
+#submit-input {
+    flex: 0 1;
+    padding: 10px;
+    background-color: var(--accent-color);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* ~ Decor */
+
+.avatar {
+    border-radius: 50%;
+
+    height: 50px;
+}
+
+#asSheIs {
+    padding: 10px;
+    background-color: var(--night);
+}
+
+header #asSheIs {
+    margin-right: 10px;
+}
