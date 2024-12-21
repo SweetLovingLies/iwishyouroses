@@ -49,10 +49,10 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class='webring-info'>
           <img class="eyeCatcher" src="https://iwishyouroses.neocities.org/forYou/webring/js/img/HarrowRingLogo.png"
           <span class='webring-links'>
-          <a href='${harrowRingSites[previousIndex]}'>previous</a> ⌗
+          <a href='${harrowRingSites[previousIndex].url}'>previous</a> ⌗
             ${randomText}
             ${indexText}
-            ⌗ <a href='${harrowRingSites[nextIndex]}'>next</a>
+            ⌗ <a href='${harrowRingSites[nextIndex].url}'>next</a>
       </div>
     `);
 
