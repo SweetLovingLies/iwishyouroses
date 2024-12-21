@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paracosms</title>
+
+    <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" href="css/paracosmsBase.css">
+
+    <meta name="description" content="Where all of my stories come to light!" />
+    <link rel="icon" type="image/x-icon" href="/Assets/pixels/magicalgirls/confetti.webp">
+
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+</head>
+
+<body>
+    <div class="overlay">
+    </div>
+
+    <div id="severanceSolarSystem" class="celestialObject">
+        <div id="sun" class="planet">
+            <span class="label">The Sun</span>
+        </div>
+
+        <div id="severanceOrbit" class="orbit">
+            <a id="severance" class="planet UNF">
+                <span class="label">
+                    <iconify-icon icon="game-icons:tiara"></iconify-icon>
+                    Severance</span>
+            </a>
+            <div id="eMajorOrbit" class="orbit">
+                <a id="earthaMajor" class="planet UNF">
+                    <span class="label">Eartha Major</span>
+                </a>
+                <div id="koaOrbit" class="orbit">
+                    <a id="koa" class="planet UNF">
+                        <span class="label">Koa</span>
+                    </a>
+                    <div id="bellavueOrbit" class="orbit">
+                        <a id="bellavue" class="planet UNF">
+                            <span class="label">Bellavue</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="BH1" class="BHWrapper celestialObject">
+        <a class="UNF">
+            <div class="blackHole"></div>
+            <div class="eventHorizon"></div>
+
+            <span class="label">Dead Fairy Circle</span>
+        </a>
+    </div>
+
+    <!-- <div id="someStation" class="celestialObject">
+    <a class="celestial-object spaceStation" id="station1">
+            <span class="label">Some Space Station</span>
+        </a> 
+    </div> -->
+
+    <!-- <div id="someMeteor" class="celestialObject">
+        <a class="celestialObject meteor" id="meteor1">
+            <span class="label">Some Meteor</span>
+        </a>
+    </div> -->
+
+    <script>
+        function createStars() {
+            const overlay = document.querySelector('.overlay');
+            const starCount = Math.floor(Math.random() * 50) + 50
+
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('img');
+                star.src = 'css/img/Star.png';
+                star.classList.add('stars');
+
+                const size = Math.random() * 20 + 30;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.left = `${Math.random() * 100}%`;
+
+                if (Math.random() > 0.7) {
+                    setInterval(() => {
+                        star.classList.toggle('twinkling');
+                    }, Math.random() * 2000 + 1000);
+                }
+
+                overlay.appendChild(star);
+            }
+        }
+
+        function createShootingStar() {
+            const overlay = document.querySelector('.overlay');
+            const shootingStar = document.createElement('img');
+            shootingStar.src = 'css/img/shootingstar.png';
+            shootingStar.classList.add('shootingstar');
+
+            const startX = Math.random() * 70 - 10;
+            const startY = Math.random() * 50;
+
+            shootingStar.style.top = `${startY}vh`;
+            shootingStar.style.left = `${startX}vw`;
+
+            const animationDuration = 500; // a half seconds
+
+            overlay.appendChild(shootingStar);
+
+            setTimeout(() => {
+                shootingStar.remove();
+            }, animationDuration);
+        }
+
+
+        function triggerMeteorShower() {
+            const meteorShowerDuration = 5000;
+            const meteorInterval = 100; // Interval between shooting stars
+            const shootingStarDuration = 500; // matches animationDuration
+
+            const meteorShowerTimer = setInterval(() => {
+                createShootingStar();
+            }, meteorInterval);
+
+            setTimeout(() => {
+                clearInterval(meteorShowerTimer);
+            }, meteorShowerDuration);
+        }
+
+        function startShootingStars() {
+            setInterval(() => {
+                const chance = Math.random();
+
+                if (chance > 0.99) { // 1% chance for a meteor shower
+                    triggerMeteorShower();
+                } else if (chance > 0.95) { // 5% chance for a single shooting star
+                    createShootingStar();
+                }
+            }, 2000); // Every 2 seconds
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            createStars();
+            startShootingStars();
+        });
+
+        window.addEventListener('resize', () => {
+            document.querySelector('.overlay').innerHTML = '';
+            createStars();
+        });
+    </script>
+</body>
+
+</html>
