@@ -33,7 +33,7 @@ body {
 }
 
 #harrowRingHeader h1 span {
-    font-size: 4em;
+    font-size: 8rem;
 }
 
 section {
@@ -52,6 +52,7 @@ section {
 nav {
     flex: 1 1;
     display: flex;
+    flex-flow: row wrap;
 
     background-color: black;
     border: 5px solid var(--blood);
@@ -128,6 +129,9 @@ header {
 .snippet p {
     flex: 1 1;
     font-size: .9em;
+
+    max-height: 140px;
+    overflow: auto;
 }
 
 .snippet a {
@@ -272,7 +276,7 @@ header {
 }
 
 .memberCard {
-    flex: 0 1 calc((100% / 2) - 10px);
+    flex: 1 0 calc((100% / 2) - 10px);
     margin-left: 10px;
     margin-bottom: 10px;
 
@@ -405,4 +409,25 @@ button {
 
 *::-webkit-scrollbar-thumb {
     background-color: var(--deepslate);
+}
+
+/* ~ Media Queries */
+@media only screen and (max-width: 1024px) {
+
+}
+
+@media only screen and (max-width: 810px) {
+    #wrapper {
+        flex: 1 1;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    body {
+        overflow-y: auto;
+        align-items: baseline;
+    }
+    #rules .content {
+        overflow: auto;
+    }
 }
