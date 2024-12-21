@@ -1,6 +1,6 @@
 // ! Credits to Onionring for the base code!
 
-const sites = [
+const harrowRingSites = [
     {
         url: 'https://iwishyouroses.neocities.org',
         profilePicture: '/Assets/anime/YanSim/pfp/sweetryo.jpg',

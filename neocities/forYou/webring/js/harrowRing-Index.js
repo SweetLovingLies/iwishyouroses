@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     const tag = document.getElementById('index');
-    const memberCount = sites.length;
+    const memberCount = harrowRingSites.length;
     const indexCountElement = document.getElementById('indexCount');
 
     if (indexCountElement) {
@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     let membersHTML = "";
-    for (let i = 0; i < sites.length; i++) {
-        const site = sites[i];
+    for (let i = 0; i < harrowRingSites.length; i++) {
+        const site = harrowRingSites[i];
         const isNSFW = site.nsfw ? `<span class="nsfw-warning">⚠️ NSFW Warning </span>` : "";
         const isWebringOwner = site.webringOwner ? `<img src="/Assets/pixels/menhera/brokenheart2.webp" alt="Webring Owner" class="owner-badge">` : "";
         const styleClass = site.style ? `style-${site.style}` : "";

@@ -12,15 +12,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // console.log(thisSite)
   thisIndex = null;
 
-  for (let i = 0; i < sites.length; i++) {
-    if (thisSite.startsWith(sites[i].url)) { 
+  for (let i = 0; i < harrowRingSites.length; i++) {
+    if (thisSite.startsWith(harrowRingSites[i].url)) { 
       thisIndex = i;
       break;
     }
   }
 
   function randomSite() {
-    const otherSites = sites.slice();
+    const otherSites = harrowRingSites.slice();
     otherSites.splice(thisIndex, 1); // ! Remove current site
     const randomIndex = Math.floor(Math.random() * otherSites.length);
     location.href = otherSites[randomIndex].url;
@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
           <div>This site hasn't been added to the ${ringName} webring yet. Sorry!</div>
     `);
   } else {
-    let previousIndex = (thisIndex - 1 < 0) ? sites.length - 1 : thisIndex - 1;
-    let nextIndex = (thisIndex + 1 >= sites.length) ? 0 : thisIndex + 1;
+    let previousIndex = (thisIndex - 1 < 0) ? harrowRingSites.length - 1 : thisIndex - 1;
+    let nextIndex = (thisIndex + 1 >= harrowRingSites.length) ? 0 : thisIndex + 1;
 
     let indexText = "";
     if (useIndex) {
@@ -49,10 +49,10 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class='webring-info'>
           <img class="eyeCatcher" src="https://iwishyouroses.neocities.org/forYou/webring/js/img/HarrowRingLogo.png"
           <span class='webring-links'>
-          <a href='${sites[previousIndex]}'>previous</a> ⌗
+          <a href='${harrowRingSites[previousIndex]}'>previous</a> ⌗
             ${randomText}
             ${indexText}
-            ⌗ <a href='${sites[nextIndex]}'>next</a>
+            ⌗ <a href='${harrowRingSites[nextIndex]}'>next</a>
       </div>
     `);
 
