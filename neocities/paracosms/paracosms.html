@@ -8,6 +8,7 @@
 
     <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
     <link rel="stylesheet" href="css/paracosmsBase.css">
+    <link rel="stylesheet" href="css/tablet.css">
 
     <meta name="description" content="Where all of my stories come to light!" />
     <link rel="icon" type="image/x-icon" href="/Assets/pixels/magicalgirls/confetti.webp">
@@ -25,36 +26,42 @@
         </div>
 
         <div id="severanceOrbit" class="orbit">
-            <a id="severance" class="planet UNF">
+            <a id="severance" class="planet UNF" 
+            data-title="Severance" 
+            data-image="img/planet.png"
+            data-description="Description of the planet.">
                 <span class="label">
                     <iconify-icon icon="game-icons:tiara"></iconify-icon>
                     Severance</span>
             </a>
+
             <div id="eMajorOrbit" class="orbit">
-                <a id="earthaMajor" class="planet UNF">
+                <a id="earthaMajor" class="planet UNF" 
+                data-title="Eartha Major" 
+                data-image="img/planet.png"
+                data-description="Description of the planet.">
                     <span class="label">Eartha Major</span>
                 </a>
+
                 <div id="koaOrbit" class="orbit">
-                    <a id="koa" class="planet UNF">
+                    <a id="koa" class="planet UNF" 
+                    data-title="Koa" 
+                    data-image="img/planet.png"
+                    data-description="Description of the planet.">
                         <span class="label">Koa</span>
                     </a>
+
                     <div id="bellavueOrbit" class="orbit">
-                        <a id="bellavue" class="planet UNF">
+                        <a id="bellavue" class="planet UNF" 
+                        data-title="Bellavue" 
+                        data-image="img/planet.png"
+                        data-description="Description of the planet.">
                             <span class="label">Bellavue</span>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div id="BH1" class="BHWrapper celestialObject">
-        <a class="UNF">
-            <div class="blackHole"></div>
-            <div class="eventHorizon"></div>
-
-            <span class="label">Dead Fairy Circle</span>
-        </a>
     </div>
 
     <!-- <div id="someStation" class="celestialObject">
@@ -69,91 +76,45 @@
         </a>
     </div> -->
 
-    <script>
-        function createStars() {
-            const overlay = document.querySelector('.overlay');
-            const starCount = Math.floor(Math.random() * 50) + 50
+    <div id="sciFiTablet">
+        <div id="tabletBranding" class="sciFi">
+            <h1>Cristalize</h1>
+            <p>by DolcetTech</p>
+        </div>
+        <div id="mainWrapper">
+            <div id="tabletMain" class="sciFi">
+                <div id="buttons">
+                    <button id="closeTablet"></button> <button id="idk"></button> <button id="idk"></button>
+                </div>
+                <div class="blackFiller"></div>
+                <div class="details"></div>
+                <div class="content">
+                    <h2 id="planetName">Planet Name</h2>
+                    <p id="planetDescription">"This planet is really cool!" and Other Placeholder Texts... Like Lorem Ipsum.</p>
+                    <img id="planetPreview" src="/Assets/anime/pjsk/pfp/miku1.jpg"> <!-- ! Temp -->
+                </div>
+            </div>
+            <div id="tabletAside" class="sciFi">
+                <div class="blackFiller"></div>
+                <div class="details"></div>
+                <div class="content">
+                    <h2>Settings</h2>
+                    <button class="settingsButton">Some really cool buttons!</button>
+                    <button class="settingsButton">Some really cool buttons!</button>
+                    <button class="settingsButton">Some really cool buttons!</button>
+                    <button class="settingsButton">Some really cool buttons!</button>
+                    <button class="settingsButton">Some really cool buttons!</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-            for (let i = 0; i < starCount; i++) {
-                const star = document.createElement('img');
-                star.src = 'css/img/Star.png';
-                star.classList.add('stars');
+    <audio id="outerSpace" autoplay loop>
+        <source src="https://files.catbox.moe/zvp1ty.mp3">
+    </audio>
 
-                const size = Math.random() * 20 + 30;
-                star.style.width = `${size}px`;
-                star.style.height = `${size}px`;
-
-                star.style.top = `${Math.random() * 100}%`;
-                star.style.left = `${Math.random() * 100}%`;
-
-                if (Math.random() > 0.7) {
-                    setInterval(() => {
-                        star.classList.toggle('twinkling');
-                    }, Math.random() * 2000 + 1000);
-                }
-
-                overlay.appendChild(star);
-            }
-        }
-
-        function createShootingStar() {
-            const overlay = document.querySelector('.overlay');
-            const shootingStar = document.createElement('img');
-            shootingStar.src = 'css/img/shootingstar.png';
-            shootingStar.classList.add('shootingstar');
-
-            const startX = Math.random() * 70 - 10;
-            const startY = Math.random() * 50;
-
-            shootingStar.style.top = `${startY}vh`;
-            shootingStar.style.left = `${startX}vw`;
-
-            const animationDuration = 500; // a half seconds
-
-            overlay.appendChild(shootingStar);
-
-            setTimeout(() => {
-                shootingStar.remove();
-            }, animationDuration);
-        }
-
-
-        function triggerMeteorShower() {
-            const meteorShowerDuration = 5000;
-            const meteorInterval = 100; // Interval between shooting stars
-            const shootingStarDuration = 500; // matches animationDuration
-
-            const meteorShowerTimer = setInterval(() => {
-                createShootingStar();
-            }, meteorInterval);
-
-            setTimeout(() => {
-                clearInterval(meteorShowerTimer);
-            }, meteorShowerDuration);
-        }
-
-        function startShootingStars() {
-            setInterval(() => {
-                const chance = Math.random();
-
-                if (chance > 0.99) { // 1% chance for a meteor shower
-                    triggerMeteorShower();
-                } else if (chance > 0.95) { // 5% chance for a single shooting star
-                    createShootingStar();
-                }
-            }, 2000); // Every 2 seconds
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            createStars();
-            startShootingStars();
-        });
-
-        window.addEventListener('resize', () => {
-            document.querySelector('.overlay').innerHTML = '';
-            createStars();
-        });
-    </script>
+    <script src="js/paracosms.js"></script>
+    <script src="js/tablet.js"></script>
 </body>
 
 </html>

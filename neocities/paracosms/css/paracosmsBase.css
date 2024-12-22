@@ -1,4 +1,45 @@
-/* Background */
+:root {
+
+    /* Colors */
+    --bubblegum: #ffb7ed;
+    --dustyPink: #f6bdd1;
+    --rosette: #ffbbc5;
+    --persian: #f283b6;
+    --wisteria: #8266ff;
+    --kangel: #c3a3f6;
+    --hintofmist: #f1efff;
+    --whispermist: #dbd8f0;
+    --driedBlood: #8B575c;
+    --pinkIce: #f6e4f6;
+    --ash: #cad2c5;
+    --water: #adcaff;
+    --deepsea: #357ce6;
+    --roseRed: #C71227;
+    --rosePink: #FB003F;
+    --blood: #800000;
+    --deepslate: #696969;
+    --cobblestone: #a8a8a8;
+
+    /* New Colors */
+
+    --ScifiTeal: #00ffcc;
+    --ScifiBlue: #75ffeb;
+
+    /* Globals */
+    --globalBorderRadius: 10px;
+    --detailBarHeight: 20px;
+}
+
+@font-face {
+    font-family: Aboro;
+    src: url('/fonts/sciFiFonts/Aboro.ttf');
+}
+
+@font-face {
+    font-family: OCRA;
+    src: url('/fonts/sciFiFonts/OCRA.ttf');
+}
+
 body {
     height: 100vh;
 
@@ -20,6 +61,7 @@ body {
 
     position: fixed;
     pointer-events: none;
+    user-select: none;
 }
 
 /* Regular Stars */
@@ -31,6 +73,8 @@ body {
     opacity: 0.8;
     filter: blur(1px);
     transition: transform 1s, opacity 1s;
+
+    pointer-events: none;
 }
 
 .stars.twinkling {
@@ -83,7 +127,7 @@ body {
 
 .planet:hover,
 .meteor:hover,
-.spaceStation:hover{
+.spaceStation:hover {
     transform: scale(1.1);
     box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.7);
     cursor: pointer;
@@ -165,9 +209,12 @@ body {
 }
 
 @keyframes shine {
-    0%, 100% {
+
+    0%,
+    100% {
         box-shadow: 0 0 20px 10px rgba(255, 153, 0, 0.7);
     }
+
     50% {
         box-shadow: 0 0 20px 15px rgba(255, 153, 0, 0.7);
     }
@@ -181,7 +228,22 @@ body {
     bottom: 10em;
     right: 15em;
 
-    transition: transform .3s;
+    transform: scaleX(0) scaleY(0);
+    animation: appearance 2s forwards;
+}
+
+@keyframes appearance {
+    0% {
+        transform: scaleX(0) scaleY(0);
+    }
+
+    50% {
+        transform: scaleX(1) scaleY(0);
+    }
+
+    100% {
+        transform: scaleX(1) scaleY(1);
+    }
 }
 
 .blackHole {
@@ -223,6 +285,7 @@ body {
     from {
         transform: translate(-50%, -50%) rotate(0deg);
     }
+
     to {
         transform: translate(-50%, -50%) rotate(-360deg);
     }
@@ -245,12 +308,10 @@ body {
 }
 
 .celestialObject>.planet:hover .label,
-.orbit >.planet:hover .label,
-.celestialObject>a:hover .label{
+.orbit>.planet:hover .label,
+.celestialObject>a:hover .label {
     opacity: 1;
 }
-
-/* Relative positioning the planets in celestial objects */
 
 .COWrapper {
     position: relative;

@@ -1,0 +1,435 @@
+/* * Tablet */
+
+/* & Wrappers */
+
+#sciFiTablet {
+    width: 50vw;
+    height: 45vh;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 1000;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+
+    /* ! Subtract height of branding */
+    margin-top: -90px;
+
+    border-radius: 10px;
+
+    font-family: "OCRA", 'Courier New', Courier, monospace;
+    color: black;
+
+    transform: translate(-50%, 150%);
+}
+
+#mainWrapper {
+    flex: 1;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+/* & Animation Hell */
+
+/* TODO Show */
+
+/* ? Show Tablet */
+@keyframes tabletShow {
+    from {
+        transform: translate(-50%, 150%);
+    }
+
+    to {
+        transform: translate(-50%, -50%);
+    }
+}
+
+.tabletShow {
+    animation: tabletShow 1s forwards;
+}
+
+/* ? Show Branding */
+
+@keyframes brandingShow {
+    from {
+        transform: translateY(120%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.brandingShow {
+    animation: brandingShow 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+/* ? Show Sidebar */
+
+@keyframes asideShow {
+    from {
+        transform: translateX(-110%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.asideShow {
+    animation: asideShow 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+/* ? Show Main Background */
+
+@keyframes powerOn {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: .9;
+    }
+
+    60%,
+    70%,
+    80%,
+    90% {
+        opacity: .6;
+    }
+
+    75% {
+        opacity: .9;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.powerOn {
+    animation: powerOn .5s forwards;
+}
+
+/* ? Fade In Details */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation: fadeIn 0.5s forwards;
+}
+
+/* TODO Hide */
+
+#sciFiTablet.tabletHide {
+    transform: translate(-50%, -50%);
+}
+
+@keyframes tabletHide {
+    from {
+        transform: translate(-50%, -50%);
+    }
+
+    to {
+        transform: translate(-50%, 150%);
+    }
+}
+
+.tabletHide {
+    animation: tabletHide 1s forwards;
+}
+
+/* ? Hide Branding */
+#sciFiTablet.tabletHide #tabletBranding {
+    transform: translateY(0);
+}
+
+@keyframes brandingHide {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(120%);
+    }
+}
+
+.brandingHide {
+    animation: brandingHide 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+
+/* ? Hide Sidebar */
+#sciFiTablet.tabletHide #tabletAside {
+    transform: translateX(0);
+}
+
+@keyframes asideHide {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-110%);
+    }
+}
+
+.asideHide {
+    animation: asideHide 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+/* ? Fade Out */
+
+.tabletHide .content ,
+.tabletHide .details,
+.tabletHide #planetName,
+.tabletHide #planetDescription,
+.tabletHide #planetPreview,
+.tabletHide #tabletAside h2,
+.tabletHide #tabletAside p,
+.tabletHide #tabletAside .settingsButton {
+    opacity: 1;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.fadeOut {
+    animation: fadeOut 0.5s forwards;
+}
+
+/* & Content Layout */
+
+/* ~ Branding */
+
+#tabletBranding {
+    flex: 0 1 90px;
+    padding: 10px 20px 5px;
+
+    border-radius: 5px 5px 0 0;
+    border-bottom: none;
+
+    transform: translateY(120%);
+}
+
+#tabletBranding h1 {
+    font-family: Aboro;
+    font-size: 4em;
+    line-height: .8em;
+
+    color: var(--ScifiTeal);
+    -webkit-text-stroke: 1px var(--deepslate);
+}
+
+#tabletBranding p {
+    text-align: right;
+}
+
+/* ~ Main */
+
+#tabletMain {
+    flex: 1 1 80%;
+    width: 800px;
+    height: 100%;
+
+    padding: 20px;
+    padding-top: 0;
+
+    border-radius: 0 5px 5px 5px;
+    z-index: 2;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: flex-start;
+}
+
+#tabletMain .content {
+    flex: 1 0;
+
+    position: relative;
+    z-index: 2;
+
+    background: url(img/tabletMats/GridBG.png) center/20px, linear-gradient(160deg, #ff95fd 0%, var(--ScifiBlue) 100%);
+
+    border: 3px ridge var(--ScifiTeal);
+    box-shadow: inset 0 0 20px 5px var(--ScifiBlue);
+
+    padding: 30px 40px;
+
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    column-gap: 10px;
+}
+
+#planetName {
+    flex: 1 0 100%;
+}
+
+#planetDescription {
+    flex: 1 1 50%;
+
+    max-height: 233px;
+    overflow: auto;
+}
+
+#planetPreview {
+    flex: 0 1;
+    max-width: 200px;
+}
+
+/* ~ Buttons */
+
+#buttons {
+    height: 25px;
+}
+
+#buttons button {
+    width: 15px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+
+    background-color: white;
+
+    border: 2px ridge white;
+    outline: 1px solid black;
+}
+
+#buttons #closeTablet {
+    background-color: red;
+}
+
+/* ~ Aside */
+
+#tabletAside {
+    z-index: 1;
+
+    flex: 1 0 20%;
+    height: 90%;
+
+    border-left: none;
+    padding: 10px;
+
+    border-radius: 0 5px 5px 0;
+
+    transform: translateX(-110%);
+}
+
+#tabletAside .content {
+    position: relative;
+    z-index: 2;
+
+    height: 100%;
+
+    background: url(img/tabletMats/GridBG.png) center/20px, linear-gradient(60deg, var(--ScifiBlue) 0%, #ff95fd 100%);
+
+    border: 3px ridge var(--ScifiTeal);
+    box-shadow: inset 0 0 20px 5px var(--ScifiBlue);
+
+    padding: 30px 25px;
+}
+
+#tabletAside h2 {
+    font-size: .9em;
+}
+
+#tabletAside p {
+    font-size: .8em;
+}
+
+#tabletAside .settingsButton {
+    background-color: var(--bubblegum);
+}
+
+/* ~ Both */
+
+#tabletMain,
+#tabletAside {
+    position: relative;
+}
+
+.content,
+.details,
+#planetName,
+#planetDescription,
+#planetPreview,
+#tabletAside h2,
+#tabletAside p,
+#tabletAside .settingsButton {
+    opacity: 0;
+}
+
+/* & Decor */
+
+.sciFi {
+    background: url(img/tabletMats/metal.jpg);
+    border: 2px solid var(--ScifiTeal);
+    box-shadow: 0 0 20px 5px rgba(0, 255, 204, 0.5);
+}
+
+#sciFiTablet .details {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+
+    border-style: solid;
+    border-image: url("img/tabletMats/sciFiBorder.png") 130 repeat;
+    border-width: 55px;
+    background-clip: padding-box;
+
+    pointer-events: none;
+}
+
+#sciFiTablet .blackFiller {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 1;
+
+    background-color: black;
+
+    pointer-events: none;
+}
+
+#tabletMain .details {
+    width: 93%;
+    height: 85%;
+}
+
+#tabletMain .blackFiller {
+    width: 94%;
+    height: 84%;
+}
+
+#tabletAside .details {
+    width: 80%;
+    height: 90%;
+}
+
+#tabletAside .blackFiller {
+    width: 89%;
+    height: 93%;
+}
