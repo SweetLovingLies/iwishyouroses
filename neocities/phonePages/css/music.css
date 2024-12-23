@@ -83,12 +83,16 @@ main {
 
 .ProgressCStar {
     position: absolute;
-    /* top: 50%;
-    left: 50%; */
+    top: 50%;
+    left: 50%;
     transform-origin: center center;
     z-index: 10;
-    /* transform: translateX(-50%) translateY(-90px); */
+    transform: translateX(-50%) translateY(-110px);
 }
+
+#starPath {
+    transform-origin: 50% 50% 0px;
+  }
 
 /* ! Progress Bar End */
 
