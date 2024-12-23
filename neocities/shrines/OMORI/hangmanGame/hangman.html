@@ -251,7 +251,6 @@
                     </div>
                 </div>
 
-
             </div>
             <div id="hangmanContainer" class="columnFlex">
                 <div id="incorrectLetters"></div>
@@ -309,11 +308,13 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
+            getAchievement("general", "Hangman");
 
             function clearLocalStorage() {
-                localStorage.clear();
-                alert('Your local storage has been cleared. Begin again.');
-                location.reload();
+                //! Need to update this to not delete everything from local storage, only the keys gained!
+                // localStorage.clear();
+                // alert('Your local storage has been cleared. Begin again.');
+                // location.reload();
             }
 
             function updateDownTrianglePosition() {
@@ -379,6 +380,7 @@
             });
         });
     </script>
+    <script src="/phonePages/js/achievements/achievements.js"></script>
 </body>
 
 </html>

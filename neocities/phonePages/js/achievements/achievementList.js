@@ -1,176 +1,120 @@
-// & Code by LilithDev. Adding my own comments so I can understand everything (or mark things I don't understand...)
+fetch('js/achievements/achievements.json', {cache: "no-store"})
+    .then(response => response.json())
+    .then(data => {
+        achievementData = data;
+        displayAchievements();
+    })
+    .catch(error => console.error('Error loading JSON:', error));
 
-//const insertAchievementsHere = document.currentScript;
+// ~ Function to check if achievement is unlocked from localStorage
+function hasAchievement(namespace, achievementID) {
+    const achievementKey = `${namespace}:${achievementID}`;
+    return localStorage.getItem(achievementKey) === 'true';
+}
 
-// ~ Also in the Achievements.js file 
-function waitForAchievementData(checkInterval = 100) {
-    return new Promise((resolve) => {
-      if("achievementData" in window)
-        resolve();
-      
-      const interval = setInterval(() => {
-        //console.log("achievementData" in window);
-        if ("achievementData" in window) { // or any specific condition
-          clearInterval(interval); // Stop checking
-          resolve(); // Resolve the promise
-        }
-      }, checkInterval); // Check every 'checkInterval' milliseconds
-    });
-  }
-  
-  // & This actually displays the achievements. 
-  async function showAchievements(listObtainedFirst) {
-    // Wait for the critical data (I know, gross)
-    await waitForAchievementData();
-    
-    let achievementData = window["achievementData"];
-    
-    for (var namespace in achievementData) {
-      const listByNamespace = document.getElementById("achievement-list-" + namespace);
-      if(!listByNamespace) {
-        continue;
-      }
-      
-      listByNamespace.innerHTML = '';
-      
-      // Load the namespace style
-      const toastStyleID = "toast-style-" + namespace;
-      if(!document.getElementById(toastStyleID)) {
-        // Load the achievement style in advance just to preload it
-        let link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.id = toastStyleID;
-        link.href = achievementData[namespace].style;
-        document.head.appendChild(link);
-      }
-      
-      // Load the namespace template
-      const toastTemplateID = "toast-template-" + namespace;
-      if(!document.getElementById(toastTemplateID)) {
-        const response = await fetch(achievementData[namespace].template, {cache: "no-store"});
-        const templateData = await response.text();
-        document.body.insertAdjacentHTML("beforeend", "<template id=" + toastTemplateID + ">" + templateData + "</template>");
-      }
-      
-      const achievementTemplate = document.getElementById(toastTemplateID);
-      
-      let obtainedCount = 0;
-      
-      for(var achievementName in achievementData[namespace].achievements) {
-        let achievementInfo = achievementData[namespace].achievements[achievementName];
-        //console.log(achievementInfo);
-        
-        const clone = achievementTemplate.content.cloneNode(true);
-  
-        const toast = clone.querySelector(".achievement-toast");
-        const toastIcon = clone.querySelector(".toast-icon");
-        const toastTitle = clone.querySelector(".toast-title");
-        const toastDescription = clone.querySelector(".toast-description");
-        
-        toast.className += " " + achievementInfo.class;
-        toastIcon.src = achievementInfo.icon;
-        toastTitle.textContent = achievementInfo.title;
-        toastDescription.textContent = achievementInfo.description;
-        
-        toast.style.animationName = "initial";
-        toast.style.position = "initial";
-        toast.style.left = "initial";
-        toast.style.top = "initial";
-        
-        //opacity: 0.6; filter: grayscale(0.8);/
-        if(!hasAchievement(namespace, achievementName)) { // ~ So many if statements...
-          /*toast.style.opacity = "0.6";
-          toast.style.filter = "grayscale(0.8)";*/
-          if("hidden" in achievementInfo && "hidden" in achievementData[namespace]) {
-            let hidden = achievementData[namespace].hidden;
-            if("class" in hidden) toast.className += " " + hidden.class;
-            if("icon" in hidden) toastIcon.src = hidden.icon;
-            if("title" in hidden) toastTitle.textContent = hidden.title;
-            if("description" in hidden) toastDescription.textContent = hidden.description;
-          } else if("missing" in achievementData[namespace]) {
-            let missing = achievementData[namespace].missing;
-            if("class" in missing) toast.className += " " + missing.class;
-            if("icon" in missing) toastIcon.src = missing.icon;
-            if("title" in missing) toastTitle.textContent = missing.title;
-            if("description" in missing) toastDescription.textContent = missing.description;
-          }
-        }
-    
-        // ? Not sure here... 
-        //document.body.appendChild(clone);
-        //insertAchievementsHere.after(clone);
-        if(listObtainedFirst) {
-          if(hasAchievement(namespace, achievementName)) {
-            listByNamespace.insertBefore(clone, listByNamespace.childNodes[obtainedCount]);
-            obtainedCount++;
-          } else {
-            listByNamespace.appendChild(clone);
-          }
+// ~ Function to display achievements
+function displayAchievements() {
+    const dashboard = document.getElementById("achievements-dashboard");
+    const { missing, hidden, achievements } = achievementData.general;
+
+    dashboard.innerHTML = ""; // Clear previous content
+
+    Object.keys(achievements).forEach(achievementID => {
+        const achievement = achievements[achievementID];
+
+        const card = document.createElement("div");
+        card.classList.add("achievement-card");
+
+        const isHidden = achievement.hidden; // Check if the achievement is hidden
+        const isCompleted = hasAchievement("general", achievementID); // Check if completed in localStorage
+
+        // Apply classes based on completion status
+        if (isHidden && !isCompleted) {
+            card.classList.add(hidden.class); // Hidden achievements if not completed
+        } else if (isHidden && isCompleted) {
+            card.classList.add("dark"); // Completed hidden achievements should have the "dark" class
+        } else if (!isCompleted) {
+            card.classList.add(missing.class); // Missing achievements
         } else {
-          listByNamespace.appendChild(clone);
+            card.classList.add('completed'); // Normal achievements
         }
-      }
-    }
-    
 
-    let totalAchievementCount = 0;
-    let foundTotalAchievements = 0;
-    let achievementPerNamespace = {};
-    let foundAchievementPerNamespace = {};
-    for (var namespaceCount in achievementData) {
-      achievementPerNamespace[namespaceCount] = 0;
-      foundAchievementPerNamespace[namespaceCount] = 0;
-      
-      for(var achievementCount in achievementData[namespaceCount].achievements) {
-        totalAchievementCount++;
-        achievementPerNamespace[namespaceCount]++;
-        if(hasAchievement(namespaceCount, achievementCount)) {
-          foundTotalAchievements++;
-          foundAchievementPerNamespace[namespaceCount]++;
-        }
-      }
-    }
-    
-    let completed = foundTotalAchievements === totalAchievementCount;
-    
-    // & Nodes are literally whatever you declare them to be, genius.
-    // & Anyways, this is that achievements list on the index
-    const achievementListCountNode = document.getElementById("achievement-list-count");
+        // Update title, description, and icon based on completion and hidden status
+        const title = isHidden && !isCompleted ? "???" : achievement.title;
+        const description = isHidden && !isCompleted 
+            ? hidden.description 
+            : (isCompleted ? achievement.description : missing.description);
+        const icon = isHidden && !isCompleted ? hidden.icon : achievement.icon || "";
 
-    if(achievementListCountNode) achievementListCountNode.textContent = foundTotalAchievements + "/" + totalAchievementCount;
-    if(achievementListCountNode && completed) achievementListCountNode.classList.add("complete");
-    
-    const achievementListPercentageNode = document.getElementById("achievement-list-percentage");
-    
-    if(achievementListPercentageNode) achievementListPercentageNode.textContent = Math.round(foundTotalAchievements/totalAchievementCount*100) + "%";
-    if(achievementListPercentageNode && completed) achievementListPercentageNode.classList.add("complete");
-    
-    const achievementListBarNode = document.getElementById("achievement-list-bar");
+        // Create card content
+        card.innerHTML = `
+            <img src="${icon}" alt="${title}">
+            <div>
+                <h3>${title}</h3>
+                <p>${description}</p>
+            </div>
+        `;
 
-    if(achievementListBarNode) achievementListBarNode.style.width = (foundTotalAchievements/totalAchievementCount*100) + "%";
-    if(achievementListBarNode && completed) achievementListBarNode.classList.add("complete");
-    
-    for (var ns in achievementData) {
-      let achievementCompleted = foundAchievementPerNamespace[ns] === achievementPerNamespace[ns];
-      
-      const achievementNamespaceListCountNode = document.getElementById("achievement-list-count-" + ns);
-      if(achievementNamespaceListCountNode) achievementNamespaceListCountNode.textContent = foundAchievementPerNamespace[ns] + "/" + achievementPerNamespace[ns];
-      if(achievementNamespaceListCountNode && achievementCompleted) achievementNamespaceListCountNode.classList.add("complete");
-      
-      const achievementNamespaceListPercentageNode = document.getElementById("achievement-list-percentage-" + ns);
-      if(achievementNamespaceListPercentageNode) achievementNamespaceListPercentageNode.textContent = Math.round(foundAchievementPerNamespace[ns]/achievementPerNamespace[ns]*100) + "%";
-      if(achievementNamespaceListPercentageNode && achievementCompleted) achievementNamespaceListPercentageNode.classList.add("complete");
-      
-      const achievementNamespaceListBarNode = document.getElementById("achievement-list-bar-" + ns);
-      if(achievementNamespaceListBarNode) achievementNamespaceListBarNode.style.width = (foundAchievementPerNamespace[ns]/achievementPerNamespace[ns]*100) + "%";
-      if(achievementNamespaceListBarNode && achievementCompleted) achievementNamespaceListBarNode.classList.add("complete");
+        // Handle click event to show hint
+        card.addEventListener("click", () => {
+            showHint(
+                achievement.title,
+                achievement.hint,
+                isHidden,
+                !isCompleted,
+                isCompleted
+            );
+        });
+
+        dashboard.appendChild(card);
+    });
+
+    calculateProgress();
+}
+
+
+function showHint(title, hint, isHidden = false, isMissing = false, isCompleted = false) {
+    if (isCompleted) {
+        return; 
     }
-    
-    /*const listByNamespace = document.getElementById("achievement-list-percentage-" + namespace);
-    if(!listByNamespace) {
-      continue;
-    }*/
-  }
+
+    const popover = document.getElementById("popover");
+    const popoverTitle = document.getElementById("popover-title");
+    const popoverDescription = document.getElementById("popover-description");
+
+    const resolvedTitle = isHidden ? "???" : title || "Unknown Achievement";
+    const resolvedHint = 
+        isHidden ? "There is no hint for the hidden achievements." : 
+        isMissing ? (hint || "No hint needed!") : hint || "No hint available.";
+
+    popoverTitle.textContent = resolvedTitle;
+    popoverDescription.textContent = resolvedHint;
+
+    popover.classList.remove("noShow");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("close-popover").addEventListener("click", () => {
+        document.getElementById("popover").classList.add("noShow");
+    });
+});
+
+// ~ Progress Bar
+
+function calculateProgress() {
+    const achievements = achievementData.general.achievements;
+    const total = Object.keys(achievements).length;
   
-  //showAchievements();
+    const completed = Object.keys(achievements).filter(key => {
+      const achievementKey = `general:${key}`;
+      return localStorage.getItem(achievementKey) === 'true';
+    }).length;
+  
+    const percentage = Math.round((completed / total) * 100);
+  
+    console.log(`Total achievements: ${total}, Completed: ${completed}`);
+    console.log(`Progress: ${percentage}%`);
+  
+    document.getElementById("progress-percentage").textContent = `${percentage}%`;
+    document.getElementById("progress-bar").style.width = `${percentage}%`;
+  }

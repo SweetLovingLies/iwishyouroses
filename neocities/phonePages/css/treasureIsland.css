@@ -20,6 +20,16 @@
     --deepslate: #696969;
     --cobblestone: #a8a8a8;
 
+    /* New Colors */
+
+    --leafyGreen: #64A757;
+    --hibiscusPink: #F98FA5;
+    --orangeCrush: #FF6429;
+    --sunYellow: #F6B402;
+    --bananaYellow: #FCDD64;
+    --peachFruit: #FF4756;
+    --limeFruit: #B9DE76;
+
     /* Globals */
     --globalBorderRadius: 10px;
     --detailBarHeight: 20px;
@@ -38,7 +48,8 @@
 body {
     font-family: Helvetica, Arial, sans-serif;
 
-    background-color: white;
+    background: url(/Assets/BGs/water.gif);
+    background-size: 10%;
 
     overflow-x: hidden;
 }
@@ -47,6 +58,8 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    gap: 10px;
 
     padding: 20px 5px 10px;
 
@@ -59,7 +72,11 @@ header {
     font-size: 36px;
     font-family: LoveBeach;
     font-feature-settings: "aalt";
-    color: green;
+    color: var(--leafyGreen);
+}
+
+header #left {
+    transform: scaleX(-1);
 }
 
 #welcome {
@@ -74,14 +91,13 @@ header {
 }
 
 .achievement-card {
-    width: 270px;
     padding: 10px 5px;
 
     background: url("/Assets/BGs/haibisukasu01b.gif");
     background-size: 20%;
     background-position: center;
 
-    border: 2px solid var(--water);
+    border: 2px solid var(--peachFruit);
     border-left: none;
     border-right: none;
 
@@ -90,6 +106,16 @@ header {
     transition: color 0.2s;
 
     overflow: hidden;
+
+    display: flex;
+    gap: 10px;
+}
+
+.achievement-card img {
+    width: 70px;
+    height: 70px;
+
+    border: 2px solid var(--rosePink);
 }
 
 .achievement-card:hover {
@@ -98,12 +124,30 @@ header {
 
 /* Themes */
 
-.achievement-card.hidden {
+.missing.achievement-card {
+    filter: grayscale(100%);
+}
+
+.hidden.achievement-card {
     filter: grayscale(100%) brightness(50%);
 }
 
-progress {
-    width: 100%;
+.hidden.achievement-card img {
+    border: 2px solid black;
+}
+
+.completed.achievement-card:hover {
+    color: black;
+    cursor: auto;
+}
+
+.dark.achievement-card {
+    background: url(/Assets/BGs/darkMode/scratches.png);
+    color: white;
+}
+
+.dark.achievement-card img {
+    border: 2px solid white;
 }
 
 /* ~ Popover */
@@ -129,18 +173,58 @@ progress {
     overflow-x: hidden;
 }
 
-#popoverTitle {}
 
 #popover.noShow {
     display: none;
 }
 
 .popover-content button {
-    background: #6200ea;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
+    background: var(--limeFruit);
+    color: black;
+    border: 1px solid var(--leafyGreen);
+    padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 1rem;
+    margin-top: 10px;
+}
+
+#progress-container {
+    position: relative;
+    height: 20px;
+    background: white;
+    margin: 10px 0;
+    overflow: hidden;
+    border: 2px solid var(--bananaYellow);
+    border-left: none;
+    border-right: none;
+}
+
+#progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: var(--leafyGreen);
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+#progress-percentage {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: black;
+}
+
+/* ~ General */
+
+* {
+    scrollbar-width: none;
+}
+
+*::-webkit-scrollbar,
+*::-webkit-scrollbar-button {
+    width: 0;
 }
