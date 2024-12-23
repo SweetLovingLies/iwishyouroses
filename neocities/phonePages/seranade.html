@@ -211,13 +211,12 @@
 
         function updateMetadata(index) {
             const song = songs[index];
-            if (!song) return;  // Exit if there's no song at the given index
+            if (!song) return;
 
             // Update song name and artist
             document.getElementById('songName').innerText = song.title;
             document.getElementById('songArtist').innerText = song.writer;
 
-            // Update album cover (with fallback image)
             const albumCoverElement = document.getElementById('albumCover');
             if (albumCoverElement) {
                 albumCoverElement.src = song.cover || "/Assets/other/albumCovers/fallbackCover.jpg";
@@ -245,16 +244,15 @@
             updatePauseButton();
         }
 
-
-
         function updatePauseButton() {
             const pauseButton = document.getElementById('MusicPauseButton');
             if (audioPlayer.paused) {
-                pauseButton.innerHTML = `<iconify-icon icon="qlementine-icons:play-16"></iconify-icon>`;  // Show Play icon if paused
+                pauseButton.innerHTML = `<iconify-icon icon="qlementine-icons:play-16"></iconify-icon>`;
             } else {
-                pauseButton.innerHTML = `<iconify-icon icon="qlementine-icons:pause-16"></iconify-icon>`;  // Show Pause icon if playing
+                pauseButton.innerHTML = `<iconify-icon icon="qlementine-icons:pause-16"></iconify-icon>`;
             }
         }
+
         // Loop Mode
         function toggleLoop() {
             loopMode = !loopMode;
@@ -268,6 +266,7 @@
             this.classList.toggle('active', shuffleMode);
 
             if (shuffleMode) {
+                shuffleOrder = [...Array(songs.length).keys()];
                 shuffleArray(shuffleOrder);
                 currentShuffleIndex = 0;
             } else {
@@ -276,6 +275,7 @@
 
             sessionStorage.setItem('shuffleMode', shuffleMode);
         }
+
     </script>
 </body>
 
