@@ -15,40 +15,42 @@
             "class": "hidden"
         },
         "achievements": {
-            "yanShrine": {
-                "icon": "/assets/anime/IWasWrong/pfp/1.jpg",
-                "title": "ANDROSESANDROSESANDROSESANDROSEANDROSESANDROSESANDROSES",
-                "description": "View the Yandere Shrine",
-                "hint": "Home is where the heart is. The count is how much you love me.",
-                "class": "achievementYandere"
-            },
             "iwishyouroses": {
-                "icon": "/assets/anime/IWasWrong/pfp/1.jpg",
+                "icon": "/assets/singers/kaliUchis/iwishyouroses2.jpg",
                 "title": "I Wish You Roses",
-                "description": "Wish roses 100 times",
+                "description": "Wish roses 18 times",
+                "hint": "How many times does Kali Uchis wish you roses?",
                 "class": "achievementNormal"
             },
             "Nice": {
-                "icon": "/assets/anime/IWasWrong/pfp/1.jpg",
+                "icon": "/assets/other/achievementIcons/nice.webp",
                 "title": "👌",
                 "description": "Click the Weird Stats 69 times",
-                "hint": "Hey... that's weird...",
+                "hint": "That's weird...",
+                "sfx": "https://files.catbox.moe/lcy0r7.mp3",
                 "class": "achievementNormal"
             },
             "Selfie": {
-                "icon": "/assets/anime/IWasWrong/pfp/1.jpg",
+                "icon": "/assets/kpop/xg/selcas/hinata/1.jpg",
                 "title": "Selfie Connoiseur!",
                 "description": "Take 10 Selfies!",
                 "class": "achievementNormal"
             },
             "Herobrine": {
-                "icon": "/assets/anime/IWasWrong/pfp/1.jpg",
+                "icon": "/assets/other/achievementIcons/herobrine.jpeg",
                 "title": "Herobrine?",
                 "description": "He was supposed to have been removed...",
                 "class": "achievementNormal"
             },
+            "yanShrine": {
+                "icon": "/assets/anime/YanSim/pfp/ryoba3.jpg",
+                "title": "ANDROSESANDROSESANDROSESANDROSEANDROSESANDROSESANDROSES",
+                "description": "View the Yandere Shrine",
+                "hint": "Beat my heart. Tell me how much you love me!",
+                "class": "achievementYandere"
+            },
             "HeadCount": {
-                "icon": "/assets/anime/IWasWrong/pfp/1.jpg",
+                "icon": "/assets/FNAF/GoldenFreddy/1.jpg",
                 "title": "THE BITE OF '83",
                 "hint": "What could serve as a numpad?",
                 "description": "Type 395248 into Your Tome",

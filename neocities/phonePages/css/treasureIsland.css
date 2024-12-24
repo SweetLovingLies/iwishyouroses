@@ -115,11 +115,14 @@ header #left {
     width: 70px;
     height: 70px;
 
-    border: 2px solid var(--rosePink);
+    object-fit: cover;
+    border-radius: 5px;
+
+    border: 2px solid var(--orangeCrush);
 }
 
 .achievement-card:hover {
-    color: var(--rosePink);
+    color: var(--orangeCrush);
 }
 
 /* Themes */

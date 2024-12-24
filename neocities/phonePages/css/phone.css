@@ -84,7 +84,6 @@ main {
 
     text-decoration: none;
     font-family: "Noto Emoji";
-    font-size: .8em;
 
     background-color: #303030;
     color: white;
@@ -92,4 +91,6 @@ main {
     height: 40px;
     width: 40px;
     border-radius: 999px;
+
+    cursor: pointer;
 }

@@ -1,4 +1,4 @@
-fetch('js/achievements/achievements.json', {cache: "no-store"})
+fetch('js/achievements/achievements.json', { cache: "no-store" })
     .then(response => response.json())
     .then(data => {
         achievementData = data;
@@ -41,8 +41,8 @@ function displayAchievements() {
 
         // Update title, description, and icon based on completion and hidden status
         const title = isHidden && !isCompleted ? "???" : achievement.title;
-        const description = isHidden && !isCompleted 
-            ? hidden.description 
+        const description = isHidden && !isCompleted
+            ? hidden.description
             : (isCompleted ? achievement.description : missing.description);
         const icon = isHidden && !isCompleted ? hidden.icon : achievement.icon || "";
 
@@ -75,7 +75,7 @@ function displayAchievements() {
 
 function showHint(title, hint, isHidden = false, isMissing = false, isCompleted = false) {
     if (isCompleted) {
-        return; 
+        return;
     }
 
     const popover = document.getElementById("popover");
@@ -83,9 +83,9 @@ function showHint(title, hint, isHidden = false, isMissing = false, isCompleted 
     const popoverDescription = document.getElementById("popover-description");
 
     const resolvedTitle = isHidden ? "???" : title || "Unknown Achievement";
-    const resolvedHint = 
-        isHidden ? "There is no hint for the hidden achievements." : 
-        isMissing ? (hint || "No hint needed!") : hint || "No hint available.";
+    const resolvedHint =
+        isHidden ? "There is no hint for the hidden achievements." :
+            isMissing ? (hint || "No hint needed!") : hint || "No hint available.";
 
     popoverTitle.textContent = resolvedTitle;
     popoverDescription.textContent = resolvedHint;
@@ -104,17 +104,17 @@ document.addEventListener("DOMContentLoaded", () => {
 function calculateProgress() {
     const achievements = achievementData.general.achievements;
     const total = Object.keys(achievements).length;
-  
+
     const completed = Object.keys(achievements).filter(key => {
-      const achievementKey = `general:${key}`;
-      return localStorage.getItem(achievementKey) === 'true';
+        const achievementKey = `general:${key}`;
+        return localStorage.getItem(achievementKey) === 'true';
     }).length;
-  
+
     const percentage = Math.round((completed / total) * 100);
-  
+
     console.log(`Total achievements: ${total}, Completed: ${completed}`);
     console.log(`Progress: ${percentage}%`);
-  
+
     document.getElementById("progress-percentage").textContent = `${percentage}%`;
     document.getElementById("progress-bar").style.width = `${percentage}%`;
-  }
+}

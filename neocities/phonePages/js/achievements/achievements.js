@@ -16,7 +16,7 @@ fetch(`/phonePages/js/achievements/achievements.json`, { cache: "no-store" }) //
 async function loadAssets(namespace) {
   const toastStyleID = "toast-style-" + namespace;
   if (!document.getElementById(toastStyleID)) {
-    // ~ Preloading css link just because
+    // ~ Preloading css link
     let link = document.createElement('link');
     link.rel = 'stylesheet';
     link.type = 'text/css';
@@ -25,8 +25,7 @@ async function loadAssets(namespace) {
     // document.currentScript.getAttribute('namespace');
     link.href = achievementData[namespace].style;
 
-    document.head.appendChild(link);
-
+    window.top.document.head.appendChild(link);
   }
 
   // & Loads an HTML file for displaying the achievements
@@ -36,7 +35,7 @@ async function loadAssets(namespace) {
     const templateData = await response.text();
 
     // ! Non Destructive way of adding html to the document body
-    document.body.insertAdjacentHTML("beforeend", "<template id=" + toastTemplateID + ">" + templateData + "</template>");
+    window.top.document.body.insertAdjacentHTML("beforeend", "<template id=" + toastTemplateID + ">" + templateData + "</template>");
   }
 }
 
@@ -79,7 +78,7 @@ async function getAchievement(namespace, achievementID) {
   localStorage.setItem(namespace + ":" + achievementID, true);
 
   loadAssets(namespace).then(() => {
-    const achievementTemplate = document.getElementById("toast-template-" + namespace);
+    const achievementTemplate = window.top.document.getElementById("toast-template-" + namespace);
 
     const clone = achievementTemplate.content.cloneNode(true);
 
@@ -136,7 +135,7 @@ async function getAchievement(namespace, achievementID) {
       // }, 100000);
     }, 10000);
 
-    document.body.appendChild(clone);
+    window.top.document.body.appendChild(clone);
   });
 }
 
@@ -147,6 +146,8 @@ window.addEventListener("message", (e) => {
 });
 
 // ! Debug Logs
+
+// getAchievement("general", "achievementName");
 
 function logAllAchievements() {
   const achievements = achievementData.general.achievements;

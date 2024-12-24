@@ -45,10 +45,11 @@ function createShootingStar() {
     }, animationDuration);
 }
 
-
 function triggerMeteorShower() {
     const meteorShowerDuration = 5000;
-    const meteorInterval = 100; // Interval between shooting stars
+    const meteorInterval = 100;
+
+    getAchievement("general", "MeteorShower");
 
     const meteorShowerTimer = setInterval(() => {
         createShootingStar();
@@ -88,12 +89,12 @@ function randomEvents() {
     setInterval(() => {
         const chance = Math.random();
 
-        if (chance > 0.99) { // 1% chance for a meteor shower
+        if (chance > 0.995) { // ~ 0.5% chance for a meteor shower
             triggerMeteorShower();
-        } else if (chance > 0.95) { // 5% chance for a single shooting star
+        } else if (chance > 0.95) { // ~ 5% chance for a single shooting star
             createShootingStar();
         }
-    }, 2000); // Every 2 seconds
+    }, 2000); // ~ Every 2 seconds
 }
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -15,7 +15,7 @@
     <link rel="icon" type="image/x-icon" href="../Assets/pixels/vintageAmericana/strawberryphone.webp">
 
     <!-- ! Needed for the dot on the camera lol -->
-    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script> 
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 
     <script src="js/phone.js"></script>
     <script src="js/stats.js"></script>
@@ -24,18 +24,20 @@
 
 <body>
     <div id="phoneWrapper">
-            <header>
-                <p>IdolLine</p>
-            </header>
-            <div id="camera" aria-hidden="true">
-                <iconify-icon icon="ic:baseline-lens"></iconify-icon>
-            </div>
+        <header>
+            <p>IdolLine</p>
+        </header>
+        <div id="camera" aria-hidden="true">
+            <iconify-icon icon="ic:baseline-lens"></iconify-icon>
+        </div>
         <main>
             <iframe id="phoneScreen" name="phoneScreen" src="treasureIsland.html" onload="onboardingState()"></iframe>
             <!-- ! Change the src as previews are needed! -->
         </main>
         <footer>
-            <a id="homeButton" href="#" onclick="homeButton(); clicker();"></a>
+            <button id="homeButton" onclick="homeButton(); clicker();">
+                <iconify-icon icon="si:heart-fill" width="24" height="24"></iconify-icon>
+            </button>
         </footer>
     </div>
 
