@@ -66,11 +66,22 @@ const sounds = {
         url: 'https://files.catbox.moe/pfbhla.mp3',
         volume: 0.5,
     },
+    settingsButtonHover: {
+        url: 'https://files.catbox.moe/hxtary.mp3',
+        volume: 0.2,
+    },
+    settingsButtonClick: {
+        url: 'https://files.catbox.moe/mp2g59.mp3',
+        volume: 0.2,
+    },
+    hudButtonClick: {
+        url: 'https://files.catbox.moe/w5g5px.mp3',
+        volume: 0.2
+    },
 
     setVolume: function (volumeLevel, soundKey = null) {
         volumeLevel = Math.min(Math.max(volumeLevel, 0), 1); // ~ Volume Clamp
 
-        // ! Never knew how much I hated the "this" keyword until now
         if (soundKey && this[soundKey]) {
             this[soundKey].volume = volumeLevel;
         } else {
@@ -84,6 +95,27 @@ const sounds = {
 };
 
 // & Helper Functions
+
+const preloadedAudio = {};
+
+function preloadAudio() {
+    for (const soundKey in sounds) {
+        if (sounds[soundKey].url) {
+            const audio = new Audio(sounds[soundKey].url);
+            audio.volume = sounds[soundKey].volume;
+            preloadedAudio[soundKey] = audio;
+        }
+    }
+}
+
+function playPreloadedAudio(soundKey) {
+    if (preloadedAudio[soundKey]) {
+        preloadedAudio[soundKey].currentTime = 0;
+        preloadedAudio[soundKey].play();
+    }
+}
+
+document.addEventListener('DOMContentLoaded', preloadAudio);
 
 let isAnimating = false;
 
@@ -99,29 +131,25 @@ function enablePlanetLinks() {
     });
 }
 
-function playSoundAndAnimate(element, animationClass, delay = 0, soundKey = null) {
+function audioAndAnimations(element, animationClass, delay = 0, soundKey = null) {
     if (!element) return;
 
     setTimeout(() => {
-        if (soundKey && sounds[soundKey]) {
-            const soundInstance = new Audio(sounds[soundKey].url); // ~ Create audio instances dynamically
-            soundInstance.volume = sounds[soundKey].volume; // ~ Volume set per sound
+        if (soundKey && preloadedAudio[soundKey]) {
+            const originalAudio = preloadedAudio[soundKey];
+            const soundInstance = originalAudio.cloneNode();
+            soundInstance.volume = originalAudio.volume; 
             soundInstance.play();
         }
         resetAnimation(element, animationClass);
     }, delay);
 }
 
+
 function resetAnimation(element, animationClass) {
     if (!element) return;
-
-    // Ensure no animation classes are stacked
     element.classList.remove(animationClass);
-
-    // Force a reflow to reset the animation
     void element.offsetWidth;
-
-    // Re-add the animation class to trigger it
     element.classList.add(animationClass);
 }
 
@@ -170,20 +198,20 @@ function showTablet() {
     disablePlanetLinks();
 
     tablet.classList.remove('tabletHide');
-    playSoundAndAnimate(tablet, 'tabletShow', 0, 'show');
-    playSoundAndAnimate(tabletBranding, 'brandingShow', 1000, 'brandingSlide');
-    playSoundAndAnimate(tabletAside, 'asideShow', 1300, 'asideSlide');
-    playSoundAndAnimate(mainContent, 'powerOn', 2500);
-    playSoundAndAnimate(mainDetails, 'fadeIn', 2700);
-    playSoundAndAnimate(planetName, 'fadeIn', 3000, 'fadeIn');
-    playSoundAndAnimate(planetPreview, 'fadeIn', 3100, 'fadeIn');
-    playSoundAndAnimate(planetDescription, 'fadeIn', 3300, 'fadeIn');
-    playSoundAndAnimate(asideContent, 'powerOn', 3400);
-    playSoundAndAnimate(asideH2, 'fadeIn', 3450, 'fadeIn');
-    playSoundAndAnimate(asideDetails, 'powerOn', 3500);
+    audioAndAnimations(tablet, 'tabletShow', 0, 'show');
+    audioAndAnimations(tabletBranding, 'brandingShow', 1000, 'brandingSlide');
+    audioAndAnimations(tabletAside, 'asideShow', 1300, 'asideSlide');
+    audioAndAnimations(mainContent, 'powerOn', 2500);
+    audioAndAnimations(mainDetails, 'fadeIn', 2700);
+    audioAndAnimations(planetName, 'fadeIn', 3000, 'fadeIn');
+    audioAndAnimations(planetPreview, 'fadeIn', 3100, 'fadeIn');
+    audioAndAnimations(planetDescription, 'fadeIn', 3300, 'fadeIn');
+    audioAndAnimations(asideContent, 'powerOn', 3400);
+    audioAndAnimations(asideH2, 'fadeIn', 3450, 'fadeIn');
+    audioAndAnimations(asideDetails, 'powerOn', 3500);
 
     settingsButtons.forEach((button, index) => {
-        playSoundAndAnimate(button, 'fadeIn', 3550 + index * 100);
+        audioAndAnimations(button, 'fadeIn', 3550 + index * 100);
     });
 
     setTimeout(() => {
@@ -198,20 +226,20 @@ function hideTablet() {
 
     disablePlanetLinks();
 
-    playSoundAndAnimate(tablet, 'tabletHide', 3000, 'hide');
-    playSoundAndAnimate(tabletBranding, 'brandingHide', 2600, 'brandingSlide');
-    playSoundAndAnimate(mainContent, 'fadeOut', 2300);
-    playSoundAndAnimate(mainDetails, 'fadeOut', 1800);
-    playSoundAndAnimate(planetPreview, 'fadeOut', 1700);
-    playSoundAndAnimate(planetName, 'fadeOut', 1600);
-    playSoundAndAnimate(planetDescription, 'fadeOut', 1400);
-    playSoundAndAnimate(tabletAside, 'asideHide', 1400, 'asideSlide');
-    playSoundAndAnimate(asideContent, 'fadeOut', 1200);
-    playSoundAndAnimate(asideDetails, 'fadeOut', 1200);
-    playSoundAndAnimate(asideH2, 'fadeOut', 1000);
+    audioAndAnimations(tablet, 'tabletHide', 3000, 'hide');
+    audioAndAnimations(tabletBranding, 'brandingHide', 2600, 'brandingSlide');
+    audioAndAnimations(mainContent, 'fadeOut', 2300);
+    audioAndAnimations(mainDetails, 'fadeOut', 1800);
+    audioAndAnimations(planetPreview, 'fadeOut', 1700);
+    audioAndAnimations(planetName, 'fadeOut', 1600);
+    audioAndAnimations(planetDescription, 'fadeOut', 1400);
+    audioAndAnimations(tabletAside, 'asideHide', 1400, 'asideSlide');
+    audioAndAnimations(asideContent, 'fadeOut', 1200);
+    audioAndAnimations(asideDetails, 'fadeOut', 1200);
+    audioAndAnimations(asideH2, 'fadeOut', 1000);
 
     settingsButtons.forEach((button, index) => {
-        playSoundAndAnimate(button, 'fadeOut', 400 - index * 100);
+        audioAndAnimations(button, 'fadeOut', 400 - index * 100);
     });
 
     setTimeout(() => {
@@ -248,14 +276,10 @@ document.querySelectorAll('.planet').forEach(link => {
 
 settingsButtons.forEach(settingsButton => {
     settingsButton.addEventListener('mouseenter', () => {
-        let audio = new Audio('https://files.catbox.moe/hxtary.mp3');
-        audio.volume = "0.2";
-        audio.play();
+        playPreloadedAudio('settingsButtonHover');
     });
     settingsButton.addEventListener('click', () => {
-        let audio = new Audio('https://files.catbox.moe/mp2g59.mp3');
-        audio.volume = "0.2";
-        audio.play();
+        playPreloadedAudio('settingsButtonClick');
     });
 });
 
@@ -300,11 +324,10 @@ discardTrash.addEventListener('click', () => {
 
 hudButtons.forEach(hudButton => {
     hudButton.addEventListener('click', () => {
-        let audio = new Audio('https://files.catbox.moe/w5g5px.mp3');
-        audio.volume = "0.2";
-        audio.play();
+        playPreloadedAudio('hudButtonClick'); 
     });
 });
+
 
 // ! Close Tablet
 

@@ -9,12 +9,10 @@ body {
 }
 
 body {
-    position: relative;
     height: 100vh;
 
     background-color: black;
     color: white;
-    
 
     justify-content: center;
     align-items: center;
@@ -34,7 +32,7 @@ body {
 /* ~ Layout */
 
 #gameContainer {
-    width: 53vw;
+    width: 45vw;
     min-width: 800px;
 }
 
@@ -66,28 +64,36 @@ body {
 
 #keysList {
     position: relative;
-    overflow: auto;
     align-items: center;
     margin-right: 3px;
-    padding: 15px 0;
+    overflow: hidden;
 }
 
-#hangmanTitle img, #hangmanWord img, .keypreview {
-    width: 1.3em;
+#listContainer {
+    position: relative;
+    padding: 15px 25px 15px 60px;
+
+    height: 375px;
+    overflow-y: auto;
 }
 
+#scrollTriangle {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
 
-#downTriangle {
-    position: fixed;
     width: 14px;
     height: 8px;
     animation: triangleMove .5s infinite;
 }
 
 @keyframes triangleMove {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(2px);
     }
@@ -99,20 +105,20 @@ body {
     justify-content: start;
     align-items: center;
     margin-bottom: 10px;
-    width: 80%;
     height: 40px;
 }
-.keypreview{
+
+.keypreview {
     min-height: 39px;
     margin-right: 20px;
 }
 
-#keysList label{
+#keysList label {
     font-size: 35px;
     line-height: 25px;
 }
 
-#keysList .cursor{
+#keysList .cursor {
     left: -12%;
     width: 55px;
     height: 25px;
@@ -120,14 +126,22 @@ body {
 }
 
 @keyframes cursorMove {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateX(0);
     }
+
     50% {
         transform: translateX(2px);
     }
 }
 
+#hangmanTitle img,
+#hangmanWord img,
+.keypreview {
+    width: 1.3em;
+}
 
 #keysList,
 #hangmanContainer {
@@ -140,7 +154,7 @@ body {
     display: none;
 }
 
-#keysList .key-item input[type="checkbox"] + label::before {
+#keysList .key-item input[type="checkbox"]+label::before {
     content: "";
     display: inline-block;
     width: 35px;
@@ -156,11 +170,11 @@ body {
     margin-left: auto;
 }
 
-#keysList .key-item input[type="checkbox"].correct:checked + label::before {
+#keysList .key-item input[type="checkbox"].correct:checked+label::before {
     background-image: url("../Assets/hangman/hangmanCorrect.png");
 }
 
-#keysList .key-item input[type="checkbox"].incorrect:checked + label::before {
+#keysList .key-item input[type="checkbox"].incorrect:checked+label::before {
     background-image: url("../Assets/hangman/hangmanIncorrect.png");
 }
 
@@ -183,7 +197,7 @@ body {
     gap: 4px;
 }
 
-#localStorageClear{
+#restartGame {
     align-self: flex-end;
     margin: 5px;
 }
@@ -192,7 +206,7 @@ body {
     width: 1.8em;
 }
 
-/* ! The Word */
+/* ! The Phrase?? */
 
 #hangmanWord {
     display: flex;
@@ -205,7 +219,8 @@ body {
     row-gap: 10px;
 
 }
-.word-section{
+
+.word-section {
     display: flex;
     flex-flow: row wrap;
     min-height: 30px;
@@ -287,11 +302,11 @@ body {
 
 /* ~ Other */
 
-#keysList::-webkit-scrollbar {
+*::-webkit-scrollbar {
     display: none;
 }
 
-#keysList {
+* {
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
@@ -300,7 +315,7 @@ p {
     margin: 0;
 }
 
-button{
+button {
     font-family: 'Courier New', Courier, monospace;
     font-size: 14px;
     color: white;
@@ -309,26 +324,28 @@ button{
     padding: 5px 7px;
 }
 
-canvas{
+canvas {
     max-height: 370px;
 }
 
-#debugButton{
+/* Debug */
+
+#debugButton {
     position: absolute;
     bottom: 0;
-    right: 0;
+    left: 0;
     z-index: 100;
     color: black;
     border: 2px solid black;
     transition: .25s;
 }
 
-#debugButton:hover{
+#debugButton:hover {
     color: white;
     border: 2px solid white;
 }
 
-#debug{
+#debug {
     background-color: black;
     position: absolute;
     bottom: 0;
@@ -337,21 +354,42 @@ canvas{
     padding: 10px;
 }
 
-/* Media Queries! */
+/* ~ Media Queries! */
+
+@media (prefers-reduced-motion: reduce) {}
+
+
+@media only screen and (max-width: 810px) {
+    body {
+        height: auto;
+    }
+
+    #gameContainer {
+        width: 100vw;
+        
+    }
+
+    #debugButton {
+        display: none;
+    }
+
+    #keysList .cursor {
+        left: -14%;
+    }
+}
 
 @media only screen and (max-width: 600px) {
 
-    body {
-        height: auto;
+    #gameContainer{
+        min-width: unset;
     }
 
     .flex {
         flex-flow: column nowrap;
     }
 
-    #gameContainer {
-        width: 100vw;
-        min-width: auto;
+    #keysList .cursor {
+        left: -20%;
     }
 
     #main {
@@ -359,12 +397,14 @@ canvas{
     }
 
     #hangmanTitle,
-    #keysList {
-        margin-right: 0;
+    #keysList, 
+    #instructions,
+    #canvas {
+        margin: 3px 0;
     }
 
     #keysList {
-        max-height: 300px;
+        height: 300px;
     }
 
     #keysList img {
@@ -376,16 +416,12 @@ canvas{
         line-height: 25px;
     }
 
-    #keysList .cursor {
-        display: none;
-    }
-
-    #keysList .key-item input[type="checkbox"] + label::before {
+    #keysList .key-item input[type="checkbox"]+label::before {
         width: 25px;
         height: 25px;
     }
 
-    #hangmanWord{
+    #hangmanWord {
         flex-flow: row wrap;
         height: auto;
         padding: 15px 5px;
@@ -395,15 +431,18 @@ canvas{
         width: 25px;
     }
 
-    #hangmanWord img{
+    #hangmanWord img {
         width: 1em;
     }
 
-    #hangmanWord .space{
+    #hangmanWord .space {
         width: 10px;
     }
-
-    p{
+    p {
         font-size: smaller;
     }
+
+    .word-section {
+        justify-content: center;
+      }
 }

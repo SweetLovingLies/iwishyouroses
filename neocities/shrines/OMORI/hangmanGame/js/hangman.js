@@ -5,12 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const keys = JSON.parse(localStorage.getItem('collectedKeys')) || [];
     const uniqueKeys = new Set(keys);
 
-    const word = "WELCOME TO DEAD FAIRY CIRCLE";
+    const word = "LILY OF THE VALLEY";
     const hangmanWordContainer = document.getElementById('hangmanWord');
     hangmanWordContainer.innerHTML = '';
 
-    hangmanWordContainer.appendChild(displayWord("WELCOME TO ", 0));
-    hangmanWordContainer.appendChild(displayWord("DEAD FAIRY CIRCLE", "WELCOME TO ".length));
+    hangmanWordContainer.appendChild(displayWord("LILY OF THE VALLEY", 0));
 
     keys.forEach(key => {
         const letterIndexes = [];
@@ -41,40 +40,93 @@ document.addEventListener('DOMContentLoaded', () => {
         letterImg.alt = key;
         incorrectLettersContainer.appendChild(letterImg);
     });
-
-    // Cursor functionality
-    const keyItems = document.querySelectorAll('.key-item');
-    let currentItemIndex = 0;
-    const cursor = document.createElement('div');
-    cursor.classList.add('cursor');
-    keyItems[currentItemIndex].appendChild(cursor);
-
-    const updateCursorPosition = () => {
-        keyItems.forEach(item => item.contains(cursor) && item.removeChild(cursor));
-        keyItems[currentItemIndex].appendChild(cursor);
-    };
-
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'ArrowDown') {
-            currentItemIndex = (currentItemIndex + 1) % keyItems.length;
-        } else if (event.key === 'ArrowUp') {
-            currentItemIndex = (currentItemIndex - 1 + keyItems.length) % keyItems.length;
-        }
-        updateCursorPosition();
-    });
-
-    document.addEventListener('mousedown', updateCursorPosition);
-
-    keys.forEach(function (key) {
-        const checkbox = document.getElementById("checkbox" + key);
-        if (checkbox) {
-            checkbox.checked = true;
-            checkbox.classList.add(isCorrectKey(key) ? 'correct' : 'incorrect');
-        }
-    });
-
+    
     checkAllLettersRevealed();
 });
+
+// ~ Cursor Functionality
+const keyItems = document.querySelectorAll('.key-item');
+let currentItemIndex = 0;
+const cursor = document.createElement('div');
+cursor.classList.add('cursor');
+keyItems[currentItemIndex].appendChild(cursor);
+
+const listContainer = document.getElementById('listContainer');
+
+const updateCursorPosition = () => {
+    keyItems.forEach(item => item.contains(cursor) && item.removeChild(cursor));
+    keyItems[currentItemIndex].appendChild(cursor);
+};
+
+const isAtBottom = () => {
+    const cursorPosition = document.querySelector('.cursor').getBoundingClientRect().bottom;
+    const containerBottom = listContainer.getBoundingClientRect().bottom;
+    return cursorPosition >= containerBottom - 1;
+};
+
+const isAtTop = () => {
+    const cursorPosition = document.querySelector('.cursor').getBoundingClientRect().top;
+    const containerTop = listContainer.getBoundingClientRect().top;
+    return cursorPosition <= containerTop + 1;
+};
+
+const scrollToNextItem = () => {
+    const nextItem = keyItems[currentItemIndex + 1];
+    if (nextItem) {
+        listContainer.scrollBy({
+            top: nextItem.offsetHeight + 15,
+            behavior: 'smooth'
+        });
+    }
+};
+
+const scrollToPreviousItem = () => {
+    const prevItem = keyItems[currentItemIndex - 1];
+    if (prevItem) {
+        listContainer.scrollBy({
+            top: -(prevItem.offsetHeight + 15),
+            behavior: 'smooth'
+        });
+    }
+};
+
+document.addEventListener('keydown', (e) => {
+    e.preventDefault();
+
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        if (e.key === 'ArrowDown') {
+            currentItemIndex = (currentItemIndex + 1) % keyItems.length;
+        } else if (e.key === 'ArrowUp') {
+            currentItemIndex = (currentItemIndex - 1 + keyItems.length) % keyItems.length;
+        }
+
+        updateCursorPosition();
+
+        if (isAtBottom()) {
+            scrollToNextItem();
+        } else if (isAtTop()) {
+            scrollToPreviousItem();
+        }
+    }
+});
+
+// ~ Mobile Support
+document.addEventListener('touchstart', (event) => {
+    const touchedElement = event.target.closest('.key-item');
+    if (touchedElement) {
+        currentItemIndex = Array.from(keyItems).indexOf(touchedElement);
+        updateCursorPosition();
+    }
+});
+
+keyItems.forEach((item, index) => {
+    item.addEventListener('click', () => {
+        currentItemIndex = index;
+        updateCursorPosition();
+    });
+});
+
+
 
 function displayWord(word, startIndex) {
     const wrapper = document.createElement('div');
@@ -113,7 +165,7 @@ function checkAllLettersRevealed() {
 function checkKeys() {
     const word = "WELCOME TO DEAD FAIRY CIRCLE";
     const revealedLetters = document.querySelectorAll('.letter.revealed');
-    
+
     if (revealedLetters.length === word.replace(/ /g, '').length) {
         console.log("You are my whole world.");
         localStorage.setItem('keysCollected', 'true');
@@ -121,7 +173,6 @@ function checkKeys() {
         console.log("So, tell me, when did you become so beautiful?");
     }
 }
-
 
 function applyAnimations() {
     const allLetters = Array.from(document.querySelectorAll('.letter'));
@@ -142,8 +193,8 @@ function applyAnimations() {
     }, 1350);
 
     setTimeout(() => {
-        localStorage.clear();
-        window.location.href = 'https://deadfairycircle.neocities.org';
+        localStorage.removeItem('collectedKeys');
+        // ! Figure out what this will do
     }, 7200);
 }
 
@@ -162,9 +213,8 @@ function animateThirdLetter(allLetters) {
 }
 
 function isCorrectKey(key) {
-    return "WELCOME TO DEAD FAIRY CIRCLE".replace(/ /g, '').toUpperCase().includes(key.toUpperCase());
+    return "LILY OF THE VALLEY".replace(/ /g, '').toUpperCase().includes(key.toUpperCase());
 }
-
 
 // ! Giant code for drawing the hangman 
 function drawHangman(incorrectCount, uniqueKeys) {
@@ -268,7 +318,7 @@ function drawHangman(incorrectCount, uniqueKeys) {
         img.src = '../../OMORI/Assets/SomethingL.webp';
         img.onload = function () {
             ctx.drawImage(img, 60, 0, 70, 230);
-            localStorage.clear();
+            localStorage.removeItem('collectedKeys');
         };
         setTimeout(() => {
             location.reload();
@@ -277,3 +327,61 @@ function drawHangman(incorrectCount, uniqueKeys) {
 
     ctx.stroke();
 }
+
+// ! (Mainly) Debug
+
+document.addEventListener('DOMContentLoaded', () => {
+    getAchievement("general", "Hangman");
+});
+
+function restartGame() {
+    //! Need to update this to not delete everything from local storage, only the keys gained!
+    localStorage.removeItem('collectedKeys');
+    alert('You may now begin again.');
+    location.reload();
+}
+
+var debugButton = document.getElementById('debugButton');
+var debug = document.getElementById('debug');
+
+debugButton.addEventListener('click', function () {
+    if (debug.style.display === 'block') {
+        debug.style.display = 'none';
+        debugButton.textContent = 'Show Debug';
+    } else {
+        debug.style.display = 'block';
+        debugButton.textContent = 'Hide Debug';
+    }
+});
+
+const collectAthruJButton = document.getElementById('collectAthruJButton');
+const collectDFCButton = document.getElementById('collectDFCButton');
+const collectDFC2Button = document.getElementById('collectDFC2Button');
+const collectALLButton = document.getElementById('collectALLButton');
+const collectWTButton = document.getElementById('collectWTButton');
+
+collectAthruJButton.addEventListener('click', () => {
+    const keysToCollect = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
+    keysToCollect.forEach(key => collectKey(key));
+    location.reload();
+});
+collectDFCButton.addEventListener('click', () => {
+    const keysToCollect = ['D', 'A', 'F', 'I', 'R', 'Y', 'C', 'L'];
+    keysToCollect.forEach(key => collectKey(key));
+    location.reload();
+});
+collectDFC2Button.addEventListener('click', () => {
+    const keysToCollect = ['D', 'E', 'A', 'F', 'R', 'Y', 'C', 'L'];
+    keysToCollect.forEach(key => collectKey(key));
+    location.reload();
+});
+collectALLButton.addEventListener('click', () => {
+    const keysToCollect = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+    keysToCollect.forEach(key => collectKey(key));
+    location.reload();
+});
+collectWTButton.addEventListener('click', () => {
+    const keysToCollect = ['C', 'E', 'L', 'M', 'N', 'O', 'W'];
+    keysToCollect.forEach(key => collectKey(key));
+    location.reload();
+});
