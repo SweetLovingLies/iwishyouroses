@@ -10,10 +10,9 @@
 
     <link href="css/indexbase.css" rel="stylesheet" type="text/css" media="all">
 
-    <link id="indexCSS" href="css/indexThemes/indexLight.css" rel="stylesheet" type="text/css" media="all">
-
-    <link id="indexDarkCSS" href="css/indexThemes/indexDark.css" rel="stylesheet" type="text/css" media="all">
-    <link id="indexChristmasCSS" href="css/indexThemes/indexChristmas.css" rel="stylesheet" type="text/css" media="all">
+    <!-- ~ Themes -->
+    <link id="indexCSS" href="css/indexThemes/indexLight.css" rel="stylesheet" type="text/css" media="all" disabled>
+    <link id="indexDarkCSS" href="css/indexThemes/indexDark.css" rel="stylesheet" type="text/css" media="all" disabled>
 
 
     <meta name="description" content="A happy place, A quiet place." />
@@ -40,6 +39,13 @@
         if (navigator.userAgent.includes('Screenjesus')) {
             window.location.replace("/preview/");
         }
+
+        (function setInitialTheme() {
+            const savedTheme = localStorage.getItem("globalTheme") || "light";
+            const themeId = savedTheme === "light" ? "indexCSS" : "indexDarkCSS";
+            const themeLink = document.getElementById(themeId);
+            if (themeLink) themeLink.disabled = false;
+        })();
     </script>
 </head>
 
