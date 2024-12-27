@@ -387,6 +387,7 @@ h2 {
 
 #pixelRose {
     image-rendering: pixelated;
+    cursor: pointer;
 }
 
 /* ~ Media Queries */

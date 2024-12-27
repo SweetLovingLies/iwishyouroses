@@ -161,14 +161,14 @@ function updatehomeButtonClicks(count) {
 function trackHerobrineSightings() {
   let sightingsCount = parseInt(localStorage.getItem('herobrineSightings')) || 0;
   if (Math.random() < 0.1) {
-      sightingsCount++;
+    sightingsCount++;
   }
   localStorage.setItem('herobrineSightings', sightingsCount);
 
   // console.log('Herobrine Sightings:', sightingsCount);
 }
 
-setInterval(trackHerobrineSightings, 460000); 
+setInterval(trackHerobrineSightings, 460000);
 
 function updateHBSightings(count) {
   const display = document.querySelector('.herobrineSightings');
@@ -184,8 +184,12 @@ function wishOnRose() {
   if (count >= 18) {
     getAchievement("general", "iwishyouroses");
   }
+  if (count >= 18) {
+    getAchievement("general", "iwishyouroses");
+  }
   count++;
   localStorage.setItem('rosesWished', count);
+  updateRosesWishedDisplay(count); 
   updateRosesWishedDisplay(count); 
 }
 
