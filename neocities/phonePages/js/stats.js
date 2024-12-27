@@ -1,6 +1,6 @@
 // Visitor Count by netfriend - https://netfriend.neocities.org/visitor-count/
 // Released under the Unlicense - https://unlicense.org
-// Modified by me!
+// ~ Modified by me!
 ///
 
 const visitor_count_source = "neocities";
@@ -149,7 +149,7 @@ function updatehomeButtonClicks(count) {
   }
 }
 
-// Need to make a version that tracks consecutive clicks as well
+// ! Need to make a version that tracks consecutive clicks as well
 
 // Herobrine Sightings
 
@@ -176,9 +176,6 @@ function updateHBSightings(count) {
 
 function wishOnRose() {
   let count = parseInt(localStorage.getItem('rosesWished')) || 0;
-  if (count >= 18) {
-    getAchievement("general", "iwishyouroses");
-  }
   count++;
   localStorage.setItem('rosesWished', count);
   updateRosesWishedDisplay(count); 
@@ -188,6 +185,5 @@ function updateRosesWishedDisplay(count) {
   const display = document.querySelector('.rosesWished');
   if (display) {
     display.textContent = count;
-  }
   }
 }
