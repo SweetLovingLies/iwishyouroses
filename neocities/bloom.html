@@ -4,26 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I Wish You A Merry Christmas</title>
+    <title>I Wish You Roses</title>
 
     <link href="css/palette.css" rel="stylesheet" type="text/css" media="all">
     <link href="css/bloomBase.css" rel="stylesheet" type="text/css" media="all">
 
-    <!-- Themes -->
-    <link id="bloomCSS" href="css/bloomThemes/bloomLight.css" rel="stylesheet" type="text/css" media="all">
-
-    <link id="bloomDarkCSS" href="css/bloomThemes/bloomDark.css" rel="stylesheet" type="text/css" media="all">
-    <link id="bloomChristmasCSS" href="css/bloomThemes/bloomChristmas.css" rel="stylesheet" type="text/css" media="all">
+    <!-- ~ Themes -->
+    <link id="bloomCSS" href="css/bloomThemes/bloomLight.css" rel="stylesheet" type="text/css" media="all" disabled>
+    <link id="bloomDarkCSS" href="css/bloomThemes/bloomDark.css" rel="stylesheet" type="text/css" media="all" disabled>
 
 
-    <meta name="description" content="A jolly place, A quiet place." />
-    <link rel="icon" type="image/x-icon" href="Assets/pixels/christmas/holly.gif">
+    <meta name="description" content="A happy place, A quiet place." />
+    <link rel="icon" type="image/x-icon" href="Assets/pixels/vintageAmericana/rose.gif">
 
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 
     <script src="js/jaxframeFork.js"></script>
     <script src="phonePages/js/stats.js"></script>
     <script src="js/rsswidget.js"></script>
+
     <script>
         var documentTitle = "୧ ꒰ " + document.title + " ꒱ ୨";
         if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -32,6 +31,13 @@
                 setTimeout(tabTitle, 400);
             })();
         }
+
+        (function setInitialTheme() {
+            const savedTheme = localStorage.getItem("globalTheme") || "light";
+            const themeId = savedTheme === "light" ? "bloomCSS" : "bloomDarkCSS";
+            const themeLink = document.getElementById(themeId);
+            if (themeLink) themeLink.disabled = false;
+        })();
     </script>
 </head>
 
@@ -58,8 +64,8 @@
 
             <div id="content" class="flex">
                 <section class="columnFlex2">
-                    <img id="eyecatcher" class="img-fluid" src="Assets/cartoons/MLP/gifs/winterPinkie1.gif"
-                        alt="Pinkie Pie from MLP making a cake out of snow">
+                    <img id="eyecatcher" class="img-fluid" src="Assets/anime/gifs/8add9a0bdb6f30b54919295a376866f3.gif"
+                        alt="Picking up a stuffed animal!">
 
                     <hr>
 
@@ -130,10 +136,10 @@
 
                     <div id="spotlight" class="box" aria-label="Spotlight for a website the website creator likes">
                         <h2>Site of the Whenever</h2>
-                        <a href="https://burgeritchi.neocities.org/" class="columnFlex2">
+                        <a href="https://frutigeraeroarchive.org/" class="columnFlex2">
                             <img class="displayScreenshots"
-                                src="Assets/other/screenshots/Burgeritchi 2024-12-07 at 16.56.52.png">
-                            <p>Burgeritchi</p>
+                                src="Assets/other/screenshots/Frutiger Aero Archive 2024-12-27 at 11.17.39.png">
+                            <p>The Frutiger Aero Archive</p>
                         </a>
                     </div>
 
@@ -141,8 +147,8 @@
 
                     <div id="statusCafe" class="box" aria-live="polite"
                         aria-label="A display for 'updates' from the website owner">
-                        <img class="img-fluid" src="Assets/cartoons/charlieBrown/christmas1.gif"
-                            alt="The kids from A Charlie Brown Christmas decorating a tree. The status bubble sits on top of this image">
+                        <img class="img-fluid" src="Assets/anime/gifs/yui.gif"
+                            alt="Yumekawa Yui from Pripara talking about cute accessories!">
                         <div id="TBWrapper">
                             <div id="thoughtBubble" class="TBStyle">
                                 <div id="statuscafe">
@@ -236,7 +242,7 @@
 
                     <div id="webgroups" class="box2">
                         <h2>Webrings</h2>
-                        
+
                         <a href="https://allyratworld.com/cafe/rose">
                             <img src="/Assets/coolsites/cafeRose/88x31melo.png">
                         </a>
@@ -259,14 +265,11 @@
 
                         <p id="tip">(Feed updated every hour)</p>
                     </div>
-                    <img id="pixelRose" src="Assets/pixels/fd/singlerose.webp" style="cursor: pointer;"
-                        aria-label="A rose. You can click on it!"
-                        onclick="wishOnRose(); document.getElementById('roseClick').play();">
+                    <img id="pixelRose" src="Assets/pixels/fd/singlerose.webp" aria-label="A rose. You can click on it!"
+                        onclick="wishOnRose();">
                 </div>
 
             </div>
-            <img id="christmasTree" src="/Assets/pixels/christmas/christmastree5.webp" aria-hidden="true">
-            <img id="presents" src="/Assets/pixels/christmas/presents.png" aria-hidden="true">
             <footer>
                 <p>EST.</p>
                 <p class="creationDate"></p>
@@ -282,10 +285,7 @@
     <script src="js/phoneDisplayScript.js"></script>
 
     <script src="js/calender.js"></script>
+    <script src="phonePages/js/achievements/achievements.js"></script>
 </body>
-
-<audio id="roseClick" aria-label="A sound effect for the rose">
-    <source src="https://files.catbox.moe/dgg0m4.mp3" type="audio/ogg">
-</audio>
 
 </html>

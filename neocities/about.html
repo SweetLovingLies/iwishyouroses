@@ -9,13 +9,23 @@
     <link href="css/palette.css" rel="stylesheet" type="text/css" media="all">
     <link href="css/aboutbase.css" rel="stylesheet" type="text/css" media="all">
 
-    <link id="aboutCSS" href="css/aboutThemes/aboutLight.css" rel="stylesheet" type="text/css" media="all">
-    <link id="aboutDarkCSS" href="css/aboutThemes/aboutDark.css" rel="stylesheet" type="text/css" media="all">
+    <!-- ~ Themes -->
+    <link id="aboutCSS" href="css/aboutThemes/aboutLight.css" rel="stylesheet" type="text/css" media="all" disabled>
+    <link id="aboutDarkCSS" href="css/aboutThemes/aboutDark.css" rel="stylesheet" type="text/css" media="all" disabled>
 
     <meta name="description" content="Welcome to my safe place!" />
     <link rel="icon" type="image/x-icon" href="Assets/pixels/kwk/drink2.webp">
 
     <script src="js/jaxframeFork.js"></script>
+
+    <script>
+        (function setInitialTheme() {
+            const savedTheme = localStorage.getItem("globalTheme") || "light";
+            const themeId = savedTheme === "light" ? "aboutCSS" : "aboutDarkCSS";
+            const themeLink = document.getElementById(themeId);
+            if (themeLink) themeLink.disabled = false;
+        })();
+    </script>
 </head>
 
 <body>

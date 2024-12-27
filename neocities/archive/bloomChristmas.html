@@ -1,42 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I Wish You Roses</title>
+    <title>I Wish You A Merry Christmas</title>
 
     <link href="css/palette.css" rel="stylesheet" type="text/css" media="all">
     <link href="css/bloomBase.css" rel="stylesheet" type="text/css" media="all">
 
     <!-- Themes -->
-    <link id="bloomCSS" href="css/bloomThemes/bloomLight.css" rel="stylesheet" type="text/css" media="all" >
+    <link id="bloomCSS" href="css/bloomThemes/bloomLight.css" rel="stylesheet" type="text/css" media="all">
 
-    <link id="bloomDarkCSS" href="css/bloomThemes/bloomDark.css" rel="stylesheet" type="text/css" media="all" disabled>
+    <link id="bloomDarkCSS" href="css/bloomThemes/bloomDark.css" rel="stylesheet" type="text/css" media="all">
+    <link id="bloomChristmasCSS" href="css/bloomThemes/bloomChristmas.css" rel="stylesheet" type="text/css" media="all">
 
-    <meta name="description" content="A happy place, A quiet place." />
-    <link rel="icon" type="image/x-icon" href="Assets/pixels/vintageAmericana/rose.gif">
+
+    <meta name="description" content="A jolly place, A quiet place." />
+    <link rel="icon" type="image/x-icon" href="Assets/pixels/christmas/holly.gif">
 
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 
     <script src="js/jaxframeFork.js"></script>
     <script src="phonePages/js/stats.js"></script>
     <script src="js/rsswidget.js"></script>
+
     <script>
         var documentTitle = "୧ ꒰ " + document.title + " ꒱ ୨";
-        (function tabTitle() {
-            document.title = documentTitle = documentTitle.substring(1) + documentTitle.substring(0, 1);
-            setTimeout(tabTitle, 400);
-        })();
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            (function tabTitle() {
+                document.title = documentTitle = documentTitle.substring(1) + documentTitle.substring(0, 1);
+                setTimeout(tabTitle, 400);
+            })();
+        }
     </script>
 </head>
 
 <body>
     <div id="wrapper">
         <div id="baselayout" class="columnFlex1">
-            <div class="detailing" style="z-index: 1;"></div>
+            <div class="detailing" style="z-index: 1;" aria-hidden="true"></div>
 
-            <h1 id="androses" class="textshadow">
+            <h1 id="androses" class="textshadow" aria-label="I Wish You Roses, the site title">
                 <span style="padding-right: 10px;">I</span>
                 <span>w</span>
                 <span>i</span>
@@ -54,7 +59,8 @@
 
             <div id="content" class="flex">
                 <section class="columnFlex2">
-                    <img id="eyecatcher" class="img-fluid" src="Assets/anime/gifs/8add9a0bdb6f30b54919295a376866f3.gif">
+                    <img id="eyecatcher" class="img-fluid" src="Assets/cartoons/MLP/gifs/winterPinkie1.gif"
+                        alt="Pinkie Pie from MLP making a cake out of snow">
 
                     <hr>
 
@@ -62,26 +68,28 @@
                         <h2>My Site Button</h2>
                         <p><strong>Do not </strong><a
                                 href="https://blog.hubspot.com/website/hotlinking#:~:text=Hotlinking%20is%20the%20act%20of,assets%20can%20also%20be%20hotlinked"
-                                target="_blank">hotlink!</a></p>
+                                target="_blank" aria-label="Learn about hotlinking here!">hotlink!</a></p>
 
-                        <img src="Assets/myAssets/IWYRsmall.png">
-                        <textarea
-                            id="txtarea"><a href="https://iwishyouroses.neocities.org/" target="_blank"><img src="(INSERT YOUR OWN LINK TO MY BUTTON HERE!)" alt="'Welcome to I wish you roses"></a></textarea>
+                        <img src="Assets/myAssets/IWYRsmall.png" alt="My Site Button!">
+                        <textarea id="txtarea"
+                            aria-label="A place to copy the code to display my button on your own personal site!"><a href="https://iwishyouroses.neocities.org/" target="_blank"><img src="(INSERT YOUR OWN LINK TO MY BUTTON HERE!)" alt="Welcome to I Wish You Roses (site button)"></a></textarea>
                     </div>
 
                     <hr>
 
-                    <div id="jsCalender" class="box type2">
+                    <div id="jsCalender" class="box type2" aria-label="An interactable calender of the year">
                         <div class="calendar-container">
                             <header class="calendar-header">
                                 <p class="calendar-current-date"></p>
                                 <div class="calendar-navigation">
-                                    <span id="calendar-prev" class="material-symbols-rounded">
+                                    <span id="calendar-prev" class="material-symbols-rounded"
+                                        aria-label="Previous month">
                                         <iconify-icon icon="ic:round-chevron-left"></iconify-icon>
                                     </span>
-                                    <span id="calendar-next" class="material-symbols-rounded">
+                                    <span id="calendar-next" class="material-symbols-rounded" aria-label="Next month">
                                         <iconify-icon icon="ic:round-chevron-right"></iconify-icon>
                                     </span>
+
                                 </div>
                             </header>
 
@@ -118,22 +126,24 @@
                         <p> Oh, and please feel free to leave me a message on IdolMessenger! It serves as the guest book
                             for this site.</p>
                     </div>
-                    
+
                     <hr>
 
-                    <div id="spotlight" class="box">
+                    <div id="spotlight" class="box" aria-label="Spotlight for a website the website creator likes">
                         <h2>Site of the Whenever</h2>
-                        <a href="https://sanguineroyal.com/" class="columnFlex2">
+                        <a href="https://burgeritchi.neocities.org/" class="columnFlex2">
                             <img class="displayScreenshots"
-                                src="Assets/other/screenshots/Sanguine Royal 2024-11-30 at 13.54.09.png">
-                            <p>Sanguine Royal</p>
+                                src="Assets/other/screenshots/Burgeritchi 2024-12-07 at 16.56.52.png">
+                            <p>Burgeritchi</p>
                         </a>
                     </div>
-                    
+
                     <hr>
-                    
-                    <div id="statusCafe" class="box">
-                        <img class="img-fluid" src="Assets/anime/gifs/yui.gif">
+
+                    <div id="statusCafe" class="box" aria-live="polite"
+                        aria-label="A display for 'updates' from the website owner">
+                        <img class="img-fluid" src="Assets/cartoons/charlieBrown/christmas1.gif"
+                            alt="The kids from A Charlie Brown Christmas decorating a tree. The status bubble sits on top of this image">
                         <div id="TBWrapper">
                             <div id="thoughtBubble" class="TBStyle">
                                 <div id="statuscafe">
@@ -146,7 +156,7 @@
                     </div>
                 </main>
 
-                <div class="column flex2">
+                <div class="column flex2" aria-label="A mini status for the website owner">
                     <div id="status" class="box2">
                         <h2>Currently, I am:</h2>
                         <div class="statusBubble">
@@ -227,13 +237,18 @@
 
                     <div id="webgroups" class="box2">
                         <h2>Webrings</h2>
+                        
                         <a href="https://allyratworld.com/cafe/rose">
                             <img src="/Assets/coolsites/cafeRose/88x31melo.png">
                         </a>
-                        <br>
-                        <img src="https://iili.io/HD7xIff.png"
-                            style="height: 16px; width:16px; vertical-align: text-bottom;"> This <a
-                            href="https://fan.sanguineroyal.com/cli/barbieland/">Barbie</a> is a Himedere!
+
+                        <p><img src="https://iili.io/HD7xIff.png"
+                                style="height: 16px; width:16px; vertical-align: text-bottom;"> This <a
+                                href="https://fan.sanguineroyal.com/cli/barbieland/">Barbie</a> is a Himedere!</p>
+
+                        <div id="HarrowRing"></div>
+                        <script type="text/javascript" src="/forYou/webring/js/harrowRing-Variables.js"></script>
+                        <script type="text/javascript" src="/forYou/webring/js/harrowRing-Widget.js"></script>
                     </div>
 
                     <hr>
@@ -245,12 +260,13 @@
 
                         <p id="tip">(Feed updated every hour)</p>
                     </div>
-                    <img id="pixelRose" src="Assets/pixels/fd/singlerose.webp" style="cursor: pointer;"
-                        onclick="wishOnRose(); document.getElementById('roseClick').play();">
+                    <img id="pixelRose" src="Assets/pixels/fd/singlerose.webp" aria-label="A rose. You can click on it!"
+                        onclick="wishOnRose();">
                 </div>
 
             </div>
-            
+            <img id="christmasTree" src="/Assets/pixels/christmas/christmastree5.webp" aria-hidden="true">
+            <img id="presents" src="/Assets/pixels/christmas/presents.png" aria-hidden="true">
             <footer>
                 <p>EST.</p>
                 <p class="creationDate"></p>
@@ -260,32 +276,13 @@
     </div>
 
     <div id="phoneSpot">
-        <iframe id="phone" class="hidden" src="phonePages/phone.html"></iframe>
+        <iframe id="phone" class="hidden" src="phonePages/phone.html"
+            title="IdolLine Interactive Phone: Games, Tools, and Navigation!" role="application"></iframe>
     </div>
+    <script src="js/phoneDisplayScript.js"></script>
 
     <script src="js/calender.js"></script>
-    <script src="js/phoneDisplayScript.js"></script>
+    <script src="phonePages/js/achievements/achievements.js"></script>
 </body>
 
-<audio id="roseClick">
-    <source src="https://files.catbox.moe/dgg0m4.mp3" type="audio/ogg">
-</audio>
-
 </html>
-
-<!-- <script>
-    // Script for keeping the footer visible only at the bottom of the viewport
-    window.addEventListener('scroll', function () {
-        const footer = document.querySelector('.footer-hidden');
-        const scrollHeight = document.documentElement.scrollHeight;
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const clientHeight = window.innerHeight;
-
-        if (scrollTop + clientHeight >= scrollHeight - 50) {
-            footer.classList.add('footer-visible');
-        } else {
-            footer.classList.remove('footer-visible');
-        }
-    });
-
-</script> -->

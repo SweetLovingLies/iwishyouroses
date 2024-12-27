@@ -42,10 +42,10 @@
             <caption>Empty Dream</caption>
         </button>
 
-        <button id="christmasModeSwitch" class="themePreview" data-theme="christmas">
+        <!-- <button id="christmasModeSwitch" class="themePreview" data-theme="christmas">
             <img src="themeSwitcherPreviews/Christmas.png">
             <caption>Christmas Cheer</caption>
-        </button>
+        </button> -->
     </div>
 
     <div id="loadingScreen" class="loading-screen hidden">
@@ -66,8 +66,6 @@
             const themeLinks = Array.from(document.querySelectorAll("link[id^='themes']"));
             const themeButtons = document.querySelectorAll("[data-theme]");
 
-            const forceChristmasTheme = localStorage.getItem("forceChristmasTheme") || "true";
-
             function applyTheme(theme) {
                 themeLinks.forEach(link => {
                     link.disabled = !(link.id === `themes${theme === "light" ? "" : theme.charAt(0).toUpperCase() + theme.slice(1)}CSS`);
@@ -80,13 +78,8 @@
             }
 
             function pickInitialTheme() {
-                if (forceChristmasTheme === "true") {
-                    applyTheme("christmas");
-                    localStorage.setItem("forceChristmasTheme", "false"); // Reset the flag
-                } else {
-                    const savedTheme = localStorage.getItem("themesTheme") || "light";
-                    applyTheme(savedTheme);
-                }
+                const savedTheme = localStorage.getItem("themesTheme") || "light";
+                applyTheme(savedTheme);
             }
 
             themeButtons.forEach(button => {
