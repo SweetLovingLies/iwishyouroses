@@ -156,14 +156,14 @@ function updatehomeButtonClicks(count) {
 function trackHerobrineSightings() {
   let sightingsCount = parseInt(localStorage.getItem('herobrineSightings')) || 0;
   if (Math.random() < 0.1) {
-      sightingsCount++;
+    sightingsCount++;
   }
   localStorage.setItem('herobrineSightings', sightingsCount);
 
   // console.log('Herobrine Sightings:', sightingsCount);
 }
 
-setInterval(trackHerobrineSightings, 460000); 
+setInterval(trackHerobrineSightings, 460000);
 
 function updateHBSightings(count) {
   const display = document.querySelector('.herobrineSightings');
@@ -176,15 +176,18 @@ function updateHBSightings(count) {
 
 function wishOnRose() {
   let count = parseInt(localStorage.getItem('rosesWished')) || 0;
+  if (count >= 18) {
+    getAchievement("general", "iwishyouroses");
+  }
   count++;
   localStorage.setItem('rosesWished', count);
-
-  // console.log('Roses Wished:', count);
+  updateRosesWishedDisplay(count); 
 }
 
 function updateRosesWishedDisplay(count) {
   const display = document.querySelector('.rosesWished');
   if (display) {
     display.textContent = count;
+  }
   }
 }

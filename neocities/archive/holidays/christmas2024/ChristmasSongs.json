@@ -1,5 +1,47 @@
 [
   {
+    "title": "O Tannenbaum",
+    "writer": "Vince Guaraldi Trio",
+    "volume": 0.05,
+    "src": "https://files.catbox.moe/iol4eu.mp3",
+    "cover": "/Assets/other/albumCovers/holiday/christmas/OTannenbaumCover.jpeg"
+  },
+  {
+    "title": "Rockin' Around The Christmas Tree",
+    "writer": "Brenda Lee",
+    "volume": 0.05,
+    "src": "https://files.catbox.moe/7mxsnz.mp3",
+    "cover": "/Assets/other/albumCovers/holiday/christmas/RockinAroundTheChristmasTreeCover.jpeg"
+  },
+  {
+    "title": "Run Rudolph Run",
+    "writer": "Chuck Berry",
+    "volume": 0.05,
+    "src": "https://files.catbox.moe/ycc9iu.mp3",
+    "cover": "/Assets/other/albumCovers/holiday/christmas/RunRudolphRunCover.jpeg"
+  },
+  {
+    "title": "Merry Christmas to You",
+    "writer": "Nat King Cole",
+    "volume": 0.05,
+    "src": "https://files.catbox.moe/6ajq3u.mp3",
+    "cover": "/Assets/other/albumCovers/holiday/christmas/MerryChristmasToYouCover.jpeg"
+  },
+  {
+    "title": "Baby, It's Cold Outside",
+    "writer": "Voiceplay, Soshana Bean",
+    "volume": 0.05,
+    "src": "https://files.catbox.moe/bclweh.mp3",
+    "cover": "/Assets/other/albumCovers/holiday/christmas/BabyItsColdOutsideCover.jpeg"
+  },
+  {
+    "title": "Baby, Please Come Home",
+    "writer": "Darlene Love",
+    "volume": 0.05,
+    "src": "https://files.catbox.moe/210hqb.mp3",
+    "cover": "/Assets/other/albumCovers/holiday/christmas/BabyPleaseComeHomeCover.jpeg"
+  },
+  {
     "title": "I Wish You Roses",
     "writer": "Kali Uchis",
     "volume": 0.04,
@@ -180,33 +222,5 @@
     "volume": 0.05,
     "src": "https://files.catbox.moe/kgvecj.mp3",
     "cover": "/Assets/other/albumCovers/OTONOBLUECover.jpeg"
-  },
-  {
-    "title": "Hanging Lanterns",
-    "writer": "Kalaido",
-    "volume": 0.04,
-    "src": "https://files.catbox.moe/q5jig2.mp3",
-    "cover": "/Assets/other/albumCovers/hangingLanternsCover.jpeg"
-  },
-  {
-    "title": "Skylight",
-    "writer": "Gramatik",
-    "volume": 0.04,
-    "src": "https://files.catbox.moe/iub3v4.mp3",
-    "cover": "/Assets/other/albumCovers/skylightCover.jpeg"
-  },
-  {
-    "title": "NEMONEMO",
-    "writer": "YENA",
-    "volume": 0.04,
-    "src": "https://files.catbox.moe/1mky0p.mp3",
-    "cover": "/Assets/other/albumCovers/NEMONEMOCover.jpeg"
-  },
-  {
-    "title": "ten",
-    "writer": "Fred Again, Jim Legxacy, Jozzy",
-    "volume": 0.04,
-    "src": "https://files.catbox.moe/0ifo0g.mp3",
-    "cover": "/Assets/other/albumCovers/tenCover.jpeg"
   }
 ]
