@@ -40,7 +40,21 @@ document.addEventListener('DOMContentLoaded', () => {
         letterImg.alt = key;
         incorrectLettersContainer.appendChild(letterImg);
     });
-    
+
+    keys.forEach(function (key) {
+        var checkbox = document.getElementById("checkbox" + key);
+
+        if (checkbox) {
+            checkbox.checked = true;
+
+            if (isCorrectKey(key)) { 
+                checkbox.classList.add('correct');
+            } else {
+                checkbox.classList.add('incorrect');
+            }
+        }
+    });
+        
     checkAllLettersRevealed();
 });
 
@@ -125,8 +139,6 @@ keyItems.forEach((item, index) => {
         updateCursorPosition();
     });
 });
-
-
 
 function displayWord(word, startIndex) {
     const wrapper = document.createElement('div');

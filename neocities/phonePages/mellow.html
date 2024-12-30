@@ -51,17 +51,24 @@
                         <h3>Today's Mood</h3>
                     </div>
                     <div id="moodButtons" class="flexWrapper">
-                        <button id="cheerful"><img src="/Assets/other/mellowIcons/emoji/Cheerful.png" alt="Cheerful"></button>
+                        <button id="cheerful"><img src="/Assets/other/mellowIcons/emoji/Cheerful.png"
+                                alt="Cheerful"></button>
                         <button id="happy"><img src="/Assets/other/mellowIcons/emoji/Happy.png" alt="Happy"></button>
                         <button id="calm"><img src="/Assets/other/mellowIcons/emoji/Calm.png" alt="Calm"></button>
                         <button id="loved"><img src="/Assets/other/mellowIcons/emoji/Loved.png" alt="Loved"></button>
-                        <button id="inspired"><img src="/Assets/other/mellowIcons/emoji/Starstruck.png" alt="Starstruck"></button>
-                        <button id="indifferent"><img src="/Assets/other/mellowIcons/emoji/Indifferent.png" alt="Indifferent"></button>
+                        <button id="inspired"><img src="/Assets/other/mellowIcons/emoji/Starstruck.png"
+                                alt="Starstruck"></button>
+                        <button id="indifferent"><img src="/Assets/other/mellowIcons/emoji/Indifferent.png"
+                                alt="Indifferent"></button>
                         <button id="sad"><img src="/Assets/other/mellowIcons/emoji/Sad.png" alt="Sad"></button>
-                        <button id="depressed"><img src="/Assets/other/mellowIcons/emoji/Depressed.png" alt="Depressed"></button>
-                        <button id="frustrated"><img src="/Assets/other/mellowIcons/emoji/Frustrated.png" alt="Frustrated"></button>
-                        <button id="anxious"><img src="/Assets/other/mellowIcons/emoji/Anxious.png" alt="Anxious"></button>
-                        <button id="annoyed"><img src="/Assets/other/mellowIcons/emoji/Annoyed.png" alt="Annoyed"></button>
+                        <button id="depressed"><img src="/Assets/other/mellowIcons/emoji/Depressed.png"
+                                alt="Depressed"></button>
+                        <button id="frustrated"><img src="/Assets/other/mellowIcons/emoji/Frustrated.png"
+                                alt="Frustrated"></button>
+                        <button id="anxious"><img src="/Assets/other/mellowIcons/emoji/Anxious.png"
+                                alt="Anxious"></button>
+                        <button id="annoyed"><img src="/Assets/other/mellowIcons/emoji/Annoyed.png"
+                                alt="Annoyed"></button>
                         <button id="angry"><img src="/Assets/other/mellowIcons/emoji/Angry.png" alt="Angry"></button>
                     </div>
                 </div>
@@ -76,8 +83,7 @@
 
                     <form id="notes">
                         <label for="textbox">You can expand on that here:</label>
-                        <textarea id="textbox" rows="4"
-                            placeholder="Do you want to talk about why?"></textarea>
+                        <textarea id="textbox" rows="4" placeholder="Do you want to talk about why?"></textarea>
                         <button id="saveEntry" type="submit">Log Mood</button>
                     </form>
                 </div>
@@ -102,7 +108,10 @@
                 <div id="landscape">
                     <div id="sky">
                         <img id="sun" src="/Assets/other/mellowIcons/Sun.png">
-                        <img id="moon" src="/Assets/other/mellowIcons/Moon.png">
+                        <div id="moon">
+                            <img src="/shrines/OMORI/hangmanGame/assets/keys/keyY.png" id="keyY" onclick="collectKey('Y');">
+                            <img src="/Assets/other/mellowIcons/Moon.png">
+                        </div>
                         <img id="mountains" src="/Assets/other/mellowIcons/Mountains.png">
                     </div>
                     <div id="reflection"></div>
@@ -139,6 +148,7 @@
 
     </div>
     <script src="js/mellow.js"></script>
+    <script src="/shrines/OMORI/hangmanGame/js/keyCollectScript.js"></script>
 </body>
 
 </html>

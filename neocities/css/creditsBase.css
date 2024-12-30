@@ -77,3 +77,9 @@ hr {
     border: none;
     margin: 20px 0;
 }
+
+#keyC {
+    position: absolute;
+    bottom: 50%;
+    left: 0;
+}

@@ -1,14 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = '/shrines/OMORI/hangmanGame/css/keyscollected.css';  
+    document.head.appendChild(link);
+
     const keys = JSON.parse(localStorage.getItem('collectedKeys')) || [];
 
     keys.forEach(key => {
         if (key === 'T') return;
         
-        const keyElement = document.getElementById(`key${key}`);
-        if (keyElement) {
-            keyElement.checked = true;
-            keyElement.style.display = 'none';
-        }
+        const keyElements = document.querySelectorAll(`#key${key}`);
+        keyElements.forEach(keyElement => {
+            if (keyElement) {
+                keyElement.checked = true; 
+                keyElement.remove();
+            }
+        });
     });
 });
 
