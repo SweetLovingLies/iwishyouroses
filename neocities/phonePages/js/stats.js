@@ -193,7 +193,6 @@ function wishOnRose() {
   updateRosesWishedDisplay(count); 
 }
 
-
 function updateRosesWishedDisplay(count) {
   const display = document.querySelector('.rosesWished');
   if (display) {
