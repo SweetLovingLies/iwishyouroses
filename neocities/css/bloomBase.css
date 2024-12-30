@@ -58,6 +58,7 @@ section {
 
 #siteButton img {
     margin: 10px 0;
+    width: 88px;
 }
 
 textarea {
@@ -68,6 +69,10 @@ textarea {
 
 #jsCalender {
     width: 356px;
+}
+
+.calendar-container {
+    position: relative;
 }
 
 .calendar-container header {
