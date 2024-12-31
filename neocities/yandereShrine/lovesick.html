@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>and roses and roses and roses</title>
+
+    <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/lovesick.css" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Themes -->
+
+    <meta name="description" content="A happy place, A quiet place." />
+    <link rel="icon" type="image/x-icon" href="/Assets/pixels/vintageAmericana/rose.gif">
+
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+    <script src="/js/jaxframeFork.js"></script>
+
+    <script>
+        var documentTitle = document.title + " ";
+        (function tabTitle() {
+            document.title = documentTitle = documentTitle.substring(1) + documentTitle.substring(0, 1);
+            setTimeout(tabTitle, 100);
+        })();
+
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <img id="roof" src="">
+
+        <div id="middle" class="oak">
+            <div id="letter1" class="letters">
+                <br>
+                <p>Ea non deserunt nisi mollit est nulla sunt laborum et. Proident ex velit deserunt eiusmod ad Lorem
+                    ullamco consectetur ex pariatur est. Nisi pariatur anim reprehenderit proident sit consequat elit
+                    proident fugiat dolore. Cupidatat do excepteur duis exercitation. Occaecat est labore laborum fugiat
+                    est aliqua ipsum anim magna deserunt. Esse mollit excepteur fugiat est aliqua voluptate laborum
+                    nulla eu excepteur. Consectetur minim velit qui anim sint ad dolore non exercitation sint.</p>
+                <br>
+
+                <img id="heart" class="floaters" src="/Assets/yandere/pngs/heart.png">
+            </div>
+            <div id="polaroid1" class="polaroids">
+                <img src="/Assets/other/albumCovers/fallbackCover.jpg" alt="Polaroid Image">
+            </div>
+            <iframe id="notebook" src="notebook.html"></iframe>
+
+        </div>
+
+        <div id="shrineStand" class="woodStock">
+            <div id="drawer" class="woodStock">
+                <handle></handle>
+            </div>
+        </div>
+    </div>
+
+    <div id="phoneSpot">
+        <iframe id="phone" class="hidden" src="/phonePages/phone.html"
+            title="IdolLine Interactive Phone: Games, Tools, and Navigation!" role="application"></iframe>
+    </div>
+    <script src="/js/phoneDisplayScript.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            getAchievement("general", "yanShrine");
+        });
+    </script>
+    <script src="/phonePages/js/achievements/achievements.js"></script>
+</body>
+
+</html>
