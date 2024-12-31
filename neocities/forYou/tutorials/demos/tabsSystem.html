@@ -83,7 +83,7 @@
 
             // When you use querySelectorAll to select a group of objects, it returns 1 "object" of whatever you've selected, called a nodeList.
             // In order to modify each of them, we have to apply code seperately to each of them, and we use a forEach loop to do that.
-            tabLinks.forEach((tab) => {
+            tabLinks.forEach((tab) => { // For each tab link
                 tab.addEventListener('click', (e) => { // Now we add an eventListener that checks for clicks to each tab
                     e.preventDefault(); // Keeps the page from reloading when we click the link
                     const tabId = tab.getAttribute('href').replace('#', ''); // Create the tab id by getting the href attribute and removing the #
@@ -92,7 +92,7 @@
                     // Special: The history API updates the URL to reflect the current tab. This allows you to navigate between tabs using browser history (back/forward buttons) or share links to specific tabs.
                     // See how it shows your tabId in the page URL?
                     // If you don't want this, I provided a (commented out) version without it below!
-                    history.pushState(null, null, `#${tabId}`); // Passing in only our tabId. The nulls we passed in will matter later
+                    history.pushState(null, null, `#${tabId}`); // Passing in only our tabId
                 });
             });
 
@@ -113,6 +113,7 @@
                     // Short hand if statement: If the tab is active, set it's display style to block
                     // Otherwise, set it to none
                     section.style.display = isActive ? 'block' : 'none';
+                    // If you're using a different display type (like flex!) you can change that here!
                 });
             };
 
