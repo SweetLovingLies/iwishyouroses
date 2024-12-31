@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Simple Tab System!</title>
+
+    <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
+
+    <meta name="description" content="Tabs System Demo!" />
+
+    <style>
+        body {
+            font-family: cafesweet;
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        p {
+            max-width: 700px;
+            text-align: center;
+        }
+
+        main {
+            flex: 0 1 20%;
+            background-color: #ebdfcf;
+            display: flex;
+            flex-flow: column wrap;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        section {
+            height: 100px;
+            padding: 20px;
+            overflow: auto;
+        }
+
+        a.active {
+            color: var(--persian)
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <nav>
+            <a href="#one" class="active">1</a>
+            <a href="#two">2</a>
+            <a href="#three">3</a>
+            <a href="#four">4</a>
+        </nav>
+        <section id="one" class="active">
+            This is the home section! It's displayed by default. 
+            Go into inspect element or right click and view the page source for a tutorial!
+
+        </section>
+        <section id="two">
+            This is a test section!
+        </section>
+        <section id="three">
+            This is another test section!
+        </section>
+        <section id="four">
+            This is the final test section!
+        </section>
+    </main>
+
+    <!-- ! This script controls the tabs section! -->
+    <script>
+        // On page load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Select the sections and the tabs
+            const tabLinks = document.querySelectorAll('nav a');
+            const sections = document.querySelectorAll('section');
+
+            tabLinks.forEach((tab) => {
+                tab.addEventListener('click', (e) => { // Now we add an eventListener that checks for clicks to each tab
+                    e.preventDefault(); // Keeps the page from reloading when we click the link
+                    const tabId = tab.getAttribute('href').replace('#', ''); // Create the tab id by getting the href attribute and removing the #
+                    activateTab(tabId); // Then we run the constant as if it were a function
+
+                    // Special: The history API updates the URL to reflect the current tab. This allows you to navigate between tabs using browser history (back/forward buttons) or share links to specific tabs.
+                    // See how it shows your tabId in the link to this page?
+                    // If you don't want this, I provided a (commented out) version without it below!
+                    history.pushState(null, null, `#${tabId}`); // Passing in only our tabId. The nulls we passed in will matter later
+                });
+            });
+
+            // The below constant is responsible for actually toggling the tab content.
+            // This could be a function too, but I use a constant here for a couple of reasons:
+            // One: constants are block-scoped, meaning that they can't be referenced outside of the DOMContentLoaded eventListener
+            // Two: It being a constant means it can't be overwritten by accident
+            const activateTab = (tabId) => {
+                // When you use querySelectorAll to select a group of objects, it returns 1 "object" of whatever you've selected, called a nodeList.
+                // In order to modify each of them, we have to apply code seperately to each of them, and we use a forEach loop to do that.
+                tabLinks.forEach((tab) => { // For each tab link
+                    const isActive = tab.getAttribute('href') === `#${tabId}`; // Get the href, and set it equal to a created variable we're calling a tabId
+                    tab.classList.toggle('active', isActive); // Add the "active" class to the selected tab
+                });
+
+                sections.forEach((section) => { // For each section
+                    const isActive = section.id === tabId; // Get the section's ID and match it up to the tabId
+                    section.classList.toggle('active', isActive); // Add the "active" class to the selected section (for if you want to customize anything!)
+
+                    // Short hand if statement: If the tab is active, set it's display style to block
+                    // Otherwise, set it to none
+                    section.style.display = isActive ? 'block' : 'none';
+                });
+            };
+
+            // If you were to click a tab that isn't "one", close the page, and come back, that tab would re-open. That's because of the following functionality.
+            // window.location.hash checks if the URL contains a hashtag (#), which represents the ID of the section to open.
+            // Replace the hash in the URL to the one you've clicked (or default to #one (the default for this page specifically.) 
+            // Change this if you use "home" or something else for your default!)
+            const initialTabId = window.location.hash ? window.location.hash.replace('#', '') : 'one';  
+
+            // Call our activator constant while using the initialTabId
+            activateTab(initialTabId);
+
+            // window level eventListener that checks for when your browser history gets updated 
+            window.addEventListener('popstate', () => {
+                const currentTabId = window.location.hash.replace('#', '') || 'one';
+                activateTab(currentTabId); // Use the current ID in the URL instead
+            });
+        });
+    </script>
+
+    <!-- !  Here's the version without the history API! -->
+    <!-- <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabLinks = document.querySelectorAll('nav a');
+            const sections = document.querySelectorAll('section');
+
+            tabLinks.forEach((tab) => {
+                tab.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const tabId = tab.getAttribute('href').replace('#', '');
+                    activateTab(tabId);
+                });
+            });
+
+            const activateTab = (tabId) => {
+                tabLinks.forEach((tab) => {
+                    const isActive = tab.getAttribute('href') === `#${tabId}`;
+                    tab.classList.toggle('active', isActive);
+                });
+
+                sections.forEach((section) => {
+                    const isActive = section.id === tabId;
+                    section.classList.toggle('active', isActive);
+                    section.style.display = isActive ? 'block' : 'none';
+                });
+            };
+
+            const initialTabId = 'one';
+            activateTab(initialTabId);
+        });
+    </script> -->
+</body>
+
+</html>
