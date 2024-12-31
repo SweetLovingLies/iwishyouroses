@@ -81,6 +81,8 @@
             const tabLinks = document.querySelectorAll('nav a');
             const sections = document.querySelectorAll('section');
 
+            // When you use querySelectorAll to select a group of objects, it returns 1 "object" of whatever you've selected, called a nodeList.
+            // In order to modify each of them, we have to apply code seperately to each of them, and we use a forEach loop to do that.
             tabLinks.forEach((tab) => {
                 tab.addEventListener('click', (e) => { // Now we add an eventListener that checks for clicks to each tab
                     e.preventDefault(); // Keeps the page from reloading when we click the link
@@ -88,7 +90,7 @@
                     activateTab(tabId); // Then we run the constant as if it were a function
 
                     // Special: The history API updates the URL to reflect the current tab. This allows you to navigate between tabs using browser history (back/forward buttons) or share links to specific tabs.
-                    // See how it shows your tabId in the link to this page?
+                    // See how it shows your tabId in the page URL?
                     // If you don't want this, I provided a (commented out) version without it below!
                     history.pushState(null, null, `#${tabId}`); // Passing in only our tabId. The nulls we passed in will matter later
                 });
@@ -99,8 +101,6 @@
             // One: constants are block-scoped, meaning that they can't be referenced outside of the DOMContentLoaded eventListener
             // Two: It being a constant means it can't be overwritten by accident
             const activateTab = (tabId) => {
-                // When you use querySelectorAll to select a group of objects, it returns 1 "object" of whatever you've selected, called a nodeList.
-                // In order to modify each of them, we have to apply code seperately to each of them, and we use a forEach loop to do that.
                 tabLinks.forEach((tab) => { // For each tab link
                     const isActive = tab.getAttribute('href') === `#${tabId}`; // Get the href, and set it equal to a created variable we're calling a tabId
                     tab.classList.toggle('active', isActive); // Add the "active" class to the selected tab
