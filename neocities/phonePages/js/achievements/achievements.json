@@ -51,9 +51,9 @@
             },
             "HeadCount": {
                 "icon": "/assets/FNAF/GoldenFreddy/1.jpg",
-                "title": "THE BITE OF '83",
+                "title": "Bite of '83",
                 "hint": "What could serve as a numpad?",
-                "description": "Type 395248 into Your Tome",
+                "description": "Type 395248 into the calculator!",
                 "class": "achievementNormal"
             },
             "MeteorShower": {

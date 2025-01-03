@@ -19,42 +19,29 @@
 <body>
     <div class="overlay">
     </div>
-
     <div id="severanceSolarSystem" class="celestialObject">
-        <a id="sun" class="planet" data-title="Severance Solar System" data-image="img/planet.png"
-            data-description="The Severance Solar System is a massively populated system of 27 different planets, most notably Eartha Major, Koa, Bellavue, and the titular planet of Severance, the hub. It has existed for trillions of years, and hosts most of the universe's population as a result. What happens in this system has an effect on almost every other paracosm in existence.">
+        <a id="sun" class="planet">
             <span class="label">Severance Solar System</span>
         </a>
-
         <div id="severanceOrbit" class="orbit">
-            <a id="severance" class="planet" data-title="Severance" data-image="img/planet.png"
-                data-description="Severance is the largest planet in the Severance solar system, boasting a massive 1.4 Quadrillion individual population, as well as the Queen. It controls nearly all technological advancements and has the deepest connection with the Gods because of the Queen's residence. Severance is extremely progressive overall and is entirely intolerant of any conservative belief sets.">
+            <a id="severance" class="planet">
                 <span class="label">
                     <iconify-icon icon="game-icons:tiara"></iconify-icon>
                     Severance</span>
             </a>
 
             <div id="eMajorOrbit" class="orbit">
-                <a id="earthaMajor" class="planet" data-title="Eartha Major" data-image="img/planet.png"
-                    data-description="After the 'Big Bang' as we know it, 2 planets with very similar structure formed, albeit different sizes. These planets became known as Eartha Minor (our planet), and Eartha Major. 
-                    <br>
-                    Eartha Major has become a massive industrial hub in the Severance solar system, as well as a major political power. It takes care of almost all intergalactic affairs and is responsible for almost all manufacturing of space-centric machinery, such as spaceships, spacesuits, and weaponry.
-                    <br>
-                    Eartha Major is known for it's violent nature and patriotism, and is not afraid to discard anything they view as unnecessary, or a hinderance. ">
+                <a id="earthaMajor" class="planet">
                     <span class="label">Eartha Major</span>
                 </a>
 
                 <div id="koaOrbit" class="orbit">
-                    <a id="koa" class="planet" data-title="Koa" data-image="img/planet.png"
-                        data-description="Koa is an extremely territorial and militarist planet. Notably, it is entirely run by women. It is heavily guarded and the population is extremely prejudiced. While the planet is still liable to following the rules of the hub planet, there are many structural changes and any rules that Severance is lenient about are most likely modified on this planet.">
+                    <a id="koa" class="planet">
                         <span class="label">Koa</span>
                     </a>
 
                     <div id="bellavueOrbit" class="orbit">
-                        <a id="bellavue" class="planet UNF" data-title="Bellavue" data-image="img/planet.png"
-                            data-description="Bellavue is a feminist, women-ran planet known for it's pink and hyperfeminine environment. Reminiscent of Barbie World, the architecture is very modern and colorful with cartoony motifs. The planet boasts a smaller population than most planets (10.2 billion), but it is a major tourist location for people from Eartha Major and other unnamed planets. 
-                            <br> 
-                            It may not look like it, but this planet is twice the size of Eartha Minor!">
+                        <a id="bellavue" class="planet">
                             <span class="label">Bellavue</span>
                         </a>
                     </div>
@@ -77,7 +64,7 @@
 
     <div id="sciFiTablet">
         <div id="tabletBranding" class="sciFi">
-            <h1>Cristalize</h1>
+            <h1 class="logo">Cristalize</h1>
             <p>by DolcetTech</p>
         </div>
         <div id="mainWrapper">
@@ -87,25 +74,48 @@
                     <button></button>
                     <button></button>
                 </div>
-                <div class="blackFiller"></div>
-                <div class="details"></div>
-                <div class="content">
-                    <h2 id="planetName">Planet Name</h2>
-                    <p id="planetDescription">"This planet is really cool!" and Other Placeholder Texts... Like Lorem
-                        Ipsum.</p>
-                    <img id="planetPreview" src="/Assets/anime/pjsk/pfp/miku1.jpg"> <!-- ! Temp -->
+
+                <div class="contentWrapper">
+                    <div class="blackFiller"></div>
+                    <div class="crashOverlay">
+                        <div style="display: flex;">
+                            <iconify-icon icon="material-symbols:warning-outline"></iconify-icon>
+                            <h1>Critical Error</h1>
+                            <iconify-icon icon="material-symbols:warning-outline"></iconify-icon>
+                        </div>
+                        <p class="glitch-text" data-text="The Cristalize tablet has encountered a fatal error. Restart sequence
+                        initiated.">The Cristalize tablet has encountered a fatal error. Restart sequence
+                            initiated.</p>
+                    </div>
+                    <div class="details"></div>
+
+                    <div class="content">
+                        <h2 id="planetName"></h2>
+                        <div id="txtWrapper">
+                            <p id="planetDescription"></p>
+                            <a id="seeMore" href="">Go to official page!</a>
+                        </div>
+                        <img id="planetPreview" src="">
+                    </div>
                 </div>
             </div>
             <div id="tabletAside" class="sciFi">
-                <div class="blackFiller"></div>
-                <div class="details"></div>
-                <div class="content">
-                    <h2>Settings</h2>
-                    <div id="buttonWrapper">
-                        <button id="darkMode" class="settingsButton">Theme Toggle</button>
-                        <button id="random" class="settingsButton">Random Planet</button>
-                        <button id="discardTrash" class="settingsButton">Discard Trash</button>
-                        <button id="party" class="settingsButton">Party!</button>
+                <div class="contentWrapper">
+                    <div class="blackFiller"></div>
+                    <div class="details"></div>
+                    <div class="crashOverlay">
+                        <div style="display: flex;">
+                            <iconify-icon icon="material-symbols:warning-outline"></iconify-icon>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <h2>Settings</h2>
+                        <div id="buttonWrapper">
+                            <button id="darkMode" class="settingsButton">Theme Toggle</button>
+                            <button id="random" class="settingsButton">Random Planet</button>
+                            <button id="party" class="settingsButton">Party!</button>
+                        </div>
                     </div>
                 </div>
             </div>

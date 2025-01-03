@@ -111,6 +111,8 @@ header .calendar-navigation span:hover {
     background: var(--dustyPink);
     border: 3px dashed white;
     outline: 5px solid var(--dustyPink);
+
+    color: black;
 }
 
 #thoughtBubble::after {

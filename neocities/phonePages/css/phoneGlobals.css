@@ -85,3 +85,12 @@ filler {
     color: transparent;
     font-size: 20px;
 }
+
+*{
+    scrollbar-width: none;
+}
+
+*::-webkit-scrollbar,
+*::-webkit-scrollbar-button {
+    width: 0;
+}

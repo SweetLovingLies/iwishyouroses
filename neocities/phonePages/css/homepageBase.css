@@ -10,7 +10,7 @@
 body {
     display: flex;
     flex-flow: column wrap;
-    height: calc(100vh - 5px);
+    height: 100vh;
 
     overflow: hidden;
 }
@@ -40,36 +40,45 @@ body {
 #homepage2.hidden {
     transform: translateX(100%);
 }
-
-
 .appWrapper {
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
 
-    row-gap: 15px;
-    column-gap: 25px;
+    column-gap: 10px;
+    row-gap: 12px;
     padding: 5px;
     padding-top: 25px;
     padding-bottom: 10px;
 }
 
-.app ,
-footer a {
+.flexWrapper {
+    display: flex;
+    margin: 0 auto;
+    gap: 25px;
+}
+
+.app {
+    width: calc(25% - 10px);
+    align-self: flex-start;
+
     display: flex;
     flex-flow: column wrap;
-    justify-content: center;
     align-items: flex-start;
+    justify-content: flex-start;
+
     text-decoration: none;
 
     transition: color .25s;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
 }
 
 .app p,
 footer p {
     text-align: center;
-    width: 70px;
-    font-size: 15px;
+    width:60px;
+    font-size: 13px;
 }
 
 .column1 {
@@ -78,7 +87,7 @@ footer p {
     gap: 20px;
 }
 
-.column2 {
+.widgetColumn {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
@@ -134,13 +143,6 @@ footer p {
         transform: scale(0);
         opacity: 0;
     }
-}
-
-.app {
-    animation-duration: 0.3s;
-    animation-fill-mode: forwards;
-
-    justify-content: flex-start;
 }
 
 .app.UNF {

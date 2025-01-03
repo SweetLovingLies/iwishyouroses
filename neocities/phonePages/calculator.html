@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone App: Calculator</title>
+
+    <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/phoneGlobals.css" rel="stylesheet" type="text/css" media="all">
+
+    <link href="css/calculatorBase.css" rel="stylesheet" type="text/css" media="all">
+
+    <link id="calculatorCSS" href="css/calculatorThemes/calculatorLight.css" rel="stylesheet" type="text/css" media="all"
+        data-theme="light">
+    <link id="calculatorDarkCSS" href="css/calculatorThemes/calculatorDark.css" rel="stylesheet" type="text/css" media="all" data-theme="dark">
+
+    <meta name="description" content="Access literally everything you need." />
+
+    <link rel="icon" type="image/x-icon" href="../Assets/pixels/vintageAmericana/strawberryphone.webp">
+
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <input type="text" id="display" readonly>
+            <button id="clear">AC</button>
+        </header>
+        <div id="buttons">
+            <button data-value="7">7</button>
+            <button data-value="8">8</button>
+            <button data-value="9">9</button>
+            <button data-value="/">/</button>
+            <button data-value="4">4</button>
+            <button data-value="5">5</button>
+            <button data-value="6">6</button>
+            <button data-value="*">*</button>
+            <button data-value="1">1</button>
+            <button data-value="2">2</button>
+            <button data-value="3">3</button>
+            <button data-value="-">-</button>
+            <button data-value="0">0</button>
+            <button data-value=".">.</button>
+            <button data-value="=">=</button>
+            <button data-value="+">+</button>
+        </div>
+    </div>
+
+    <script src="js/calculator.js"></script>
+</body>
+
+</html>

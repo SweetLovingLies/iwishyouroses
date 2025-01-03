@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone App: Widgetsmith</title>
+
+    <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/phoneGlobals.css" rel="stylesheet" type="text/css" media="all">
+
+    <link href="css/widgetSmith.css" rel="stylesheet" type="text/css" media="all">
+
+    <meta name="description" content="Access literally everything you need." />
+
+    <link rel="icon" type="image/x-icon" href="../Assets/pixels/vintageAmericana/strawberryphone.webp">
+
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+</head>
+
+<body>
+    <object id="detailBarObject" data="detailbar.html" aria-hidden="true"></object>
+
+    <section id="previewAll">
+        <h1>Widgetsmith</h1>
+        <p>Welcome to Widgetsmith. You are allowed up to 5 widgets total!</p>
+
+        <div id="yourWidgets">
+            <button id="createNewWidget"><iconify-icon icon="typcn:plus" width="24" height="24"></iconify-icon></button>
+        </div>
+
+        <footer>
+            <button id="clearAllWidgets">Clear all Widgets</button>
+        </footer>
+    </section>
+
+    <section id="customize">
+        <iconify-icon class="back" icon="lucide:chevron-left" tabindex="0"></iconify-icon>
+        <div class="widget-preview">
+            <h1>Preview</h1>
+            <div class="widget-display">
+                <object id="widgetObject" type="image/svg+xml" data="" class="widget"></object>
+            </div>
+        </div>
+
+        <div class="widget-settings">
+            <h2>Customize Widget</h2>
+
+            <div class="image-selector">
+                <label for="imageInput">Choose an image</label>
+                <input type="file" id="imageInput" accept="image/*">
+            </div>
+
+            <div class="shape-selector">
+                <label for="shapeInput">Shape</label>
+                <select id="shapeInput">
+                    <option value="square">Square</option>
+                    <option value="circle">Circle</option>
+                    <option value="rounded">Rounded Rectangle</option>
+                    <option value="star">Star</option>
+                    <option value="heart">Heart</option>
+                    <option value="diamond">Diamond</option>
+                    <option value="leaf">Leaf</option>
+                    <option value="lightning">Lightning</option>
+                </select>
+            </div>
+            <div class="filter-selector">
+                <label for="filterInput">Filter</label>
+                <select id="filterInput">
+                    <option value="none">None</option>
+                    <option value="grayscale">Grayscale</option>
+                    <option value="sepia">Sepia</option>
+                    <option value="blur">Blur</option>
+                    <option value="invert">Invert</option>
+                    <option value="saturate">Saturate</option>
+                    <option value="contrast">Contrast</option>
+                </select>
+            </div>
+
+            <!-- <div class="custom-filter-settings">
+                <h3>Create Custom Filter</h3>
+                <div>
+                    <label for="customGrayscale">Grayscale (%)</label>
+                    <input type="range" id="customGrayscale" min="0" max="100" value="0">
+                </div>
+                <div>
+                    <label for="customBlur">Blur (px)</label>
+                    <input type="range" id="customBlur" min="0" max="10" value="0">
+                </div>
+                <div>
+                    <label for="customSaturate">Saturate (%)</label>
+                    <input type="range" id="customSaturate" min="0" max="200" value="100">
+                </div>
+                <button id="saveCustomFilter">Save Custom Filter</button>
+            </div> -->
+            
+        </div>
+        <footer>
+            <button id="clearPreview">Clear Preview</button>
+            <button id="saveWidget">Save Widget</button>
+        </footer>
+    </section>
+
+    <section id="edit">
+        <iconify-icon class="back" icon="lucide:chevron-left" tabindex="0"></iconify-icon>
+        <div class="widget-preview">
+            <h1>Preview</h1>
+            <div class="widget-display">
+                <object id="editWidgetObject" type="image/svg+xml" data="" class="widget"></object>
+            </div>
+        </div>
+
+        <div class="widget-settings">
+            <h2>Customize Widget</h2>
+
+            <div class="shape-selector">
+                <label for="editShapeInput">Shape</label>
+                <select id="editShapeInput">
+                    <option value="square">Square</option>
+                    <option value="circle">Circle</option>
+                    <option value="rounded">Rounded Rectangle</option>
+                    <option value="star">Star</option>
+                    <option value="heart">Heart</option>
+                    <option value="diamond">Diamond</option>
+                    <option value="leaf">Leaf</option>
+                    <option value="lightning">Lightning</option>
+                </select>
+            </div>
+
+            <div class="filter-selector">
+                <label for="editFilterInput">Filter</label>
+                <select id="editFilterInput">
+                    <option value="none">None</option>
+                    <option value="grayscale">Grayscale</option>
+                    <option value="sepia">Sepia</option>
+                    <option value="blur">Blur</option>
+                    <option value="invert">Invert</option>
+                    <option value="saturate">Saturate</option>
+                    <option value="contrast">Contrast</option>
+                </select>
+            </div>
+
+            <!-- <div class="custom-filter-settings">
+                <h3>Create Custom Filter</h3>
+                <div>
+                    <label for="customGrayscale">Grayscale (%)</label>
+                    <input type="range" id="customGrayscale" min="0" max="100" value="0">
+                </div>
+                <div>
+                    <label for="customBlur">Blur (px)</label>
+                    <input type="range" id="customBlur" min="0" max="10" value="0">
+                </div>
+                <div>
+                    <label for="customSaturate">Saturate (%)</label>
+                    <input type="range" id="customSaturate" min="0" max="200" value="100">
+                </div>
+                <button id="saveCustomFilter">Save Custom Filter</button>
+            </div>             -->
+        </div>
+        <footer>
+            <button id="clearPreview">Clear Preview</button>
+            <button id="saveEditedWidget">Save Changes</button>
+            <button id="deleteWidget">Delete Widget</button>
+        </footer>
+    </section>
+
+    <script src="js/widgetsmith/widgetSmith.js"></script>
+    <script src="js/widgetsmith/widgets.js"></script>
+</body>
+
+</html>

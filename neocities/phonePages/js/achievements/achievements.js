@@ -4,7 +4,7 @@
 
 let achievementData;
 
-fetch(`/phonePages/js/achievements/achievements.json`, { cache: "no-store" }) //& cache: "no-store" keeps the browser from caching anything so only the newest info is retrieved
+fetch(`/phonePages/js/achievements/achievements.json`, { cache: "no-store" })
   .then((response) => response.json())
   .then((json) => {
     achievementData = json;

@@ -34,13 +34,14 @@
     <div id="homepages">
         <div class="homepage active" id="homepage1">
             <div class="appWrapper">
-                <div style="display: flex; margin: 0 auto; column-gap: 25px;">
-                    <div class="column2">
-                        <img class="widget" src="/Assets/kpop/IVE/selcas/wonyoungChristmas2.jpg">
-                        <p>widgetsmith</p>
+                <div class="flexWrapper">
+                    <div class="widgetColumn" id="widgetColumn1">
+                        <div class="draggable-widget" draggable="true">
+                            <object class="widget" id="widget1" type="image/svg+xml" data=""></object>
+                            <p>Widgetsmith</p>
+                        </div>
                     </div>
-
-                    <div class="column1">
+                    <div class="column">
                         <a href="nav.html" class="app" onclick="openApp(event, this)">
                             <div class="appIcon">
                                 <img src="/Assets/customNavIcons/navIcon.png">
@@ -92,6 +93,17 @@
                         <img src="/Assets/customNavIcons/serenadeIcon.png">
                     </div>
                     <p>Serenade</p>
+                </a>
+
+                <a href="calculator.html" class="app" onclick="openApp(event, this)">
+                    <div class="appIcon">
+                    </div>
+                    <p>Calculator</p>
+                </a>
+                <a href="widgetsmith.html" class="app" onclick="openApp(event, this)">
+                    <div class="appIcon">
+                    </div>
+                    <p>Widget Smith</p>
                 </a>
             </div>
         </div>
@@ -150,7 +162,7 @@
             </div>
 
             <tray>
-                <a href="shiranai.html" class="app" onclick="openApp(event, this)">
+                <a href="temp.html" class="app UNF" onclick="openApp(event, this)">
                     <div class="appIcon">
                         <img src="/Assets/customNavIcons/shiranaiIcon.png">
                     </div>
@@ -172,96 +184,8 @@
         </footer>
     </div>
 
-    <script>
-        function openApp(event, appElement) {
-            event.preventDefault();
-
-            if (appElement.classList.contains('open')) return;
-
-            appElement.classList.add('open');
-
-            const appHref = appElement.getAttribute('href');
-
-            incrementAppOpenedCount();
-
-            setTimeout(() => {
-                parent.document.getElementById('phoneScreen').src = appHref;
-            }, 350);
-        }
-
-
-        let currentHomepage = parseInt(localStorage.getItem('currentHomepage')) || 0;
-        const homepages = document.querySelectorAll('.homepage');
-        const navDots = document.querySelectorAll('.navDots');  // Select all dots
-
-        function showHomepage(index, autoOpenFirstApp = false) {
-            homepages.forEach((homepage, i) => {
-                if (i === index) {
-                    homepage.classList.remove('hidden');
-                    homepage.classList.add('active');
-                } else {
-                    homepage.classList.add('hidden');
-                    homepage.classList.remove('active');
-                }
-            });
-
-            navDots.forEach((dot, i) => {
-                if (i === index) {
-                    dot.classList.add('active');
-                    dot.classList.remove('inactive');
-                } else {
-                    dot.classList.add('inactive');
-                    dot.classList.remove('active');
-                }
-            });
-
-            localStorage.setItem('currentHomepage', index);
-        }
-
-        document.addEventListener('swiped-right', () => {
-            currentHomepage = (currentHomepage > 0) ? currentHomepage - 1 : homepages.length - 1;
-            showHomepage(currentHomepage);
-        });
-
-        document.addEventListener('swiped-left', () => {
-            currentHomepage = (currentHomepage < homepages.length - 1) ? currentHomepage + 1 : 0;
-            showHomepage(currentHomepage);
-        });
-
-        navDots.forEach((dot, i) => {
-            if (i === currentHomepage) {
-                dot.classList.add('active');
-                dot.classList.remove('inactive');
-            } else {
-                dot.classList.add('inactive');
-                dot.classList.remove('active');
-            }
-        });
-
-        showHomepage(currentHomepage); 
-    </script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const themeLinks = Array.from(document.querySelectorAll("link[id^='homepage']"));
-            const savedTheme = localStorage.getItem("globalTheme") || "light";
-            const pageName = window.location.pathname.split('/').pop().split('.')[0];
-
-            const availableThemes = themeLinks.map(link =>
-                link.id.replace(pageName, '').replace('CSS', '').toLowerCase()
-            );
-
-            const validTheme = (availableThemes.includes(savedTheme) &&
-                themeLinks.some(link => link.getAttribute("data-theme") === savedTheme))
-                ? savedTheme
-                : "light";
-
-            themeLinks.forEach(link => {
-                link.disabled = link.getAttribute("data-theme") !== validTheme;
-            });
-        });
-    </script>
-    
+    <script src="js/homepage.js"></script>
+    <script src="js/widgetsmith/widgets.js"></script>
     <script src="/shrines/OMORI/hangmanGame/js/keyCollectScript.js"></script>
 </body>
 

@@ -1,0 +1,202 @@
+:root {
+
+    /* Colors */
+    --bubblegum: #ffb7ed;
+    --dustyPink: #f6bdd1;
+    --rosette: #ffbbc5;
+    --persian: #f283b6;
+    --wisteria: #8266ff;
+    --kangel: #c3a3f6;
+    --hintofmist: #f1efff;
+    --whispermist: #dbd8f0;
+    --driedBlood: #8B575c;
+    --pinkIce: #f6e4f6;
+    --ash: #cad2c5;
+    --water: #adcaff;
+    --deepsea: #357ce6;
+    --roseRed: #C71227;
+    --rosePink: #FB003F;
+    --blood: #800000;
+    --deepslate: #696969;
+    --cobblestone: #a8a8a8;
+
+    /* Custom Colors */
+
+    --sweetGreen: #D8E2DC;
+    --sweetYellow: #FFE5D9;
+    --sweetPink: #FFCAD4;
+    --sweetBlush: #F4ACB7;
+    --sweetOak: #9D8189;
+
+    /* Globals */
+    --globalBorderRadius: 10px;
+    --detailBarHeight: 20px;
+}
+
+/* ~ General */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    height: 100vh;
+
+    position: relative;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    padding: 20px;
+}
+
+section {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
+}
+
+/* ~ Previews */
+
+#yourWidgets {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+.widgetItem {
+    max-width: 100px;
+    order: 1;
+}
+
+#createNewWidget {
+    order: 2;
+    padding: 0;
+
+    width: 90px;
+    height: 100px;
+    background-color: var(--sweetGreen); 
+    border: 2px solid var(--ash);
+}
+
+.widgetWrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button.editWidget {
+    position: absolute;
+    
+    background: none;
+    padding: 0;
+    z-index: 3;
+}
+
+button.editWidget iconify-icon {
+    color: black;
+    filter: drop-shadow(0 0 5px white);
+
+    font-size: 60px;
+
+    opacity: 0;
+    transition: opacity .25s;
+}
+
+button.editWidget:hover {
+    background: none;
+}
+
+button.editWidget:hover > iconify-icon {
+    opacity: 100%;
+}
+
+
+/* ~ Customize */
+
+#customize {
+    display: none;
+}
+
+.widget-preview {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.widget-display {
+    width: 200px;
+    height: 200px;
+    background-color: var(--sweetGreen);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 2px solid var(--ash);
+}
+
+.widget {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.widget-settings {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.widget-settings label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.widget-settings select, 
+.widget-settings input[type="file"] {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid var(--sweetOak);
+    border-radius: 5px;
+}
+
+/* ~ Other */
+
+footer {
+    flex: 1 0 50%;
+    flex: 1 0 50%;
+
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+     align-items: flex-end;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: var(--sweetBlush);
+
+    color: black;
+    border: none;
+    border-radius: var(--globalBorderRadius);
+
+    cursor: pointer;
+    transition: background-color .25s;
+}
+
+button:hover {
+    background-color: var(--sweetPink);
+}
+
+.back {
+    font-size: 2em;
+    transition: color .25s;
+}
+
+#edit {
+    display: none;
+}
+

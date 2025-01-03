@@ -1,0 +1,27 @@
+body {
+    background-color: #f4f4f4;
+    color: white;
+}
+
+#buttons {
+    background-color: var(--whispermist);
+}
+
+button {
+    background-color: var(--wisteria);
+
+    transition: background-color .15s;
+}
+
+button:hover {
+    background-color: var(--kangel);
+}
+
+#clear {
+    flex: 0 1 50px;
+    background-color: var(--roseRed);
+}
+
+#clear:hover {
+    background: #a71d2a;
+}

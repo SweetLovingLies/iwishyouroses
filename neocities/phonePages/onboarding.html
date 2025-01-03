@@ -378,13 +378,6 @@
     <script src="js/themeSwitcher.js"></script>
     <script>
         // Name Stuff
-
-        window.addEventListener('load', () => {
-            if (localStorage.getItem('userName')) {
-                parent.document.getElementById('phoneScreen').src = 'homepage.html';
-            }
-        });
-
         // Attemping validation without a button
         let debounceTimer;
 
@@ -425,7 +418,6 @@
         }
 
         // Screen Selection 
-
         let currentOnboardingPage = 0;
         const wrappers = document.querySelectorAll('.wrapper');
 
@@ -482,7 +474,6 @@
                 }
             });
         }
-
 
         document.addEventListener('swiped-right', () => {
             currentOnboardingPage = (currentOnboardingPage > 0) ? currentOnboardingPage - 1 : wrappers.length - 1;

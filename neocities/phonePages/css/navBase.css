@@ -1,4 +1,4 @@
-body{
+body {
     overflow-x: hidden;
     display: flex;
     flex-flow: column nowrap;
@@ -14,7 +14,8 @@ section {
     margin-top: 20px;
 }
 
-#topList, #middleList {
+#topList,
+#middleList {
     margin-bottom: 20px;
 }
 
@@ -35,7 +36,7 @@ section {
     color: red;
 }
 
-#deer{
+#deer {
     margin-top: 10px;
     align-self: center;
 }

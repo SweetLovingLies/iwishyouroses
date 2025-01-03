@@ -1,6 +1,43 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    // Clock
+    // ~ Onboarding
+    const phoneScreen = document.getElementById('phoneScreen');
+    const homeButton = document.getElementById('homeButton');
+
+    if (!phoneScreen) {
+        return;
+    }
+
+    // ! For development  purposes
+    const initialSrc = phoneScreen.getAttribute('src');
+
+    if (!initialSrc || initialSrc === '#') {
+        phoneScreen.src = 'startup.html'; 
+        homeButton.classList.add('disabled');
+        homeButton.style.pointerEvents = 'none';
+
+        setTimeout(() => {
+            if (localStorage.getItem('userName') && localStorage.getItem('selectedIcon')) {
+                phoneScreen.src = 'homepage.html';
+            } else {
+                phoneScreen.src = 'onboarding.html'; 
+            }
+        }, 5000); // ! Adjust as needed
+    }
+
+    phoneScreen.addEventListener('load', updateHomeButtonState);
+
+    function updateHomeButtonState() {
+        if (phoneScreen.src.includes('onboarding.html') || phoneScreen.src.includes('startup.html')) {
+            homeButton.classList.add('disabled');
+            homeButton.style.pointerEvents = 'none';
+        } else {
+            homeButton.classList.remove('disabled');
+            homeButton.style.pointerEvents = 'auto';
+        }
+    }
+
+    // ~ Clock
     function updateTime() {
         const timeDisplay = document.getElementById('time');
         if (!timeDisplay) return;
@@ -13,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     setInterval(updateTime);
 
-    // Weather
+    // ~ Weather
 
     const weatherData = {
         summer: {
@@ -73,7 +110,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         return forecast;
     }
-
 
     function displayForecast(forecast) {
         const forecastContainer = document.getElementById('forecastContainer');
@@ -175,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // }, 50);
 });
 
-// Homepage button
+// ~ Homepage button
 
 function homeButton() {
     const iframe = document.getElementById('phoneScreen');

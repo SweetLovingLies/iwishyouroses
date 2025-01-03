@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (savedTheme === "dark") {
         tablet.classList.add('dark');
     }
+    preloadAudio();
 })
 
 const tablet = document.getElementById('sciFiTablet');
@@ -15,6 +16,7 @@ const mainDetails = document.querySelector('#tabletMain .details');
 const planetName = document.getElementById('planetName');
 const planetPreview = document.getElementById('planetPreview');
 const planetDescription = document.getElementById('planetDescription');
+const seeMore = document.getElementById('seeMore');
 
 // ~ Hud Buttons
 
@@ -58,10 +60,6 @@ const sounds = {
         url: 'https://files.catbox.moe/4kjme5.mp3',
         volume: 0.1,
     },
-    powerOff: {
-        url: 'https://files.catbox.moe/qbwwe5.mp3',
-        volume: 0.4,
-    },
     hide: {
         url: 'https://files.catbox.moe/pfbhla.mp3',
         volume: 0.5,
@@ -78,6 +76,10 @@ const sounds = {
         url: 'https://files.catbox.moe/w5g5px.mp3',
         volume: 0.2
     },
+    crashed: {
+        url: 'https://files.catbox.moe/z2duk1.mp3',
+        volume: 0.4,
+    },
 
     setVolume: function (volumeLevel, soundKey = null) {
         volumeLevel = Math.min(Math.max(volumeLevel, 0), 1); // ~ Volume Clamp
@@ -93,6 +95,50 @@ const sounds = {
         }
     },
 };
+
+const planets = [
+    {
+        id: "sun",
+        name: "Severance Solar System",
+        image: "https://placehold.co/150x220/00ffcc/white",
+        description: "The Severance Solar System is a massively populated system of 27 different planets, most notably Eartha Major, Koa, Bellavue, and the titular planet of Severance, the hub. It has existed for trillions of years, and hosts most of the universe's population as a result. What happens in this system has an effect on almost every other paracosm in existence.",
+        link: "#"
+    },
+    {
+        id: "severance",
+        name: "Severance",
+        image: "https://placehold.co/150x220/00ffcc/white",
+        description: "Severance is the largest planet in the Severance solar system, boasting a massive 1.4 Quadrillion individual population, as well as the Queen. It controls nearly all technological advancements and has the deepest connection with the Gods because of the Queen's residence. Severance is extremely progressive overall and is entirely intolerant of any conservative belief sets.",
+        link: "#"
+    },
+    {
+        id: "earthaMajor",
+        name: "Eartha Major",
+        image: "https://placehold.co/150x220/00ffcc/white",
+        description: `After the 'Big Bang' as we know it, 2 planets with very similar structure formed, albeit different sizes. These planets became known as Eartha Minor (our planet), and Eartha Major. 
+        <br>
+        Eartha Major has become a massive industrial hub in the Severance solar system, as well as a major political power. It takes care of almost all intergalactic affairs and is responsible for almost all manufacturing of space-centric machinery, such as spaceships, spacesuits, and weaponry.
+        <br>
+        Eartha Major is known for it's violent nature and patriotism, and is not afraid to discard anything they view as unnecessary, or a hinderance. `,
+        link: "#"
+    },
+    {
+        id: "koa",
+        name: "Koa",
+        image: "https://placehold.co/150x220/00ffcc/white",
+        description: "Koa is an extremely territorial and militarist planet. Notably, it is entirely run by women. It is heavily guarded and the population is extremely prejudiced. While the planet is still liable to following the rules of the hub planet, there are many structural changes and any rules that Severance is lenient about are most likely modified on this planet.",
+        link: "#"
+    },
+    {
+        id: "bellavue",
+        name: "Bellavue",
+        image: "https://placehold.co/150x220/00ffcc/white",
+        description: `Bellavue is a feminist, women-ran planet known for it's pink and hyperfeminine environment. Reminiscent of Barbie World, the architecture is very modern and colorful with cartoony motifs. The planet boasts a smaller population than most planets (10.2 billion), but it is a major tourist location for people from Eartha Major and other unnamed planets. 
+        <br> 
+        It may not look like it, but this planet is twice the size of Eartha Minor!`,
+        link: "#"
+    }
+];
 
 // & Helper Functions
 
@@ -114,9 +160,6 @@ function playPreloadedAudio(soundKey) {
         preloadedAudio[soundKey].play();
     }
 }
-
-document.addEventListener('DOMContentLoaded', preloadAudio);
-
 let isAnimating = false;
 
 function disablePlanetLinks() {
@@ -131,6 +174,14 @@ function enablePlanetLinks() {
     });
 }
 
+function resetAnimation(element, animationClass) {
+    if (!element) return;
+
+    element.classList.remove(animationClass);
+    element.offsetHeight;
+    element.classList.add(animationClass);
+}
+
 function audioAndAnimations(element, animationClass, delay = 0, soundKey = null) {
     if (!element) return;
 
@@ -138,55 +189,40 @@ function audioAndAnimations(element, animationClass, delay = 0, soundKey = null)
         if (soundKey && preloadedAudio[soundKey]) {
             const originalAudio = preloadedAudio[soundKey];
             const soundInstance = originalAudio.cloneNode();
-            soundInstance.volume = originalAudio.volume; 
+            soundInstance.volume = originalAudio.volume;
             soundInstance.play();
         }
         resetAnimation(element, animationClass);
     }, delay);
 }
 
+function resetTablet() {
+    const classGroups = [
+        // ? Shown States
+        {
+            elements: [tablet, tabletBranding, mainContent, mainDetails, planetName, planetPreview, planetDescription, seeMore, tabletAside, asideContent, asideDetails],
+            classes: ['tabletShow', 'brandingShow', 'powerOn', 'fadeIn', 'asideShow'],
+        },
+        // ? Hidden States
+        {
+            elements: [tabletBranding, mainContent, mainDetails, planetName, planetPreview, planetDescription, seeMore, tabletAside, asideContent, asideDetails, asideH2],
+            classes: ['brandingHide', 'fadeOut', 'asideHide'],
+        },
+        // ? Other
+        {
+            elements: [tablet],
+            classes: ['errorScreen'],
+        },
+    ];
 
-function resetAnimation(element, animationClass) {
-    if (!element) return;
-    element.classList.remove(animationClass);
-    void element.offsetWidth;
-    element.classList.add(animationClass);
-}
-
-function resetClasses() {
-    // ? Can't figure out a better way to do this LOL 
-
-    // ! Shown Classes
-    tablet.classList.remove('tabletShow');
-    tabletBranding.classList.remove('brandingShow');
-    mainContent.classList.remove('powerOn');
-    mainDetails.classList.remove('fadeIn');
-    planetName.classList.remove('fadeIn');
-    planetPreview.classList.remove('fadeIn');
-    planetDescription.classList.remove('fadeIn');
-
-    tabletAside.classList.remove('asideShow');
-    asideContent.classList.remove('powerOn');
-    asideH2.classList.remove('fadeIn');
-    asideDetails.classList.remove('powerOn');
-    settingsButtons.forEach((button) => {
-        button.classList.remove('fadeIn');
+    classGroups.forEach(({ elements, classes }) => {
+        elements.forEach((el) => {
+            if (el) classes.forEach((cls) => el.classList.remove(cls));
+        });
     });
 
-    // ! Hidden Classes
-    tabletBranding.classList.remove('brandingHide');
-    mainContent.classList.remove('fadeOut');
-    mainDetails.classList.remove('fadeOut');
-    planetName.classList.remove('fadeOut');
-    planetPreview.classList.remove('fadeOut');
-    planetDescription.classList.remove('fadeOut');
-
-    tabletAside.classList.remove('asideHide');
-    asideContent.classList.remove('fadeOut');
-    asideDetails.classList.remove('fadeOut');
-    asideH2.classList.remove('fadeOut');
     settingsButtons.forEach((button) => {
-        button.classList.remove('fadeOut');
+        button.classList.remove('fadeIn', 'fadeOut');
     });
 }
 
@@ -206,6 +242,7 @@ function showTablet() {
     audioAndAnimations(planetName, 'fadeIn', 3000, 'fadeIn');
     audioAndAnimations(planetPreview, 'fadeIn', 3100, 'fadeIn');
     audioAndAnimations(planetDescription, 'fadeIn', 3300, 'fadeIn');
+    audioAndAnimations(seeMore, 'fadeIn', 3350, 'fadeIn');
     audioAndAnimations(asideContent, 'powerOn', 3400);
     audioAndAnimations(asideH2, 'fadeIn', 3450, 'fadeIn');
     audioAndAnimations(asideDetails, 'powerOn', 3500);
@@ -233,6 +270,7 @@ function hideTablet() {
     audioAndAnimations(planetPreview, 'fadeOut', 1700);
     audioAndAnimations(planetName, 'fadeOut', 1600);
     audioAndAnimations(planetDescription, 'fadeOut', 1400);
+    audioAndAnimations(seeMore, 'fadeOut', 1300);
     audioAndAnimations(tabletAside, 'asideHide', 1400, 'asideSlide');
     audioAndAnimations(asideContent, 'fadeOut', 1200);
     audioAndAnimations(asideDetails, 'fadeOut', 1200);
@@ -245,7 +283,7 @@ function hideTablet() {
     setTimeout(() => {
         isAnimating = false;
         enablePlanetLinks();
-        resetClasses()
+        resetTablet()
     }, 4000);
 }
 
@@ -254,23 +292,29 @@ document.querySelectorAll('.planet').forEach(link => {
     link.addEventListener('click', (event) => {
         event.preventDefault();
 
-        const title = link.getAttribute('data-title');
-        const image = link.getAttribute('data-image');
-        const description = link.getAttribute('data-description');
+        const planetId = link.id;
+        const planetData = planets.find(planet => planet.id === planetId);
 
-        if (tablet.classList.contains('tabletShow')) {
-            planetName.textContent = title;
-            planetPreview.src = image;
-            planetDescription.innerHTML = description; 
+        if (planetData) {
+            const { name, image, description, link } = planetData;
+
+            if (tablet.classList.contains('tabletShow')) {
+                planetName.textContent = name;
+                planetPreview.src = image;
+                planetDescription.innerHTML = description;
+                seeMore.href = link;
+            } else {
+                planetName.textContent = name;
+                planetPreview.src = image;
+                planetDescription.innerHTML = description;
+                seeMore.href = link;
+                showTablet();
+            }
         } else {
-            planetName.textContent = title;
-            planetPreview.src = image;
-            planetDescription.innerHTML = description;
-            showTablet();
+            console.error(`No info found for: ${planetId}`);
         }
     });
 });
-
 
 // ~ Settings Buttons
 
@@ -285,20 +329,11 @@ settingsButtons.forEach(settingsButton => {
 
 // ~ Dark Mode Toggle
 darkMode.addEventListener('click', () => {
-    if (tablet.classList.contains('dark')) {
-        tablet.classList.remove('dark');
-    } else {
-        tablet.classList.add('dark');
-    }
+    tablet.classList.toggle('dark');
 });
 
+
 // ~ Random Planet
-const planets = [
-    { name: "Severance", image: "img/planet.png", description: "A mysterious, severed world." },
-    { name: "Eartha Major", image: "img/planet.png", description: "A large, thriving world." },
-    { name: "Koa", image: "img/planet.png", description: "A desolate, rocky planet." },
-    { name: "Bellavue", image: "img/planet.png", description: "A beautiful planet with a stunning view." }
-];
 
 random.addEventListener('click', () => {
     const randomPlanet = planets[Math.floor(Math.random() * planets.length)];
@@ -307,27 +342,131 @@ random.addEventListener('click', () => {
     planetDescription.innerHTML = randomPlanet.description;
 });
 
-// ~ Discard Trash
+// ~ Party Button
 
-discardTrash.addEventListener('click', () => {
-    const confirmDiscard = confirm("Are you sure you want to discard all trash?");
-    if (confirmDiscard) {
-        // Come up with something for this
+let partyToggleCount = 0;
+let partyTimeout;
+
+party.addEventListener('click', () => {
+    tablet.classList.toggle('party');
+
+    partyToggleCount++;
+    clearTimeout(partyTimeout);
+
+    partyTimeout = setTimeout(() => {
+        partyToggleCount = 0;
+    }, 5000);
+
+    if (partyToggleCount >= 5) {
+        triggerCrash();
     }
 });
 
-// ~ Party Button
-
-// Come up with something for this too...
 
 // ~ Hud Buttons
 
-hudButtons.forEach(hudButton => {
-    hudButton.addEventListener('click', () => {
-        playPreloadedAudio('hudButtonClick'); 
+let hudClickCount = 0;
+let hudClickTimeout;
+
+hudButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        playPreloadedAudio('hudButtonClick');
+        hudClickCount++;
+        clearTimeout(hudClickTimeout);
+
+        hudClickTimeout = setTimeout(() => {
+            hudClickCount = 0;
+        }, 2000);
+
+        if (hudClickCount >= 10) {
+            triggerCrash();
+        }
     });
 });
 
+// ! Crash that shit!
+
+let crashSequence = ['darkMode', 'random', 'party', 'closeTablet'];
+let inputSequence = [];
+
+document.addEventListener('click', (event) => {
+    if (event.target.id) {
+        inputSequence.push(event.target.id);
+        if (inputSequence.join(',') === crashSequence.join(',')) {
+            triggerCrash();
+        }
+        if (inputSequence.length > crashSequence.length) {
+            inputSequence.shift();
+        }
+    }
+});
+
+function triggerCrash() {
+    isAnimating = true;
+    disablePlanetLinks();
+
+    const crashOverlay = document.querySelectorAll('.crashOverlay');
+    tablet.classList.add('errorScreen');
+
+    crashOverlay.forEach(overlay => { 
+        overlay.classList.add('active');
+    });
+
+    playPreloadedAudio('crashed');
+
+    const glitchTextElement = document.querySelector('.crashOverlay .glitch-text');
+    const originalText = glitchTextElement.getAttribute('data-text');
+    const maxDuration = 5000;
+
+    const randomizeText = (element, originalText, maxDuration) => {
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>?/~`';
+        const textLength = originalText.length;
+        let progress = 0;
+
+        let randomizedText = Array.from({ length: textLength }, () => randomChar(chars)).join('');
+        element.textContent = randomizedText;
+
+        const interval = setInterval(() => {
+            let newText = '';
+            progress++;
+
+            for (let i = 0; i < textLength; i++) {
+                if (Math.random() < 0.1 || originalText[i] === randomizedText[i]) {
+                    newText += originalText[i];
+                } else {
+                    newText += randomChar(chars);
+                }
+            }
+
+            element.textContent = newText;
+
+            if (progress * 100 > maxDuration) {
+                clearInterval(interval);
+                element.textContent = originalText;
+            }
+        }, 10);
+    };
+
+    const randomChar = (chars) => {
+        return chars.charAt(Math.floor(Math.random() * chars.length));
+    };
+
+    randomizeText(glitchTextElement, originalText, maxDuration);
+
+    setTimeout(() => {
+        tablet.classList.add('tabletHide');
+        isAnimating = false;
+        enablePlanetLinks();
+        getAchievement("general", "crash");
+
+        setTimeout(() => {
+            crashOverlay.forEach(overlay => { 
+                overlay.classList.remove('active');
+            });
+            resetTablet();
+        }, 1000);
+    }, 5000); 
+}
 
 // ! Close Tablet
 
