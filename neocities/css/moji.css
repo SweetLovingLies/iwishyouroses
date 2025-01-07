@@ -1,0 +1,404 @@
+
+
+iPromisedYouARose {
+    display: inline-block;
+    background: url("/Assets/myAssets/IWYRLogo/IWYRIcon.png") center/contain no-repeat;
+    /* width: 150px; */
+    aspect-ratio: 1;
+
+    vertical-align: middle;
+    user-select: none;
+}
+
+heartMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/pinkheart.gif") no-repeat;
+    width: 18px;
+    height: 14px;
+
+    vertical-align: text-top;
+    user-select: none;
+}
+
+cloudBubbleMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/chatbubble\(cloud\).gif") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+    user-select: none;
+}
+
+heartBubbleMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/chatbubble\(heart\).gif") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+    user-select: none;
+}
+
+
+pinkNewMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/other/new!p.gif") no-repeat;
+    width: 29px;
+    height: 8px;
+
+    vertical-align: text-bottom;
+    user-select: none;
+}
+purpleNewMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/other/new!.gif") no-repeat;
+    width: 29px;
+    height: 8px;
+
+    vertical-align: text-bottom;
+    user-select: none;
+}
+
+keyMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/other/key.gif") no-repeat;
+    width: 22px;
+    height: 13px;
+
+    vertical-align: text-bottom;
+    user-select: none;
+}
+
+downloadMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/other/download.gif") no-repeat;
+    width: 57px;
+    height: 11px;
+
+    vertical-align: text-top;
+    user-select: none;
+}
+
+bandageMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/menhera/bandage.webp") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+    user-select: none;
+}
+bandage2Moji {
+    display: inline-block;
+    background: url("/Assets/pixels/menhera/bandage2.webp") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+    user-select: none;
+}
+
+bloodMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/menhera/blood.webp") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+    user-select: none;
+}
+
+boxKnifeMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/menhera/boxknife.webp") no-repeat;
+    width: 68px;
+    height: 13px;
+
+    vertical-align: text-bottom;
+    user-select: none;
+}
+
+brokenHeartMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/menhera/brokenheart.webp") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+    user-select: none;
+}
+
+PinkSyringeMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/menhera/syringep.gif") no-repeat;
+    width: 15px;
+    height: 15px;
+
+    vertical-align: middle;
+}
+
+realHeartMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/menhera/realheart.webp") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+    user-select: none;
+}
+
+knifeMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/menhera/knife.webp") no-repeat;
+    width: 25px;
+    height: 26px;
+
+    vertical-align: text-bottom;
+    user-select: none;
+}
+
+roseMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/vintageAmericana/rose.gif") no-repeat;
+    width: 16px;
+    height: 16px;
+
+    vertical-align: text-bottom;
+    user-select: none;
+}
+
+pinkBouquetMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/fd/pinkbouquet.gif") no-repeat;
+    width: 16px;
+    height: 16px;
+
+    vertical-align: text-bottom;
+    user-select: none;
+}
+
+roseBouquetMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/fd/rosebouquet.gif") no-repeat;
+    width: 16px;
+    height: 16px;
+
+    vertical-align: text-bottom;
+    user-select: none;
+}
+
+
+confettiMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/magicalgirls/confetti.webp") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+    user-select: none;
+}
+
+glitterMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/magicalgirls/glitter2.webp") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+    user-select: none;
+}
+
+pastelGlitterMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/magicalgirls/glitter3.webp") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+    user-select: none;
+}
+
+pinkGlitterMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/magicalgirls/glitter.webp") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+    user-select: none;
+}
+
+crayonGlitterMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/magicalgirls/glitter4.webp") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+    user-select: none;
+}
+
+staffMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/magicalgirls/magicstaff.webp") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+    user-select: none;
+}
+
+crayonStaffMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/magicalgirls/magicstaff2.webp") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+    user-select: none;
+}
+
+shootingStarMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/magicalgirls/shootingStar.webp") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+    user-select: none;
+}
+
+cometsMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/magicalgirls/shootingStars.webp") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+    user-select: none;
+}
+
+softSkyMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/magicalgirls/moonnStars.webp") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+    user-select: none;
+}
+
+phoneMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/magicalgirls/phone.webp") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+    user-select: none;
+}
+
+starCloudMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/magicalgirls/starCloud.webp") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+    user-select: none;
+}
+
+/* ! Christmas */
+
+christmasTreeMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/christmas/christmastreeFav2.gif") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+    user-select: none;
+}
+
+christmasPresentMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/christmas/gift.gif") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+    user-select: none;
+}
+
+hollyMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/christmas/holly.gif") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+    user-select: none;
+}
+
+reindeerMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/christmas/reindeer1.gif") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+    user-select: none;
+}
+
+santaMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/christmas/santa.gif") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+    user-select: none;
+}
+
+santaHatMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/christmas/santahat.gif") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+    user-select: none;
+}
+
+stockingMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/christmas/stocking2.gif") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+    user-select: none;
+}
+
+wreathMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/christmas/wreath.gif") no-repeat;
+    width: 20px;
+    height: 20px;
+
+    vertical-align: text-bottom;
+    user-select: none;
+}
+
+candyCaneMoji {
+    display: inline-block;
+    background: url("/Assets/pixels/christmas/candycane.gif") no-repeat;
+    width: 15px;
+    height: 15px;
+
+    vertical-align: text-bottom;
+    user-select: none;
+}
+
+/* There's always more to add! Go check if you need anything new! */

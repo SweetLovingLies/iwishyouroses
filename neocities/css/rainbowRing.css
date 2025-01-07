@@ -1,0 +1,84 @@
+:root {
+    --globalBorderRadius: 10px;
+    --detailBarHeight: 20px;
+}
+
+.rainbowWrapper {
+    position: absolute;
+}
+
+.ring1,
+.ring2,
+.ring3,
+.ring4,
+.ring5,
+.ring6,
+.ring7,
+.ring8,
+.ring9 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.ring1 {
+    width: 400px;
+    height: 400px;
+    border: 25px solid var(--rainbowRed);
+}
+
+.ring2 {
+    width: 350px;
+    height: 350px;
+    border: 25px solid var(--rainbowOrange);
+}
+
+.ring3 {
+    width: 300px;
+    height: 300px;
+    border: 25px solid var(--rainbowYellow);
+}
+
+.ring4 {
+    width: 250px;
+    height: 250px;
+    border: 25px solid var(--rainbowGreen);
+}
+
+.ring5 {
+    width: 200px;
+    height: 200px;
+    border: 25px solid var(--rainbowBlue);
+}
+
+.ring6 {
+    width: 150px;
+    height: 150px;
+    border: 25px solid var(--rainbowIndigo);
+}
+
+.ring7 {
+    width: 100px;
+    height: 100px;
+    border: 25px solid var(--rainbowPurple);
+}
+
+.ring8 {
+    width: 50px;
+    height: 50px;
+    border: 25px solid var(--rainbowPink);
+}
+
+/* Rainbow Ring End */

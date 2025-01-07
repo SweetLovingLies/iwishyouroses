@@ -32,11 +32,11 @@ footer a:focus {
     color: var(--deepslate);
 }
 
-tray {
+#tray {
     background: #ffffffa9;
     box-shadow: -1px 2px 3px rgba(0, 0, 0, 0.25);
 }
 
-.column2 p {
+.widgetColumn p {
     color: black;
 }

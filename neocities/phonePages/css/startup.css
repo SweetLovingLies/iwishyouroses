@@ -1,49 +1,59 @@
 body {
-    margin: 0;
-    background-color: #111;
-    color: #fff;
     display: flex;
+    flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    font-family: Arial, sans-serif;
-}
 
-.startup-container {
+    background-color: var(--nightSky);
+    color: #fff;
     text-align: center;
-    animation: fadeIn 1s ease-in-out;
 }
 
-.logo h1 {
-    font-size: 3rem;
-    margin: 0;
-    color: #f4a261;
+main {
+    padding: 20px;
+    z-index: 1;
 }
 
-.loading p {
-    margin: 1rem 0 0.5rem;
+#idolLineIcon {
+    width: 40%;
 }
 
-.spinner {
-    width: 50px;
-    height: 50px;
-    border: 5px solid rgba(255, 255, 255, 0.3);
-    border-top: 5px solid #f4a261;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
+#idolLineType {
+    width: 90%;
 }
 
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
+#progressBar {
+    position: relative;
+    height: 20px;
+    background: white;
+    margin: 10px 0;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+#progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: var(--wisteria);
+    width: 0;
+    transition: width 0.3s ease;
+    animation: fill 5s ease forwards;
+}
+
+@keyframes fill {
+    0% {
+        width: 0;
     }
-}
+    
+    70%, 90% {
+        width: 80%;
+    }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
+    100% {
+        width: 100%;
     }
-    to {
-        opacity: 1;
-    }
-}
+    
+} 

@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-
     // ~ Onboarding
     const phoneScreen = document.getElementById('phoneScreen');
     const homeButton = document.getElementById('homeButton');
@@ -8,24 +7,30 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
     }
 
-    // ! For development  purposes
-    const initialSrc = phoneScreen.getAttribute('src');
+    let startupFlag = sessionStorage.getItem('startedUp') === 'true';
 
-    if (!initialSrc || initialSrc === '#') {
-        phoneScreen.src = 'startup.html'; 
+    if (!startupFlag) {
+        phoneScreen.src = 'startup.html';
         homeButton.classList.add('disabled');
         homeButton.style.pointerEvents = 'none';
+
+        sessionStorage.setItem('startedUp', 'true');
 
         setTimeout(() => {
             if (localStorage.getItem('userName') && localStorage.getItem('selectedIcon')) {
                 phoneScreen.src = 'homepage.html';
             } else {
-                phoneScreen.src = 'onboarding.html'; 
+                phoneScreen.src = 'onboarding.html';
             }
+            updateHomeButtonState();
         }, 5000); // ! Adjust as needed
+    } else {
+        if (localStorage.getItem('userName') && localStorage.getItem('selectedIcon')) {
+            phoneScreen.src = 'homepage.html';
+        } else {
+            phoneScreen.src = 'onboarding.html';
+        }
     }
-
-    phoneScreen.addEventListener('load', updateHomeButtonState);
 
     function updateHomeButtonState() {
         if (phoneScreen.src.includes('onboarding.html') || phoneScreen.src.includes('startup.html')) {
@@ -37,6 +42,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    phoneScreen.addEventListener('load', updateHomeButtonState);
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
     // ~ Clock
     function updateTime() {
         const timeDisplay = document.getElementById('time');

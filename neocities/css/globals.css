@@ -1,0 +1,303 @@
+@import url("idolLine.css");
+@import url("IWYR.css");
+@import url("moji.css");
+
+:root {
+    --globalBorderRadius: 10px;
+    --detailBarHeight: 20px;
+}
+
+@font-face {
+    font-family: cafesweet;
+    src: url('/fonts/16ptpixels/CafeSweet.ttf');
+}
+
+@font-face {
+    font-family: diegovainilla;
+    src: url('/fonts/16ptpixels/DiegoVainilla.otf');
+}
+
+@font-face {
+    font-family: peachsundress;
+    src: url('/fonts/peachsundress.ttf');
+}
+
+@font-face {
+    /* use & _ - for connectors */
+    font-family: heartstyle;
+    src: url('/fonts/heartstyle.ttf');
+}
+
+@font-face {
+    /* Use stylistic sets ss01 - ss06 for connectors*/
+    font-family: maddison;
+    src: url('/fonts/Maddison.ttf');
+}
+
+@font-face {
+    font-family: chalkCursive;
+    src: url('/fonts/MorganChalk.ttf');
+}
+
+@font-face {
+    font-family: chalk;
+    src: url('/fonts/Rudiment.ttf');
+}
+
+@font-face {
+    font-family: Barbie;
+    src: url('/fonts/BarbieKawaii.otf');
+}
+
+@font-face {
+    /* Fuzzy Font! */
+    font-family: FoxRelish;
+    src: url('/fonts/FoxRelish.ttf');
+}
+
+@font-face {
+    font-family: MagicStars;
+    src: url('/fonts/MagicStars.otf');
+}
+
+@font-face {
+    font-family: heartBlood;
+    src: url('/fonts/yanFonts/HeartBlood.ttf');
+}
+
+@font-face {
+    font-family: brightHeart;
+    src: url('/fonts/yanFonts/BrightHeart.otf');
+}
+
+@font-face {
+    font-family: Witch;
+    src: url('/fonts/yanFonts/BloodofWitchRegular.ttf');
+}
+
+@font-face {
+    font-family: Angela;
+    src: url('/fonts/Angela.otf');
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    width: 100vw;
+}
+
+* {
+    scrollbar-width: thin;
+    box-sizing: border-box;
+
+    scrollbar-color: var(--bubblegum) white;
+}
+
+*::-webkit-scrollbar,
+*::-webkit-scrollbar-button {
+    width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background: white;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--bubblegum);
+}
+
+body {
+    position: relative;
+    overflow: hidden;
+
+    animation: fadeIn ease .55s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* & Simplification */
+
+.img-fluid {
+    width: 100%;
+}
+
+.flex,
+.flex2 {
+    display: flex;
+}
+
+.flex2 {
+    flex-wrap: wrap;
+}
+
+.columnFlex1,
+.columnFlex2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.columnFlex2 {
+    flex-wrap: wrap;
+}
+
+/* & Global styling */
+
+::selection {
+    background-color: var(--wisteria);
+    color: #ffffff;
+}
+
+mark {
+    background-color: var(--wisteria);
+    color: #ffffff;
+}
+
+quote {
+    display: block;
+    margin: 10px 0;
+}
+
+quote::before,
+quote::after {
+    font-size: larger;
+}
+
+quote::before {
+    content: "❝";
+    color: inherit;
+}
+
+quote::after {
+    content: "❞";
+    color: inherit;
+}
+
+/* Rainbow BG Pastel */
+.rainbowbg {
+    background: linear-gradient(90deg, rgba(255, 189, 200, 1) 0%, rgba(246, 255, 175, 1) 20%, rgba(205, 255, 167, 1) 40%, rgba(195, 241, 255, 1) 60%, rgba(241, 202, 245, 1) 80%, rgba(252, 206, 242, 1) 100%);
+}
+
+/* Rainbow BG Not Pastel */
+.rainbowbg2 { 
+    background: linear-gradient(90deg, rgba(255,71,101,1) 0%, rgba(254,147,65,1) 10%, rgba(241,205,57,1) 20%, rgba(102,246,70,1) 30%, rgba(38,191,186,1) 40%, rgba(65,89,225,1) 50%, rgba(159,20,225,1) 60%, rgba(173,76,254,1) 70%, rgba(252,64,125,1) 80%, rgba(255,139,177,1) 90%, rgba(255,255,255,1) 100%);
+}
+
+/* Drop Shadows and Text Shadows */
+
+.textshadow {
+    text-shadow: 2px 2px 0 var(--driedBlood), 2px -2px 0 var(--driedBlood), -2px 2px 0 var(--driedBlood), -2px -2px 0 var(--driedBlood), 2px 0px 0 var(--driedBlood), 0px 2px 0 var(--driedBlood), -2px 0px 0 var(--driedBlood), 0px -2px 0 var(--driedBlood);
+}
+
+.dropShadow {
+    filter: drop-shadow(-1px 2px 3px rgba(0, 0, 0, 0.26));
+}
+
+.dropShadowOutlineF {
+    filter: drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white);
+}
+
+.dropShadowOutlineW2{
+    filter: drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(1px 1px 0px #0000002d);
+}
+
+.dropshadowPurple {
+    box-shadow: 2px 2px 0 var(--wisteria), 2px -2px 0 var(--wisteria), -2px 2px 0 var(--wisteria), -2px -2px 0 var(--wisteria), 2px 0px 0 var(--wisteria), 0px 2px 0 var(--wisteria), -2px 0px 0 var(--wisteria), 0px -2px 0 var(--wisteria);
+}
+
+/* Details at the top */
+
+.detailing {
+    position: absolute;
+    background: url('/Assets/pixels/headers/headerpink2.gif') repeat-x;
+    background-size: contain;
+    height: 58px;
+    width: 100%;
+
+    top: 0;
+    left: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Border Styles */
+
+.kerchiefBorder {
+    border-style: solid;
+    border-image: url("/Assets/borders/border2FP.png") 28 round;
+    border-width: 28px;
+    background-clip: padding-box;
+}
+
+.cloudBorder {
+    border-style: solid;
+    border-image: url("/Assets/borders/borderfilled.png") 8 round;
+    border-width: 8px;
+    background-clip: padding-box;
+}
+
+.blueberryBorder {
+    border-style: solid;
+    border-image: url("/Assets/borders/blueberryGingham.png") 8 round;
+    border-width: 7px;
+    background-clip: padding-box;
+}
+
+/* Boring Shit */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+pre,
+code {
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+iframe {
+    border: none;
+}
+
+/* ? Media Queries */
+
+@media (prefers-reduced-motion: reduce) {}
+
+@media only screen and (max-width: 1024px) {}
+
+@media only screen and (max-width: 810px) {
+    .flex {
+        flex-flow: column nowrap;
+    }
+
+    /* .flex2 {
+        flex-flow: column wrap;
+    } */
+}
+
+@media only screen and (max-width: 500px) {
+    #phone {
+        right: 50%;
+        transform: translateX(50%);
+    }
+}

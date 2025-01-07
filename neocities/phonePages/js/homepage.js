@@ -65,81 +65,6 @@ navDots.forEach((dot, i) => {
 });
 showHomepage(currentHomepage);
 
-document.addEventListener('DOMContentLoaded', () => {
-
-    // ~ Drag and drop
-    const appElements = document.querySelectorAll('.app');
-    const widgetElements = document.querySelectorAll('.widget');
-    const appWrapper = document.querySelector('.appWrapper');
-
-    // Allow elements to be draggable
-    appElements.forEach(app => {
-        app.setAttribute('draggable', 'true');
-        app.addEventListener('dragstart', handleDragStart);
-        app.addEventListener('dragover', handleDragOver);
-        app.addEventListener('drop', handleDrop);
-    });
-
-    widgetElements.forEach(widget => {
-        widget.setAttribute('draggable', 'true');
-        widget.addEventListener('dragstart', handleDragStart);
-        widget.addEventListener('dragover', handleDragOver);
-        widget.addEventListener('drop', handleDrop);
-    });
-
-    let draggedItem = null;
-
-    // Function to handle the drag start event
-    function handleDragStart(event) {
-        draggedItem = event.target;
-        setTimeout(() => {
-            draggedItem.style.opacity = 0.5;
-        }, 0);
-    }
-
-    // Function to handle the drag over event
-    function handleDragOver(event) {
-        event.preventDefault();
-    }
-
-    // Function to handle the drop event
-    function handleDrop(event) {
-        event.preventDefault();
-        if (event.target !== draggedItem) {
-            // Reorder the dragged element in the DOM
-            const allItems = Array.from(appWrapper.children);
-            const targetIndex = allItems.indexOf(event.target);
-            const draggedIndex = allItems.indexOf(draggedItem);
-
-            if (targetIndex < draggedIndex) {
-                appWrapper.insertBefore(draggedItem, event.target);
-            } else {
-                appWrapper.insertBefore(draggedItem, event.target.nextSibling);
-            }
-
-            // Optional: Call a function to update widget visibility
-            updateWidgetVisibility();
-        }
-
-        draggedItem.style.opacity = 1;
-        draggedItem = null;
-    }
-
-    function updateWidgetVisibility() {
-        const savedWidgets = JSON.parse(localStorage.getItem('widgets')) || [];
-        const widgetContainer = document.querySelector('.widgetColumn'); 
-
-        if (savedWidgets.length > 0) {
-            widgetContainer.style.display = 'flex';
-        } else {
-            widgetContainer.style.display = 'none';
-        }
-    }
-
-    updateWidgetVisibility();
-});
-
-
 // ~ ThemeSwitcher
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -177,3 +102,60 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const savedWidgets = JSON.parse(localStorage.getItem('widgets')) || [];
+    const homepage1 = document.getElementById('homepage1');
+    const appWrapper = document.querySelector('.appWrapper');
+
+    // Initial update of layout based on saved widgets
+    updateLayout(savedWidgets);
+
+    // Function to update layout
+    function updateLayout(widgets) {
+        const flexWrapper = document.querySelector('.flexWrapper');
+        const appIconsHTML = `
+            <a href="nav.html" class="app" onclick="openApp(event, this)">
+                <div class="appIcon">
+                    <img src="/Assets/customNavIcons/navIcon.png">
+                </div>
+                <p>Navigation</p>
+            </a>
+            <a href="idolMessenger.html" class="app" onclick="openApp(event, this)">
+                <div id="idolMessenger" class="appIcon">
+                    <img src="/Assets/customNavIcons/idolMessengerIcon.png">
+                </div>
+                <p>Idol Messenger</p>
+            </a>
+        `;
+
+        if (widgets.length > 0) {
+            if (!flexWrapper) {
+                const newFlexWrapper = document.createElement('div');
+                newFlexWrapper.classList.add = 'flexWrapper';
+            
+                const widgetColumn = document.createElement('div');
+                widgetColumn.classList.add('widgetColumn');
+                widgetColumn.innerHTML = `
+                    <object class="widget" id="widget1" type="image/svg+xml" data="${widgets[0].data || ''}"></object>
+                    <p>Widgetsmith</p>
+                `;
+                newFlexWrapper.appendChild(widgetColumn);
+            
+                const appsColumn = document.createElement('div');
+                appsColumn.classList.add('column1');
+                appsColumn.innerHTML = appIconsHTML;
+                newFlexWrapper.appendChild(appsColumn);
+            
+                // Append to homepage1
+                homepage1.insertBefore(newFlexWrapper, homepage1.querySelector('.appWrapper').firstChild);
+            }            
+        } else {
+            if (flexWrapper) {
+                flexWrapper.remove();
+            }
+            appWrapper.insertAdjacentHTML('afterbegin', appIconsHTML);
+        }        
+    }
+});
+

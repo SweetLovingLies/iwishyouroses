@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Homepage</title>
 
-    <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/css/globals.css" rel="stylesheet" type="text/css" media="all">
     <link href="css/phoneGlobals.css" rel="stylesheet" type="text/css" media="all">
 
     <link href="css/homepageBase.css" rel="stylesheet" type="text/css" media="all">
@@ -35,13 +35,11 @@
         <div class="homepage active" id="homepage1">
             <div class="appWrapper">
                 <div class="flexWrapper">
-                    <div class="widgetColumn" id="widgetColumn1">
-                        <div class="draggable-widget" draggable="true">
-                            <object class="widget" id="widget1" type="image/svg+xml" data=""></object>
-                            <p>Widgetsmith</p>
-                        </div>
+                    <div class="widgetColumn">
+                        <object class="widget" id="widget1" type="image/svg+xml" data=""></object>
+                        <p>Widgetsmith</p>
                     </div>
-                    <div class="column">
+                    <div class="column1">
                         <a href="nav.html" class="app" onclick="openApp(event, this)">
                             <div class="appIcon">
                                 <img src="/Assets/customNavIcons/navIcon.png">
@@ -161,7 +159,7 @@
                 <iconify-icon icon="material-symbols:circle" class="navDots" onclick="showHomepage(1)"></iconify-icon>
             </div>
 
-            <tray>
+            <div id="tray">
                 <a href="temp.html" class="app UNF" onclick="openApp(event, this)">
                     <div class="appIcon">
                         <img src="/Assets/customNavIcons/shiranaiIcon.png">
@@ -180,7 +178,7 @@
                     </div>
                     <p>Camera</p>
                 </a>
-            </tray>
+            </div>
         </footer>
     </div>
 

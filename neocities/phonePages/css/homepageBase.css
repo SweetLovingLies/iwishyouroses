@@ -59,7 +59,7 @@ body {
 }
 
 .app {
-    width: calc(25% - 10px);
+    /* width: calc(25% - 10px); */
     align-self: flex-start;
 
     display: flex;
@@ -187,11 +187,11 @@ footer {
     padding: 0 20px 10px;
 }
 
-tray {
+#tray {
+    margin: 0;
     display: flex;
-    justify-content: space-between;
-
-    padding: 5px 9px;
+    justify-content: space-around;
+    padding: 5px 10px;
     border-radius: 20px;
 }
 
