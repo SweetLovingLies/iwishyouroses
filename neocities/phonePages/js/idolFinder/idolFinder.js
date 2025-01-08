@@ -1,11 +1,11 @@
-let mutualsData = []; // Debug Storage
+// let mutualsData = []; // ! Debug Storage
 
 document.addEventListener("DOMContentLoaded", () => {
     fetch('js/idolFinder/myMutuals.json')
         .then(response => response.json())
         .then(mutuals => {
-            mutualsData = mutuals;
-            console.log(mutuals);  // To debug the entire fetched JSON data
+            // mutualsData = mutuals;
+            // console.log(mutuals); 
 
             const wrapper = document.getElementById('wrapper');
             const popover = document.getElementById('popover');
@@ -23,9 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const otherInfo = popover.querySelector('#other');
 
             mutuals.forEach((mutual, index) => {
-                console.log(mutual);  // Debug each mutual entry
-                console.log(mutual.otherInfo);  // Debug the otherInfo
-                console.log(mutual.siteButton.src);  // Debug the src of siteButton
+                // console.log(mutual); 
+                // console.log(mutual.otherInfo);
+                // console.log(mutual.siteButton.src);
 
                 const button = document.createElement('button');
                 button.dataset.index = index;
@@ -33,26 +33,26 @@ document.addEventListener("DOMContentLoaded", () => {
                 wrapper.appendChild(button);
 
                 button.addEventListener('click', () => {
-                    personaIcon.src = mutual.icon.src;  // Correct access to icon.src
-                    personaIcon.alt = mutual.icon.alt;  // Add alt text for icon
+                    personaIcon.src = mutual.icon.src;  
+                    personaIcon.alt = mutual.icon.alt;
                     personaName.textContent = mutual.name;
                     personaQuote.textContent = mutual.quote;
 
-                    siteButton.href = mutual.siteButton.link;  // Correct property for site button link
-                    siteButtonImg.src = mutual.siteButton.src;  // Correct access to button image src
-                    siteButtonImg.alt = mutual.siteButton.alt;  // Set alt text for site button image
-                    minorWarning.textContent = mutual.siteButton.warning || '';  // Handle minorWarning gracefully
+                    siteButton.href = mutual.siteButton.link;
+                    siteButtonImg.src = mutual.siteButton.src;
+                    siteButtonImg.alt = mutual.siteButton.alt;
+                    minorWarning.textContent = mutual.siteButton.warning || '';
 
                     reputation.textContent = `${mutual.reputation}`;
                     slider.dataset.reputation = mutual.reputation;
                     club.textContent = mutual.club;
                     loves.textContent = mutual.loves;
                     hates.textContent = mutual.hates;
-                    otherInfo.textContent = mutual.otherInfo;  // Simply set the text (it's a string, not an array)
+                    otherInfo.textContent = mutual.otherInfo;
 
                     popover.classList.remove('hide');
 
-                    const reputationValue = parseInt(mutual.reputation, 10);  // Ensure reputation is treated as a number
+                    const reputationValue = parseInt(mutual.reputation, 10);  // Check reputation is parsed as a number
                     const minReputation = -100;
                     const maxReputation = 100;
                     const barWidth = popover.querySelector(".repbar").offsetWidth;
