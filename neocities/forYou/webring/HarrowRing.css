@@ -370,6 +370,11 @@ header {
 
 /* ~ General */
 
+mark {
+    background-color: var(--roseRed);
+    padding: 0 5px;
+}
+
 p {
     font-size: 1.5em;
 }
