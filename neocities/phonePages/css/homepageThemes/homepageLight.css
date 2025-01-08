@@ -1,5 +1,6 @@
 body {
-    background: url("/Assets/BGs/phonewallpaper.jpg");
+    background: url("/Assets/BGs/phonewallpaper2.jpg");
+    backdrop-filter: blur(3px);
     background-size: cover;
     background-position: center;
 
