@@ -16,7 +16,7 @@
         },
         "achievements": {
             "iwishyouroses": {
-                "icon": "/assets/singers/kaliUchis/iwishyouroses2.jpg",
+                "icon": "/assets/other/achievementIcons/IWYR.png",
                 "title": "I Wish You Roses",
                 "description": "Wish roses 18 times",
                 "hint": "How many times does Kali Uchis wish you roses?",
@@ -31,7 +31,7 @@
                 "class": "achievementNormal"
             },
             "Selfie": {
-                "icon": "/assets/kpop/xg/selcas/hinata/1.jpg",
+                "icon": "/assets/other/achievementIcons/instax.png",
                 "title": "Selfie Connoiseur!",
                 "description": "Take 10 Selfies!",
                 "class": "achievementNormal"
@@ -57,31 +57,17 @@
                 "class": "achievementNormal"
             },
             "MeteorShower": {
-                "icon": "/assets/anime/IWasWrong/pfp/1.jpg",
+                "icon": "/assets/other/achievementIcons/shootingStar.png",
                 "title": "Space Show",
                 "description": "See a meteor shower!",
                 "class": "achievementNormal"
             },
             "crash": {
                 "icon": "/assets/anime/IWasWrong/pfp/1.jpg",
-                "title": "Whoops...",
+                "title": "0x00000050",
                 "description": "Crash the tablet somehow",
-                "hint": "Hi-Tech failiure",
+                "hint": "Hi-Tech spam",
                 "class": "achievementNormal"
-            },
-            "SPACE": {
-                "icon": "https://lilithdev.neocities.org/shrine/vg/nso/sprites/achievements/something.png",
-                "title": "SOMETHING IN SPACE",
-                "description": "Find SOMETHING on the Paracosms page",
-                "class": "achievementHidden",
-                "hidden": true
-            },
-            "WATER": {
-                "icon": "https://lilithdev.neocities.org/shrine/vg/nso/sprites/achievements/something.png",
-                "title": "SOMETHING IN THE WATER",
-                "description": "Find SOMETHING in the Frutiger Aero shrine",
-                "class": "achievementHidden",
-                "hidden": true
             },
             "Hangman": {
                 "icon": "/assets/anime/IWasWrong/pfp/1.jpg",
@@ -90,14 +76,6 @@
                 "class": "achievementHidden",
                 "sfx": "https://files.catbox.moe/jhw5i9.mp3",
                 "hidden": true
-            },
-            "Hangman2": {
-                "icon": "/assets/anime/IWasWrong/pfp/1.jpg",
-                "title": "You are my whole world",
-                "description": "Find the word.",
-                "class": "achievementHidden",
-                "sfx": "https://files.catbox.moe/jhw5i9.mp3",
-                "hidden": true      
             }
         }
     }
