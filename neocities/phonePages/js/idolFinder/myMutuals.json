@@ -1,0 +1,39 @@
+[
+    {
+      "name": "Jirachis",
+      "icon": {
+        "src": "/Assets/coolsites/jirachis/icon.jpg",
+        "alt": "A picture of the pokemon Jirachi"
+      },
+      "quote": "I like Wobbuffet",
+      "siteButton": {
+        "link": "https://jirachis.neocities.org/",
+        "src": "/Assets/coolsites/jirachis/jirachisButton.gif",
+        "alt": "Welcome to jirachis' site!"
+      },
+      "reputation": "+20",
+      "club": "Neocities",
+      "loves": "Pokemon, Sonic, DDLC, MLP, Sanrio, NSO, Sailor Moon",
+      "hates": "N/A",
+      "otherInfo": "Not sure much about this person yet, however, they seem cool. Please bare in mind that the webmaster is a minor if you visit.\nI hope you enjoy your web development journey!"
+    },
+    {
+      "name": "Bugkisser",
+      "icon": {
+        "src": "/Assets/coolsites/bugkisser/ayumuEdit.jpg",
+        "alt": "An edit of Osaka/Ayumu from Azumanga Daioh"
+      },
+      "quote": "Welcome to Nerdspace",
+      "siteButton": {
+        "link": "https://bugkisser.neocities.org/",
+        "src": "/Assets/coolsites/bugkisser/bugkisserButton.png",
+        "alt": "Welcome to zimmykin's site!"
+      },
+      "reputation": "+30",
+      "club": "Neocities",
+      "loves": "Blogging, Vocaloid, Coding, Invader Zim, MLP, Azumanga Daioh",
+      "hates": "Xitter, fandom discourse, rude people",
+      "otherInfo": "Zimmykins is a very creative and colorful personality in the Neocities circle. He likes anything related to early 2000s anime, cartoons in general, cutecore fashion, and glitter! (A lot like me fr). He spends a lot of his time online as well, doing coding projects and consuming his favorite medias. Go show them some love! Be aware though, the webmaster is a minor!"
+    }
+  ]
+  

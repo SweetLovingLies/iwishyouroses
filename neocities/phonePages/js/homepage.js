@@ -63,6 +63,7 @@ navDots.forEach((dot, i) => {
         dot.classList.remove('active');
     }
 });
+
 showHomepage(currentHomepage);
 
 // ~ ThemeSwitcher
@@ -103,15 +104,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// ~ Widgets
+
 document.addEventListener("DOMContentLoaded", function () {
     const savedWidgets = JSON.parse(localStorage.getItem('widgets')) || [];
     const homepage1 = document.getElementById('homepage1');
     const appWrapper = document.querySelector('.appWrapper');
 
-    // Initial update of layout based on saved widgets
     updateLayout(savedWidgets);
 
-    // Function to update layout
     function updateLayout(widgets) {
         const flexWrapper = document.querySelector('.flexWrapper');
         const appIconsHTML = `
@@ -139,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 widgetColumn.innerHTML = `
                     <object class="widget" id="widget1" type="image/svg+xml" data="${widgets[0].data || ''}"></object>
                     <p>Widgetsmith</p>
-                `;
+                ;`
                 newFlexWrapper.appendChild(widgetColumn);
             
                 const appsColumn = document.createElement('div');
@@ -158,4 +159,3 @@ document.addEventListener("DOMContentLoaded", function () {
         }        
     }
 });
-

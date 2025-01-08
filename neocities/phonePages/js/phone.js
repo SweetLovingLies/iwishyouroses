@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let startupFlag = sessionStorage.getItem('startedUp') === 'true';
 
+    // Check if a custom URL is already set in the iframe
+    const defaultSrc = phoneScreen.getAttribute('src'); // Save the initial src attribute
+
     if (!startupFlag) {
         phoneScreen.src = 'startup.html';
         homeButton.classList.add('disabled');
@@ -17,7 +20,10 @@ document.addEventListener('DOMContentLoaded', function () {
         sessionStorage.setItem('startedUp', 'true');
 
         setTimeout(() => {
-            if (localStorage.getItem('userName') && localStorage.getItem('selectedIcon')) {
+            // Override with custom URL if provided
+            if (defaultSrc && defaultSrc !== 'startup.html') {
+                phoneScreen.src = defaultSrc;
+            } else if (localStorage.getItem('userName') && localStorage.getItem('selectedIcon')) {
                 phoneScreen.src = 'homepage.html';
             } else {
                 phoneScreen.src = 'onboarding.html';
@@ -25,7 +31,10 @@ document.addEventListener('DOMContentLoaded', function () {
             updateHomeButtonState();
         }, 5000); // ! Adjust as needed
     } else {
-        if (localStorage.getItem('userName') && localStorage.getItem('selectedIcon')) {
+        // Override with custom URL if provided
+        if (defaultSrc && defaultSrc !== 'startup.html') {
+            phoneScreen.src = defaultSrc;
+        } else if (localStorage.getItem('userName') && localStorage.getItem('selectedIcon')) {
             phoneScreen.src = 'homepage.html';
         } else {
             phoneScreen.src = 'onboarding.html';
@@ -44,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     phoneScreen.addEventListener('load', updateHomeButtonState);
 });
+
 
 
 document.addEventListener('DOMContentLoaded', function () {

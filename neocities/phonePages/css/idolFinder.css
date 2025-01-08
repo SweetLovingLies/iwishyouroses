@@ -91,8 +91,8 @@ button:hover {
 
 /* Popover functionality */
 
-.popover {
-    display: none;
+#popover {
+    display: flex;
     position: fixed;
 
     top: 200%;
@@ -138,18 +138,21 @@ button:hover {
     }
 }
 
-.popover.hide {
+#popover.hide {
+    display: none;
     animation: popoverHide 0.3s ease-in forwards;
 }
 
 @keyframes popoverHide {
     from {
+        display: none;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
 
     to {
+        display: flex;
         top: 200%;
         left: 50%;
         transform: translate(-50%, -50%);

@@ -7,10 +7,10 @@ body {
     background-size: contain, 40%;
     color: white;
 
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
-#top {
+header {
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -36,10 +36,13 @@ h5{
 
 main{
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column;
     gap: 10px;
 
-    padding: 0 10px 0 5px;
+    padding: 0 10px 15px 5px;
+
+    height: 262px;
+    overflow: auto;
 }
 
 main button{
