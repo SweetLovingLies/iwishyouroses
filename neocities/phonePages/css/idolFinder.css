@@ -7,7 +7,7 @@
     --blue1: #87b4e0;
     --blue2: #96c0e6;
     --blue3: #a4c8e0;
-    --blue4: #b4d6e7;
+    --blue4: #cce4ff;
     --blue5: #bbdae6;
     --blue6: #BFD4DB;
 }
@@ -53,9 +53,10 @@ main {
 button {
     background: none;
     border: none;
-    font-family: Arial, Helvetica, sans-serif;
-
     flex: 0 1 45%;
+
+    display: flex;
+    flex-flow: column nowrap;
 
     font-size: 16px;
     transition: color .25s;
@@ -98,7 +99,6 @@ button:hover {
     top: 200%;
     left: 50%;
     transform: translate(-50%, -50%);
-
     z-index: 1000;
 
     flex-flow: column nowrap;
@@ -115,13 +115,18 @@ button:hover {
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
 
     background: url("/Assets/BGs/bgtf5b.gif");
-
-    animation: popoverShow 0.3s ease-out forwards;
-
-    /* ! Debug */
-    /* top: 50%;
-    display: flex; */
 }
+
+#popover.show {
+    display: flex;
+    animation: popoverShow .4s linear forwards;
+    
+}
+
+#popover.hide {
+    animation: popoverHide .4s linear forwards;
+}
+
 
 @keyframes popoverShow {
     from {
@@ -138,21 +143,15 @@ button:hover {
     }
 }
 
-#popover.hide {
-    display: none;
-    animation: popoverHide 0.3s ease-in forwards;
-}
 
 @keyframes popoverHide {
     from {
-        display: none;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
 
     to {
-        display: flex;
         top: 200%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -174,8 +173,18 @@ button:hover {
 
 /* Popover Content */
 
+#warning {
+    font-size: .9em;
+}
+
+.adultWarning,
 .minorWarning {
     color: red;
+}
+
+.epilepsyWarning,
+.sensitivyWarning {
+    color: forestgreen;
 }
 
 section {

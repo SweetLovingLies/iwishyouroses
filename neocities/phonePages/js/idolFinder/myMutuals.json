@@ -10,13 +10,13 @@
         "link": "https://jirachis.neocities.org/",
         "src": "/Assets/coolsites/jirachis/jirachisButton.gif",
         "alt": "Welcome to jirachis' site!",
-        "minor": true
+        "warnings": ["minor"]
       },
       "reputation": "+20",
       "club": "Neocities",
       "loves": "Pokemon, Sonic, DDLC, MLP, Sanrio, NSO, Sailor Moon",
       "hates": "N/A",
-      "otherInfo": "Not sure much about this person yet, however, they seem cool. Please bare in mind that the webmaster is a minor if you visit. I hope you enjoy your web development journey!"
+      "otherInfo": "Not sure much about this person yet, however, they seem cool. I hope they enjoy their web development journey!"
     },
     {
       "name": "Bugkisser",
@@ -29,7 +29,7 @@
         "link": "https://bugkisser.neocities.org/",
         "src": "/Assets/coolsites/bugkisser/bugkisserButton.png",
         "alt": "Welcome to Zimmykin's site!",
-        "minor": true
+        "warnings": ["minor"]
       },
       "reputation": "+30",
       "club": "Neocities",
@@ -48,7 +48,7 @@
         "link": "https://midosuji.neocities.org/",
         "src": "/Assets/coolsites/midosujiMoon/midosujiMoonBtn.png",
         "alt": "Welcome to Midosuji's site!",
-        "epilepsy": true
+        "warnings": ["epilepsy"]
       },
       "reputation": "+10",
       "club": "Neocities",
@@ -67,7 +67,7 @@
         "link": "https://eyesoiree.neocities.org/",
         "src": "/Assets/coolsites/eyeSoiree/eyeSoireeButton.gif",
         "alt": "Welcome to EyeSoiree's site!",
-        "minor": true
+        "warnings": ["minor"]
       },
       "reputation": "+5",
       "club": "Neocities",
@@ -86,7 +86,7 @@
         "link": "https://oyasumimi.neocities.org/",
         "src": "/Assets/coolsites/oyasumimi/oyasumimiButton.gif",
         "alt": "Welcome to Mimi's site!",
-        "minor": true
+        "warnings": ["minor"]
       },
       "reputation": "+5",
       "club": "Neocities",
@@ -105,7 +105,7 @@
         "link": "https://krystalspalace.neocities.org/",
         "src": "/Assets/coolsites/krystalspalace/krystalsPalaceButton.png",
         "alt": "Welcome to Krystal's palace!",
-        "adult": true
+        "warnings": ["adult"]
       },
       "reputation": "+15",
       "club": "Neocities",
@@ -124,7 +124,7 @@
         "link": "https://freshflesh.neocities.org/",
         "src": "/Assets/coolsites/freshFlesh/freshFleshButton.gif",
         "alt": "Welcome to Fresh Flesh!",
-        "squeamish": true
+        "warnings": ["sensitivy"]
       },
       "reputation": "+10",
       "club": "Neocities",
@@ -143,7 +143,7 @@
         "link": "https://lilithdev.neocities.org/",
         "src": "/Assets/coolsites/LilithDev/lilithdevButton.gif",
         "alt": "Welcome to LilithDev!",
-        "adult": true
+        "warnings": [""]  
       },
       "reputation": "+40",
       "club": "Neocities",
@@ -162,13 +162,13 @@
         "link": "https://rhinedottir.neocities.org/",
         "src": "/Assets/coolsites/rhinedottir/rhinedottirButton.png",
         "alt": "Welcome to Rhinedottir!",
-        "adult": true
+        "warnings": [""]
       },
       "reputation": "+10",
       "club": "Neocities",
-      "loves": "",
-      "hates": "",
-      "otherInfo": ""
+      "loves": "Genshin Impact, HTML, Periwinkle, foxes, Churros, and a nice pumpkin spice latte",
+      "hates": "Modern social media",
+      "otherInfo": "I came across this site many moons ago when I was working on the parent site. I'm not close to the webmaster but they seem really sweet, although their life is rather turbulent... ^^' Anyways, I enjoy reading their blog posts and have been inspired to make my own hobby \"shrines\" myself. The site is really cute, give it a a visit!"
     },
     {
       "name": "Skye Journey",
@@ -180,7 +180,8 @@
       "siteButton": {
         "link": "https://luvrksknskyejourney.org/",
         "src": "/Assets/coolsites/skyejourney/skyejourneyButton.png",
-        "alt": "Welcome to Skye Journey!"
+        "alt": "Welcome to Skye Journey!",
+        "warnings": [""]
       },
       "reputation": "+5",
       "club": "Neocities",

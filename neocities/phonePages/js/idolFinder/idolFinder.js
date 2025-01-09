@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const personaQuote = popover.querySelector('i');
             const siteButton = popover.querySelector('#siteButton a');
             const siteButtonImg = popover.querySelector('#siteButton img');
-            const minorWarning = popover.querySelector('#siteButton .minorWarning');
+            const warning = document.getElementById('warning');
             const reputation = popover.querySelector('.repValue');
             const slider = popover.querySelector('.slider');
             const club = popover.querySelector('#club p');
@@ -33,7 +33,40 @@ document.addEventListener("DOMContentLoaded", () => {
                 wrapper.appendChild(button);
 
                 button.addEventListener('click', () => {
-                    personaIcon.src = mutual.icon.src;  
+                    warning.className = '';
+                    warning.textContent = '';
+
+                    if (Array.isArray(mutual.siteButton.warnings)) {
+                        mutual.siteButton.warnings.forEach(warningType => {
+                            switch (warningType) {
+                                case 'minor':
+                                    warning.classList.add('minorWarning');
+                                    warning.textContent += 'The webmaster is a minor!';
+                                    break;
+                                case 'adult':
+                                    warning.classList.add('adultWarning');
+                                    warning.textContent += 'This site is suitable for adults ONLY!';
+                                    break;
+                                case 'epilepsy':
+                                    warning.classList.add('epilepsyWarning');
+                                    warning.textContent += 'This site contains flashing lights!';
+                                    break;
+                                case 'sensitivy':
+                                    warning.classList.add('sensitivyWarning');
+                                    warning.textContent += 'This site contains graphic or sensitive content!';
+                                    break;
+                                default:
+                                    break;
+                            }
+                        });
+
+                        warning.textContent = warning.textContent.trim();
+                    } else {
+                        return
+                    }
+
+
+                    personaIcon.src = mutual.icon.src;
                     personaIcon.alt = mutual.icon.alt;
                     personaName.textContent = mutual.name;
                     personaQuote.textContent = mutual.quote;
@@ -41,7 +74,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     siteButton.href = mutual.siteButton.link;
                     siteButtonImg.src = mutual.siteButton.src;
                     siteButtonImg.alt = mutual.siteButton.alt;
-                    minorWarning.textContent = mutual.siteButton.warning || '';
 
                     reputation.textContent = `${mutual.reputation}`;
                     slider.dataset.reputation = mutual.reputation;
@@ -51,6 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     otherInfo.textContent = mutual.otherInfo;
 
                     popover.classList.remove('hide');
+                    popover.classList.add("show");
 
                     const reputationValue = parseInt(mutual.reputation, 10);  // Check reputation is parsed as a number
                     const minReputation = -100;
@@ -62,7 +95,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     const exitButton = popover.querySelector(".exit");
                     exitButton.addEventListener("click", () => {
+                        popover.classList.remove("show");
                         popover.classList.add("hide");
+
+                        setTimeout(() => {
+                            popover.classList.remove("show");
+                            popover.classList.remove("hide");
+                        }, 500); 
                     });
                 });
             });
