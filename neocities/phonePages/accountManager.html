@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Manager</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .icon-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .icon-grid img {
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      border-radius: 50%;
+    }
+
+    .icon-grid img.selected {
+      border-color: blue;
+    }
+
+    #saveButton {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Account Manager</h1>
+  <div>
+    <label for="nameInput">Name:</label>
+    <input type="text" id="nameInput" placeholder="Enter your name">
+  </div>
+  <h2>Select Your Icon</h2>
+  <div class="icon-grid" id="iconGrid">
+    <!-- Icons will be populated dynamically -->
+  </div>
+  <button id="saveButton">Save</button>
+
+  <script>
+    const defaultIcons = [
+      'icon1.png', 'icon2.png', 'icon3.png',
+    ];
+
+    const nameInput = document.getElementById('nameInput');
+    const iconGrid = document.getElementById('iconGrid');
+    const saveButton = document.getElementById('saveButton');
+
+    // Load initial values from localStorage
+    const storedName = localStorage.getItem('username');
+    const storedIcon = localStorage.getItem('usericon');
+
+    if (storedName) nameInput.value = storedName;
+    if (storedIcon) {
+      updateSelectedIcon(storedIcon);
+    }
+
+    // Populate icons
+    defaultIcons.forEach(icon => {
+      const img = document.createElement('img');
+      img.src = icon;
+      img.alt = icon;
+      img.addEventListener('click', () => updateSelectedIcon(icon));
+      iconGrid.appendChild(img);
+    });
+
+    // Update selected icon
+    function updateSelectedIcon(icon) {
+      const allIcons = iconGrid.querySelectorAll('img');
+      allIcons.forEach(img => img.classList.remove('selected'));
+      const selectedIcon = Array.from(allIcons).find(img => img.src.includes(icon));
+      if (selectedIcon) selectedIcon.classList.add('selected');
+      localStorage.setItem('usericon', icon);
+    }
+
+    // Save name and icon
+    saveButton.addEventListener('click', () => {
+      const name = nameInput.value.trim();
+      const selectedIcon = iconGrid.querySelector('.selected');
+      if (name && selectedIcon) {
+        localStorage.setItem('username', name);
+        localStorage.setItem('usericon', selectedIcon.src);
+        alert('Changes saved successfully!');
+      } else {
+        alert('Please provide a name and select an icon.');
+      }
+    });
+  </script>
+</body>
+
+</html>
