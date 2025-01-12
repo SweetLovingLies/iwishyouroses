@@ -3,7 +3,7 @@
         "title": "General",
         "template": "/phonePages/js/achievements/toastTemplate.txt",
         "style": "/phonePages/js/achievements/toast.css",
-        "sfx": "https://files.catbox.moe/a1ck7t.mp3",
+        "sfx": "https://files.catbox.moe/mena57.mp3",
         "missing": {
             "description": "???",
             "class": "missing"
@@ -35,19 +35,6 @@
                 "title": "Selfie Connoiseur!",
                 "description": "Take 10 Selfies!",
                 "class": "achievementNormal"
-            },
-            "Herobrine": {
-                "icon": "/assets/other/achievementIcons/herobrine.jpeg",
-                "title": "Herobrine?",
-                "description": "He was supposed to have been removed...",
-                "class": "achievementNormal"
-            },
-            "yanShrine": {
-                "icon": "/assets/anime/YanSim/pfp/ryoba3.jpg",
-                "title": "ANDROSESANDROSESANDROSESANDROSEANDROSESANDROSESANDROSES",
-                "description": "View the Yandere Shrine",
-                "hint": "Beat my heart. Tell me how much you love me!",
-                "class": "achievementYandere"
             },
             "HeadCount": {
                 "icon": "/assets/FNAF/GoldenFreddy/1.jpg",

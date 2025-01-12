@@ -17,97 +17,74 @@
 
     /* New Colors */
 
-    --rottedWood: #3b2418;
-    --woodStock: #5e4131;
-    --oak: #8a5d45;
-
-
     /* Globals */
     --globalBorderRadius: 10px;
     --detailBarHeight: 20px;
 }
 
+@font-face {
+    font-family: lovelyMood;
+    src: url('/fonts/yanFonts/LovelyMoodScript.ttf');
+}
+
+@font-face {
+    font-family: scratchy;
+    src: url('/fonts/Superscratchy.ttf');
+}
+
 body {
-    font-family: cafesweet;
-    background: url('/Assets/BGs/ILOVEYOU.png'), var(--persian);
-    background-size: 10% 10%;
-    background-position: top right;
-    background-blend-mode: overlay;
-     /* ! Gets rid of the fade on load */
-    animation: none;
-    
-    animation: slide 10s linear infinite;
-
-    width: 100vw;
-
+    height: 100vh;
+    position: relative;
     display: flex;
-
     justify-content: center;
-
-    color: white;
+    align-items: center;
 
     overflow-y: auto;
     overflow-x: hidden;
 
-    position: relative;
-}
+    background: url("/Assets/BGs/pattern610.gif"), var(--pinkIce);
+    background-blend-mode: multiply;
 
-@keyframes slide {
-    0% {
-        background-position: top right;
-    }
-
-    100% {
-        background-position: bottom left;
-    }
+    font-family: cafesweet;
+    color: black;
 }
 
 #wrapper {
+    flex: 0 1 60%;
+
     display: flex;
     flex-flow: column nowrap;
-
-    width: 60%;
-
-    margin-top: 200px;
 }
 
-#middle {
-    height:  705px;
-    padding: 20px;
+header {
+    background-color: var(--whispermist);
+    text-align: center;
+}
+
+main {
+    /* ! Temp */
+    min-height: 20vh;
+    background-color: var(--pinkIce);
+
     position: relative;
 
     display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    align-items: flex-start;
 
-    /* ! Temp */
-    gap: 50px; 
-}
+    column-gap: 50px;
+    row-gap: 20px;
 
-#shrineStand {
-    flex: 1 1;
-
-    border-top: none;
-    border-bottom: none;
-
-    box-shadow: inset 0 4px 5px #251c1cb6;
-}
-
-#drawer {
-    margin-top: 50px;
-
-    border-left: none;
-    border-right: none;
-    border-bottom: none;
-
-    height: calc(100% - 50px);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 20px;
 }
 
 /* ! Stuff */
 
-.letters{
+.letters {
+    position: relative;
+    z-index: 1;
+
     width: 300px;
     min-height: 400px;
     align-self: flex-start;
@@ -117,19 +94,20 @@ body {
     color: #252525;
     padding: 0 20px;
 
-    position: relative;
+    filter: drop-shadow(-1px 4px 4px #727272);
 }
 
 .polaroids {
+    position: relative;
+    z-index: 0;
+
     background: white;
-    width: 250px;
-    height: 350px;
+    width: 200px;
+    height: 270px;
 
     padding: 20px;
 
     border: 1px solid var(--deepslate);
-
-    filter: drop-shadow(1px 4px 4px #382424);
 }
 
 .polaroids img {
@@ -139,12 +117,121 @@ body {
 }
 
 #notebook {
-    width: 700px;
+    position: relative;
+    z-index: 1;
+
+    width: 500px;
     height: 300px;
+
+    filter: drop-shadow(1px 4px 4px #727272);
+
+    transform: rotate(2deg);
 }
 
+/* ! Counters */
+
+.counter {
+    position: relative;
+    z-index: 1;
+
+    background: var(--hintofmist);
+    border-radius: var(--globalBorderRadius);
+
+    max-height: 150px;
+
+    padding: 15px;
+    text-align: center;
+
+    filter: drop-shadow(1px 4px 4px #727272);
+}
+
+.counter h2,
+.quiz h2 {
+    font-family: lovelyMood, serif;
+    color: var(--blood);
+    font-size: 2em;
+
+    margin-bottom: 10px;
+}
+
+.action-button {
+    background-color: var(--bubblegum);
+    border: none;
+    border-radius: var(--globalBorderRadius);
+    padding: 10px 20px;
+    font-family: cafesweet;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.action-button:hover {
+    background-color: var(--persian);
+}
+
+/* ! Quiz */
+
+.quiz {
+    position: relative;
+    z-index: 1;
+
+    background: var(--whispermist);
+    border: 2px solid var(--blood);
+    border-radius: var(--globalBorderRadius);
+
+    padding: 20px;
+    width: 300px;
+
+    text-align: center;
+
+    color: var(--persian);
+    filter: drop-shadow(1px 4px 4px #727272);
+
+    transform: translate(0, -25%) rotate(4deg);
+}
+
+.quiz p {
+    margin-bottom: 15px;
+}
+
+.quiz label {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+#quizResponse {
+    margin-top: 20px;
+    color: black;
+}
 
 /* Specifics */
+
+#photosCounter {
+    border: 8px dotted var(--rosette);
+    transform: translate(0, -70%) rotate(-9deg);
+}
+
+#daysCounter {
+    border: 4px dashed var(--persian);
+    width: 320px;
+    color: var(--persian);
+
+    transform: rotate(-15deg);
+}
+
+#daysCounter .flexWrapper {
+    justify-content: center;
+    gap: 10px;
+}
+
+#letter1 {
+    transform: rotate(3deg);
+}
 
 #letter1 #heart {
     width: 100px;
@@ -153,52 +240,100 @@ body {
     transform: rotate(20deg);
 }
 
-/*! Details */
+#letter1 .doodle {
+    width: 90px;
+    font-size: 5em;
 
-handle {
-    display: block;
-    height: 40px;
-    width: 40px;
+    color: var(--persian);
+
+    bottom: 0;
+    right: 1.8em;
+}
+
+#letter1 .doodle:last-of-type {
+    width: 90px;
+    font-size: 5em;
     border-radius: 50%;
 
-    background: url(/Assets/BGs/wood3.jpg);
-    box-shadow: 0 4px 5px #251c1cb6;
+    color: yellow;
+    background-color: #fff7eb;
+
+    bottom: 0;
+    right: .5em;
 }
 
-#bloodHeader {
-    position: absolute;
-    background: url('/Assets/pixels/menhera/bloodHeader.webp') repeat-x;
-    background-size: contain;
-    height: 24px;
-    width: 100%;
+#polaroid1 {
+    filter: drop-shadow(0px 2px 4px #727272);
+    transform: rotate(-7deg);
 
-    top: 0;
-    left: 0;
+    font-family: scratchy;
+    font-size: 1.5em;
+}
+
+#polaroid1 p {
+    transform: translateY(-.3em) rotate(-3deg);
+}
+
+#pinkRoses {
     z-index: 0;
+    width: 300px;
+    bottom: 3em;
+    right: 2em;
+    transform: rotate(50deg);
 }
 
-/* Borders */
-
-.woodStock {
-    background-color: var(--woodStock);
-
-    border-width: 20px;
-    border-style: solid;
-    border-image: url("/Assets/BGs/wood3.jpg") 36 round;
+#bloodSplatter1 {
+    bottom: 3em;
+    right: 2em;
 }
 
-.oak {
-    background-color: var(--oak);
+#candle {
+    z-index: 2;
+    width: 180px;
 
-    border-width: 20px;
-    border-style: solid;
-    border-image: url("/Assets/BGs/wood3.jpg") 36 round;
+    bottom: -2em;
+    left: -5em;
 }
+
+#bloodyKnife {
+    bottom: -5em;
+    left: 7em;
+
+    transform: rotate(10deg);
+}
+
+#snowRose {
+    width: 200px;
+    bottom: 50%;
+    left: 50%;
+
+    transform: translate(-20%, 50%);
+}
+
+#rainbow {
+    z-index: 2;
+    width: 400px;
+    top: -4em;
+    left: -8em;
+    transform: rotate(-30deg);
+}
+
+/*! Details */
 
 /* General */
 
+.doodle {
+    font-family: doodles;
+}
+
+.flexWrapper {
+    display: flex;
+}
+
 .floaters {
     position: absolute;
+    user-select: none;
+    pointer-events: none;
 }
 
 /* ? Media Queries */

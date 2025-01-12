@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phone App: Account Manager</title>
+  <link href="/css/globals.css" rel="stylesheet" type="text/css" media="all">
+  <link href="css/phoneGlobals.css" rel="stylesheet" type="text/css" media="all">
+
+  <link href="css/accountManagerBase.css" rel="stylesheet" type="text/css" media="all">
+
+  <link id="accountManagerCSS" href="css/accountManagerThemes/accountManagerLight.css" rel="stylesheet" type="text/css"
+    media="all" data-theme="light">
+  <link id="accountManagerDarkCSS" href="css/accountManagerThemes/accountManagerDark.css" rel="stylesheet"
+    type="text/css" media="all" data-theme="dark">
+
+  <meta name="description" content="Access literally everything you need." />
+  <link rel="icon" type="image/x-icon" href="../Assets/pixels/vintageAmericana/strawberryphone.webp">
+
+  <script src="/js/jaxframeFork.js"></script>
+  <script src="js/stats.js"></script>
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+  <script src="js/phone.js"></script>
+</head>
+
+<body class="builtIn">
+  <header>Account Manager</header>
+  <main>
+    <div class="wrapper">
+      <h2>Update your Name</h2>
+      <label for="nameInput">Name:</label>
+      <input type="text" id="nameInput" placeholder="Enter your name">
+    </div>
+
+    <div class="wrapper">
+      <h2>Update your Icon</h2>
+      <nav class="flexWrapper">
+        <a href="#iconGrid">Preselected</a>
+        <a href="#iconUpload">Custom</a>
+      </nav>
+
+      <section id="iconGrid">
+        <h3 id="top">IdolMaster</h3>
+        <div id="idolMasterWrapper" class="imgWrapper">
+          <img src="/Assets/anime/idolmaster/pfp/anzu1.jpg" data-id="anzu1" onclick="iconSelect(this)">
+          <img src="/Assets/anime/idolmaster/pfp/kirari1.jpg" data-id="kirari1" onclick="iconSelect(this)">
+          <img src="/Assets/anime/idolmaster/pfp/mika1.jpg" data-id="mika1" onclick="iconSelect(this)">
+          <img src="/Assets/anime/idolmaster/pfp/riamu1.jpg" data-id="riamu1" onclick="iconSelect(this)">
+        </div>
+
+
+        <hr>
+
+        <h3>Project Sekai</h3>
+        <div id="pjskWrapper" class="imgWrapper">
+          <img src="/Assets/anime/pjsk/pfp/airi1.jpg" data-id="airi1" onclick="iconSelect(this)">
+          <img src="/Assets/anime/pjsk/pfp/emu1.jpg" data-id="emu1" onclick="iconSelect(this)">
+          <img src="/Assets/anime/pjsk/pfp/ena1.jpg" data-id="ena1" onclick="iconSelect(this)">
+          <img src="/Assets/anime/pjsk/pfp/miku1.jpg" data-id="miku1" onclick="iconSelect(this)">
+        </div>
+
+        <hr>
+
+        <h3>PriPara</h3>
+        <div id="priparaWrapper" class="imgWrapper">
+          <img src="/Assets/anime/pripara/pfp/laala.jpg" data-id="laala" onclick="iconSelect(this)">
+          <img src="/Assets/anime/pripara/pfp/yui1.jpg" data-id="yui1" onclick="iconSelect(this)">
+        </div>
+
+        <hr>
+
+        <h3>XG</h3>
+        <div id="xgWrapper" class="imgWrapper">
+          <img src="/Assets/kpop/xg/pfp/chisa1.jpg" data-id="chisa1" onclick="iconSelect(this)">
+          <img src="/Assets/kpop/xg/pfp/cocona1.jpg" data-id="cocona1" onclick="iconSelect(this)">
+          <img src="/Assets/kpop/xg/pfp/harvey1.jpg" data-id="harvey1" onclick="iconSelect(this)">
+          <img src="/Assets/kpop/xg/pfp/hinata1.jpg" data-id="hinata1" onclick="iconSelect(this)">
+          <img src="/Assets/kpop/xg/pfp/juria1.jpg" data-id="juria1" onclick="iconSelect(this)">
+          <img src="/Assets/kpop/xg/pfp/jurin1.jpg" data-id="jurin1" onclick="iconSelect(this)">
+          <img src="/Assets/kpop/xg/pfp/maya1.jpg" data-id="maya1" onclick="iconSelect(this)">
+        </div>
+
+        <hr>
+
+        <h3>IVE</h3>
+        <div id="iveWrapper" class="imgWrapper">
+          <img src="/Assets/kpop/IVE/pfps/gaeul1.jpg" data-id="gaeul1" onclick="iconSelect(this)">
+          <img src="/Assets/kpop/IVE/pfps/leeseo1.jpg" data-id="leeseo1" onclick="iconSelect(this)">
+          <img src="/Assets/kpop/IVE/pfps/liz1.jpg" data-id="liz1" onclick="iconSelect(this)">
+          <img src="/Assets/kpop/IVE/pfps/rei1.jpg" data-id="rei1" onclick="iconSelect(this)">
+          <img src="/Assets/kpop/IVE/pfps/wonyoung1.jpg" data-id="wonyoung1" onclick="iconSelect(this)">
+          <img src="/Assets/kpop/IVE/pfps/yujin1.jpg" data-id="yujin1" onclick="iconSelect(this)">
+        </div>
+
+        <hr>
+
+        <h3>NGO/NSO</h3>
+        <div id="ngoWrapper" class="imgWrapper">
+          <img src="/Assets/anime/NSO/pfp/ame1.jpg" data-id="ame1" onclick="iconSelect(this)">
+          <img src="/Assets/anime/NSO/pfp/ame2.jpg" data-id="ame2" onclick="iconSelect(this)">
+          <img src="/Assets/anime/NSO/pfp/ame3.jpg" data-id="ame3" onclick="iconSelect(this)">
+          <img src="/Assets/anime/NSO/pfp/Kangel1.jpg" data-id="Kangel1" onclick="iconSelect(this)">
+          <img src="/Assets/anime/NSO/pfp/Kangel2.jpg" data-id="Kangel2" onclick="iconSelect(this)">
+          <img src="/Assets/anime/NSO/pfp/pchan1.png" data-id="pchan1" onclick="iconSelect(this)">
+        </div>
+
+        <hr>
+
+        <h3>YanSim</h3>
+        <div id="yansimWrapper" class="imgWrapper">
+          <img src="/Assets/anime/YanSim/pfp/ayano1.jpg" data-id="ayano1" onclick="iconSelect(this)">
+          <img src="/Assets/anime/YanSim/pfp/hana1.jpg" data-id="hana1" onclick="iconSelect(this)">
+          <img src="/Assets/anime/YanSim/pfp/kokona1.jpg" data-id="kokona1" onclick="iconSelect(this)">
+          <img src="/Assets/anime/YanSim/pfp/osana1.jpg" data-id="osana1" onclick="iconSelect(this)">
+          <img src="/Assets/anime/YanSim/pfp/raibaru1.jpg" data-id="raibaru1" onclick="iconSelect(this)">
+          <img src="/Assets/anime/YanSim/pfp/ryoba1.jpg" data-id="ryoba1" onclick="iconSelect(this)">
+          <img src="/Assets/anime/YanSim/pfp/ryoba2.png" data-id="ryoba2" onclick="iconSelect(this)">
+          <img src="/Assets/anime/YanSim/pfp/tokuko1.jpg" data-id="tokuko1" onclick="iconSelect(this)">
+        </div>
+
+        <a href="#top" style="display: flex; justify-content: center;">
+          <iconify-icon icon="lucide:chevron-up"></iconify-icon>
+        </a>
+
+      </section>
+      <section id="iconUpload">
+        <img id="uploadPreview" src="">
+        <label for="imageInput">Choose an image</label>
+        <input type="file" id="imageInput" accept="image/*">
+        <button id="clearPreview" class="brandButton">Clear Preview</button>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <button id="saveButton" class="brandButton">Save</button>
+  </footer>
+
+  <script src="js/accountManager.js"></script>
+</body>
+
+</html>

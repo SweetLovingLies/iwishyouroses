@@ -1,6 +1,15 @@
 :root {
     --wisteria: #8266ff;
     --nightSky: #13007c;
+    --periwinkle: #dcd6f7;
+    --spaceDust: #cacfd6;
+
+    --fontSpace: "Berry", Courier, monospace;
+}
+
+@font-face {
+    font-family: Berry;
+    src: url('/fonts/BerryRegular.ttf');
 }
 
 /* & Phone */

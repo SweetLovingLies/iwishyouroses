@@ -137,19 +137,38 @@ function updateAppsOpened(count) {
 }
 
 // ~ Home Button Clicks
-
 function clicker() {
   let homeButtonClicks = parseInt(localStorage.getItem('homeButtonClicks')) || 0;
 
   homeButtonClicks++;
-
   localStorage.setItem('homeButtonClicks', homeButtonClicks);
+  updatehomeButtonClicks(homeButtonClicks);
+  checkConsecutiveClicks();
 }
 
 function updatehomeButtonClicks(count) {
   const display = document.querySelector('.homeButtonClicksCounter');
   if (display) {
     display.textContent = count;
+  }
+}
+
+function checkConsecutiveClicks() {
+  let consecutiveClicks = parseInt(localStorage.getItem('consecutiveClicks')) || 0;
+  let lastClickTime = parseInt(localStorage.getItem('lastClickTime')) || 0;
+
+  const now = Date.now();
+  if (now - lastClickTime > 1000) {
+    consecutiveClicks = 0;
+  }
+
+  consecutiveClicks++;
+  localStorage.setItem('consecutiveClicks', consecutiveClicks);
+  localStorage.setItem('lastClickTime', now);
+
+  if (consecutiveClicks === 9) {
+    window.parent.location.href = '/yandereShrine/lovesick.html';
+    localStorage.setItem('consecutiveClicks', 0); 
   }
 }
 

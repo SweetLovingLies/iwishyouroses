@@ -27,9 +27,10 @@ body {
 .wrapper {
     overflow: hidden;
     height: 100%;
+    margin-top: 10px;
 }
 
-header,
+nav,
 footer {
     display: flex;
 }
@@ -40,7 +41,7 @@ footer {
     font-size: 25px;
 }
 
-header {
+nav {
     align-items: center;
 }
 
@@ -50,7 +51,7 @@ header {
     padding-bottom: 40px;
 }
 
-#gridView main {
+#gridView #images {
     height: 100%;
     width: 100vw;
     padding: 0 10px;
@@ -114,12 +115,13 @@ header {
     background: black;
 }
 
-#lightboxView header {
+#lightboxView nav {
     padding: 0 10px;
 }
 
-#lightboxView main {
+#lightboxView #LBDisplay {
     display: flex;
+    flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
 

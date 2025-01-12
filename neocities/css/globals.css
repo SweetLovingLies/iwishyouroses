@@ -80,6 +80,11 @@
     src: url('/fonts/Angela.otf');
 }
 
+@font-face {
+    font-family: doodles;
+    src: url('/fonts/dingbatFonts/DoodlesDecorate.ttf');
+}
+
 html,
 body {
     margin: 0;
