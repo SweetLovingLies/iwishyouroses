@@ -25,10 +25,6 @@
             overflow: hidden;
         }
 
-        .color1 {
-            color: var(--wisteria)
-        }
-
         #chattable {
             width: 100vw;
             height: calc(100vh - 60px);
@@ -36,13 +32,12 @@
     </style>
 </head>
 
-<body>
+<body class="builtIn">
     <object id="detailBarObject" data="detailbar.html"></object>
 
-    <h id="idolMessengerHeader">
-        <span class="color1">i</span>
-        DOLMESSENGER
-    </h>
+    <header id="idolMessengerHeader">
+        IDOLMESSENGER
+    </header>
     <iframe src='https://iframe.chat/embed?chat=IdolMessenger' id='chattable' frameborder='none'></iframe>
 </body>
 

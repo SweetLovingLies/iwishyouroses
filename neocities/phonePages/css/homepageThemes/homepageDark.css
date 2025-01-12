@@ -2,8 +2,7 @@ body {
     background: url("/Assets/BGs/darkMode/phonewallpaperB.jpg");
     background-size: cover;
     background-position: center;
-    font-family: cafesweet;
-
+    backdrop-filter: blur(3px);
 }
 
 .appWrapper a, footer a {

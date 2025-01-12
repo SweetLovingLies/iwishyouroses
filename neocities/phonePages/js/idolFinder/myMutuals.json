@@ -57,16 +57,16 @@
       "otherInfo": "This is the type of energy I need to be channeling...\n I don't know very much about this person yet, but the aesthetic of the website caught my eye as soon as I saw it. The site is extremely colorful and full of old web graphics. I highly suggest giving him a visit!"
     },
     {
-      "name": "EyeSoiree",
+      "name": "EyeSoire",
       "icon": {
         "src": "/Assets/coolsites/eyeSoiree/icon.jpg",
         "alt": "A picture of a Burberry scarf!"
       },
       "quote": "A sight for soiree eyes",
       "siteButton": {
-        "link": "https://eyesoiree.neocities.org/",
+        "link": "https://eyesoire.neocities.org/",
         "src": "/Assets/coolsites/eyeSoiree/eyeSoireeButton.gif",
-        "alt": "Welcome to EyeSoiree's site!",
+        "alt": "Welcome to EyeSoire's site!",
         "warnings": ["minor"]
       },
       "reputation": "+5",

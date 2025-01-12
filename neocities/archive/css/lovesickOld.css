@@ -1,0 +1,212 @@
+:root {
+    /* OG Colors */
+    --bubblegum: #ffb7ed;
+    --dustyPink: #f6bdd1;
+    --persian: #f283b6;
+    --wisteria: #8266ff;
+    --hintofmist: #f1efff;
+    --whispermist: #dbd8f0;
+    --driedBlood: #8B575c;
+    --pinkIce: #f6e4f6;
+    --ash: #cad2c5;
+    --water: #adcaff;
+    --deepsea: #357ce6;
+    --blood: #800000;
+    --deepslate: #696969;
+    --cobblestone: #a8a8a8;
+
+    /* New Colors */
+
+    --rottedWood: #3b2418;
+    --woodStock: #5e4131;
+    --oak: #8a5d45;
+
+
+    /* Globals */
+    --globalBorderRadius: 10px;
+    --detailBarHeight: 20px;
+}
+
+body {
+    font-family: cafesweet;
+    background: url('/Assets/BGs/ILOVEYOU.png'), var(--persian);
+    background-size: 10% 10%;
+    background-position: top right;
+    background-blend-mode: overlay;
+     /* ! Gets rid of the fade on load */
+    animation: none;
+    
+    animation: slide 10s linear infinite;
+
+    width: 100vw;
+
+    display: flex;
+
+    justify-content: center;
+
+    color: white;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    position: relative;
+}
+
+@keyframes slide {
+    0% {
+        background-position: top right;
+    }
+
+    100% {
+        background-position: bottom left;
+    }
+}
+
+#wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+
+    width: 60%;
+
+    margin-top: 200px;
+}
+
+#middle {
+    height:  705px;
+    padding: 20px;
+    position: relative;
+
+    display: flex;
+
+    /* ! Temp */
+    gap: 50px; 
+}
+
+#shrineStand {
+    flex: 1 1;
+
+    border-top: none;
+    border-bottom: none;
+
+    box-shadow: inset 0 4px 5px #251c1cb6;
+}
+
+#drawer {
+    margin-top: 50px;
+
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+
+    height: calc(100% - 50px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ! Stuff */
+
+.letters{
+    width: 300px;
+    min-height: 400px;
+    align-self: flex-start;
+
+    background: url(/Assets/BGs/linedpaper.jpg);
+
+    color: #252525;
+    padding: 0 20px;
+
+    position: relative;
+}
+
+.polaroids {
+    background: white;
+    width: 250px;
+    height: 350px;
+
+    padding: 20px;
+
+    border: 1px solid var(--deepslate);
+
+    filter: drop-shadow(1px 4px 4px #382424);
+}
+
+.polaroids img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#notebook {
+    width: 700px;
+    height: 300px;
+}
+
+
+/* Specifics */
+
+#letter1 #heart {
+    width: 100px;
+    top: -2em;
+    right: -3em;
+    transform: rotate(20deg);
+}
+
+/*! Details */
+
+handle {
+    display: block;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+
+    background: url(/Assets/BGs/wood3.jpg);
+    box-shadow: 0 4px 5px #251c1cb6;
+}
+
+#bloodHeader {
+    position: absolute;
+    background: url('/Assets/pixels/menhera/bloodHeader.webp') repeat-x;
+    background-size: contain;
+    height: 24px;
+    width: 100%;
+
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+/* Borders */
+
+.woodStock {
+    background-color: var(--woodStock);
+
+    border-width: 20px;
+    border-style: solid;
+    border-image: url("/Assets/BGs/wood3.jpg") 36 round;
+}
+
+.oak {
+    background-color: var(--oak);
+
+    border-width: 20px;
+    border-style: solid;
+    border-image: url("/Assets/BGs/wood3.jpg") 36 round;
+}
+
+/* General */
+
+.floaters {
+    position: absolute;
+}
+
+/* ? Media Queries */
+
+@media (prefers-reduced-motion: reduce) {}
+
+@media only screen and (max-width: 1024px) {}
+
+@media only screen and (max-width: 810px) {}
+
+@media only screen and (max-width: 500px) {}
