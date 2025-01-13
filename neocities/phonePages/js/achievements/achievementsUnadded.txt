@@ -1,3 +1,9 @@
+            "Selfie": {
+                "icon": "/assets/other/achievementIcons/instax.png",
+                "title": "Selfie Connoiseur!",
+                "description": "Take 10 Selfies!",
+                "class": "achievementNormal"
+            },
             "Herobrine": {
                 "icon": "/assets/other/achievementIcons/herobrine.jpeg",
                 "title": "Herobrine?",

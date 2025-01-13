@@ -1,4 +1,3 @@
-const groupMode = document.getElementById("group");
 const selfieMode = document.getElementById("selfie");
 
 const viewfinder = document.getElementById("viewfinder");
@@ -11,7 +10,7 @@ const filtersButton = document.getElementById("filtersButton");
 const filterName = document.getElementById("filterName");
 
 let currentMode = "selfie";
-let photoData = { selfie: [], group: [] };
+let photoData = { selfie: []};
 let galleryImages = [];
 let currentFilterIndex = 0;
 const filters = [
@@ -22,7 +21,6 @@ const filters = [
     { name: "Contrast", filter: "contrast(1.5)" },
 ];
 
-// Fetch the JSON file on load
 async function loadPhotos() {
     try {
         const response = await fetch("js/camera/photos.json");
@@ -33,27 +31,13 @@ async function loadPhotos() {
     }
 }
 
-// Select a random photo based on the current mode
-function setRandomPhoto(mode) {
-    const photos = photoData[mode];
+function setRandomPhoto() {
     if (photos && photos.length > 0) {
         const randomPhoto = photos[Math.floor(Math.random() * photos.length)];
         viewfinder.style.backgroundImage = `url("${randomPhoto}")`;
     } else {
         console.warn(`No photos available for mode: ${mode}`);
     }
-}
-
-
-function switchMode(mode) {
-    if (currentMode === mode) return;
-    currentMode = mode;
-
-    selfieMode.classList.toggle("active", mode === "selfie");
-    groupMode.classList.toggle("active", mode === "group");
-
-    // Assign a new random photo for the selected mode
-    setRandomPhoto(mode);
 }
 
 function takePhoto() {
@@ -86,8 +70,6 @@ function filterChoice() {
     filterName.textContent = filter.name;
 }
 
-groupMode.addEventListener("click", () => switchMode("group"));
-selfieMode.addEventListener("click", () => switchMode("selfie"));
 shutterButton.addEventListener("click", takePhoto);
 filtersButton.addEventListener("click", filterChoice);
 

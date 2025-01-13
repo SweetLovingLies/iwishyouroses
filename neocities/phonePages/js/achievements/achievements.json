@@ -30,12 +30,6 @@
                 "sfx": "https://files.catbox.moe/lcy0r7.mp3",
                 "class": "achievementNormal"
             },
-            "Selfie": {
-                "icon": "/assets/other/achievementIcons/instax.png",
-                "title": "Selfie Connoiseur!",
-                "description": "Take 10 Selfies!",
-                "class": "achievementNormal"
-            },
             "HeadCount": {
                 "icon": "/assets/FNAF/GoldenFreddy/1.jpg",
                 "title": "Bite of '83",
