@@ -286,6 +286,15 @@ main {
     border-image: url("/Assets/BGs/wood.jpg") 36 round;
 
     cursor: pointer;
+
+    position: relative;
+}
+
+#updates pinkNewMoji {
+    display: block;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
 }
 
 #webgroups,
@@ -444,6 +453,8 @@ h2 {
     font-size: 5em;
     color: white;
     pointer-events: all;
+
+    image-rendering: pixelated;
 }
 
 /* ~ Media Queries */
