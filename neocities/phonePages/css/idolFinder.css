@@ -338,3 +338,13 @@ h4 {
     font-family: diegovainilla;
     font-weight: normal;
 }
+
+a {
+    color: darkblue;
+
+    transition: color .25s;
+}
+
+a:hover {
+    color: var(--blueDeep);
+}

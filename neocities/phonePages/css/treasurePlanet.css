@@ -1,38 +1,14 @@
 :root {
 
-    /* Colors */
-    --bubblegum: #ffb7ed;
-    --dustyPink: #f6bdd1;
-    --rosette: #ffbbc5;
-    --persian: #f283b6;
-    --wisteria: #8266ff;
-    --kangel: #c3a3f6;
-    --hintofmist: #f1efff;
-    --whispermist: #dbd8f0;
-    --driedBlood: #8B575c;
-    --pinkIce: #f6e4f6;
-    --ash: #cad2c5;
-    --water: #adcaff;
-    --deepsea: #357ce6;
-    --roseRed: #C71227;
-    --rosePink: #FB003F;
-    --blood: #800000;
-    --deepslate: #696969;
-    --cobblestone: #a8a8a8;
-
-    /* New Colors */
-
     --leafyGreen: #64A757;
     --hibiscusPink: #F98FA5;
     --orangeCrush: #FF6429;
     --sunYellow: #F6B402;
     --bananaYellow: #FCDD64;
+    --beachYellow: #f0e68c;
+    --skyBlue: #87ceeb;
     --peachFruit: #FF4756;
     --limeFruit: #B9DE76;
-
-    /* Globals */
-    --globalBorderRadius: 10px;
-    --detailBarHeight: 20px;
 }
 
 @font-face {
@@ -63,11 +39,7 @@ header {
 
     padding: 20px 5px 10px;
 
-    background: linear-gradient(to bottom,
-            #87ceeb,
-            #f0e68c);
-    box-shadow: 0 1px 4px rgba(0, 0, 10, 0.24);
-
+    background: linear-gradient(to bottom, var(--skyBlue), var(--beachYellow));
 
     font-size: 36px;
     font-family: LoveBeach;
@@ -80,35 +52,37 @@ header #left {
 }
 
 #welcome {
-    background: white;
+    background: url("/Assets/BGs/haibisukasu01b.gif") center/40%;
     padding: 5px;
+    margin-bottom: 10px;
+    border: 2px solid var(--sunYellow);
 }
 
 #achievements-dashboard {
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: row wrap;
     gap: 10px;
+    justify-content: center;
 }
 
 .achievement-card {
-    padding: 10px 5px;
-
-    background: url("/Assets/BGs/haibisukasu01b.gif");
-    background-size: 20%;
-    background-position: center;
-
-    border: 2px solid var(--peachFruit);
-    border-left: none;
-    border-right: none;
-
+    background: url("/Assets/BGs/sand.gif") center/50%;
+    border: 2px solid var(--bananaYellow);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    width: calc(100% / 2 - 10px);
+    padding: 10px 5px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    text-align: center;
+
     cursor: pointer;
     transition: color 0.2s;
-
     overflow: hidden;
-
-    display: flex;
-    gap: 10px;
 }
 
 .achievement-card img {
@@ -125,6 +99,15 @@ header #left {
     color: var(--orangeCrush);
 }
 
+.achievement-card h3 {
+    color: var(--peachFruit);
+    font-size: 1.1em;
+}
+
+.achievement-card .cardTxt {
+    width: 100%;
+}
+
 /* Themes */
 
 .missing.achievement-card {
@@ -132,11 +115,14 @@ header #left {
 }
 
 .hidden.achievement-card {
-    filter: grayscale(100%) brightness(50%);
+    background: url("/Assets/BGs/darkMode/scratches.png");
+    color: white;
+    filter: brightness(70%);
+    border: 2px solid white;
 }
 
 .hidden.achievement-card img {
-    border: 2px solid black;
+    border: 2px solid white;
 }
 
 .completed.achievement-card:hover {
@@ -145,13 +131,21 @@ header #left {
 }
 
 .dark.achievement-card {
-    background: url(/Assets/BGs/darkMode/scratches.png);
+    background: url("/Assets/BGs/darkMode/scratches.png");
+    color: white;
+
+    cursor: auto;
+}
+
+.dark.achievement-card h3 {
     color: white;
 }
 
 .dark.achievement-card img {
     border: 2px solid white;
 }
+
+
 
 /* ~ Popover */
 
@@ -161,11 +155,9 @@ header #left {
     left: 50%;
     transform: translate(-50%, -50%);
 
-    background: url("/Assets/BGs/haibisukasu01b.gif");
-    background-size: 20%;
-    background-position: center;
+    background: url("/Assets/BGs/sand.gif") center/30%;
 
-    border: 2px solid var(--water);
+    border: 2px solid var(--beachYellow);
 
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -175,13 +167,22 @@ header #left {
     padding: 20px;
     overflow-x: hidden;
 }
-
-
 #popover.noShow {
     display: none;
 }
 
-.popover-content button {
+#popover #description::before {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    vertical-align: -.25em;
+
+    color: var(--peachFruit);
+
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='6' height='0' x='9' y='20' fill='%23ff4756'%3E%3Canimate fill='freeze' attributeName='height' begin='0.6s' dur='0.2s' values='0;2'/%3E%3C/rect%3E%3Cpath fill='%23fcdd64' stroke='%23ff4756' stroke-dasharray='48' stroke-dashoffset='48' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 17h-3v-2.8c-1.79 -1.04 -3 -2.98 -3 -5.2c0 -3.31 2.69 -6 6 -6c3.31 0 6 2.69 6 6c0 2.22 -1.21 4.16 -3 5.2v2.8Z'%3E%3Canimate fill='freeze' attributeName='stroke-dashoffset' dur='0.6s' values='48;0'/%3E%3C/path%3E%3C/svg%3E");
+}
+
+#popoverContent button {
     background: var(--limeFruit);
     color: black;
     border: 1px solid var(--leafyGreen);
@@ -191,7 +192,7 @@ header #left {
     margin-top: 10px;
 }
 
-#progress-container {
+#progressWrapper {
     position: relative;
     height: 20px;
     background: white;
@@ -202,7 +203,7 @@ header #left {
     border-right: none;
 }
 
-#progress-bar {
+#progressBar {
     position: absolute;
     top: 0;
     left: 0;
@@ -212,22 +213,11 @@ header #left {
     transition: width 0.3s ease;
 }
 
-#progress-percentage {
+#progressPercentage {
     position: absolute;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
     font-size: 14px;
     color: black;
-}
-
-/* ~ General */
-
-* {
-    scrollbar-width: none;
-}
-
-*::-webkit-scrollbar,
-*::-webkit-scrollbar-button {
-    width: 0;
 }

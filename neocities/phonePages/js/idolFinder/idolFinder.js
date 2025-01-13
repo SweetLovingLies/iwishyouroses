@@ -78,9 +78,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     reputation.textContent = `${mutual.reputation}`;
                     slider.dataset.reputation = mutual.reputation;
                     club.textContent = mutual.club;
-                    loves.textContent = mutual.loves;
-                    hates.textContent = mutual.hates;
-                    otherInfo.textContent = mutual.otherInfo;
+                    loves.innerHTML = mutual.loves;
+                    hates.innerHTML = mutual.hates;
+                    otherInfo.innerHTML = mutual.otherInfo;
 
                     popover.classList.remove('hide');
                     popover.classList.add("show");

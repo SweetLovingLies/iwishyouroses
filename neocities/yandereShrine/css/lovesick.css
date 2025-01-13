@@ -200,7 +200,7 @@ main {
     display: block;
 }
 
-.hidden {
+.quiz.hidden {
     display: none;
 }
 

@@ -4,13 +4,6 @@
                 "description": "He was supposed to have been removed...",
                 "class": "achievementNormal"
             },
-            "yanShrine": {
-                "icon": "/assets/anime/YanSim/pfp/ryoba3.jpg",
-                "title": "ANDROSESANDROSESANDROSESANDROSEANDROSESANDROSESANDROSES",
-                "description": "View the Yandere Shrine",
-                "hint": "Beat my heart. Tell me how much you love me!",
-                "class": "achievementYandere"
-            },
             "SPACE": {
                 "icon": "https://lilithdev.neocities.org/shrine/vg/nso/sprites/achievements/something.png",
                 "title": "SOMETHING IN SPACE",

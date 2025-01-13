@@ -315,6 +315,14 @@ footer {
     background-color: #3d2c29;
 }
 
+#treasurePlanet {
+    background-color: #b0e5ff;
+}
+
+#widgetsmith {
+    background-color: #b3bdb7;
+}
+
 #keyE {
     align-self: flex-start;
     width: 50px;

@@ -9,7 +9,7 @@
             "class": "missing"
         },
         "hidden": {
-            "icon": "https://lilithdev.neocities.org/shrine/vg/nso/sprites/achievements/hidden.png",
+            "icon": "/assets/other/achievementIcons/hidden.png",
             "title": "???",
             "description": "???",
             "class": "hidden"
@@ -50,14 +50,21 @@
                 "class": "achievementNormal"
             },
             "crash": {
-                "icon": "/assets/anime/IWasWrong/pfp/1.jpg",
+                "icon": "/assets/other/achievementIcons/Crash.png",
                 "title": "0x00000050",
                 "description": "Crash the tablet somehow",
                 "hint": "Hi-Tech spam",
                 "class": "achievementNormal"
             },
+            "yanShrine": {
+                "icon": "/assets/other/achievementIcons/yandere.jpg",
+                "title": "ANDROSESANDROSESANDROSESANDROSEANDROSESANDROSESANDROSES",
+                "description": "View the Yandere Shrine",
+                "hint": "Beat my heart. Tell me how much you love me!",
+                "class": "achievementYandere"
+            },
             "Hangman": {
-                "icon": "/assets/anime/IWasWrong/pfp/1.jpg",
+                "icon": "/assets/other/achievementIcons/hangman.webp",
                 "title": "Hangman's Game",
                 "description": "Do you want to play a game?",
                 "class": "achievementHidden",

@@ -1,41 +1,19 @@
 :root {
-
-    /* Colors */
-    --bubblegum: #ffb7ed;
-    --dustyPink: #f6bdd1;
-    --rosette: #ffbbc5;
-    --persian: #f283b6;
-    --wisteria: #8266ff;
-    --kangel: #c3a3f6;
-    --hintofmist: #f1efff;
-    --whispermist: #dbd8f0;
-    --driedBlood: #8B575c;
-    --pinkIce: #f6e4f6;
-    --ash: #cad2c5;
-    --water: #adcaff;
-    --deepsea: #357ce6;
-    --roseRed: #C71227;
-    --rosePink: #FB003F;
-    --blood: #800000;
-    --deepslate: #696969;
-    --cobblestone: #a8a8a8;
-
-    /* Custom Colors */
-
     --sweetGreen: #D8E2DC;
     --sweetYellow: #FFE5D9;
     --sweetPink: #FFCAD4;
     --sweetBlush: #F4ACB7;
     --sweetOak: #9D8189;
+}
 
-    /* Globals */
-    --globalBorderRadius: 10px;
-    --detailBarHeight: 20px;
+@font-face {
+    font-family: cailyne;
+    src: url('/fonts/Cailyne.ttf');
 }
 
 /* ~ General */
 body {
-    font-family: Arial, sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     background-color: #f9f9f9;
     height: 100vh;
 
@@ -44,16 +22,38 @@ body {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    padding: 20px;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px 5px 10px;
+    font-size: 25px;
+
+    color: white;
+    font-family: "cailyne", sans-serif;
+    font-weight: bold;
+
+    background: var(--sweetBlush);
+
+    box-shadow: 0 1px 4px rgba(0, 0, 10, 0.24);
 }
 
 section {
     display: flex;
     flex-flow: column nowrap;
     gap: 10px;
+    padding: 10px 20px;
 }
 
 /* ~ Previews */
+
+#previewAll {
+    gap: 20px;
+}
 
 #yourWidgets {
     display: flex;
@@ -62,9 +62,10 @@ section {
     gap: 10px;
 }
 
-
 .widgetItem {
     max-width: 100px;
+    aspect-ratio: 1;
+    object-fit: cover;
     order: 1;
 }
 
@@ -111,6 +112,20 @@ button.editWidget:hover > iconify-icon {
     opacity: 100%;
 }
 
+#previewAll p {
+    background-color: var(--sweetPink);
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    padding: 10px 20px;
+}
+
+#previewAll footer {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+
+    transform: translateX(-50%);
+}
 
 /* ~ Customize */
 
@@ -143,19 +158,20 @@ button.editWidget:hover > iconify-icon {
     object-fit: cover;
 }
 
-.widget-settings {
+.widgetSettings {
     margin-top: 20px;
     width: 100%;
     max-width: 400px;
+    padding: 0 10px;
 }
 
-.widget-settings label {
+.widgetSettings label {
     display: block;
     margin-bottom: 5px;
 }
 
-.widget-settings select, 
-.widget-settings input[type="file"] {
+.widgetSettings select, 
+.widgetSettings input[type="file"] {
     width: 100%;
     margin-bottom: 10px;
     padding: 10px;
@@ -166,13 +182,10 @@ button.editWidget:hover > iconify-icon {
 /* ~ Other */
 
 footer {
-    flex: 1 0 50%;
-    flex: 1 0 50%;
-
     display: flex;
     gap: 10px;
     justify-content: center;
-     align-items: flex-end;
+    align-items: flex-end;
 }
 
 button {
@@ -192,8 +205,16 @@ button:hover {
 }
 
 .back {
+    color: var(--sweetOak);
+
+    position: absolute;
+    height: 32px;
     font-size: 2em;
     transition: color .25s;
+}
+
+.back:hover {
+    color: black;
 }
 
 #edit {

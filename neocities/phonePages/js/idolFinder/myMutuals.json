@@ -12,7 +12,7 @@
         "alt": "Welcome to jirachis' site!",
         "warnings": ["minor"]
       },
-      "reputation": "+20",
+      "reputation": "+5",
       "club": "Neocities",
       "loves": "Pokemon, Sonic, DDLC, MLP, Sanrio, NSO, Sailor Moon",
       "hates": "N/A",
@@ -88,7 +88,7 @@
         "alt": "Welcome to Mimi's site!",
         "warnings": ["minor"]
       },
-      "reputation": "+5",
+      "reputation": "+10",
       "club": "Neocities",
       "loves": "Danganronpa, ProDiva, Hatsune Miku, Kagamine Rin, Gumi, Kokichi Ouma, Tsumugi Shirogana, and physical media",
       "hates": "Self-introductions and earbuds (so real)",
@@ -128,7 +128,7 @@
       },
       "reputation": "+10",
       "club": "Neocities",
-      "loves": "Drawing, red, fleshcore, Bill Cipher, sweet things, cartoons, and seafood.",
+      "loves": "Drawing, <span style=\"font-weight: bold; color: red;\">red</span>, fleshcore, Bill Cipher, sweet things, cartoons, and seafood.",
       "hates": "N/A",
       "otherInfo": "This site's aesthetic mirrors mine in some aspects, without all the pink, which immediately stood out to me. Also, I absolutely love their art! The style is exactly the style I am trying to learn. Finally, the webmaster is Korean, and I am learning Korean, so that also became something of interest to me as well. Go and check out their site if you are not squeamish, which if you are here, you probably aren't."
     },
@@ -166,7 +166,7 @@
       },
       "reputation": "+10",
       "club": "Neocities",
-      "loves": "Genshin Impact, HTML, Periwinkle, foxes, Churros, and a nice pumpkin spice latte",
+      "loves": "Genshin Impact, HTML, <span style=\"font-weight: bold; color: #ccccff; background-color: black;\">Periwinkle</span>, foxes, Churros, and a nice pumpkin spice latte",
       "hates": "Modern social media",
       "otherInfo": "I came across this site many moons ago when I was working on the parent site. I'm not close to the webmaster but they seem really sweet, although their life is rather turbulent... ^^' Anyways, I enjoy reading their blog posts and have been inspired to make my own hobby \"shrines\" myself. The site is really cute, give it a a visit!"
     },
@@ -187,7 +187,26 @@
       "club": "Neocities",
       "loves": "N/A",
       "hates": "N/A",
-      "otherInfo": "I met this person in LilithDev's Discord server, and I love his site so much. The aesthetics are very calming and the Genshin Impact sfx are nostalgic for me. Skye is very sweet, go show him some love!."
+      "otherInfo": "I met this person in LilithDev's Discord server, and I love his site so much. The aesthetics are very calming and the Genshin Impact sfx are nostalgic for me. Skye is very sweet, go show him some love!"
+    },
+    {
+      "name": "Fabled.Day",
+      "icon": {
+        "src": "/Assets/coolsites/fabled.day/icon.gif",
+        "alt": "Art from her website. Idk who owns it, probably the webmaster."
+      },
+      "quote": "Remembering the Before Times",
+      "siteButton": {
+        "link": "https://fabled.day/",
+        "src": "/Assets/coolsites/fabled.day/fabledButton.gif",
+        "alt": "Welcome to Fabled.Day!",
+        "warnings": [""]
+      },
+      "reputation": "+25",
+      "club": "Neocities",
+      "loves": "Radical hyperfemininity, A feminine god, Weed, Cyberpunk Aesthetics, Tarot, Modern Medicine, and pink!",
+      "hates": "Cultural appropriation, QAnon, Objectivism, and Ronald Reagan",
+      "otherInfo": "Clarity Anne is a very peculiar character to me, and one that I absolutely love. She provides code snippets, interesting articles, and a very clean aesthetic to her websites. She also runs a unique website called <a href=\"https://redoubtful.com/\" target=\"_blank\">Redoubtful</a> that I suggest taking a look at too! <br> What stood out to me when I was reading her about me that she also worships a feminine god. I have grew up in many different religions, notably Christianity, Paganism, and a rather unorthodox version of Islam. After finding out that my mother was Wiccan, I did my own research and almost completely pivotted to my own version of it as a teen. All this to say that I too believe in a feminine god, and I strongly resonate with the fact that she does too... <br> I digress, grab a cup of tea and sit down with this one sometime. I promise you won't be disappointed."
     }
   ]
   

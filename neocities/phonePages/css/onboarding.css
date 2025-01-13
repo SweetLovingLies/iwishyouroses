@@ -336,6 +336,8 @@ body {
 }
 
 #OBCentralWrapper {
+    position: relative;
+    z-index: 10;
     display: flex;
     flex-flow: column wrap;
     justify-content: center;

@@ -34,7 +34,8 @@
     <div id="homepages">
         <div class="homepage active" id="homepage1">
             <div class="appWrapper">
-                <!-- <div class="flexWrapper">
+                <div class="flexWrapper">
+                    <!-- ! If you change anything html-wise here, be sure to update homepage.js too! -->
                     <div class="widgetColumn">
                         <object class="widget" id="widget1" type="image/svg+xml" data=""></object>
                         <p>Widgetsmith</p>
@@ -53,7 +54,7 @@
                             <p>Idol Messenger</p>
                         </a>
                     </div>
-                </div> -->
+                </div>
 
                 <a href="contact.html" class="app" onclick="openApp(event, this)">
                     <div id="asterism" class="appIcon">
@@ -70,9 +71,9 @@
                 </a>
                 <a href="accountManager.html" class="app" onclick="openApp(event, this)">
                     <div class="appIcon">
-                        <img src="">
+                        <img src="/Assets/myAssets/appIcons/idolManagerIcon.png">
                     </div>
-                    <p>Account Manager</p>
+                    <p>Idol Manager</p>
                 </a>
                 <a href="idolFinder.html" class="app" onclick="openApp(event, this)">
                     <div id="idolFinder" class="appIcon">
@@ -98,14 +99,9 @@
                     </div>
                     <p>Serenade</p>
                 </a>
-                <a href="calculator.html" class="app" onclick="openApp(event, this)">
-                    <div class="appIcon">
-                        <img src="/Assets/myAssets/appIcons/calculatorIcon.png">
-                    </div>
-                    <p>Calculator</p>
-                </a>
                 <a href="widgetsmith.html" class="app" onclick="openApp(event, this)">
-                    <div class="appIcon">
+                    <div id="widgetsmith" class="appIcon">
+                        <img src="/Assets/myAssets/appIcons/widgetsmithIcon.png">
                     </div>
                     <p>Widget Smith</p>
                 </a>
@@ -129,6 +125,12 @@
                     </div>
                 </div>
 
+                <a href="calculator.html" class="app" onclick="openApp(event, this)">
+                    <div class="appIcon">
+                        <img src="/Assets/myAssets/appIcons/calculatorIcon.png">
+                    </div>
+                    <p>Calculator</p>
+                </a>
                 <a href="idolPet.html" class="app" onclick="openApp(event, this)">
                     <div id="idolPet" class="appIcon">
                         <img src="/Assets/myAssets/appIcons/IdolPetIcon.png">
@@ -147,9 +149,11 @@
                     </div>
                     <p>Your Tome</p>
                 </a>
-                <a href="treasureIsland.html" class="app" onclick="openApp(event, this)">
-                    <div class="appIcon"></div>
-                    <p>Treasure Island</p>
+                <a href="treasurePlanet.html" class="app" onclick="openApp(event, this)">
+                    <div id="treasurePlanet" class="appIcon">
+                        <img src="/Assets/myAssets/appIcons/treasurePlanetIcon.png">
+                    </div>
+                    <p>Treasure Planet</p>
                 </a>
 
                 <img src="/shrines/OMORI/hangmanGame/assets/keys/keyE.png" id="keyE" onclick="collectKey('E');">

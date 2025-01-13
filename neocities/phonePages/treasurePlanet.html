@@ -8,7 +8,7 @@
     <link href="/css/globals.css" rel="stylesheet" type="text/css" media="all">
     <link href="css/phoneGlobals.css" rel="stylesheet" type="text/css" media="all">
 
-    <link href="css/treasureIsland.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/treasurePlanet.css" rel="stylesheet" type="text/css" media="all">
 
     <meta name="description" content="Access literally everything you need." />
     <link rel="icon" type="image/x-icon" href="../Assets/pixels/vintageAmericana/strawberryphone.webp">
@@ -24,18 +24,21 @@
         Achievements 
         <iconify-icon icon="mdi:leaf" width="24" height="24"></iconify-icon>
     </header>
-    <div id="progress-container">
-        <div id="progress-bar"></div>
-        <span id="progress-percentage">0%</span>
+    <div id="progressWrapper">
+        <div id="progressBar"></div>
+        <span id="progressPercentage">0%</span>
     </div>
 
     <main>
+        <div id="welcome">
+            Welcome! Achievements have been scattered around the site! The ones shown below are all achievable currently, but bare in mind that more will be added later. Good luck and have fun searching!
+        </div>
         <section id="achievements-dashboard"></section>
 
         <div id="popover" class="noShow">
-            <div class="popover-content">
-                <h3 id="popover-title">Placeholder Name</h3>
-                <p id="popover-description">Placeholder Description</p>
+            <div id="popoverContent">
+                <h3 id="title">Some Name</h3>
+                <p id="description"></p>
                 <button id="close-popover">Close</button>
             </div>
         </div>

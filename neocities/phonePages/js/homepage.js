@@ -118,13 +118,13 @@ document.addEventListener("DOMContentLoaded", function () {
         const appIconsHTML = `
             <a href="nav.html" class="app" onclick="openApp(event, this)">
                 <div class="appIcon">
-                    <img src="/Assets/customNavIcons/navIcon.png">
+                    <img src="/Assets/myAssets/appIcons/navIcon.png">
                 </div>
                 <p>Navigation</p>
             </a>
             <a href="idolMessenger.html" class="app" onclick="openApp(event, this)">
                 <div id="idolMessenger" class="appIcon">
-                    <img src="/Assets/customNavIcons/idolMessengerIcon.png">
+                    <img src="/Assets/myAssets/appIcons/idolMessengerIcon.png">
                 </div>
                 <p>Idol Messenger</p>
             </a>

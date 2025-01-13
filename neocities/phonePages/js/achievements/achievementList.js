@@ -17,7 +17,7 @@ function displayAchievements() {
     const dashboard = document.getElementById("achievements-dashboard");
     const { missing, hidden, achievements } = achievementData.general;
 
-    dashboard.innerHTML = ""; // Clear previous content
+    dashboard.innerHTML = "";
 
     Object.keys(achievements).forEach(achievementID => {
         const achievement = achievements[achievementID];
@@ -28,36 +28,32 @@ function displayAchievements() {
         const isHidden = achievement.hidden; // Check if the achievement is hidden
         const isCompleted = hasAchievement("general", achievementID); // Check if completed in localStorage
 
-        // Apply classes based on completion status
         if (isHidden && !isCompleted) {
-            card.classList.add(hidden.class); // Hidden achievements if not completed
+            card.classList.add(hidden.class);
         } else if (isHidden && isCompleted) {
-            card.classList.add("dark"); // Completed hidden achievements should have the "dark" class
+            card.classList.add("dark");
         } else if (!isCompleted) {
-            card.classList.add(missing.class); // Missing achievements
+            card.classList.add(missing.class);
         } else {
-            card.classList.add('completed'); // Normal achievements
+            card.classList.add('completed');
         }
 
-        // Update title, description, and icon based on completion and hidden status
         const title = isHidden && !isCompleted ? "???" : achievement.title;
         const description = isHidden && !isCompleted
             ? hidden.description
             : (isCompleted ? achievement.description : missing.description);
         const icon = isHidden && !isCompleted ? hidden.icon : achievement.icon || "";
 
-        // Create card content
         card.innerHTML = `
             <img src="${icon}" alt="${title}">
-            <div>
+            <div class="cardTxt">
                 <h3>${title}</h3>
                 <p>${description}</p>
             </div>
         `;
 
-        // Handle click event to show hint
         card.addEventListener("click", () => {
-            showHint(
+            showPopover(
                 achievement.title,
                 achievement.hint,
                 isHidden,
@@ -73,14 +69,14 @@ function displayAchievements() {
 }
 
 
-function showHint(title, hint, isHidden = false, isMissing = false, isCompleted = false) {
+function showPopover(title, hint, isHidden = false, isMissing = false, isCompleted = false) {
     if (isCompleted) {
         return;
     }
 
     const popover = document.getElementById("popover");
-    const popoverTitle = document.getElementById("popover-title");
-    const popoverDescription = document.getElementById("popover-description");
+    const popoverTitle = document.querySelector("#popover #title");
+    const popoverDescription = document.querySelector("#popover #description");
 
     const resolvedTitle = isHidden ? "???" : title || "Unknown Achievement";
     const resolvedHint =
@@ -88,7 +84,7 @@ function showHint(title, hint, isHidden = false, isMissing = false, isCompleted 
             isMissing ? (hint || "No hint needed!") : hint || "No hint available.";
 
     popoverTitle.textContent = resolvedTitle;
-    popoverDescription.textContent = resolvedHint;
+    popoverDescription.innerHTML = resolvedHint;
 
     popover.classList.remove("noShow");
 }
@@ -115,6 +111,6 @@ function calculateProgress() {
     console.log(`Total achievements: ${total}, Completed: ${completed}`);
     console.log(`Progress: ${percentage}%`);
 
-    document.getElementById("progress-percentage").textContent = `${percentage}%`;
-    document.getElementById("progress-bar").style.width = `${percentage}%`;
+    document.getElementById("progressPercentage").textContent = `${percentage}%`;
+    document.getElementById("progressBar").style.width = `${percentage}%`;
 }
