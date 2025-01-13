@@ -9,21 +9,21 @@
             "class": "missing"
         },
         "hidden": {
-            "icon": "/assets/other/achievementIcons/hidden.png",
+            "icon": "/Assets/other/achievementIcons/hidden.png",
             "title": "???",
             "description": "???",
             "class": "hidden"
         },
         "achievements": {
             "iwishyouroses": {
-                "icon": "/assets/other/achievementIcons/IWYR.png",
+                "icon": "/Assets/other/achievementIcons/IWYR.png",
                 "title": "I Wish You Roses",
                 "description": "Wish roses 18 times",
                 "hint": "How many times does Kali Uchis wish you roses?",
                 "class": "achievementNormal"
             },
             "Nice": {
-                "icon": "/assets/other/achievementIcons/nice.webp",
+                "icon": "/Assets/other/achievementIcons/nice.webp",
                 "title": "👌",
                 "description": "Click the Weird Stats 69 times",
                 "hint": "That's weird...",
@@ -31,34 +31,34 @@
                 "class": "achievementNormal"
             },
             "HeadCount": {
-                "icon": "/assets/FNAF/GoldenFreddy/1.jpg",
+                "icon": "/Assets/FNAF/GoldenFreddy/1.jpg",
                 "title": "Bite of '83",
                 "hint": "What could serve as a numpad?",
                 "description": "Type 395248 into the calculator!",
                 "class": "achievementNormal"
             },
             "MeteorShower": {
-                "icon": "/assets/other/achievementIcons/shootingStar.png",
+                "icon": "/Assets/other/achievementIcons/shootingStar.png",
                 "title": "Space Show",
                 "description": "See a meteor shower!",
                 "class": "achievementNormal"
             },
             "crash": {
-                "icon": "/assets/other/achievementIcons/Crash.png",
+                "icon": "/Assets/other/achievementIcons/Crash.png",
                 "title": "0x00000050",
                 "description": "Crash the tablet somehow",
                 "hint": "Hi-Tech spam",
                 "class": "achievementNormal"
             },
             "yanShrine": {
-                "icon": "/assets/other/achievementIcons/yandere.jpg",
+                "icon": "/Assets/other/achievementIcons/yandere.jpg",
                 "title": "ANDROSESANDROSESANDROSESANDROSEANDROSESANDROSESANDROSES",
                 "description": "View the Yandere Shrine",
                 "hint": "Beat my heart. Tell me how much you love me!",
                 "class": "achievementYandere"
             },
             "Hangman": {
-                "icon": "/assets/other/achievementIcons/hangman.webp",
+                "icon": "/Assets/other/achievementIcons/hangman.webp",
                 "title": "Hangman's Game",
                 "description": "Do you want to play a game?",
                 "class": "achievementHidden",
