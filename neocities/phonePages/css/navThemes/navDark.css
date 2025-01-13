@@ -1,5 +1,5 @@
 body{
-    background: url(/Assets/navMap/BG.png);
+    background: url(/Assets/BGs/spaceBG.png);
     background-size: cover;
     background-attachment: fixed;
 }
@@ -50,6 +50,10 @@ h2 {
     background: url('/Assets/BGs/alicebg2.gif');
 } */
 
-#middleList #credits {
+#credits {
     background: url('/Assets/BGs/darkMode/dots.png');
+}
+
+#index {
+    background: url('/Assets/BGs/darkMode/galaxy.gif');
 }

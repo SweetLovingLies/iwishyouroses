@@ -1,41 +1,3 @@
-:root {
-
-    /* Colors */
-    --bubblegum: #ffb7ed;
-    --dustyPink: #f6bdd1;
-    --rosette: #ffbbc5;
-    --persian: #f283b6;
-    --wisteria: #8266ff;
-    --kangel: #c3a3f6;
-    --hintofmist: #f1efff;
-    --whispermist: #dbd8f0;
-    --driedBlood: #8B575c;
-    --pinkIce: #f6e4f6;
-    --ash: #cad2c5;
-    --water: #adcaff;
-    --deepsea: #357ce6;
-    --roseRed: #C71227;
-    --rosePink: #FB003F;
-    --blood: #800000;
-    --deepslate: #696969;
-    --cobblestone: #a8a8a8;
-
-    /* Rainbow Ring Colors */
-
-    --rainbowRed: #ffadad;
-    --rainbowOrange: #ffdea1;
-    --rainbowYellow: #ffffb5;
-    --rainbowGreen: #c2ffc2;
-    --rainbowBlue: #b8d4ff;
-    --rainbowIndigo: #9e97e0;
-    --rainbowPurple: #cfb0ff;
-    --rainbowPink: #ffd8f2;
-
-    /* Globals */
-    --globalBorderRadius: 10px;
-    --detailBarHeight: 20px;
-}
-
 body {
     height: 100vh;
 
@@ -143,6 +105,7 @@ header {
 #aestheticSnippets {
     height: 170px;
     overflow: auto;
+    margin: 10px 0;
 }
 
 .snippet {
@@ -301,7 +264,7 @@ header {
 
 #copyPaste {
     width: 100%;
-    height: 60px;
+    height: 100px;
 }
 
 /* & Members */
@@ -362,6 +325,7 @@ header {
 }
 
 .siteButton {
+    max-width: 88px;
     text-decoration: none;
 }
 
@@ -408,8 +372,18 @@ header {
 
 /* ~ General */
 
+mark {
+    background-color: var(--roseRed);
+    padding: 0 5px;
+}
+
 p {
     font-size: 1.5em;
+}
+
+ol {
+    height: 450px;
+    overflow: auto;
 }
 
 ol li {

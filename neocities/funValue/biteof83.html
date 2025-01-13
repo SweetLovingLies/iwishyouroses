@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Was that the bite of 87?</title>
+
+    <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
+
+    <style>
+        body {
+            background-color: black;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        video {
+            width: 900px;
+        }
+    </style>
+</head>
+
+<body>
+    <video id="bite" autoplay>
+        <source src="https://files.catbox.moe/7h3p4h.mp4" type="video/mp4">
+    </video>
+
+    <script src="/phonePages/js/achievements/achievements.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            getAchievement("general", "HeadCount");
+        });
+        const bite = document.getElementById('bite');
+
+        bite.volume = "0.5"
+
+        bite.addEventListener('ended', () => {
+            window.location.href = '/bloom.html';
+        });
+    </script>
+</body>
+
+</html>

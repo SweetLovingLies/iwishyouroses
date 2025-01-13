@@ -1,0 +1,190 @@
+:root {
+    /* Colors */
+    --bubblegum: #ffb7ed;
+    --dustyPink: #f6bdd1;
+    --persian: #f283b6;
+    --wisteria: #8266ff;
+    --hintofmist: #f1efff;
+    --whispermist: #dbd8f0;
+    --driedBlood: #8B575c;
+    --pinkIce: #f6e4f6;
+    --ash: #cad2c5;
+    --water: #adcaff;
+    --deepsea: #357ce6;
+    --roseRed: #C71227;
+    --rosePink: #FB003F;
+    --blood: #800000;
+    --deepslate: #696969;
+    --cobblestone: #a8a8a8;
+
+    /* Globals */
+    --globalBorderRadius: 10px;
+    --detailBarHeight: 20px;
+}
+
+body {
+    background: url("/Assets/navMap/BG.png");
+    background-size: cover;
+    background-attachment: fixed;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    position: relative;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.navLink {
+    position: absolute;
+}
+
+.navLink img {
+    max-width: 250px;
+    /* ! Temp */
+}
+
+.UNF {
+    cursor: not-allowed;
+    filter: grayscale(100%);
+}
+
+.planetWrapper {
+    position: relative;
+}
+
+/* Specific */
+
+/* ~ Home */
+
+#home {
+    top: 2em;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#home img {
+    width: 120px;
+}
+
+#homeTXT {
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%) rotate(20deg);
+}
+
+#homeTXT:hover {
+    animation: rotate 1s forwards linear;
+}
+
+@keyframes rotate {
+    0% {
+        transform: translateX(-50%) rotate(20deg);
+    }
+    20% {
+        transform: translateX(-50%) rotate(180deg);
+    }
+    60% {
+        transform: translateX(-50%) rotate(200deg);
+    }
+
+    90% {
+        transform: translateX(-50%) rotate(360deg);
+    }
+    100% {
+        transform: translateX(-50%) rotate(380deg);
+    }
+}
+
+#homeTXT text {
+    fill: white;
+
+    font-size: 30px;
+    font-family: barbie;
+
+}
+
+
+/* ~ About */
+
+#about {
+    top: 15em;
+    right: 20px;
+}
+
+#about img {
+    width: 220px;
+}
+
+/* ~ Blog */
+
+#blog {
+    top: 27em;
+    left: 4em;
+}
+
+#blog img {
+    width: 100px;
+}
+
+/* ~ Paracosms */
+
+#paracosms {
+    top: 42em;
+    left: 10px;
+}
+
+#paracosms img {
+    width: 250px;
+}
+
+/* ~ Shrines */
+
+#shrines {
+    top: 60em;
+    left: 10px;
+
+    transform: rotate(30deg);
+}
+
+#shrines img {
+    width: 200px;
+}
+
+/* ~ Projects */
+
+#projects {
+    top: 75em;
+    left: 50%;
+
+    transform: translateX(-50%) rotate(70deg);
+}
+
+#projects img {
+    width: 150px;
+}
+
+/* ~ Media Log */
+
+#mediaLog {
+    top: 85em;
+    right: 10px;
+}
+
+#mediaLog img {
+    width: 200px;
+}
+
+
+/* ~ Credits */
+
+#credits {
+    top: 93em;
+    left: 10px;
+}
+
+#credits img {
+    width: 200px;
+}

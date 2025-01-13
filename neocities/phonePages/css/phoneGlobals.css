@@ -1,9 +1,18 @@
-body{
+body {
     overflow: auto;
 }
 
-#detailBarObject{
-    display: block; 
+body.builtIn {
+    background-color: var(--spaceDust);
+    font-family: var(--fontSpace)
+}
+
+body.builtIn.dark {
+    background-color: var(--nightSky);
+}
+
+#detailBarObject {
+    display: block;
     position: fixed;
     top: 0;
     left: 0;
@@ -57,7 +66,7 @@ body{
     padding: 1px 2px;
 }
 
-h {
+.builtIn header {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -65,23 +74,52 @@ h {
     padding: 20px 5px 10px;
     font-size: 25px;
 
-    color: #525252;
-    font-family: "Barbie";
-    background: linear-gradient(0deg, var(--bubblegum) 0%, rgba(238, 238, 255, 1) 50%, var(--bubblegum) 100%);
+    color: white;
+    font-family: var(--fontSpace);
+    font-weight: bold;
+
+    background: url("/Assets/myAssets/idolLineLogo/headerDesign.png") center/contain;
+
     box-shadow: 0 1px 4px rgba(0, 0, 10, 0.24);
 }
 
-h::after {
-    content: "★";
-    font-size: 20px;
-    margin-left: 2px;
-    transform: rotate(20deg);
+.builtIn header::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+
+    background: url(/Assets/myAssets/idolLineLogo/IdolLineDetail.png) center/contain no-repeat;
+    margin-right: 3px;
 
     color: white;
     text-shadow: 2px 2px 0 var(--wisteria), 2px -2px 0 var(--wisteria), -2px 2px 0 var(--wisteria), -2px -2px 0 var(--wisteria), 2px 0px 0 var(--wisteria), 0px 2px 0 var(--wisteria), -2px 0px 0 var(--wisteria), 0px -2px 0 var(--wisteria);
 }
 
+.builtIn .brandButton {
+    background-color: var(--wisteria);
+    color: white;
+    border-radius: 7px;
+    border: 2px solid white;
+}
+
+
+.builtIn.dark .brandButton {
+    background-color: var(--nightSky);
+    color: white;
+    border-radius: 7px;
+    border: 2px solid white;
+}
+
 filler {
     color: transparent;
     font-size: 20px;
+}
+
+* {
+    scrollbar-width: none;
+}
+
+*::-webkit-scrollbar,
+*::-webkit-scrollbar-button {
+    width: 0;
 }

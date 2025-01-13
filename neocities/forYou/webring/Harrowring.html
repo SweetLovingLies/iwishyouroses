@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HarrowRing</title>
 
-    <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/css/globals.css" rel="stylesheet" type="text/css" media="all">
 
     <link href="HarrowRing.css" rel="stylesheet" type="text/css" media="all">
 
@@ -41,12 +41,13 @@
         <main role="region" aria-live="polite">
             <section id="home" class="active">
                 <header id="welcome">
-                    <p>Welcome! HarrowRing is intended for people who love unsettling aesthetics of all types! Whether
+                    <p>Welcome!</p>
+                </header>
+                <div class="content">
+                    <p>HarrowRing is intended for people who love unsettling aesthetics of all types! Whether
                         that
                         be the yandere aesthetic, liminal spaces, morbid cute, gurokawa, etc, this webring is for you!
                     </p>
-                </header>
-                <div class="content">
                     <div id="aestheticSnippets">
                         <article id="Yandere" class="snippet">
                             <img src="/Assets/anime/IWasWrong/pfp/1.jpg"
@@ -120,6 +121,7 @@
                             </div>
                         </article>
                     </div>
+
                     <p>Above are snippets of aesthetics that would fit in here! However, this is not a guideline. If you
                         want to join, go ahead!</p>
                 </div>
@@ -156,7 +158,7 @@
             <section id="join">
                 <header id="joinUp">
                     <p>
-                        Thanks for your interest! To join, fill out this form and click the submit button!
+                        Thanks for your interest! To join, fill out this form and send me an email!
                     </p>
                 </header>
                 <div class="content">
@@ -180,7 +182,8 @@ Share a link to your site button (I will not hotlink).
                         <button id="submitForm" type="submit">Submit!</button>
                     </form>
 
-                    <p>I'm using the Discord webhooks function for this! Check out the script at the bottom! Anyways, you should be added pretty quickly (within 2 days or so... I'm always on Discord!)</p>
+                    <p>To sign up, just send me an email at <mark>sweetlovinglies@gmail.com!</mark></p>
+                    <p>I'll get back to you as soon as possible!</p>
                 </div>
             </section>
 
@@ -198,6 +201,11 @@ Share a link to your site button (I will not hotlink).
 <div id="HarrowRing"></div>
 </textarea>
                     <p>You can add the js to your head tag if you'd like, by the way. I've fixed it to work.</p>
+                    <p>
+                        By the way, the widget uses ASCII symbols. Please add this tag:
+                        <mark>meta charset="UTF-8"</mark> to your <mark>head</mark>! Otherwise, the symbols will be
+                        obfuscated.
+                    </p>
                 </div>
             </section>
 
@@ -224,92 +232,6 @@ Share a link to your site button (I will not hotlink).
             title="IdolLine Interactive Phone: Games, Tools, and Navigation!" role="application"></iframe>
     </div>
     <script src="/js/phoneDisplayScript.js"></script>
-
-    <script>
-        // Trying the Discord webhook submission method!
-        document.addEventListener('DOMContentLoaded', () => {
-            const form = document.getElementById('joinForm');
-            const formInput = document.getElementById('formInput');
-            const submitButton = document.getElementById('submitForm');
-
-
-            form.addEventListener('submit', async (event) => {
-                event.preventDefault();
-
-                const messageContent = formInput.value.trim();
-                if (!messageContent) {
-                    return;
-                }
-
-                const webhookUrl = 'https://discord.com/api/webhooks/1318028913229955073/5tihSa8MUNSETfI4ODRLlXyWF31ii7Xssx4NtVFCysoY_mwLHSyvQZ7IZ9y5G97SlyYK';
-
-                const payload = {
-                    content: messageContent,
-                    username: 'Form Submission',
-                    avatar_url: 'https://iwishyouroses.neocities.org/Assets/anime/another/mei/icon1.jpg'
-                };
-
-                try {
-                    const response = await fetch(webhookUrl, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify(payload),
-                    });
-
-                    if (response.ok) {
-                        alert('Your submission has been sent!');
-                        form.reset();
-                    } else {
-                        alert('There was an error. Try again later!');
-                    }
-                } catch (error) {
-                    console.error('Error:', error);
-                }
-            });
-        });
-
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const tabLinks = document.querySelectorAll('nav a');
-            const contents = document.querySelectorAll('section');
-
-            const activateTab = (tabId) => {
-                tabLinks.forEach((tab) => {
-                    const isActive = tab.getAttribute('href') === `#${tabId}`;
-                    tab.classList.toggle('active', isActive);
-                    tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
-                });
-
-                contents.forEach((content) => {
-                    const isActive = content.id === tabId;
-                    content.classList.toggle('active', isActive);
-                    content.style.display = isActive ? 'flex' : 'none';
-                    content.setAttribute('aria-hidden', !isActive);
-                });
-            };
-
-            tabLinks.forEach((tab) => {
-                tab.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const tabId = tab.getAttribute('href').replace('#', '');
-                    activateTab(tabId);
-
-                    history.pushState(null, null, `#${tabId}`);
-                });
-            });
-
-            const initialTabId = window.location.hash ? window.location.hash.replace('#', '') : 'home';
-            activateTab(initialTabId);
-
-            window.addEventListener('popstate', () => {
-                const currentTabId = window.location.hash.replace('#', '') || 'home';
-                activateTab(currentTabId);
-            });
-        });
-    </script>
 </body>
 
 </html>

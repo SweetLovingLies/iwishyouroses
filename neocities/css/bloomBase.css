@@ -279,14 +279,22 @@ main {
 #updates {
     flex: 1 1;
 
-    background: url(/Assets/BGs/blackboard.jpeg);
-    background-size: contain;
+    background: url("/Assets/myAssets/Updates.png") center/contain no-repeat, url("/Assets/BGs/blackboard.jpeg") center/cover;
 
     border-width: 11px;
     border-style: solid;
     border-image: url("/Assets/BGs/wood.jpg") 36 round;
 
-    overflow: hidden;
+    cursor: pointer;
+
+    position: relative;
+}
+
+#updates pinkNewMoji {
+    display: block;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
 }
 
 #webgroups,
@@ -393,6 +401,60 @@ h2 {
 #pixelRose {
     image-rendering: pixelated;
     cursor: pointer;
+}
+
+#keyD {
+    position: absolute;
+    z-index: 10;
+    top: 6em;
+    left: .8em;
+}
+
+#blackboard {
+    display: none;
+    position: absolute;
+    z-index: 9999;
+    pointer-events: none;
+
+    width: 100vw;
+    height: 100vh;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#lightbox {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #00000070;
+}
+
+#blackboard iframe {
+    position: relative;
+    z-index: 1;
+    width: 50vw;
+    height: 60vh;
+
+    pointer-events: all;
+}
+
+#blackboard #bbWrapper {
+    position: relative;
+    width: fit-content;
+}
+
+#blackboard #exit {
+    z-index: 2;
+    position: absolute;
+    right: 0.2em;
+    bottom: -0.2em;
+
+    font-size: 5em;
+    color: white;
+    pointer-events: all;
+
+    image-rendering: pixelated;
 }
 
 /* ~ Media Queries */

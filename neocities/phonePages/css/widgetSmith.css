@@ -1,0 +1,225 @@
+:root {
+    --sweetGreen: #D8E2DC;
+    --sweetYellow: #FFE5D9;
+    --sweetPink: #FFCAD4;
+    --sweetBlush: #F4ACB7;
+    --sweetOak: #9D8189;
+}
+
+@font-face {
+    font-family: cailyne;
+    src: url('/fonts/Cailyne.ttf');
+}
+
+/* ~ General */
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #f9f9f9;
+    height: 100vh;
+
+    position: relative;
+    overflow-x: hidden;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px 5px 10px;
+    font-size: 25px;
+
+    color: white;
+    font-family: "cailyne", sans-serif;
+    font-weight: bold;
+
+    background: var(--sweetBlush);
+
+    box-shadow: 0 1px 4px rgba(0, 0, 10, 0.24);
+}
+
+section {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
+    padding: 10px 20px;
+}
+
+/* ~ Previews */
+
+#previewAll {
+    gap: 20px;
+}
+
+#yourWidgets {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.widgetItem {
+    max-width: 100px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    order: 1;
+}
+
+#createNewWidget {
+    order: 2;
+    padding: 0;
+
+    width: 90px;
+    height: 100px;
+    background-color: var(--sweetGreen); 
+    border: 2px solid var(--ash);
+}
+
+.widgetWrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button.editWidget {
+    position: absolute;
+    
+    background: none;
+    padding: 0;
+    z-index: 3;
+}
+
+button.editWidget iconify-icon {
+    color: black;
+    filter: drop-shadow(0 0 5px white);
+
+    font-size: 60px;
+
+    opacity: 0;
+    transition: opacity .25s;
+}
+
+button.editWidget:hover {
+    background: none;
+}
+
+button.editWidget:hover > iconify-icon {
+    opacity: 100%;
+}
+
+#previewAll p {
+    background-color: var(--sweetPink);
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    padding: 10px 20px;
+}
+
+#previewAll footer {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+
+    transform: translateX(-50%);
+}
+
+/* ~ Customize */
+
+#customize {
+    display: none;
+}
+
+.widget-preview {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.widget-display {
+    width: 200px;
+    height: 200px;
+    background-color: var(--sweetGreen);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 2px solid var(--ash);
+}
+
+.widget {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.widgetSettings {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 400px;
+    padding: 0 10px;
+}
+
+.widgetSettings label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.widgetSettings select, 
+.widgetSettings input[type="file"] {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid var(--sweetOak);
+    border-radius: 5px;
+}
+
+/* ~ Other */
+
+footer {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: var(--sweetBlush);
+
+    color: black;
+    border: none;
+    border-radius: var(--globalBorderRadius);
+
+    cursor: pointer;
+    transition: background-color .25s;
+}
+
+button:hover {
+    background-color: var(--sweetPink);
+}
+
+.back {
+    color: var(--sweetOak);
+
+    position: absolute;
+    height: 32px;
+    font-size: 2em;
+    transition: color .25s;
+}
+
+.back:hover {
+    color: black;
+}
+
+#edit {
+    display: none;
+}
+

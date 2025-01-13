@@ -1,18 +1,15 @@
-body{
-    background: white;
-}
-
 #userIcon{
     border: 5px solid var(--wisteria);
 }
+
 .settingsWrapper {
-    background-color: white;
+    background-color: var(--spaceDust);
 }
 
 .settingsWrapper:nth-child(odd){
-    background-color: #f5eeee;
+    background-color: #a9b1bd;
 }
 
 .settingsWrapper button:hover {
-    background-color: #ccc;
+    background-color: white;
 }

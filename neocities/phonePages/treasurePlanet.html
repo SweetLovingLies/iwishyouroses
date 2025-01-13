@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone App: Achievements</title>
+    <link href="/css/globals.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/phoneGlobals.css" rel="stylesheet" type="text/css" media="all">
+
+    <link href="css/treasurePlanet.css" rel="stylesheet" type="text/css" media="all">
+
+    <meta name="description" content="Access literally everything you need." />
+    <link rel="icon" type="image/x-icon" href="../Assets/pixels/vintageAmericana/strawberryphone.webp">
+
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+    <script src="js/phone.js"></script>
+    <script src="js/stats.js"></script>
+</head>
+
+<body>
+    <header>
+        <iconify-icon id="left" icon="mdi:leaf" width="24" height="24"></iconify-icon>
+        Achievements 
+        <iconify-icon icon="mdi:leaf" width="24" height="24"></iconify-icon>
+    </header>
+    <div id="progressWrapper">
+        <div id="progressBar"></div>
+        <span id="progressPercentage">0%</span>
+    </div>
+
+    <main>
+        <div id="welcome">
+            Welcome! Achievements have been scattered around the site! The ones shown below are all achievable currently, but bare in mind that more will be added later. Good luck and have fun searching!
+        </div>
+        <section id="achievements-dashboard"></section>
+
+        <div id="popover" class="noShow">
+            <div id="popoverContent">
+                <h3 id="title">Some Name</h3>
+                <p id="description"></p>
+                <button id="close-popover">Close</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/achievements/achievements.js"></script>
+    <script src="js/achievements/achievementList.js"></script>
+</body>
+
+</html>

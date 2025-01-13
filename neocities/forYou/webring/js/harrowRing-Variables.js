@@ -8,7 +8,7 @@ const harrowRingSites = [
         description: 'The owner of the webring and a lover of interactive sites and creativity! I love all horror aesthetics, but my favorites will always be Yandere, Weirdcore, and Morute!',
         nsfw: true,
         webringOwner: true,
-        siteButton: '/Assets/myAssets/IWYRsmall.png',
+        siteButton: '/Assets/myAssets/IWYRFullScale.png',
         style: "yandere"
     }, 
     {

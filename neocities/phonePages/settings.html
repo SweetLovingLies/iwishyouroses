@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phone Screen: Homepage</title>
-    <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
+    <title>Phone App: Settings</title>
+    <link href="/css/globals.css" rel="stylesheet" type="text/css" media="all">
     <link href="css/phoneGlobals.css" rel="stylesheet" type="text/css" media="all">
 
 
@@ -25,10 +25,10 @@
     <script src="js/phone.js"></script>
 </head>
 
-<body>
+<body class="builtIn">
     <object id="detailBarObject" data="detailbar.html"></object>
 
-    <h>Settings</h>
+    <header>Settings</header>
     <main>
 
         <img id="userIcon" src="/Assets/other/anonIcon.jpg">
@@ -65,75 +65,7 @@
             <button id="clearCacheButton" style="color: red;">Clear Site Storage</button>
         </div>
     </main>
-    <script>
-        const clearCacheButton = document.getElementById('clearCacheButton');
-        if (clearCacheButton) {
-            clearCacheButton.addEventListener('click', () => {
-                localStorage.clear()
-                alert("Cache Cleared!");
-                window.top.location.reload();
-            });
-        }
-
-        // Freezeframe.js
-
-        function toggleGIFs() {
-            const gifToggle = document.getElementById("gifToggle");
-            const toggleState = gifToggle.checked ? "playing" : "stopped";
-
-            localStorage.setItem("gifState", toggleState);
-
-            window.top.postMessage({ command: toggleState }, "*");
-        }
-
-        window.addEventListener("load", () => {
-            const gifState = localStorage.getItem("gifState");
-
-            const gifToggle = document.getElementById("gifToggle");
-
-            if (gifState === "playing") {
-                gifToggle.checked = true;
-            } else {
-                gifToggle.checked = false;
-            }
-
-            window.top.postMessage({ command: gifState }, "*");
-        });
-
-        // Fun Stuff
-        var userName = localStorage.getItem("userName");
-        var selectedIcon = localStorage.getItem("selectedIcon");
-        // console.log(selectedIcon);
-
-        document.getElementById("welcomeMessage").textContent = `Welcome, ${userName}!`;
-        document.getElementById("userIcon").src = selectedIcon;
-
-
-        document.addEventListener("DOMContentLoaded", () => {
-            const userIcon = document.getElementById("userIcon");
-            const chance = 0.01;
-            const alternateIcon = "/Assets/other/anonAicon.jpg";
-
-            if (Math.random() < chance) {
-                userIcon.src = alternateIcon;
-            }
-        });
-    </script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const themeLinks = Array.from(document.querySelectorAll("link[id^='settings']"));
-            const savedTheme = localStorage.getItem("globalTheme") || "light";
-            const pageName = window.location.pathname.split('/').pop().split('.')[0];
-
-            const availableThemes = themeLinks.map(link => link.id.replace(pageName, '').replace('CSS', '').toLowerCase());
-            const validTheme = (availableThemes.includes(savedTheme) && themeLinks.some(link => link.getAttribute("data-theme") === savedTheme))
-                ? savedTheme
-                : "light";
-
-            themeLinks.forEach(link => link.disabled = link.getAttribute("data-theme") !== validTheme);
-        });
-    </script>
+    <script src="js/settings.js"></script>
 </body>
 
 </html>

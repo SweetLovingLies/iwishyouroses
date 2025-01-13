@@ -1,0 +1,97 @@
+body {
+    height: 100vh;    
+    color: white;
+    overflow: hidden;
+}
+
+* {
+    scrollbar-color: white #2c2c2c;
+}
+
+*::-webkit-scrollbar-track {
+    background: black;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: white;
+}
+
+main {
+    padding: 15px;
+
+    height: 100%;
+    background: url("/Assets/BGs/blackboard.jpeg");
+    background-size: cover;
+
+    border-width: 11px;
+    border-style: solid;
+    border-image: url("/Assets/BGs/wood.jpg") 36 round;
+
+    overflow: auto;
+
+    font-family: chalk;
+    font-size: 1.5em;
+}
+
+.update {
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-family: chalkcursive;
+    font-size: 4em;
+    font-weight: normal;
+}
+
+h2 {
+    font-family: chalkcursive;
+    font-size: 3em;
+    font-weight: normal;
+
+    color: var(--persian);
+
+    margin: 10px 0;
+}
+
+h3 {
+    font-size: 1.1em;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+.chalkLine {
+    width: 30%;
+    pointer-events: none;
+}
+
+.flexWrapper {
+    display: flex;
+}
+
+.doodles {
+    font-family: doodles;
+}
+
+#Fleur {
+    margin-left: 10px;
+    font-size: 3em;
+}
+
+#Stars {
+    position: absolute;
+    right: 0.4em;
+    top: 0.2em;
+    font-size: 6em;
+}
+
+ul {
+    margin: 10px 0;
+}
+
+li.two {
+    padding-left: 1em;
+}
+
+li.three {
+    padding-left: 2em;
+}

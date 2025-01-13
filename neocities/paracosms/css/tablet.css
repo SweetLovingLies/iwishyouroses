@@ -1,0 +1,650 @@
+:root {
+    /* New Colors */
+    --ScifiTeal: #00ffcc;
+    --ScifiBlue: #75ffeb;
+    --ScifiDarkBlue: #043D94;
+}
+
+#sciFiTablet {
+    width: 50vw;
+    height: 45vh;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 1000;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+
+    /* ! Subtract height of branding */
+    margin-top: -90px;
+
+    border-radius: 10px;
+
+    font-family: "OCRA", 'Courier New', Courier, monospace;
+    color: black;
+
+    transform: translate(-50%, 150%);
+}
+
+#mainWrapper {
+    flex: 1;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    align-items: center;
+
+    min-height: 376px;
+}
+
+/* & Animation Hell */
+
+/* TODO Show */
+
+/* ? Show Tablet */
+@keyframes tabletShow {
+    from {
+        transform: translate(-50%, 150%);
+    }
+
+    to {
+        transform: translate(-50%, -50%);
+    }
+}
+
+.tabletShow {
+    animation: tabletShow 1s forwards;
+}
+
+/* ? Show Branding */
+
+@keyframes brandingShow {
+    from {
+        transform: translateY(120%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.brandingShow {
+    animation: brandingShow 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+/* ? Show Sidebar */
+
+@keyframes asideShow {
+    from {
+        transform: translateX(-110%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.asideShow {
+    animation: asideShow 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+/* ? Show Main Background */
+
+@keyframes powerOn {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: .9;
+    }
+
+    60%,
+    70%,
+    80%,
+    90% {
+        opacity: .6;
+    }
+
+    75% {
+        opacity: .9;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.powerOn {
+    animation: powerOn .5s forwards;
+}
+
+/* ? Fade In Details */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation: fadeIn 0.5s forwards;
+}
+
+/* TODO Hide */
+
+#sciFiTablet.tabletHide {
+    transform: translate(-50%, -50%);
+}
+
+@keyframes tabletHide {
+    from {
+        transform: translate(-50%, -50%);
+    }
+
+    to {
+        transform: translate(-50%, 150%);
+    }
+}
+
+.tabletHide {
+    animation: tabletHide 1s forwards;
+}
+
+/* ? Hide Branding */
+#sciFiTablet.tabletHide #tabletBranding {
+    transform: translateY(0);
+}
+
+@keyframes brandingHide {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(120%);
+    }
+}
+
+.brandingHide {
+    animation: brandingHide 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+
+/* ? Hide Sidebar */
+#sciFiTablet.tabletHide #tabletAside {
+    transform: translateX(0);
+}
+
+@keyframes asideHide {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-110%);
+    }
+}
+
+.asideHide {
+    animation: asideHide 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+/* ? Fade Out */
+
+.tabletHide .content,
+.tabletHide .details,
+.tabletHide #planetName,
+.tabletHide #planetDescription,
+.tabletHide #planetPreview,
+.tabletHide #seeMore,
+.tabletHide #tabletAside h2,
+.tabletHide #tabletAside p,
+.tabletHide #tabletAside .settingsButton {
+    opacity: 1;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.fadeOut {
+    animation: fadeOut 0.5s forwards;
+}
+
+/* & Content Layout */
+
+.logo {
+    font-family: Aboro;
+
+    background: linear-gradient(to top, var(--ScifiTeal), var(--ScifiBlue), var(--ScifiTeal));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    -webkit-text-stroke: 1px var(--deepslate);
+}
+
+/* ~ Branding */
+
+#tabletBranding {
+    flex: 0 1 90px;
+    padding: 10px 20px 5px;
+
+    border-radius: 5px 5px 0 0;
+    border-bottom: none;
+
+    transform: translateY(120%);
+}
+
+#tabletBranding .logo {
+    font-size: 4em;
+    line-height: .8em;
+}
+
+#tabletBranding p {
+    text-align: right;
+}
+
+/* ~ Main */
+
+#tabletMain {
+    flex: 1 1 80%;
+    width: 800px;
+    height: 100%;
+
+    padding: 20px;
+    padding-top: 0;
+
+    border-radius: 0 5px 5px 5px;
+    z-index: 2;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: flex-start;
+}
+
+#tabletMain .contentWrapper {
+    flex: 1 0;
+    display: flex;
+
+    position: relative;
+    z-index: 2;
+
+    border: 3px ridge var(--ScifiTeal);
+    box-shadow: inset 0 0 20px 5px var(--ScifiBlue);
+}
+
+#tabletMain .content {
+    flex: 1 1;
+    background: url(img/tabletMats/GridBG.png) center/20px, linear-gradient(160deg, #ff95fd 0%, var(--ScifiBlue) 100%);
+    padding: 30px 40px;
+
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    column-gap: 10px;
+}
+
+#planetName {
+    flex: 1 0 100%;
+}
+
+#txtWrapper {
+    flex: 1 1 50%;
+}
+
+#planetDescription {
+    max-height: 195px;
+    overflow: auto;
+}
+
+#seeMore {
+    display: block;
+    width: 100%;
+    padding: 5px;
+
+    border-top: 1px solid var(--ScifiBlue);
+    background-color: white;
+    color: var(--ScifiDarkBlue);
+}
+
+#seeMore::before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='%23000' stroke-linecap='round' stroke-width='1.5'%3E%3Cpath d='M3 8.008S5.937 11 10.437 11M21 8.008s-1.917-.138-4.5.748c-.797.273-1.303.695-2.5 1.244M3 14.008s.768-.05 2 .107m2.903.64C9.401 15.228 11.172 17 14.51 17c3.012 0 5.381-1.129 6.761-2'/%3E%3Cpath d='M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5'/%3E%3C/g%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+
+#planetPreview {
+    flex: 0 1;
+    max-width: 200px;
+}
+
+/* ~ Buttons */
+
+#hudButtons {
+    height: 25px;
+}
+
+#hudButtons button {
+    width: 15px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+
+    background-color: white;
+
+    border: 2px ridge white;
+    outline: 1px solid black;
+}
+
+#hudButtons #closeTablet {
+    background-color: red;
+}
+
+/* ~ Aside */
+
+#tabletAside {
+    z-index: 1;
+
+    flex: 1 0 20%;
+
+    border-left: none;
+    padding: 10px;
+
+    border-radius: 0 5px 5px 0;
+
+    transform: translateX(-110%);
+}
+
+#tabletAside .contentWrapper {
+    position: relative;
+    z-index: 2;
+
+    border: 3px ridge var(--ScifiTeal);
+    box-shadow: inset 0 0 20px 5px var(--ScifiBlue);
+}
+
+#tabletAside .content {
+    background: url(img/tabletMats/GridBG.png) center/20px, linear-gradient(60deg, var(--ScifiBlue) 0%, #ff95fd 100%);
+    padding: 30px 25px;
+}
+
+#tabletAside h2 {
+    font-size: .9em;
+}
+
+#buttonWrapper {
+    height: 180px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
+
+    margin-top: 10px;
+}
+
+.settingsButton {
+    background: linear-gradient(to top, rgba(0, 68, 255, 0.5), #00d0ff, rgba(0, 68, 255, 0.5));
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.5), 0 0 25px rgba(0, 191, 255, 0.8);
+    height: 40px;
+    border: none;
+
+
+    font-family: "OCRA", 'Courier New', Courier, monospace;
+    color: white;
+    letter-spacing: 2px;
+    line-height: 1.5em;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+    transition: box-shadow .3s;
+}
+
+.settingsButton:hover {
+    background: linear-gradient(to top, rgba(140, 0, 255, 0.5), #ff00d0, rgba(140, 0, 255, 0.5));
+    box-shadow: 0 0 25px rgba(255, 0, 208, 0.7), 0 0 15px rgba(255, 0, 208, 1);
+}
+
+/* ~ Both */
+
+#tabletMain,
+#tabletAside {
+    position: relative;
+}
+
+.content,
+.details,
+#planetName,
+#planetDescription,
+#planetPreview,
+#seeMore,
+#tabletAside h2,
+#tabletAside p,
+#tabletAside .settingsButton {
+    opacity: 0;
+}
+
+/* & Decor */
+
+.sciFi {
+    background: url(img/tabletMats/metal.jpg);
+    border: 2px solid var(--ScifiTeal);
+    box-shadow: 0 0 20px 5px rgba(0, 255, 204, 0.5);
+}
+
+#sciFiTablet .details {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+
+    border-style: solid;
+    border-image: url("img/tabletMats/sciFiBorder.png") 130 repeat;
+    border-width: 55px;
+    background-clip: padding-box;
+
+    pointer-events: none;
+}
+
+#sciFiTablet .blackFiller {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 0;
+
+    width: 100%;
+    height: 100%;
+    background-color: black;
+
+    pointer-events: none;
+}
+
+#tabletMain .details {
+    width: 98%;
+    height: 95%;
+}
+
+#tabletAside .details {
+    width: 85%;
+    height: 95%;
+}
+
+/* Dark Mode */
+
+.dark {
+    color: white !important;
+}
+
+.dark #tabletBranding p {
+    text-shadow: 0 0 5px white;
+}
+
+.dark #tabletBranding .logo {
+    background: linear-gradient(to top, var(--ScifiDarkBlue), #5611f7, var(--ScifiDarkBlue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.dark .sciFi {
+    border: 2px solid var(--ScifiDarkBlue);
+    box-shadow: none;
+}
+
+.dark #tabletMain .contentWrapper {
+    border: 3px ridge var(--ScifiDarkBlue);
+    box-shadow: none;
+}
+
+.dark #tabletMain .content {
+    z-index: 1;
+    background: url(img/tabletMats/GridBG.png) center/20px, linear-gradient(160deg, #4b0092 0%, var(--ScifiDarkBlue) 100%);
+}
+
+.dark #tabletAside .contentWrapper {
+    background: url(img/tabletMats/GridBG.png) center/20px, linear-gradient(60deg, var(--ScifiDarkBlue) 0%, #4b0092 100%);
+    border: 3px ridge var(--ScifiDarkBlue);
+    box-shadow: none;
+}
+
+.dark #tabletAside .content {
+    z-index: 1;
+    background: url(img/tabletMats/GridBG.png) center/20px, linear-gradient(60deg, var(--ScifiDarkBlue) 0%, #4b0092 100%);
+}
+
+.party #tabletAside .content,
+.party #tabletMain .content {
+    background: url(img/tabletMats/GridBG.png) center/20px,
+        linear-gradient(0deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3, #ff2400, #e81d1d) 0% 0%/100% 800%;
+
+    animation: rainbow 10s linear infinite;
+}
+
+@keyframes rainbow {
+    0% {
+        opacity: 100%;
+        background-position: center, 0% 0%;
+    }
+
+    100% {
+        opacity: 100%;
+        background-position: center, 0% 100%;
+    }
+}
+
+
+.party #tabletBranding .logo {
+    background: linear-gradient(0deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3, #ff2400, #e81d1d) 0% 0%/100% 800%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: rainbowTXT 10s linear infinite;
+}
+
+@keyframes rainbowTXT {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 0% 100%;
+    }
+}
+
+/* ! Error Screen */
+
+
+.errorScreen .sciFi {
+    border: 2px solid #cf0000;
+    box-shadow: 0 0 20px 5px red;
+}
+
+.errorScreen #tabletBranding h1 {
+    background: red !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.errorScreen #tabletMain .contentWrapper {
+    border: 3px ridge #cf0000;
+    box-shadow: inset 0 0 20px 5px red;
+}
+
+.errorScreen #tabletAside .contentWrapper {
+    border: 3px ridge #cf0000;
+    box-shadow: inset 0 0 20px 5px red;
+}
+
+.crashOverlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+
+    display: none;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    text-align: center;
+    color: white;
+    pointer-events: none;
+}
+
+#tabletMain .crashOverlay {
+    background: radial-gradient(circle, #ff0000, #000000);
+}
+
+#tabletAside .crashOverlay {
+    background: radial-gradient(circle, #ff0000, #000000);
+}
+
+.crashOverlay.active {
+    display: flex;
+    pointer-events: all;
+}
+
+.errorScreen iconify-icon {
+    font-size: 40px;
+}
+
+.errorScreen #tabletAside iconify-icon {
+    font-size: 60px;
+}
+
+.glitch-text {
+    max-width: 572px;
+    word-wrap: break-word;
+}

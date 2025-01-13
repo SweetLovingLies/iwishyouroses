@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Where in the world are you?</title>
 
-    <link href="css/palette.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/globals.css" rel="stylesheet" type="text/css" media="all">
 
     <!-- ~ Themes -->
     <link id="not_foundCSS" href="css/notfoundThemes/nf.css" rel="stylesheet" type="text/css" media="all" disabled>
     <link id="not_foundDarkCSS" href="css/notfoundThemes/nfDark.css" rel="stylesheet" type="text/css" media="all" disabled>
 
     <meta name="description" content="You made a wrong turn somewhere mate." />
-    <link rel="icon" type="image/x-icon" href="Assets/pixels/kwk/sunset.gif">
+    <link rel="icon" type="image/x-icon" href="Assets/other/snowRose.png">
 
     <script src="js/jaxframeFork.js"></script>
     <script src="phonePages/js/themeSwitcher.js"></script>
@@ -36,14 +36,17 @@
         <img id="wonyoung" src="Assets/kpop/IVE/selcas/wonyoung.jpg" alt="" aria-hidden="true">
 
         <p id="phoneNavigation">Use the phone below to navigate back to the main site.</p>
+
+        <img src="/shrines/OMORI/hangmanGame/assets/keys/keyZ.png" id="keyZ" onclick="collectKey('Z');">
     </main>
 
     <div id="phoneSpot">
         <iframe id="phone" class="hidden" src="phonePages/phone.html"
             title="IdolLine Interactive Phone: Games, Tools, and Navigation!" role="application"></iframe>
     </div>
-
     <script src="js/phoneDisplayScript.js"></script>
+
+    <script src="/shrines/OMORI/hangmanGame/js/keyCollectScript.js"></script>
 </body>
 
 </html

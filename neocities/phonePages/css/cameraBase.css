@@ -1,0 +1,164 @@
+:root {
+
+    /* Colors */
+    --bubblegum: #ffb7ed;
+    --dustyPink: #f6bdd1;
+    --rosette: #ffbbc5;
+    --persian: #f283b6;
+    --wisteria: #8266ff;
+    --kangel: #c3a3f6;
+    --hintofmist: #f1efff;
+    --whispermist: #dbd8f0;
+    --driedBlood: #8B575c;
+    --pinkIce: #f6e4f6;
+    --ash: #cad2c5;
+    --water: #adcaff;
+    --deepsea: #357ce6;
+    --roseRed: #C71227;
+    --rosePink: #FB003F;
+    --blood: #800000;
+    --deepslate: #696969;
+    --cobblestone: #a8a8a8;
+
+    /* Rainbow Ring Colors */
+
+    --rainbowRed: #ffadad;
+    --rainbowOrange: #ffdea1;
+    --rainbowYellow: #ffffb5;
+    --rainbowGreen: #c2ffc2;
+    --rainbowBlue: #b8d4ff;
+    --rainbowIndigo: #9e97e0;
+    --rainbowPurple: #cfb0ff;
+    --rainbowPink: #ffd8f2;
+
+    /* Globals */
+    --globalBorderRadius: 10px;
+    --detailBarHeight: 20px;
+}
+
+#detailBarObject {
+    z-index: 99;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+
+    background-color: var(--rosette);
+    padding: 5px;
+    padding-top: 20px;
+}
+
+#viewfinder {
+    flex: 1;
+    position: relative;
+    background: url('/Assets/kpop/xg/harvey/Harvey1.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid gray;
+}
+
+#flash {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+
+@keyframes flash {
+    0% {
+        background-color: white;
+    }
+
+    100% {
+        background-color: transparent;
+    }
+}
+
+#controls {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--rosette);
+    position: relative;
+
+    height: 100px;
+}
+
+#mode {
+    flex: 1 0 100%;
+    align-self: flex-start;
+
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    background-color: rgba(0, 0, 0, 0.3);
+
+    color: #bbbbbb;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+#mode .active {
+    color: white;
+    transform: scale(1.1);
+}
+
+#galleryPreview {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 2px solid var(--kangel);
+}
+
+#galleryPreview img {
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+#shutterButton {
+    background-color: white;
+    border: 2px solid black;
+    outline: 4px solid white;
+
+    border-radius: 50%;
+
+    width: 50px;
+    aspect-ratio: 1;
+}
+
+#filtersButton {
+    border: none;
+    outline: none;
+    background-color: transparent;
+
+    width: 50px;
+    aspect-ratio: 1;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--deepslate);
+    font-size: 2rem;
+}
+
+#filterName {
+    font-size: .6rem;
+    color: var(--deepslate);
+}
+
+
+
+/* ~ General */
+
+a {
+    text-decoration: none;
+}

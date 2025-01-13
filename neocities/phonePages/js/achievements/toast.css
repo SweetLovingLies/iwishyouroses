@@ -49,7 +49,9 @@
 .achievement-toast {
     position: fixed;
     left: 0;
-    top: 3em;
+    top: 40px;
+
+    font-size: 16px;
 
     width: 360px;
     box-sizing: border-box;
@@ -58,6 +60,8 @@
     z-index: 9999999;
 
     border-radius: 0 5px 5px 0;
+
+    color: black;
 }
 
 .achievement-toast * {
@@ -76,8 +80,9 @@
 
 #decor {
     position: absolute;
-    top: -4em;
+    top: 50%;
     left: -10px;
+    transform: translateY(-50%);
 
     stroke-width: 3;
     fill: none;
@@ -87,12 +92,13 @@
 }
 
 .toast-icon {
-    height: 50px;
-    width: 50px;
+    height: 90px;
+    aspect-ratio: 1;
 
-    background-size: cover;
+    object-fit: cover;
+    border-radius: 5px;
 
-    border: 2px solid var(--persian);
+    border: 2px solid var(--rosette);
     z-index: 201;
 }
 
@@ -124,12 +130,12 @@
 }
 
 .achievementNormal {
-    background: url("/Assets/BGs/bloodcute.jpg");
-    border: 3px solid var(--wisteria);
+    background: url("/Assets/BGs/iDAfjUq.gif");
+    border: 3px solid var(--rosette);
 }
 
 .achievementNormal #decor {
-    stroke: var(--wisteria);
+    stroke: var(--rosette);
 }
 
 .achievementYandere {
@@ -166,6 +172,8 @@
     background-position: center;
     background-size: 50%;
     border: 3px solid var(--persian);
+
+    color: white;
 }
 
 .achievementHidden #decor {

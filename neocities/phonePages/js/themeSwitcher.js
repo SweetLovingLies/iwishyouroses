@@ -54,16 +54,25 @@ document.addEventListener("DOMContentLoaded", function () {
         const themeId = theme === 'light'
             ? `${topPageName}CSS`
             : `${topPageName}${theme.charAt(0).toUpperCase() + theme.slice(1)}CSS`;
-
+    
         themeLinks.forEach(link => {
             link.disabled = link.id !== themeId;
         });
-
+    
         localStorage.setItem("globalTheme", theme);
+    
+        const body = window.top.document.body;
+        if (theme === 'dark') {
+            body.classList.add('dark');
+        } else {
+            body.classList.remove('dark');
+        }
+    
         themeButtons.forEach(button => {
             button.disabled = button.dataset.theme === theme;
         });
     }
+    
 
     themeButtons.forEach(button => {
         button.addEventListener("click", function () {

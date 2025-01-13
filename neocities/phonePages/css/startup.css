@@ -1,0 +1,59 @@
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+    background-color: var(--nightSky);
+    color: #fff;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+    z-index: 1;
+}
+
+#idolLineIcon {
+    width: 40%;
+}
+
+#idolLineType {
+    width: 90%;
+}
+
+#progressBar {
+    position: relative;
+    height: 20px;
+    background: white;
+    margin: 10px 0;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+#progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: var(--wisteria);
+    width: 0;
+    transition: width 0.3s ease;
+    animation: fill 5s ease forwards;
+}
+
+@keyframes fill {
+    0% {
+        width: 0;
+    }
+    
+    70%, 90% {
+        width: 80%;
+    }
+
+    100% {
+        width: 100%;
+    }
+    
+} 

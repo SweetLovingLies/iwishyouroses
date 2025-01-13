@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PhoneScreen: IdolMessenger</title>
+    <title>Phone App: IdolMessenger</title>
     
-    <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/css/globals.css" rel="stylesheet" type="text/css" media="all">
     <link href="css/phoneGlobals.css" rel="stylesheet" type="text/css" media="all">
 
     <meta name="description" content="Access literally everything you need." />
@@ -25,10 +25,6 @@
             overflow: hidden;
         }
 
-        .color1 {
-            color: var(--wisteria)
-        }
-
         #chattable {
             width: 100vw;
             height: calc(100vh - 60px);
@@ -36,13 +32,12 @@
     </style>
 </head>
 
-<body>
+<body class="builtIn">
     <object id="detailBarObject" data="detailbar.html"></object>
 
-    <h id="idolMessengerHeader">
-        <span class="color1">i</span>
-        DOLMESSENGER
-    </h>
+    <header id="idolMessengerHeader">
+        IDOLMESSENGER
+    </header>
     <iframe src='https://iframe.chat/embed?chat=IdolMessenger' id='chattable' frameborder='none'></iframe>
 </body>
 

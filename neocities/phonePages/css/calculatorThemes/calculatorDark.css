@@ -1,0 +1,31 @@
+body {
+    background-color: black;
+}
+
+#display {
+    color: white;
+}
+
+#buttons {
+    background-color: black;
+}
+
+button {
+    background-color: var(--persian);
+    color: black;
+
+    transition: background-color .15s;
+}
+
+button:hover {
+    background-color: var(--bubblegum);
+}
+
+#clear {
+    flex: 0 1 50px;
+    background-color: var(--roseRed);
+}
+
+#clear:hover {
+    background: #a71d2a;
+}

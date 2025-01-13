@@ -1,0 +1,438 @@
+:root {
+
+    /* Colors */
+    --bubblegum: #ffb7ed;
+    --dustyPink: #f6bdd1;
+    --rosette: #ffbbc5;
+    --persian: #f283b6;
+    --wisteria: #8266ff;
+    --kangel: #c3a3f6;
+    --hintofmist: #f1efff;
+    --whispermist: #dbd8f0;
+    --driedBlood: #8B575c;
+    --pinkIce: #f6e4f6;
+    --ash: #cad2c5;
+    --water: #adcaff;
+    --deepsea: #357ce6;
+    --roseRed: #C71227;
+    --rosePink: #FB003F;
+    --blood: #800000;
+    --deepslate: #696969;
+    --cobblestone: #a8a8a8;
+
+    /* New Colors */
+
+    --ScifiTeal: #00ffcc;
+    --ScifiBlue: #75ffeb;
+
+    /* Globals */
+    --globalBorderRadius: 10px;
+    --detailBarHeight: 20px;
+}
+
+@font-face {
+    font-family: Aboro;
+    src: url('/fonts/sciFiFonts/Aboro.ttf');
+}
+
+@font-face {
+    font-family: OCRA;
+    src: url('/fonts/sciFiFonts/OCRA.ttf');
+}
+
+body {
+    height: 100vh;
+
+    /* ~ Me after discovering the shorthand of bgPos and bgSize */
+    background: url(img/BG.png) center/cover fixed;
+    color: white;
+
+    position: relative;
+
+    font-family: cafesweet;
+
+    overflow-y: auto;
+
+    line-height: 1.5em;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    position: fixed;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* ~ Regular Stars */
+
+.stars {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    opacity: 0.8;
+    filter: blur(1px);
+    transition: transform 1s, opacity 1s;
+
+    pointer-events: none;
+}
+
+.stars.twinkling {
+    opacity: 1;
+    transform: scale(1.3);
+}
+
+/* ~ Shooting Stars */
+
+.shootingstar {
+    position: absolute;
+
+    opacity: 0.8;
+
+    animation: shooting-star .5s linear;
+    pointer-events: none;
+}
+
+@keyframes shooting-star {
+    0% {
+        transform: translate(-100px, -100px) scale(1);
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(100vw, 100vh) scale(0.5);
+        opacity: 0;
+    }
+}
+
+
+/* ~ Celestial objects */
+
+.celestialObject {
+    position: absolute;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+
+.planet,
+.meteor,
+.spaceStation {
+    transition: transform .3s, box-shadow .3s;
+}
+
+.planet:hover,
+.meteor:hover,
+.spaceStation:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+}
+
+.BHWrapper:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* ! Temp */
+.UNF {
+    cursor: not-allowed !important;
+}
+
+/* ~ Planets */
+
+.planet {
+    display: block;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    position: absolute;
+}
+
+/* ~ Orbital Wrapper */
+
+.orbit {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+}
+
+/* ~ Keyframes for orbit rotation */
+
+@keyframes parentOrbit {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+@keyframes childOrbit {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+#sun {
+    background: radial-gradient(circle, #e8d45c, #c96f1b);
+
+    width: 120px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    transition: box-shadow .3s;
+
+    box-shadow: 0 0 20px 10px rgba(255, 153, 0, 0.7);
+
+    animation: shine 1.5s infinite;
+
+    z-index: 20;
+}
+
+@keyframes shine {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px 10px rgba(255, 153, 0, 0.7);
+    }
+
+    50% {
+        box-shadow: 0 0 20px 15px rgba(255, 153, 0, 0.7);
+    }
+}
+
+/* ~ Black Hole */
+
+.BHWrapper {
+    width: 200px;
+    height: 100px;
+    bottom: 10em;
+    right: 15em;
+
+    transform: scaleX(0) scaleY(0);
+    animation: appearance 2s forwards;
+}
+
+@keyframes appearance {
+    0% {
+        transform: scaleX(0) scaleY(0);
+    }
+
+    50% {
+        transform: scaleX(1) scaleY(0);
+    }
+
+    100% {
+        transform: scaleX(1) scaleY(1);
+    }
+}
+
+.blackHole {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url(img/BlackHole.png) center/contain no-repeat;
+
+    z-index: 2;
+}
+
+.eventHorizon {
+    position: absolute;
+    width: 26%;
+    height: 52%;
+
+    background: radial-gradient(rgba(0, 0, 0, .9) 50%, rgba(255, 183, 141, 0.7) 100%), url("img/planetSwirled.png");
+    background-size: contain;
+
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+
+    animation: spin 8s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(-360deg);
+    }
+}
+
+/* ~ Labels */
+
+.label {
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.celestialObject>.planet:hover .label,
+.orbit>.planet:hover .label,
+.celestialObject>a:hover .label {
+    opacity: 1;
+}
+
+.COWrapper {
+    position: relative;
+    height: 100%;
+}
+
+/* ~ Specifics */
+
+/* ? Cerulean Galaxy */
+
+#severanceSolarSystem {
+    width: 900px;
+    height: 900px;
+
+    top: 10%;
+    left: 5%;
+}
+
+#severance {
+    background: url(img/Severance.png);
+    background-size: contain;
+
+    width: 130px;
+
+    top: -60px;
+    /* ~ Top Start */
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+
+#koa {
+    background: url(img/Koa.png);
+    background-size: contain;
+
+    width: 90px;
+
+    bottom: -50px;
+    /* ~ Bottom Start */
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+
+#bellavue {
+    background: url(img/Bellavue.png);
+    background-size: contain;
+
+    width: 50px;
+    left: -20px;
+    /* ~ Left Start */
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+
+#earthaMajor {
+    background: url(img/EarthaMajor.png);
+    background-size: contain;
+
+    width: 110px;
+    right: -60px;
+    /* ~ Right Start */
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+
+/* ! Planet Specific Orbits */
+
+#severanceOrbit {
+    animation: parentOrbit 40s linear infinite;
+}
+
+#eMajorOrbit {
+    width: 620px;
+    height: 620px;
+
+    top: 50%;
+    left: 50%;
+
+    animation: childOrbit 30s linear infinite;
+}
+
+#koaOrbit {
+    width: 400px;
+    height: 400px;
+
+    top: 50%;
+    left: 50%;
+
+    animation: childOrbit 20s linear infinite;
+}
+
+#bellavueOrbit {
+    width: 250px;
+    height: 250px;
+
+    top: 50%;
+    left: 50%;
+
+    animation: childOrbit 10s linear infinite;
+}
+
+
+/* ? Space Stations */
+.spaceStation {
+    /* ! Temp Display */
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #4a90e2, #0029a8);
+}
+
+/* Other */
+
+#someMeteor {
+    bottom: 20%;
+    left: 10%;
+}
+
+#someStation {
+    top: 50%;
+    left: 40%;
+}
+
+/* ~ General */
+
+* {
+    cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat996.cur), auto !important;
+    scrollbar-width: none;
+}
+
+*::-webkit-scrollbar,
+*::-webkit-scrollbar-button {
+    width: 0;
+}
+

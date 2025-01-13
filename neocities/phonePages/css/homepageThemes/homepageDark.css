@@ -2,8 +2,7 @@ body {
     background: url("/Assets/BGs/darkMode/phonewallpaperB.jpg");
     background-size: cover;
     background-position: center;
-    font-family: cafesweet;
-
+    backdrop-filter: blur(3px);
 }
 
 .appWrapper a, footer a {
@@ -36,6 +35,6 @@ tray{
     box-shadow: -1px 2px 3px rgba(255, 255, 255, 0.25);
 }
 
-.column2 p{
-    color: white;
+.widgetColumn p {
+    color: #747474;
 }

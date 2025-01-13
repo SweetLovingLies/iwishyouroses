@@ -1,0 +1,63 @@
+body {
+    height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to top, rgba(0, 6, 87, 0.5), rgba(0, 0, 0, 0.6)), url('/Assets/BGs/bluefloral.png');
+
+    background-size: contain, 40%;
+    color: white;
+
+    overflow: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    background: url("/Assets/kpop/xg/renders/shootingstars1.png"), url("/Assets/kpop/xg/bgs/shootingstarsbg.png");
+    background-size: cover;
+    background-position: bottom;
+    height: 45%;
+
+    border-bottom: 5px solid black;
+
+    margin-bottom: 10px;
+}
+
+h5{
+    font-family: "FoxRelish";
+    font-size: 2em;
+    color: var(--whispermist);
+    -webkit-text-stroke: .4px black;
+
+    text-align: center;
+}
+
+main{
+    display: flex;
+    flex-flow: column;
+    gap: 10px;
+
+    padding: 0 10px 15px 5px;
+
+    height: 262px;
+    overflow: auto;
+}
+
+main button{
+    background-color: var(--hintofmist);
+    border: 1px solid black;
+    border-radius: var(--globalBorderRadius);
+
+    font-size: larger;
+
+    width: 100%;
+    padding: 5px;
+
+    cursor: pointer;
+}
+
+p {
+    text-align: center;
+}

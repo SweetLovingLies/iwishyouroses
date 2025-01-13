@@ -1,9 +1,8 @@
 body {
-    background: url("/Assets/BGs/phonewallpaper.jpg");
+    background: url("/Assets/BGs/phonewallpaper2.jpg");
+    backdrop-filter: blur(3px);
     background-size: cover;
     background-position: center;
-
-    font-family: cafesweet;
 }
 
 .appWrapper a,
@@ -32,11 +31,11 @@ footer a:focus {
     color: var(--deepslate);
 }
 
-tray {
+#tray {
     background: #ffffffa9;
     box-shadow: -1px 2px 3px rgba(0, 0, 0, 0.25);
 }
 
-.column2 p {
-    color: black;
+.widgetColumn p {
+    color: #747474;
 }

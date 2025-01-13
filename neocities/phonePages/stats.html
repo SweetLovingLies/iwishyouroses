@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phone Screen: Stats</title>
+    <title>Phone App: Stats</title>
 
-    <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/css/globals.css" rel="stylesheet" type="text/css" media="all">
     <link href="css/phoneGlobals.css" rel="stylesheet" type="text/css" media="all">
 
     <link href="css/statsBase.css" rel="stylesheet" type="text/css" media="all">
@@ -23,10 +23,10 @@
     <script src="js/phone.js"></script>
 </head>
 
-<body>
+<body class="builtIn">
     <object id="detailBarObject" data="detailbar.html"></object>
 
-    <h>Stats</h>
+    <header>Stats</header>
     <main>
         <h1>Site Stats</h1>
 
@@ -89,6 +89,7 @@
             themeLinks.forEach(link => link.disabled = link.getAttribute("data-theme") !== validTheme);
         });
     </script>
+    <script src="./js/achievements/achievements.js"></script>
 </body>
 
 </html>

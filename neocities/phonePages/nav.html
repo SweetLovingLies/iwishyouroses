@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phone Screen: Navigation</title>
+    <title>Phone App: Navigation</title>
 
-    <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/css/globals.css" rel="stylesheet" type="text/css" media="all">
     <link href="css/phoneGlobals.css" rel="stylesheet" type="text/css" media="all">
 
     <link href="css/navBase.css" rel="stylesheet" type="text/css" media="all">
@@ -22,17 +22,17 @@
     <script src="/js/jaxframeFork.js"></script>
 </head>
 
-<body>
+<body class="builtIn">
     <object id="detailBarObject" data="detailbar.html"></object>
 
-    <h>Navigation</h>
+    <header>Navigation</header>
     <section id="topList">
         <h2>For Me</h2>
         <a class="navLink" href="/bloom.html" target="_top">Home</a>
         <a id="about" class="navLink" href="/about.html" target="_top">About</a>
         <a id="blog" class="navLink" href="https://iwishyouroses.bearblog.dev/" target="_blank">Blog</a>
+        <a id="paracosms" class="navLink" href="/paracosms/paracosms.html" target="_top">Paracosms</a>
         <a id="mediaLogs" class="navLink" href="/mediaLogs/directory.html" target="_top">Media Logs</a>
-        <a class="UNF navLink">Paracosms</a>
         <a class="UNF navLink">Shrines</a>
         <a class="UNF navLink">Projects</a>
     </section>
@@ -45,6 +45,7 @@
 
     <section id="bottomList">
         <h2>Other</h2>
+        <a id="index" class="navLink" href="/index.html" target="_top">Splash Screen</a>
         <a id="credits" class="navLink" href="/credits.html" target="_top">Credits</a>
     </section>
 
@@ -62,7 +63,16 @@
                 : "light";
 
             themeLinks.forEach(link => link.disabled = link.getAttribute("data-theme") !== validTheme);
-        });
+
+            function isMobile() {
+                return /Mobi|Android/i.test(navigator.userAgent);
+            }
+
+            const paracosmsLink = document.getElementById('paracosms');
+            if (isMobile() && paracosmsLink) {
+                paracosmsLink.style.display = 'none';
+            }
+        });    
     </script>
 </body>
 

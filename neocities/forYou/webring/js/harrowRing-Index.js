@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const linkContent = site.siteButton
             ? `<img src="${site.siteButton}" alt="${site.webmasterName}'s Site Button" class="siteButton">`
-            : site.url.replace(/^https?:\/\//, "").replace(/\/$/, ""); 
+            : site.url.replace(/^https?:\/\//, "").replace(/\/$/, "");
 
         membersHTML += `
             <div class="memberCard ${styleClass} ${site.nsfw ? "nsfw" : ""} ${site.webringOwner ? "owner" : ""}">
@@ -40,4 +40,40 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     tag.insertAdjacentHTML('afterbegin', membersHTML);
+
+    const tabLinks = document.querySelectorAll('nav a');
+    const contents = document.querySelectorAll('section');
+
+    const activateTab = (tabId) => {
+        tabLinks.forEach((tab) => {
+            const isActive = tab.getAttribute('href') === `#${tabId}`;
+            tab.classList.toggle('active', isActive);
+            tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+
+        contents.forEach((content) => {
+            const isActive = content.id === tabId;
+            content.classList.toggle('active', isActive);
+            content.style.display = isActive ? 'flex' : 'none';
+            content.setAttribute('aria-hidden', !isActive);
+        });
+    };
+
+    tabLinks.forEach((tab) => {
+        tab.addEventListener('click', (e) => {
+            e.preventDefault();
+            const tabId = tab.getAttribute('href').replace('#', '');
+            activateTab(tabId);
+
+            history.pushState(null, null, `#${tabId}`);
+        });
+    });
+
+    const initialTabId = window.location.hash ? window.location.hash.replace('#', '') : 'home';
+    activateTab(initialTabId);
+
+    window.addEventListener('popstate', () => {
+        const currentTabId = window.location.hash.replace('#', '') || 'home';
+        activateTab(currentTabId);
+    });
 });

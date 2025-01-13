@@ -29,10 +29,6 @@
 </head>
 
 <body>
-    <div id="phoneSpot">
-        <iframe id="phone" class="hidden" src="../../phone.html"></iframe>
-    </div>
-
     <button id="clear" onclick="clearAchievements();">Clear Achievements</button>
 
     <script src="achievements.js"></script>
@@ -48,7 +44,35 @@
             }
             console.log("All achievements cleared!");
         }
+
+        document.onkeypress = function (e) {
+            switch (e.key) {
+                case "q":
+                    // console.log("test");
+                    getAchievement("general", "yanShrine");
+                    break;
+                case "w":
+                    // console.log("test");
+                    getAchievement("general", "iwishyouroses");
+                    break;
+                case "e":
+                    // console.log("test");
+                    getAchievement("general", "Nice");
+                    break;
+                case "r":
+                    // console.log("gay");
+                    getAchievement("general", "Hangman");
+                    break;
+            }
+        };
+
     </script>
+
+    <div id="phoneSpot">
+        <iframe id="phone" class="hidden" src="/phonePages/phone.html"
+            title="IdolLine Interactive Phone: Games, Tools, and Navigation!" role="application"></iframe>
+    </div>
+    <script src="/js/phoneDisplayScript.js"></script>
 </body>
 
 </html>

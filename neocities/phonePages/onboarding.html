@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phone Screen: Onboarding</title>
+    <title>Phone App: Onboarding</title>
 
-    <link href="/css/palette.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/css/globals.css" rel="stylesheet" type="text/css" media="all">
     <link href="css/phoneGlobals.css" rel="stylesheet" type="text/css" media="all">
 
     <link href="css/onboarding.css" rel="stylesheet" type="text/css" media="all">
@@ -59,8 +59,7 @@
         <div class="centralWrapper">
             <div style="display: flex; flex-flow: column nowrap;">
                 <h2 id="top">Pick an Icon!</h2>
-                <p>If you have any icon recommendations, send us a message on IdolMessenger! <heartMoji>
-                    </heartMoji>
+                <p> You'll be able to upload a custom one later! <heartMoji></heartMoji>
                 </p>
             </div>
             <hr>
@@ -169,7 +168,7 @@
                     <img src="themeSwitcherPreviews/Base.png" loading="lazy">
                     <caption>Fairy Dust</caption>
                 </button>
-            
+
                 <button id="darkModeSwitch" class="themePreview" data-theme="dark">
                     <img src="themeSwitcherPreviews/Dark.png" loading="lazy">
                     <caption>Empty Dream</caption>
@@ -215,7 +214,7 @@
 
         <div id="OBCentralWrapper" class="centralWrapper">
             <p>Welcome to the</p>
-            <h1>IdolLine</h1>
+            <img id="idolLineType" src="/Assets/myAssets/idolLineLogo/IdolLineType.png">
             <p>universe! </p>
         </div>
 
@@ -241,7 +240,7 @@
 
         <div id="OBCentralWrapper" class="centralWrapper">
             <p>Use your new phone to navigate the site! It will be present in the bottom right corner of every page.</p>
-            <img id="navIcon" src="/Assets/customNavIcons/navIcon.png">
+            <img id="navIcon" src="/Assets/myAssets/appIcons/navIcon.png">
         </div>
 
         <footer>
@@ -364,11 +363,11 @@
             <p>
                 Thank you for willingly choosing
             </p>
-            <h1>IdolLine</h1>
+            <img id="idolLineType" src="/Assets/myAssets/idolLineLogo/IdolLineType.png">
             <strong>We hope you enjoy your stay!</strong>
 
             <button id="enter">
-                <iconify-icon icon="mingcute:star-fill"></iconify-icon> It wasn't willingly... <iconify-icon
+                <iconify-icon icon="mingcute:star-fill"></iconify-icon> Begin space travel! <iconify-icon
                     icon="mingcute:star-fill"></iconify-icon>
             </button>
         </div>
@@ -378,13 +377,6 @@
     <script src="js/themeSwitcher.js"></script>
     <script>
         // Name Stuff
-
-        window.addEventListener('load', () => {
-            if (localStorage.getItem('userName')) {
-                parent.document.getElementById('phoneScreen').src = 'homepage.html';
-            }
-        });
-
         // Attemping validation without a button
         let debounceTimer;
 
@@ -425,7 +417,6 @@
         }
 
         // Screen Selection 
-
         let currentOnboardingPage = 0;
         const wrappers = document.querySelectorAll('.wrapper');
 
@@ -440,14 +431,12 @@
                 const nameInput = document.getElementById("nameInput").value.trim();
                 const keepItSweet = document.getElementById('keepItSweet');
 
-                // Check if the name input is valid
                 if (!nameInput) {
                     keepItSweet.textContent = "Please enter your name to continue.";
                     keepItSweet.style.color = "red";
-                    return; // Stop progression
+                    return;
                 }
 
-                // Save the name if not already saved
                 if (!localStorage.getItem('userName') || localStorage.getItem('userName') !== nameInput) {
                     localStorage.setItem('userName', nameInput);
                     keepItSweet.textContent = `It's nice to meet you, ${nameInput}!`;
@@ -482,7 +471,6 @@
                 }
             });
         }
-
 
         document.addEventListener('swiped-right', () => {
             currentOnboardingPage = (currentOnboardingPage > 0) ? currentOnboardingPage - 1 : wrappers.length - 1;

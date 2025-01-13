@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paracosms</title>
+
+    <link href="/css/globals.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" href="css/paracosmsBase.css">
+    <link rel="stylesheet" href="css/tablet.css">
+
+    <meta name="description" content="Where all of my stories come to light!" />
+    <link rel="icon" type="image/x-icon" href="/Assets/pixels/magicalgirls/confetti.webp">
+
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+</head>
+
+<body>
+    <div class="overlay">
+    </div>
+    <div id="severanceSolarSystem" class="celestialObject">
+        <a id="sun" class="planet">
+            <span class="label">Severance Solar System</span>
+        </a>
+        <div id="severanceOrbit" class="orbit">
+            <a id="severance" class="planet">
+                <span class="label">
+                    <iconify-icon icon="game-icons:tiara"></iconify-icon>
+                    Severance</span>
+            </a>
+
+            <div id="eMajorOrbit" class="orbit">
+                <a id="earthaMajor" class="planet">
+                    <span class="label">Eartha Major</span>
+                </a>
+
+                <div id="koaOrbit" class="orbit">
+                    <a id="koa" class="planet">
+                        <span class="label">Koa</span>
+                    </a>
+
+                    <div id="bellavueOrbit" class="orbit">
+                        <a id="bellavue" class="planet">
+                            <span class="label">Bellavue</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div id="someStation" class="celestialObject">
+    <a class="celestial-object spaceStation" id="station1">
+            <span class="label">Some Space Station</span>
+        </a> 
+    </div> -->
+
+    <!-- <div id="someMeteor" class="celestialObject">
+        <a class="celestialObject meteor" id="meteor1">
+            <span class="label">Some Meteor</span>
+        </a>
+    </div> -->
+
+    <div id="sciFiTablet">
+        <div id="tabletBranding" class="sciFi">
+            <h1 class="logo">Cristalize</h1>
+            <p>by DolcetTech</p>
+        </div>
+        <div id="mainWrapper">
+            <div id="tabletMain" class="sciFi">
+                <div id="hudButtons">
+                    <button id="closeTablet"></button>
+                    <button></button>
+                    <button></button>
+                </div>
+
+                <div class="contentWrapper">
+                    <div class="blackFiller"></div>
+                    <div class="crashOverlay">
+                        <div style="display: flex;">
+                            <iconify-icon icon="material-symbols:warning-outline"></iconify-icon>
+                            <h1>Critical Error</h1>
+                            <iconify-icon icon="material-symbols:warning-outline"></iconify-icon>
+                        </div>
+                        <p class="glitch-text" data-text="The Cristalize tablet has encountered a fatal error. Restart sequence
+                        initiated.">The Cristalize tablet has encountered a fatal error. Restart sequence
+                            initiated.</p>
+                    </div>
+                    <div class="details"></div>
+
+                    <div class="content">
+                        <h2 id="planetName"></h2>
+                        <div id="txtWrapper">
+                            <p id="planetDescription"></p>
+                            <a id="seeMore" href="">Go to official page!</a>
+                        </div>
+                        <img id="planetPreview" src="">
+                    </div>
+                </div>
+            </div>
+            <div id="tabletAside" class="sciFi">
+                <div class="contentWrapper">
+                    <div class="blackFiller"></div>
+                    <div class="details"></div>
+                    <div class="crashOverlay">
+                        <div style="display: flex;">
+                            <iconify-icon icon="material-symbols:warning-outline"></iconify-icon>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <h2>Settings</h2>
+                        <div id="buttonWrapper">
+                            <button id="darkMode" class="settingsButton">Theme Toggle</button>
+                            <button id="random" class="settingsButton">Random Planet</button>
+                            <button id="party" class="settingsButton">Party!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="phoneSpot">
+        <iframe id="phone" class="hidden" src="/phonePages/phone.html"
+            title="IdolLine Interactive Phone: Games, Tools, and Navigation!" role="application"></iframe>
+    </div>
+    <script src="/js/phoneDisplayScript.js"></script>
+
+    <script src="js/paracosms.js"></script>
+    <script src="js/tablet.js"></script>
+    <script src="/phonePages/js/achievements/achievements.js"></script>
+</body>
+
+<audio id="outerSpace" autoplay loop>
+    <source src="https://files.catbox.moe/zvp1ty.mp3">
+</audio>
+
+</html>

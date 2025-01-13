@@ -1,0 +1,64 @@
+:root {
+    --bubblegum: #ffb7ed;
+    --dustyPink: #f6bdd1;
+    --rosette: #ffbbc5;
+    --persian: #f283b6;
+    --kangel: #c3a3f6;
+    --hintofmist: #f1efff;
+    --whispermist: #dbd8f0;
+    --driedBlood: #8B575c;
+    --pinkIce: #f6e4f6;
+    --ash: #cad2c5;
+    --water: #adcaff;
+    --deepsea: #357ce6;
+    --roseRed: #C71227;
+    --rosePink: #FB003F;
+    --blood: #800000;
+    --deepslate: #696969;
+    --cobblestone: #a8a8a8;
+}
+
+.ss01 {
+    font-feature-settings: "ss01" 1;
+}
+
+.ss04 {
+    font-feature-settings: "ss04" 1;
+}
+
+.ss08 {
+    font-feature-settings: "ss08" 1;
+}
+
+.ss09 {
+    font-feature-settings: "ss09" 1;
+}
+
+/* & Titular h1 */
+
+#androses {
+    font-family: Maddison;
+    letter-spacing: -5px;
+    color: var(--dustyPink);
+}
+
+#androses span {
+    font-size: 4vw;
+    margin: 0;
+}
+
+/* <h1 id="androses" class="textshadow">
+                <span style="padding-right: 10px;">I</span>
+                <span>w</span>
+                <span>i</span>
+                <span>s</span>
+                <span class="ss01">h</span>
+                <span>y</span>
+                <span>o</span>
+                <span class="ss01">u</span>
+                <span>r</span>
+                <span>o</span>
+                <span>s</span>
+                <span>e</span>
+                <span class="ss04">s</span>
+            </h1> */

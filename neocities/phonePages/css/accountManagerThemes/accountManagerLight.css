@@ -1,0 +1,21 @@
+nav {
+    background-color: var(--periwinkle);
+    border: 1px solid black;
+}
+
+#uploadPreview {
+    background-color: var(--periwinkle);
+    border: 1px solid black;
+}
+
+a:hover, a:active {
+    color: var(--nightSky)
+}
+
+a.active {
+    color: var(--wisteria)
+}
+
+footer {
+    background: var(--spaceDust);
+}

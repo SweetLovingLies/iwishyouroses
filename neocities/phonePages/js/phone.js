@@ -1,6 +1,63 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // ~ Onboarding
+    const phoneScreen = document.getElementById('phoneScreen');
+    const homeButton = document.getElementById('homeButton');
 
-    // Clock
+    if (!phoneScreen) {
+        return;
+    }
+
+    let startupFlag = sessionStorage.getItem('startedUp') === 'true';
+
+    // Check if a custom URL is already set in the iframe
+    const defaultSrc = phoneScreen.getAttribute('src'); // Save the initial src attribute
+
+    if (!startupFlag) {
+        phoneScreen.src = 'startup.html';
+        homeButton.classList.add('disabled');
+        homeButton.style.pointerEvents = 'none';
+
+        sessionStorage.setItem('startedUp', 'true');
+
+        setTimeout(() => {
+            // Override with custom URL if provided
+            if (defaultSrc && defaultSrc !== 'startup.html') {
+                phoneScreen.src = defaultSrc;
+            } else if (localStorage.getItem('userName') && localStorage.getItem('selectedIcon')) {
+                phoneScreen.src = 'homepage.html';
+            } else {
+                phoneScreen.src = 'onboarding.html';
+            }
+            updateHomeButtonState();
+        }, 5000); // ! Adjust as needed
+    } else {
+        // Override with custom URL if provided
+        if (defaultSrc && defaultSrc !== 'startup.html') {
+            phoneScreen.src = defaultSrc;
+        } else if (localStorage.getItem('userName') && localStorage.getItem('selectedIcon')) {
+            phoneScreen.src = 'homepage.html';
+        } else {
+            phoneScreen.src = 'onboarding.html';
+        }
+    }
+
+    function updateHomeButtonState() {
+        if (phoneScreen.src.includes('onboarding.html') || phoneScreen.src.includes('startup.html')) {
+            homeButton.classList.add('disabled');
+            homeButton.style.pointerEvents = 'none';
+        } else {
+            homeButton.classList.remove('disabled');
+            homeButton.style.pointerEvents = 'auto';
+        }
+    }
+
+    phoneScreen.addEventListener('load', updateHomeButtonState);
+});
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    // ~ Clock
     function updateTime() {
         const timeDisplay = document.getElementById('time');
         if (!timeDisplay) return;
@@ -13,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     setInterval(updateTime);
 
-    // Weather
+    // ~ Weather
 
     const weatherData = {
         summer: {
@@ -73,7 +130,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         return forecast;
     }
-
 
     function displayForecast(forecast) {
         const forecastContainer = document.getElementById('forecastContainer');
@@ -175,7 +231,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // }, 50);
 });
 
-// Homepage button
+// ~ Homepage button
 
 function homeButton() {
     const iframe = document.getElementById('phoneScreen');

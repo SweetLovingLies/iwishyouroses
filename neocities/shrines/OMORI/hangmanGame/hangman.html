@@ -7,9 +7,9 @@
     <title>HANGMAN</title>
 
     <link href="css/hangman.css" rel="stylesheet">
-    <meta name="description" content="A happy place, A quiet place." />
+    <meta name="description" content="Do you want to play a game?" />
 
-    <link rel="icon" type="image/x-icon" href="../assets/STRANGER.png">
+    <link rel="icon" type="image/x-icon" href="assets/keys/keyH.png">
 
     <style>
         #phoneSpot {
@@ -62,208 +62,204 @@
                 <div id="instructions">
                     <p>Collect the KEYS to fill in the blanks.</p>
                     <p>Incorrect KEYS will be discarded to the right.</p>
+                    <p style="text-decoration: underline 1px;">WIP! Not all keys are hidden yet.</p>
                 </div>
                 <div id="keysList" class="columnFlex">
-                    <p style="text-decoration: underline 1px;">WIP! Not all keys are distributed yet.</p>
-                    <br>
-                    <div class="key-item">
-                        <img class="keypreview" src="assets/keys/keyA.png">
-                        <label for="keyA"></label>
-                        <input type="checkbox" id="checkboxA" disabled>
-                        <label for="checkboxA" class="checkbox-label"></label>
-                    </div>
+                    <div id="listContainer">
+                        <div class="key-item">
+                            <img class="keypreview" src="assets/keys/keyA.png">
+                            <label for="keyA"><p>Hi! I'm a marquee! Where am I?</p></label>
+                            <input type="checkbox" id="checkboxA" disabled>
+                            <label for="checkboxA" class="checkbox-label"></label>
+                        </div>
 
-                    <div class="key-item">
-                        <img class="keypreview" src="assets/keys/keyB.png">
-                        <label for="keyB">I love you so so so so much</label>
-                        <input type="checkbox" id="checkboxB" disabled>
-                        <label for="checkboxB" class="checkbox-label"></label>
-                    </div>
+                        <div class="key-item">
+                            <img class="keypreview" src="assets/keys/keyB.png">
+                            <label for="keyB">I love you so so so so much</label>
+                            <input type="checkbox" id="checkboxB" disabled>
+                            <label for="checkboxB" class="checkbox-label"></label>
+                        </div>
 
-                    <div class="key-item">
-                        <img class="keypreview" src="assets/keys/keyC.png">
-                        <label for="keyC"></label>
-                        <input type="checkbox" id="checkboxC" disabled>
-                        <label for="checkboxC" class="checkbox-label"></label>
-                    </div>
+                        <div class="key-item">
+                            <img class="keypreview" src="assets/keys/keyC.png">
+                            <label for="keyC">And now for our sponsers!</label>
+                            <input type="checkbox" id="checkboxC" disabled>
+                            <label for="checkboxC" class="checkbox-label"></label>
+                        </div>
 
-                    <div class="key-item">
-                        <img class="keypreview" src="assets/keys/keyD.png">
-                        <label for="keyD"></label>
-                        <input type="checkbox" id="checkboxD" disabled>
-                        <label for="checkboxD" class="checkbox-label"></label>
-                    </div>
+                        <div class="key-item">
+                            <img class="keypreview" src="assets/keys/keyD.png">
+                            <label for="keyD">1st of the month</label>
+                            <input type="checkbox" id="checkboxD" disabled>
+                            <label for="checkboxD" class="checkbox-label"></label>
+                        </div>
 
-                    <div class="key-item">
-                        <img class="keypreview" src="assets/keys/keyE.png">
-                        <label for="keyE"></label>
-                        <input type="checkbox" id="checkboxE" disabled>
-                        <label for="checkboxE" class="checkbox-label"></label>
-                    </div>
+                        <div class="key-item">
+                            <img class="keypreview" src="assets/keys/keyE.png">
+                            <label for="keyE">Home is where the heart is</label>
+                            <input type="checkbox" id="checkboxE" disabled>
+                            <label for="checkboxE" class="checkbox-label"></label>
+                        </div>
 
-                    <div class="key-item">
-                        <img class="keypreview" src="assets/keys/keyF.png">
-                        <label for="keyF"></label>
-                        <input type="checkbox" id="checkboxF" disabled>
-                        <label for="checkboxF" class="checkbox-label"></label>
-                    </div>
+                        <div class="key-item">
+                            <img class="keypreview" src="assets/keys/keyF.png">
+                            <label for="keyF"></label>
+                            <input type="checkbox" id="checkboxF" disabled>
+                            <label for="checkboxF" class="checkbox-label"></label>
+                        </div>
 
-                    <div class="key-item">
-                        <img class="keypreview" src="assets/keys/keyG.png">
-                        <label for="keyG"></label>
-                        <input type="checkbox" id="checkboxG" disabled>
-                        <label for="checkboxG" class="checkbox-label"></label>
-                    </div>
+                        <div class="key-item">
+                            <img class="keypreview" src="assets/keys/keyG.png">
+                            <label for="keyG"></label>
+                            <input type="checkbox" id="checkboxG" disabled>
+                            <label for="checkboxG" class="checkbox-label"></label>
+                        </div>
 
-                    <div class="key-item">
-                        <img class="keypreview" src="assets/keys/keyH.png">
-                        <label for="keyH"></label>
-                        <input type="checkbox" id="checkboxH" disabled>
-                        <label for="checkboxH" class="checkbox-label"></label>
-                    </div>
+                        <div class="key-item">
+                            <img class="keypreview" src="assets/keys/keyH.png">
+                            <label for="keyH"></label>
+                            <input type="checkbox" id="checkboxH" disabled>
+                            <label for="checkboxH" class="checkbox-label"></label>
+                        </div>
 
-                    <div class="key-item">
-                        <img class="keypreview" src="assets/keys/keyI.png">
-                        <label for="keyI">In the beginning... There were few.</label>
-                        <input type="checkbox" id="checkboxI" disabled>
-                        <label for="checkboxI" class="checkbox-label"></label>
-                    </div>
+                        <div class="key-item">
+                            <img class="keypreview" src="assets/keys/keyI.png">
+                            <label for="keyI"></label>
+                            <input type="checkbox" id="checkboxI" disabled>
+                            <label for="checkboxI" class="checkbox-label"></label>
+                        </div>
 
-                    <div class="key-item">
-                        <img class="keypreview" src="assets/keys/keyJ.png">
-                        <label for="keyJ"></label>
-                        <input type="checkbox" id="checkboxJ" disabled>
-                        <label for="checkboxJ" class="checkbox-label"></label>
-                    </div>
+                        <div class="key-item">
+                            <img class="keypreview" src="assets/keys/keyJ.png">
+                            <label for="keyJ"></label>
+                            <input type="checkbox" id="checkboxJ" disabled>
+                            <label for="checkboxJ" class="checkbox-label"></label>
+                        </div>
 
-                    <div class="key-item">
-                        <img class="keypreview" src="assets/keys/keyK.png">
-                        <label for="keyK"> Internet Angel!</label>
-                        <input type="checkbox" id="checkboxK" disabled>
-                        <label for="checkboxK" class="checkbox-label"></label>
-                    </div>
+                        <div class="key-item">
+                            <img class="keypreview" src="assets/keys/keyK.png">
+                            <label for="keyK">Internet Angel!</label>
+                            <input type="checkbox" id="checkboxK" disabled>
+                            <label for="checkboxK" class="checkbox-label"></label>
+                        </div>
 
-                    <div class="key-item">
-                        <img class="keypreview" src="assets/keys/keyL.png">
-                        <label for="keyL"></label>
-                        <input type="checkbox" id="checkboxL" disabled>
-                        <label for="checkboxL" class="checkbox-label"></label>
-                    </div>
+                        <div class="key-item">
+                            <img class="keypreview" src="assets/keys/keyL.png">
+                            <label for="keyL"></label>
+                            <input type="checkbox" id="checkboxL" disabled>
+                            <label for="checkboxL" class="checkbox-label"></label>
+                        </div>
 
-                    <div class="key-item">
-                        <img class="keypreview" src="assets/keys/keyM.png">
-                        <label for="keyM"></label>
-                        <input type="checkbox" id="checkboxM" disabled>
-                        <label for="checkboxM" class="checkbox-label"></label>
-                    </div>
+                        <div class="key-item">
+                            <img class="keypreview" src="assets/keys/keyM.png">
+                            <label for="keyM"></label>
+                            <input type="checkbox" id="checkboxM" disabled>
+                            <label for="checkboxM" class="checkbox-label"></label>
+                        </div>
 
-                    <div class="key-item">
-                        <img class="keypreview" src="assets/keys/keyN.png">
-                        <label for="keyN"></label>
-                        <input type="checkbox" id="checkboxN" disabled>
-                        <label for="checkboxN" class="checkbox-label"></label>
-                    </div>
+                        <div class="key-item">
+                            <img class="keypreview" src="assets/keys/keyN.png">
+                            <label for="keyN"></label>
+                            <input type="checkbox" id="checkboxN" disabled>
+                            <label for="checkboxN" class="checkbox-label"></label>
+                        </div>
 
-                    <div class="key-item">
-                        <img class="keypreview" src="assets/keys/keyO.png">
-                        <label for="keyO"></label>
-                        <input type="checkbox" id="checkboxO" disabled>
-                        <label for="checkboxO" class="checkbox-label"></label>
-                    </div>
+                        <div class="key-item">
+                            <img class="keypreview" src="assets/keys/keyO.png">
+                            <label for="keyO"></label>
+                            <input type="checkbox" id="checkboxO" disabled>
+                            <label for="checkboxO" class="checkbox-label"></label>
+                        </div>
 
-                    <div class="key-item">
-                        <img class="keypreview" src="assets/keys/keyP.png">
-                        <label for="keyP"></label>
-                        <input type="checkbox" id="checkboxP" disabled>
-                        <label for="checkboxP" class="checkbox-label"></label>
-                    </div>
+                        <div class="key-item">
+                            <img class="keypreview" src="assets/keys/keyP.png">
+                            <label for="keyP"></label>
+                            <input type="checkbox" id="checkboxP" disabled>
+                            <label for="checkboxP" class="checkbox-label"></label>
+                        </div>
 
-                    <div class="key-item">
-                        <img class="keypreview" src="assets/keys/keyQ.png">
-                        <label for="keyQ"></label>
-                        <input type="checkbox" id="checkboxQ" disabled>
-                        <label for="checkboxQ" class="checkbox-label"></label>
-                    </div>
+                        <div class="key-item">
+                            <img class="keypreview" src="assets/keys/keyQ.png">
+                            <label for="keyQ"></label>
+                            <input type="checkbox" id="checkboxQ" disabled>
+                            <label for="checkboxQ" class="checkbox-label"></label>
+                        </div>
 
-                    <div class="key-item">
-                        <img class="keypreview" src="assets/keys/keyR.png">
-                        <label for="keyR"></label>
-                        <input type="checkbox" id="checkboxR" disabled>
-                        <label for="checkboxR" class="checkbox-label"></label>
-                    </div>
+                        <div class="key-item">
+                            <img class="keypreview" src="assets/keys/keyR.png">
+                            <label for="keyR"></label>
+                            <input type="checkbox" id="checkboxR" disabled>
+                            <label for="checkboxR" class="checkbox-label"></label>
+                        </div>
 
-                    <div class="key-item">
-                        <img class="keypreview" src="assets/keys/keyS.png">
-                        <label for="keyS"></label>
-                        <input type="checkbox" id="checkboxS" disabled>
-                        <label for="checkboxS" class="checkbox-label"></label>
-                    </div>
+                        <div class="key-item">
+                            <img class="keypreview" src="assets/keys/keyS.png">
+                            <label for="keyS"></label>
+                            <input type="checkbox" id="checkboxS" disabled>
+                            <label for="checkboxS" class="checkbox-label"></label>
+                        </div>
 
-                    <div class="key-item">
-                        <img class="keypreview" src="assets/keys/keyT.png" id="keyT" onclick="collectKey('T');">
-                        <label for="keyT"> You're staring right at me!</label>
-                        <input type="checkbox" id="checkboxT" disabled>
-                        <label for="checkboxT" class="checkbox-label"></label>
-                    </div>
+                        <div class="key-item">
+                            <img class="keypreview" src="assets/keys/keyT.png" id="keyT" onclick="collectKey('T');">
+                            <label for="keyT"> You're staring right at me!</label>
+                            <input type="checkbox" id="checkboxT" disabled>
+                            <label for="checkboxT" class="checkbox-label"></label>
+                        </div>
 
-                    <div class="key-item">
-                        <img class="keypreview" src="assets/keys/keyU.png">
-                        <label for="keyU"></label>
-                        <input type="checkbox" id="checkboxU" disabled>
-                        <label for="checkboxU" class="checkbox-label"></label>
-                    </div>
+                        <div class="key-item">
+                            <img class="keypreview" src="assets/keys/keyU.png">
+                            <label for="keyU"></label>
+                            <input type="checkbox" id="checkboxU" disabled>
+                            <label for="checkboxU" class="checkbox-label"></label>
+                        </div>
 
-                    <div class="key-item">
-                        <img class="keypreview" src="assets/keys/keyV.png">
-                        <label for="keyV"></label>
-                        <input type="checkbox" id="checkboxV" disabled>
-                        <label for="checkboxV" class="checkbox-label"></label>
-                    </div>
+                        <div class="key-item">
+                            <img class="keypreview" src="assets/keys/keyV.png">
+                            <label for="keyV"></label>
+                            <input type="checkbox" id="checkboxV" disabled>
+                            <label for="checkboxV" class="checkbox-label"></label>
+                        </div>
 
-                    <div class="key-item">
-                        <img class="keypreview" src="assets/keys/keyW.png">
-                        <label for="keyW"></label>
-                        <input type="checkbox" id="checkboxW" disabled>
-                        <label for="checkboxW" class="checkbox-label"></label>
-                    </div>
+                        <div class="key-item">
+                            <img class="keypreview" src="assets/keys/keyW.png">
+                            <label for="keyW"></label>
+                            <input type="checkbox" id="checkboxW" disabled>
+                            <label for="checkboxW" class="checkbox-label"></label>
+                        </div>
 
-                    <div class="key-item">
-                        <img class="keypreview" src="assets/keys/keyX.png">
-                        <label for="keyX"></label>
-                        <input type="checkbox" id="checkboxX" disabled>
-                        <label for="checkboxX" class="checkbox-label"></label>
-                    </div>
+                        <div class="key-item">
+                            <img class="keypreview" src="assets/keys/keyX.png">
+                            <label for="keyX"></label>
+                            <input type="checkbox" id="checkboxX" disabled>
+                            <label for="checkboxX" class="checkbox-label"></label>
+                        </div>
 
-                    <div class="key-item">
-                        <img class="keypreview" src="assets/keys/keyY.png">
-                        <label for="keyY">You shouldn't be here</label>
-                        <input type="checkbox" id="checkboxY" disabled>
-                        <label for="checkboxY" class="checkbox-label"></label>
-                    </div>
+                        <div class="key-item">
+                            <img class="keypreview" src="assets/keys/keyY.png">
+                            <label for="keyY">Let's take a breather</label>
+                            <input type="checkbox" id="checkboxY" disabled>
+                            <label for="checkboxY" class="checkbox-label"></label>
+                        </div>
 
-                    <div class="key-item">
-                        <img class="keypreview" src="assets/keys/keyZ.png">
-                        <label for="keyZ"></label>
-                        <input type="checkbox" id="checkboxZ" disabled>
-                        <label for="checkboxZ" class="checkbox-label"></label>
+                        <div class="key-item">
+                            <img class="keypreview" src="assets/keys/keyZ.png">
+                            <label for="keyZ">You shouldn't be here</label>
+                            <input type="checkbox" id="checkboxZ" disabled>
+                            <label for="checkboxZ" class="checkbox-label"></label>
+                        </div>
                     </div>
-                    <div><img id="downTriangle" src="assets/hangman/downtriangle.png" alt="You can scroll here!">
-                    </div>
+                    <img id="scrollTriangle" src="assets/hangman/downtriangle.png" alt="You can scroll here!">
                 </div>
-
 
             </div>
             <div id="hangmanContainer" class="columnFlex">
                 <div id="incorrectLetters"></div>
                 <canvas id="hangmanCanvas" width="200" height="250"></canvas>
-                <button id="localStorageClear" onclick="clearLocalStorage()">Restart the Game?</button>
+                <button id="restartGame" onclick="restartGame()">Restart the Game?</button>
             </div>
         </div>
         <div id="hangmanWord"></div>
     </div>
-
-    <script src="js/keyCollectScript.js"></script>
-    <script src="js/hangman.js"></script>
 
     <button id="debugButton">Show Debug</button>
     <div id="debug">
@@ -301,84 +297,16 @@
         <button id="collectALLButton">COLLECT ALL </button>
 
     </div>
+
     <div id="phoneSpot">
         <iframe id="phone" class="hidden" src="/phonePages/phone.html"></iframe>
     </div>
-
     <script src="/js/phoneDisplayScript.js"></script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
+    <script src="/phonePages/js/achievements/achievements.js"></script>
 
-            function clearLocalStorage() {
-                localStorage.clear();
-                alert('Your local storage has been cleared. Begin again.');
-                location.reload();
-            }
-
-            function updateDownTrianglePosition() {
-                const keysList = document.getElementById('keysList');
-                const downTriangle = document.getElementById('downTriangle');
-
-                const keysListRect = keysList.getBoundingClientRect();
-                const offsetX = keysListRect.right - downTriangle.offsetWidth - 15;
-                const offsetY = keysListRect.bottom - downTriangle.offsetHeight - 15;
-
-                downTriangle.style.left = `${offsetX}px`;
-                downTriangle.style.top = `${offsetY}px`;
-
-            }
-
-            window.addEventListener('scroll', updateDownTrianglePosition);
-            window.addEventListener('resize', updateDownTrianglePosition);
-            document.addEventListener('DOMContentLoaded', updateDownTrianglePosition);
-
-            var debugButton = document.getElementById('debugButton');
-            var debug = document.getElementById('debug');
-
-            debugButton.addEventListener('click', function () {
-                if (debug.style.display === 'block') {
-                    debug.style.display = 'none';
-                    debugButton.textContent = 'Show Debug';
-                } else {
-                    debug.style.display = 'block';
-                    debugButton.textContent = 'Hide Debug';
-                }
-            });
-
-            const collectAthruJButton = document.getElementById('collectAthruJButton');
-            const collectDFCButton = document.getElementById('collectDFCButton');
-            const collectDFC2Button = document.getElementById('collectDFC2Button');
-            const collectALLButton = document.getElementById('collectALLButton');
-            const collectWTButton = document.getElementById('collectWTButton');
-
-            collectAthruJButton.addEventListener('click', () => {
-                const keysToCollect = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
-                keysToCollect.forEach(key => collectKey(key));
-                location.reload();
-            });
-            collectDFCButton.addEventListener('click', () => {
-                const keysToCollect = ['D', 'A', 'F', 'I', 'R', 'Y', 'C', 'L'];
-                keysToCollect.forEach(key => collectKey(key));
-                location.reload();
-            });
-            collectDFC2Button.addEventListener('click', () => {
-                const keysToCollect = ['D', 'E', 'A', 'F', 'R', 'Y', 'C', 'L'];
-                keysToCollect.forEach(key => collectKey(key));
-                location.reload();
-            });
-            collectALLButton.addEventListener('click', () => {
-                const keysToCollect = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-                keysToCollect.forEach(key => collectKey(key));
-                location.reload();
-            });
-            collectWTButton.addEventListener('click', () => {
-                const keysToCollect = ['C', 'E', 'L', 'M', 'N', 'O', 'W'];
-                keysToCollect.forEach(key => collectKey(key));
-                location.reload();
-            });
-        });
-    </script>
+    <script src="js/keyCollectScript.js"></script>
+    <script src="js/hangman.js"></script>
 </body>
 
 </html>
