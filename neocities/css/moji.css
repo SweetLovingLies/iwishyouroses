@@ -47,6 +47,9 @@ pinkNewMoji {
     width: 29px;
     height: 8px;
 
+    background-color: white;
+    border-radius: 3px;
+
     vertical-align: text-bottom;
     user-select: none;
 }
@@ -55,6 +58,9 @@ purpleNewMoji {
     background: url("/Assets/pixels/other/new!.gif") no-repeat;
     width: 29px;
     height: 8px;
+
+    background-color: white;
+    border-radius: 3px;
 
     vertical-align: text-bottom;
     user-select: none;

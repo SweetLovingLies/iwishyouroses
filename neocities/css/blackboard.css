@@ -29,6 +29,8 @@ main {
 
     overflow: auto;
 
+    font-family: chalk;
+    font-size: 1.5em;
 }
 
 .update {
@@ -42,14 +44,19 @@ h1 {
 }
 
 h2 {
-    font-family: chalk;
-    font-size: 1.7em;
+    font-family: chalkcursive;
+    font-size: 3em;
     font-weight: normal;
+
+    color: var(--persian);
+
+    margin: 10px 0;
 }
 
-p {
-    font-family: chalk;
-    font-size: 1.5em;
+h3 {
+    font-size: 1.1em;
+    font-weight: normal;
+    margin-bottom: 5px;
 }
 
 .chalkLine {
@@ -75,4 +82,16 @@ p {
     right: 0.4em;
     top: 0.2em;
     font-size: 6em;
+}
+
+ul {
+    margin: 10px 0;
+}
+
+li.two {
+    padding-left: 1em;
+}
+
+li.three {
+    padding-left: 2em;
 }

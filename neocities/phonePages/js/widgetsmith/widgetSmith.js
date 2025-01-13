@@ -29,8 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // & Helper Functions
 
     function getStoredWidgets() {
-        var w = parseInt(localStorage.getItem('widgetId')) || 1; 
-        return w;
+        return parseInt(localStorage.getItem('widgetId')) || 1; 
     }
 
     function toggleCustomizeSection() {
@@ -63,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateWidgetBtn() {
-        const savedWidgets = getStoredWidgets();
+        const savedWidgets = JSON.parse(localStorage.getItem('widgets')) || [];
         createNewWidgetButton.style.display = savedWidgets >= 1 ? 'none' : 'block';
     }
 
@@ -75,7 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function clearAllWidgets() {
         localStorage.removeItem('widgets');
         localStorage.removeItem('widgetId');
-        alert('All widgets cleared!');
         window.location.reload();
         updateWidgetBtn();
     }
@@ -137,7 +135,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function saveWidget() {
         if (!selectedImageURL) {
-            alert('Please select an image to save the widget.');
             return;
         }
 
@@ -156,8 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const savedWidgets = JSON.parse(localStorage.getItem('widgets')) || [];
 
-        if (savedWidgets.length >= 5) {
-            alert('Maximum number of widgets reached!');
+        if (savedWidgets.length >= 1) {
             return;
         }
 
@@ -169,7 +165,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         updateWidgetDSP(widgetSettings);
 
-        alert('Widget saved!');
         toggleCustomizeSection();
         resetPreview();
         updateWidgetBtn();
@@ -202,7 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const shapeStyle = shapeStyles[widgetSettings.shape] || { clipPath: 'none', mask: 'none' };
         widgetClone.style.clipPath = shapeStyle.clipPath;
         widgetClone.style.mask = shapeStyle.mask;
-        widgetClone.style.filter = widgetSettings.filterValue; // Apply custom filter
+        widgetClone.style.filter = widgetSettings.filterValue; 
 
         const editButton = document.createElement('button');
         editButton.innerHTML = '<iconify-icon icon="fa:gear"></iconify-icon>';
@@ -261,16 +256,13 @@ document.addEventListener('DOMContentLoaded', () => {
             widgetSettings.filterValue = filterMap[editFilterInput.value] || 'none';
             widgetSettings.shape = editShapeInput.value;
 
-            // Update widget settings in localStorage
             updateWidgetSettings(widgetSettings);
 
-            // Apply the changes to the preview object
             const editWidgetObject = document.getElementById('editWidgetObject');
             updateWidgetPV(editWidgetObject, widgetSettings.shape, widgetSettings.filterName);
 
-            alert('Widget updated!');
             toggleEditSection(false);
-            window.location.reload(); // Reload to reflect changes
+            window.location.reload();
         });
 
         document.getElementById('deleteWidget').addEventListener('click', () => {
@@ -282,11 +274,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     savedWidgets.splice(widgetIndex, 1);
                     localStorage.setItem('widgets', JSON.stringify(savedWidgets));
 
-                    alert('Widget deleted!');
                     toggleEditSection(false);
                     window.location.reload();
                 } else {
-                    alert('Widget not found!');
+                    return
                 }
             }
         });

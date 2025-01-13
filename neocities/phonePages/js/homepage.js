@@ -109,12 +109,20 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     const savedWidgets = JSON.parse(localStorage.getItem('widgets')) || [];
     const homepage1 = document.getElementById('homepage1');
-    const appWrapper = document.querySelector('.appWrapper');
+    const appWrapper = homepage1.querySelector('.appWrapper');
 
-    updateLayout(savedWidgets);
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+    console.log(isSafari);
+
+    if (isSafari) {
+        handleSafariFallback();
+    } else {
+        updateLayout(savedWidgets);
+    }
 
     function updateLayout(widgets) {
-        const flexWrapper = document.querySelector('.flexWrapper');
+        const flexWrapper = appWrapper.querySelector('.flexWrapper');
         const appIconsHTML = `
             <a href="nav.html" class="app" onclick="openApp(event, this)">
                 <div class="appIcon">
@@ -133,14 +141,14 @@ document.addEventListener("DOMContentLoaded", function () {
         if (widgets.length > 0) {
             if (!flexWrapper) {
                 const newFlexWrapper = document.createElement('div');
-                newFlexWrapper.classList.add = 'flexWrapper';
+                newFlexWrapper.classList.add('flexWrapper');
             
                 const widgetColumn = document.createElement('div');
                 widgetColumn.classList.add('widgetColumn');
                 widgetColumn.innerHTML = `
                     <object class="widget" id="widget1" type="image/svg+xml" data="${widgets[0].data || ''}"></object>
                     <p>Widgetsmith</p>
-                ;`
+                `;
                 newFlexWrapper.appendChild(widgetColumn);
             
                 const appsColumn = document.createElement('div');
@@ -148,14 +156,67 @@ document.addEventListener("DOMContentLoaded", function () {
                 appsColumn.innerHTML = appIconsHTML;
                 newFlexWrapper.appendChild(appsColumn);
             
-                // Append to homepage1
-                homepage1.insertBefore(newFlexWrapper, homepage1.querySelector('.appWrapper').firstChild);
+                // Append to the appWrapper
+                if (appWrapper) {
+                    appWrapper.appendChild(newFlexWrapper);
+                }
             }            
         } else {
             if (flexWrapper) {
                 flexWrapper.remove();
             }
-            appWrapper.insertAdjacentHTML('afterbegin', appIconsHTML);
+            if (appWrapper) {
+                appWrapper.insertAdjacentHTML('afterbegin', appIconsHTML);
+            }
         }        
     }
+
+    function handleSafariFallback() {
+        const widgetsmithApp = document.getElementById("wsApp");
+        const flexWrapper = appWrapper.querySelector('.flexWrapper');
+        if (flexWrapper) {
+            flexWrapper.remove();
+        }
+
+    if (widgetsmithApp) {
+        widgetsmithApp.style.display = "none";
+    }
+        
+        const newFlexWrapper = document.createElement('div');
+        newFlexWrapper.classList.add('flexWrapper');
+
+        const appIconsHTML = `
+            <a href="nav.html" class="app" onclick="openApp(event, this)">
+                <div class="appIcon">
+                    <img src="/Assets/myAssets/appIcons/navIcon.png">
+                </div>
+                <p>Navigation</p>
+            </a>
+            <a href="idolMessenger.html" class="app" onclick="openApp(event, this)">
+                <div id="idolMessenger" class="appIcon">
+                    <img src="/Assets/myAssets/appIcons/idolMessengerIcon.png">
+                </div>
+                <p>Idol Messenger</p>
+            </a>
+        `;
+
+        const widgetColumn = document.createElement('div');
+        widgetColumn.classList.add('widgetColumn');
+        widgetColumn.innerHTML = `
+            <img class="widget" src="/Assets/kpop/weeekly/selcas/jihan3.jpg">
+            <p>Widgetsmith</p>
+        `;
+        newFlexWrapper.appendChild(widgetColumn);
+
+        const appsColumn = document.createElement('div');
+        appsColumn.classList.add('column1');
+        appsColumn.innerHTML = appIconsHTML;
+        newFlexWrapper.appendChild(appsColumn);
+
+        if (appWrapper) {
+            appWrapper.insertAdjacentElement('afterbegin', newFlexWrapper);
+        }
+    }
 });
+
+
