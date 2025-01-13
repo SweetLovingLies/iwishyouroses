@@ -278,7 +278,14 @@ main {
 
 #updates {
     flex: 1 1;
-    object-fit: contain;
+
+    background: url("/Assets/myAssets/Updates.png") center/contain no-repeat, url("/Assets/BGs/blackboard.jpeg") center/cover;
+
+    border-width: 11px;
+    border-style: solid;
+    border-image: url("/Assets/BGs/wood.jpg") 36 round;
+
+    cursor: pointer;
 }
 
 #webgroups,

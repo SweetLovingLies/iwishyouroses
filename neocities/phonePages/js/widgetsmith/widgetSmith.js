@@ -29,7 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // & Helper Functions
 
     function getStoredWidgets() {
-        return parseInt(localStorage.getItem('widgetId')) || 1;
+        var w = parseInt(localStorage.getItem('widgetId')) || 1; 
+        return w;
     }
 
     function toggleCustomizeSection() {
@@ -63,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateWidgetBtn() {
         const savedWidgets = getStoredWidgets();
-        createNewWidgetButton.style.display = savedWidgets.length = 1 ? 'none' : 'block';
+        createNewWidgetButton.style.display = savedWidgets >= 1 ? 'none' : 'block';
     }
 
     function loadSavedWidgets() {
