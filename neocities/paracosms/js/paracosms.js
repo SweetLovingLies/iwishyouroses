@@ -27,7 +27,7 @@ function createStars() {
 function createShootingStar() {
     const overlay = document.querySelector('.overlay');
     const shootingStar = document.createElement('img');
-    shootingStar.src = 'css/img/shootingstar.png';
+    shootingStar.src = '../css/img/shootingstar.png';
     shootingStar.classList.add('shootingstar');
 
     const startX = Math.random() * 70 - 10;
