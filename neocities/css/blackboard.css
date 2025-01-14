@@ -95,3 +95,9 @@ li.two {
 li.three {
     padding-left: 2em;
 }
+
+@media only screen and (max-width: 810px) {
+    #Stars {
+        font-size: 3em;
+    }
+}
