@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
-    console.log(isSafari);
+    // console.log(isSafari);
 
     if (isSafari) {
         handleSafariFallback();
