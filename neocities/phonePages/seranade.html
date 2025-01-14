@@ -74,7 +74,7 @@
             </button>
         </div>
 
-        <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.5" title="Volume">
+        <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.1" title="Volume">
     </main>
     <script>
         document.addEventListener('DOMContentLoaded', async function () {
@@ -153,7 +153,7 @@
             // Volume Slider
             const volumeSlider = document.getElementById('volumeSlider');
             if (volumeSlider) {
-                volumeSlider.value = audioPlayer.volume;
+                volumeSlider.value = .1;
                 volumeSlider.addEventListener('input', function () {
                     audioPlayer.volume = parseFloat(volumeSlider.value);
                     sessionStorage.setItem('songVolume', volumeSlider.value);

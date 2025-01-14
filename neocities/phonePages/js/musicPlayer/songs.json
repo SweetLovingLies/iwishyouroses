@@ -208,5 +208,61 @@
     "volume": 0.04,
     "src": "https://files.catbox.moe/0ifo0g.mp3",
     "cover": "/Assets/other/albumCovers/tenCover.jpeg"
+  },
+  {
+    "title": "Louie Bag",
+    "writer": "YEBBA, Smino",
+    "volume": 0.04,
+    "src": "https://files.catbox.moe/kc08so.mp3",
+    "cover": "/Assets/other/albumCovers/yebbaCover.jpeg"
+  },
+  {
+    "title": "Boomerang",
+    "writer": "YEBBA",
+    "volume": 0.04,
+    "src": "https://files.catbox.moe/dkcmde.mp3",
+    "cover": "/Assets/other/albumCovers/yebbaCover.jpeg"
+  },
+  {
+    "title": "Distance",
+    "writer": "YEBBA",
+    "volume": 0.04,
+    "src": "https://files.catbox.moe/b3o5nf.mp3",
+    "cover": "/Assets/other/albumCovers/yebbaCover.jpeg"
+  },
+  {
+    "title": "Foggy Windows",
+    "writer": "Vana",
+    "volume": 0.04,
+    "src": "https://files.catbox.moe/2f10xv.mp3",
+    "cover": "/Assets/other/albumCovers/foggyWindowsCover.jpeg"
+  },
+  {
+    "title": "PLAYBOi",
+    "writer": "Vana, Sophie Powers",
+    "volume": 0.04,
+    "src": "https://files.catbox.moe/o9angd.mp3",
+    "cover": "/Assets/other/albumCovers/PLAYBOiCover.jpeg"
+  },
+  {
+    "title": "Pretty Boy!",
+    "writer": "Vana",
+    "volume": 0.04,
+    "src": "https://files.catbox.moe/5rl18j.mp3",
+    "cover": "/Assets/other/albumCovers/prettyBoyCover.jpeg"
+  },
+  {
+    "title": "SERPENTINE",
+    "writer": "Vana",
+    "volume": 0.04,
+    "src": "https://files.catbox.moe/kya8io.mp3",
+    "cover": "/Assets/other/albumCovers/serpentineCover.jpeg"
+  },
+  {
+    "title": "BEG!",
+    "writer": "Vana",
+    "volume": 0.04,
+    "src": "https://files.catbox.moe/tczlb2.mp3",
+    "cover": "/Assets/other/albumCovers/BEGCover.jpeg"
   }
 ]

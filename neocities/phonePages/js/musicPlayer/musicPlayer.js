@@ -76,8 +76,9 @@ function loadSong(index) {
 
         let savedTime = parseFloat(sessionStorage.getItem(`songTime_${index}`)) || 0;
 
+
         audioPlayer.src = song.src;
-        audioPlayer.volume = sessionStorage.getItem('songVolume') ? parseFloat(sessionStorage.getItem('songVolume')) : 1;
+        audioPlayer.volume = sessionStorage.getItem('songVolume') ? parseFloat(sessionStorage.getItem('songVolume')) : .1;
         audioPlayer.currentTime = savedTime;
 
         updateMetadata(index);
