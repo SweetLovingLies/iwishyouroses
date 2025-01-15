@@ -42,7 +42,7 @@
     bottom: -605px;
 
     /* ! For testing... PLEASE UPDATE */
-    /* bottom: 0; */
+    bottom: 0;
 }
 
 #phone.visible {
@@ -57,7 +57,7 @@
 <img id="idolLineFullLogo" src="/Assets/myAssets/idolLineLogo/IdolLineFullLogo.png"> 
 */
 
-bgOverlay{
+bgOverlay {
     display: block;
     position: absolute;
     top: 0;
@@ -74,7 +74,7 @@ bgOverlay{
     opacity: 30%;
 }
 
-#moon {
+bgOverlay #moon {
     position: absolute;
     top: 2px;
     right: 2px;
@@ -91,18 +91,21 @@ bgOverlay{
     0% {
         transform: rotate(0deg);
     }
+
     33% {
         transform: rotate(10deg);
     }
+
     66% {
         transform: rotate(-10deg);
     }
+
     100% {
         transform: rotate(0deg);
     }
 }
 
-#cloud1 {
+bgOverlay #cloud1 {
     position: absolute;
     top: 1em;
     left: 1em;
@@ -116,18 +119,21 @@ bgOverlay{
     0% {
         transform: rotate(0deg) translateX(0) translateY(4px);
     }
+
     33% {
         transform: rotate(5deg) translateX(3px) translateY(4px);
     }
+
     66% {
         transform: rotate(-5deg) translateX(-3px) translateY(4px);
     }
+
     100% {
         transform: rotate(0deg) translateX(0) translateY(4px);
     }
 }
 
-#cloud2 {
+bgOverlay #cloud2 {
     position: absolute;
     top: 2.5em;
     right: 4em;
@@ -141,12 +147,15 @@ bgOverlay{
     0% {
         transform: translateX(0) translateY(0);
     }
+
     33% {
         transform: translateX(0) translateY(4px);
     }
+
     66% {
         transform: translateX(0) translateY(-4px);
     }
+
     100% {
         transform: translateX(0) translateY(0);
     }
@@ -166,18 +175,21 @@ bgOverlay{
     0% {
         transform: translateX(0) translateY(0);
     }
+
     33% {
         transform: translateX(4px) translateY(0);
     }
+
     66% {
         transform: translateX(-4px) translateY(0);
     }
+
     100% {
         transform: translateX(0) translateY(0);
     }
 }
 
-#star1 {
+bgOverlay #star1 {
     position: absolute;
     top: 1em;
     left: 6em;
@@ -188,7 +200,7 @@ bgOverlay{
     transition: transform 1s ease;
 }
 
-#star2 {
+bgOverlay #star2 {
     position: absolute;
     top: 7em;
     right: 7em;
@@ -199,7 +211,7 @@ bgOverlay{
     transition: transform 1s ease;
 }
 
-bgOverlay #star1:hover, 
+bgOverlay #star1:hover,
 bgOverlay #star2:hover {
     transform: rotate(360deg);
 }
