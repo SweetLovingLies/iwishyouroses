@@ -52,6 +52,7 @@
         const tutorialDiv = document.getElementById("tutorial");
         const toggleButton = document.getElementById("toggleDiv");
     
+        // If you want a sound to play on load
         document.addEventListener("DOMContentLoaded", () => {
             const loadSound = tutorialDiv.classList.contains("active")
                 ? "https://files.catbox.moe/mena57.mp3" // Sound for active state
@@ -59,6 +60,7 @@
             playSound(loadSound);
         });
     
+        // Check if the button is clicked
         toggleButton.addEventListener("click", () => {
             const isActive = tutorialDiv.classList.contains("active");
             // toggle active class. Could also have an if statement for displaying block or not displaying, but I like using classes.
