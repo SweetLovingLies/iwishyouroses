@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound On Display</title>
+
+    <link href="/css/globals.css" rel="stylesheet" type="text/css" media="all">
+
+    <meta name="description" content="Play a sound when a div is shown and hidden" />
+
+    <style>
+        body {
+            font-family: cafesweet;
+            height: 100vh;
+
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        p {
+            max-width: 700px;
+            text-align: center;
+        }
+
+        #tutorial {
+            display: none;
+            height: 100px;
+            padding: 20px;
+            overflow: auto;
+
+            background-color: var(--rosette);
+        }
+
+        #tutorial.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="tutorial" class="active">
+        I'll play 2 different sounds when active or when hidden!
+    </div>
+    <button id="toggleDiv">Toggle Div</button>
+
+
+    <script>
+        const tutorialDiv = document.getElementById("tutorial");
+        const toggleButton = document.getElementById("toggleDiv");
+    
+        document.addEventListener("DOMContentLoaded", () => {
+            const loadSound = tutorialDiv.classList.contains("active")
+                ? "https://files.catbox.moe/mena57.mp3" // Sound for active state
+                : "https://files.catbox.moe/8zcdw3.mp3"; // Sound for hidden state
+            playSound(loadSound);
+        });
+    
+        toggleButton.addEventListener("click", () => {
+            const isActive = tutorialDiv.classList.contains("active");
+            // toggle active class. Could also have an if statement for displaying block or not displaying, but I like using classes.
+            tutorialDiv.classList.toggle("active");
+    
+            const soundSrc = isActive
+                ? "https://files.catbox.moe/8zcdw3.mp3"
+                : "https://files.catbox.moe/mena57.mp3";
+            playSound(soundSrc);
+        });
+    
+        // Function to dynamically create (and remove) an audio element
+        function playSound(src) {
+            const audio = document.createElement("audio");
+            audio.src = src;
+            audio.preload = "auto";
+            audio.play();
+    
+            // Removes it at the end of the sound effect
+            audio.addEventListener("ended", () => {
+                audio.remove();
+            });
+    
+            // Fallback just in case
+            setTimeout(() => {
+                audio.remove();
+            }, 500); 
+        }
+    </script>
+    
+</body>
+
+</html>
