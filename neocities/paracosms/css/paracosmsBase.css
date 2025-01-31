@@ -318,8 +318,8 @@ body {
 }
 
 #severance {
-    background: url(img/Severance.png);
-    background-size: contain;
+    background: url(img/Severance.png) center/contain;
+    border-radius: 0;
 
     width: 130px;
 
