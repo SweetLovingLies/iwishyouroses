@@ -427,6 +427,7 @@ function setupBreathingExercises() {
                 setTimeout(() => {
                     startBreathingCycle(true);
                 }, 4000);
+            // }, 2000000);
 
             } else {
                 stopBreathingCycle();

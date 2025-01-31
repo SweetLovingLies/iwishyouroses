@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound On Display</title>
+
+    <link href="/css/globals.css" rel="stylesheet" type="text/css" media="all">
+
+    <meta name="description" content="Play a sound when a div is shown and hidden" />
+
+    <style>
+        body {
+            font-family: cafesweet;
+            height: 100vh;
+
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        p {
+            max-width: 700px;
+            text-align: center;
+        }
+
+        #tutorial,
+        #tutorial2 {
+            display: none;
+            height: 100px;
+            padding: 20px;
+            overflow: auto;
+
+            background-color: var(--rosette);
+            border: 2px solid var(--periwinkle);
+        }
+
+        #tutorial.active,
+        #tutorial2.active {
+            display: block;
+        }
+
+        #tutorial2 {
+        }
+
+        .btn {
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="tutorial" class="active">
+        I'll play 2 different sounds when active or when hidden!
+    </div>
+    <button id="toggleDiv" class="btn">Toggle Div</button>
+
+    <div id="tutorial2">
+        Click outside of this box to close me!
+    </div>
+    <button id="toggleDiv2" class="btn">Toggle Div 2</button>
+
+
+    <script>
+        const tutorialDiv = document.getElementById("tutorial");
+        const tutorialDiv2 = document.getElementById("tutorial2");
+        const toggleButton = document.getElementById("toggleDiv");
+        const toggleDiv2Button = document.getElementById("toggleDiv2");
+
+        // If you want a sound to play on load
+        document.addEventListener("DOMContentLoaded", () => {
+            // Shorthand if-statement: If IsActive === true, play the hide sound, else, play the show sound
+            const loadSound = tutorialDiv.classList.contains("active")
+                ? "https://files.catbox.moe/mena57.mp3" // Sound for active state
+                : "https://files.catbox.moe/8zcdw3.mp3"; // Sound for hidden state
+            playSound(loadSound);
+        });
+
+        // Check if the button is clicked
+        toggleButton.addEventListener("click", () => {
+            const isActive = tutorialDiv.classList.contains("active");
+            // toggle active class. Could also have an if statement for displaying block or not displaying, but I like using classes.
+            tutorialDiv.classList.toggle("active");
+
+            // Shorthand if-statement: If IsActive === true, play the hide sound, else, play the show sound
+            const soundSrc = isActive
+                ? "https://files.catbox.moe/8zcdw3.mp3"
+                : "https://files.catbox.moe/mena57.mp3";
+            playSound(soundSrc);
+        });
+
+        // Show the second tutorial div when the button is clicked
+        toggleDiv2Button.addEventListener("click", () => {
+            const isActive = tutorialDiv2.classList.contains("active");
+            tutorialDiv2.classList.add("active");
+
+            const soundSrc = isActive
+                ? "https://files.catbox.moe/8zcdw3.mp3"
+                : "https://files.catbox.moe/mena57.mp3";
+            playSound(soundSrc);
+        });
+
+        // Close the second tutorial div when clicking outside of it
+        document.addEventListener("click", (event) => {
+            // Check if the second tutorial is active and if the click is outside the div
+            if (
+                tutorialDiv2.classList.contains("active") &&
+                !tutorialDiv2.contains(event.target) && 
+                event.target !== toggleDiv2Button // check if the click event target is in the div 
+            ) {
+                tutorialDiv2.classList.remove("active");
+                playSound("https://files.catbox.moe/8zcdw3.mp3");
+            }
+        });
+
+        // Function to dynamically create (and remove) an audio element
+        function playSound(src) {
+            const audio = document.createElement("audio");
+            audio.src = src;
+            audio.preload = "auto";
+            audio.play();
+
+            // Removes it at the end of the sound effect
+            audio.addEventListener("ended", () => {
+                audio.remove();
+            });
+
+            // Fallback just in case
+            setTimeout(() => {
+                audio.remove();
+            }, 500); // change time to match duration 
+        }
+    </script>
+
+</body>
+
+</html>
