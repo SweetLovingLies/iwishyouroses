@@ -1,3 +1,4 @@
+/* ~ Color Palettes */
 @import url("idolLine.css");
 @import url("IWYR.css");
 @import url("moji.css");
@@ -78,6 +79,12 @@
 @font-face {
     font-family: Angela;
     src: url('/fonts/Angela.otf');
+}
+
+
+@font-face {
+    font-family: cyberpunk;
+    src: url('/fonts/CyberPunk.ttf');
 }
 
 @font-face {

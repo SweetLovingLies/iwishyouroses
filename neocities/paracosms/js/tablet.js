@@ -100,43 +100,58 @@ const planets = [
     {
         id: "sun",
         name: "Severance Solar System",
-        image: "https://placehold.co/150x220/00ffcc/white",
+        imageNeeded: false,
+        image: "",
         description: "The Severance Solar System is a massively populated system of 27 different planets, most notably Eartha Major, Koa, Bellavue, and the titular planet of Severance, the hub. It has existed for trillions of years, and hosts most of the universe's population as a result. What happens in this system has an effect on almost every other paracosm in existence.",
-        link: "#"
+        linkNeeded: false,
+        link: "#",
+        UNF: true
     },
     {
         id: "severance",
         name: "Severance",
-        image: "https://placehold.co/150x220/00ffcc/white",
+        imageNeeded: true,
+        image: "/paracosms/css/img/SeveranceFlagV1.png",
         description: "Severance is the largest planet in the Severance solar system, boasting a massive 1.4 Quadrillion individual population, as well as the Queen. It controls nearly all technological advancements and has the deepest connection with the Gods because of the Queen's residence. Severance is extremely progressive overall and is entirely intolerant of any conservative belief sets.",
-        link: "#"
+        linkNeeded: true,
+        link: "#",
+        UNF: true
     },
     {
         id: "earthaMajor",
         name: "Eartha Major",
-        image: "https://placehold.co/150x220/00ffcc/white",
+        imageNeeded: true,
+        image: "/paracosms/css/img/EarthaMajorFlag.png",
         description: `After the 'Big Bang' as we know it, 2 planets with very similar structure formed, albeit different sizes. These planets became known as Eartha Minor (our planet), and Eartha Major. 
         <br>
         Eartha Major has become a massive industrial hub in the Severance solar system, as well as a major political power. It takes care of almost all intergalactic affairs and is responsible for almost all manufacturing of space-centric machinery, such as spaceships, spacesuits, and weaponry.
         <br>
         Eartha Major is known for it's violent nature and patriotism, and is not afraid to discard anything they view as unnecessary, or a hinderance. `,
-        link: "#"
+        linkNeeded: true,
+        link: "#",
+        UNF: true
     },
     {
         id: "koa",
         name: "Koa",
-        image: "https://placehold.co/150x220/00ffcc/white",
+        imageNeeded: true,
+        image: "/paracosms/css/img/KoaFlag.png",
         description: "Koa is an extremely territorial and militarist planet. Notably, it is entirely run by women. It is heavily guarded and the population is extremely prejudiced. While the planet is still liable to following the rules of the hub planet, there are many structural changes and any rules that Severance is lenient about are most likely modified on this planet.",
-        link: "#"
+        linkNeeded: true,
+        link: "#",
+        UNF: true
     },
     {
         id: "bellavue",
         name: "Bellavue",
-        image: "https://placehold.co/150x220/00ffcc/white",
+        imageNeeded: true,
+        image: "/paracosms/css/img/BellavueFlag.png",
         description: `Bellavue is a feminist, women-ran planet known for it's pink and hyperfeminine environment. Reminiscent of Barbie World, the architecture is very modern and colorful with cartoony motifs. The planet boasts a smaller population than most planets (10.2 billion), but it is a major tourist location for people from Eartha Major and other unnamed planets. 
         <br> 
         It may not look like it, but this planet is twice the size of Eartha Minor!`,
-        link: "#"
+        linkNeeded: true,
+        link: "#",
+        UNF: true
     }
 ];
 
@@ -172,6 +187,42 @@ function enablePlanetLinks() {
     document.querySelectorAll('.planet').forEach(link => {
         link.style.pointerEvents = 'auto';
     });
+}
+
+function planetInfo(planetData) {
+    if (!planetData) {
+        console.error("Invalid planet data.");
+        return;
+    }
+
+    const { name, imageNeeded, image, description, linkNeeded, link, UNF } = planetData;
+
+    planetName.textContent = name;
+    planetDescription.innerHTML = description;
+
+    if (!imageNeeded) {
+        planetPreview.style.display = "none";
+    } else {
+        planetPreview.style.display = "block";
+        planetPreview.src = image;
+    }
+
+    if (!linkNeeded) {
+        seeMore.style.display = "none";
+    } else {
+        seeMore.style.display = "block";
+        seeMore.href = link;
+    }
+
+    if (UNF) {
+        seeMore.classList.add("UNF");
+    } else {
+        seeMore.classList.remove("UNF");
+    }
+
+    if (!tablet.classList.contains('tabletShow')) {
+        showTablet();
+    }
 }
 
 function resetAnimation(element, animationClass) {
@@ -224,6 +275,7 @@ function resetTablet() {
     settingsButtons.forEach((button) => {
         button.classList.remove('fadeIn', 'fadeOut');
     });
+    seeMore.style.display = "none";
 }
 
 // & Main Functions
@@ -291,28 +343,9 @@ function hideTablet() {
 document.querySelectorAll('.planet').forEach(link => {
     link.addEventListener('click', (event) => {
         event.preventDefault();
-
         const planetId = link.id;
         const planetData = planets.find(planet => planet.id === planetId);
-
-        if (planetData) {
-            const { name, image, description, link } = planetData;
-
-            if (tablet.classList.contains('tabletShow')) {
-                planetName.textContent = name;
-                planetPreview.src = image;
-                planetDescription.innerHTML = description;
-                seeMore.href = link;
-            } else {
-                planetName.textContent = name;
-                planetPreview.src = image;
-                planetDescription.innerHTML = description;
-                seeMore.href = link;
-                showTablet();
-            }
-        } else {
-            console.error(`No info found for: ${planetId}`);
-        }
+        planetInfo(planetData);
     });
 });
 
@@ -337,10 +370,9 @@ darkMode.addEventListener('click', () => {
 
 random.addEventListener('click', () => {
     const randomPlanet = planets[Math.floor(Math.random() * planets.length)];
-    planetName.textContent = randomPlanet.name;
-    planetPreview.src = randomPlanet.image;
-    planetDescription.innerHTML = randomPlanet.description;
+    planetInfo(randomPlanet);
 });
+
 
 // ~ Party Button
 

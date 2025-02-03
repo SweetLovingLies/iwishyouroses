@@ -1,0 +1,282 @@
+@import url("../colorPalettes/retrowave.css");
+
+body {
+    font-family: cafesweet;
+    background: url('/Assets/BGs/retrowave2.jpg');
+}
+
+#baselayout {
+    background: var(--RWdeep);
+    border: 5px solid var(--RWteal);
+    box-shadow: 2px 2px var(--RWorange), -2px -2px var(--RWpink);
+    border-radius: 20px;
+}
+
+/* Left-side */
+
+#eyecatcher {
+    border: 8px dotted var(--RWpink);
+    border-radius: 0;
+}
+
+#siteButton {
+    background: var(--transWhite);
+    border: 2px dotted var(--RWplum);
+    box-shadow: 2px 2px var(--RWpurple), -2px -2px var(--RWteal);
+}
+
+#jsCalender {
+    border: 2px dotted var(--RWplum);
+    box-shadow: 2px 2px var(--RWpurple), -2px -2px var(--RWteal);
+    background: var(--transWhite);
+}
+
+/* Calender styles */
+
+
+.calendar-weekdays li {
+    background: url("/Assets/BGs/polkadotPink.png");
+    background-size: 100%;
+}
+
+header .calendar-navigation span {
+    color: var(--wisteria);
+}
+
+header .calendar-navigation span:hover {
+    color: black;
+}
+
+.calendar-body li {
+    color: black;
+
+    box-shadow: -1px -1.4px 1px inset #9e9699, 2px 3px 1.5px inset white, 0px 0px 2px #aba4a6;
+    border: 1px solid var(--whispermist);
+}
+
+.calendar-body .calendar-dates li {
+    background: url("/Assets/BGs/polkadotPink.png");
+    background-size: 100%;
+}
+
+.calendar-body .calendar-dates li:hover {
+    background: url("/Assets/BGs/polkaheartPink.png");
+    background-size: 100%;
+}
+
+.calendar-dates li.inactive {
+    color: #696969;
+}
+
+.calendar-dates li.active {
+    color: #fff;
+    background: var(--water);
+}
+
+.calendar-dates li.active:hover {
+    color: black;
+}
+
+/* Main */
+
+
+#home {
+    background: var(--transWhite);
+    border: 2px dotted var(--RWplum);
+    box-shadow: 2px 2px var(--RWpurple), -2px -2px var(--RWteal);
+
+    scrollbar-color: var(--RWteal) white;
+}
+
+#home::-webkit-scrollbar-track {
+    background: white;
+}
+
+#home::-webkit-scrollbar-thumb {
+    background-color: var(--RWteal);
+}
+
+#spotlight {
+    background: var(--transWhite);
+    border: 2px dotted var(--RWplum);
+    box-shadow: 2px 2px var(--RWpurple), -2px -2px var(--RWteal);
+}
+
+#spotlight a {
+    color: var(--RWorange);
+    transition: color .25s;
+}
+
+#spotlight a:hover {
+    color: var(--driedBlood);
+}
+
+#spotlight h2 {
+    color: var(--RWplum);
+    text-align: center;
+}
+
+/* Status Cafe */
+
+#statusCafe {
+    background: var(--transWhite);
+    border: 2px dotted var(--RWplum);
+    box-shadow: 2px 2px var(--RWpurple), -2px -2px var(--RWteal);
+}
+
+#thoughtBubble {
+    background:  var(--RWdeep);
+    border: 3px dashed white;
+    outline: 5px solid var(--RWdeep);
+
+    color: white;
+}
+
+#thoughtBubble::after {
+    color: var(--RWdeep);
+    -webkit-text-stroke: 1px white;
+
+    background-color:  var(--RWdeep);
+    border: 1px solid white;
+    border-radius: 11px;
+}
+
+#thoughtBubble a {
+    color: var(--RWorange);
+}
+
+/* Side Columns */
+
+#status {
+    background: var(--transWhite);
+    border: 2px dotted var(--RWplum);
+    box-shadow: 2px 2px var(--RWpurple), -2px -2px var(--RWteal);
+}
+
+.statusBubble {
+    background: white;
+    border: 3px dashed var(--bubblegum);
+}
+
+.statusBubble:nth-child(even) {
+    background: var(--hintofmist);
+}
+
+#status h3 {
+    font-style: italic;
+    color: var(--persian)
+}
+
+#stamps {
+    background: var(--transWhite);
+    border: 2px dotted var(--RWplum);
+    box-shadow: 2px 2px var(--RWpurple), -2px -2px var(--RWteal);
+}
+
+#webgroups {
+    background: var(--transWhite);
+    border: 2px dotted var(--RWplum);
+    box-shadow: 2px 2px var(--RWpurple), -2px -2px var(--RWteal);
+}
+
+#stamps h2,
+#webgroups h2 {
+    color: var(--RWplum);
+}
+
+#blogRSS {
+    background: url(/Assets/BGs/linedpaper.jpg);
+
+    border-style: solid;
+    border-image: url(/Assets/borders/border2FP.png) 28 round;
+    border-width: 28px;
+    background-clip: padding-box;
+}
+
+#blogRSS h1,
+#blogRSS h2,
+#blogRSS h3,
+#blogRSS h4,
+#blogRSS h5,
+#blogRSS h6 {
+    color: #0c3934;
+}
+
+#blogRSS #title {
+    color: var(--persian);
+}
+
+#blogRSS p{
+    color: #0c3934;
+}
+
+.feed-item {
+    border-bottom: 4px dashed var(--water);
+}
+
+.feed-item a {
+    color: var(--wisteria);
+}
+
+.feed-item small {
+    color: #797979;
+}
+
+/* Footer */
+
+footer {
+    background: linear-gradient(124deg, var(--RWplum) 0%, var(--RWpink) 50%, var(--RWplum) 100%); 
+    color: white;
+}
+
+/* ? Decor */
+
+#christmasTree {
+    display: none;
+}
+
+#presents {
+    display: none;
+}
+
+
+/* General */
+
+
+
+hr {
+    background: url('/Assets/pixels/bubblegum/pinkRoseBowDivider.webp') repeat-x;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    height: 22px;
+}
+
+.box,
+.box2 {
+    padding: 5px;
+    background-color: var(--pinkIce);
+    border: 2px dashed var(--ash);
+    border-radius: var(--globalBorderRadius);
+}
+
+h2 {
+    font-family: cyberpunk;
+    color: var(--RWpink);
+    filter: drop-shadow(0px 0px 6px var(--RWpurple));
+}
+
+a {
+    color: var(--wisteria);
+    text-decoration: none;
+}
+
+/* ? Media Queries */
+
+@media (prefers-reduced-motion: reduce) {}
+
+@media only screen and (max-width: 1024px) {}
+
+@media only screen and (max-width: 810px) {}
+
+@media only screen and (max-width: 500px) {}

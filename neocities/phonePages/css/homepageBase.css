@@ -53,9 +53,9 @@ body {
 }
 
 .flexWrapper {
+    flex: 1 1;
     display: flex;
-    margin: 0 auto;
-    gap: 25px;
+    justify-content: space-between;
 }
 
 .app {
@@ -88,9 +88,11 @@ footer p {
 }
 
 .widgetColumn {
+    flex: 1 1;
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
     justify-content: center;
+    align-items: center;
 
     text-align: center;
     font-size: 15px;
