@@ -8,11 +8,11 @@
 
     <link href="/css/globals.css" rel="stylesheet" type="text/css" media="all">
 
-    <link href="css/directoryBase.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/indexBase.css" rel="stylesheet" type="text/css" media="all">
 
     <!-- ~ Themes -->
-    <link id="directoryCSS" href="css/directoryThemes/directoryLight.css" rel="stylesheet" type="text/css" media="all" disabled>
-    <link id="directoryDarkCSS" href="css/directoryThemes/directoryDark.css" rel="stylesheet" type="text/css" media="all" disabled>
+    <link id="indexCSS" href="css/indexThemes/indexLight.css" rel="stylesheet" type="text/css" media="all" disabled>
+    <link id="indexDarkCSS" href="css/indexThemes/indexDark.css" rel="stylesheet" type="text/css" media="all" disabled>
 
     <meta name="description" content="Pick your poison. They both look delicious!"/>
     <link rel="icon" type="image/x-icon" href="/Assets/pixels/dollette/phone.webp">
@@ -20,7 +20,7 @@
     <script>
         (function setInitialTheme() {
             const savedTheme = localStorage.getItem("globalTheme") || "light";
-            const themeId = savedTheme === "light" ? "directoryCSS" : "directoryDarkCSS";
+            const themeId = savedTheme === "light" ? "indexCSS" : "indexDarkCSS";
             const themeLink = document.getElementById(themeId);
             if (themeLink) themeLink.disabled = false;
         })();

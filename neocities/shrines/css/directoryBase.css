@@ -1,0 +1,243 @@
+:root {
+    --fontFamily: 'Rosemode', 'Times New Roman', Times, serif;
+}
+
+@font-face {
+    font-family: Rosemode;
+    src: url("/fonts/Rosemode.ttf");
+}
+
+@font-face {
+    font-family: Grossura;
+    src: url("/fonts/Grossura.ttf");
+}
+
+@font-face {
+    font-family: valentinesDB;
+    src: url("/fonts/dingbatFonts/ValentinesDingbats.otf");
+}
+
+body {
+    background: url("/Assets/BGs/weather.gif");
+    
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+#content {
+    flex: 0 1 60%;
+    height: 100vh;
+
+    background-color: white;
+    padding: 20px;
+    position: relative;
+}
+
+header {
+    flex: 1 1 100%;
+}
+
+.magazinePage {
+    width: 500px;
+    height: 750px;
+    position: relative;
+    overflow: hidden;
+
+    background-color: black;
+}
+
+#magazineContainer {
+    flex: 1 1;
+    position: relative;
+}
+
+.magazineView {
+    display: flex;
+    justify-content: center;
+}
+
+#navigation {
+    width: 100%;
+
+    left: 50%; 
+    bottom: 50%;
+    transform: translate(-50%, -50%);
+
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+#navigation iconify-icon {
+    color: var(--deepslate);
+    font-size: 2em;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: color .25s;
+}
+
+#navigation iconify-icon:hover {
+    color: var(--persian);
+}
+
+#navigation iconify-icon.disabled {
+    color: #cecece;
+    cursor: not-allowed;
+}
+
+#logo {
+    padding-top: 30px;
+    position: relative;
+
+    font-family: var(--fontFamily);
+    text-align: center;
+}
+
+#logo #issueDate {
+    width: 30px;
+    top: 5em;
+    left: 3em;
+} 
+
+#logo h2 {
+    font-size: 4rem;
+    line-height: 50px;
+}
+
+#logo #magTitle {
+    font-size: 1.5rem;
+    line-height: 15px;
+}
+
+#logo #magTitle .dingbats1 {
+    display: inline-block;
+    vertical-align: -.2em;
+    font-size: 2.4em;
+    height: 10px;
+
+    color: var(--persian);
+}
+
+/*  ~ Cover Page */
+
+#cover {
+    background: url("/Assets/singers/sabrinaCarpenter/Render1.png") center/cover;
+    font-family: var(--fontFamily);
+}
+
+#supportingLines p:first-of-type {
+    top: 48%;
+    left: 20px;
+    transform: translateY(-48%);
+
+
+    font-size: 1.2em;
+    width: 150px
+}
+
+#supportingLines p:first-of-type mark {
+    font-size: 2.1em;
+    background-color: var(--deepsea);
+    color: white;
+}
+
+#supportingLines p:nth-of-type(2) {
+    top: 30%;
+    right: 20px;
+    width: 200px;
+
+    font-size: 2em;
+    text-align: right;
+}
+
+#supportingLines p:nth-of-type(2) span {
+    color: var(--persian);
+}
+
+#supportingLines p:nth-of-type(3) {
+    top: 46%;
+    right: 20px;
+    width: 200px;
+
+    font-size: 1.1em;
+    text-align: right;
+}
+
+/* Specifics */
+
+#yenaShrine {
+    background: linear-gradient(150deg, rgba(228,190,213,1) 0%, rgba(255,159,250,1) 100%); 
+
+    flex-flow: column nowrap;
+
+    align-items: center;
+}
+
+#yenaShrine #header {
+    width: 100%;
+
+    background-color: #cc1524;
+    text-align: center;
+}
+
+#yenaShrine #header h2 {
+    font-family: FoxRelish;
+    color: white;
+    font-weight: normal;
+    font-size: 3em;
+}
+
+#nemonemo {
+    flex: 1;
+    width: 600px;
+}
+
+#yenaLogo {
+    width: 300px;
+    bottom: 0;
+    right: 0;
+    transform: rotate(-10deg);
+
+    filter: drop-shadow(3px 3px #f93fff) drop-shadow(-3px -3px #6150ff);
+}
+
+overlay {
+    width: 100%;
+    height: 100%;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
+    background: #ffffff2c;
+
+
+    z-index: 10;
+
+    pointer-events: none;
+}
+
+/* Helpers */ 
+
+.dingbats1 {
+    font-family: valentinesDB;
+}
+
+.floaters {
+    position: absolute;
+}
+
+.flex {
+    display: flex;
+}
+
+
+a {
+    color: black;
+    text-decoration: none;
+}
