@@ -21,6 +21,26 @@ const harrowRingSites = [
         siteButton: '/forYou/webring/webringIMGs/miniWildPanda/MWPButton.gif',
         style: "morute"
     },
+    {
+        url: 'https://vincesdesktop.neocities.org',
+        profilePicture: '/forYou/webring/webringIMGs/vincesdesktop/185789.jpg',
+        webmasterName: 'Vince',
+        description: 'A windowsXP based object show site',
+        nsfw: false,
+        webringOwner: false,
+        siteButton: 'https://file.garden/Z4x79bKazCHHyNRs/Untitled596_20250207161910.png',
+        style: "liminal"
+    },
+    {
+        url: 'https://beaus-silly-folder.nekoweb.org',
+        profilePicture: 'https://file.garden/ZqzaaX6Iv3i3b03H/MES-miku-hop',
+        webmasterName: 'Beau',
+        description: 'Personal site; a love letter to some of my favorite music, mostly songs made with vocal synthesizers like vocaloid, utau, etc.!',
+        nsfw: false,
+        webringOwner: false,
+        siteButton: 'https://file.garden/ZqzaaX6Iv3i3b03H/BSF_button.gif',
+        style: "analog"
+    },
 ];
 
 // console.log(sites)
