@@ -57,25 +57,6 @@
       "otherInfo": "This is the type of energy I need to be channeling...\n I don't know very much about this person yet, but the aesthetic of the website caught my eye as soon as I saw it. The site is extremely colorful and full of old web graphics. I highly suggest giving him a visit!"
     },
     {
-      "name": "EyeSoire",
-      "icon": {
-        "src": "/Assets/coolsites/eyeSoiree/icon.jpg",
-        "alt": "A picture of a Burberry scarf!"
-      },
-      "quote": "A sight for soiree eyes",
-      "siteButton": {
-        "link": "https://eyesoire.neocities.org/",
-        "src": "/Assets/coolsites/eyeSoiree/eyeSoireeButton.gif",
-        "alt": "Welcome to EyeSoire's site!",
-        "warnings": ["minor"]
-      },
-      "reputation": "+5",
-      "club": "Neocities",
-      "loves": "N/A",
-      "hates": "N/A",
-      "otherInfo": "Currently, the webmaster of this site is mysterious, however, the aesthetic of the site is absolutely incredible. It reminds me a lot of sugar cookies, and that specific Burberry scarf that I made the icon. I can't wait to learn more about you soon!"
-    },
-    {
       "name": "Oyasumimi25",
       "icon": {
         "src": "/Assets/coolsites/oyasumimi/icon.jpg",
@@ -207,6 +188,25 @@
       "loves": "Radical hyperfemininity, A feminine god, Weed, Cyberpunk Aesthetics, Tarot, Modern Medicine, and pink!",
       "hates": "Cultural appropriation, QAnon, Objectivism, and Ronald Reagan",
       "otherInfo": "Clarity Anne is a very peculiar character to me, and one that I absolutely love. She provides code snippets, interesting articles, and a very clean aesthetic to her websites. She also runs a unique website called <a href=\"https://redoubtful.com/\" target=\"_blank\">Redoubtful</a> that I suggest taking a look at too! <br> What stood out to me when I was reading her about me that she also worships a feminine god. I have grew up in many different religions, notably Christianity, Paganism, and a rather unorthodox version of Islam. After finding out that my mother was Wiccan, I did my own research and almost completely pivotted to my own version of it as a teen. All this to say that I too believe in a feminine god, and I strongly resonate with the fact that she does too... <br> I digress, grab a cup of tea and sit down with this one sometime. I promise you won't be disappointed."
+    },
+    {
+      "name": "Gorekytti",
+      "icon": {
+        "src": "/Assets/coolsites/gorekytti/icon.jpg",
+        "alt": "A tabby cat named Pusheen!"
+      },
+      "quote": "Kiwi's Dungeon!",
+      "siteButton": {
+        "link": "https://gorekytti.neocities.org/",
+        "src": "/Assets/coolsites/gorekytti/gorekyttiButton.gif",
+        "alt": "Welcome to gore kitty!",
+        "warnings": ["minor"]
+      },
+      "reputation": "+5",
+      "club": "Neocities",
+      "loves": "Definitely pink!",
+      "hates": "N/A",
+      "otherInfo": "This sweet individual reached out to me on Discord! I don't know very much about them, but I certainly enjoy the aesthetics of their website. There are also a few links to free games on here, which I suggest looking into!"
     }
   ]
   

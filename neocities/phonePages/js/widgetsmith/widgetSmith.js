@@ -23,10 +23,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const edit = document.getElementById('edit');
     const backButtons = document.querySelectorAll('.back');
 
+    const FAQbutton = document.getElementById('FAQbutton');
+    const FAQ = document.getElementById('FAQ');
+    const closeButton = document.getElementById('close');
+
     loadSavedWidgets();
     updateWidgetBtn();
 
     // & Helper Functions
+    function toggleFAQ() {
+        FAQ.classList.toggle('show');
+    }
 
     function getStoredWidgets() {
         return parseInt(localStorage.getItem('widgetId')) || 1; 
@@ -63,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateWidgetBtn() {
         const savedWidgets = JSON.parse(localStorage.getItem('widgets')) || [];
-        createNewWidgetButton.style.display = savedWidgets >= 1 ? 'none' : 'block';
+        createNewWidgetButton.style.display = savedWidgets.length >= 1 ? 'none' : 'block';
     }
 
     function loadSavedWidgets() {
@@ -286,6 +293,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // & Event listeners
+    FAQbutton.addEventListener('click', toggleFAQ);
+    closeButton.addEventListener('click', toggleFAQ);
+
     createNewWidgetButton.addEventListener('click', toggleCustomizeSection);
     clearAllWidgetsButton.addEventListener('click', clearAllWidgets);
 

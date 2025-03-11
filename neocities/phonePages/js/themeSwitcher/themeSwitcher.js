@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (updateStorage) {
                     localStorage.setItem('globalTheme', mode);
                 }
-            }, 3550);
+            }, 3400);
         }
     }
 });

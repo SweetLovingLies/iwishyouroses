@@ -31,12 +31,11 @@
         <div id="yourWidgets">
             <button id="createNewWidget"><iconify-icon icon="typcn:plus" width="24" height="24"></iconify-icon></button>
         </div>
-
-        <p id="note">For now, we only allow one, however, <strong>this will change in the future!</strong></p>
-
         <footer>
             <button id="clearAllWidgets">Clear all Widgets</button>
         </footer>
+
+        <iconify-icon id="FAQbutton" role="button" icon="mingcute:question-line"></iconify-icon>
     </section>
 
     <section id="customize">
@@ -104,7 +103,7 @@
                 </div>
                 <button id="saveCustomFilter">Save Custom Filter</button>
             </div> -->
-            
+
         </div>
         <footer>
             <button id="clearPreview">Clear Preview</button>
@@ -173,6 +172,19 @@
             <button id="saveEditedWidget">Save Changes</button>
             <button id="deleteWidget">Delete Widget</button>
         </footer>
+    </section>
+
+    <section id="FAQ">
+        <div id="header">
+            <iconify-icon id="close" icon="mingcute:close-fill" tabindex="0"></iconify-icon>
+            FAQ
+        </div>
+        <h2>Will we be allowed to have more widgets later?</h2>
+        <p>Yes! Right now, it's limited to one because of the system we're using, but the intention is to allow up to 4. We will roll this update out as soon as we can! </p>
+        <h2>My homepage keeps breaking when I remove and add a widget! Why? </h2>
+        <p>Well, if we're getting real technical, it's because of the way the homepage is designed. It uses IDs to track which section an app icon is in, and it loads it's position accordingly. However, whenever we remove and replace the widget, the code destroys some icons and replaces them where they need to be, subsequently breaking the layout. This is a limitation in the system we're using that we intend to patch later on. For now, you will have to reset your homepage layout every time you create or remove your widget. We will let you know when a fix comes out!</p>
+        <h2>Will there be more shapes?</h2>
+        <p>The answer is a strong maybe. More shapes are not on the to-do list, but if you have any recommendations, please let us know and we will consider them! However, it's a lot harder than you might think.</p>
     </section>
 
     <script src="js/widgetsmith/widgetSmith.js"></script>

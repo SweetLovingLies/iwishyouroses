@@ -73,7 +73,7 @@ function initializeWidgets() {
     const homepage1 = document.getElementById('homepage1');
     if (!homepage1) return;
 
-    const appWrapper = homepage1.querySelector('.appWrapper');
+    const appWrapper = homepage1.querySelector('#aw1');
     if (!appWrapper) return;
 
     // Handle widget rendering
@@ -94,31 +94,31 @@ function initializeWidgets() {
     const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
     if (isSafari) {
+        console.log("THIS WEB BROWSER STINKS !")
         handleSafariFallback();
     } else {
         updateLayout(savedWidgets);
     }
 
-    // Helper function to update layout based on widgets
+    // Function to update layout based on if there is a widget or not
     function updateLayout(widgets) {
         const widgetColumn = appWrapper.querySelector('#widgetColumn');
         const column1 = appWrapper.querySelector('#column1');
         const defaultApps = `
-            <a href="nav.html" class="app" onclick="openApp(event, this)">
-                <div class="appIcon">
-                    <img src="/Assets/myAssets/appIcons/navIcon.png">
-                </div>
-                <p>Navigation</p>
-            </a>
-            <a href="idolMessenger.html" class="app" onclick="openApp(event, this)">
-                <div id="idolMessenger" class="appIcon">
-                    <img src="/Assets/myAssets/appIcons/idolMessengerIcon.png">
-                </div>
-                <p>Idol Messenger</p>
-            </a>
+            <a href="nav.html" id="nav" class="app draggable-item" onclick="openApp(event, this)">
+                        <div class="appIcon">
+                            <img src="/Assets/myAssets/appIcons/navIcon.png">
+                        </div>
+                        <p>Navigation</p>
+                    </a>
+                    <a href="idolMessenger.html" id="idolMessenger" class="app draggable-item" onclick="openApp(event, this)">
+                        <div class="appIcon">
+                            <img src="/Assets/myAssets/appIcons/idolMessengerIcon.png">
+                        </div>
+                        <p>Idol Messenger</p>
+                    </a>
         `;
 
-        // Only add default apps if no saved order exists
         const savedOrder = JSON.parse(localStorage.getItem('column1Order')) || [];
         if (widgets.length > 0) {
             if (!widgetColumn) {
@@ -131,7 +131,6 @@ function initializeWidgets() {
                 appWrapper.insertBefore(newWidgetColumn, column1);
             }
 
-            // Add default apps if column1 order is empty
             if (savedOrder.length === 0) {
                 if (!column1) {
                     const newColumn1 = document.createElement('div');
@@ -140,7 +139,6 @@ function initializeWidgets() {
                     appWrapper.appendChild(newColumn1);
                 }
             } else {
-                // Make a new one with the saved order
                 if (!column1) {
                     const newColumn1 = document.createElement('div');
                     newColumn1.classList.add('column1');
@@ -150,13 +148,30 @@ function initializeWidgets() {
         } else {
             if (widgetColumn) {
                 appWrapper.removeChild(widgetColumn);
+                appWrapper.insertAdjacentHTML('afterbegin', defaultApps);
             }
             if (column1) {
                 column1.style.display = 'none';
             }
         }
 
-        // Initialize sortable items
+        // console.log("Removing widget, checking if column1 exists:", column1);
+        //     if (widgetColumn) {
+        //         appWrapper.removeChild(widgetColumn);
+
+        //         if (!column1) {
+        //             console.log("Column1 doesn't exist. Recreating...");
+        //             const newColumn1 = document.createElement('div');
+        //             newColumn1.classList.add('column1');
+        //             newColumn1.innerHTML = defaultApps;
+        //             appWrapper.appendChild(newColumn1);
+        //         } else {
+        //             console.log("Column1 exists. Restoring default apps...");
+        //             column1.style.display = 'block';
+        //             appWrapper.innerHTML = defaultApps;
+        //         }
+        //     }
+
         initializeSortable();
         loadSavedOrder("column1", 'column1Order');
         loadSavedOrder("aw1", 'homepage1Order');
@@ -164,7 +179,6 @@ function initializeWidgets() {
         loadSavedOrder("aw2", 'homepage2Order');
     }
 
-    // Safari-specific fallback handling
     function handleSafariFallback() {
         const widgetsmithApp = document.getElementById("wsApp");
         if (widgetsmithApp) {
