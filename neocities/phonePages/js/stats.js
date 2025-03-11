@@ -154,8 +154,8 @@ function updatehomeButtonClicks(count) {
 }
 
 function checkConsecutiveClicks() {
-  let consecutiveClicks = parseInt(localStorage.getItem('consecutiveClicks')) || 0;
-  let lastClickTime = parseInt(localStorage.getItem('lastClickTime')) || 0;
+  let consecutiveClicks = parseInt(sessionStorage.getItem('consecutiveClicks')) || 0;
+  let lastClickTime = parseInt(sessionStorage.getItem('lastClickTime')) || 0;
 
   const now = Date.now();
   if (now - lastClickTime > 1000) {
@@ -163,16 +163,14 @@ function checkConsecutiveClicks() {
   }
 
   consecutiveClicks++;
-  localStorage.setItem('consecutiveClicks', consecutiveClicks);
-  localStorage.setItem('lastClickTime', now);
+  sessionStorage.setItem('consecutiveClicks', consecutiveClicks);
+  sessionStorage.setItem('lastClickTime', now);
 
   if (consecutiveClicks === 9) {
-    window.parent.location.href = '/yandereShrine/lovesick.html';
-    localStorage.setItem('consecutiveClicks', 0); 
+    window.parent.location.href = '/shrines/yandereShrine/lovesick.html';
+    sessionStorage.setItem('consecutiveClicks', 0); 
   }
 }
-
-// ! Need to make a version that tracks consecutive clicks as well
 
 // * Herobrine Sightings
 

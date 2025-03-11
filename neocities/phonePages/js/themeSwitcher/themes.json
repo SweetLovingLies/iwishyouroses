@@ -1,0 +1,130 @@
+[
+  {
+    "name": "Fairy Dust",
+    "mode": "light",
+    "style": "light",
+    "fallback": "none",
+    "eyecatcher": {
+      "1": {
+        "src": "Assets/anime/gifs/8add9a0bdb6f30b54919295a376866f3.gif",
+        "alt": "Picking up a stuffed animal!"
+      },
+      "2": {
+        "src": "Assets/kpop/NCTDream/gifs/jaemin1.gif",
+        "alt": "Jaemin from NCT Dream in the Music Video: Candy!"
+      },
+      "3": {
+        "src": "Assets/gifs/cute1.gif",
+        "alt": "Hydrangeas and a rainbow!"
+      },
+      "4": {
+        "src": "Assets/gifs/dreamyPlushiesbydearlybun.gif",
+        "alt": "A cute plushy claw machine, drawn by dearlybun on DeviantArt!"
+      },
+      "5": {
+        "src": "Assets/gifs/yaeByNekomimiyu.gif",
+        "alt": "Fox-Form Yae Miko from Genshin Impact. Pixel art by Nekomimiyu!"
+      }
+    },
+    "extras": {
+      "1": "none",
+      "2": "none"
+    }
+  },
+  {
+    "name": "Empty Dream",
+    "mode": "dark",
+    "style": "dark",
+    "fallback": "none",
+    "eyecatcher": {
+      "1": {
+        "src": "Assets/anime/another/mei/mei1.gif",
+        "alt": "Mei from the anime Another"
+      },
+      "2": {
+        "src": "Assets/anime/another/mei/mei2.gif",
+        "alt": "Mei from the anime Another"
+      },
+      "3": {
+        "src": "Assets/anime/another/mei/mei3.gif",
+        "alt": "Mei from the anime Another"
+      },
+      "4": {
+        "src": "Assets/anime/random/darkSky.gif",
+        "alt": "A full moon on a dark night."
+      },
+      "5": {
+        "src": "Assets/anime/random/dark1.gif",
+        "alt": "A dark anime gif. Source is unknown."
+      }
+    },
+    "extras": {
+      "1": "none",
+      "2": "none"
+    }
+  },
+  {
+    "name": "Retrowave",
+    "mode": "retro",
+    "style": "dark",
+    "fallback": "dark",
+    "eyecatcher": {
+      "1": {
+        "src": "Assets/gifs/retro.gif",
+        "alt": "A static screen"
+      },
+      "2": {
+        "src": "Assets/gifs/retrowave1.gif",
+        "alt": "A car driving down a freeway"
+      },
+      "3": {
+        "src": "Assets/gifs/retrowave2.gif",
+        "alt": "A car driving down a street"
+      },
+      "4": {
+        "src": "",
+        "alt": ""
+      },
+      "5": {
+        "src": "",
+        "alt": ""
+      }
+    },
+    "extras": {
+      "1": "none",
+      "2": "none"
+    }
+  },
+  {
+    "name": "Jingle Bells",
+    "mode": "christmas",
+    "style": "light",
+    "fallback": "light",
+    "eyecatcher": {
+      "1": {
+        "src": "",
+        "alt": ""
+      },
+      "2": {
+        "src": "",
+        "alt": ""
+      },
+      "3": {
+        "src": "",
+        "alt": ""
+      },
+      "4": {
+        "src": "",
+        "alt": ""
+      },
+      "5": {
+        "src": "",
+        "alt": ""
+      }
+    },
+    "extras": {
+      "1": "none",
+      "2": "none"
+    }
+  }
+]

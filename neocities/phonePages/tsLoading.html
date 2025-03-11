@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone App Module: Loading Screen for Themeswitcher</title>
+
+    <link href="/css/globals.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/phoneGlobals.css" rel="stylesheet" type="text/css" media="all">
+
+    <!-- ~ Themes  -->
+    <link id="themesCSS" href="css/themeAppThemes/themesLight.css" rel="stylesheet" type="text/css" media="all"
+        data-theme="light">
+    <link id="themesDarkCSS" href="css/themeAppThemes/themesDark.css" rel="stylesheet" type="text/css" media="all"
+        data-theme="dark" disabled>
+    <link id="themesRetroCSS" href="css/themeAppThemes/themesRetro.css" rel="stylesheet" type="text/css" media="all"
+        data-theme="retro" disabled>
+
+    <!-- <link id="themesChristmasCSS" href="css/themeAppThemes/themesChristmas.css" rel="stylesheet" type="text/css"
+        media="all"> -->
+
+    <meta name="description" content="Access literally everything you need." />
+    <link rel="icon" type="image/x-icon" href="../Assets/pixels/vintageAmericana/strawberryphone.webp">
+    <script src="js/phone.js"></script>
+
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+        }
+
+        .progressBar {
+            width: 100%;
+            height: 20px;
+            border-radius: 10px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+
+        #progress {
+            height: 100%;
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+
+        img {
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body id="loading" class="builtIn">
+    <div class="loading-container">
+        <p>Great choice!</p>
+        <p>Applying your theme now!</p>
+        <div class="progressBar">
+            <div id="progress"></div>
+        </div>
+    </div>
+    <img src="/Assets/pixels/animals/catroll.gif">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const progressBar = document.getElementById("progress");
+            let progress = 0;
+            const selectedTheme = sessionStorage.getItem('queuedTheme') || 'light';
+
+            const loadingInterval = setInterval(function () {
+                progress += 3;
+                progressBar.style.width = progress + "%";
+                if (progress >= 100) {
+                    clearInterval(loadingInterval);
+                    window.location.href = "themes.html";
+                }
+            }, 100);
+        });
+    </script>
+    <script src="js/themeSwitcher/themeSwitcher.js"></script>
+</body>
+
+</html>

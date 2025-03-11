@@ -1,0 +1,347 @@
+:root {
+    /* OG Colors */
+    --bubblegum: #ffb7ed;
+    --dustyPink: #f6bdd1;
+    --persian: #f283b6;
+    --wisteria: #8266ff;
+    --hintofmist: #f1efff;
+    --whispermist: #dbd8f0;
+    --driedBlood: #8B575c;
+    --pinkIce: #f6e4f6;
+    --ash: #cad2c5;
+    --water: #adcaff;
+    --deepsea: #357ce6;
+    --blood: #800000;
+    --deepslate: #696969;
+    --cobblestone: #a8a8a8;
+
+    /* New Colors */
+
+    /* Globals */
+    --globalBorderRadius: 10px;
+    --detailBarHeight: 20px;
+}
+
+@font-face {
+    font-family: lovelyMood;
+    src: url('/fonts/yanFonts/LovelyMoodScript.ttf');
+}
+
+@font-face {
+    font-family: scratchy;
+    src: url('/fonts/Superscratchy.ttf');
+}
+
+body {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    background: url("/Assets/BGs/pattern610.gif"), var(--pinkIce);
+    background-blend-mode: multiply;
+
+    font-family: cafesweet;
+    color: black;
+}
+
+#wrapper {
+    flex: 0 1 60%;
+
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+header {
+    background-color: var(--whispermist);
+    text-align: center;
+}
+
+main {
+    /* ! Temp */
+    min-height: 20vh;
+    background-color: var(--pinkIce);
+
+    position: relative;
+
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    align-items: flex-start;
+
+    column-gap: 50px;
+    row-gap: 20px;
+
+    padding: 20px;
+}
+
+/* ! Stuff */
+
+.letters {
+    position: relative;
+    z-index: 1;
+
+    width: 300px;
+    min-height: 400px;
+    align-self: flex-start;
+
+    background: url(/Assets/BGs/linedpaper.jpg);
+
+    color: #252525;
+    padding: 0 20px;
+
+    filter: drop-shadow(-1px 4px 4px #727272);
+}
+
+.polaroids {
+    position: relative;
+    z-index: 0;
+
+    background: white;
+    width: 200px;
+    height: 270px;
+
+    padding: 20px;
+
+    border: 1px solid var(--deepslate);
+}
+
+.polaroids img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#notebook {
+    position: relative;
+    z-index: 1;
+
+    width: 500px;
+    height: 300px;
+
+    filter: drop-shadow(1px 4px 4px #727272);
+
+    transform: rotate(2deg);
+}
+
+/* ! Counters */
+
+.counter {
+    position: relative;
+    z-index: 1;
+
+    background: var(--hintofmist);
+    border-radius: var(--globalBorderRadius);
+
+    max-height: 150px;
+
+    padding: 15px;
+    text-align: center;
+
+    filter: drop-shadow(1px 4px 4px #727272);
+}
+
+.counter h2,
+.quiz h2 {
+    font-family: lovelyMood, serif;
+    color: var(--blood);
+    font-size: 2em;
+
+    margin-bottom: 10px;
+}
+
+.action-button {
+    background-color: var(--bubblegum);
+    border: none;
+    border-radius: var(--globalBorderRadius);
+    padding: 10px 20px;
+    font-family: cafesweet;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.action-button:hover {
+    background-color: var(--persian);
+}
+
+/* ! Quiz */
+
+.quiz {
+    position: relative;
+    z-index: 1;
+
+    background: var(--whispermist);
+    border: 2px solid var(--blood);
+    border-radius: var(--globalBorderRadius);
+
+    padding: 20px;
+    width: 300px;
+
+    text-align: center;
+
+    color: var(--persian);
+    filter: drop-shadow(1px 4px 4px #727272);
+
+    transform: translate(0, -25%) rotate(4deg);
+}
+
+.quiz p {
+    margin-bottom: 15px;
+}
+
+.quiz label {
+    display: block;
+}
+
+.quiz.hidden {
+    display: none;
+}
+
+#quizResponse {
+    margin-top: 20px;
+    color: black;
+}
+
+/* Specifics */
+
+#photosCounter {
+    border: 8px dotted var(--rosette);
+    transform: translate(0, -70%) rotate(-9deg);
+}
+
+#daysCounter {
+    border: 4px dashed var(--persian);
+    width: 320px;
+    color: var(--persian);
+
+    transform: rotate(-15deg);
+}
+
+#daysCounter .flexWrapper {
+    justify-content: center;
+    gap: 10px;
+}
+
+#letter1 {
+    transform: rotate(3deg);
+}
+
+#letter1 #heart {
+    width: 100px;
+    top: -2em;
+    right: -3em;
+    transform: rotate(20deg);
+}
+
+#letter1 .doodle {
+    width: 90px;
+    font-size: 5em;
+
+    color: var(--persian);
+
+    bottom: 0;
+    right: 1.8em;
+}
+
+#letter1 .doodle:last-of-type {
+    width: 90px;
+    font-size: 5em;
+    border-radius: 50%;
+
+    color: yellow;
+    background-color: #fff7eb;
+
+    bottom: 0;
+    right: .5em;
+}
+
+#polaroid1 {
+    filter: drop-shadow(0px 2px 4px #727272);
+    transform: rotate(-7deg);
+
+    font-family: scratchy;
+    font-size: 1.5em;
+}
+
+#polaroid1 p {
+    transform: translateY(-.3em) rotate(-3deg);
+}
+
+#pinkRoses {
+    z-index: 0;
+    width: 300px;
+    bottom: 3em;
+    right: 2em;
+    transform: rotate(50deg);
+}
+
+#bloodSplatter1 {
+    bottom: 3em;
+    right: 2em;
+}
+
+#candle {
+    z-index: 2;
+    width: 180px;
+
+    bottom: -2em;
+    left: -5em;
+}
+
+#bloodyKnife {
+    bottom: -5em;
+    left: 7em;
+
+    transform: rotate(10deg);
+}
+
+#snowRose {
+    width: 200px;
+    bottom: 50%;
+    left: 50%;
+
+    transform: translate(-20%, 50%);
+}
+
+#rainbow {
+    z-index: 2;
+    width: 400px;
+    top: -4em;
+    left: -8em;
+    transform: rotate(-30deg);
+}
+
+/*! Details */
+
+/* General */
+
+.doodle {
+    font-family: doodles;
+}
+
+.flexWrapper {
+    display: flex;
+}
+
+.floaters {
+    position: absolute;
+    user-select: none;
+    pointer-events: none;
+}
+
+/* ? Media Queries */
+
+@media (prefers-reduced-motion: reduce) {}
+
+@media only screen and (max-width: 1024px) {}
+
+@media only screen and (max-width: 810px) {}
+
+@media only screen and (max-width: 500px) {}

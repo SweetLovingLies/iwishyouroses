@@ -1,0 +1,258 @@
+:root {
+    --bubblegum: #ffb7ed;
+    --dustyPink: #f6bdd1;
+    --persian: #f283b6;
+    --hintofmist: #f1efff;
+    --whispermist: #dbd8f0;
+    --kangel: #c3a3f6;
+}
+
+@font-face {
+    font-family: berry;
+    src: url('https://iwishyouroses.neocities.org/fonts/BerryRegular.ttf');
+}
+
+body {
+    font-family: berry;
+    background-color: var(--whispermist);
+
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.1) 2px, transparent 2px), linear-gradient(rgba(0, 0, 0, 0.1) 2px, transparent 2px);
+    background-position: 0 0;
+    background-size: 25px 25px;
+}
+
+.allMessages {
+    margin: 7px;
+    opacity: 0.75;
+    transition: box-shadow .25s linear;
+    box-shadow: 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 3px 4px #005;
+
+    border: 1px solid var(--kangel);
+}
+
+.allMessages:hover {
+    opacity: 1;
+}
+
+.sent {
+    border-radius: 20px 20px 0 20px;
+    background-color: white;
+    color: #555;
+}
+
+.recieved {
+    border-radius: 20px 20px 20px 0;
+    background-color: var(--hintofmist);
+    color: #333;
+}
+
+blockquote {
+    background-color: var(--bubblegum);
+    color: white;
+    opacity: 0.90;
+    border-right: solid 2px #AAA;
+}
+
+.senderInfo {
+    flex-wrap: nowrap;
+}
+
+.senderInfo::after {
+    content: "";
+    width: 14px;
+    height: 14px;
+    background: url("https://iwishyouroses.neocities.org/Assets/myAssets/idolLineLogo/IdolLineDetail.png") center/contain;
+    margin-left: 2px;
+}
+
+#background {
+    scrollbar-color: var(--kangel) transparent;
+}
+
+#input {
+    background-color: white;
+    border-radius: 0;
+    border-top: 1px solid #8888ff;
+    font-family: berry;
+}
+
+#top_banner {
+    display: none;
+}
+
+.mod,
+.owner,
+.tester {
+    width: 0;
+}
+
+/* Right Click Menu */
+.ctxMenuOption {
+    background-color: var(--dustyPink) !important;
+    color: #111;
+}
+
+.ctxMenuOption:nth-child(odd) {
+    background-color: var(--persian) !important;
+}
+
+.ctxMenuOption:hover {
+    filter: brightness(80%);
+    -webkit-filter: brightness(80%);
+}
+
+#ctxMenu {
+    background-color: white !important;
+}
+
+:where(#emojiTrayToggle) {
+    background-image: url("https://iwishyouroses.neocities.org/Assets/other/mellowIcons/emoji/Happy.png");
+}
+
+#emojiTray {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    width: calc(100% - 40px);
+    background-color: white;
+    box-shadow: 0 1px 4px rgba(0, 0, 10, 0.24);
+    color: black;
+}
+
+#emojiTay img {
+    height: 15px;
+}
+
+#settingsMenu {
+    background-color: var(--whispermist);
+}
+
+#settingsMenu hr {
+    border: none;
+    height: 2px;
+    background-color: var(--hintofmist);
+    width: 100%;
+}
+
+#settingsMenu input[type=text] {
+    border-radius: 1em;
+
+    border: solid 2px var(--hintofmist);
+    background-color: var(--whispermist);
+
+    color: black;
+    outline: none !important;
+}
+
+#settingsMenu input[type=text]:focus {
+    border: solid 2px black;
+}
+
+#save {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 10px;
+
+    border: solid 2px black;
+    background-color: var(--whispermist);
+
+    font-family: berry;
+    color: black;
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+.msgWrapper::before {
+    content: "";
+    width: 32px;
+    height: 32px;
+    margin: 4px;
+    flex-shrink: 0;
+    border-radius: 32px;
+
+    background-size: cover;
+}
+
+.senderInfo:has(.owner)::before {
+    content: "[ADMIN]";
+    color: var(--persian)
+}
+
+.msgWrapper {
+    display: flex;
+}
+
+.msgWrapper:has(.sent) {
+    flex-direction: row-reverse;
+}
+
+#timestamp {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: var(--hintofmist);
+    border-radius: 4px;
+    padding: 2px 2px 0;
+
+    margin: 0 auto !important;
+}
+
+/* Thanks to LilithDev for helping me with this! */
+
+.msgWrapper:has(.owner)::before {
+    background-image: url(https://iwishyouroses.neocities.org/Assets/anime/YanSim/pfp/sweetryo.jpg) !important;
+}
+
+.msgWrapper:has(.mod)::before {
+    background-image: url(https://iwishyouroses.neocities.org/Assets/anime/pripara/pfp/yui1.jpg) !important;
+}
+
+.msgWrapper:has(.beta)::before {
+    background-image: url(https://iwishyouroses.neocities.org/Assets/anime/pripara/pfp/laala.jpg) !important;
+}
+
+/* You can technically assign a pfp to a specific user as well if you desire using this selector, it uses the uid that is unique per user, you can view it in inspect element of the p element inside .msgWrapper
+.msgWrapper:has([uid="WxRZ8bEBndfC3iF3MqwHksWv2oa2"])::before {
+    background-image: url(https://lilithdev.neocities.org/shrine/vg/nso/sprites/icon_cho.png) !important;
+} */
+
+/* Random Icons */
+
+.msgWrapper:nth-child(7n+0)::before {
+    background-image: url(https://iwishyouroses.neocities.org/Assets/anime/idolmaster/pfp/anzu1.jpg);
+}
+
+.msgWrapper:nth-child(7n+1)::before {
+    background-image: url(https://iwishyouroses.neocities.org/Assets/anime/pripara/pfp/laala.jpg);
+}
+
+.msgWrapper:nth-child(7n+2)::before {
+    background-image: url(https://iwishyouroses.neocities.org/Assets/anime/pripara/pfp/yui1.jpg);
+}
+
+.msgWrapper:nth-child(7n+3)::before {
+    background-image: url(https://iwishyouroses.neocities.org/Assets/anime/pjsk/pfp/miku1.jpg);
+}
+
+.msgWrapper:nth-child(7n+4)::before {
+    background-image: url(https://iwishyouroses.neocities.org/Assets/anime/idolmaster/pfp/kirari1.jpg);
+}
+
+.msgWrapper:nth-child(7n+5)::before {
+    background-image: url(https://iwishyouroses.neocities.org/Assets/anime/idolmaster/pfp/riamu1.jpg);
+}
+
+.msgWrapper:nth-child(7n+6)::before {
+    background-image: url(https://iwishyouroses.neocities.org/Assets/anime/pjsk/pfp/ena1.jpg);
+}
+
+@media (max-width: 200px) {
+    .msgWrapper::before {
+        display: none;
+    }
+}

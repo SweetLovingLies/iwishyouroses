@@ -1,6 +1,5 @@
 
 main{
-    font-family: cafesweet;
     display: flex;
     flex-flow: column wrap;
 }
@@ -26,7 +25,7 @@ main{
 }
 
 .settingsWrapper button {
-    font-family: cafesweet;
+    font-family: var(--fontSpace);
     font-size: 16px;
     background-color: transparent;
     border: none;

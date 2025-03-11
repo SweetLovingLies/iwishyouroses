@@ -7,6 +7,18 @@ if (clearCacheButton) {
     });
 }
 
+const resetLayoutButton = document.getElementById('resetLayoutButton')
+if (resetLayoutButton) {
+    resetLayoutButton.addEventListener('click', () => {
+        localStorage.removeItem('column1Order');
+        localStorage.removeItem('trayOrder');
+        localStorage.removeItem('homepage1Order');
+        localStorage.removeItem('homepage2Order');
+
+        alert("Homepage Layout has been reset!");
+    });
+}
+
 // & Freezeframe.js
 
 function toggleGIFs() {
@@ -48,26 +60,4 @@ document.addEventListener("DOMContentLoaded", () => {
     if (Math.random() < chance) {
         userIcon.src = alternateIcon;
     }
-});
-
-// & Themeswitcher
-
-document.addEventListener("DOMContentLoaded", function () {
-    const themeLinks = Array.from(document.querySelectorAll("link[id^='settings']"));
-    const savedTheme = localStorage.getItem("globalTheme") || "light";
-    const pageName = window.location.pathname.split('/').pop().split('.')[0];
-
-    const availableThemes = themeLinks.map(link => link.id.replace(pageName, '').replace('CSS', '').toLowerCase());
-    const validTheme = (availableThemes.includes(savedTheme) && themeLinks.some(link => link.getAttribute("data-theme") === savedTheme))
-        ? savedTheme
-        : "light";
-
-    const body = document.body;
-    if (savedTheme === "dark") {
-        body.classList.add("dark");
-    } else {
-        body.classList.remove("dark");
-    }
-
-    themeLinks.forEach(link => link.disabled = link.getAttribute("data-theme") !== validTheme);
 });

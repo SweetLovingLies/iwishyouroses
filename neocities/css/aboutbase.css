@@ -153,6 +153,7 @@ aside section {
     padding: 10px;
 }
 
+/* ? The video */
 #kins {
     overflow: hidden;
 }
@@ -162,6 +163,10 @@ aside section {
 }
 
 /* ~ General */
+
+ul {
+    padding-left: 10px;
+}
 
 h3 {
     font-weight: normal;

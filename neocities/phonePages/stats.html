@@ -11,7 +11,8 @@
 
     <link href="css/statsBase.css" rel="stylesheet" type="text/css" media="all">
 
-    <link id="statsCSS" href="css/statsThemes/statsLight.css" rel="stylesheet" type="text/css" media="all"
+    <!-- ~ Themes  -->
+    <link id="statsLightCSS" href="css/statsThemes/statsLight.css" rel="stylesheet" type="text/css" media="all"
         data-theme="light">
     <link id="statsDarkCSS" href="css/statsThemes/statsDark.css" rel="stylesheet" type="text/css" media="all"
         data-theme="dark">
@@ -74,21 +75,6 @@
             <p class="weirdstats">0</p>
         </div>
     </main>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const themeLinks = Array.from(document.querySelectorAll("link[id^='stats']"));
-            const savedTheme = localStorage.getItem("globalTheme") || "light";
-            const pageName = window.location.pathname.split('/').pop().split('.')[0];
-
-            const availableThemes = themeLinks.map(link => link.id.replace(pageName, '').replace('CSS', '').toLowerCase());
-            const validTheme = (availableThemes.includes(savedTheme) && themeLinks.some(link => link.getAttribute("data-theme") === savedTheme))
-                ? savedTheme
-                : "light";
-
-            themeLinks.forEach(link => link.disabled = link.getAttribute("data-theme") !== validTheme);
-        });
-    </script>
     <script src="./js/achievements/achievements.js"></script>
 </body>
 

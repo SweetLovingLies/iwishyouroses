@@ -18,6 +18,8 @@
 </head>
 
 <body>
+
+    <!-- & 0 -->
     <div id="welcomeScreen" class="wrapper active">
         <div id="hangingSheep"></div>
         <div id="welcomeWrapper" class="centralWrapper">
@@ -35,6 +37,7 @@
         </footer>
     </div>
 
+    <!-- & 1 -->
     <div id="nameScreen" class="wrapper">
         <div id="roseChime"></div>
         <form class="centralWrapper">
@@ -55,6 +58,7 @@
         <!-- <div id="glitterGlobe"></div> -->
     </div>
 
+    <!-- & 2 -->
     <div id="iconPickerScreen" class="wrapper">
         <div class="centralWrapper">
             <div style="display: flex; flex-flow: column nowrap;">
@@ -160,45 +164,7 @@
         </div>
     </div>
 
-    <div id="themeScreen" class="wrapper">
-        <div class="centralWrapper">
-            <h2>Pick a theme!</h2>
-            <div id="themeWrapper">
-                <button id="lightModeSwitch" class="themePreview" data-theme="light">
-                    <img src="themeSwitcherPreviews/Base.png" loading="lazy">
-                    <caption>Fairy Dust</caption>
-                </button>
-
-                <button id="darkModeSwitch" class="themePreview" data-theme="dark">
-                    <img src="themeSwitcherPreviews/Dark.png" loading="lazy">
-                    <caption>Empty Dream</caption>
-                </button>
-            </div>
-            <p class="rightAligned">This can be changed in the themes app later!</p>
-            <br>
-        </div>
-
-        <footer>
-            <div class="iconifyWrapper">
-                <iconify-icon class="backward" onclick="keepitPushing(2)" icon="lucide:chevron-left"></iconify-icon>
-                <iconify-icon class="forward" style="color: red;" onclick="keepitPushing(4)"
-                    icon="lucide:chevron-right"></iconify-icon>
-            </div>
-        </footer>
-
-        <div id="mirror"></div>
-        <div id="loadingScreen" class="loading-screen hidden">
-            <div class="loading-container">
-                <p>Great choice!</p>
-                <p>Applying your theme now!</p>
-                <div class="progress-bar">
-                    <div id="progress" class="progress"></div>
-                </div>
-            </div>
-            <img src="/Assets/pixels/animals/catroll.gif">
-        </div>
-    </div>
-
+    <!-- & 3 -->
     <div id="onboarding1" class="onboarding wrapper">
         <bgOverlay>
             <div style="position: relative; height: 100%;">
@@ -220,11 +186,12 @@
 
         <footer>
             <div class="iconifyWrapper">
-                <iconify-icon class="forward" onclick="keepitPushing(5)" icon="lucide:chevron-right"></iconify-icon>
+                <iconify-icon class="forward" onclick="keepitPushing(4)" icon="lucide:chevron-right"></iconify-icon>
             </div>
         </footer>
     </div>
 
+    <!-- & 4 -->
     <div id="onboarding2" class="onboarding wrapper">
         <bgOverlay>
             <div style="position: relative; height: 100%;">
@@ -245,12 +212,13 @@
 
         <footer>
             <div class="iconifyWrapper">
-                <iconify-icon class="backward" onclick="keepitPushing(4)" icon="lucide:chevron-left"></iconify-icon>
-                <iconify-icon class="forward" onclick="keepitPushing(6)" icon="lucide:chevron-right"></iconify-icon>
+                <iconify-icon class="backward" onclick="keepitPushing(3)" icon="lucide:chevron-left"></iconify-icon>
+                <iconify-icon class="forward" onclick="keepitPushing(5)" icon="lucide:chevron-right"></iconify-icon>
             </div>
         </footer>
     </div>
 
+    <!-- & 5 -->
     <div id="onboarding3" class="onboarding wrapper">
         <bgOverlay>
             <div style="position: relative; height: 100%;">
@@ -271,12 +239,13 @@
 
         <footer>
             <div class="iconifyWrapper">
-                <iconify-icon class="backward" onclick="keepitPushing(5)" icon="lucide:chevron-left"></iconify-icon>
-                <iconify-icon class="forward" onclick="keepitPushing(7)" icon="lucide:chevron-right"></iconify-icon>
+                <iconify-icon class="backward" onclick="keepitPushing(4)" icon="lucide:chevron-left"></iconify-icon>
+                <iconify-icon class="forward" onclick="keepitPushing(6)" icon="lucide:chevron-right"></iconify-icon>
             </div>
         </footer>
     </div>
 
+    <!-- & 6 -->
     <div id="onboarding4" class="onboarding wrapper">
         <bgOverlay>
             <div style="position: relative; height: 100%;">
@@ -302,12 +271,13 @@
 
         <footer>
             <div class="iconifyWrapper">
-                <iconify-icon class="backward" onclick="keepitPushing(6)" icon="lucide:chevron-left"></iconify-icon>
-                <iconify-icon class="forward" onclick="keepitPushing(8)" icon="lucide:chevron-right"></iconify-icon>
+                <iconify-icon class="backward" onclick="keepitPushing(5)" icon="lucide:chevron-left"></iconify-icon>
+                <iconify-icon class="forward" onclick="keepitPushing(7)" icon="lucide:chevron-right"></iconify-icon>
             </div>
         </footer>
     </div>
 
+    <!-- & 7 -->
     <div id="onboarding5" class="onboarding wrapper">
         <bgOverlay>
             <div style="position: relative; height: 100%;">
@@ -339,13 +309,14 @@
 
         <footer>
             <div class="iconifyWrapper">
-                <iconify-icon class="backward" onclick="keepitPushing(7)" icon="lucide:chevron-left"></iconify-icon>
-                <iconify-icon class="forward" style="color: red;" onclick="keepitPushing(9)"
+                <iconify-icon class="backward" onclick="keepitPushing(6)" icon="lucide:chevron-left"></iconify-icon>
+                <iconify-icon class="forward" style="color: red;" onclick="keepitPushing(8)"
                     icon="lucide:chevron-right"></iconify-icon>
             </div>
         </footer>
     </div>
 
+    <!-- & 8 -->
     <div id="onboarding6" class="onboarding wrapper">
         <bgOverlay>
             <div style="position: relative; height: 100%;">
@@ -373,8 +344,6 @@
         </div>
     </div>
 
-
-    <script src="js/themeSwitcher.js"></script>
     <script>
         // Name Stuff
         // Attemping validation without a button

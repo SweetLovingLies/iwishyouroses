@@ -11,17 +11,20 @@
 
     <link href="css/homepageBase.css" rel="stylesheet" type="text/css" media="all">
 
-    <link id="homepageCSS" href="css/homepageThemes/homepageLight.css" rel="stylesheet" type="text/css" media="all"
+    <!-- ~ Themes -->
+    <link id="homepageLightCSS" href="css/homepageThemes/homepageLight.css" rel="stylesheet" type="text/css" media="all"
         data-theme="light">
-
     <link id="homepageDarkCSS" href="css/homepageThemes/homepageDark.css" rel="stylesheet" type="text/css" media="all"
         data-theme="dark">
+        <link id="homepageRetroCSS" href="css/homepageThemes/homepageRetro.css" rel="stylesheet" type="text/css" media="all"
+        data-theme="retro">
     <!-- <link id="homepageChristmasCSS" href="css/homepageThemes/homepageChristmas.css" rel="stylesheet" type="text/css"
         media="all" data-theme="christmas"> -->
 
     <meta name="description" content="Access literally everything you need." />
     <link rel="icon" type="image/x-icon" href="../Assets/pixels/vintageAmericana/strawberryphone.webp">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.2/Sortable.min.js"></script>
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 
     <script src="js/phone.js"></script>
@@ -32,75 +35,73 @@
     <object id="detailBarObject" data="detailbar.html"></object>
 
     <div id="homepages">
-        <div class="homepage active" id="homepage1">
-            <div class="appWrapper">
-                <div class="flexWrapper">
-                    <!-- ! If you change anything html-wise here, be sure to update homepage.js too! -->
-                    <div class="widgetColumn">
-                        <object class="widget" id="widget1" type="image/svg+xml" data=""></object>
-                        <p>Widgetsmith</p>
-                    </div>
-                    <div class="column1">
-                        <a href="nav.html" class="app" onclick="openApp(event, this)">
-                            <div class="appIcon">
-                                <img src="/Assets/myAssets/appIcons/navIcon.png">
-                            </div>
-                            <p>Navigation</p>
-                        </a>
-                        <a href="idolMessenger.html" class="app" onclick="openApp(event, this)">
-                            <div id="idolMessenger" class="appIcon">
-                                <img src="/Assets/myAssets/appIcons/idolMessengerIcon.png">
-                            </div>
-                            <p>Idol Messenger</p>
-                        </a>
-                    </div>
+        <div id="homepage1" class="homepage active">
+            <div id="aw1" class="appWrapper draggable-container">
+                <div id="widgetColumn">
+                    <object class="widget" id="widget1" type="image/svg+xml" data=""></object>
+                    <p>Widgetsmith</p>
+                </div>
+            
+                <div id="column1" class="draggable-container">
+                    <a href="nav.html" id="nav" class="app draggable-item" onclick="openApp(event, this)">
+                        <div class="appIcon">
+                            <img src="/Assets/myAssets/appIcons/navIcon.png">
+                        </div>
+                        <p>Navigation</p>
+                    </a>
+                    <a href="idolMessenger.html" id="idolMessenger" class="app draggable-item" onclick="openApp(event, this)">
+                        <div class="appIcon">
+                            <img src="/Assets/myAssets/appIcons/idolMessengerIcon.png">
+                        </div>
+                        <p>Idol Messenger</p>
+                    </a>
                 </div>
 
-                <a href="contact.html" class="app" onclick="openApp(event, this)">
-                    <div id="asterism" class="appIcon">
+                <a href="contact.html" id="contactMe" class="app draggable-item" onclick="openApp(event, this)">
+                    <div class="appIcon">
                         <img src="/Assets/myAssets/appIcons/contactMeIcon.png">
                     </div>
                     <p>Webmiss Contact</p>
                 </a>
 
-                <a href="stats.html" class="app" onclick="openApp(event, this)">
+                <a href="stats.html" id="stats" class="app draggable-item" onclick="openApp(event, this)">
                     <div class="appIcon">
                         <img src="/Assets/myAssets/appIcons/statsIcon.png">
                     </div>
                     <p>Stats</p>
                 </a>
-                <a href="accountManager.html" class="app" onclick="openApp(event, this)">
+                <a href="accountManager.html" id="accManager" class="app draggable-item" onclick="openApp(event, this)">
                     <div class="appIcon">
                         <img src="/Assets/myAssets/appIcons/idolManagerIcon.png">
                     </div>
                     <p>Idol Manager</p>
                 </a>
-                <a href="idolFinder.html" class="app" onclick="openApp(event, this)">
-                    <div id="idolFinder" class="appIcon">
+                <a href="idolFinder.html" id="idolFinder" class="app draggable-item" onclick="openApp(event, this)">
+                    <div class="appIcon">
                         <img src="/Assets/myAssets/appIcons/peersIcon.png">
                     </div>
                     <p>IdolFinder</p>
                 </a>
-                <a href="gallery.html" class="app" onclick="openApp(event, this)">
+                <a href="gallery.html" id="gallery" class="app draggable-item" onclick="openApp(event, this)">
                     <div class="appIcon">
                         <img src="/Assets/myAssets/appIcons/galleryIcon.png">
                     </div>
                     <p>Gallery</p>
                 </a>
-                <a href="themes.html" class="app" onclick="openApp(event, this)">
+                <a href="themes.html" id="themes" class="app draggable-item" onclick="openApp(event, this)">
                     <div class="appIcon">
                         <img src="/Assets/myAssets/appIcons/shiny_cats_pact_by_yuriachanartist.png">
                     </div>
                     <p>Themes</p>
                 </a>
-                <a href="seranade.html" class="app" onclick="openApp(event, this)">
-                    <div id="serenade" class="appIcon">
+                <a href="seranade.html" id="serenade" class="app draggable-item" onclick="openApp(event, this)">
+                    <div class="appIcon">
                         <img src="/Assets/myAssets/appIcons/serenadeIcon.png">
                     </div>
                     <p>Serenade</p>
                 </a>
-                <a id="wsApp" href="widgetsmith.html" class="app" onclick="openApp(event, this)">
-                    <div id="widgetsmith" class="appIcon">
+                <a href="widgetsmith.html" id="widgetsmith" class="app draggable-item" onclick="openApp(event, this)">
+                    <div class="appIcon">
                         <img src="/Assets/myAssets/appIcons/widgetsmithIcon.png">
                     </div>
                     <p>Widget Smith</p>
@@ -108,8 +109,8 @@
             </div>
         </div>
 
-        <div class="homepage" id="homepage2">
-            <div class="appWrapper">
+        <div id="homepage2" class="homepage">
+            <div id="aw2" class="appWrapper draggable-container">
                 <div id="weatherWidget">
                     <div id="wwTop">
                         <p id="wwCityName">Yomiyama City</p>
@@ -125,32 +126,32 @@
                     </div>
                 </div>
 
-                <a href="calculator.html" class="app" onclick="openApp(event, this)">
+                <a href="calculator.html" id="calculator" class="app draggable-item" onclick="openApp(event, this)">
                     <div class="appIcon">
                         <img src="/Assets/myAssets/appIcons/calculatorIcon.png">
                     </div>
                     <p>Calculator</p>
                 </a>
-                <a href="idolPet.html" class="app" onclick="openApp(event, this)">
-                    <div id="idolPet" class="appIcon">
+                <a href="idolPet.html" id="idolPet" class="app draggable-item" onclick="openApp(event, this)">
+                    <div class="appIcon">
                         <img src="/Assets/myAssets/appIcons/IdolPetIcon.png">
                     </div>
                     <p>IdolPet</p>
                 </a>
-                <a href="mellow.html" class="app" onclick="openApp(event, this)">
-                    <div id="mellow" class="appIcon">
+                <a href="mellow.html" id="mellow" class="app draggable-item" onclick="openApp(event, this)">
+                    <div class="appIcon">
                         <img src="/Assets/myAssets/appIcons/mellowIcon.png">
                     </div>
                     <p>Mellow</p>
                 </a>
-                <a href="yourTome.html" class="app" onclick="openApp(event, this)">
-                    <div id="yourTome" class="appIcon">
+                <a href="yourTome.html" id="yourTome" class="app draggable-item" onclick="openApp(event, this)">
+                    <div class="appIcon">
                         <img src="/Assets/myAssets/appIcons/yourTomeIcon.png">
                     </div>
                     <p>Your Tome</p>
                 </a>
-                <a href="treasurePlanet.html" class="app" onclick="openApp(event, this)">
-                    <div id="treasurePlanet" class="appIcon">
+                <a href="treasurePlanet.html" id="treasurePlanet" class="app draggable-item" onclick="openApp(event, this)">
+                    <div class="appIcon">
                         <img src="/Assets/myAssets/appIcons/treasurePlanetIcon.png">
                     </div>
                     <p>Treasure Planet</p>
@@ -159,26 +160,29 @@
                 <img src="/shrines/OMORI/hangmanGame/assets/keys/keyE.png" id="keyE" onclick="collectKey('E');">
             </div>
         </div>
+
         <footer>
             <div class="swipeIcons">
                 <iconify-icon icon="material-symbols:circle" class="navDots" onclick="showHomepage(0)"></iconify-icon>
                 <iconify-icon icon="material-symbols:circle" class="navDots" onclick="showHomepage(1)"></iconify-icon>
             </div>
 
-            <div id="tray">
-                <a href="temp.html" class="app UNF" onclick="openApp(event, this)">
+            <div id="tray" class="draggable-container">
+                <a href="temp.html" id="shiranai" class="app UNF draggable-item" onclick="openApp(event, this)">
                     <div class="appIcon">
                         <img src="/Assets/myAssets/appIcons/shiranaiIcon.png">
                     </div>
                     <p>SHIRANAI</p>
                 </a>
-                <a href="settings.html" class="app" onclick="openApp(event, this)">
+
+                <a href="settings.html" id="settings" class="app draggable-item" onclick="openApp(event, this)">
                     <div class="appIcon">
                         <img src="/Assets/myAssets/appIcons/settingsIcon.png">
                     </div>
                     <p>Settings</p>
                 </a>
-                <a href="temp.html" class="app UNF" onclick="openApp(event, this)">
+
+                <a href="temp.html" id="camera" class="app UNF draggable-item" onclick="openApp(event, this)">
                     <div class="appIcon">
                         <img src="/Assets/myAssets/appIcons/cameraIcon.png">
                     </div>

@@ -18,7 +18,7 @@
 }
 
 body {
-    background: url("/Assets/BGs/weather.gif");
+    background: url("/Assets/BGs/darkMode/glitter.gif");
     
     justify-content: center;
     align-items: center;
@@ -30,13 +30,44 @@ body {
     flex: 0 1 60%;
     height: 100vh;
 
-    background-color: white;
+    background: black;
     padding: 20px;
     position: relative;
 }
 
 header {
-    flex: 1 1 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    padding: 20px;
+
+    color: white;
+
+    font-family: var(--fontFamily);
+    font-size: larger;
+    text-align: center;
+}
+
+header span:nth-of-type(1) {
+    color: var(--persian)
+}
+
+header span:nth-of-type(2) {
+    color: var(--deepsea)
+}
+
+#magazineContainer {
+    padding-top: 100px;
+    position: relative;
+}
+
+.magazineView {
+    display: flex;
+    justify-content: center;
+
+    filter: drop-shadow(0px 3px 4px #9b9b9b);
 }
 
 .magazinePage {
@@ -46,16 +77,6 @@ header {
     overflow: hidden;
 
     background-color: black;
-}
-
-#magazineContainer {
-    flex: 1 1;
-    position: relative;
-}
-
-.magazineView {
-    display: flex;
-    justify-content: center;
 }
 
 #navigation {
@@ -71,7 +92,7 @@ header {
 }
 
 #navigation iconify-icon {
-    color: var(--deepslate);
+    color: var(--persian);
     font-size: 2em;
     padding: 10px 20px;
     border: none;
@@ -81,11 +102,11 @@ header {
 }
 
 #navigation iconify-icon:hover {
-    color: var(--persian);
+    color: var(--deepsea);
 }
 
 #navigation iconify-icon.disabled {
-    color: #cecece;
+    color: var(--deepslate);
     cursor: not-allowed;
 }
 
@@ -119,7 +140,7 @@ header {
     font-size: 2.4em;
     height: 10px;
 
-    color: var(--persian);
+    color: var(--deepsea);
 }
 
 /*  ~ Cover Page */
@@ -154,8 +175,8 @@ header {
     text-align: right;
 }
 
-#supportingLines p:nth-of-type(2) span {
-    color: var(--persian);
+#supportingLines p:nth-of-type(2) mark {
+    background-color: var(--persian);
 }
 
 #supportingLines p:nth-of-type(3) {
@@ -165,6 +186,28 @@ header {
 
     font-size: 1.1em;
     text-align: right;
+}
+
+.mainEvent {
+    bottom: 5%;
+    right: 50%;
+    transform: translateX(50%);
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    text-align: center;
+}
+
+.mainEvent p:nth-of-type(1) {
+    width: 100%;
+    font-size: 4em;
+    font-style: italic;
+}
+
+.mainEvent p:nth-of-type(2) {
+    width: 350px;
+    font-size: 1.4em;
 }
 
 /* Specifics */
@@ -220,6 +263,25 @@ overlay {
     z-index: 10;
 
     pointer-events: none;
+}
+
+#yenaShrine2 {
+    background: url("/Assets/myAssets/magazineAssets/MagazinePageYena.png");
+    padding: 15px;
+}
+
+#yenaShrine2 p:nth-of-type(1) {
+    top: 3%;
+    left: 20px;
+    width: 230px;
+}
+
+#yenaShrine2 p:nth-of-type(2) {
+    bottom: 5%;
+    right: 20px;
+    width: 230px;
+
+    text-align: right;
 }
 
 /* Helpers */ 

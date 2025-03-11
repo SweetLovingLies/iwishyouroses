@@ -35,7 +35,10 @@
 <body class="flex">
     <div id="content">
         <header>
-            HELLO!
+            <p>Hello and welcome to...</p>
+            <h3><span>Andromeda's Obsession</span> <span>with POP!</span></h3>
+            <p>Please sit back, grab a coffee, and enjoy what we have to share in the first edition of this brand new
+                magazine!</p>
         </header>
 
         <div id="magazineContainer">
@@ -43,39 +46,69 @@
                 <div id="cover" class="magazinePage">
                     <div id="logo" class="floaters">
                         <h2>ANDROMEDA's OBSESSION</h2>
-                        <p id="magTitle">with Love<span class="dingbats1">n</span></p>
+                        <p id="magTitle">with POP<span class="dingbats1">n</span></p>
                         <p id="issueDate" class="floaters">Feb. 2025</p>
                     </div>
 
                     <div id="supportingLines">
                         <p class="floaters">The return of <mark>Frutiger Aero</mark></p>
-                        <p class="floaters">The <span>BEST</span> indie games of all time!</p>
+                        <p class="floaters">The <mark>BEST</mark> indie games of all time!</p>
                         <p class="floaters">A peak into YENA's fashion style</p>
                     </div>
-
+                    <div class="mainEvent floaters">
+                        <p>Sabrina Carpenter</p>
+                        <p> "Busy Woman" drops and the princess of pop rises</p>
+                    </div>
                 </div>
             </div>
 
-            <!-- ! Page 1 -->
+            <!-- ! Page 1 + 2 -->
             <div class="magazineView" style="display: none;">
-                <a id="yenaShrine" class="magazinePage flex" href="#">
+                
+                <!-- ? 2 Pager -->
+                <a id="yenaShrine" class="magazinePage flex" href="YENA/nemonemoroom.html">                    
                     <overlay class="floaters"></overlay>
                     <img id="nemonemo"
                         src="/Assets/kpop/YENA/Selcas/Yena-SMARTPHONE-Promotion-Photoshoot-by-Dispatch-documents-1.jpeg">
                     <img id="yenaLogo" class="floaters" src="/Assets/kpop/YENA/yena.png">
                 </a>
-                <a id="XGShrine" class="magazinePage" href="#"></a>
+
+                <!-- ! Update this muck ASAP -->
+                <div id="yenaShrine2" class="magazinePage">
+                    <p class="floaters">In a universe filled with shining idols, YENA blazes like a shooting star,
+                        leaving a trail of playful energy and fierce individuality. Formerly of IZ*ONE and now carving
+                        her own path as a soloist, YENA isn't just an artist—she's a force of nature. With her signature
+                        blend of pop-punk attitude and infectious charisma, she bends the rules of K-pop, fusing
+                        colorful visuals with bold, genre-defying sounds. Her music, an interstellar mix of rebellious
+                        anthems and heartfelt confessions, invites fans into her orbit, where fun and freedom reign
+                        supreme. Whether she's belting out high-energy tracks like "SMILEY" or delivering unexpectedly
+                        emotional ballads, YENA's galaxy is one where joy and authenticity shine the brightest.</p>
+
+                    <p class="floaters">Beyond the stage, YENA's presence is just as magnetic—whether she's making fans
+                        laugh with her chaotic variety show antics or showcasing her love for gaming and anime. She
+                        embodies the perfect blend of cute and edgy, a neon-lit comet streaking across the polished sky
+                        of K-pop's elite. With every comeback, she reinvents herself, proving that she's not afraid to
+                        take risks and challenge expectations. In Andromeda Obsession, we celebrate YENA not just as an
+                        idol, but as a celestial rebel who reminds us that being unapologetically yourself is the
+                        ultimate superpower. Keep your eyes on the cosmos—YENA's journey has only just begun. 🚀✨</p>
+                </div>
             </div>
 
-            <!-- ! Page 2 -->
+            <!-- ! Page 3 + 4  -->
             <div class="magazineView" style="display: none;">
+                <!-- ? 1 Pager -->
                 <a id="anotherShrine" class="magazinePage" href="#"></a>
+
+                <!-- ? 2 Pager -->
                 <a id="frutigerShrine" class="magazinePage" href="#"></a>
             </div>
 
-            <!-- ! Page 3 -->
+            <!-- ! Page 5 + 6 -->
             <div class="magazineView" style="display: none;">
+                <!-- ? 2 Pager -->
                 <a id="OMORIShrine" class="magazinePage" href="#"></a>
+
+                <!-- ? 2 Pager -->
                 <a id="sabrinaShrine" class="magazinePage" href="#"></a>
             </div>
 
@@ -105,20 +138,25 @@
                 page.style.display = index === currentPage ? 'flex' : 'none';
             });
 
-            if (currentPage === 0) {
-                prevButton.classList.add('disabled');
-            } else {
-                prevButton.classList.remove('disabled');
-            }
+            prevButton.classList.toggle('disabled', currentPage === 0);
+            nextButton.classList.toggle('disabled', currentPage === pages.length - 1);
 
-            if (currentPage === pages.length - 1) {
-                nextButton.classList.add('disabled');
-            } else {
-                nextButton.classList.remove('disabled');
-            }
+            history.pushState({ page: currentPage }, '', `?page=${currentPage}`);
         }
 
-        // Event listeners for navigation buttons
+        function loadPageFromURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const pageFromURL = parseInt(urlParams.get('page'), 10);
+
+            if (!isNaN(pageFromURL) && pageFromURL >= 0 && pageFromURL < pages.length) {
+                currentPage = pageFromURL;
+            } else {
+                currentPage = 0;
+            }
+
+            updatePageVisibility();
+        }
+
         prevButton.addEventListener('click', () => {
             if (currentPage > 0) {
                 currentPage--;
@@ -143,8 +181,21 @@
             }
         });
 
-        updatePageVisibility();
+        window.addEventListener('popstate', (event) => {
+            if (event.state && typeof event.state.page === 'number') {
+                currentPage = event.state.page;
+                updatePageVisibility();
+            }
+        });
+
+        loadPageFromURL();
     </script>
+
+    <div id="phoneSpot">
+        <iframe id="phone" class="hidden" src="/phonePages/phone.html"
+            title="IdolLine Interactive Phone: Games, Tools, and Navigation!" role="application"></iframe>
+    </div>
+    <script src="/js/phoneDisplayScript.js"></script>
 </body>
 
 </html>

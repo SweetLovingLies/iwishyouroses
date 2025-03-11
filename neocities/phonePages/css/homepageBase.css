@@ -52,12 +52,6 @@ body {
     padding-bottom: 10px;
 }
 
-.flexWrapper {
-    flex: 1 1;
-    display: flex;
-    justify-content: space-between;
-}
-
 .app {
     /* width: calc(25% - 10px); */
     align-self: flex-start;
@@ -81,13 +75,15 @@ footer p {
     font-size: 13px;
 }
 
-.column1 {
-    display: flex;
-    flex-flow: column wrap;
-    gap: 20px;
+#column1 {
+    height: 167px;
 }
 
-.widgetColumn {
+#column1 .app:first-of-type {
+    margin-bottom: 12px;
+}
+
+#widgetColumn {
     flex: 1 1;
     display: flex;
     flex-flow: column nowrap;
@@ -289,39 +285,39 @@ footer {
 
 /* ? Downloaded App Icons */
 
-#idolMessenger {
+#idolMessenger .appIcon {
     background-color: var(--wisteria);
 }
 
-#asterism {
+#contactMe .appIcon {
     background-color: #090349;
 }
 
-#idolFinder {
+#idolFinder .appIcon {
     background-color: #87b4e0;
 }
 
-#serenade {
+#serenade .appIcon {
     background-color: #F01501;
 }
 
-#idolPet {
+#idolPet .appIcon {
     background-color: #428FF7;
 }
 
-#mellow {
+#mellow .appIcon {
     background: linear-gradient(to bottom, #8affbd 0%, #ffaef2 100%);
 }
 
-#yourTome {
+#yourTome .appIcon {
     background-color: #3d2c29;
 }
 
-#treasurePlanet {
+#treasurePlanet .appIcon {
     background-color: #b0e5ff;
 }
 
-#widgetsmith {
+#widgetsmith .appIcon {
     background-color: #b3bdb7;
 }
 

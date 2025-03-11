@@ -70,6 +70,45 @@ document.addEventListener('DOMContentLoaded', function () {
 
     setInterval(updateTime);
 
+    // ~ Themeswitcher
+    fetch('/phonePages/js/themeSwitcher/themes.json')
+        .then(response => response.json())
+        .then(data => {
+            const topPath = window.location.pathname.split('/').pop();
+            const pageName = topPath ? topPath.split('.')[0] : "index";
+            const savedTheme = localStorage.getItem("globalTheme") || "light";
+            const themeLinks = [...document.querySelectorAll(`link[id^="${pageName}"]`)];
+            let themeData = data.find(t => t.mode === savedTheme);
+            if (!themeData) {
+                const fallbackTheme = data.find(t => t.mode === themeData.fallback);
+                themeData = fallbackTheme || data.find(t => t.mode === "light");
+            }
+
+            const validTheme = themeData ? themeData.mode : "light";
+            const validStyle = themeData ? themeData.style : "light";
+            const fallbackTheme = themeData.fallback ? data.find(t => t.mode === themeData.fallback) : null;
+            const themeId = `${pageName}${capitalize(validTheme)}CSS`;
+            const fallbackThemeId = fallbackTheme ? `${pageName}${capitalize(fallbackTheme.mode)}CSS` : null;
+
+            themeLinks.forEach(link => {
+                const isValidPrimaryTheme = link.id === themeId;
+                const isValidFallbackTheme = fallbackThemeId && link.id === fallbackThemeId;
+                link.disabled = !(isValidPrimaryTheme || isValidFallbackTheme);
+            });
+
+            document.body.classList.toggle("dark", validStyle === "dark");
+        })
+        .catch(err => {
+            console.error("Failed to load themes.json:", err);
+        });
+
+    // Helper function to capitalize the theme mode
+    function capitalize(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+
+
     // ~ Weather
 
     const weatherData = {

@@ -66,29 +66,17 @@ navDots.forEach((dot, i) => {
 
 showHomepage(currentHomepage);
 
-// ~ ThemeSwitcher
+// ~ Widgets
 
-document.addEventListener("DOMContentLoaded", function () {
-    const themeLinks = Array.from(document.querySelectorAll("link[id^='homepage']"));
-    const savedTheme = localStorage.getItem("globalTheme") || "light";
-    const pageName = window.location.pathname.split('/').pop().split('.')[0];
-
-    const availableThemes = themeLinks.map(link =>
-        link.id.replace(pageName, '').replace('CSS', '').toLowerCase()
-    );
-
-    const validTheme = (availableThemes.includes(savedTheme) &&
-        themeLinks.some(link => link.getAttribute("data-theme") === savedTheme))
-        ? savedTheme
-        : "light";
-
-    themeLinks.forEach(link => {
-        link.disabled = link.getAttribute("data-theme") !== validTheme;
-    });
-    // ~ Widgets
-
+function initializeWidgets() {
     const savedWidgets = JSON.parse(localStorage.getItem('widgets')) || [];
+    const homepage1 = document.getElementById('homepage1');
+    if (!homepage1) return;
 
+    const appWrapper = homepage1.querySelector('.appWrapper');
+    if (!appWrapper) return;
+
+    // Handle widget rendering
     savedWidgets.forEach((widget) => {
         const widgetElement = document.getElementById(widget.id);
 
@@ -102,18 +90,8 @@ document.addEventListener("DOMContentLoaded", function () {
             widgetElement.style.filter = widget.filterValue;
         }
     });
-});
-
-// ~ Widgets
-
-document.addEventListener("DOMContentLoaded", function () {
-    const savedWidgets = JSON.parse(localStorage.getItem('widgets')) || [];
-    const homepage1 = document.getElementById('homepage1');
-    const appWrapper = homepage1.querySelector('.appWrapper');
 
     const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-
-    // console.log(isSafari);
 
     if (isSafari) {
         handleSafariFallback();
@@ -121,9 +99,11 @@ document.addEventListener("DOMContentLoaded", function () {
         updateLayout(savedWidgets);
     }
 
+    // Helper function to update layout based on widgets
     function updateLayout(widgets) {
-        const flexWrapper = appWrapper.querySelector('.flexWrapper');
-        const appIconsHTML = `
+        const widgetColumn = appWrapper.querySelector('#widgetColumn');
+        const column1 = appWrapper.querySelector('#column1');
+        const defaultApps = `
             <a href="nav.html" class="app" onclick="openApp(event, this)">
                 <div class="appIcon">
                     <img src="/Assets/myAssets/appIcons/navIcon.png">
@@ -138,85 +118,225 @@ document.addEventListener("DOMContentLoaded", function () {
             </a>
         `;
 
+        // Only add default apps if no saved order exists
+        const savedOrder = JSON.parse(localStorage.getItem('column1Order')) || [];
         if (widgets.length > 0) {
-            if (!flexWrapper) {
-                const newFlexWrapper = document.createElement('div');
-                newFlexWrapper.classList.add('flexWrapper');
-            
-                const widgetColumn = document.createElement('div');
-                widgetColumn.classList.add('widgetColumn');
-                widgetColumn.innerHTML = `
+            if (!widgetColumn) {
+                const newWidgetColumn = document.createElement('div');
+                newWidgetColumn.classList.add('widgetColumn');
+                newWidgetColumn.innerHTML = `
                     <object class="widget" id="widget1" type="image/svg+xml" data="${widgets[0].data || ''}"></object>
                     <p>Widgetsmith</p>
                 `;
-                newFlexWrapper.appendChild(widgetColumn);
-            
-                const appsColumn = document.createElement('div');
-                appsColumn.classList.add('column1');
-                appsColumn.innerHTML = appIconsHTML;
-                newFlexWrapper.appendChild(appsColumn);
-            
-                // Append to the appWrapper
-                if (appWrapper) {
-                    appWrapper.appendChild(newFlexWrapper);
+                appWrapper.insertBefore(newWidgetColumn, column1);
+            }
+
+            // Add default apps if column1 order is empty
+            if (savedOrder.length === 0) {
+                if (!column1) {
+                    const newColumn1 = document.createElement('div');
+                    newColumn1.classList.add('column1');
+                    newColumn1.innerHTML = defaultApps;
+                    appWrapper.appendChild(newColumn1);
                 }
-            }            
+            } else {
+                // Make a new one with the saved order
+                if (!column1) {
+                    const newColumn1 = document.createElement('div');
+                    newColumn1.classList.add('column1');
+                    appWrapper.appendChild(newColumn1);
+                }
+            }
         } else {
-            if (flexWrapper) {
-                flexWrapper.remove();
+            if (widgetColumn) {
+                appWrapper.removeChild(widgetColumn);
             }
-            if (appWrapper) {
-                appWrapper.insertAdjacentHTML('afterbegin', appIconsHTML);
+            if (column1) {
+                column1.style.display = 'none';
             }
-        }        
+        }
+
+        // Initialize sortable items
+        initializeSortable();
+        loadSavedOrder("column1", 'column1Order');
+        loadSavedOrder("aw1", 'homepage1Order');
+        loadSavedOrder("tray", 'trayOrder');
+        loadSavedOrder("aw2", 'homepage2Order');
     }
 
+    // Safari-specific fallback handling
     function handleSafariFallback() {
         const widgetsmithApp = document.getElementById("wsApp");
-        const flexWrapper = appWrapper.querySelector('.flexWrapper');
-        if (flexWrapper) {
-            flexWrapper.remove();
-        }
-
-    if (widgetsmithApp) {
-        widgetsmithApp.style.display = "none";
-    }
-        
-        const newFlexWrapper = document.createElement('div');
-        newFlexWrapper.classList.add('flexWrapper');
-
-        const appIconsHTML = `
-            <a href="nav.html" class="app" onclick="openApp(event, this)">
-                <div class="appIcon">
-                    <img src="/Assets/myAssets/appIcons/navIcon.png">
-                </div>
-                <p>Navigation</p>
-            </a>
-            <a href="idolMessenger.html" class="app" onclick="openApp(event, this)">
-                <div id="idolMessenger" class="appIcon">
-                    <img src="/Assets/myAssets/appIcons/idolMessengerIcon.png">
-                </div>
-                <p>Idol Messenger</p>
-            </a>
-        `;
-
-        const widgetColumn = document.createElement('div');
-        widgetColumn.classList.add('widgetColumn');
-        widgetColumn.innerHTML = `
-            <img class="widget" src="/Assets/kpop/weeekly/selcas/jihan3.jpg">
-            <p>Widgetsmith</p>
-        `;
-        newFlexWrapper.appendChild(widgetColumn);
-
-        const appsColumn = document.createElement('div');
-        appsColumn.classList.add('column1');
-        appsColumn.innerHTML = appIconsHTML;
-        newFlexWrapper.appendChild(appsColumn);
-
-        if (appWrapper) {
-            appWrapper.insertAdjacentElement('afterbegin', newFlexWrapper);
+        if (widgetsmithApp) {
+            widgetsmithApp.style.display = "none";
         }
     }
+}
+
+// ~ Sortable
+
+function initializeSortable() {
+    const containers = document.querySelectorAll('.draggable-container');
+    containers.forEach(container => {
+        new Sortable(container, {
+            animation: 150,
+            ghostClass: 'sortable-ghost',
+            draggable: ".draggable-item",
+            filter: ".widgetColumn", // No drag for you!
+            onEnd: function () {
+                const newOrder = Array.from(container.children).map(item => item.id).filter(id => id !== "");
+                // console.log(`New ${container.id} Order:`, newOrder);
+
+                overflowCheck(); 
+                saveOrders();
+            },
+            group: {
+                name: "shared",
+                pull: true,
+                put: true
+            },
+            onAdd: function () {
+                saveOrders();
+            }
+
+
+        });
+    });
+}
+
+const loadSavedOrder = (containerId, orderKey) => {
+    const savedOrder = JSON.parse(localStorage.getItem(orderKey));
+    // console.log(orderKey);
+    const container = document.getElementById(containerId);
+
+    if (!container) return;
+
+    if (!savedOrder || savedOrder.length === 0) {
+        // console.log(`No saved order found for ${containerId}. Defaulting!`);
+        const defaultOrder = Array.from(container.children).map(item => item.id).filter(id => id !== "");
+        localStorage.setItem(orderKey, JSON.stringify(defaultOrder));
+        return;
+    }
+
+    if (savedOrder.length > 0) {
+        // console.log(`Loading saved order for ${containerId}:`, savedOrder);
+        savedOrder.forEach(appID => {
+            const app = document.getElementById(appID);
+            if (app) {
+                container.appendChild(app);
+            } else {
+                console.warn(`App ID ${appID} not found!`);
+            }
+        });
+    }
+};
+
+function saveOrders() {
+    const containers = document.querySelectorAll('.draggable-container');
+    containers.forEach(container => {
+        const newOrder = Array.from(container.children).map(item => item.id).filter(id => id !== "");
+        if (container.id === "column1") {
+            localStorage.setItem('column1Order', JSON.stringify(newOrder));
+        } else if (container.id === "tray") {
+            localStorage.setItem('trayOrder', JSON.stringify(newOrder));
+        } else if (container.id === "aw1") {
+            localStorage.setItem('homepage1Order', JSON.stringify(newOrder));
+        } else if (container.id === "aw2") {
+            localStorage.setItem('homepage2Order', JSON.stringify(newOrder));
+        }
+    });
+}
+
+function overflowCheck() {
+    const appWrapper1 = document.querySelector("#aw1");
+    const appWrapper2 = document.querySelector("#aw2");
+
+    const limits = {
+        column1: 2,
+        tray: 3,
+        aw1: 10, // 10 to account for column1 being a child of aw1
+        aw2: 12
+    };
+
+    const containers = document.querySelectorAll('.draggable-container');
+    
+    containers.forEach(container => {
+        const newOrder = Array.from(container.children).map(item => item.id).filter(id => id !== "");
+        const containerId = container.id;
+        const limit = limits[containerId];
+
+        // Check if the container exceeds its limit
+        if (newOrder.length > limit) {
+            const excessItems = newOrder.slice(limit); // Get excess items
+
+            // console.log(`${containerId} is overflowing with ${excessItems.length} items!`);
+
+            if (containerId === "column1" && excessItems.length > 0) {
+                // console.log("Moving excess items from column1 to AW1");
+                excessItems.forEach(itemId => {
+                    const item = document.getElementById(itemId);
+                    if (item && appWrapper1) {
+                        appWrapper1.appendChild(item);
+                    }
+                });
+            }
+
+            if (containerId === "tray" && excessItems.length > 0) {
+                // console.log("Moving excess items from tray1 to AW1");
+                excessItems.forEach(itemId => {
+                    const item = document.getElementById(itemId);
+                    if (item && appWrapper1) {
+                        appWrapper1.appendChild(item);
+                    }
+                });
+            }
+
+            if (containerId === "aw1" && excessItems.length > 0) {
+                // console.log("Moving excess items from AW1 to AW2");
+                excessItems.forEach(itemId => {
+                    const item = document.getElementById(itemId);
+                    if (item && appWrapper2) {
+                        appWrapper2.appendChild(item);
+                    }
+                });
+            }
+
+            if (containerId === "aw2" && excessItems.length > 0) {
+                // console.log("Moving excess items from AW2 to AW1");
+                excessItems.forEach(itemId => {
+                    const item = document.getElementById(itemId);
+                    if (item && appWrapper2) {
+                        appWrapper1.appendChild(item);
+                    }
+                });
+            }
+        }
+    });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    initializeWidgets();
+
+    const topPath = window.top.location.pathname.split('/').pop();
+    const topPageName = topPath ? topPath.split('.')[0] : "index";
+
+    if (topPageName !== 'bloom') {
+        const themesApp = document.getElementById('themes');
+        if (themesApp) {
+            themesApp.style.display = 'none'; 
+        }
+    }
+
+    // ! If needed 
+    // clearAppOrder("aw1");
+    // clearAppOrder("aw2");
+    // clearAppOrder("tray");
+    // clearAppOrder("column1");
 });
 
-
+// Debug
+function clearAppOrder(containerId) {
+    localStorage.removeItem(`${containerId}Order`);
+    // console.log(`${containerId} order has been reset.`);
+    loadSavedOrder(containerId, `${containerId}Order`);
+}

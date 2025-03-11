@@ -19,17 +19,17 @@ body {
     color: gray;
 }
 
-.loading-screen {
+body#loading {
     background-color: black;
     color: white;
 }
 
-.progress-bar {
+.progressBar {
     background-color: var(--pinkIce);
 
-    border: 2px dashed var(--wisteria);
+    border: 2px dashed var(--persian);
 }
 
-.progress {
-    background-color: var(--bubblegum);
+#progress {
+    background-color: black;
 }

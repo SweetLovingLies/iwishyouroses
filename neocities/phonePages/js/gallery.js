@@ -137,27 +137,3 @@ images.forEach((img) => {
         }
     });
 });
-
-// Themeswitcher
-
-document.addEventListener("DOMContentLoaded", function () {
-    const themeLinks = Array.from(document.querySelectorAll("link[id^='gallery']"));
-    const savedTheme = localStorage.getItem("globalTheme") || "light";
-    const pageName = window.location.pathname.split('/').pop().split('.')[0];
-
-    const availableThemes = themeLinks.map(link => link.id.replace(pageName, '').replace('CSS', '').toLowerCase());
-    const validTheme = (availableThemes.includes(savedTheme) && themeLinks.some(link => link.getAttribute("data-theme") === savedTheme))
-        ? savedTheme
-        : "light";
-
-    const body = document.body;
-    if (savedTheme === "dark") {
-        body.classList.add("dark");
-        console.log("dark mode initiated");
-    } else {
-        body.classList.remove("dark");
-        console.log("dark mode deactivated");
-    }
-
-    themeLinks.forEach(link => link.disabled = link.getAttribute("data-theme") !== validTheme);
-});

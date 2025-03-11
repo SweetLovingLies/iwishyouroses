@@ -1,0 +1,39 @@
+@import url("/css/colorPalettes/retrowave.css");
+
+
+body {
+    background: url("/Assets/BGs/retrowavePhone2.jpg") center/cover;
+    background-color: var(--RWpurple);
+}
+
+#welcomeWrapper {
+    background-color: black;
+    color: white;
+
+    border-top: 1px solid var(--RWorange);
+    border-bottom: 1px solid var(--RWorange);
+}
+
+.themePreview {
+    color: black;
+}
+
+.themePreview:disabled {
+    color: var(--deepslate);
+}
+
+body#loading {
+    background-color: black;
+    background: url("/Assets/BGs/retrowavePhone3.jpg") center/cover;
+    color: white;
+}
+
+.progressBar {
+    background-color: var(--RWdeep);
+
+    border: 2px dashed var(--RWpurple);
+}
+
+#progress {
+    background-color: var(--RWorange);
+}

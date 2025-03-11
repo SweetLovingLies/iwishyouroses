@@ -18,17 +18,17 @@ body{
     color: gray;
 }
 
-.loading-screen {
+body#loading {
     background-color: white;
     color: black;
 }
 
-.progress-bar {
+.progressBar {
     background-color: var(--pinkIce);
 
     border: 2px dashed var(--wisteria);
 }
 
-.progress {
+#progress {
     background-color: var(--bubblegum);
 }

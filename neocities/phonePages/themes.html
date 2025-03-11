@@ -11,10 +11,16 @@
 
     <link href="css/themesBase.css" rel="stylesheet" type="text/css" media="all">
 
-    <link id="themesCSS" href="css/themeAppThemes/themesLight.css" rel="stylesheet" type="text/css" media="all">
-    <link id="themesDarkCSS" href="css/themeAppThemes/themesDark.css" rel="stylesheet" type="text/css" media="all">
-    <link id="themesChristmasCSS" href="css/themeAppThemes/themesChristmas.css" rel="stylesheet" type="text/css"
-        media="all">
+    <!-- ~ Themes  -->
+    <link id="themesLightCSS" href="css/themeAppThemes/themesLight.css" rel="stylesheet" type="text/css" media="all"
+        data-theme="light">
+    <link id="themesDarkCSS" href="css/themeAppThemes/themesDark.css" rel="stylesheet" type="text/css" media="all"
+        data-theme="dark">
+    <link id="themesRetroCSS" href="css/themeAppThemes/themesRetro.css" rel="stylesheet" type="text/css" media="all"
+        data-theme="retro">
+
+    <!-- <link id="themesChristmasCSS" href="css/themeAppThemes/themesChristmas.css" rel="stylesheet" type="text/css"
+        media="all"> -->
 
     <meta name="description" content="Access literally everything you need." />
     <link rel="icon" type="image/x-icon" href="../Assets/pixels/vintageAmericana/strawberryphone.webp">
@@ -42,66 +48,37 @@
             <caption>Empty Dream</caption>
         </button>
 
+        <button id="retroThemeSwitch" class="themePreview" data-theme="retro">
+            <img src="themeSwitcherPreviews/Retro.png">
+            <caption>Retrowave</caption>
+        </button>
+
         <!-- <button id="christmasModeSwitch" class="themePreview" data-theme="christmas">
             <img src="themeSwitcherPreviews/Christmas.png">
             <caption>Christmas Cheer</caption>
         </button> -->
     </div>
-
-    <div id="loadingScreen" class="loading-screen hidden">
-        <div class="loading-container">
-            <p>Great choice!</p>
-            <p>Applying your theme now!</p>
-            <div class="progress-bar">
-                <div id="progress" class="progress"></div>
-            </div>
-        </div>
-        <img src="/Assets/pixels/animals/catroll.gif">
-    </div>
-
-    <script src="js/themeSwitcher.js"></script>
-
+    
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const themeLinks = Array.from(document.querySelectorAll("link[id^='themes']"));
-            const themeButtons = document.querySelectorAll("[data-theme]");
+            const themeButtons = document.querySelectorAll(".themePreview");
+            const currentTheme = localStorage.getItem('globalTheme') || "light";
+            
+            themeButtons.forEach(button => {
+                const themeMode = button.getAttribute("data-theme");
 
-            function applyTheme(theme) {
-                themeLinks.forEach(link => {
-                    link.disabled = !(link.id === `themes${theme === "light" ? "" : theme.charAt(0).toUpperCase() + theme.slice(1)}CSS`);
-                });
-
-                localStorage.setItem("themesTheme", theme);
-
-                const body = document.body;
-                if (theme === "dark") {
-                    body.classList.add("dark");
+                if (themeMode === currentTheme) {
+                    button.disabled = true; 
                 } else {
-                    body.classList.remove("dark");
+                    button.disabled = false;
                 }
 
-                themeButtons.forEach(button => {
-                    button.disabled = button.dataset.theme === theme;
-                });
-            }
-
-            function pickInitialTheme() {
-                const savedTheme = localStorage.getItem("themesTheme") || "light";
-                applyTheme(savedTheme);
-            }
-
-            themeButtons.forEach(button => {
                 button.addEventListener("click", function () {
-                    const selectedTheme = button.dataset.theme;
-                    if (selectedTheme) {
-                        applyTheme(selectedTheme);
-                    }
+                    sessionStorage.setItem('queuedTheme', themeMode);
+                    window.location.href = "tsLoading.html";
                 });
             });
-
-            pickInitialTheme();
         });
-
     </script>
 
 

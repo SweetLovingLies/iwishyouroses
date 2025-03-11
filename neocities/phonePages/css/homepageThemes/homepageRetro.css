@@ -1,0 +1,45 @@
+@import url("/css/colorPalettes/retrowave.css");
+
+body {
+    background: url("/Assets/BGs/retrowavePhone.jpg");
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(1px);
+}
+
+.appWrapper a {
+    color: white;
+}
+footer a {
+    color: var(--RWdeep)
+}
+
+.appIcon {
+    background-color: var(--RWdeep);
+    border: 2px dotted var(--RWplum);
+    box-shadow: 2px 2px var(--RWorange), -2px -2px var(--RWteal);
+}
+
+.appWrapper a:hover, 
+.appWrapper a:focus, 
+footer a:hover, 
+footer a:focus {
+    color: var(--RWorange);
+}
+
+.navDots.active {
+    color: var(--RWteal);
+}
+
+.navDots.inactive {
+    color: var(--deepslate);
+}
+
+#tray{
+    background: var(--transWhite);
+    border: 2px dotted var(--RWdeep);
+}
+
+#widgetColumn p {
+    color: white;
+}

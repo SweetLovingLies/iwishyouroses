@@ -11,7 +11,7 @@
 
     <link href="css/navBase.css" rel="stylesheet" type="text/css" media="all">
 
-    <link id="navCSS" href="css/navThemes/navLight.css" rel="stylesheet" type="text/css" media="all" data-theme="light">
+    <link id="navLightCSS" href="css/navThemes/navLight.css" rel="stylesheet" type="text/css" media="all" data-theme="light">
     <link id="navDarkCSS" href="css/navThemes/navDark.css" rel="stylesheet" type="text/css" media="all"
         data-theme="dark">
 
@@ -33,7 +33,7 @@
         <a id="blog" class="navLink" href="https://iwishyouroses.bearblog.dev/" target="_blank">Blog</a>
         <a id="paracosms" class="navLink" href="/paracosms/" target="_top">Paracosms</a>
         <a id="mediaLogs" class="navLink" href="/mediaLogs/" target="_top">Media Logs</a>
-        <a class="UNF navLink">Shrines</a>
+        <a id="shrines" class="navLink" href="/shrines/" target="_top">Shrines</a>
         <a class="UNF navLink">Projects</a>
     </section>
 
@@ -50,30 +50,6 @@
     </section>
 
     <img id="deer" src="/Assets/pixels/animals/dollydeer.gif">
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const themeLinks = Array.from(document.querySelectorAll("link[id^='nav']"));
-            const savedTheme = localStorage.getItem("globalTheme") || "light";
-            const pageName = window.location.pathname.split('/').pop().split('.')[0];
-
-            const availableThemes = themeLinks.map(link => link.id.replace(pageName, '').replace('CSS', '').toLowerCase());
-            const validTheme = (availableThemes.includes(savedTheme) && themeLinks.some(link => link.getAttribute("data-theme") === savedTheme))
-                ? savedTheme
-                : "light";
-
-            themeLinks.forEach(link => link.disabled = link.getAttribute("data-theme") !== validTheme);
-
-            function isMobile() {
-                return /Mobi|Android/i.test(navigator.userAgent);
-            }
-
-            const paracosmsLink = document.getElementById('paracosms');
-            if (isMobile() && paracosmsLink) {
-                paracosmsLink.style.display = 'none';
-            }
-        });    
-    </script>
 </body>
 
 </html>

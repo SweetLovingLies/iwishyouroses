@@ -16,9 +16,30 @@
     <script src="js/phone.js"></script>
     <script src="https://chattable.neocities.org/scripts/main.min.js"></script>
     <script>
-        chattable.initialize({
-            stylesheet: "css/idolMessenger.css",
-        });
+        // Fetch the themes.json file for theme data
+        fetch('/phonePages/js/themeSwitcher/themes.json')
+            .then(response => response.json())
+            .then(data => {
+                const savedTheme = localStorage.getItem("globalTheme") || "light";
+                let themeData = data.find(t => t.mode === savedTheme);
+                if (!themeData) {
+                    const fallbackTheme = data.find(t => t.mode === themeData?.fallback);
+                    themeData = fallbackTheme || data.find(t => t.mode === "light");
+                }
+                let themeStylesheet;
+                if (themeData.style === "dark") {
+                    themeStylesheet = "css/idolMessengerDark.css";
+                } else {
+                    themeStylesheet = "css/idolMessengerLight.css";
+                }
+
+                chattable.initialize({
+                    stylesheet: themeStylesheet,
+                });
+            })
+            .catch(err => {
+                console.error("Failed to load themes.json:", err);
+            });
     </script>
     <style>
         body {

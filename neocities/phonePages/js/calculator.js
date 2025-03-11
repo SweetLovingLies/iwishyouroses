@@ -41,25 +41,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         return new Function(`return ${expression}`)();
     }
-
-
-
-    // ! Theme Switcher
-
-    const themeLinks = Array.from(document.querySelectorAll("link[id^='calculator']"));
-    const savedTheme = localStorage.getItem("globalTheme") || "light";
-    const pageName = window.location.pathname.split('/').pop().split('.')[0];
-
-    const availableThemes = themeLinks.map(link =>
-        link.id.replace(pageName, '').replace('CSS', '').toLowerCase()
-    );
-
-    const validTheme = (availableThemes.includes(savedTheme) &&
-        themeLinks.some(link => link.getAttribute("data-theme") === savedTheme))
-        ? savedTheme
-        : "light";
-
-    themeLinks.forEach(link => {
-        link.disabled = link.getAttribute("data-theme") !== validTheme;
-    });
 });
