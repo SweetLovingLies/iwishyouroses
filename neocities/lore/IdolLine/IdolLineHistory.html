@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Wish You Roses</title>
+
+    <link href="/css/globals.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/IdolLineHistory.css" rel="stylesheet" type="text/css" media="all">
+
+    <meta name="description" content="Creating experiences that transcend expectations." />
+    <link rel="icon" type="image/x-icon" href="/Assets/myAssets/idolLineLogo/IdolLineIcon.png">
+
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+    <script src="/js/jaxframeFork.js"></script>
+</head>
+
+<body>
+    <header>
+        <img src="/Assets/myAssets/idolLineLogo/IdolLineFullLogo.png">
+        <nav>
+            <a href="#">History</a>
+            <a href="#">Products</a>
+            <a href="#">Careers</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <h1>IdolLine: Innovating the Future</h1>
+        <p>Creating experiences that transcend expectation. Innovation beyond boundaries.</p>
+    </section>
+
+    <section id="history">
+
+    </section>
+
+    <section id="timeline">
+        <div class="event">
+            <div class="year">2015</div>
+            <div class="description">IdolLine launches its first mobile device. <span class="confidential">(Details
+                    confidential)</span></div>
+        </div>
+
+        <div class="event">
+            <div class="year">2017</div>
+            <div class="description">A new technology is unveiled to the public. <span class="redacted">(Redacted for
+                    security purposes)</span></div>
+        </div>
+
+        <div class="event">
+            <div class="year">2019</div>
+            <div class="description">Product recall... <span class="mysterious">(No public explanation given.)</span>
+            </div>
+        </div>
+
+        <div class="event">
+            <div class="year">2021</div>
+            <div class="description">Expansion into undisclosed markets. <span class="mysterious">(The company continues
+                    to grow in unexplained ways.)</span></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 IdolLine. <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a></p>
+        <p class="mysterious">You've seen everything. Or have you?</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            window.addEventListener('scroll', function () {
+                const footer = document.querySelector('footer');
+                console.log(footer);
+
+                const scrollHeight = document.documentElement.scrollHeight;
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const clientHeight = window.innerHeight;
+
+                if (scrollTop + clientHeight >= scrollHeight - 50) {
+                    footer.classList.add('visible');
+                } else {
+                    footer.classList.remove('visible');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

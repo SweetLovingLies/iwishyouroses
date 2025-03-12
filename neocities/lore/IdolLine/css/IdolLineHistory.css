@@ -1,0 +1,158 @@
+body {
+    height: 100vh;
+
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--periwinkle);
+    color: var(--nightSky);
+}
+
+a {
+    text-decoration: none;
+    color: var(--wisteria);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--spaceDust);
+}
+
+header {
+    background-color: var(--nightSky);
+    color: var(--periwinkle);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img {
+    max-width: 150px;
+}
+
+header nav a {
+    margin-left: 20px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#hero {
+    background: linear-gradient(to bottom, var(--wisteria), var(--nightSky));
+    padding: 100px 20px;
+    text-align: center;
+    color: var(--periwinkle);
+}
+
+#hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+#hero p {
+    font-size: 20px;
+}
+
+#timeline {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    background-color: var(--periwinkle);
+}
+
+#timeline .event {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+#timeline .event::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background-color: var(--nightSky);
+}
+
+#timeline .event .year {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--nightSky);
+    z-index: 1;
+}
+
+#timeline .event .description {
+    font-size: 16px;
+    color: black;
+    margin-left: 20px;
+    transition: color 0.3s ease;
+}
+
+#timeline .event:hover .description {
+    color: var(--wisteria);
+    animation: glitch .1s infinite;
+}
+
+@keyframes glitch {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(5px);
+    }
+}
+
+.confidential {
+    font-weight: bold;
+    font-style: italic;
+    color: var(--wisteria);
+}
+
+.redacted {
+    color: gray;
+    font-style: italic;
+}
+
+.mysterious {
+    font-weight: bold;
+    color: var(--wisteria);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.mysterious:hover {
+    color: var(--nightSky);
+    background-color: var(--wisteria);
+}
+
+footer {
+    position: absolute;
+    bottom: -400px;
+
+    width: 100%;
+    padding: 20px;
+    background-color: var(--nightSky);
+
+    color: var(--periwinkle);
+    text-align: center;
+    font-size: 14px;
+}
+
+footer a {
+    color: var(--periwinkle);
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--wisteria);
+}
+
+footer.visible {
+    bottom: 0;
+}

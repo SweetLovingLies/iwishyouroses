@@ -1,0 +1,65 @@
+:root {
+    --spacePurple: #581D57;
+    --spaceDeepBlue: #26255E;
+    --spaceBlue: #1B5779;
+    --spaceTeal: #159098;
+    --spaceGreen: #38A48C;
+    --spaceYellow: #F9D193;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: var(--spaceBlue);
+    padding: 20px;
+
+    color: white;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+#currentWeather {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#currentWeatherIcon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+#currentTemperature {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#forecastContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.forecastItem {
+    margin: 10px;
+}
+
+.forecastItem iconify-icon {
+    font-size: 2rem;
+}
+
+
+/* <div id="currentWeather">
+        <h2>Current Weather</h2>
+        <div id="currentWeatherIcon">
+            <iconify-icon></iconify-icon>
+        </div>
+        <div id="currentTemperature">72°F</div>
+    </div>
+
+    <div id="forecastContainer"></div> */

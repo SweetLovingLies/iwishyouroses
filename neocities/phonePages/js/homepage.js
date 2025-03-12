@@ -155,23 +155,6 @@ function initializeWidgets() {
             }
         }
 
-        // console.log("Removing widget, checking if column1 exists:", column1);
-        //     if (widgetColumn) {
-        //         appWrapper.removeChild(widgetColumn);
-
-        //         if (!column1) {
-        //             console.log("Column1 doesn't exist. Recreating...");
-        //             const newColumn1 = document.createElement('div');
-        //             newColumn1.classList.add('column1');
-        //             newColumn1.innerHTML = defaultApps;
-        //             appWrapper.appendChild(newColumn1);
-        //         } else {
-        //             console.log("Column1 exists. Restoring default apps...");
-        //             column1.style.display = 'block';
-        //             appWrapper.innerHTML = defaultApps;
-        //         }
-        //     }
-
         initializeSortable();
         loadSavedOrder("column1", 'column1Order');
         loadSavedOrder("aw1", 'homepage1Order');

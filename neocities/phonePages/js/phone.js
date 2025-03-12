@@ -106,168 +106,133 @@ document.addEventListener('DOMContentLoaded', function () {
     function capitalize(str) {
         return str.charAt(0).toUpperCase() + str.slice(1);
     }
+});
 
-
-
+document.addEventListener('DOMContentLoaded', function () {
     // ~ Weather
-
     const weatherData = {
         summer: {
             weatherIcons: [
-                { icon: "mdi:weather-sunny", temperatureRange: [70, 90] },
-                { icon: "fluent:weather-partly-cloudy-day-48-filled", temperatureRange: [65, 85] },
-                { icon: "ion:cloudy", temperatureRange: [60, 80] },
-                { icon: "mdi:weather-rainy", temperatureRange: [60, 75] },
-                { icon: "mdi:weather-windy", temperatureRange: [60, 80] }
+                { icon: "mdi:weather-sunny", temperatureRange: [70, 90], color: "yellow" },
+                { icon: "fluent:weather-partly-cloudy-day-48-filled", temperatureRange: [65, 85], color: "lightyellow" },
+                { icon: "ion:cloudy", temperatureRange: [60, 80], color: "gray" },
+                { icon: "mdi:weather-rainy", temperatureRange: [60, 75], color: "blue" },
+                { icon: "mdi:weather-windy", temperatureRange: [60, 80], color: "lightblue" }
             ]
         },
         winter: {
             weatherIcons: [
-                { icon: "solar:snowflake-bold", temperatureRange: [20, 35] },
-                { icon: "mdi:weather-windy", temperatureRange: [30, 40] },
-                { icon: "mi:fog", temperatureRange: [10, 30] },
-                { icon: "ion:cloudy", temperatureRange: [10, 20] },
-                { icon: "mingcute:snowstorm-line", temperatureRange: [-10, 20] }
+                { icon: "solar:snowflake-bold", temperatureRange: [20, 35], color: "lightblue" },
+                { icon: "mdi:weather-windy", temperatureRange: [30, 40], color: "gray" },
+                { icon: "mi:fog", temperatureRange: [10, 30], color: "lightgray" },
+                { icon: "ion:cloudy", temperatureRange: [10, 20], color: "gray" },
+                { icon: "mingcute:snowstorm-line", temperatureRange: [-10, 20], color: "white" }
             ]
         },
         fall: {
             weatherIcons: [
-                { icon: "mdi:weather-sunny", temperatureRange: [50, 60] },
-                { icon: "fluent:weather-partly-cloudy-day-48-filled", temperatureRange: [50, 60] },
-                { icon: "mdi:weather-windy", temperatureRange: [30, 40] },
-                { icon: "ion:cloudy", temperatureRange: [45, 55] },
-                { icon: "mdi:weather-rainy", temperatureRange: [45, 55] },
-                { icon: "mi:fog", temperatureRange: [45, 55] }
+                { icon: "mdi:weather-sunny", temperatureRange: [50, 60], color: "yellow" },
+                { icon: "fluent:weather-partly-cloudy-day-48-filled", temperatureRange: [50, 60], color: "lightyellow" },
+                { icon: "mdi:weather-windy", temperatureRange: [30, 40], color: "lightgray" },
+                { icon: "ion:cloudy", temperatureRange: [45, 55], color: "gray" },
+                { icon: "mdi:weather-rainy", temperatureRange: [45, 55], color: "blue" },
+                { icon: "mi:fog", temperatureRange: [45, 55], color: "lightgray" }
             ]
         },
         spring: {
             weatherIcons: [
-                { icon: "mdi:weather-sunny", temperatureRange: [60, 80] },
-                { icon: "fluent:weather-partly-cloudy-day-48-filled", temperatureRange: [65, 75] },
-                { icon: "ion:cloudy", temperatureRange: [55, 70] },
-                { icon: "mdi:weather-windy", temperatureRange: [50, 65] },
-                { icon: "mdi:weather-rainy", temperatureRange: [45, 55] },
-                { icon: "mdi:weather-hail", temperatureRange: [40, 55] }
+                { icon: "mdi:weather-sunny", temperatureRange: [60, 80], color: "yellow" },
+                { icon: "fluent:weather-partly-cloudy-day-48-filled", temperatureRange: [65, 75], color: "lightyellow" },
+                { icon: "ion:cloudy", temperatureRange: [55, 70], color: "gray" },
+                { icon: "mdi:weather-windy", temperatureRange: [50, 65], color: "lightblue" },
+                { icon: "mdi:weather-rainy", temperatureRange: [45, 55], color: "blue" },
+                { icon: "mdi:weather-hail", temperatureRange: [40, 55], color: "white" }
             ]
         }
     };
 
-    let currentSeason = 'winter';
-    let forecastIcons = generateWeeklyForecast();
-    loadWeatherDataFromSession();
+    let currentSeason = "winter"; // Change this as needed
+    let forecastData = generateForecastData();
 
-    function getRandomWeatherIcon() {
-        const weatherOptions = weatherData[currentSeason].weatherIcons;
-        const randomIndex = Math.floor(Math.random() * weatherOptions.length);
-        return weatherOptions[randomIndex];
+    // Function to generate random weather icon and temperature for the season
+    function getRandomWeatherForSeason() {
+        const weatherIcons = weatherData[currentSeason].weatherIcons;
+        const randomWeather = weatherIcons[Math.floor(Math.random() * weatherIcons.length)];
+        const temperature = getRandomTemperature(randomWeather.temperatureRange);
+        return { icon: randomWeather.icon, color: randomWeather.color, temperature };
     }
 
-    function generateWeeklyForecast() {
+    // Generate weekly forecast
+    function generateForecastData() {
         const forecast = [];
         for (let i = 0; i < 7; i++) {
-            forecast.push(getRandomWeatherIcon());
+            const weather = getRandomWeatherForSeason();
+            forecast.push({ ...weather, day: `Day ${i + 1}` });
         }
         return forecast;
     }
 
-    function displayForecast(forecast) {
-        const forecastContainer = document.getElementById('forecastContainer');
-        if (forecastContainer) {
-            forecastContainer.innerHTML = '';
+    // Generate random temperature based on the given range
+    function getRandomTemperature([min, max]) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
 
-            forecast.forEach((day) => {
-                const dayIcon = document.createElement('div');
-                dayIcon.className = 'forecastIcon';
-                dayIcon.innerHTML = `<iconify-icon icon="${day.icon}"></iconify-icon>`;
-                forecastContainer.appendChild(dayIcon);
+    function saveForecastToSession() {
+        sessionStorage.setItem("forecastData", JSON.stringify(forecastData));
+        sessionStorage.setItem("currentSeason", currentSeason);
+    }
+
+    // Load data from sessionStorage
+    function loadForecastFromSession() {
+        const savedForecast = sessionStorage.getItem("forecastData");
+        const savedSeason = sessionStorage.getItem("currentSeason");
+
+        if (savedForecast && savedSeason) {
+            forecastData = JSON.parse(savedForecast);
+            currentSeason = savedSeason;
+        } else {
+            forecastData = generateForecastData();
+            saveForecastToSession();
+        }
+    }
+
+    // Display current weather and weekly forecast
+    function displayWeather() {
+        const currentWeather = forecastData[0];
+        const currentWeatherIcon = document.getElementById("currentWeatherIcon");
+        const currentTemperature = document.getElementById("currentTemperature");
+
+        if (currentWeatherIcon) {
+            currentWeatherIcon.innerHTML = `<iconify-icon icon="${currentWeather.icon}" style="color: ${currentWeather.color};"></iconify-icon>`;
+        }
+        if (currentTemperature) {
+            currentTemperature.textContent = `${currentWeather.temperature}°F`;
+        }
+
+        const forecastContainer = document.getElementById("forecastContainer");
+        if (forecastContainer) {
+            forecastContainer.innerHTML = "";
+            forecastData.forEach(day => {
+                const dayElement = document.createElement("div");
+                dayElement.className = "forecastItem";
+                dayElement.innerHTML = `
+                    <div><iconify-icon icon="${day.icon}" style="color: ${day.color};"></iconify-icon></div>
+                `;
+                forecastContainer.appendChild(dayElement);
             });
         }
     }
 
-    function updateWeather() {
-        const weatherIconElements = document.querySelectorAll(".weatherIcon iconify-icon");
+    // Initial setup
+    loadForecastFromSession();
+    displayWeather();
 
-        const todayWeather = forecastIcons.shift(); // Shift allows us to get the first icon and move the array "forward"
-        const todayTemp = getTemperature(todayWeather.temperatureRange); // Get the temperature based on range
-
-        const wwTempElement = document.getElementById("wwTemp");
-
-        if (wwTempElement) {
-            wwTempElement.textContent = `${todayTemp}°F`;
-        }
-
-
-        weatherIconElements.forEach(icon => {
-            icon.setAttribute("icon", todayWeather.icon);
-
-            icon.classList.remove("sunny", "cloudy", "rainy", "snow", "wind", "hail", "fog");
-
-            switch (true) {
-                case todayWeather.icon.includes("sun"):
-                    icon.classList.add("sunny");
-                    break;
-                case todayWeather.icon.includes("cloudy"):
-                    icon.classList.add("cloudy");
-                    break;
-                case todayWeather.icon.includes("rain"):
-                    icon.classList.add("rainy");
-                    break;
-                case todayWeather.icon.includes("snow"):
-                    icon.classList.add("snow");
-                    break;
-                case todayWeather.icon.includes("wind"):
-                    icon.classList.add("wind");
-                    break;
-                case todayWeather.icon.includes("hail"):
-                    icon.classList.add("hail");
-                    break;
-                case todayWeather.icon.includes("fog"):
-                    icon.classList.add("fog");
-                    break;
-                case todayWeather.icon.includes("snowstorm"):
-                    icon.classList.add("snowstorm");
-                    break;
-                default:
-                    console.warn("Weather condition not recognized");
-            }
-        });
-
-        const newWeatherIcon = getRandomWeatherIcon();
-        forecastIcons.push(newWeatherIcon);
-
-        displayForecast(forecastIcons);
-    }
-
-    function getTemperature(range) {
-        const [min, max] = range;
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-
-    function saveWeatherDataToSession() {
-        sessionStorage.setItem('forecastIcons', JSON.stringify(forecastIcons));
-        sessionStorage.setItem('currentSeason', currentSeason);
-    }
-
-    function loadWeatherDataFromSession() {
-        const savedForecast = sessionStorage.getItem('forecastIcons');
-        const savedSeason = sessionStorage.getItem('currentSeason');
-
-        if (savedForecast && savedSeason) {
-            forecastIcons = JSON.parse(savedForecast);
-            currentSeason = savedSeason;
-        } else {
-            forecastIcons = generateWeeklyForecast();
-        }
-    }
-
-    displayForecast(forecastIcons);
-    saveWeatherDataToSession();
-
+    // Update the weather every 10 minutes
     setInterval(() => {
-        updateWeather();
-        saveWeatherDataToSession();
-    }, 3600000); // 1 hour = 3600000 milliseconds
-    // }, 50);
+        forecastData = generateForecastData();
+        saveForecastToSession();
+        displayWeather();
+    }, 600000); // 10 minutes = 600000ms
 });
 
 // ~ Homepage button
