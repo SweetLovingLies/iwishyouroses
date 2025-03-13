@@ -81,14 +81,14 @@
     "writer": "XG",
     "volume": 0.05,
     "src": "https://files.catbox.moe/4kl1q3.mp3",
-    "cover": "/Assets/other/albumCovers/XGCover.jpeg"
+    "cover": "/Assets/other/albumCovers/SHOOTINGSTARCover.jpeg"
   },
   {
     "title": "LEFT RIGHT",
     "writer": "XG",
     "volume": 0.05,
     "src": "https://files.catbox.moe/fqqoqx.mp3",
-    "cover": "/Assets/other/albumCovers/XGCover.jpeg"
+    "cover": "/Assets/other/albumCovers/SHOOTINGSTARCover.jpeg"
   },
   {
     "title": "IYKYK",
@@ -186,14 +186,14 @@
     "writer": "Kalaido",
     "volume": 0.04,
     "src": "https://files.catbox.moe/q5jig2.mp3",
-    "cover": "/Assets/other/albumCovers/hangingLanternsCover.jpeg"
+    "cover": "/Assets/other/albumCovers/HangingLanternsCover.jpeg"
   },
   {
     "title": "Skylight",
     "writer": "Gramatik",
     "volume": 0.04,
     "src": "https://files.catbox.moe/iub3v4.mp3",
-    "cover": "/Assets/other/albumCovers/skylightCover.jpeg"
+    "cover": "/Assets/other/albumCovers/SkylightCover.jpeg"
   },
   {
     "title": "NEMONEMO",
@@ -201,6 +201,20 @@
     "volume": 0.04,
     "src": "https://files.catbox.moe/1mky0p.mp3",
     "cover": "/Assets/other/albumCovers/NEMONEMOCover.jpeg"
+  },
+  {
+    "title": "Good Girls in the Dark",
+    "writer": "YENA",
+    "volume": 0.04,
+    "src": "https://files.catbox.moe/msgr7v.mp3",
+    "cover": "/Assets/other/albumCovers/GoodMorningCover.jpeg"
+  },
+  {
+    "title": "Good Morning",
+    "writer": "YENA",
+    "volume": 0.04,
+    "src": "https://files.catbox.moe/zd1h8o.mp3",
+    "cover": "/Assets/other/albumCovers/GoodMorningCover.jpeg"
   },
   {
     "title": "ten",
@@ -214,28 +228,28 @@
     "writer": "YEBBA, Smino",
     "volume": 0.04,
     "src": "https://files.catbox.moe/kc08so.mp3",
-    "cover": "/Assets/other/albumCovers/yebbaCover.jpeg"
+    "cover": "/Assets/other/albumCovers/DawnCover.jpeg"
   },
   {
     "title": "Boomerang",
     "writer": "YEBBA",
     "volume": 0.04,
     "src": "https://files.catbox.moe/dkcmde.mp3",
-    "cover": "/Assets/other/albumCovers/yebbaCover.jpeg"
+    "cover": "/Assets/other/albumCovers/DawnCover.jpeg"
   },
   {
     "title": "Distance",
     "writer": "YEBBA",
     "volume": 0.04,
     "src": "https://files.catbox.moe/b3o5nf.mp3",
-    "cover": "/Assets/other/albumCovers/yebbaCover.jpeg"
+    "cover": "/Assets/other/albumCovers/DawnCover.jpeg"
   },
   {
     "title": "Foggy Windows",
     "writer": "Vana",
     "volume": 0.04,
     "src": "https://files.catbox.moe/2f10xv.mp3",
-    "cover": "/Assets/other/albumCovers/foggyWindowsCover.jpeg"
+    "cover": "/Assets/other/albumCovers/FoggyWindowsCover.jpeg"
   },
   {
     "title": "PLAYBOi",
@@ -249,14 +263,14 @@
     "writer": "Vana",
     "volume": 0.04,
     "src": "https://files.catbox.moe/5rl18j.mp3",
-    "cover": "/Assets/other/albumCovers/prettyBoyCover.jpeg"
+    "cover": "/Assets/other/albumCovers/PrettyBoyCover.jpeg"
   },
   {
     "title": "SERPENTINE",
     "writer": "Vana",
     "volume": 0.04,
     "src": "https://files.catbox.moe/kya8io.mp3",
-    "cover": "/Assets/other/albumCovers/serpentineCover.jpeg"
+    "cover": "/Assets/other/albumCovers/SerpentineCover.jpeg"
   },
   {
     "title": "BEG!",
@@ -264,5 +278,89 @@
     "volume": 0.04,
     "src": "https://files.catbox.moe/tczlb2.mp3",
     "cover": "/Assets/other/albumCovers/BEGCover.jpeg"
+  },
+  {
+    "title": "Candy",
+    "writer": "NCT DREAM",
+    "volume": 0.04,
+    "src": "https://files.catbox.moe/6slrzk.mp3",
+    "cover": "/Assets/other/albumCovers/CandyCover.jpeg"
+  },
+  {
+    "title": "Beatbox",
+    "writer": "NCT DREAM",
+    "volume": 0.04,
+    "src": "https://files.catbox.moe/p6jt9d.mp3",
+    "cover": "/Assets/other/albumCovers/BeatboxCover.jpeg"
+  },
+  {
+    "title": "Bed Chem",
+    "writer": "Sabrina Carpenter",
+    "volume": 0.04,
+    "src": "https://files.catbox.moe/meygjd.mp3",
+    "cover": "/Assets/other/albumCovers/ShortnSweetCover.jpeg"
+  },
+  {
+    "title": "Lie to Girls",
+    "writer": "Sabrina Carpenter",
+    "volume": 0.04,
+    "src": "https://files.catbox.moe/oauswo.mp3",
+    "cover": "/Assets/other/albumCovers/ShortnSweetCover.jpeg"
+  },
+  {
+    "title": "Feather",
+    "writer": "Sabrina Carpenter",
+    "volume": 0.04,
+    "src": "https://files.catbox.moe/a2y38l.mp3",
+    "cover": "/Assets/other/albumCovers/FeatherCover.jpeg"
+  },
+  {
+    "title": "Espresso",
+    "writer": "Sabrina Carpenter",
+    "volume": 0.04,
+    "src": "https://files.catbox.moe/8smqfc.mp3",
+    "cover": "/Assets/other/albumCovers/EspressoCover.jpeg"
+  },
+  {
+    "title": "Busy Woman",
+    "writer": "Sabrina Carpenter",
+    "volume": 0.04,
+    "src": "https://files.catbox.moe/d8ly0y.mp3",
+    "cover": "/Assets/other/albumCovers/ShortnSweetDeluxeCover.jpeg"
+  },
+  {
+    "title": "Butterfly Effect",
+    "writer": "ARTMS",
+    "volume": 0.04,
+    "src": "https://files.catbox.moe/nri33d.mp3",
+    "cover": "/Assets/other/albumCovers/DallCover.jpeg"
+  },
+  {
+    "title": "Virtual Angel",
+    "writer": "ARTMS",
+    "volume": 0.04,
+    "src": "https://files.catbox.moe/8391bn.mp3",
+    "cover": "/Assets/other/albumCovers/DallCover.jpeg"
+  },
+  {
+    "title": "Crazy",
+    "writer": "SNOW WIFE",
+    "volume": 0.04,
+    "src": "https://files.catbox.moe/g3z2zp.mp3",
+    "cover": "/Assets/other/albumCovers/CrazyCover.jpeg"
+  },
+  {
+    "title": "What Do Girls Do?",
+    "writer": "SNOW WIFE",
+    "volume": 0.04,
+    "src": "https://files.catbox.moe/uqla5o.mp3",
+    "cover": "/Assets/other/albumCovers/WhatDoGirlsDoCover.jpeg"
+  },
+  {
+    "title": "Candy Pop",
+    "writer": "Twice",
+    "volume": 0.04,
+    "src": "https://files.catbox.moe/a2u88x.mp3",
+    "cover": "/Assets/other/albumCovers/CandyPopCover.jpeg"
   }
 ]

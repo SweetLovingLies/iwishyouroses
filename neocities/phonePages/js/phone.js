@@ -9,8 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let startupFlag = sessionStorage.getItem('startedUp') === 'true';
 
-    // Check if a custom URL is already set in the iframe
-    const defaultSrc = phoneScreen.getAttribute('src'); // Save the initial src attribute
+    const defaultSrc = phoneScreen.getAttribute('src');
 
     if (!startupFlag) {
         phoneScreen.src = 'startup.html';
@@ -20,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function () {
         sessionStorage.setItem('startedUp', 'true');
 
         setTimeout(() => {
-            // Override with custom URL if provided
             if (defaultSrc && defaultSrc !== 'startup.html') {
                 phoneScreen.src = defaultSrc;
             } else if (localStorage.getItem('userName') && localStorage.getItem('selectedIcon')) {
@@ -29,9 +27,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 phoneScreen.src = 'onboarding.html';
             }
             updateHomeButtonState();
-        }, 5000); // ! Adjust as needed
+        }, 5000);
     } else {
-        // Override with custom URL if provided
         if (defaultSrc && defaultSrc !== 'startup.html') {
             phoneScreen.src = defaultSrc;
         } else if (localStorage.getItem('userName') && localStorage.getItem('selectedIcon')) {
@@ -54,8 +51,6 @@ document.addEventListener('DOMContentLoaded', function () {
     phoneScreen.addEventListener('load', updateHomeButtonState);
 });
 
-
-
 document.addEventListener('DOMContentLoaded', function () {
     // ~ Clock
     function updateTime() {
@@ -74,38 +69,49 @@ document.addEventListener('DOMContentLoaded', function () {
     fetch('/phonePages/js/themeSwitcher/themes.json')
         .then(response => response.json())
         .then(data => {
-            const topPath = window.location.pathname.split('/').pop();
-            const pageName = topPath ? topPath.split('.')[0] : "index";
             const savedTheme = localStorage.getItem("globalTheme") || "light";
-            const themeLinks = [...document.querySelectorAll(`link[id^="${pageName}"]`)];
-            let themeData = data.find(t => t.mode === savedTheme);
-            if (!themeData) {
-                const fallbackTheme = data.find(t => t.mode === themeData.fallback);
-                themeData = fallbackTheme || data.find(t => t.mode === "light");
-            }
-
-            const validTheme = themeData ? themeData.mode : "light";
-            const validStyle = themeData ? themeData.style : "light";
-            const fallbackTheme = themeData.fallback ? data.find(t => t.mode === themeData.fallback) : null;
-            const themeId = `${pageName}${capitalize(validTheme)}CSS`;
-            const fallbackThemeId = fallbackTheme ? `${pageName}${capitalize(fallbackTheme.mode)}CSS` : null;
-
-            themeLinks.forEach(link => {
-                const isValidPrimaryTheme = link.id === themeId;
-                const isValidFallbackTheme = fallbackThemeId && link.id === fallbackThemeId;
-                link.disabled = !(isValidPrimaryTheme || isValidFallbackTheme);
-            });
-
-            document.body.classList.toggle("dark", validStyle === "dark");
+            const themeData = findValidTheme(savedTheme, data);
+            applyTheme(themeData, data);
         })
         .catch(err => {
             console.error("Failed to load themes.json:", err);
         });
 
-    // Helper function to capitalize the theme mode
+    function findValidTheme(themeMode, themesData) {
+        let themeData = themesData.find(t => t.mode === themeMode);
+
+        if (!themeData) {
+            console.warn(`Theme '${themeMode}' not found. Falling back.`);
+            themeData = themesData.find(t => t.mode === "light") || { mode: "light", style: "light" };
+        }
+
+        return themeData;
+    }
+
+    function applyTheme(themeData, themesData) {
+        const pageName = getPageName();
+        const themeLinks = [...document.querySelectorAll(`link[id^="${pageName}"]`)];
+
+        const themeId = `${pageName}${capitalize(themeData.mode)}CSS`;
+        const fallbackTheme = themesData.find(t => t.mode === themeData.fallback) || null;
+        const fallbackThemeId = fallbackTheme ? `${pageName}${capitalize(fallbackTheme.mode)}CSS` : null;
+
+        themeLinks.forEach(link => {
+            link.disabled = !(link.id === themeId || (fallbackThemeId && link.id === fallbackThemeId));
+        });
+
+        document.body.classList.toggle("dark", themeData.style === "dark");
+    }
+
+    function getPageName() {
+        const topPath = window.location.pathname.split('/').pop();
+        return topPath ? topPath.split('.')[0] : "index";
+    }
+
     function capitalize(str) {
         return str.charAt(0).toUpperCase() + str.slice(1);
     }
+
 });
 
 document.addEventListener('DOMContentLoaded', function () {

@@ -13,7 +13,6 @@
 
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
     <script src="js/phone.js"></script>
-    <script src="js/themeSwitcher/themeSwitcher.js"></script>
 
     <style>
         body {
@@ -41,50 +40,37 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const urlParams = new URLSearchParams(window.location.search);
-            const urlTheme = urlParams.get('theme');
-            const savedTheme = localStorage.getItem('globalTheme') || 'light';  
-            const theme = urlTheme || savedTheme;
-    
-            let themesData = [];
             fetch('/phonePages/js/themeSwitcher/themes.json')
                 .then(response => response.json())
                 .then(data => {
-                    themesData = data;
-                    const validTheme = findValidTheme(theme, themesData);
-                    applyTheme(validTheme);
+                    const theme = getSelectedTheme();
+                    const themeData = data.find(t => t.mode === theme);
+                    const themeStyle = themeData ? themeData.style : 'light';
+
+                    applyThemeStyle(themeStyle);
                 })
                 .catch(err => {
                     console.error("Failed to load themes.json:", err);
-                    const fallbackTheme = findValidTheme(theme, themesData); 
-                    applyTheme(fallbackTheme);
+                    applyThemeStyle('light');
                 });
-    
-            function findValidTheme(themeMode, themesData) {
-                const themeData = themesData.find(t => t.mode === themeMode);
-                if (themeData && themeData.fallback && themeData.fallback !== "none") {
-                    console.warn(`Theme '${themeMode}' not found. Falling back to '${themeData.fallback}'.`);
-                    return themeData.fallback;
-                }
-    
-                console.warn(`Theme '${themeMode}' not found. Defaulting to 'light'.`);
-                return "light"; // Should never happen lol
+
+            function getSelectedTheme() {
+                const themeFromURL = new URLSearchParams(window.location.search).get('theme');
+                const themeFromLocalStorage = localStorage.getItem('globalTheme');
+                return themeFromURL || themeFromLocalStorage || 'light';
             }
-    
-            function applyTheme(theme) {
+
+            function applyThemeStyle(themeStyle) {
                 const detailBar = document.querySelector('.detailBar');
                 if (detailBar) {
-                    if (theme === 'dark') {
-                        detailBar.classList.add('dark');
-                    } else {
-                        detailBar.classList.remove('dark');
-                    }
+                    detailBar.classList.toggle('dark', themeStyle === 'dark');
+                    detailBar.classList.toggle('light', themeStyle === 'light');
                 }
             }
         });
+
     </script>
-    
-    
+
 </body>
 
 </html>
