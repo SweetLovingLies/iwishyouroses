@@ -88,6 +88,10 @@ ul {
     margin: 10px 0;
 }
 
+li {
+    margin: 10px;
+}
+
 li.two {
     padding-left: 1em;
 }
