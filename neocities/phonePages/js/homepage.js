@@ -163,10 +163,13 @@ function initializeWidgets() {
     }
 
     function handleSafariFallback() {
-        const widgetsmithApp = document.getElementById("wsApp");
-        if (widgetsmithApp) {
+        const widgetsmithApp = document.getElementById("widgetsmith");
+        const widgetColumn = appWrapper.querySelector('#widgetColumn');
+        if (widgetsmithApp && widgetColumn) {
             widgetsmithApp.style.display = "none";
+            widgetColumn.style.display = "none";
         }
+        
     }
 }
 
