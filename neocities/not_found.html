@@ -19,10 +19,47 @@
 
     <script>
         (function setInitialTheme() {
-            const savedTheme = localStorage.getItem("globalTheme") || "light";
-            const themeId = savedTheme === "light" ? "not_foundCSS" : "not_foundDarkCSS";
-            const themeLink = document.getElementById(themeId);
-            if (themeLink) themeLink.disabled = false;
+            fetch('/phonePages/js/themeSwitcher/themes.json')
+                .then(response => response.json())
+                .then(data => {
+                    const savedTheme = localStorage.getItem("globalTheme") || "light";
+                    const themeData = findValidTheme(savedTheme, data);
+                    applyInitialTheme(themeData, data);
+                })
+                .catch(err => {
+                    console.error("Failed to load themes.json:", err);
+                });
+
+            function findValidTheme(themeMode, themesData) {
+                let themeData = themesData.find(t => t.mode === themeMode);
+
+                if (!themeData) {
+                    console.warn(`Theme '${themeMode}' not found. Falling back.`);
+                    themeData = themesData.find(t => t.mode === "light") || { mode: "light", style: "light" };
+                }
+
+                return themeData;
+            }
+
+            function applyInitialTheme(themeData, themesData) {
+                const pageName = getPageName();
+                const themeId = `${pageName}${capitalize(themeData.mode)}CSS`;
+                const fallbackTheme = themesData.find(t => t.mode === themeData.fallback) || null;
+                const fallbackThemeId = fallbackTheme ? `${pageName}${capitalize(fallbackTheme.mode)}CSS` : null;
+
+                [...document.querySelectorAll(`link[id^="${pageName}"]`)].forEach(link => {
+                    link.disabled = !(link.id === themeId || (fallbackThemeId && link.id === fallbackThemeId));
+                });
+            }
+
+            function getPageName() {
+                const topPath = window.location.pathname.split('/').pop();
+                return topPath ? topPath.split('.')[0] : "index";
+            }
+
+            function capitalize(str) {
+                return str.charAt(0).toUpperCase() + str.slice(1);
+            }
         })();
     </script>
 </head>
