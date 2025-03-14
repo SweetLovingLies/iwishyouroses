@@ -1,0 +1,57 @@
+@import url("../colorPalettes/retrowave.css");
+
+body {
+    background: url(/Assets/BGs/retrowave1.png);
+    color: white;
+}
+
+.detailing {
+    display: none;
+}
+
+main {
+    background: var(--transOrange);
+    border: 3px dotted var(--RWorange);
+    outline: 5px solid var(--RWteal);
+    box-shadow: 8px 8px var(--RWplum), -8px -8px var(--RWpink);
+    border-radius: 20px;
+}
+
+#warnings {
+    background-color: var(--transWhite);
+    border: 2px dotted var(--RWplum);
+    box-shadow: 2px 2px var(--RWpurple), -2px -2px var(--RWteal);
+
+    color: var(--RWdeep)
+}
+
+.warningIMGs {
+    border-bottom: 2px solid var(--RWorange);
+    border-top: 2px dotted var(--RWorange);
+}
+
+strong {
+    color: var(--RWpink);
+    font-weight: normal;
+}
+
+#enter {
+    color: var(--RWorange);
+}
+
+#enter:hover {
+    color: var(--RWpink);
+}
+
+#missing {
+    left: 15em;
+    top: 20em;
+
+    /* ! debug */
+    /* color: black; */
+    /* background-color: white; */
+}
+
+#missing:hover {
+    color: var(--wisteria);
+}
