@@ -81,7 +81,7 @@ function initializeWidgets() {
         const widgetElement = document.getElementById(widget.id);
 
         if (widgetElement) {
-            widgetElement.setAttribute('data', widget.image);
+            widgetElement.setAttribute('src', widget.image);
 
             const shapeStyle = shapeStyles[widget.shape] || { clipPath: 'none', mask: 'none' };
 
@@ -90,15 +90,7 @@ function initializeWidgets() {
             widgetElement.style.filter = widget.filterValue;
         }
     });
-
-    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-
-    if (isSafari) {
-        console.log("THIS WEB BROWSER STINKS !")
-        handleSafariFallback();
-    } else {
-        updateLayout(savedWidgets);
-    }
+    updateLayout(savedWidgets);
 
     // Function to update layout based on if there is a widget or not
     function updateLayout(widgets) {
@@ -125,7 +117,7 @@ function initializeWidgets() {
                 const newWidgetColumn = document.createElement('div');
                 newWidgetColumn.classList.add('widgetColumn');
                 newWidgetColumn.innerHTML = `
-                    <object class="widget" id="widget1" type="image/svg+xml" data="${widgets[0].data || ''}"></object>
+                    <object class="widget" id="widget1" src="${widgets[0].data || ''}"></object>
                     <p>Widgetsmith</p>
                 `;
                 appWrapper.insertBefore(newWidgetColumn, column1);
@@ -161,16 +153,6 @@ function initializeWidgets() {
         loadSavedOrder("tray", 'trayOrder');
         loadSavedOrder("aw2", 'homepage2Order');
     }
-
-    function handleSafariFallback() {
-        const widgetsmithApp = document.getElementById("widgetsmith");
-        const widgetColumn = appWrapper.querySelector('#widgetColumn');
-        if (widgetsmithApp && widgetColumn) {
-            widgetsmithApp.style.display = "none";
-            widgetColumn.style.display = "none";
-        }
-        
-    }
 }
 
 // ~ Sortable
@@ -187,7 +169,7 @@ function initializeSortable() {
                 const newOrder = Array.from(container.children).map(item => item.id).filter(id => id !== "");
                 // console.log(`New ${container.id} Order:`, newOrder);
 
-                overflowCheck(); 
+                overflowCheck();
                 saveOrders();
             },
             group: {
@@ -259,7 +241,7 @@ function overflowCheck() {
     };
 
     const containers = document.querySelectorAll('.draggable-container');
-    
+
     containers.forEach(container => {
         const newOrder = Array.from(container.children).map(item => item.id).filter(id => id !== "");
         const containerId = container.id;
@@ -323,7 +305,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (topPageName !== 'bloom') {
         const themesApp = document.getElementById('themes');
         if (themesApp) {
-            themesApp.style.display = 'none'; 
+            themesApp.style.display = 'none';
         }
     }
 

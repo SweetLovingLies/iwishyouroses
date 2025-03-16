@@ -99,6 +99,8 @@ footer p {
     height: 150px;
     object-fit: cover;
     object-position: right;
+    scale: 1.01;
+
     border-radius: var(--globalBorderRadius);
 }
 

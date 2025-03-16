@@ -91,9 +91,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const reader = new FileReader();
             reader.onload = function (event) {
                 selectedImageURL = event.target.result;
-                const widgetPreviewObject = document.getElementById('widgetObject');
-                widgetPreviewObject.setAttribute('data', selectedImageURL);
-                updateWidgetPV(widgetPreviewObject, shape, filter);
+                const widgetPreviewIMG = document.getElementById('widgetIMG');
+                widgetPreviewIMG.setAttribute('src', selectedImageURL);
+                updateWidgetPV(widgetPreviewIMG, shape, filter);
             };
             reader.readAsDataURL(file);
         }
@@ -104,10 +104,10 @@ document.addEventListener('DOMContentLoaded', () => {
         shape = 'square';
         filter = 'none';
 
-        const widgetPreviewObject = document.getElementById('widgetObject');
-        widgetPreviewObject.setAttribute('data', '');
-        widgetPreviewObject.style.borderRadius = '0';
-        widgetPreviewObject.style.filter = 'none';
+        const widgetPreviewIMG = document.getElementById('widgetIMG');
+        widgetPreviewIMG.setAttribute('src', '');
+        widgetPreviewIMG.style.borderRadius = '0';
+        widgetPreviewIMG.style.filter = 'none';
 
         document.getElementById('imageInput').value = '';
         document.getElementById('shapeInput').value = 'square';
@@ -129,13 +129,13 @@ document.addEventListener('DOMContentLoaded', () => {
     //     return `grayscale(${grayscale}%) blur(${blur}px) saturate(${saturate}%)`;
     // }
 
-    // function applyCustomFilter(widgetObject) {
+    // function applyCustomFilter(widgetIMG) {
     //     const grayscale = customGrayscaleInput.value;
     //     const blur = customBlurInput.value;
     //     const saturate = customSaturateInput.value;
 
     //     const filterValue = `grayscale(${grayscale}%) blur(${blur}px) saturate(${saturate}%)`;
-    //     widgetObject.style.filter = filterValue;
+    //     widgetIMG.style.filter = filterValue;
     // }
 
     // & Main Functions
@@ -177,10 +177,10 @@ document.addEventListener('DOMContentLoaded', () => {
         updateWidgetBtn();
     }
 
-    function updateWidgetPV(widgetPreviewObject, shape, filter) {
+    function updateWidgetPV(widgetPreviewIMG, shape, filter) {
         const shapeStyle = shapeStyles[shape] || { clipPath: 'none', mask: 'none' };
-        widgetPreviewObject.style.clipPath = shapeStyle.clipPath;
-        widgetPreviewObject.style.mask = shapeStyle.mask;
+        widgetPreviewIMG.style.clipPath = shapeStyle.clipPath;
+        widgetPreviewIMG.style.mask = shapeStyle.mask;
 
         const filterMap = {
             none: 'none',
@@ -192,14 +192,14 @@ document.addEventListener('DOMContentLoaded', () => {
             contrast: 'contrast(200%)'
         };
 
-        widgetPreviewObject.style.filter = filterMap[filter] || 'none';
+        widgetPreviewIMG.style.filter = filterMap[filter] || 'none';
     }
 
     function updateWidgetDSP(widgetSettings) {
-        const widgetClone = document.createElement('object');
+        const widgetClone = document.createElement('img');
         widgetClone.classList.add('widgetItem');
         widgetClone.setAttribute('type', 'image/svg+xml');
-        widgetClone.setAttribute('data', widgetSettings.image);
+        widgetClone.setAttribute('src', widgetSettings.image);
 
         const shapeStyle = shapeStyles[widgetSettings.shape] || { clipPath: 'none', mask: 'none' };
         widgetClone.style.clipPath = shapeStyle.clipPath;
@@ -224,14 +224,14 @@ document.addEventListener('DOMContentLoaded', () => {
     function loadWidgetForEditing(widgetSettings) {
         const editShapeInput = document.getElementById('editShapeInput');
         const editFilterInput = document.getElementById('editFilterInput');
-        const editWidgetObject = document.getElementById('editWidgetObject');
+        const editWidgetIMG = document.getElementById('editWidgetIMG');
 
         toggleEditSection(true);
 
         // console.log(widgetSettings.filterName);
 
-        if (editWidgetObject) {
-            editWidgetObject.setAttribute('data', widgetSettings.image);
+        if (editWidgetIMG) {
+            editWidgetIMG.setAttribute('src', widgetSettings.image);
         }
 
         if (editShapeInput) {
@@ -244,17 +244,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     : widgetSettings.filterName;
         }
 
-        updateWidgetPV(editWidgetObject, widgetSettings.shape, widgetSettings.filterName);
+        updateWidgetPV(editWidgetIMG, widgetSettings.shape, widgetSettings.filterName);
 
-        if (editShapeInput && editWidgetObject) {
+        if (editShapeInput && editWidgetIMG) {
             editShapeInput.addEventListener('change', () => {
-                updateWidgetPV(editWidgetObject, editShapeInput.value, editFilterInput.value);
+                updateWidgetPV(editWidgetIMG, editShapeInput.value, editFilterInput.value);
             });
         }
 
         if (editFilterInput) {
             editFilterInput.addEventListener('change', () => {
-                updateWidgetPV(editWidgetObject, editShapeInput.value, editFilterInput.value);
+                updateWidgetPV(editWidgetIMG, editShapeInput.value, editFilterInput.value);
             });
         }
 
@@ -265,8 +265,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             updateWidgetSettings(widgetSettings);
 
-            const editWidgetObject = document.getElementById('editWidgetObject');
-            updateWidgetPV(editWidgetObject, widgetSettings.shape, widgetSettings.filterName);
+            const editWidgetIMG = document.getElementById('editWidgetIMG');
+            updateWidgetPV(editWidgetIMG, widgetSettings.shape, widgetSettings.filterName);
 
             toggleEditSection(false);
             window.location.reload();
@@ -289,7 +289,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        updateWidgetPV(editWidgetObject, widgetSettings.shape, widgetSettings.filterName);
+        updateWidgetPV(editWidgetIMG, widgetSettings.shape, widgetSettings.filterName);
     }
 
     // & Event listeners
@@ -304,11 +304,11 @@ document.addEventListener('DOMContentLoaded', () => {
     imageInput.addEventListener('change', imageUploader);
     shapeInput.addEventListener('change', () => {
         shape = shapeInput.value;
-        updateWidgetPV(document.getElementById('widgetObject'), shape, filter);
+        updateWidgetPV(document.getElementById('widgetIMG'), shape, filter);
     });
     filterInput.addEventListener('change', () => {
         filter = filterInput.value;
-        updateWidgetPV(document.getElementById('widgetObject'), shape, filter);
+        updateWidgetPV(document.getElementById('widgetIMG'), shape, filter);
     });
 
     // saveCustomFilterButton.addEventListener('click', () => {
@@ -325,18 +325,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // });
 
     // customGrayscaleInput.addEventListener('input', () => {
-    //     const widgetObject = document.getElementById('widgetObject');
-    //     applyCustomFilter(widgetObject);
+    //     const widgetIMG = document.getElementById('widgetIMG');
+    //     applyCustomFilter(widgetIMG);
     // });
 
     // customBlurInput.addEventListener('input', () => {
-    //     const widgetObject = document.getElementById('widgetObject');
-    //     applyCustomFilter(widgetObject);
+    //     const widgetIMG = document.getElementById('widgetIMG');
+    //     applyCustomFilter(widgetIMG);
     // });
 
     // customSaturateInput.addEventListener('input', () => {
-    //     const widgetObject = document.getElementById('widgetObject');
-    //     applyCustomFilter(widgetObject);
+    //     const widgetIMG = document.getElementById('widgetIMG');
+    //     applyCustomFilter(widgetIMG);
     // });
 
     clearPreviewButton.addEventListener('click', resetPreview);
