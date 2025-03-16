@@ -46,6 +46,24 @@ body {
     color: #333;
 }
 
+.pinned {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: default;
+}
+
+.pinned::before {
+    content: '';
+    display: none;
+}
+
+.pinned .allMessages {
+    opacity: 1;
+}
+
 blockquote {
     background-color: var(--bubblegum);
     color: white;
