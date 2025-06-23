@@ -25,6 +25,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 phoneScreen.src = 'homepage.html';
             } else {
                 phoneScreen.src = 'onboarding.html';
+                parent.document.getElementById('phone').classList.add('bounce-phone');
+                parent.document.getElementById('phoneSpot').classList.add('show-indicator');
             }
             updateHomeButtonState();
         }, 5000);
@@ -35,6 +37,8 @@ document.addEventListener('DOMContentLoaded', function () {
             phoneScreen.src = 'homepage.html';
         } else {
             phoneScreen.src = 'onboarding.html';
+            parent.document.getElementById('phone').classList.add('bounce-phone');
+            parent.document.getElementById('phoneSpot').classList.add('show-indicator');
         }
     }
 
@@ -157,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
-    let currentSeason = "winter"; // Change this as needed
+    let currentSeason = "summer"; // Change this as needed
     let forecastData = generateForecastData();
 
     // Function to generate random weather icon and temperature for the season

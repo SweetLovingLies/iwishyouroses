@@ -75,7 +75,7 @@ body.builtIn.dark {
     font-size: 25px;
 
     color: white;
-    font-family: var(--fontSpace);
+    font-family: var(--headerSpace);
     font-weight: bold;
 
     background: url("/Assets/myAssets/idolLineLogo/headerDesign.png") center/cover;

@@ -1,0 +1,36 @@
+@import url("/css/colorPalettes/mistywish.css");
+
+body {
+    background: url("/Assets/BGs/mistyWishBG2.jpg") center/cover;
+}
+
+#welcomeWrapper {
+    background-color: var(--MWgreen3);
+    color: black;
+
+    border-top: none;
+    border-bottom: 1px solid var(--MWyellow);
+}
+
+.themePreview {
+    color: white;
+}
+
+.themePreview:disabled {
+    color: gray;
+}
+
+body#loading {
+    background-color: white;
+    color: black;
+}
+
+.progressBar {
+    background-color: var(--pinkIce);
+
+    border: 2px dashed var(--wisteria);
+}
+
+#progress {
+    background-color: var(--bubblegum);
+}

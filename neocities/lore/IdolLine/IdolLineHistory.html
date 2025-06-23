@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I Wish You Roses</title>
+    <title>IdolLine</title>
 
     <link href="/css/globals.css" rel="stylesheet" type="text/css" media="all">
     <link href="css/IdolLineHistory.css" rel="stylesheet" type="text/css" media="all">
@@ -18,74 +18,84 @@
 </head>
 
 <body>
-    <header>
-        <img src="/Assets/myAssets/idolLineLogo/IdolLineFullLogo.png">
-        <nav>
-            <a href="#">History</a>
-            <a href="#">Products</a>
-            <a href="#">Careers</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
+    <div id="wrapper">
+        <header>
+            <img src="/Assets/myAssets/idolLineLogo/IdolLineFullLogo.png">
+            <nav>
+                <a href="#">About</a>
+                <a href="#">Products</a>
+                <a href="#">Milestones</a>
+                <a href="#">Contact</a>
+            </nav>
+        </header>
 
-    <section id="hero">
-        <h1>IdolLine: Innovating the Future</h1>
-        <p>Creating experiences that transcend expectation. Innovation beyond boundaries.</p>
-    </section>
+        <section id="hero">
+            <h1>IdolLine™</h1>
+            <p>Every connection is a choice. Every choice is a promise.</p>
+        </section>
 
-    <section id="history">
 
-    </section>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>
+                Since our founding, IdolLine has believed in one simple truth: technology should reflect *you*. Our
+                suite of devices adapts to your lifestyle, learns your preferences, and grows with your world.
+            </p>
+            <p>
+                With over 400 trillion users universe-wide , we continue to redefine progress as something not just powerful—but personal.
+            </p>
+        </section>
 
-    <section id="timeline">
-        <div class="event">
-            <div class="year">2015</div>
-            <div class="description">IdolLine launches its first mobile device. <span class="confidential">(Details
-                    confidential)</span></div>
-        </div>
-
-        <div class="event">
-            <div class="year">2017</div>
-            <div class="description">A new technology is unveiled to the public. <span class="redacted">(Redacted for
-                    security purposes)</span></div>
-        </div>
-
-        <div class="event">
-            <div class="year">2019</div>
-            <div class="description">Product recall... <span class="mysterious">(No public explanation given.)</span>
+        <!-- <section id="products">
+            <h2>Featured Devices</h2>
+            <div class="product-list">
+                <div class="product">
+                    <img src="/Assets/mockups???/phoneMockup.png" alt="IdolLine" />
+                    <h3>IdolLine</h3>
+                    <p></p>
+                </div>
+                <div class="product">
+                    <img src="/Assets/mockups???/laptopMockup.png" alt="" />
+                    <h3></h3>
+                    <p></p>
+                </div>
             </div>
-        </div>
+        </section> -->
 
-        <div class="event">
-            <div class="year">2021</div>
-            <div class="description">Expansion into undisclosed markets. <span class="mysterious">(The company continues
-                    to grow in unexplained ways.)</span></div>
-        </div>
-    </section>
+        <section id="milestones">
+            <h2>Milestones</h2>
+            <div class="event">
+                <div class="year">2721</div>
+                <div class="description">IdolLine is born. “Customization” enters the tech lexicon.</div>
+            </div>
+            <div class="event">
+                <div class="year">2724</div>
+                <div class="description">Launch of IdolPhone 3. First device to integrate SelfSync AI Learning.</div>
+            </div>
+            <div class="event">
+                <div class="year">2725</div>
+                <div class="description">Remote usage spikes 400%. IdolLine responds with seamless update rollouts.
+                </div>
+            </div>
+            <div class="event">
+                <div class="year">2750</div>
+                <div class="description">New loyalty program introduced. 98% opt-in rate in first quarter.</div>
+            </div>
+        </section>
 
-    <footer>
-        <p>&copy; 2025 IdolLine. <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a></p>
-        <p class="mysterious">You've seen everything. Or have you?</p>
-    </footer>
+        <section id="contact" class="section">
+            <h2>Contact Us</h2>
+            <p>Questions, concerns, compliments? Our support assistants are always listening.</p>
+            <p>Email: support@idolline.com</p>
+            <p>Phone: 1-800-IDOLLINE</p>
+        </section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            window.addEventListener('scroll', function () {
-                const footer = document.querySelector('footer');
-                console.log(footer);
+        <footer>
+            <p>&copy; 2770 IdolLine&trade;. All initiatives are aspirational. Some are actively maintained.</p>
+            <p>This product may not be available in all universes.</p>
+        </footer>
 
-                const scrollHeight = document.documentElement.scrollHeight;
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                const clientHeight = window.innerHeight;
-
-                if (scrollTop + clientHeight >= scrollHeight - 50) {
-                    footer.classList.add('visible');
-                } else {
-                    footer.classList.remove('visible');
-                }
-            });
-        });
-    </script>
+    </div>
 </body>
 
 </html>

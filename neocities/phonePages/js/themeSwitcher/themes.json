@@ -126,5 +126,53 @@
       "1": "none",
       "2": "none"
     }
+  },
+  {
+    "name": "Misty Wish",
+    "mode": "misty",
+    "style": "light",
+    "fallback": "light",
+    "eyecatcher": {
+      "1": {
+        "src": "Assets/gifs/mistyWish/1.gif",
+        "alt": "A generic greenery gif. There's bees flying around."
+      },
+      "2": {
+        "src": "Assets/gifs/mistyWish/2.gif",
+        "alt": "Leaves touching a pool of water"
+      },
+      "3": {
+        "src": "Assets/gifs/mistyWish/3.gif",
+        "alt": "Morning dew dripping off of a leaf"
+      },
+      "4": {
+        "src": "Assets/gifs/mistyWish/4.gif",
+        "alt": "Rain on leaves"
+      },
+      "5": {
+        "src": "Assets/gifs/mistyWish/5.webp",
+        "alt": "Sun breaking through the leaves"
+      },
+      "6": {
+        "src": "Assets/gifs/mistyWish/6.gif",
+        "alt": "Sun breaking through the leaves as we move through the forest"
+      },
+      "7": {
+        "src": "Assets/gifs/mistyWish/7.gif",
+        "alt": "The reflection of a forest in a lake"
+      },
+      "8": {
+        "src": "Assets/gifs/mistyWish/8.gif",
+        "alt": "Rain on stones and grass"
+      },
+      "9": {
+        "src": "Assets/gifs/mistyWish/9.gif",
+        "alt": "Rainy mountain scenery, presumedly from a balcony"
+      }
+    },
+    "extras": {
+      "1": "none",
+      "2": "none"
+    }
   }
 ]

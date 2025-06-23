@@ -1,0 +1,52 @@
+@import url("../colorPalettes/mistywish.css");
+
+body {
+    background: url(/Assets/BGs/mistywish.png) bottom/cover;
+}
+
+main {
+    background: url('/Assets/BGs/tex2.png');
+    border: 6px solid var(--MWgreen1);
+    outline: 5px solid var(--MWgreen3);
+    border-radius: 60px;
+}
+
+.detailing {
+    display: none;
+}
+
+#warnings {
+    background-color: var(--MWbluegray);
+    border: 5px solid var(--MWgreen1);
+}
+
+.warningIMGs {
+    border-bottom: 2px solid var(--MWyellow);
+}
+
+strong{
+    color: var(--MWgreen2);
+    font-weight: normal;
+}
+
+#enter{
+    color: var(--MWgreen2);
+}
+
+#enter:hover {
+    color: var(--MWgreen1);
+}
+
+
+#missing {
+    right: 15em;
+    bottom: 0;
+
+    /* ! debug */
+    /* color: black; */
+    /* background-color: white; */
+}
+
+#missing:hover {
+    color: var(--deepsea);
+}

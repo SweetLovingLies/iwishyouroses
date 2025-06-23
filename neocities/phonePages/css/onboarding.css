@@ -52,8 +52,8 @@ body {
 #nameInputLabel {
     font-weight: bold;
     font-size: 1.4em;
-    font-family: Barbie;
-    color: var(--persian);
+    font-family: Penograph;
+    color: var(--wisteria);
 }
 
 #nameScreen form {
@@ -337,18 +337,18 @@ body {
 }
 
 h1 {
-    font-family: Barbie;
+    font-family: Penograph;
     font-size: 3em;
     color: var(--wisteria);
 }
 
 h2 {
-    font-family: Barbie;
+    font-family: Penograph;
     color: var(--persian);
 }
 
 h3 {
-    font-family: Barbie;
+    font-family: Penograph;
     color: var(--deepsea);
 }
 

@@ -180,7 +180,7 @@
 
         <div id="OBCentralWrapper" class="centralWrapper">
             <p>Welcome to the</p>
-            <img id="idolLineType" src="/Assets/myAssets/idolLineLogo/IdolLineType.png">
+            <img id="idolLineType" src="/Assets/myAssets/idolLineLogo/IdolLineTypeV2.png">
             <p>universe! </p>
         </div>
 
@@ -332,9 +332,9 @@
 
         <div id="OBCentralWrapper" class="centralWrapper">
             <p>
-                Thank you for willingly choosing
+                Thank you for using
             </p>
-            <img id="idolLineType" src="/Assets/myAssets/idolLineLogo/IdolLineType.png">
+            <img id="idolLineType" src="/Assets/myAssets/idolLineLogo/IdolLineTypeV2.png">
             <strong>We hope you enjoy your stay!</strong>
 
             <button id="enter">
@@ -455,8 +455,11 @@
 
         document.getElementById('enter').addEventListener('click', () => {
             parent.document.getElementById('phoneScreen').src = 'homepage.html';
+            window.top.document.getElementById('phone').classList.remove('bounce-phone');
+            window.top.document.getElementById('phoneSpot').classList.remove('show-indicator');
         });
     </script>
+    
     <script>
         // Discovering the Intersection Observer API thanks to Mozilla Documentation (which took absolutely fucking forever!)
         function unpauseAnimations() {

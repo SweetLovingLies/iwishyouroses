@@ -1,9 +1,11 @@
 body {
     height: 100vh;
-
     font-family: 'Roboto', sans-serif;
     background-color: var(--periwinkle);
     color: var(--nightSky);
+
+    position: relative;
+    overflow: auto;
 }
 
 a {
@@ -35,6 +37,10 @@ header nav a {
     font-weight: 600;
 }
 
+section {
+    padding: 30px;
+}
+
 #hero {
     background: linear-gradient(to bottom, var(--wisteria), var(--nightSky));
     padding: 100px 20px;
@@ -51,21 +57,21 @@ header nav a {
     font-size: 20px;
 }
 
-#timeline {
+#milestones {
     display: flex;
     flex-direction: column;
     padding: 40px;
     background-color: var(--periwinkle);
 }
 
-#timeline .event {
+#milestones .event {
     display: flex;
     align-items: center;
     margin-bottom: 30px;
     position: relative;
 }
 
-#timeline .event::before {
+#milestones .event::before {
     content: "";
     position: absolute;
     left: 0;
@@ -75,66 +81,25 @@ header nav a {
     background-color: var(--nightSky);
 }
 
-#timeline .event .year {
+#milestones .event .year {
     font-size: 24px;
     font-weight: bold;
     color: var(--nightSky);
     z-index: 1;
 }
 
-#timeline .event .description {
+#milestones .event .description {
     font-size: 16px;
     color: black;
     margin-left: 20px;
     transition: color 0.3s ease;
 }
 
-#timeline .event:hover .description {
+#milestones .event:hover .description {
     color: var(--wisteria);
-    animation: glitch .1s infinite;
-}
-
-@keyframes glitch {
-    0% {
-        transform: translateX(0);
-    }
-
-    50% {
-        transform: translateX(-5px);
-    }
-
-    100% {
-        transform: translateX(5px);
-    }
-}
-
-.confidential {
-    font-weight: bold;
-    font-style: italic;
-    color: var(--wisteria);
-}
-
-.redacted {
-    color: gray;
-    font-style: italic;
-}
-
-.mysterious {
-    font-weight: bold;
-    color: var(--wisteria);
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-.mysterious:hover {
-    color: var(--nightSky);
-    background-color: var(--wisteria);
 }
 
 footer {
-    position: absolute;
-    bottom: -400px;
-
     width: 100%;
     padding: 20px;
     background-color: var(--nightSky);

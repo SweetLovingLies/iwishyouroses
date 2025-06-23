@@ -20,7 +20,7 @@ body {
 }
 
 #jsCalender{
-    background: url(/Assets/BGs/darkMode/stripes.gif);
+    background: url("/Assets/BGs/darkMode/stripes.gif");
 }
 
 /* Calender */

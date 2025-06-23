@@ -117,7 +117,7 @@ function initializeWidgets() {
                 const newWidgetColumn = document.createElement('div');
                 newWidgetColumn.classList.add('widgetColumn');
                 newWidgetColumn.innerHTML = `
-                    <object class="widget" id="widget1" src="${widgets[0].data || ''}"></object>
+                    <img class="widget" id="widget1" src="${widgets[0].data || ''}">
                     <p>Widgetsmith</p>
                 `;
                 appWrapper.insertBefore(newWidgetColumn, column1);

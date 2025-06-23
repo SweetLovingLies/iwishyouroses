@@ -14,7 +14,7 @@
 }
 
 @font-face {
-    font-family: diegovainilla; 
+    font-family: diegovainilla;
     src: url('/fonts/16ptpixels/DiegoVainilla.otf');
 }
 
@@ -202,8 +202,8 @@ quote::after {
 }
 
 /* Rainbow BG Not Pastel */
-.rainbowbg2 { 
-    background: linear-gradient(90deg, rgba(255,71,101,1) 0%, rgba(254,147,65,1) 10%, rgba(241,205,57,1) 20%, rgba(102,246,70,1) 30%, rgba(38,191,186,1) 40%, rgba(65,89,225,1) 50%, rgba(159,20,225,1) 60%, rgba(173,76,254,1) 70%, rgba(252,64,125,1) 80%, rgba(255,139,177,1) 90%, rgba(255,255,255,1) 100%);
+.rainbowbg2 {
+    background: linear-gradient(90deg, rgba(255, 71, 101, 1) 0%, rgba(254, 147, 65, 1) 10%, rgba(241, 205, 57, 1) 20%, rgba(102, 246, 70, 1) 30%, rgba(38, 191, 186, 1) 40%, rgba(65, 89, 225, 1) 50%, rgba(159, 20, 225, 1) 60%, rgba(173, 76, 254, 1) 70%, rgba(252, 64, 125, 1) 80%, rgba(255, 139, 177, 1) 90%, rgba(255, 255, 255, 1) 100%);
 }
 
 /* Drop Shadows and Text Shadows */
@@ -220,7 +220,7 @@ quote::after {
     filter: drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white);
 }
 
-.dropShadowOutlineW2{
+.dropShadowOutlineW2 {
     filter: drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(1px 1px 0px #0000002d);
 }
 
@@ -265,6 +265,41 @@ quote::after {
     border-width: 7px;
     background-clip: padding-box;
 }
+
+/* Phone */
+
+/* #phoneSpot::after {
+    content: "";
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 200px;
+    height: 100px;
+    background: url('/Assets/myAssets/idolLineLogo/HoverIndicator.png') no-repeat center/contain;
+
+    z-index: 1000;
+    pointer-events: none;
+    opacity: 0;
+}
+
+#phoneSpot.show-indicator::after {
+    opacity: 1;
+    animation: bounce2 2.5s ease-in-out infinite;
+}
+
+@keyframes bounce2 {
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(-15px);
+    }
+} */
+
 
 /* Boring Shit */
 

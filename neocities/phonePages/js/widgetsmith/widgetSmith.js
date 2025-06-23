@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function getStoredWidgets() {
-        return parseInt(localStorage.getItem('widgetId')) || 1; 
+        return parseInt(localStorage.getItem('widgetId')) || 1;
     }
 
     function toggleCustomizeSection() {
@@ -204,7 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const shapeStyle = shapeStyles[widgetSettings.shape] || { clipPath: 'none', mask: 'none' };
         widgetClone.style.clipPath = shapeStyle.clipPath;
         widgetClone.style.mask = shapeStyle.mask;
-        widgetClone.style.filter = widgetSettings.filterValue; 
+        widgetClone.style.filter = widgetSettings.filterValue;
 
         const editButton = document.createElement('button');
         editButton.innerHTML = '<iconify-icon icon="fa:gear"></iconify-icon>';
@@ -240,8 +240,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (editFilterInput) {
             editFilterInput.value = widgetSettings.filterName === 'custom' || !widgetSettings.filterName
-                    ? 'none'
-                    : widgetSettings.filterName;
+                ? 'none'
+                : widgetSettings.filterName;
         }
 
         updateWidgetPV(editWidgetIMG, widgetSettings.shape, widgetSettings.filterName);
@@ -281,13 +281,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     savedWidgets.splice(widgetIndex, 1);
                     localStorage.setItem('widgets', JSON.stringify(savedWidgets));
 
+                    if (savedWidgets.length === 0) {
+                        localStorage.setItem('widgetId', 1); 
+                    }
+
                     toggleEditSection(false);
                     window.location.reload();
                 } else {
-                    return
+                    return;
                 }
             }
         });
+
 
         updateWidgetPV(editWidgetIMG, widgetSettings.shape, widgetSettings.filterName);
     }

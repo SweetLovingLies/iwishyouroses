@@ -5,11 +5,16 @@
     --spaceDust: #cacfd6;
 
     --fontSpace: "Berry", Courier, monospace;
+    --headerSpace: "Penograph", Courier, monospace;
 }
 
 @font-face {
     font-family: Berry;
     src: url('/fonts/BerryRegular.ttf');
+}
+@font-face {
+    font-family: Penograph;
+    src: url('/fonts/Penograph.ttf');
 }
 
 /* & Phone */
@@ -42,19 +47,35 @@
     bottom: -605px;
 
     /* ! For testing... PLEASE UPDATE */
-    /* bottom: 0; */
+    /* bottom: 0;
+    animation: none; */
 }
 
 #phone.visible {
     bottom: 0;
+    animation: none;
 }
+
+.bounce-phone {
+    animation: bounce 0.8s 5s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
 
 /* & Branding */
 
 /* 
-<img id="idolLineIcon" src="/Assets/myAssets/idolLineLogo/IdolLineIcon.png">
-<img id="idolLineType" src="/Assets/myAssets/idolLineLogo/IdolLineType.png"> 
-<img id="idolLineFullLogo" src="/Assets/myAssets/idolLineLogo/IdolLineFullLogo.png"> 
+~ <img id="idolLineIcon" src="/Assets/myAssets/idolLineLogo/IdolLineIcon.png">
+~ <img id="idolLineType" src="/Assets/myAssets/idolLineLogo/IdolLineType.png"> 
+~ <img id="idolLineFullLogo" src="/Assets/myAssets/idolLineLogo/IdolLineFullLogo.png"> 
 */
 
 bgOverlay {

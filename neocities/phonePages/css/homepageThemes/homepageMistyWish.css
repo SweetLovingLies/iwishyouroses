@@ -1,0 +1,43 @@
+@import url("/css/colorPalettes/mistywish.css");
+
+body {
+    background: url("/Assets/BGs/mistyWishBG3.jpg");
+    backdrop-filter: blur(2px) grayscale(0.4);
+    background-size: cover;
+    background-position: center;
+}
+
+.appWrapper a,
+footer a {
+    color: black;
+}
+
+
+.appWrapper a:hover,
+.appWrapper a:focus,
+footer a:hover,
+footer a:focus {
+    color: var(--MWgreen3);
+}
+
+.appIcon {
+    background-color: var(--MWgreen2);
+    border: 2px solid var(--MWgreen3);
+    filter: drop-shadow(-1px 2px 3px rgba(0, 0, 0, 0.26));
+}
+
+.navDots.active {
+    color: var(--MWblue3);
+}
+.navDots.inactive {
+    color: black;
+}
+
+#tray {
+    background: #ffffffa9;
+    box-shadow: -1px 2px 3px rgba(0, 0, 0, 0.25);
+}
+
+#widgetColumn p {
+    color: black;
+}

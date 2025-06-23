@@ -94,6 +94,10 @@ footer p {
     font-size: 15px;
 }
 
+#widgetColumn a {
+    text-decoration: none;
+}
+
 .widget {
     width: 160px;
     height: 150px;
@@ -113,6 +117,12 @@ footer p {
     height: 50px;
 
     border-radius: 10px;
+
+    transition: transform .25s;
+}
+
+.app:hover > .appIcon {
+    transform: scale(1.1);
 }
 
 .appIcon img {

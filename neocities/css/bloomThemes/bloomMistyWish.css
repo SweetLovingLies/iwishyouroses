@@ -1,0 +1,262 @@
+@import url("../colorPalettes/mistywish.css");
+
+body {
+    font-family: cafesweet;
+    background: url('/Assets/BGs/leaves6.gif') var(--MWgreen2);
+    backdrop-filter: brightness(1.2);
+}
+
+#baselayout {
+    background: url('/Assets/BGs/tex2.png');
+
+    border-radius: 60px;
+    border: 6px solid var(--MWgreen1);
+    outline: 5px solid var(--MWgreen3);
+}
+
+.detailing {
+    display: none;
+}
+
+/* Left-side */
+#eyecatcher,
+#siteButton,
+#jsCalender,
+#home,
+#spotlight,
+#statusCafe,
+#status,
+#webgroups,
+#stamps,
+#blogRSS {
+    background: var(--MWblue1);
+
+    border-radius: 20px;
+    border: 6px solid var(--MWgreen1);
+    outline: 5px solid var(--MWgreen3);
+}
+
+
+/* Calender */
+
+.calendar-weekdays li {
+    background: var(--MWgreen2);
+    background-size: 100%;
+}
+
+header .calendar-navigation span {
+    color: var(--MWbluegray);
+}
+
+header .calendar-navigation span:hover {
+    color: var(--MWblue2);
+}
+
+.calendar-body li {
+    color: white;
+
+    box-shadow: -1px -1.4px 1px inset #9e9699, 2px 3px 1.5px inset white, 0px 0px 2px #aba4a6;
+    border: 1px solid var(--whispermist);
+}
+
+.calendar-body .calendar-dates li {
+    background: var(--MWyellow);
+    color: black;
+}
+
+.calendar-body .calendar-dates li:hover {
+    background: var(--MWgreen3);
+}
+
+.calendar-dates li.inactive {
+    color: #696969;
+}
+
+.calendar-dates li.active {
+    background: var(--MWbluegray)
+}
+
+/* Main */
+
+#home {
+    scrollbar-color: var(--MWgreengray) var(--MWyellow);
+}
+
+#home::-webkit-scrollbar-track {
+    background: var(--MWyellow);
+}
+
+#home::-webkit-scrollbar-thumb {
+    background-color: var(--MWgreengray);
+}
+
+#spotlight {
+    height: unset;
+}
+
+.displayScreenshots {
+    border: 4px groove var(--MWyellow);
+    filter: drop-shadow(-1px 2px 3px rgba(0, 0, 0, 0.26));
+}
+
+#spotlight a {
+    color: var(--MWgreen2);
+    transition: color .25s;
+}
+
+#spotlight a:hover {
+    color: var(--MWblue3);
+}
+
+#spotlight h2 {
+    text-align: center;
+    color: black;
+}
+
+/* Status Cafe */
+
+#thoughtBubble {
+    background: var(--dustyPink);
+    border: 3px dashed white;
+    outline: 5px solid var(--dustyPink);
+
+    color: black;
+}
+
+#thoughtBubble::after {
+    color: var(--dustyPink);
+    -webkit-text-stroke: 1px white;
+
+    background-color: var(--dustyPink);
+    border: 1px solid white;
+    border-radius: 11px;
+}
+
+#thoughtBubble a {
+    color: var(--wisteria);
+}
+
+/* Side Columns */
+
+.statusBubble {
+    background: var(--MWgreengray);
+    border: 3px dashed var(--bubblegum);
+    color: white;
+}
+
+.statusBubble:nth-child(even) {
+    background: var(--MWgreen1);
+}
+
+#status h3 {
+    font-style: italic;
+    color: var(--MWyellow);
+}
+
+#stamps h2,
+#webgroups h2 {
+    color: black;
+}
+
+#blogRSS h1,
+#blogRSS h2,
+#blogRSS h3,
+#blogRSS h4,
+#blogRSS h5,
+#blogRSS h6 {
+    color: var(--MWgreen1);
+}
+
+#blogRSS #title {
+    color: var(--MWgreen2);
+}
+
+#blogRSS p {
+    color: black;
+}
+
+.feed-item {
+    border-bottom: 4px dashed var(--MWbluegray);
+}
+
+.feed-item a {
+    color: black;
+}
+
+.feed-item small {
+    color: #797979;
+}
+
+/* Footer */
+
+
+footer {
+    background: var(--MWgreen3);
+}
+
+/* ? Decor */
+
+#christmasTree {
+    display: none;
+}
+
+#presents {
+    display: none;
+}
+
+/* General */
+
+hr {
+    background: url('/Assets/pixels/bubblegum/pinkRoseBowDivider.webp') repeat-x;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    height: 22px;
+}
+
+.box,
+.box2 {
+    padding: 5px;
+    background-color: var(--pinkIce);
+    border: 2px dashed var(--ash);
+    border-radius: var(--globalBorderRadius);
+}
+
+h2 {
+    color: black;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+* {
+    scrollbar-width: thin;
+    box-sizing: border-box;
+
+    scrollbar-color: var(--MWgreen2) var(--MWyellow);
+}
+
+*::-webkit-scrollbar,
+*::-webkit-scrollbar-button {
+    width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--MWyellow);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--MWgreen2);
+}
+
+/* ? Media Queries */
+
+@media (prefers-reduced-motion: reduce) {}
+
+@media only screen and (max-width: 1024px) {}
+
+@media only screen and (max-width: 810px) {}
+
+@media only screen and (max-width: 500px) {}
