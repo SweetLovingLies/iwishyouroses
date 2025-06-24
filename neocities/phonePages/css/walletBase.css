@@ -1,0 +1,37 @@
+#wrapper {
+    padding: 10px;
+}
+
+#welcomeMessage{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#userIcon{
+    display: block;
+    margin: 20px auto 0;
+    width:  100px;
+    border-radius: 999px;
+}
+
+#userIcon{
+    border: 5px solid var(--wisteria);
+}
+
+#cardView {
+    padding: 10px;
+}
+
+#cardWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background: linear-gradient(27deg,rgba(130, 102, 255, 1) 42%, rgba(173, 202, 255, 1) 78%, rgba(220, 214, 247, 1) 100%);
+    padding: 10px;
+    color: white;
+
+    height: 130px;
+    border-radius: 15px;
+}

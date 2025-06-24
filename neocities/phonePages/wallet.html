@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Wallet</title>
+    <link href="/css/globals.css" rel="stylesheet">
+    <link href="css/phoneGlobals.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/walletBase.css" rel="stylesheet" type="text/css" media="all">
+</head>
+
+<body class="builtIn">
+    <object id="detailBarObject" data="detailbar.html"></object>
+
+    <header>Wallet</header>
+
+    <div id="wrapper">
+        <img id="userIcon" src="/Assets/other/anonIcon.jpg">
+        <p id="welcomeMessage">Welcome, Anon</p>
+
+        <div id="cardView">
+            <div id="cardWrapper">
+                <div class="charmletCounter">
+                    <p>You have</p>
+                    <h2><span id="walletCharmletDisplay">0</span> Charmlets</h2>
+                </div>
+            </div>
+        </div>
+
+        <div id="walletHistory">
+            <h3>Recent Activity</h3>
+            <ul id="charmletHistoryList">
+                <li>There's nothing here yet!</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="js/wallet.js"></script>
+</body>
+
+</html>

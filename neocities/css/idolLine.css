@@ -47,8 +47,8 @@
     bottom: -605px;
 
     /* ! For testing... PLEASE UPDATE */
-    /* bottom: 0;
-    animation: none; */
+    bottom: 0;
+    /* animation: none; */
 }
 
 #phone.visible {

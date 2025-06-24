@@ -1,0 +1,45 @@
+body {
+  font-family: 'Cormorant Garamond', serif;
+  background: #fdf7f9;
+  padding: 20px;
+}
+
+#shopWrapper {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+#shopGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.shopItem {
+  border: 2px dashed pink;
+  padding: 10px;
+  border-radius: 12px;
+  background-color: white;
+}
+
+.shopItem img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.shopItem button {
+  margin-top: 8px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 8px;
+  background: palevioletred;
+  color: white;
+  cursor: pointer;
+}
+
+.shopItem button:disabled {
+  background: gray;
+  cursor: not-allowed;
+}
